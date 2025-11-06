@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WordRush</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" />
+    <style>
+      :root {
+        --bg-gradient-start: #000000;
+        --bg-gradient-end: #222222;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Nunito', sans-serif;
+        background: radial-gradient(circle at center, var(--bg-gradient-start), var(--bg-gradient-end));
+        color: #ffffff;
+        overflow: hidden;
+      }
+
+      header {
+        position: absolute;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 10;
+      }
+
+      #game-canvas {
+        display: block;
+        margin: 0 auto;
+        background: transparent;
+      }
+
+      #hud {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        text-align: right;
+        z-index: 10;
+      }
+
+      #theme-selector {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.5rem;
+        z-index: 10;
+      }
+
+      #theme-selector button,
+      #bonus-modal button {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 999px;
+        color: inherit;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+
+      #theme-selector button:hover,
+      #bonus-modal button:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+
+      #bonus-modal {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 20;
+      }
+
+      #bonus-content {
+        background: rgba(20, 20, 30, 0.95);
+        padding: 2rem;
+        border-radius: 1rem;
+        min-width: 320px;
+        max-width: 600px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      }
+
+      #pair-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+
+      .pair-card {
+        padding: 0.75rem;
+        border-radius: 0.75rem;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid transparent;
+        text-align: center;
+        user-select: none;
+      }
+
+      .pair-card[data-state="active"] {
+        border-color: #ffffff;
+        background: rgba(255, 255, 255, 0.18);
+      }
+
+      .pair-card[data-state="correct"] {
+        border-color: #42f57b;
+        background: rgba(66, 245, 123, 0.25);
+      }
+
+      .pair-card[data-state="wrong"] {
+        border-color: #ff5f57;
+        background: rgba(255, 95, 87, 0.25);
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>WordRush</h1>
+      <p id="round-indicator">Bereit?</p>
+    </header>
+
+    <main>
+      <canvas id="game-canvas" width="960" height="540" aria-label="WordRush Spielfläche"></canvas>
+      <div id="hud" aria-live="polite">
+        <div id="score-display">Score: 0</div>
+        <div id="level-display">Level 1</div>
+        <div id="mode-display">Normal</div>
+      </div>
+      <nav id="theme-selector" aria-label="Themenauswahl"></nav>
+    </main>
+
+    <section id="bonus-modal" role="dialog" aria-modal="true" aria-labelledby="bonus-title">
+      <div id="bonus-content">
+        <h2 id="bonus-title">PairMatch Bonus</h2>
+        <p id="bonus-description">Finde die passenden Wortpaare.</p>
+        <div id="pair-grid"></div>
+        <div style="margin-top: 1.5rem; text-align: right;">
+          <button id="skip-bonus">Überspringen</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="sr-only" id="audio-region" aria-live="assertive"></div>
+
+    <!-- Inline fallback data to support local file execution without a dev server -->
+    <script src="data/preloaded-data.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>

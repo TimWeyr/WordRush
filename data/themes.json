@@ -1,0 +1,26 @@
+[
+  {
+    "id": "family",
+    "name": "Family",
+    "colorTheme": [
+      "#ffb6b9",
+      "#fae3d9"
+    ]
+  },
+  {
+    "id": "nature",
+    "name": "Nature",
+    "colorTheme": [
+      "#b5e48c",
+      "#76c893"
+    ]
+  },
+  {
+    "id": "car",
+    "name": "Automobile",
+    "colorTheme": [
+      "#a0c4ff",
+      "#caffbf"
+    ]
+  }
+]

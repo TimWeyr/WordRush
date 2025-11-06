@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Beginner",
+    "speedMultiplier": 1.0,
+    "maxDistractors": 2,
+    "themeRotation": ["family", "nature"]
+  },
+  {
+    "id": 2,
+    "name": "Intermediate",
+    "speedMultiplier": 1.25,
+    "maxDistractors": 3,
+    "themeRotation": ["car", "family"]
+  },
+  {
+    "id": 3,
+    "name": "Advanced",
+    "speedMultiplier": 1.5,
+    "maxDistractors": 4,
+    "themeRotation": ["nature", "car", "family"]
+  }
+]

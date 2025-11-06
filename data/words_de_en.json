@@ -1,0 +1,125 @@
+[
+  {
+    "id": 101,
+    "word_de": "Auto",
+    "correct_en": "car",
+    "distractors": [
+      "train",
+      "bus",
+      "bike"
+    ],
+    "theme": "car",
+    "level": 1
+  },
+  {
+    "id": 102,
+    "word_de": "Getriebe",
+    "correct_en": "gearbox",
+    "distractors": [
+      "engine",
+      "brake",
+      "pedal"
+    ],
+    "theme": "car",
+    "level": 3
+  },
+  {
+    "id": 201,
+    "word_de": "Mutter",
+    "correct_en": "mother",
+    "distractors": [
+      "father",
+      "daughter",
+      "sister"
+    ],
+    "theme": "family",
+    "level": 1
+  },
+  {
+    "id": 202,
+    "word_de": "Stiefvater",
+    "correct_en": "stepfather",
+    "distractors": [
+      "uncle",
+      "grandfather",
+      "father"
+    ],
+    "theme": "family",
+    "level": 3
+  },
+  {
+    "id": 301,
+    "word_de": "Baum",
+    "correct_en": "tree",
+    "distractors": [
+      "flower",
+      "grass",
+      "bush"
+    ],
+    "theme": "nature",
+    "level": 1
+  },
+  {
+    "id": 302,
+    "word_de": "Wolke",
+    "correct_en": "cloud",
+    "distractors": [
+      "rain",
+      "snow",
+      "fog"
+    ],
+    "theme": "nature",
+    "level": 2
+  },
+  {
+    "id": 901,
+    "word_de": "Mutter",
+    "correct_en": "mother",
+    "distractors": [
+      "father",
+      "daughter",
+      "aunt",
+      "woman",
+      "lady",
+      "girl",
+      "sister"
+    ],
+    "theme": "family",
+    "level": "boss",
+    "reward": "glow_crosshair_01"
+  },
+  {
+    "id": 902,
+    "word_de": "Auto",
+    "correct_en": "car",
+    "distractors": [
+      "bus",
+      "truck",
+      "train",
+      "wheel",
+      "engine",
+      "bike",
+      "road"
+    ],
+    "theme": "car",
+    "level": "boss",
+    "reward": "speed_boost_01"
+  },
+  {
+    "id": 903,
+    "word_de": "Baum",
+    "correct_en": "tree",
+    "distractors": [
+      "flower",
+      "grass",
+      "bush",
+      "rock",
+      "rain",
+      "leaf",
+      "seed"
+    ],
+    "theme": "nature",
+    "level": "boss",
+    "reward": "forest_theme_bg"
+  }
+]

@@ -160,6 +160,8 @@
 
     <div class="sr-only" id="audio-region" aria-live="assertive"></div>
 
-    <script type="module" src="game.js"></script>
+    <!-- Inline fallback data to support local file execution without a dev server -->
+    <script src="data/preloaded-data.js"></script>
+    <script src="game.js"></script>
   </body>
 </html>

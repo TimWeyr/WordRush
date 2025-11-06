@@ -1,8 +1,8 @@
 const DATA_SOURCES = {
-  config: './config.json',
-  levels: './data/levels.json',
-  themes: './data/themes.json',
-  words: './data/words_de_en.json'
+  config: { path: './config.json', embedKey: 'config' },
+  levels: { path: './data/levels.json', embedKey: 'levels' },
+  themes: { path: './data/themes.json', embedKey: 'themes' },
+  words: { path: './data/words_de_en.json', embedKey: 'words' }
 };
 
 const canvas = document.getElementById('game-canvas');
@@ -17,10 +17,17 @@ const pairGrid = document.getElementById('pair-grid');
 const skipBonusButton = document.getElementById('skip-bonus');
 const audioRegion = document.getElementById('audio-region');
 
-function fetchJSON(path) {
-  return fetch(path).then((response) => {
+function cloneData(data) {
+  return JSON.parse(JSON.stringify(data));
+}
+
+function fetchJSON(source) {
+  if (window.location.protocol === 'file:' && window.WORDRUSH_EMBED && source.embedKey && window.WORDRUSH_EMBED[source.embedKey]) {
+    return Promise.resolve(cloneData(window.WORDRUSH_EMBED[source.embedKey]));
+  }
+  return fetch(source.path).then((response) => {
     if (!response.ok) {
-      throw new Error(`Failed to load ${path}`);
+      throw new Error(`Failed to load ${source.path}`);
     }
     return response.json();
   });
@@ -259,6 +266,11 @@ class WordRushGame {
     this.roundsSinceBoss = 0;
     this.reverseMode = false;
     this.animationFrameId = null;
+    this.lastFrameTime = null;
+    this.roundStatus = 'idle';
+
+    this.handleCanvasClick = (event) => this.onCanvasClick(event);
+    canvas.addEventListener('click', this.handleCanvasClick);
 
     this.buildThemeSelector();
     this.restoreProgress();
@@ -338,6 +350,7 @@ class WordRushGame {
   }
 
   startRound() {
+    this.stopAnimationLoop();
     this.activeTheme = this.getCurrentTheme();
     const isBoss = this.shouldTriggerBossWave();
     const roundData = this.prepareRoundData(this.activeTheme, isBoss);
@@ -345,7 +358,9 @@ class WordRushGame {
     this.roundsSinceBoss = isBoss ? 0 : this.roundsSinceBoss + 1;
     roundIndicator.textContent = isBoss ? 'Boss-Welle!' : `Level ${this.state.level}`;
     modeDisplay.textContent = isBoss ? 'Boss' : (this.reverseMode ? 'Reverse' : 'Normal');
-    this.drawRound(roundData);
+    this.roundStatus = 'running';
+    this.initializeWordSprites(roundData);
+    this.startAnimationLoop();
   }
 
   shouldTriggerBossWave() {
@@ -402,6 +417,70 @@ class WordRushGame {
     };
   }
 
+  initializeWordSprites(roundData) {
+    const baseRadius = Math.max(canvas.width, canvas.height) * 0.6;
+    roundData.flyingWords.forEach((word, index) => {
+      const angle = (Math.PI * 2 * index) / Math.max(1, roundData.flyingWords.length);
+      word.angle = angle + (Math.random() - 0.5) * 0.6;
+      word.radius = baseRadius + Math.random() * 80;
+      word.angularSpeed = (Math.random() * 0.6 + 0.2) * (Math.random() > 0.5 ? 1 : -1);
+      word.travelSpeed = word.speed * 55;
+      word.state = 'flying';
+      this.updateWordPosition(word);
+    });
+  }
+
+  updateWordPosition(word) {
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    word.x = centerX + Math.cos(word.angle) * word.radius;
+    word.y = centerY + Math.sin(word.angle) * word.radius;
+  }
+
+  startAnimationLoop() {
+    this.lastFrameTime = null;
+    const step = (timestamp) => {
+      if (this.roundStatus !== 'running' || !this.activeRound) {
+        return;
+      }
+      if (!this.lastFrameTime) {
+        this.lastFrameTime = timestamp;
+      }
+      const delta = (timestamp - this.lastFrameTime) / 1000;
+      this.lastFrameTime = timestamp;
+      this.updateFlyingWords(delta);
+      this.drawRound(this.activeRound);
+      this.animationFrameId = requestAnimationFrame(step);
+    };
+    this.animationFrameId = requestAnimationFrame(step);
+  }
+
+  stopAnimationLoop() {
+    if (this.animationFrameId) {
+      cancelAnimationFrame(this.animationFrameId);
+      this.animationFrameId = null;
+    }
+  }
+
+  updateFlyingWords(deltaSeconds) {
+    if (!this.activeRound) {
+      return;
+    }
+    const targetRadius = 60;
+    this.activeRound.flyingWords.forEach((word) => {
+      if (word.state !== 'flying') {
+        return;
+      }
+      word.radius = Math.max(targetRadius, word.radius - word.travelSpeed * deltaSeconds);
+      word.angle += word.angularSpeed * deltaSeconds;
+      this.updateWordPosition(word);
+      if (word.radius <= targetRadius + 2 && this.roundStatus === 'running') {
+        word.state = 'collided';
+        this.handleWordCollision(word);
+      }
+    });
+  }
+
   createFlyingWords(targetWord, correctWord, distractors, isBoss) {
     const entries = [];
     entries.push({
@@ -448,21 +527,55 @@ class WordRushGame {
     ctx.fillText(roundData.targetWord, canvas.width / 2, canvas.height / 2);
     ctx.restore();
 
-    roundData.flyingWords.forEach((word, index) => {
-      const angle = (Math.PI * 2 * index) / roundData.flyingWords.length;
-      const radius = 220;
-      const x = canvas.width / 2 + Math.cos(angle) * radius;
-      const y = canvas.height / 2 + Math.sin(angle) * radius;
+    roundData.flyingWords.forEach((word) => {
+      if (word.state === 'removed') {
+        return;
+      }
       ctx.save();
       ctx.fillStyle = word.type === 'correct' ? '#6cf542' : '#ff6f61';
       ctx.font = '32px Nunito';
       ctx.textAlign = 'center';
-      ctx.fillText(word.text, x, y);
+      ctx.fillText(word.text, word.x, word.y);
       ctx.restore();
     });
   }
 
+  onCanvasClick(event) {
+    if (this.roundStatus !== 'running' || !this.activeRound) {
+      return;
+    }
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const x = (event.clientX - rect.left) * scaleX;
+    const y = (event.clientY - rect.top) * scaleY;
+    const targetWord = this.findWordAt(x, y);
+    this.handlePlayerShot(targetWord);
+  }
+
+  findWordAt(x, y) {
+    if (!this.activeRound) {
+      return null;
+    }
+    ctx.save();
+    ctx.font = '32px Nunito';
+    const hit = this.activeRound.flyingWords.find((word) => {
+      if (word.state !== 'flying') {
+        return false;
+      }
+      const metrics = ctx.measureText(word.text);
+      const halfWidth = metrics.width / 2 + 12;
+      const halfHeight = 24;
+      return Math.abs(word.x - x) <= halfWidth && Math.abs(word.y - y) <= halfHeight;
+    });
+    ctx.restore();
+    return hit || null;
+  }
+
   handlePlayerShot(wordEntry) {
+    if (this.roundStatus !== 'running') {
+      return;
+    }
     if (!wordEntry) {
       this.adjustScore(this.config.points.missShot);
       return;
@@ -476,11 +589,15 @@ class WordRushGame {
       this.markWordFailed(this.activeRound.sourceWord.id);
       this.removeWordFromRound(wordEntry.id);
       this.playFeedback('fail');
+      this.handleRoundFailure();
     }
     this.persistProgress();
   }
 
   handleWordCollision(wordEntry) {
+    if (this.roundStatus !== 'running') {
+      return;
+    }
     if (!wordEntry) {
       return;
     }
@@ -501,8 +618,13 @@ class WordRushGame {
     if (!this.activeRound) {
       return;
     }
-    this.activeRound.flyingWords = this.activeRound.flyingWords.filter((word) => word.id !== wordId);
-    this.drawRound(this.activeRound);
+    this.activeRound.flyingWords = this.activeRound.flyingWords.filter((word) => {
+      if (word.id === wordId) {
+        word.state = 'removed';
+        return false;
+      }
+      return true;
+    });
   }
 
   getPointsFor(action, roundType) {
@@ -517,11 +639,27 @@ class WordRushGame {
   }
 
   handleRoundSuccess() {
-    this.checkLevelProgress();
+    if (this.roundStatus !== 'running') {
+      return;
+    }
+    this.roundStatus = 'transition';
+    this.stopAnimationLoop();
+    setTimeout(() => {
+      this.roundStatus = 'idle';
+      this.checkLevelProgress();
+    }, 600);
   }
 
   handleRoundFailure() {
-    this.checkLevelProgress();
+    if (this.roundStatus !== 'running') {
+      return;
+    }
+    this.roundStatus = 'transition';
+    this.stopAnimationLoop();
+    setTimeout(() => {
+      this.roundStatus = 'idle';
+      this.checkLevelProgress();
+    }, 600);
   }
 
   checkLevelProgress() {
@@ -572,6 +710,8 @@ class WordRushGame {
       this.startRound();
       return;
     }
+    this.roundStatus = 'bonus';
+    this.stopAnimationLoop();
     this.pairMatchBoard.open(failedPairs);
   }
 

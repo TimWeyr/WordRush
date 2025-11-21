@@ -1,6 +1,6 @@
 // Main App Component
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { GalaxyMap } from './components/GalaxyMap';
 import { Game } from './components/Game';
 import type { Universe, Theme } from './types/content.types';

@@ -188,7 +188,7 @@ export class GalaxyCamera {
   /**
    * Update camera animation
    */
-  update(deltaTime: number): void {
+  update(_deltaTime: number): void {
     if (this.animating) {
       const elapsed = performance.now() - this.animationStartTime;
       const progress = Math.min(1, elapsed / this.animationDuration);

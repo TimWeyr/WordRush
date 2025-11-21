@@ -77,7 +77,6 @@ export class Renderer {
       outline = true,
       outlineColor = '#000000',
       align = 'center',
-      bold = false,
       font,
       glow = false,
       glowColor,
@@ -141,30 +140,6 @@ export class Renderer {
     this.ctx.fillText(text, pos.x, pos.y);
     
     this.ctx.restore();
-  }
-  
-  // Helper to lighten a color
-  private lightenColor(color: string, percent: number): string {
-    if (color.startsWith('#')) {
-      const num = parseInt(color.slice(1), 16);
-      const r = Math.min(255, ((num >> 16) & 0xff) + percent);
-      const g = Math.min(255, ((num >> 8) & 0xff) + percent);
-      const b = Math.min(255, (num & 0xff) + percent);
-      return `#${((r << 16) | (g << 8) | b).toString(16).padStart(6, '0')}`;
-    }
-    return color;
-  }
-  
-  // Helper to darken a color
-  private darkenColor(color: string, percent: number): string {
-    if (color.startsWith('#')) {
-      const num = parseInt(color.slice(1), 16);
-      const r = Math.max(0, ((num >> 16) & 0xff) - percent);
-      const g = Math.max(0, ((num >> 8) & 0xff) - percent);
-      const b = Math.max(0, (num & 0xff) - percent);
-      return `#${((r << 16) | (g << 8) | b).toString(16).padStart(6, '0')}`;
-    }
-    return color;
   }
 
   // Expose canvas context for custom rendering

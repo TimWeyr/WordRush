@@ -37,7 +37,6 @@ export interface LevelRingLayout {
   chapterId: string;
 }
 
-const MIN_PLANET_DISTANCE = 200;
 const PLANET_RADIUS = 40;
 const MOON_ORBIT_RADIUS = 80;
 const MOON_RADIUS = 15;
@@ -48,7 +47,6 @@ const MAX_LEVEL_SPACING = 15; // Maximum spacing for very high levels
 
 // New constants for horizontal S-curve and moon spacing
 const S_CURVE_AMPLITUDE_FACTOR = 0.3; // Amplitude of S-curve relative to screen height
-const S_CURVE_WAVELENGTH_FACTOR = 0.4; // Wavelength factor for S-curve
 const PLANET_SPACING_VARIATION = 0.05; // Variation in planet spacing (±5%)
 const MOON_RING_PADDING = 15; // Padding between moon rings and planets/moons
 const MIN_RING_GAP = 10; // Minimum gap between rings
@@ -153,15 +151,15 @@ export function calculatePlanetPositionsHorizontalMaeander(
  * Evenly distributes moons in a circle
  */
 export function calculateMoonPositions(
-  chapters: ChapterConfig[],
+  chapters: Record<string, ChapterConfig>,
   planetX: number,
   planetY: number
 ): MoonLayout[] {
   const layouts: MoonLayout[] = [];
   
-  if (chapters.length === 0) return layouts;
-  
   const chapterIds = Object.keys(chapters);
+  if (chapterIds.length === 0) return layouts;
+  
   const angleStep = (Math.PI * 2) / chapterIds.length;
   
   chapterIds.forEach((chapterId, index) => {

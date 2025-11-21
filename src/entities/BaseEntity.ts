@@ -261,63 +261,6 @@ export class BaseEntity extends GameObject {
     };
   }
 
-  // OPTION 1: Platform/Landing Pad (WIDE - almost full screen width) - OLD VERSION
-  private renderPlatform(renderer: Renderer, color: string): void {
-    const ctx = renderer.getContext();
-    const canvas = ctx.canvas;
-    
-    // Wide platform (80% of screen width)
-    const platformWidth = canvas.width * 0.8;
-    const platformHeight = 60;
-    const x = this.position.x - platformWidth / 2;
-    const y = this.position.y - platformHeight / 2;
-    
-    ctx.save();
-    
-    // Platform base with depth effect
-    const gradient = ctx.createLinearGradient(x, y, x, y + platformHeight);
-    gradient.addColorStop(0, this.lightenColor(color, 30));
-    gradient.addColorStop(0.5, color);
-    gradient.addColorStop(1, this.darkenColor(color, 20));
-    
-    ctx.fillStyle = gradient;
-    ctx.fillRect(x, y, platformWidth, platformHeight);
-    
-    // Top edge highlight
-    ctx.strokeStyle = this.lightenColor(color, 50);
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.lineTo(x + platformWidth, y);
-    ctx.stroke();
-    
-    // Bottom shadow
-    ctx.strokeStyle = this.darkenColor(color, 40);
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(x, y + platformHeight);
-    ctx.lineTo(x + platformWidth, y + platformHeight);
-    ctx.stroke();
-    
-    // Side borders
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 4;
-    ctx.strokeRect(x, y, platformWidth, platformHeight);
-    
-    // Grid pattern for detail
-    ctx.strokeStyle = this.lightenColor(color, 10);
-    ctx.lineWidth = 1;
-    ctx.globalAlpha = 0.3;
-    const gridSpacing = 40;
-    for (let i = 1; i < platformWidth / gridSpacing; i++) {
-      ctx.beginPath();
-      ctx.moveTo(x + i * gridSpacing, y);
-      ctx.lineTo(x + i * gridSpacing, y + platformHeight);
-      ctx.stroke();
-    }
-    
-    ctx.restore();
-  }
   
   // Helper methods for color manipulation
   private lightenColor(color: string, percent: number): string {
@@ -338,45 +281,8 @@ export class BaseEntity extends GameObject {
     return `#${((r << 16) | (g << 8) | b).toString(16).padStart(6, '0')}`;
   }
 
-  // OPTION 2: Glowing Portal
-  private renderPortal(renderer: Renderer, color: string): void {
-    const ctx = renderer.getContext();
-    const radius = this.radius * 1.3;
-    const time = Date.now() / 1000;
-    
-    ctx.save();
-    
-    // Outer rotating ring
-    for (let i = 0; i < 8; i++) {
-      const angle = (Math.PI / 4) * i + time * 2;
-      const x = this.position.x + Math.cos(angle) * radius;
-      const y = this.position.y + Math.sin(angle) * radius;
-      
-      const gradient = ctx.createRadialGradient(x, y, 0, x, y, 8);
-      gradient.addColorStop(0, color);
-      gradient.addColorStop(1, 'transparent');
-      ctx.fillStyle = gradient;
-      ctx.beginPath();
-      ctx.arc(x, y, 8, 0, Math.PI * 2);
-      ctx.fill();
-    }
-    
-    // Center glow
-    const centerGradient = ctx.createRadialGradient(
-      this.position.x, this.position.y, 0,
-      this.position.x, this.position.y, radius * 0.7
-    );
-    centerGradient.addColorStop(0, color + 'aa');
-    centerGradient.addColorStop(1, 'transparent');
-    ctx.fillStyle = centerGradient;
-    ctx.beginPath();
-    ctx.arc(this.position.x, this.position.y, radius * 0.7, 0, Math.PI * 2);
-    ctx.fill();
-    
-    ctx.restore();
-  }
-
-  // OPTION 3: Target Crosshair
+  // OPTION 3: Target Crosshair (unused but kept for reference)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   private renderCrosshair(renderer: Renderer, color: string): void {
     const ctx = renderer.getContext();
     const radius = this.radius * 1.3;

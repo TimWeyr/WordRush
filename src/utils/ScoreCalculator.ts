@@ -1,7 +1,7 @@
 // Score Calculator Utility
 // Calculates maximum possible scores and percentages for items, chapters, themes, and universes
 
-import type { Item, CorrectEntry, DistractorEntry, Theme, Universe, ChapterConfig } from '@/types/content.types';
+import type { Item, Theme, Universe } from '@/types/content.types';
 import type { LearningState, ItemLearningState } from '@/types/progress.types';
 
 /**
@@ -75,7 +75,7 @@ export function getItemScore(
  * Uses totalScore for cumulative score tracking
  */
 export function getChapterScore(
-  chapterId: string,
+  _chapterId: string,
   chapterItems: Item[],
   learningState: LearningState
 ): { totalScore: number; maxScore: number; percentage: number } {
@@ -106,7 +106,7 @@ export function getChapterScore(
  * Filters items by level and calculates aggregated score
  */
 export function getLevelScore(
-  chapterId: string,
+  _chapterId: string,
   level: number,
   chapterItems: Item[],
   learningState: LearningState
@@ -144,7 +144,7 @@ export function getLevelScore(
  */
 export function getThemeScore(
   themeId: string,
-  theme: Theme,
+  _theme: Theme,
   allItems: Item[],
   learningState: LearningState
 ): { totalScore: number; maxScore: number; percentage: number } {
@@ -184,7 +184,7 @@ export function getThemeScore(
  * Aggregates all themes in the universe
  */
 export function getUniverseScore(
-  universeId: string,
+  _universeId: string,
   universe: Universe,
   allThemes: Theme[],
   allItems: Item[],

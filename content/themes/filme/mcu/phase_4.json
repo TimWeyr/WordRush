@@ -1,0 +1,206 @@
+[
+  {
+    "id": "MCU_SPIDERMAN_NWH",
+    "theme": "mcu",
+    "chapter": "phase_4",
+    "level": 1,
+    "waveDuration": 10,
+    "base": {
+      "word": "Spider-Man: No Way Home",
+      "type": "Film",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "2021",
+          "type": "Erscheinungsjahr"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Spider-Man: No Way Home kam 2021 raus - Phase 4 des MCU!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Action, Superhero",
+          "type": "Genre"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Spider-Man: No Way Home ist ein Action-Superhero-Film - mit drei Spider-Men!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Jon Watts",
+          "type": "Regisseur"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Jon Watts inszenierte No Way Home - und brachte alle Spider-Men zusammen!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Tom Holland",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Tom Holland spielte Peter Parker - den Jungen, der sehr mutig ist und sehr viel opfert!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Zendaya",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Zendaya spielte MJ - die Frau, die sehr schlau ist und sehr viel weiß!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Benedict Cumberbatch",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 6,
+        "context": "Benedict Cumberbatch spielte Doctor Strange - den Mann, der sehr mächtig ist und sehr viel Magie kann!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Jon Watts",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Jon Watts ist der Regisseur, nicht ein Hauptdarsteller!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Robert Downey Jr.",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Robert Downey Jr. war nicht in No Way Home - Iron Man ist tot!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 4", "2021", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  }
+]
+

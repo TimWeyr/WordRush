@@ -1,0 +1,4227 @@
+[
+  {
+    "id": "PUNK_PP_001",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Schrei nach Liebe",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#E74C3C",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Es ist nicht deine Schuld, dass die Welt ist wie sie ist",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Es ist nicht deine Schuld, dass die Welt ist wie sie ist ist eine Zeile aus Schrei nach Liebe",
+        "visual": {
+          "color": "#E74C3C",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Planet Punk",
+          "type": "Album"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Schrei nach Liebe ist auf Planet Punk",
+        "visual": {
+          "color": "#C0392B",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1995",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Planet Punk erschien 1995",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Männer sind Schweine",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Männer sind Schweine ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Die Bestie in Menschengestalt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Die Bestie in Menschengestalt ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2000",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2000 ist falsch, Planet Punk erschien 1995",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level1"
+      ],
+      "related": [
+        "PUNK_PP_002",
+        "PUNK_PP_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_002",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Es ist nicht deine Schuld, dass die Welt ist wie sie ist",
+      "type": "Zeile",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498DB",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Schrei nach Liebe",
+          "type": "Song"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Es ist nicht deine Schuld, dass die Welt ist wie sie ist ist eine Zeile aus Schrei nach Liebe",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Planet Punk",
+          "type": "Album"
+        },
+        "spawnPosition": 0.48,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Schrei nach Liebe ist auf Planet Punk",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1995",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Planet Punk erschien 1995",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Männer sind Schweine, aber ich mag sie",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Männer sind Schweine, aber ich mag sie ist eine Zeile aus einem anderen Song",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Die Bestie in Menschengestalt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Die Bestie in Menschengestalt ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2000",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2000 ist falsch, Planet Punk erschien 1995",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level2"
+      ],
+      "related": [
+        "PUNK_PP_001",
+        "PUNK_PP_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_003",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Hurra",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#E91E63",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Hurra, hurra, die Schule brennt",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.18,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Hurra, hurra, die Schule brennt ist eine Zeile aus Hurra",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Planet Punk",
+          "type": "Album"
+        },
+        "spawnPosition": 0.44,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Hurra ist auf Planet Punk",
+        "visual": {
+          "color": "#C2185B",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1995",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Planet Punk erschien 1995",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Ein Lied für dich",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.32,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ein Lied für dich ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Die Bestie in Menschengestalt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.78,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Die Bestie in Menschengestalt ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2000",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2000 ist falsch, Planet Punk erschien 1995",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level3"
+      ],
+      "related": [
+        "PUNK_PP_002",
+        "PUNK_PP_004"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_004",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Deine Schuld",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#F39C12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Es ist nicht deine Schuld, dass die Welt ist wie sie ist",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.26,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Es ist nicht deine Schuld, dass die Welt ist wie sie ist ist eine Zeile aus Deine Schuld",
+        "visual": {
+          "color": "#F39C12",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Planet Punk",
+          "type": "Album"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Deine Schuld ist auf Planet Punk",
+        "visual": {
+          "color": "#E67E22",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1995",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Planet Punk erschien 1995",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Schrei nach Liebe",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Schrei nach Liebe ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Le Frisur",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.46,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Le Frisur ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2000",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2000 ist falsch, Planet Punk erschien 1995",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level4"
+      ],
+      "related": [
+        "PUNK_PP_003",
+        "PUNK_PP_005"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_005",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Ein Lied für dich",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#16A085",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ein Lied für dich, ein Lied für mich",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ein Lied für dich, ein Lied für mich ist eine Zeile aus Ein Lied für dich",
+        "visual": {
+          "color": "#16A085",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Planet Punk",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Ein Lied für dich ist auf Planet Punk",
+        "visual": {
+          "color": "#138D75",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1995",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Planet Punk erschien 1995",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Hurra",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Hurra ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "13",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "13 ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2000",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2000 ist falsch, Planet Punk erschien 1995",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level5"
+      ],
+      "related": [
+        "PUNK_PP_004",
+        "PUNK_PP_006"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_006",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 6,
+    "waveDuration": 3,
+    "base": {
+      "word": "Männer sind Schweine",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#E67E22",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Männer sind Schweine, aber ich mag sie",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.23,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Männer sind Schweine, aber ich mag sie ist eine Zeile aus Männer sind Schweine",
+        "visual": {
+          "color": "#E67E22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Die Bestie in Menschengestalt",
+          "type": "Album"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Männer sind Schweine ist auf Die Bestie in Menschengestalt",
+        "visual": {
+          "color": "#D35400",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1993",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Die Bestie in Menschengestalt erschien 1993",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Schunder-Song",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Schunder-Song ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Planet Punk",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Planet Punk ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1998",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1998 ist falsch, Die Bestie in Menschengestalt erschien 1993",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level6"
+      ],
+      "related": [
+        "PUNK_PP_005",
+        "PUNK_PP_007"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_007",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 7,
+    "waveDuration": 3,
+    "base": {
+      "word": "Männer sind Schweine, aber ich mag sie",
+      "type": "Zeile",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#1ABC9C",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Männer sind Schweine",
+          "type": "Song"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Männer sind Schweine, aber ich mag sie ist eine Zeile aus Männer sind Schweine",
+        "visual": {
+          "color": "#1ABC9C",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Die Bestie in Menschengestalt",
+          "type": "Album"
+        },
+        "spawnPosition": 0.51,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Männer sind Schweine ist auf Die Bestie in Menschengestalt",
+        "visual": {
+          "color": "#16A085",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1993",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Die Bestie in Menschengestalt erschien 1993",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Es ist nicht deine Schuld, dass die Welt ist wie sie ist",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.19,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Es ist nicht deine Schuld, dass die Welt ist wie sie ist ist eine Zeile aus einem anderen Song",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Le Frisur",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.63,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Le Frisur ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1998",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.89,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1998 ist falsch, Die Bestie in Menschengestalt erschien 1993",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level7"
+      ],
+      "related": [
+        "PUNK_PP_006",
+        "PUNK_PP_008"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_008",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 8,
+    "waveDuration": 3,
+    "base": {
+      "word": "Schunder-Song",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#34495E",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ich bin ein Schunder, ich bin ein Schunder",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ich bin ein Schunder, ich bin ein Schunder ist eine Zeile aus Schunder-Song",
+        "visual": {
+          "color": "#34495E",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Die Bestie in Menschengestalt",
+          "type": "Album"
+        },
+        "spawnPosition": 0.48,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Schunder-Song ist auf Die Bestie in Menschengestalt",
+        "visual": {
+          "color": "#2C3E50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1993",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Die Bestie in Menschengestalt erschien 1993",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Männer sind Schweine",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.18,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Männer sind Schweine ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Planet Punk",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.64,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Planet Punk ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1998",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.86,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1998 ist falsch, Die Bestie in Menschengestalt erschien 1993",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level8"
+      ],
+      "related": [
+        "PUNK_PP_007",
+        "PUNK_PP_009"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_009",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 9,
+    "waveDuration": 3,
+    "base": {
+      "word": "1/2 Lovesong",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#8E44AD",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ich liebe dich, ich liebe dich nicht",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.21,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ich liebe dich, ich liebe dich nicht ist eine Zeile aus 1/2 Lovesong",
+        "visual": {
+          "color": "#8E44AD",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Le Frisur",
+          "type": "Album"
+        },
+        "spawnPosition": 0.47,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "1/2 Lovesong ist auf Le Frisur",
+        "visual": {
+          "color": "#7D3C98",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1996",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.71,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Le Frisur erschien 1996",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Westerland",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Westerland ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "13",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.59,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "13 ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2001",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.85,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2001 ist falsch, Le Frisur erschien 1996",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level9"
+      ],
+      "related": [
+        "PUNK_PP_008",
+        "PUNK_PP_010"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_010",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 10,
+    "waveDuration": 3,
+    "base": {
+      "word": "Westerland",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#27AE60",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Westerland, Westerland, ich fahr nach Westerland",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Westerland, Westerland, ich fahr nach Westerland ist eine Zeile aus Westerland",
+        "visual": {
+          "color": "#27AE60",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Le Frisur",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Westerland ist auf Le Frisur",
+        "visual": {
+          "color": "#229954",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1996",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Le Frisur erschien 1996",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "1/2 Lovesong",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1/2 Lovesong ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Planet Punk",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Planet Punk ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2001",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2001 ist falsch, Le Frisur erschien 1996",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level10"
+      ],
+      "related": [
+        "PUNK_PP_009",
+        "PUNK_PP_011"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_011",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 11,
+    "waveDuration": 3,
+    "base": {
+      "word": "Junge",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#E74C3C",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Junge, du bist zu schnell",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Junge, du bist zu schnell ist eine Zeile aus Junge",
+        "visual": {
+          "color": "#E74C3C",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Jazz ist anders",
+          "type": "Album"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Junge ist auf Jazz ist anders",
+        "visual": {
+          "color": "#C0392B",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "2007",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Jazz ist anders erschien 2007",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Unrockbar",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Unrockbar ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Geräusch",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Geräusch ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2002",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2002 ist falsch, Jazz ist anders erschien 2007",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level11"
+      ],
+      "related": [
+        "PUNK_PP_010",
+        "PUNK_PP_012"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_012",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 12,
+    "waveDuration": 3,
+    "base": {
+      "word": "Unrockbar",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498DB",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ich bin unrockbar",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ich bin unrockbar ist eine Zeile aus Unrockbar",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Geräusch",
+          "type": "Album"
+        },
+        "spawnPosition": 0.48,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Unrockbar ist auf Geräusch",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "2003",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Geräusch erschien 2003",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Junge",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Junge ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Jazz ist anders",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Jazz ist anders ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1998",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1998 ist falsch, Geräusch erschien 2003",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level12"
+      ],
+      "related": [
+        "PUNK_PP_011",
+        "PUNK_PP_013"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_013",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 13,
+    "waveDuration": 3,
+    "base": {
+      "word": "Ein Song namens Schunder",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#E91E63",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ich bin ein Schunder, ich bin ein Schunder",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.18,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ich bin ein Schunder, ich bin ein Schunder ist eine Zeile aus Ein Song namens Schunder",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "13",
+          "type": "Album"
+        },
+        "spawnPosition": 0.44,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Ein Song namens Schunder ist auf 13",
+        "visual": {
+          "color": "#C2185B",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1998",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "13 erschien 1998",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Schunder-Song",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.32,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Schunder-Song ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Die Bestie in Menschengestalt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.78,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Die Bestie in Menschengestalt ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2003",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2003 ist falsch, 13 erschien 1998",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level13"
+      ],
+      "related": [
+        "PUNK_PP_012",
+        "PUNK_PP_014"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_014",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 14,
+    "waveDuration": 3,
+    "base": {
+      "word": "Runter mit den Spendierhosen, Unsichtbarer!",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#F39C12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Runter mit den Spendierhosen, Unsichtbarer!",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Runter mit den Spendierhosen, Unsichtbarer! ist eine Zeile aus Runter mit den Spendierhosen, Unsichtbarer!",
+        "visual": {
+          "color": "#F39C12",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Runter mit den Spendierhosen, Unsichtbarer!",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Runter mit den Spendierhosen, Unsichtbarer! ist auf Runter mit den Spendierhosen, Unsichtbarer!",
+        "visual": {
+          "color": "#E67E22",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "2000",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Runter mit den Spendierhosen, Unsichtbarer! erschien 2000",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Ein Song namens Schunder",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ein Song namens Schunder ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Geräusch",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Geräusch ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1995",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1995 ist falsch, Runter mit den Spendierhosen, Unsichtbarer! erschien 2000",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level14"
+      ],
+      "related": [
+        "PUNK_PP_013",
+        "PUNK_PP_015"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_015",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 15,
+    "waveDuration": 3,
+    "base": {
+      "word": "Die Ärzte",
+      "type": "Band",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#16A085",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Schrei nach Liebe",
+          "type": "Song"
+        },
+        "spawnPosition": 0.23,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Die Ärzte spielte Schrei nach Liebe",
+        "visual": {
+          "color": "#16A085",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Planet Punk",
+          "type": "Album"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Schrei nach Liebe ist auf Planet Punk",
+        "visual": {
+          "color": "#138D75",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1995",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Planet Punk erschien 1995",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Männer sind Schweine",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Männer sind Schweine ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Die Bestie in Menschengestalt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Die Bestie in Menschengestalt ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2000",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2000 ist falsch, Planet Punk erschien 1995",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level15"
+      ],
+      "related": [
+        "PUNK_PP_014"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_016",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 16,
+    "waveDuration": 3,
+    "base": {
+      "word": "Quark",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#8E44AD",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Quark, Quark, Quark",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.23,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Quark, Quark, Quark ist eine Zeile aus Quark",
+        "visual": {
+          "color": "#8E44AD",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Planet Punk",
+          "type": "Album"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Quark ist auf Planet Punk",
+        "visual": {
+          "color": "#7D3C98",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1995",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Planet Punk erschien 1995",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Hurra",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Hurra ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Die Bestie in Menschengestalt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Die Bestie in Menschengestalt ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2000",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2000 ist falsch, Planet Punk erschien 1995",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level16"
+      ],
+      "related": [
+        "PUNK_PP_015",
+        "PUNK_PP_017"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_017",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 17,
+    "waveDuration": 3,
+    "base": {
+      "word": "Mach die Augen zu",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#27AE60",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Mach die Augen zu und denk an mich",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Mach die Augen zu und denk an mich ist eine Zeile aus Mach die Augen zu",
+        "visual": {
+          "color": "#27AE60",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Planet Punk",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Mach die Augen zu ist auf Planet Punk",
+        "visual": {
+          "color": "#229954",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1995",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Planet Punk erschien 1995",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Ein Lied für dich",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ein Lied für dich ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Le Frisur",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Le Frisur ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2000",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2000 ist falsch, Planet Punk erschien 1995",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level17"
+      ],
+      "related": [
+        "PUNK_PP_016",
+        "PUNK_PP_018"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_018",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 18,
+    "waveDuration": 3,
+    "base": {
+      "word": "Grau",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#95A5A6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Grau, grau, grau ist alle Theorie",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Grau, grau, grau ist alle Theorie ist eine Zeile aus Grau",
+        "visual": {
+          "color": "#95A5A6",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Die Bestie in Menschengestalt",
+          "type": "Album"
+        },
+        "spawnPosition": 0.48,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Grau ist auf Die Bestie in Menschengestalt",
+        "visual": {
+          "color": "#7F8C8D",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1993",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Die Bestie in Menschengestalt erschien 1993",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Männer sind Schweine",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.18,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Männer sind Schweine ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Planet Punk",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.64,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Planet Punk ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1998",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.86,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1998 ist falsch, Die Bestie in Menschengestalt erschien 1993",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level18"
+      ],
+      "related": [
+        "PUNK_PP_017",
+        "PUNK_PP_019"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_019",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 19,
+    "waveDuration": 3,
+    "base": {
+      "word": "Ein Sommer wie du",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#F39C12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ein Sommer wie du, ein Sommer wie ich",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.21,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ein Sommer wie du, ein Sommer wie ich ist eine Zeile aus Ein Sommer wie du",
+        "visual": {
+          "color": "#F39C12",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Die Bestie in Menschengestalt",
+          "type": "Album"
+        },
+        "spawnPosition": 0.47,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Ein Sommer wie du ist auf Die Bestie in Menschengestalt",
+        "visual": {
+          "color": "#E67E22",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1993",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.71,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Die Bestie in Menschengestalt erschien 1993",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Schunder-Song",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Schunder-Song ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Le Frisur",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.63,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Le Frisur ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1998",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.89,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1998 ist falsch, Die Bestie in Menschengestalt erschien 1993",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level19"
+      ],
+      "related": [
+        "PUNK_PP_018",
+        "PUNK_PP_020"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_020",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 20,
+    "waveDuration": 3,
+    "base": {
+      "word": "Rebell",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#E74C3C",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ich bin ein Rebell",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ich bin ein Rebell ist eine Zeile aus Rebell",
+        "visual": {
+          "color": "#E74C3C",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Le Frisur",
+          "type": "Album"
+        },
+        "spawnPosition": 0.51,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Rebell ist auf Le Frisur",
+        "visual": {
+          "color": "#C0392B",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1996",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Le Frisur erschien 1996",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "1/2 Lovesong",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1/2 Lovesong ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Planet Punk",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Planet Punk ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2001",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2001 ist falsch, Le Frisur erschien 1996",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level20"
+      ],
+      "related": [
+        "PUNK_PP_019",
+        "PUNK_PP_021"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_021",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 21,
+    "waveDuration": 3,
+    "base": {
+      "word": "Die klügsten Männer der Welt",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498DB",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Die klügsten Männer der Welt",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Die klügsten Männer der Welt ist eine Zeile aus Die klügsten Männer der Welt",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Le Frisur",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Die klügsten Männer der Welt ist auf Le Frisur",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1996",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Le Frisur erschien 1996",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Westerland",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Westerland ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "13",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "13 ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2001",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2001 ist falsch, Le Frisur erschien 1996",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level21"
+      ],
+      "related": [
+        "PUNK_PP_020",
+        "PUNK_PP_022"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_022",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 22,
+    "waveDuration": 3,
+    "base": {
+      "word": "Lasse redn",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#E91E63",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Lasse redn, lass sie reden",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.23,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Lasse redn, lass sie reden ist eine Zeile aus Lasse redn",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Le Frisur",
+          "type": "Album"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Lasse redn ist auf Le Frisur",
+        "visual": {
+          "color": "#C2185B",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1996",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Le Frisur erschien 1996",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Rebell",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Rebell ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Planet Punk",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Planet Punk ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2001",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2001 ist falsch, Le Frisur erschien 1996",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level22"
+      ],
+      "related": [
+        "PUNK_PP_021",
+        "PUNK_PP_023"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_023",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 23,
+    "waveDuration": 3,
+    "base": {
+      "word": "Lasse redn, lass sie reden",
+      "type": "Zeile",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#1ABC9C",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Lasse redn",
+          "type": "Song"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Lasse redn, lass sie reden ist eine Zeile aus Lasse redn",
+        "visual": {
+          "color": "#1ABC9C",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Le Frisur",
+          "type": "Album"
+        },
+        "spawnPosition": 0.51,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Lasse redn ist auf Le Frisur",
+        "visual": {
+          "color": "#16A085",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1996",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Le Frisur erschien 1996",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Ich bin ein Rebell",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.19,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ich bin ein Rebell ist eine Zeile aus einem anderen Song",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "13",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.63,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "13 ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2001",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.89,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2001 ist falsch, Le Frisur erschien 1996",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level23"
+      ],
+      "related": [
+        "PUNK_PP_022",
+        "PUNK_PP_024"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_024",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 24,
+    "waveDuration": 3,
+    "base": {
+      "word": "Lass mich in Ruhe",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#34495E",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Lass mich in Ruhe, lass mich in Ruhe",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Lass mich in Ruhe, lass mich in Ruhe ist eine Zeile aus Lass mich in Ruhe",
+        "visual": {
+          "color": "#34495E",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "13",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Lass mich in Ruhe ist auf 13",
+        "visual": {
+          "color": "#2C3E50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1998",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "13 erschien 1998",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Ein Song namens Schunder",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ein Song namens Schunder ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Le Frisur",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Le Frisur ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2003",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2003 ist falsch, 13 erschien 1998",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level24"
+      ],
+      "related": [
+        "PUNK_PP_023",
+        "PUNK_PP_025"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PUNK_PP_025",
+    "theme": "punk",
+    "chapter": "planet_punk",
+    "level": 25,
+    "waveDuration": 3,
+    "base": {
+      "word": "Wie am ersten Tag",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#8E44AD",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Wie am ersten Tag",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Wie am ersten Tag ist eine Zeile aus Wie am ersten Tag",
+        "visual": {
+          "color": "#8E44AD",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "13",
+          "type": "Album"
+        },
+        "spawnPosition": 0.51,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Wie am ersten Tag ist auf 13",
+        "visual": {
+          "color": "#7D3C98",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1998",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "13 erschien 1998",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Lass mich in Ruhe",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Lass mich in Ruhe ist ein anderer Song von Die Ärzte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Planet Punk",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Planet Punk ist ein anderes Album von Die Ärzte",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2003",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2003 ist falsch, 13 erschien 1998",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "punk",
+        "planet_punk",
+        "level25"
+      ],
+      "related": [
+        "PUNK_PP_024",
+        "PUNK_PP_026"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]
+

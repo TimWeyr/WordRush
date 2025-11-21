@@ -1,0 +1,30 @@
+{
+  "id": "f70_f79",
+  "name": "F70-F79: Intelligenzstörung",
+  "description": "Lerne leichte, mittelgradige, schwere und schwerste Intelligenzstörung sowie andere und nicht näher bezeichnete Intelligenzstörung.",
+  "colorPrimary": "#6b7ba5",
+  "colorAccent": "#8d9db8",
+  "backgroundGradient": [
+    "#4b5b85",
+    "#6b7ba5"
+  ],
+  "maxLevels": 15,
+  "icon": "🧩",
+  "shipSkin": "/assets/ships/medical_ship.svg",
+  "laserColor": "#6b7ba5",
+  "relatedPackages": [
+    "icd10",
+    "psychiatrie",
+    "intellectual"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "source": "ICD-10-GM 2025",
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

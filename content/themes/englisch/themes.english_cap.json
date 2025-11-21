@@ -1,0 +1,72 @@
+{
+  "id": "english_cap",
+  "name": "Englisch CAP",
+  "description": "Lerne wichtige englische Vokabeln für Alltagsleben, Beruf und Reisen.",
+  "colorPrimary": "#00ccff",
+  "colorAccent": "#66ffff",
+  "backgroundGradient": [
+    "#004488",
+    "#0088ff"
+  ],
+  "maxLevels": 15,
+  "icon": "🇬🇧",
+  "shipSkin": "/assets/ships/english_ship.svg",
+  "laserColor": "#4af2e2",
+  "relatedPackages": [
+    "english_basics",
+    "vocabulary"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "EverydayLife_Home": {
+      "backgroundImage": "home_bg.png",
+      "backgroundGradient": [
+        "#3d5a3d",
+        "#5a8a5a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "home_theme.mp3",
+      "particleEffect": "warm_particles"
+    },
+    "Work_Office": {
+      "backgroundImage": "office_bg.png",
+      "backgroundGradient": [
+        "#4a4a6a",
+        "#6a6a8a"
+      ],
+      "spawnRate": 1.8,
+      "waveDuration": 3,
+      "music": "office_theme.mp3",
+      "particleEffect": "business_sparks"
+    },
+    "Travel_Leisure": {
+      "backgroundImage": "travel_bg.png",
+      "backgroundGradient": [
+        "#5a4a3a",
+        "#8a6a5a"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "travel_theme.mp3",
+      "particleEffect": "adventure_dust"
+    },
+    "Friends_Family": {
+      "backgroundImage": "friends_family_bg.png",
+      "backgroundGradient": [
+        "#8b4a8b",
+        "#b86bb8"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "friends_family_theme.mp3",
+      "particleEffect": "warm_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}

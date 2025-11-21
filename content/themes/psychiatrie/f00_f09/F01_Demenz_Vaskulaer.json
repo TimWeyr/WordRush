@@ -1,0 +1,216 @@
+[
+  {
+    "id": "F01_001",
+    "theme": "f00_f09",
+    "chapter": "F01_Demenz_Vaskulaer",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Vaskuläre Demenz",
+      "type": "Diagnose",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#5a4a6a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Schlaganfall",
+          "type": "Ursache"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Vaskuläre Demenz durch Schlaganfall.",
+        "visual": {
+          "color": "#7a5a8a",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Alzheimer",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Alzheimer = F00, nicht F01.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F00"
+      },
+      {
+        "entry": {
+          "word": "Parkinson",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Parkinson-Demenz = F02.3, nicht F01.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F02.3"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": [
+        "demenz",
+        "vaskulaer",
+        "level1"
+      ],
+      "related": [
+        "F01_002",
+        "F00_001"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "F01_002",
+    "theme": "f00_f09",
+    "chapter": "F01_Demenz_Vaskulaer",
+    "level": 2,
+    "waveDuration": 4,
+    "base": {
+      "word": "F01.1",
+      "type": "ICD-10",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#5a4a6a",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Multiinfarkt-Demenz",
+          "type": "Diagnose"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "F01.1 = Multiinfarkt-Demenz.",
+        "visual": {
+          "color": "#7a5a8a",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Akuter Beginn",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Akuter Beginn = F01.0, nicht F01.1.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F01.0"
+      },
+      {
+        "entry": {
+          "word": "Subkortikal",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Subkortikal = F01.2, nicht F01.1.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F01.2"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": [
+        "demenz",
+        "vaskulaer",
+        "level2"
+      ],
+      "related": [
+        "F01_001",
+        "F01_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]
+

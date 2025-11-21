@@ -1,0 +1,206 @@
+[
+    {
+      "id": "BLOCKBUSTER_PULP_FICTION",
+      "theme": "blockbuster",
+      "chapter": "crime",
+      "level": 1,
+      "waveDuration": 10,
+      "base": {
+        "word": "Kriminelle suchen Erlösung",
+        "type": "3-Wort-Analyse",
+        "visual": {
+          "tier": 2,
+          "size": 1.2,
+          "appearance": "bold",
+          "color": "#9b59b6",
+          "glow": true,
+          "pulsate": true
+        }
+      },
+      "correct": [
+        {
+          "entry": {
+            "word": "Pulp Fiction",
+            "type": "Film-Titel"
+          },
+          "spawnPosition": 0.15,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 1,
+          "context": "Pulp Fiction - der Film, in dem Kriminelle nach Erlösung suchen und dabei sehr viel reden!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Crime",
+            "type": "Genre"
+          },
+          "spawnPosition": 0.3,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 2,
+          "context": "Pulp Fiction ist ein Crime-Film - perfekt für alle, die gerne über Burger reden!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "1994",
+            "type": "Erscheinungsjahr"
+          },
+          "spawnPosition": 0.45,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 3,
+          "context": "Pulp Fiction kam 1994 raus - und hat seitdem alle Burger-Dialoge komplizierter gemacht!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Samuel L. Jackson",
+            "type": "Darsteller (M)"
+          },
+          "spawnPosition": 0.6,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 4,
+          "context": "Samuel L. Jackson spielte Jules - den Mann mit den besten Bibelzitaten der Filmgeschichte!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Uma Thurman",
+            "type": "Darsteller (W)"
+          },
+          "spawnPosition": 0.75,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 5,
+          "context": "Uma Thurman spielte Mia - die Frau, die gerne tanzte und fast starb!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Eric Stoltz",
+            "type": "Darsteller (Weniger Bekannt)"
+          },
+          "spawnPosition": 0.9,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 6,
+          "context": "Eric Stoltz spielte Lance - den Drogendealer mit dem coolsten Zuhause!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        }
+      ],
+      "distractors": [
+        {
+          "entry": {
+            "word": "Zed lebt",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.2,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Zed lebt ist nicht die richtige Analyse - aber er war definitiv ein unvergesslicher Charakter!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Heroin Deal",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.8,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Heroin Deal ist nicht die richtige Analyse - aber es war definitiv ein wichtiger Plot-Punkt!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        }
+      ],
+      "meta": {
+        "source": "Film-Datenbank",
+        "tags": ["Crime", "1994"],
+        "related": [],
+        "difficultyScaling": {
+          "speedMultiplierPerReplay": 0.1,
+          "colorContrastFade": true,
+          "angleVariance": 5
+        }
+      }
+  }
+]
+

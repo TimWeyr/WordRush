@@ -1,0 +1,3550 @@
+[
+  {
+    "id": "POP_90ER_001",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Wannabe",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FF69B4",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Tell me what you want, what you really really want",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Tell me what you want, what you really really want ist eine Zeile aus Wannabe",
+        "visual": {
+          "color": "#FF69B4",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Spice",
+          "type": "Album"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Wannabe ist auf Spice",
+        "visual": {
+          "color": "#FF1493",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1996",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Spice erschien 1996",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Say You'll Be There",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Say You'll Be There ist ein anderer Song von Spice Girls",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Spiceworld",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Spiceworld ist ein anderes Album von Spice Girls",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2001",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2001 ist falsch, Spice erschien 1996",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level1"
+      ],
+      "related": [
+        "POP_90ER_002",
+        "POP_90ER_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_002",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Tell me what you want, what you really really want",
+      "type": "Zeile",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FF1493",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Wannabe",
+          "type": "Song"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Tell me what you want, what you really really want ist eine Zeile aus Wannabe",
+        "visual": {
+          "color": "#FF1493",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Spice",
+          "type": "Album"
+        },
+        "spawnPosition": 0.48,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Wannabe ist auf Spice",
+        "visual": {
+          "color": "#FF69B4",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1996",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Spice erschien 1996",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "I'll tell you what I want, what I really really want",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "I'll tell you what I want, what I really really want ist eine Zeile aus einem anderen Song",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Spiceworld",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Spiceworld ist ein anderes Album von Spice Girls",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2001",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2001 ist falsch, Spice erschien 1996",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level2"
+      ],
+      "related": [
+        "POP_90ER_001",
+        "POP_90ER_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_003",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Say You'll Be There",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FF69B4",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Say you'll be there, say you'll be there",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.18,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Say you'll be there, say you'll be there ist eine Zeile aus Say You'll Be There",
+        "visual": {
+          "color": "#FF69B4",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Spice",
+          "type": "Album"
+        },
+        "spawnPosition": 0.44,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Say You'll Be There ist auf Spice",
+        "visual": {
+          "color": "#FF1493",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1996",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Spice erschien 1996",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Wannabe",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.32,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Wannabe ist ein anderer Song von Spice Girls",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Spiceworld",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.78,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Spiceworld ist ein anderes Album von Spice Girls",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2001",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2001 ist falsch, Spice erschien 1996",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level3"
+      ],
+      "related": [
+        "POP_90ER_002",
+        "POP_90ER_004"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_004",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "2 Become 1",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FF1493",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Two become one, I need some love like I never needed love before",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Two become one, I need some love like I never needed love before ist eine Zeile aus 2 Become 1",
+        "visual": {
+          "color": "#FF1493",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Spice",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "2 Become 1 ist auf Spice",
+        "visual": {
+          "color": "#FF69B4",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1996",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Spice erschien 1996",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Mama",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Mama ist ein anderer Song von Spice Girls",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Spiceworld",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Spiceworld ist ein anderes Album von Spice Girls",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2001",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2001 ist falsch, Spice erschien 1996",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level4"
+      ],
+      "related": [
+        "POP_90ER_003",
+        "POP_90ER_005"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_005",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Mama",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FF69B4",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Mama, I love you, Mama, I care",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.23,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Mama, I love you, Mama, I care ist eine Zeile aus Mama",
+        "visual": {
+          "color": "#FF69B4",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Spice",
+          "type": "Album"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Mama ist auf Spice",
+        "visual": {
+          "color": "#FF1493",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1996",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Spice erschien 1996",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Who Do You Think You Are",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Who Do You Think You Are ist ein anderer Song von Spice Girls",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Spiceworld",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Spiceworld ist ein anderes Album von Spice Girls",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2001",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2001 ist falsch, Spice erschien 1996",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level5"
+      ],
+      "related": [
+        "POP_90ER_004",
+        "POP_90ER_006"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_006",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 6,
+    "waveDuration": 3,
+    "base": {
+      "word": "I Want It That Way",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498DB",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Tell me why, ain't nothing but a heartache",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Tell me why, ain't nothing but a heartache ist eine Zeile aus I Want It That Way",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Millennium",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "I Want It That Way ist auf Millennium",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1999",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Millennium erschien 1999",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Everybody (Backstreet's Back)",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Everybody (Backstreet's Back) ist ein anderer Song von Backstreet Boys",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Backstreet Boys",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Backstreet Boys ist ein anderes Album von Backstreet Boys",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1994",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1994 ist falsch, Millennium erschien 1999",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level6"
+      ],
+      "related": [
+        "POP_90ER_005",
+        "POP_90ER_007"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_007",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 7,
+    "waveDuration": 3,
+    "base": {
+      "word": "Everybody (Backstreet's Back)",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#2980B9",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Everybody, yeah, rock your body, yeah",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Everybody, yeah, rock your body, yeah ist eine Zeile aus Everybody (Backstreet's Back)",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Backstreet Boys",
+          "type": "Album"
+        },
+        "spawnPosition": 0.48,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Everybody (Backstreet's Back) ist auf Backstreet Boys",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1997",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Backstreet Boys erschien 1997",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "I Want It That Way",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.18,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "I Want It That Way ist ein anderer Song von Backstreet Boys",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Millennium",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.64,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Millennium ist ein anderes Album von Backstreet Boys",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1992",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.86,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1992 ist falsch, Backstreet Boys erschien 1997",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level7"
+      ],
+      "related": [
+        "POP_90ER_006",
+        "POP_90ER_008"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_008",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 8,
+    "waveDuration": 3,
+    "base": {
+      "word": "As Long As You Love Me",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498DB",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "I don't care who you are, where you're from, what you did",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.21,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "I don't care who you are, where you're from, what you did ist eine Zeile aus As Long As You Love Me",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Backstreet Boys",
+          "type": "Album"
+        },
+        "spawnPosition": 0.47,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "As Long As You Love Me ist auf Backstreet Boys",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1997",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.71,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Backstreet Boys erschien 1997",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Quit Playing Games (With My Heart)",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Quit Playing Games (With My Heart) ist ein anderer Song von Backstreet Boys",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Millennium",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.63,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Millennium ist ein anderes Album von Backstreet Boys",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1992",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.89,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1992 ist falsch, Backstreet Boys erschien 1997",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level8"
+      ],
+      "related": [
+        "POP_90ER_007",
+        "POP_90ER_009"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_009",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 9,
+    "waveDuration": 3,
+    "base": {
+      "word": "Quit Playing Games (With My Heart)",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#2980B9",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Quit playing games with my heart",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.23,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Quit playing games with my heart ist eine Zeile aus Quit Playing Games (With My Heart)",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Backstreet Boys",
+          "type": "Album"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Quit Playing Games (With My Heart) ist auf Backstreet Boys",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1997",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Backstreet Boys erschien 1997",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Larger Than Life",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Larger Than Life ist ein anderer Song von Backstreet Boys",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Millennium",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Millennium ist ein anderes Album von Backstreet Boys",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1992",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1992 ist falsch, Backstreet Boys erschien 1997",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level9"
+      ],
+      "related": [
+        "POP_90ER_008",
+        "POP_90ER_010"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_010",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 10,
+    "waveDuration": 3,
+    "base": {
+      "word": "Larger Than Life",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498DB",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "All you people can't you see, can't you see",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "All you people can't you see, can't you see ist eine Zeile aus Larger Than Life",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Millennium",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Larger Than Life ist auf Millennium",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1999",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Millennium erschien 1999",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "I Want It That Way",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "I Want It That Way ist ein anderer Song von Backstreet Boys",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Backstreet Boys",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Backstreet Boys ist ein anderes Album von Backstreet Boys",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1994",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1994 ist falsch, Millennium erschien 1999",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level10"
+      ],
+      "related": [
+        "POP_90ER_009",
+        "POP_90ER_011"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_011",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 11,
+    "waveDuration": 3,
+    "base": {
+      "word": "...Baby One More Time",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#E91E63",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Oh baby, baby, how was I supposed to know",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Oh baby, baby, how was I supposed to know ist eine Zeile aus ...Baby One More Time",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "...Baby One More Time",
+          "type": "Album"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "...Baby One More Time ist auf ...Baby One More Time",
+        "visual": {
+          "color": "#C2185B",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1999",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "...Baby One More Time erschien 1999",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Sometimes",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Sometimes ist ein anderer Song von Britney Spears",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Oops!... I Did It Again",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Oops!... I Did It Again ist ein anderes Album von Britney Spears",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1994",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1994 ist falsch, ...Baby One More Time erschien 1999",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level11"
+      ],
+      "related": [
+        "POP_90ER_010",
+        "POP_90ER_012"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_012",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 12,
+    "waveDuration": 3,
+    "base": {
+      "word": "Sometimes",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#C2185B",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Sometimes I run, sometimes I hide",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Sometimes I run, sometimes I hide ist eine Zeile aus Sometimes",
+        "visual": {
+          "color": "#C2185B",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "...Baby One More Time",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Sometimes ist auf ...Baby One More Time",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1999",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "...Baby One More Time erschien 1999",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "(You Drive Me) Crazy",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "(You Drive Me) Crazy ist ein anderer Song von Britney Spears",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Oops!... I Did It Again",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Oops!... I Did It Again ist ein anderes Album von Britney Spears",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1994",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1994 ist falsch, ...Baby One More Time erschien 1999",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level12"
+      ],
+      "related": [
+        "POP_90ER_011",
+        "POP_90ER_013"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_013",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 13,
+    "waveDuration": 3,
+    "base": {
+      "word": "(You Drive Me) Crazy",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#E91E63",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "You drive me crazy, I just can't sleep",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.23,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "You drive me crazy, I just can't sleep ist eine Zeile aus (You Drive Me) Crazy",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "...Baby One More Time",
+          "type": "Album"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "(You Drive Me) Crazy ist auf ...Baby One More Time",
+        "visual": {
+          "color": "#C2185B",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1999",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "...Baby One More Time erschien 1999",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Born to Make You Happy",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Born to Make You Happy ist ein anderer Song von Britney Spears",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Oops!... I Did It Again",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Oops!... I Did It Again ist ein anderes Album von Britney Spears",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1994",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1994 ist falsch, ...Baby One More Time erschien 1999",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level13"
+      ],
+      "related": [
+        "POP_90ER_012",
+        "POP_90ER_014"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_014",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 14,
+    "waveDuration": 3,
+    "base": {
+      "word": "Born to Make You Happy",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#C2185B",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "I was born to make you happy",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "I was born to make you happy ist eine Zeile aus Born to Make You Happy",
+        "visual": {
+          "color": "#C2185B",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "...Baby One More Time",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Born to Make You Happy ist auf ...Baby One More Time",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1999",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "...Baby One More Time erschien 1999",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "From the Bottom of My Broken Heart",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "From the Bottom of My Broken Heart ist ein anderer Song von Britney Spears",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Oops!... I Did It Again",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Oops!... I Did It Again ist ein anderes Album von Britney Spears",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1994",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1994 ist falsch, ...Baby One More Time erschien 1999",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level14"
+      ],
+      "related": [
+        "POP_90ER_013",
+        "POP_90ER_015"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_015",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 15,
+    "waveDuration": 3,
+    "base": {
+      "word": "From the Bottom of My Broken Heart",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#E91E63",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "From the bottom of my broken heart",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "From the bottom of my broken heart ist eine Zeile aus From the Bottom of My Broken Heart",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "...Baby One More Time",
+          "type": "Album"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "From the Bottom of My Broken Heart ist auf ...Baby One More Time",
+        "visual": {
+          "color": "#C2185B",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1999",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "...Baby One More Time erschien 1999",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Sometimes",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Sometimes ist ein anderer Song von Britney Spears",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Oops!... I Did It Again",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Oops!... I Did It Again ist ein anderes Album von Britney Spears",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1994",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1994 ist falsch, ...Baby One More Time erschien 1999",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level15"
+      ],
+      "related": [
+        "POP_90ER_014"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_016",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 16,
+    "waveDuration": 3,
+    "base": {
+      "word": "Who Do You Think You Are",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FF69B4",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Who do you think you are",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.23,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Who do you think you are ist eine Zeile aus Who Do You Think You Are",
+        "visual": {
+          "color": "#FF69B4",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Spice",
+          "type": "Album"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Who Do You Think You Are ist auf Spice",
+        "visual": {
+          "color": "#FF1493",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1996",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Spice erschien 1996",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Mama",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Mama ist ein anderer Song von Spice Girls",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Spiceworld",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Spiceworld ist ein anderes Album von Spice Girls",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2001",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2001 ist falsch, Spice erschien 1996",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level16"
+      ],
+      "related": [
+        "POP_90ER_015",
+        "POP_90ER_017"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_017",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 17,
+    "waveDuration": 3,
+    "base": {
+      "word": "Get Down (You're the One for Me)",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498DB",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Get down, get down and move it all around",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Get down, get down and move it all around ist eine Zeile aus Get Down (You're the One for Me)",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Backstreet Boys",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Get Down (You're the One for Me) ist auf Backstreet Boys",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1997",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Backstreet Boys erschien 1997",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Everybody (Backstreet's Back)",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Everybody (Backstreet's Back) ist ein anderer Song von Backstreet Boys",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Millennium",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Millennium ist ein anderes Album von Backstreet Boys",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1992",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1992 ist falsch, Backstreet Boys erschien 1997",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level17"
+      ],
+      "related": [
+        "POP_90ER_016",
+        "POP_90ER_018"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_018",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 18,
+    "waveDuration": 3,
+    "base": {
+      "word": "We've Got It Goin' On",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#2980B9",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "We've got it goin' on",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "We've got it goin' on ist eine Zeile aus We've Got It Goin' On",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Backstreet Boys",
+          "type": "Album"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "We've Got It Goin' On ist auf Backstreet Boys",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1997",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Backstreet Boys erschien 1997",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "As Long As You Love Me",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "As Long As You Love Me ist ein anderer Song von Backstreet Boys",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Millennium",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Millennium ist ein anderes Album von Backstreet Boys",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1992",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1992 ist falsch, Backstreet Boys erschien 1997",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level18"
+      ],
+      "related": [
+        "POP_90ER_017",
+        "POP_90ER_019"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_019",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 19,
+    "waveDuration": 3,
+    "base": {
+      "word": "Show Me the Meaning of Being Lonely",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498DB",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Show me the meaning of being lonely",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Show me the meaning of being lonely ist eine Zeile aus Show Me the Meaning of Being Lonely",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Millennium",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Show Me the Meaning of Being Lonely ist auf Millennium",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1999",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Millennium erschien 1999",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "I Want It That Way",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "I Want It That Way ist ein anderer Song von Backstreet Boys",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Backstreet Boys",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Backstreet Boys ist ein anderes Album von Backstreet Boys",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1994",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1994 ist falsch, Millennium erschien 1999",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level19"
+      ],
+      "related": [
+        "POP_90ER_018",
+        "POP_90ER_020"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_020",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 20,
+    "waveDuration": 3,
+    "base": {
+      "word": "I Need You Tonight",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#2980B9",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "I need you tonight",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "I need you tonight ist eine Zeile aus I Need You Tonight",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Millennium",
+          "type": "Album"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "I Need You Tonight ist auf Millennium",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1999",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Millennium erschien 1999",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Larger Than Life",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Larger Than Life ist ein anderer Song von Backstreet Boys",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Backstreet Boys",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Backstreet Boys ist ein anderes Album von Backstreet Boys",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1994",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1994 ist falsch, Millennium erschien 1999",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level20"
+      ],
+      "related": [
+        "POP_90ER_019",
+        "POP_90ER_021"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "POP_90ER_021",
+    "theme": "pop",
+    "chapter": "90er",
+    "level": 21,
+    "waveDuration": 3,
+    "base": {
+      "word": "The One",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498DB",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "You are the one for me",
+          "type": "Zeile"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "You are the one for me ist eine Zeile aus The One",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Millennium",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "The One ist auf Millennium",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1999",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Millennium erschien 1999",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Show Me the Meaning of Being Lonely",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Show Me the Meaning of Being Lonely ist ein anderer Song von Backstreet Boys",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Backstreet Boys",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Backstreet Boys ist ein anderes Album von Backstreet Boys",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1994",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1994 ist falsch, Millennium erschien 1999",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "pop",
+        "90er",
+        "level21"
+      ],
+      "related": [
+        "POP_90ER_020"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]
+

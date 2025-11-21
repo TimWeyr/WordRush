@@ -1,0 +1,213 @@
+[
+  {
+    "id": "HUNDE_001",
+    "theme": "haustiere",
+    "chapter": "hunde",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Labrador",
+      "type": "Hunderasse",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Sehr freundlich",
+          "type": "Eigenschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Labradore sind sehr freundlich (Und lieben Wasser! 🐕)",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Sehr aggressiv",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Labradore sind das Gegenteil von aggressiv! (Sie sind wie Sonnenschein! ☀️)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Tier-Wissen",
+      "tags": ["hunde", "level1"]
+    }
+  },
+  {
+    "id": "HUNDE_002",
+    "theme": "haustiere",
+    "chapter": "hunde",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Chihuahua",
+      "type": "Hunderasse",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Kleinste Hunderasse",
+          "type": "Eigenschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Chihuahuas sind die kleinste Hunderasse (Aber haben große Persönlichkeiten! 🐕)",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Größte Hunderasse",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Das wäre ein Great Dane! (Chihuahuas sind winzig! 📏)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Tier-Wissen",
+      "tags": ["hunde", "level1"]
+    }
+  },
+  {
+    "id": "HUNDE_003",
+    "theme": "haustiere",
+    "chapter": "hunde",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Golden Retriever",
+      "type": "Hunderasse",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Goldenes Fell",
+          "type": "Eigenschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Golden Retriever haben goldenes Fell (Und sind super lieb! 🐕)",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Schwarzes Fell",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Das wäre ein Labrador! (Golden = Gold! ✨)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Tier-Wissen",
+      "tags": ["hunde", "level1"]
+    }
+  }
+]
+

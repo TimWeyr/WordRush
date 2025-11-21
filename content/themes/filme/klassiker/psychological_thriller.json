@@ -1,0 +1,497 @@
+[
+  {
+    "id": "FILME_F021",
+      "theme": "klassiker",
+      "chapter": "psychological_thriller",
+      "level": 1,
+      "waveDuration": 10,
+      "base": {
+        "word": "Fight Club",
+        "type": "Film",
+        "visual": {
+          "tier": 2,
+          "size": 1.2,
+          "appearance": "bold",
+          "color": "#9b59b6",
+          "glow": true,
+          "pulsate": true
+        }
+      },
+      "correct": [
+        {
+          "entry": {
+            "word": "1999",
+            "type": "VÖ-Jahr"
+          },
+          "spawnPosition": 0.2,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 1,
+          "context": "Fight Club kam 1999 in die Kinos - und hat seitdem die erste Regel gebrochen: Man redet sehr wohl darüber!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Psychological Thriller",
+            "type": "Primär_Genre"
+          },
+          "spawnPosition": 0.4,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 2,
+          "context": "Fight Club ist ein Psychological Thriller - und ein perfektes Beispiel dafür, wie man Identitätskrisen inszeniert!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "David Fincher",
+            "type": "Regisseur"
+          },
+          "spawnPosition": 0.6,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 3,
+          "context": "David Fincher inszenierte Fight Club mit seiner typischen düsteren Ästhetik - perfekt für einen Film über kaputte Männlichkeit!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Brad Pitt",
+            "type": "Hauptdarsteller"
+          },
+          "spawnPosition": 0.7,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 4,
+          "context": "Brad Pitt spielte Tyler Durden - den Mann, der sehr charismatisch ist und sehr viel Chaos verursacht!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "E. Norton",
+            "type": "Hauptdarsteller"
+          },
+          "spawnPosition": 0.8,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 5,
+          "context": "Edward Norton spielte den Erzähler - den Mann, der sehr verwirrt ist und sehr viel über sein Leben nachdenkt!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "H.B. Carter",
+            "type": "Hauptdarsteller"
+          },
+          "spawnPosition": 0.9,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 6,
+          "context": "Helena Bonham Carter spielte Marla Singer - die Frau, die sehr chaotisch ist und sehr viel raucht!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        }
+      ],
+      "distractors": [
+        {
+          "entry": {
+            "word": "Spike Jonze",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.15,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Spike Jonze hat Fight Club nicht gedreht - aber er hätte vielleicht einen interessanteren Film daraus gemacht!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Darren Aronofsky",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.85,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Darren Aronofsky wäre zu psychedelisch für Fight Club gewesen - aber Requiem for a Dream war auch nicht schlecht!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Meat Loaf Aday",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.3,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Meat Loaf Aday war zwar im Film, aber nicht der Hauptdarsteller - er spielte nur Bob, den Mann mit den Brüsten!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Leonardo DiCaprio",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.7,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Leonardo DiCaprio war nicht in Fight Club - aber er hätte sicherlich auch gut gepasst!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        }
+      ],
+      "meta": {
+        "source": "Film-Datenbank",
+        "tags": ["Psychological Thriller", "1999"],
+        "related": ["F029"],
+        "difficultyScaling": {
+          "speedMultiplierPerReplay": 0.1,
+          "colorContrastFade": true,
+          "angleVariance": 5
+        }
+      }
+    },
+    {
+      "id": "FILME_F029",
+      "theme": "klassiker",
+      "chapter": "psychological_thriller",
+      "level": 2,
+      "waveDuration": 10,
+      "base": {
+        "word": "Gone Girl",
+        "type": "Film",
+        "visual": {
+          "tier": 2,
+          "size": 1.2,
+          "appearance": "bold",
+          "color": "#9b59b6",
+          "glow": true,
+          "pulsate": true
+        }
+      },
+      "correct": [
+        {
+          "entry": {
+            "word": "2014",
+            "type": "VÖ-Jahr"
+          },
+          "spawnPosition": 0.2,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 1,
+          "context": "Gone Girl kam 2014 raus - und hat seitdem alle Beziehungen komplizierter gemacht!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Psychological Thriller",
+            "type": "Primär_Genre"
+          },
+          "spawnPosition": 0.4,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 2,
+          "context": "Gone Girl ist ein Psychological Thriller - und ein perfektes Beispiel dafür, wie man toxische Beziehungen inszeniert!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "David Fincher",
+            "type": "Regisseur"
+          },
+          "spawnPosition": 0.6,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 3,
+          "context": "David Fincher inszenierte auch Gone Girl - er scheint eine Vorliebe für düstere Thriller zu haben!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Ben Affleck",
+            "type": "Hauptdarsteller"
+          },
+          "spawnPosition": 0.7,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 4,
+          "context": "Ben Affleck spielte Nick Dunne - den Mann, der sehr verwirrt ist und sehr viel über seine Ehe nachdenkt!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "R. Pike",
+            "type": "Hauptdarsteller"
+          },
+          "spawnPosition": 0.8,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 5,
+          "context": "Rosamund Pike spielte Amy Dunne - die Frau, die sehr clever ist und sehr viel plant!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "T. Perry",
+            "type": "Hauptdarsteller"
+          },
+          "spawnPosition": 0.9,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 6,
+          "context": "Tyler Perry spielte Tanner Bolt - den Mann, der sehr erfolgreich ist und sehr gut verteidigt!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        }
+      ],
+      "distractors": [
+        {
+          "entry": {
+            "word": "Denis Villeneuve",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.15,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Denis Villeneuve hat Gone Girl nicht gedreht - aber er hätte sicherlich mehr Sci-Fi-Elemente eingebaut!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Martin Scorsese",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.85,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Martin Scorsese wäre zu klassisch für Gone Girl gewesen - aber er hätte sicherlich mehr Gangster eingebaut!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Neil Patrick Harris",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.3,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Neil Patrick Harris war zwar im Film, aber nicht der Hauptdarsteller - er spielte nur den Ex-Freund!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Reese Witherspoon",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.7,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Reese Witherspoon war nicht in Gone Girl - aber sie hätte sicherlich auch gut gepasst!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        }
+      ],
+      "meta": {
+        "source": "Film-Datenbank",
+        "tags": ["Psychological Thriller", "2014"],
+        "related": ["F021"],
+        "difficultyScaling": {
+          "speedMultiplierPerReplay": 0.1,
+          "colorContrastFade": true,
+          "angleVariance": 5
+        }
+    }
+  }
+]
+

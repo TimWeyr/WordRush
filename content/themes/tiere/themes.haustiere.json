@@ -1,0 +1,69 @@
+{
+  "id": "haustiere",
+  "name": "Haustiere",
+  "description": "Lerne lustige Fakten über Haustiere - Von Hunden bis Katzen! 🐱",
+  "colorPrimary": "#27ae60",
+  "colorAccent": "#2ecc71",
+  "backgroundGradient": [
+    "#27ae60",
+    "#2ecc71"
+  ],
+  "maxLevels": 15,
+  "icon": "🐾",
+  "shipSkin": "/assets/ships/animal_ship.svg",
+  "laserColor": "#27ae60",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "hunde": {
+      "backgroundImage": "hunde_bg.png",
+      "backgroundGradient": [
+        "#f39c12",
+        "#e67e22"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "hunde_theme.mp3",
+      "particleEffect": "dog_energy"
+    },
+    "katzen": {
+      "backgroundImage": "katzen_bg.png",
+      "backgroundGradient": [
+        "#9b59b6",
+        "#8e44ad"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "katzen_theme.mp3",
+      "particleEffect": "cat_energy"
+    },
+    "hamster": {
+      "backgroundImage": "hamster_bg.png",
+      "backgroundGradient": [
+        "#e74c3c",
+        "#c0392b"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "hamster_theme.mp3",
+      "particleEffect": "hamster_energy"
+    },
+    "fische": {
+      "backgroundImage": "fische_bg.png",
+      "backgroundGradient": [
+        "#3498db",
+        "#2980b9"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "fische_theme.mp3",
+      "particleEffect": "fish_energy"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

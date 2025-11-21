@@ -1,0 +1,549 @@
+[
+  {
+    "id": "WM_2010_001",
+    "theme": "wm",
+    "chapter": "wm_2010",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "WM 2010",
+      "type": "Weltmeisterschaft",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FFD700",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Südafrika",
+          "type": "Land"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Die WM 2010 fand in Südafrika statt",
+        "visual": {
+          "color": "#FFD700",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Brasilien",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Brasilien war Austragungsort der WM 2014",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Fußball Wissen",
+      "tags": [
+        "wm",
+        "level1"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WM_2010_002",
+    "theme": "wm",
+    "chapter": "wm_2010",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Spanien",
+      "type": "Mannschaft",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FFD700",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "WM 2010",
+          "type": "Weltmeisterschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Spanien gewann die WM 2010",
+        "visual": {
+          "color": "#FFD700",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "WM 2014",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Deutschland gewann die WM 2014",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Fußball Wissen",
+      "tags": [
+        "wm",
+        "level1"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WM_2010_003",
+    "theme": "wm",
+    "chapter": "wm_2010",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "2010",
+      "type": "Jahr",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FFD700",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "WM 2010",
+          "type": "Weltmeisterschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Die WM 2010 fand im Jahr 2010 statt",
+        "visual": {
+          "color": "#FFD700",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "WM 2006",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Die WM 2006 fand im Jahr 2006 statt",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Fußball Wissen",
+      "tags": [
+        "wm",
+        "level1"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WM_2010_004",
+    "theme": "wm",
+    "chapter": "wm_2010",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Niederlande",
+      "type": "Mannschaft",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FFD700",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "WM 2010",
+          "type": "Weltmeisterschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Die Niederlande war im Finale der WM 2010",
+        "visual": {
+          "color": "#FFD700",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "WM 2014",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Argentinien war im Finale der WM 2014",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Fußball Wissen",
+      "tags": [
+        "wm",
+        "level1"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WM_2010_005",
+    "theme": "wm",
+    "chapter": "wm_2010",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Andrés Iniesta",
+      "type": "Spieler",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FFD700",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "WM 2010",
+          "type": "Weltmeisterschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Andrés Iniesta schoss das Siegtor bei der WM 2010",
+        "visual": {
+          "color": "#FFD700",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "WM 2014",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Deutschland gewann die WM 2014",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Fußball Wissen",
+      "tags": [
+        "wm",
+        "level1"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WM_2010_006",
+    "theme": "wm",
+    "chapter": "wm_2010",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Südafrika",
+      "type": "Land",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FFD700",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "WM 2010",
+          "type": "Weltmeisterschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Die WM 2010 fand in Südafrika statt",
+        "visual": {
+          "color": "#FFD700",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "WM 2014",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Die WM 2014 fand in Brasilien statt",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Fußball Wissen",
+      "tags": [
+        "wm",
+        "level1"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WM_2010_007",
+    "theme": "wm",
+    "chapter": "wm_2010",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Finale",
+      "type": "Spiel",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FFD700",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "WM 2010",
+          "type": "Weltmeisterschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Das Finale der WM 2010 war zwischen Spanien und den Niederlanden",
+        "visual": {
+          "color": "#FFD700",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "WM 2014",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Das Finale der WM 2014 war zwischen Deutschland und Argentinien",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Fußball Wissen",
+      "tags": [
+        "wm",
+        "level1"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]
+

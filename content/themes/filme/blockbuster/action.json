@@ -1,0 +1,1081 @@
+[
+    {
+      "id": "BLOCKBUSTER_DARK_KNIGHT",
+      "theme": "blockbuster",
+      "chapter": "action",
+      "level": 1,
+      "waveDuration": 10,
+      "base": {
+        "word": "Anarchie besiegt Ordnung",
+        "type": "3-Wort-Analyse",
+        "visual": {
+          "tier": 2,
+          "size": 1.2,
+          "appearance": "bold",
+          "color": "#9b59b6",
+          "glow": true,
+          "pulsate": true
+        }
+      },
+      "correct": [
+        {
+          "entry": {
+            "word": "The Dark Knight",
+            "type": "Film-Titel"
+          },
+          "spawnPosition": 0.15,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 1,
+          "context": "The Dark Knight - der Film, in dem Anarchie die Ordnung besiegt und der Joker gewinnt!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Action",
+            "type": "Genre"
+          },
+          "spawnPosition": 0.3,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 2,
+          "context": "The Dark Knight ist ein Action-Film - perfekt für alle, die gerne Batman sehen!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "2008",
+            "type": "Erscheinungsjahr"
+          },
+          "spawnPosition": 0.45,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 3,
+          "context": "The Dark Knight kam 2008 raus - und hat seitdem alle Superhelden-Filme komplizierter gemacht!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Christian Bale",
+            "type": "Darsteller (M)"
+          },
+          "spawnPosition": 0.6,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 4,
+          "context": "Christian Bale spielte Batman - den Mann mit der rauesten Stimme der Filmgeschichte!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Maggie Gyllenhaal",
+            "type": "Darsteller (W)"
+          },
+          "spawnPosition": 0.75,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 5,
+          "context": "Maggie Gyllenhaal spielte Rachel - die Frau, die zwischen zwei Männern stand!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Aaron Eckhart",
+            "type": "Darsteller (Weniger Bekannt)"
+          },
+          "spawnPosition": 0.9,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 6,
+          "context": "Aaron Eckhart spielte Harvey Dent - den Mann, der zwei Gesichter bekam!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        }
+      ],
+      "distractors": [
+        {
+          "entry": {
+            "word": "Batman tötet",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.2,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Batman tötet ist nicht die richtige Analyse - Batman tötet nie, das ist sein Prinzip!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Alfred stirbt",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.8,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Alfred stirbt ist nicht die richtige Analyse - Alfred stirbt nie, er ist unsterblich!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        }
+      ],
+      "meta": {
+        "source": "Film-Datenbank",
+        "tags": ["Action", "2008"],
+        "related": ["BLOCKBUSTER_AVENGERS"],
+        "difficultyScaling": {
+          "speedMultiplierPerReplay": 0.1,
+          "colorContrastFade": true,
+          "angleVariance": 5
+        }
+      }
+    },
+    {
+      "id": "BLOCKBUSTER_AVENGERS",
+      "theme": "blockbuster",
+      "chapter": "action",
+      "level": 2,
+      "waveDuration": 10,
+      "base": {
+        "word": "Helden besiegen Götter",
+        "type": "3-Wort-Analyse",
+        "visual": {
+          "tier": 2,
+          "size": 1.2,
+          "appearance": "bold",
+          "color": "#9b59b6",
+          "glow": true,
+          "pulsate": true
+        }
+      },
+      "correct": [
+        {
+          "entry": {
+            "word": "The Avengers",
+            "type": "Film-Titel"
+          },
+          "spawnPosition": 0.15,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 1,
+          "context": "The Avengers - der Film, in dem Helden Götter besiegen und dabei sehr viel kämpfen!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Action",
+            "type": "Genre"
+          },
+          "spawnPosition": 0.3,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 2,
+          "context": "The Avengers ist ein Action-Film - perfekt für alle, die gerne Superhelden sehen!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "2012",
+            "type": "Erscheinungsjahr"
+          },
+          "spawnPosition": 0.45,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 3,
+          "context": "The Avengers kam 2012 raus - und hat seitdem alle Superhelden-Teams komplizierter gemacht!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Chris Evans",
+            "type": "Darsteller (M)"
+          },
+          "spawnPosition": 0.6,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 4,
+          "context": "Chris Evans spielte Captain America - den Mann mit dem Schild und den besten Sprüchen!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Scarlett Johansson",
+            "type": "Darsteller (W)"
+          },
+          "spawnPosition": 0.75,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 5,
+          "context": "Scarlett Johansson spielte Black Widow - die Frau, die alle Männer besiegt!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Jeremy Renner",
+            "type": "Darsteller (Weniger Bekannt)"
+          },
+          "spawnPosition": 0.9,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 6,
+          "context": "Jeremy Renner spielte Hawkeye - den Mann mit den Pfeilen und den besten Zielen!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        }
+      ],
+      "distractors": [
+        {
+          "entry": {
+            "word": "Tesserakt zerstören",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.2,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Tesserakt zerstören ist nicht die richtige Analyse - aber es war definitiv ein wichtiger Plot-Punkt!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Thor rettet Asgard",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.8,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Thor rettet Asgard ist nicht die richtige Analyse - das passiert in anderen Filmen!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        }
+      ],
+      "meta": {
+        "source": "Film-Datenbank",
+        "tags": ["Action", "2012"],
+        "related": ["BLOCKBUSTER_DARK_KNIGHT"],
+        "difficultyScaling": {
+          "speedMultiplierPerReplay": 0.1,
+          "colorContrastFade": true,
+          "angleVariance": 5
+        }
+      }
+    },
+    {
+      "id": "BLOCKBUSTER_HUNGER_GAMES",
+      "theme": "blockbuster",
+      "chapter": "action",
+      "level": 3,
+      "waveDuration": 10,
+      "base": {
+        "word": "Revolution durch",
+        "type": "3-Wort-Analyse",
+        "visual": {
+          "tier": 2,
+          "size": 1.2,
+          "appearance": "bold",
+          "color": "#9b59b6",
+          "glow": true,
+          "pulsate": true
+        }
+      },
+      "correct": [
+        {
+          "entry": {
+            "word": "Die Tribute von Panem",
+            "type": "Film-Titel"
+          },
+          "spawnPosition": 0.1,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 1,
+          "context": "Die Tribute von Panem - der Film, in dem Revolution durch Spiele entsteht!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Dystopie, Action",
+            "type": "Genre"
+          },
+          "spawnPosition": 0.25,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 2,
+          "context": "Die Tribute von Panem ist ein Dystopie-Action-Film - perfekt für alle, die gerne über Revolution nachdenken!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Mögen die Sp",
+            "type": "Zitat"
+          },
+          "spawnPosition": 0.4,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 3,
+          "context": "Mögen die Spiele beginnen - ein berühmtes Zitat aus Die Tribute von Panem!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Josh Hutcherson",
+            "type": "Darsteller (M)"
+          },
+          "spawnPosition": 0.55,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 4,
+          "context": "Josh Hutcherson spielte Peeta Mellark - den Jungen, der sehr mutig ist und sehr viel liebt!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Jennifer Lawrence",
+            "type": "Darsteller (W)"
+          },
+          "spawnPosition": 0.7,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 5,
+          "context": "Jennifer Lawrence spielte Katniss Everdeen - die Frau, die sehr mutig ist und sehr gut schießt!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Woody Harrelson",
+            "type": "Darsteller (Weniger Bekannt)"
+          },
+          "spawnPosition": 0.85,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 6,
+          "context": "Woody Harrelson spielte Haymitch Abernathy - den Mann, der sehr trinkt und sehr clever ist!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "2012",
+            "type": "Erscheinungsjahr"
+          },
+          "spawnPosition": 0.95,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 7,
+          "context": "Die Tribute von Panem kam 2012 raus - und hat seitdem alle Spiele komplizierter gemacht!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        }
+      ],
+      "distractors": [
+        {
+          "entry": {
+            "word": "Distrikt 1 gewi",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.2,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Distrikt 1 gewinnt ist nicht die richtige Analyse!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Alle Distrikte v",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.8,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Alle Distrikte vereinen ist nicht die richtige Analyse!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        }
+      ],
+      "meta": {
+        "source": "Film-Datenbank",
+        "tags": ["Dystopie", "Action", "2012"],
+        "related": [],
+        "difficultyScaling": {
+          "speedMultiplierPerReplay": 0.1,
+          "colorContrastFade": true,
+          "angleVariance": 5
+        }
+      }
+    },
+    {
+      "id": "BLOCKBUSTER_FAST_FURIOUS",
+      "theme": "blockbuster",
+      "chapter": "action",
+      "level": 4,
+      "waveDuration": 10,
+      "base": {
+        "word": "Familie stiehlt",
+        "type": "3-Wort-Analyse",
+        "visual": {
+          "tier": 2,
+          "size": 1.2,
+          "appearance": "bold",
+          "color": "#9b59b6",
+          "glow": true,
+          "pulsate": true
+        }
+      },
+      "correct": [
+        {
+          "entry": {
+            "word": "Fast & Furious Five",
+            "type": "Film-Titel"
+          },
+          "spawnPosition": 0.1,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 1,
+          "context": "Fast & Furious Five - der Film, in dem Familie stiehlt und dabei sehr schnell fährt!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Action, Thriller",
+            "type": "Genre"
+          },
+          "spawnPosition": 0.25,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 2,
+          "context": "Fast & Furious Five ist ein Action-Thriller - perfekt für alle, die gerne schnell fahren!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Fahr oder stir",
+            "type": "Zitat"
+          },
+          "spawnPosition": 0.4,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 3,
+          "context": "Fahr oder stirb - ein berühmtes Zitat aus Fast & Furious!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Vin Diesel",
+            "type": "Darsteller (M)"
+          },
+          "spawnPosition": 0.55,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 4,
+          "context": "Vin Diesel spielte Dominic Toretto - den Mann, der sehr schnell fährt und sehr viel über Familie redet!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Gal Gadot",
+            "type": "Darsteller (W)"
+          },
+          "spawnPosition": 0.7,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 5,
+          "context": "Gal Gadot spielte Gisele - die Frau, die sehr gut kämpft und sehr schnell fährt!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Dwayne Johnson",
+            "type": "Darsteller (Weniger Bekannt)"
+          },
+          "spawnPosition": 0.85,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 6,
+          "context": "Dwayne Johnson spielte Luke Hobbs - den Mann, der sehr stark ist und sehr viel kämpft!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "2011",
+            "type": "Erscheinungsjahr"
+          },
+          "spawnPosition": 0.95,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 7,
+          "context": "Fast & Furious Five kam 2011 raus - und hat seitdem alle Autos komplizierter gemacht!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        }
+      ],
+      "distractors": [
+        {
+          "entry": {
+            "word": "Letty stirbt im",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.2,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Letty stirbt im Film ist nicht die richtige Analyse!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Rio wird zerstö",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.8,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Rio wird zerstört ist nicht die richtige Analyse!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        }
+      ],
+      "meta": {
+        "source": "Film-Datenbank",
+        "tags": ["Action", "Thriller", "2011"],
+        "related": [],
+        "difficultyScaling": {
+          "speedMultiplierPerReplay": 0.1,
+          "colorContrastFade": true,
+          "angleVariance": 5
+        }
+      }
+    },
+    {
+      "id": "BLOCKBUSTER_MAD_MAX",
+      "theme": "blockbuster",
+      "chapter": "action",
+      "level": 5,
+      "waveDuration": 10,
+      "base": {
+        "word": "Frauen suche",
+        "type": "3-Wort-Analyse",
+        "visual": {
+          "tier": 2,
+          "size": 1.2,
+          "appearance": "bold",
+          "color": "#9b59b6",
+          "glow": true,
+          "pulsate": true
+        }
+      },
+      "correct": [
+        {
+          "entry": {
+            "word": "Mad Max: Fury Road",
+            "type": "Film-Titel"
+          },
+          "spawnPosition": 0.1,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 1,
+          "context": "Mad Max: Fury Road - der Film, in dem Frauen suchen und dabei sehr schnell fahren!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Action, Sci-Fi",
+            "type": "Genre"
+          },
+          "spawnPosition": 0.25,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 2,
+          "context": "Mad Max: Fury Road ist ein Action-Sci-Fi-Film - perfekt für alle, die gerne in der Wüste fahren!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Was für ein Ta",
+            "type": "Zitat"
+          },
+          "spawnPosition": 0.4,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 3,
+          "context": "Was für ein Tag - ein berühmtes Zitat aus Mad Max!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Tom Hardy",
+            "type": "Darsteller (M)"
+          },
+          "spawnPosition": 0.55,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 4,
+          "context": "Tom Hardy spielte Max Rockatansky - den Mann, der sehr wenig redet und sehr viel kämpft!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Charlize Theron",
+            "type": "Darsteller (W)"
+          },
+          "spawnPosition": 0.7,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 5,
+          "context": "Charlize Theron spielte Imperator Furiosa - die Frau, die sehr mutig ist und sehr gut fährt!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Nicholas Hoult",
+            "type": "Darsteller (Weniger Bekannt)"
+          },
+          "spawnPosition": 0.85,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 6,
+          "context": "Nicholas Hoult spielte Nux - den Mann, der sehr loyal ist und sehr viel opfert!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "2015",
+            "type": "Erscheinungsjahr"
+          },
+          "spawnPosition": 0.95,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 7,
+          "context": "Mad Max: Fury Road kam 2015 raus - und hat seitdem alle Wüsten komplizierter gemacht!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        }
+      ],
+      "distractors": [
+        {
+          "entry": {
+            "word": "Max sucht seir",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.2,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Max sucht seine Familie ist nicht die richtige Analyse!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Wüste wird fru",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.8,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Wüste wird fruchtbar ist nicht die richtige Analyse!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        }
+      ],
+      "meta": {
+        "source": "Film-Datenbank",
+        "tags": ["Action", "Sci-Fi", "2015"],
+        "related": [],
+        "difficultyScaling": {
+          "speedMultiplierPerReplay": 0.1,
+          "colorContrastFade": true,
+          "angleVariance": 5
+        }
+      }
+  }
+]
+

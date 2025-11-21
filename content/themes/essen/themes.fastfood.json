@@ -1,0 +1,69 @@
+{
+  "id": "fastfood",
+  "name": "Fast Food",
+  "description": "Lerne alles über Fast Food - Von Burger bis Pizza! 🍔",
+  "colorPrimary": "#ff6b35",
+  "colorAccent": "#f7931e",
+  "backgroundGradient": [
+    "#ff6b35",
+    "#f7931e"
+  ],
+  "maxLevels": 15,
+  "icon": "🍔",
+  "shipSkin": "/assets/ships/food_ship.svg",
+  "laserColor": "#ff6b35",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "burger": {
+      "backgroundImage": "burger_bg.png",
+      "backgroundGradient": [
+        "#ff6b35",
+        "#f7931e"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "burger_theme.mp3",
+      "particleEffect": "burger_energy"
+    },
+    "pizza": {
+      "backgroundImage": "pizza_bg.png",
+      "backgroundGradient": [
+        "#e74c3c",
+        "#c0392b"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "pizza_theme.mp3",
+      "particleEffect": "pizza_energy"
+    },
+    "döner": {
+      "backgroundImage": "doener_bg.png",
+      "backgroundGradient": [
+        "#f39c12",
+        "#e67e22"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "doener_theme.mp3",
+      "particleEffect": "doener_energy"
+    },
+    "pommes": {
+      "backgroundImage": "pommes_bg.png",
+      "backgroundGradient": [
+        "#ffd700",
+        "#ffed4e"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "pommes_theme.mp3",
+      "particleEffect": "pommes_energy"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

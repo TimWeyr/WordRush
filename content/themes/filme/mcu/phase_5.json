@@ -1,0 +1,206 @@
+[
+  {
+    "id": "MCU_GUARDIANS_VOL3",
+    "theme": "mcu",
+    "chapter": "phase_5",
+    "level": 1,
+    "waveDuration": 10,
+    "base": {
+      "word": "Guardians of the Galaxy Vol. 3",
+      "type": "Film",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "2023",
+          "type": "Erscheinungsjahr"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Guardians of the Galaxy Vol. 3 kam 2023 raus - Phase 5 des MCU!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Action, Sci-Fi",
+          "type": "Genre"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Guardians of the Galaxy Vol. 3 ist ein Action-Sci-Fi-Film - das Finale der Guardians-Trilogie!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "James Gunn",
+          "type": "Regisseur"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "James Gunn inszenierte Vol. 3 - und beendete die Guardians-Trilogie mit viel Emotion!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Chris Pratt",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Chris Pratt spielte Star-Lord - den Mann, der sehr viel über Rocket lernt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Zoe Saldaña",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Zoe Saldaña spielte Gamora - die Frau, die sehr viel über ihre Vergangenheit lernt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Bradley Cooper",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 6,
+        "context": "Bradley Cooper sprach Rocket - den Waschbären, der sehr viel über sich selbst lernt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Jon Watts",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Jon Watts hat Guardians Vol. 3 nicht gedreht - James Gunn hat es gemacht!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Tom Holland",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Tom Holland war nicht in Guardians Vol. 3 - er ist Spider-Man!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 5", "2023", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  }
+]
+

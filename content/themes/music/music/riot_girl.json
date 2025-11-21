@@ -1,0 +1,2279 @@
+﻿[
+  {
+    "id": "RIOT_001",
+    "theme": "music",
+    "chapter": "riot_girl",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Rebel Girl",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FF9800",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Bikini Kill",
+          "type": "Band"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Bikini Kill spielte Rebel Girl",
+        "visual": {
+          "color": "#F39C12",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Pussy Whipped",
+          "type": "Album"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Rebel Girl ist auf Pussy Whipped",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1993",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Pussy Whipped erschien 1993",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Reject All American",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Reject All American ist ein anderes Album von Bikini Kill",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Sleater-Kinney",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Sleater-Kinney ist eine ähnliche Riot Grrrl Band",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Taylor Swift",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.35,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Taylor Swift ist eine Pop-Sängerin, kein Riot Grrrl",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1998",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1998 ist falsch, Pussy Whipped erschien 1993",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "riot_girl",
+        "level1"
+      ],
+      "related": [
+        "RIOT_002",
+        "RIOT_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    },
+  {
+    "id": "RIOT_002",
+    "theme": "music",
+    "chapter": "riot_girl",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Dig Me Out",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#27AE60",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Sleater-Kinney",
+          "type": "Band"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Sleater-Kinney spielte Dig Me Out",
+        "visual": {
+          "color": "#85C1E2",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Dig Me Out",
+          "type": "Album"
+        },
+        "spawnPosition": 0.48,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Dig Me Out ist das Album",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "spike",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1997",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Dig Me Out erschien 1997",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "The Hot Rock",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "The Hot Rock ist ein anderes Album von Sleater-Kinney",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Bikini Kill",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Bikini Kill ist eine ähnliche Riot Grrrl Band",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Ed Sheeran",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.09,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ed Sheeran ist ein Pop-Sänger, kein Riot Grrrl",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2002",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2002 ist falsch, Dig Me Out erschien 1997",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "riot_girl",
+        "level1"
+      ],
+      "related": [
+        "RIOT_001",
+        "RIOT_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "RIOT_003",
+    "theme": "music",
+    "chapter": "riot_girl",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Deceptacon",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#64FFDA",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Le Tigre",
+          "type": "Band"
+        },
+        "spawnPosition": 0.18,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Le Tigre spielte Deceptacon",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "spike",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Le Tigre",
+          "type": "Album"
+        },
+        "spawnPosition": 0.44,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Deceptacon ist auf Le Tigre",
+        "visual": {
+          "color": "#00BCD4",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1999",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Le Tigre erschien 1999",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "This Island",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.32,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "This Island ist ein anderes Album von Le Tigre",
+        "visual": {
+          "color": "#4ECDC4",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Bratmobile",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.78,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Bratmobile ist eine ähnliche Riot Grrrl Band",
+        "visual": {
+          "color": "#F1C40F",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Justin Bieber",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.08,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Justin Bieber ist ein Pop-Star, kein Riot Grrrl",
+        "visual": {
+          "color": "#FF1744",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2004",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2004 ist falsch, Le Tigre erschien 1999",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "riot_girl",
+        "level1"
+      ],
+      "related": [
+        "RIOT_002",
+        "RIOT_004"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "RIOT_004",
+    "theme": "music",
+    "chapter": "riot_girl",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Pretend We're Dead",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#E74C3C",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "L7",
+          "type": "Band"
+        },
+        "spawnPosition": 0.26,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "L7 spielte Pretend We're Dead",
+        "visual": {
+          "color": "#64FFDA",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Bricks Are Heavy",
+          "type": "Album"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Pretend We're Dead ist auf Bricks Are Heavy",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1992",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Bricks Are Heavy erschien 1992",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Smell the Magic",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Smell the Magic ist ein anderes Album von L7",
+        "visual": {
+          "color": "#16A085",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Babes in Toyland",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.46,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Babes in Toyland ist eine ähnliche Riot Grrrl Band",
+        "visual": {
+          "color": "#8E44AD",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Adele",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Adele ist eine Pop-Sängerin, kein Riot Grrrl",
+        "visual": {
+          "color": "#FF4081",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1997",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1997 ist falsch, Bricks Are Heavy erschien 1992",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "riot_girl",
+        "level1"
+      ],
+      "related": [
+        "RIOT_003",
+        "RIOT_005"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    },
+  {
+    "id": "RIOT_005",
+    "theme": "music",
+    "chapter": "riot_girl",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "City of Angels",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9B59B6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "The Distillers",
+          "type": "Band"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "The Distillers spielte City of Angels",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "The Distillers",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "City of Angels ist auf The Distillers",
+        "visual": {
+          "color": "#8E44AD",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "2000",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "The Distillers erschien 2000",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Coral Fang",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Coral Fang ist ein anderes Album von The Distillers",
+        "visual": {
+          "color": "#E74C3C",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Brody Dalle",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Brody Dalle ist die Sängerin von The Distillers",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Coldplay",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.38,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Coldplay ist eine Alternative Rock Band, kein Riot Grrrl",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2005",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2005 ist falsch, The Distillers erschien 2000",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "riot_girl",
+        "level2"
+      ],
+      "related": [
+        "RIOT_004",
+        "RIOT_006"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "RIOT_006",
+    "theme": "music",
+    "chapter": "riot_girl",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Bruise Violet",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#E67E22",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Babes in Toyland",
+          "type": "Band"
+        },
+        "spawnPosition": 0.23,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Babes in Toyland spielte Bruise Violet",
+        "visual": {
+          "color": "#E67E22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Fontanelle",
+          "type": "Album"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Bruise Violet ist auf Fontanelle",
+        "visual": {
+          "color": "#D35400",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1992",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Fontanelle erschien 1992",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Spanking Machine",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Spanking Machine ist ein anderes Album von Babes in Toyland",
+        "visual": {
+          "color": "#C0392B",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Hole",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Hole ist eine ähnliche Riot Grrrl Band",
+        "visual": {
+          "color": "#8E44AD",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Bruno Mars",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Bruno Mars ist ein Pop/R&B Künstler, kein Riot Grrrl",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1987",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1987 ist falsch, Fontanelle erschien 1992",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "riot_girl",
+        "level2"
+      ],
+      "related": [
+        "RIOT_005",
+        "RIOT_007"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "RIOT_007",
+    "theme": "music",
+    "chapter": "riot_girl",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Celebrity Skin",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#1ABC9C",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Hole",
+          "type": "Band"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Hole spielte Celebrity Skin",
+        "visual": {
+          "color": "#1ABC9C",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Celebrity Skin",
+          "type": "Album"
+        },
+        "spawnPosition": 0.51,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Celebrity Skin ist das Album",
+        "visual": {
+          "color": "#16A085",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1998",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Celebrity Skin erschien 1998",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Live Through This",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.19,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Live Through This ist ein anderes Album von Hole",
+        "visual": {
+          "color": "#E74C3C",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Veruca Salt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.63,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Veruca Salt ist eine ähnliche Alternative Rock Band",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Drake",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.37,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Drake ist ein Rapper, kein Riot Grrrl",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2003",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.89,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2003 ist falsch, Celebrity Skin erschien 1998",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "riot_girl",
+        "level2"
+      ],
+      "related": [
+        "RIOT_006",
+        "RIOT_008"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "RIOT_008",
+    "theme": "music",
+    "chapter": "riot_girl",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Cool Schmool",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#34495E",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Bratmobile",
+          "type": "Band"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Bratmobile spielte Cool Schmool",
+        "visual": {
+          "color": "#34495E",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Pottymouth",
+          "type": "Album"
+        },
+        "spawnPosition": 0.48,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Cool Schmool ist auf Pottymouth",
+        "visual": {
+          "color": "#2C3E50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1993",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Pottymouth erschien 1993",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Ladies, Women and Girls",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.18,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ladies, Women and Girls ist ein anderes Album von Bratmobile",
+        "visual": {
+          "color": "#7F8C8D",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Heavens to Betsy",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.64,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Heavens to Betsy ist eine ähnliche Riot Grrrl Band",
+        "visual": {
+          "color": "#95A5A6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Michael Bublé",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.36,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Michael Bublé ist ein Jazz/Pop Sänger, kein Riot Grrrl",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1998",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.86,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1998 ist falsch, Pottymouth erschien 1993",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "riot_girl",
+        "level2"
+      ],
+      "related": [
+        "RIOT_007",
+        "RIOT_009"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    },
+  {
+    "id": "RIOT_009",
+    "theme": "music",
+    "chapter": "riot_girl",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Seether",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#E91E63",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Veruca Salt",
+          "type": "Band"
+        },
+        "spawnPosition": 0.21,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Veruca Salt spielte Seether",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "American Thighs",
+          "type": "Album"
+        },
+        "spawnPosition": 0.47,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Seether ist auf American Thighs",
+        "visual": {
+          "color": "#C2185B",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1994",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.71,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "American Thighs erschien 1994",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Eight Arms to Hold You",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Eight Arms to Hold You ist ein anderes Album von Veruca Salt",
+        "visual": {
+          "color": "#AD1457",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "The Breeders",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.59,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "The Breeders ist eine ähnliche Alternative Rock Band",
+        "visual": {
+          "color": "#7B1FA2",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Post Malone",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.33,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Post Malone ist ein Rapper/Sänger, kein Riot Grrrl",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1999",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.85,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1999 ist falsch, American Thighs erschien 1994",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "riot_girl",
+        "level3"
+      ],
+      "related": [
+        "RIOT_008",
+        "RIOT_010"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "RIOT_010",
+    "theme": "music",
+    "chapter": "riot_girl",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Take It Off",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#F39C12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "The Donnas",
+          "type": "Band"
+        },
+        "spawnPosition": 0.23,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "The Donnas spielte Take It Off",
+        "visual": {
+          "color": "#F39C12",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Spend the Night",
+          "type": "Album"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Take It Off ist auf Spend the Night",
+        "visual": {
+          "color": "#E67E22",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "2002",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Spend the Night erschien 2002",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Get Skintight",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Get Skintight ist ein anderes Album von The Donnas",
+        "visual": {
+          "color": "#D68910",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "The Runaways",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "The Runaways ist eine ähnliche Rock Band",
+        "visual": {
+          "color": "#F7DC6F",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "The Weeknd",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.35,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "The Weeknd ist ein R&B/Pop Künstler, kein Riot Grrrl",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1997",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1997 ist falsch, Spend the Night erschien 2002",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "riot_girl",
+        "level3"
+      ],
+      "related": [
+        "RIOT_009",
+        "RIOT_011"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "RIOT_011",
+    "theme": "music",
+    "chapter": "riot_girl",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "One More Hour",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498DB",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Sleater-Kinney",
+          "type": "Band"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Sleater-Kinney spielte One More Hour",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Dig Me Out",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "One More Hour ist auf Dig Me Out",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1997",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Dig Me Out erschien 1997",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "The Woods",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "The Woods ist ein anderes Album von Sleater-Kinney",
+        "visual": {
+          "color": "#5DADE2",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Team Dresch",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Team Dresch ist eine ähnliche Riot Grrrl Band",
+        "visual": {
+          "color": "#85C1E9",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Shawn Mendes",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.38,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Shawn Mendes ist ein Pop-Sänger, kein Riot Grrrl",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2002",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2002 ist falsch, Dig Me Out erschien 1997",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "riot_girl",
+        "level3"
+      ],
+      "related": [
+        "RIOT_010",
+        "RIOT_012"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "RIOT_012",
+    "theme": "music",
+    "chapter": "riot_girl",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "TKO",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#16A085",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Le Tigre",
+          "type": "Band"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Le Tigre spielte TKO",
+        "visual": {
+          "color": "#16A085",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "This Island",
+          "type": "Album"
+        },
+        "spawnPosition": 0.51,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "TKO ist auf This Island",
+        "visual": {
+          "color": "#138D75",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "2004",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "This Island erschien 2004",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Feminist Sweepstakes",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.19,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Feminist Sweepstakes ist ein anderes Album von Le Tigre",
+        "visual": {
+          "color": "#0E6655",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Peaches",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.63,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Peaches ist eine ähnliche Electro-Punk Künstlerin",
+        "visual": {
+          "color": "#52BE80",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Harry Styles",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.37,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Harry Styles ist ein Pop-Sänger, kein Riot Grrrl",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1999",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.89,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1999 ist falsch, This Island erschien 2004",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "riot_girl",
+        "level3"
+      ],
+      "related": [
+        "RIOT_011",
+        "RIOT_013"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]

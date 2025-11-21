@@ -1,0 +1,222 @@
+[
+  {
+    "id": "KANTO_001",
+    "theme": "regionen",
+    "chapter": "kanto",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Pikachu",
+      "type": "Pokemon",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e74c3c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Kanto",
+          "type": "Region"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Pikachu kommt aus der Region Kanto",
+        "visual": {
+          "color": "#c0392b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Johto",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Pikachu kommt nicht aus Johto",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Pokemon Regionen",
+      "tags": [
+        "kanto",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "KANTO_002",
+    "theme": "regionen",
+    "chapter": "kanto",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Glumanda",
+      "type": "Pokemon",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e74c3c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Kanto",
+          "type": "Region"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Glumanda kommt aus der Region Kanto",
+        "visual": {
+          "color": "#c0392b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Hoenn",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Glumanda kommt nicht aus Hoenn",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Pokemon Regionen",
+      "tags": [
+        "kanto",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "KANTO_003",
+    "theme": "regionen",
+    "chapter": "kanto",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Schiggy",
+      "type": "Pokemon",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e74c3c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Kanto",
+          "type": "Region"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Schiggy kommt aus der Region Kanto",
+        "visual": {
+          "color": "#c0392b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Johto",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Schiggy kommt nicht aus Johto",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Pokemon Regionen",
+      "tags": [
+        "kanto",
+        "level1"
+      ]
+    }
+  }
+]
+

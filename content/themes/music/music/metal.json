@@ -1,0 +1,1914 @@
+[
+  {
+    "id": "METAL_001",
+    "theme": "music",
+    "chapter": "metal",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Master of Puppets",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FF9800",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Metallica",
+          "type": "Band"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Metallica spielte Master of Puppets",
+        "visual": {
+          "color": "#F39C12",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Master of Puppets",
+          "type": "Album"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Master of Puppets ist das Album",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1986",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Master of Puppets erschien 1986",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Ride the Lightning",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ride the Lightning ist ein anderes Album von Metallica",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Megadeth",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Megadeth ist eine ähnliche Thrash Metal Band",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "The Beatles",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.35,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "The Beatles ist eine Rock/Pop Band, kein Metal",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1991",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.95,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1991 ist falsch, Master of Puppets erschien 1986",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "metal",
+        "thrash",
+        "level1"
+      ],
+      "related": [
+        "METAL_002",
+        "METAL_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "METAL_002",
+    "theme": "music",
+    "chapter": "metal",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Iron Man",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#27AE60",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Black Sabbath",
+          "type": "Band"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Black Sabbath spielte Iron Man",
+        "visual": {
+          "color": "#85C1E2",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Paranoid",
+          "type": "Album"
+        },
+        "spawnPosition": 0.48,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Iron Man ist auf dem Album Paranoid",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "spike",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1970",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Paranoid erschien 1970",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Master of Reality",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Master of Reality ist ein anderes Album von Black Sabbath",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Deep Purple",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Deep Purple ist eine ähnliche Heavy Metal Band",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "ABBA",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.09,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "ABBA ist eine Pop Band, kein Metal",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1975",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.85,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1975 ist falsch, Paranoid erschien 1970",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "metal",
+        "heavy",
+        "level1"
+      ],
+      "related": [
+        "METAL_001",
+        "METAL_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "METAL_003",
+    "theme": "music",
+    "chapter": "metal",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "One",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#64FFDA",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Metallica",
+          "type": "Band"
+        },
+        "spawnPosition": 0.18,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Metallica spielte One",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "spike",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "...And Justice for All",
+          "type": "Album"
+        },
+        "spawnPosition": 0.44,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "One ist auf dem Album ...And Justice for All",
+        "visual": {
+          "color": "#00BCD4",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1988",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "...And Justice for All erschien 1988",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Metallica (The Black Album)",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.32,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Metallica (The Black Album) ist ein anderes Album",
+        "visual": {
+          "color": "#4ECDC4",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Slayer",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.78,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Slayer ist eine ähnliche Thrash Metal Band",
+        "visual": {
+          "color": "#F1C40F",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Taylor Swift",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.08,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Taylor Swift ist eine Pop-Sängerin, kein Metal",
+        "visual": {
+          "color": "#FF1744",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1993",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1993 ist falsch, ...And Justice for All erschien 1988",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "metal",
+        "thrash",
+        "level1"
+      ],
+      "related": [
+        "METAL_002",
+        "METAL_004"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "METAL_004",
+    "theme": "music",
+    "chapter": "metal",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Hallowed Be Thy Name",
+      "type": "Song",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#E74C3C",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Iron Maiden",
+          "type": "Band"
+        },
+        "spawnPosition": 0.26,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Iron Maiden spielte Hallowed Be Thy Name",
+        "visual": {
+          "color": "#64FFDA",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "The Number of the Beast",
+          "type": "Album"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Hallowed Be Thy Name ist auf The Number of the Beast",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1982",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "The Number of the Beast erschien 1982",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Powerslave",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Powerslave ist ein anderes Album von Iron Maiden",
+        "visual": {
+          "color": "#16A085",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Judas Priest",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.46,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Judas Priest ist eine ähnliche Heavy Metal Band",
+        "visual": {
+          "color": "#8E44AD",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Ed Sheeran",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Ed Sheeran ist ein Pop-Musiker, kein Metal",
+        "visual": {
+          "color": "#FF4081",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1987",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "1987 ist falsch, The Number of the Beast erschien 1982",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "metal",
+        "heavy",
+        "level2"
+      ],
+      "related": [
+        "METAL_003",
+        "METAL_005"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "METAL_005",
+    "theme": "music",
+    "chapter": "metal",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Crazy Train",
+      "type": "Song",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#FF5722",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ozzy Osbourne",
+          "type": "Band"
+        },
+        "spawnPosition": 0.11,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ozzy Osbourne spielte Crazy Train",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Blizzard of Ozz",
+          "type": "Album"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Crazy Train ist auf Blizzard of Ozz",
+        "visual": {
+          "color": "#00B0FF",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1980",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.78,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Blizzard of Ozz erschien 1980",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Diary of a Madman",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.97,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Diary of a Madman ist ein anderes Album von Ozzy",
+        "visual": {
+          "color": "#00E676",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Black Sabbath",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Black Sabbath ist Ozzy's ehemalige Band",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Justin Bieber",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Justin Bieber ist ein Pop-Star, kein Metal",
+        "visual": {
+          "color": "#27AE60",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1985",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "1985 ist falsch, Blizzard of Ozz erschien 1980",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "metal",
+        "heavy",
+        "level2"
+      ],
+      "related": [
+        "METAL_004",
+        "METAL_006"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "METAL_006",
+    "theme": "music",
+    "chapter": "metal",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Ace of Spades",
+      "type": "Song",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#9B59B6",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Motörhead",
+          "type": "Band"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Motörhead spielte Ace of Spades",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Ace of Spades",
+          "type": "Album"
+        },
+        "spawnPosition": 0.43,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Ace of Spades ist das Album",
+        "visual": {
+          "color": "#CDDC39",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1980",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Ace of Spades erschien 1980",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Overkill",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Overkill ist ein anderes Album von Motörhead",
+        "visual": {
+          "color": "#C0392B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Venom",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Venom ist eine ähnliche Speed Metal Band",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Adele",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.99,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Adele ist eine Pop-Sängerin, kein Metal",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1985",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "1985 ist falsch, Ace of Spades erschien 1980",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "metal",
+        "speed",
+        "level2"
+      ],
+      "related": [
+        "METAL_005",
+        "METAL_007"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "METAL_007",
+    "theme": "music",
+    "chapter": "metal",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Painkiller",
+      "type": "Song",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#98D8C8",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Judas Priest",
+          "type": "Band"
+        },
+        "spawnPosition": 0.78,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Judas Priest spielte Painkiller",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Painkiller",
+          "type": "Album"
+        },
+        "spawnPosition": 0.43,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Painkiller ist das Album",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1990",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Painkiller erschien 1990",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "British Steel",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.84,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "British Steel ist ein anderes Album von Judas Priest",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Iron Maiden",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.98,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Iron Maiden ist eine ähnliche Heavy Metal Band",
+        "visual": {
+          "color": "#85C1E2",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Billie Eilish",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.13,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Billie Eilish ist eine Pop-Sängerin, kein Metal",
+        "visual": {
+          "color": "#E040FB",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1995",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "1995 ist falsch, Painkiller erschien 1990",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "metal",
+        "heavy",
+        "level3"
+      ],
+      "related": [
+        "METAL_006",
+        "METAL_008"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "METAL_008",
+    "theme": "music",
+    "chapter": "metal",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Raining Blood",
+      "type": "Song",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#FFA07A",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Slayer",
+          "type": "Band"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Slayer spielte Raining Blood",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Reign in Blood",
+          "type": "Album"
+        },
+        "spawnPosition": 0.43,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Raining Blood ist auf Reign in Blood",
+        "visual": {
+          "color": "#FF6B6B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1986",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Reign in Blood erschien 1986",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "South of Heaven",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "South of Heaven ist ein anderes Album von Slayer",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Anthrax",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Anthrax ist eine ähnliche Thrash Metal Band",
+        "visual": {
+          "color": "#CDDC39",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Drake",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.06,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Drake ist ein Rapper, kein Metal",
+        "visual": {
+          "color": "#C0392B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1991",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "1991 ist falsch, Reign in Blood erschien 1986",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "metal",
+        "thrash",
+        "level3"
+      ],
+      "related": [
+        "METAL_007",
+        "METAL_009"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "METAL_009",
+    "theme": "music",
+    "chapter": "metal",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Enter Sandman",
+      "type": "Song",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#E67E22",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Metallica",
+          "type": "Band"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Metallica spielte Enter Sandman",
+        "visual": {
+          "color": "#1ABC9C",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Metallica (The Black Album)",
+          "type": "Album"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Enter Sandman ist auf Metallica (The Black Album)",
+        "visual": {
+          "color": "#9C27B0",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1991",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.13,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Metallica (The Black Album) erschien 1991",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Master of Puppets",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.43,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Master of Puppets ist ein anderes Album von Metallica",
+        "visual": {
+          "color": "#FF4081",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Megadeth",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.26,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Megadeth ist eine ähnliche Thrash Metal Band",
+        "visual": {
+          "color": "#E67E22",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Ariana Grande",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.37,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Ariana Grande ist eine Pop-Sängerin, kein Metal",
+        "visual": {
+          "color": "#27AE60",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1996",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "1996 ist falsch, Metallica (The Black Album) erschien 1991",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "metal",
+        "thrash",
+        "level3"
+      ],
+      "related": [
+        "METAL_008",
+        "METAL_010"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "METAL_010",
+    "theme": "music",
+    "chapter": "metal",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Paranoid",
+      "type": "Song",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#C0392B",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Black Sabbath",
+          "type": "Band"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Black Sabbath spielte Paranoid",
+        "visual": {
+          "color": "#E040FB",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Paranoid",
+          "type": "Album"
+        },
+        "spawnPosition": 0.41,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Paranoid ist das Album",
+        "visual": {
+          "color": "#00BCD4",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "1970",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.06,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Paranoid erschien 1970",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Master of Reality",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.41,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Master of Reality ist ein anderes Album von Black Sabbath",
+        "visual": {
+          "color": "#FF6B6B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Deep Purple",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.56,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Deep Purple ist eine ähnliche Heavy Metal Band",
+        "visual": {
+          "color": "#BB8FCE",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Dua Lipa",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Dua Lipa ist eine Pop-Sängerin, kein Metal",
+        "visual": {
+          "color": "#E040FB",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1975",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "1975 ist falsch, Paranoid erschien 1970",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "metal",
+        "heavy",
+        "level3"
+      ],
+      "related": [
+        "METAL_009"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]
+

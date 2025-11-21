@@ -1,0 +1,56 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- English theme ship - Futuristic spaceship top-down view -->
+  
+  <!-- Main fuselage body -->
+  <path d="M 30 5 L 25 20 L 20 25 L 20 35 L 25 40 L 30 45 L 35 40 L 40 35 L 40 25 L 35 20 Z" 
+        fill="#d0d0d0" stroke="#888888" stroke-width="1"/>
+  
+  <!-- Cockpit window -->
+  <path d="M 30 8 L 27 18 L 33 18 Z" fill="#1a1a1a" stroke="#000000" stroke-width="0.5"/>
+  
+  <!-- Orange-red stripes on main body -->
+  <rect x="22" y="22" width="16" height="3" fill="#ff6b35" rx="1"/>
+  <rect x="22" y="28" width="16" height="3" fill="#ff6b35" rx="1"/>
+  
+  <!-- Main wings -->
+  <path d="M 20 25 L 12 28 L 12 32 L 20 35" fill="#c0c0c0" stroke="#666666" stroke-width="1"/>
+  <path d="M 40 25 L 48 28 L 48 32 L 40 35" fill="#c0c0c0" stroke="#666666" stroke-width="1"/>
+  
+  <!-- Wing tips (orange-red) -->
+  <circle cx="12" cy="30" r="2" fill="#ff6b35"/>
+  <circle cx="48" cy="30" r="2" fill="#ff6b35"/>
+  
+  <!-- Upper wing structures (cylindrical) -->
+  <ellipse cx="25" cy="22" rx="2" ry="4" fill="#555555" transform="rotate(-15 25 22)"/>
+  <ellipse cx="35" cy="22" rx="2" ry="4" fill="#555555" transform="rotate(15 35 22)"/>
+  
+  <!-- Lower wing pods/nacelles -->
+  <ellipse cx="18" cy="38" rx="3" ry="5" fill="#444444"/>
+  <ellipse cx="42" cy="38" rx="3" ry="5" fill="#444444"/>
+  
+  <!-- Orange-red bands on pods -->
+  <rect x="16" y="40" width="4" height="2" fill="#ff6b35" rx="1"/>
+  <rect x="40" y="40" width="4" height="2" fill="#ff6b35" rx="1"/>
+  
+  <!-- Central engine -->
+  <ellipse cx="30" cy="48" rx="4" ry="3" fill="#333333"/>
+  <ellipse cx="30" cy="52" rx="5" ry="4" fill="#ff6b35" opacity="0.8"/>
+  <ellipse cx="30" cy="54" rx="4" ry="3" fill="#ffaa00" opacity="0.6"/>
+  <ellipse cx="30" cy="56" rx="3" ry="2" fill="#ffff00" opacity="0.4"/>
+  
+  <!-- Side engines -->
+  <ellipse cx="18" cy="45" rx="2.5" ry="2" fill="#333333"/>
+  <ellipse cx="18" cy="48" rx="3" ry="2.5" fill="#ff6b35" opacity="0.8"/>
+  <ellipse cx="18" cy="50" rx="2.5" ry="2" fill="#ffaa00" opacity="0.6"/>
+  <ellipse cx="18" cy="51.5" rx="2" ry="1.5" fill="#ffff00" opacity="0.4"/>
+  
+  <ellipse cx="42" cy="45" rx="2.5" ry="2" fill="#333333"/>
+  <ellipse cx="42" cy="48" rx="3" ry="2.5" fill="#ff6b35" opacity="0.8"/>
+  <ellipse cx="42" cy="50" rx="2.5" ry="2" fill="#ffaa00" opacity="0.6"/>
+  <ellipse cx="42" cy="51.5" rx="2" ry="1.5" fill="#ffff00" opacity="0.4"/>
+  
+  <!-- Additional shading for depth -->
+  <path d="M 30 5 L 25 20 L 20 25 L 20 35 L 25 40 L 30 45" 
+        fill="none" stroke="#aaaaaa" stroke-width="0.5" opacity="0.3"/>
+</svg>
+

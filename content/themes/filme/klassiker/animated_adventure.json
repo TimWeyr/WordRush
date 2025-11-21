@@ -1,0 +1,271 @@
+[
+    {
+      "id": "FILME_F026",
+      "theme": "klassiker",
+      "chapter": "animated_adventure",
+      "level": 1,
+      "waveDuration": 10,
+      "base": {
+        "word": "Up",
+        "type": "Film",
+        "visual": {
+          "tier": 2,
+          "size": 1.2,
+          "appearance": "bold",
+          "color": "#9b59b6",
+          "glow": true,
+          "pulsate": true
+        }
+      },
+      "correct": [
+        {
+          "entry": {
+            "word": "2009",
+            "type": "VÖ-Jahr"
+          },
+          "spawnPosition": 0.2,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 1,
+          "context": "Up kam 2009 raus - und hat seitdem alle Luftballons komplizierter gemacht!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Animated Adventure",
+            "type": "Primär_Genre"
+          },
+          "spawnPosition": 0.4,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 2,
+          "context": "Up ist ein Animated Adventure - perfekt für alle, die gerne mit Luftballons fliegen würden!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Pete Docter",
+            "type": "Regisseur"
+          },
+          "spawnPosition": 0.6,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 3,
+          "context": "Pete Docter inszenierte Up mit seiner typischen Pixar-Ästhetik - perfekt für einen Film über Träume und Abenteuer!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Ed Asner",
+            "type": "Hauptdarsteller"
+          },
+          "spawnPosition": 0.65,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 4,
+          "context": "Ed Asner sprach Carl Fredricksen - den Mann, der sehr alt ist und sehr viel Abenteuer erlebt!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "C. Plummer",
+            "type": "Hauptdarsteller"
+          },
+          "spawnPosition": 0.75,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 5,
+          "context": "Christopher Plummer sprach Charles Muntz - den Mann, der sehr berühmt ist und sehr viel sucht!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "J. Nagai",
+            "type": "Hauptdarsteller"
+          },
+          "spawnPosition": 0.85,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 6,
+          "context": "Jordan Nagai sprach Russell - den Jungen, der sehr mutig ist und sehr viel hilft!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "B. Peterson",
+            "type": "Hauptdarsteller"
+          },
+          "spawnPosition": 0.95,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 7,
+          "context": "Bob Peterson sprach Dug - den Hund, der sehr liebenswert ist und sehr viel redet!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        }
+      ],
+      "distractors": [
+        {
+          "entry": {
+            "word": "Andrew Stanton",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.15,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Andrew Stanton hat Up nicht gedreht - aber er hätte sicherlich mehr Unterwasser-Abenteuer eingebaut!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Brad Bird",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.85,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Brad Bird wäre zu actionreich für Up gewesen - aber er hätte sicherlich mehr Superhelden eingebaut!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Tom Hanks",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.3,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Tom Hanks war nicht in Up - aber er hätte sicherlich auch gut gepasst, besonders als Woody!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "John Goodman",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.7,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "John Goodman war nicht in Up - aber er hätte sicherlich auch gut gepasst, besonders als Sulley!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        }
+      ],
+      "meta": {
+        "source": "Film-Datenbank",
+        "tags": ["Animated Adventure", "2009"],
+        "related": [],
+        "difficultyScaling": {
+          "speedMultiplierPerReplay": 0.1,
+          "colorContrastFade": true,
+          "angleVariance": 5
+        }
+      }
+  }
+]
+

@@ -1,0 +1,6646 @@
+[
+  {
+    "id": "MCU_IRON_MAN",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 1,
+    "waveDuration": 10,
+    "base": {
+      "word": "Iron Man",
+      "type": "Film",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "2008",
+          "type": "Erscheinungsjahr"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Iron Man kam 2008 raus - und startete damit das gesamte MCU!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Action, Superhero",
+          "type": "Genre"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Iron Man ist ein Action-Superhero-Film - der erste Film des MCU!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Jon Favreau",
+          "type": "Regisseur"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Jon Favreau inszenierte Iron Man - und startete damit eine ganze Ära!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Robert Downey Jr.",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Robert Downey Jr. spielte Tony Stark - den Mann, der das MCU zum Leben erweckte!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Joss Whedon",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Joss Whedon hat Iron Man nicht gedreht - aber er hat The Avengers gemacht!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Chris Evans",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Chris Evans war nicht in Iron Man - er spielte Captain America!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "2008", "MCU"],
+      "related": ["MCU_AVENGERS"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_AVENGERS",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 2,
+    "waveDuration": 10,
+    "base": {
+      "word": "The Avengers",
+      "type": "Film",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "2012",
+          "type": "Erscheinungsjahr"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "The Avengers kam 2012 raus - und vereinte alle Helden zum ersten Mal!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Action, Superhero",
+          "type": "Genre"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "The Avengers ist ein Action-Superhero-Film - der erste Team-Up-Film des MCU!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Joss Whedon",
+          "type": "Regisseur"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Joss Whedon inszenierte The Avengers - und zeigte, wie man Superhelden zusammenbringt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Robert Downey Jr.",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Robert Downey Jr. spielte Tony Stark/Iron Man - den Mann, der das Team zusammenbringt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Chris Evans",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Chris Evans spielte Steve Rogers/Captain America - den Mann mit dem Schild!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Mark Ruffalo",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 6,
+        "context": "Mark Ruffalo spielte Bruce Banner/Hulk - den Mann, der sehr grün wird!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Jon Favreau",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Jon Favreau hat The Avengers nicht gedreht - aber er hat Iron Man gemacht!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Tom Holland",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Tom Holland war nicht in The Avengers - er kam erst später ins MCU!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "2012", "MCU"],
+      "related": ["MCU_IRON_MAN"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_KEVIN_FEIGE",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 1,
+    "waveDuration": 10,
+    "base": {
+      "word": "Kevin Feige",
+      "type": "Produzent",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "6 Filme",
+          "type": "Anzahl Phase 1"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Kevin Feige produzierte alle 6 Filme von Phase 1 - der Mastermind hinter dem MCU!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Marvel Studios",
+          "type": "Produktionsfirma"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Kevin Feige leitete Marvel Studios - die erste große unabhängige Filmproduktion seit DreamWorks!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2008-2012",
+          "type": "Zeitraum"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Phase 1 lief von 2008 bis 2012 - und Kevin Feige war bei jedem Film dabei!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "The Infinity Saga",
+          "type": "Saga-Name"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Phase 1 ist Teil von 'The Infinity Saga' - Kevin Feiges Meisterwerk!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Avi Arad",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Avi Arad produzierte nur Iron Man und Hulk - Kevin Feige war bei allen dabei!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Stan Lee",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Stan Lee war Comic-Schöpfer, nicht Produzent - aber er hatte viele Cameos!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Produzent", "MCU"],
+      "related": ["MCU_IRON_MAN"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_SAMUEL_JACKSON",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 1,
+    "waveDuration": 10,
+    "base": {
+      "word": "Samuel L. Jackson",
+      "type": "Schauspieler",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Nick Fury",
+          "type": "Charakter"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Samuel L. Jackson spielte Nick Fury - den Mann mit dem Auge und dem Plan!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "5 Auftritte",
+          "type": "Anzahl"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Samuel L. Jackson hatte die meisten Auftritte in Phase 1 - ganze 5 Filme!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Post-Credit Scene",
+          "type": "Einführung"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Nick Fury wurde in der Post-Credit-Szene von Iron Man eingeführt - legendär!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "S.H.I.E.L.D.",
+          "type": "Organisation"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Nick Fury leitete S.H.I.E.L.D. - die Organisation, die alles zusammenbrachte!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Robert Downey Jr.",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Robert Downey Jr. spielte Iron Man - nicht Nick Fury!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Chris Evans",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Chris Evans spielte Captain America - nicht Nick Fury!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Schauspieler", "MCU"],
+      "related": ["MCU_IRON_MAN"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_EDWARD_NORTON",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 1,
+    "waveDuration": 10,
+    "base": {
+      "word": "Edward Norton",
+      "type": "Schauspieler",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "The Incredible Hulk",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Edward Norton spielte Bruce Banner in The Incredible Hulk - aber nur einmal!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2008",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "The Incredible Hulk kam 2008 raus - im selben Jahr wie Iron Man!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Mark Ruffalo",
+          "type": "Nachfolger"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Edward Norton wurde durch Mark Ruffalo ersetzt - der neue Hulk für The Avengers!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Bruce Banner",
+          "type": "Charakter"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Edward Norton spielte Bruce Banner - den Wissenschaftler, der grün wird!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Robert Downey Jr.",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Robert Downey Jr. spielte Iron Man - nicht Hulk!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Chris Hemsworth",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Chris Hemsworth spielte Thor - nicht Hulk!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "2008", "MCU"],
+      "related": ["MCU_AVENGERS"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_BOX_OFFICE",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 1,
+    "waveDuration": 10,
+    "base": {
+      "word": "$3.8 Milliarden",
+      "type": "Box Office",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Phase"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Phase 1 spielte über $3.8 Milliarden ein - ein riesiger Erfolg!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "6 Filme",
+          "type": "Anzahl"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "6 Filme erzielten zusammen $3.8 Milliarden - das ist richtig viel Geld!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2008-2012",
+          "type": "Zeitraum"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Von 2008 bis 2012 sammelten die Filme $3.8 Milliarden ein!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Global",
+          "type": "Reichweite"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "$3.8 Milliarden weltweit - Phase 1 war ein globaler Erfolg!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "$1 Milliarde",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Es waren viel mehr als $1 Milliarde - ganze $3.8 Milliarden!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 2",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Das war Phase 1, nicht Phase 2 - aber Phase 2 war auch erfolgreich!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Box Office", "MCU"],
+      "related": ["MCU_AVENGERS"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_PARAMOUNT",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 1,
+    "waveDuration": 10,
+    "base": {
+      "word": "Paramount Pictures",
+      "type": "Verleih",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Paramount Pictures verlieh Iron Man - den ersten MCU-Film!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Iron Man 2",
+          "type": "Film"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Paramount Pictures verlieh auch Iron Man 2 - die Fortsetzung!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Thor",
+          "type": "Film"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Paramount Pictures verlieh auch Thor - den Gott des Donners!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Captain America",
+          "type": "Film"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Paramount Pictures verlieh auch Captain America - den Mann mit dem Schild!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "The Incredible Hulk",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "The Incredible Hulk wurde von Universal Pictures verliehen - nicht Paramount!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "The Avengers",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "The Avengers wurde von Disney verliehen - nicht Paramount!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Verleih", "MCU"],
+      "related": ["MCU_IRON_MAN"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_THOR",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 2,
+    "waveDuration": 10,
+    "base": {
+      "word": "Thor",
+      "type": "Film",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "2011",
+          "type": "Erscheinungsjahr"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Thor kam 2011 raus - der Gott des Donners kam ins MCU!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Kenneth Branagh",
+          "type": "Regisseur"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Kenneth Branagh inszenierte Thor - Shakespeare im Weltraum!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Chris Hemsworth",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Chris Hemsworth spielte Thor - den mächtigsten Avenger!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Mjölnir",
+          "type": "Hammer"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Thors Hammer heißt Mjölnir - und nur der Würdige kann ihn heben!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Jon Favreau",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Jon Favreau hat Thor nicht gedreht - aber er hat Iron Man gemacht!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Robert Downey Jr.",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Robert Downey Jr. spielte Iron Man - nicht Thor!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "2011", "MCU"],
+      "related": ["MCU_AVENGERS"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_CAPTAIN_AMERICA",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 2,
+    "waveDuration": 10,
+    "base": {
+      "word": "Captain America: The First Avenger",
+      "type": "Film",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "2011",
+          "type": "Erscheinungsjahr"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Captain America kam 2011 raus - im selben Jahr wie Thor!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Joe Johnston",
+          "type": "Regisseur"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Joe Johnston inszenierte Captain America - ein echter Retro-Film!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Chris Evans",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Chris Evans spielte Steve Rogers - den kleinen Kerl, der groß wurde!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Vibranium",
+          "type": "Material"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Captain Americas Schild besteht aus Vibranium - dem stärksten Metall!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Kenneth Branagh",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Kenneth Branagh hat Captain America nicht gedreht - aber er hat Thor gemacht!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Chris Hemsworth",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Chris Hemsworth spielte Thor - nicht Captain America!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "2011", "MCU"],
+      "related": ["MCU_AVENGERS"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_IRON_MAN_2",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 2,
+    "waveDuration": 10,
+    "base": {
+      "word": "Iron Man 2",
+      "type": "Film",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "2010",
+          "type": "Erscheinungsjahr"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Iron Man 2 kam 2010 raus - die Fortsetzung des ersten MCU-Films!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Jon Favreau",
+          "type": "Regisseur"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Jon Favreau inszenierte auch Iron Man 2 - zurück für mehr Action!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Scarlett Johansson",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Scarlett Johansson spielte Black Widow - ihr erster MCU-Auftritt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Don Cheadle",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Don Cheadle übernahm die Rolle von Rhodey - Terrence Howard wurde ersetzt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Joss Whedon",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Joss Whedon hat Iron Man 2 nicht gedreht - aber er hat The Avengers gemacht!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Terrence Howard",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Terrence Howard spielte Rhodey nur im ersten Film - Don Cheadle übernahm!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "2010", "MCU"],
+      "related": ["MCU_IRON_MAN"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_TESSERAKT",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 2,
+    "waveDuration": 10,
+    "base": {
+      "word": "Tesserakt",
+      "type": "Infinity Stone",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Thor",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Der Tesserakt wurde in der Post-Credit-Szene von Thor gezeigt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Space Stone",
+          "type": "Infinity Stone Name"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Der Tesserakt ist der Space Stone - einer der mächtigsten Gegenstände!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Captain America",
+          "type": "Film"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Der Tesserakt spielte auch in Captain America eine wichtige Rolle!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Red Skull",
+          "type": "Charakter"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Red Skull wurde vom Tesserakt ins Weltall teleportiert - für immer!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Power Stone",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Der Tesserakt ist der Space Stone, nicht der Power Stone!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Der Tesserakt wurde nicht in Iron Man gezeigt - sondern in Thor!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Infinity Stone", "MCU"],
+      "related": ["MCU_THOR"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_LOKI",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 2,
+    "waveDuration": 10,
+    "base": {
+      "word": "Loki",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Tom Hiddleston",
+          "type": "Schauspieler"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Tom Hiddleston spielte Loki - den Gott des Unheils und Bruder von Thor!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Thor",
+          "type": "Film"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Loki wurde in Thor eingeführt - als Thors adoptierter Bruder!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "The Avengers",
+          "type": "Film"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Loki war der Hauptgegner in The Avengers - der erste große Bösewicht!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Antagonist",
+          "type": "Rolle"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Loki war der Antagonist in The Avengers - und wurde später zum Antihelden!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Chris Hemsworth",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Chris Hemsworth spielte Thor - nicht Loki!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Loki war nicht in Iron Man - er kam erst in Thor vor!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Charakter", "MCU"],
+      "related": ["MCU_THOR", "MCU_AVENGERS"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_BLACK_WIDOW_INTRO",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 2,
+    "waveDuration": 10,
+    "base": {
+      "word": "Black Widow",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Iron Man 2",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Black Widow wurde in Iron Man 2 eingeführt - ihre erste MCU-Rolle!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Scarlett Johansson",
+          "type": "Schauspielerin"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Scarlett Johansson spielte Natasha Romanoff - die tödlichste Spionin!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "S.H.I.E.L.D.",
+          "type": "Organisation"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Black Widow arbeitete für S.H.I.E.L.D. - die geheime Organisation!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Natasha Romanoff",
+          "type": "Echter Name"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Black Widows echter Name ist Natasha Romanoff - die Spionin mit vielen Geheimnissen!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Black Widow war nicht im ersten Iron Man - sie kam erst in Iron Man 2!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Chris Evans",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Chris Evans spielte Captain America - nicht Black Widow!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "2010", "MCU"],
+      "related": ["MCU_IRON_MAN_2"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_PHIL_COULSON",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 3,
+    "waveDuration": 10,
+    "base": {
+      "word": "Phil Coulson",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Phil Coulson wurde in Iron Man eingeführt - der erste S.H.I.E.L.D.-Agent!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Clark Gregg",
+          "type": "Schauspieler"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Clark Gregg spielte Phil Coulson - den beliebtesten S.H.I.E.L.D.-Agenten!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "S.H.I.E.L.D.",
+          "type": "Organisation"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Phil Coulson arbeitete für S.H.I.E.L.D. - die geheime Organisation!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "The Avengers",
+          "type": "Film"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Phil Coulson starb in The Avengers - und brachte die Helden zusammen!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Samuel L. Jackson",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Samuel L. Jackson spielte Nick Fury - nicht Phil Coulson!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Thor",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Phil Coulson war nicht der Hauptcharakter in Thor - er hatte nur einen Cameo!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Charakter", "MCU"],
+      "related": ["MCU_IRON_MAN"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_HAWKEYE_INTRO",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 3,
+    "waveDuration": 10,
+    "base": {
+      "word": "Hawkeye",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Thor",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Hawkeye wurde in Thor kurz vorgestellt - sein erster MCU-Auftritt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Jeremy Renner",
+          "type": "Schauspieler"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Jeremy Renner spielte Hawkeye - den Bogenschützen ohne Fehlschuss!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Clint Barton",
+          "type": "Echter Name"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Hawkeyes echter Name ist Clint Barton - der beste Schütze der Avengers!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "The Avengers",
+          "type": "Film"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Hawkeye war ein vollwertiges Mitglied der Avengers - der Bogenschütze!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Hawkeye war nicht im ersten Iron Man - er kam erst in Thor vor!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Chris Evans",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Chris Evans spielte Captain America - nicht Hawkeye!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Charakter", "MCU"],
+      "related": ["MCU_THOR"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_RED_SKULL",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 3,
+    "waveDuration": 10,
+    "base": {
+      "word": "Red Skull",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Captain America",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Red Skull war der Hauptgegner in Captain America - der erste große Bösewicht!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Hugo Weaving",
+          "type": "Schauspieler"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Hugo Weaving spielte Red Skull - den schrecklichsten Nazi-Villain!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Johann Schmidt",
+          "type": "Echter Name"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Red Skulls echter Name ist Johann Schmidt - der Führer von HYDRA!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Tesserakt",
+          "type": "Gegenstand"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Red Skull wurde vom Tesserakt ins Weltall teleportiert - für immer verschwunden!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Tom Hiddleston",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Tom Hiddleston spielte Loki - nicht Red Skull!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Thor",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Red Skull war nicht in Thor - er war nur in Captain America!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Charakter", "MCU"],
+      "related": ["MCU_CAPTAIN_AMERICA"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_PEGGY_CARTER",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 3,
+    "waveDuration": 10,
+    "base": {
+      "word": "Peggy Carter",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Captain America",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Peggy Carter wurde in Captain America eingeführt - die Liebe von Steve Rogers!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Hayley Atwell",
+          "type": "Schauspielerin"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Hayley Atwell spielte Peggy Carter - die starke S.H.I.E.L.D.-Agentin!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "S.H.I.E.L.D.",
+          "type": "Organisation"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Peggy Carter gründete später S.H.I.E.L.D. - die geheime Organisation!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Steve Rogers",
+          "type": "Liebe"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Peggy Carter war die große Liebe von Steve Rogers - eine tragische Geschichte!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Scarlett Johansson",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Scarlett Johansson spielte Black Widow - nicht Peggy Carter!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Peggy Carter war nicht in Iron Man - sie kam erst in Captain America!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Charakter", "MCU"],
+      "related": ["MCU_CAPTAIN_AMERICA"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_ODIN",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 3,
+    "waveDuration": 10,
+    "base": {
+      "word": "Odin",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Thor",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Odin wurde in Thor eingeführt - der Allvater von Asgard!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Anthony Hopkins",
+          "type": "Schauspieler"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Anthony Hopkins spielte Odin - den mächtigsten Gott von Asgard!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Vater von Thor",
+          "type": "Beziehung"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Odin ist der Vater von Thor - und auch von Loki (adoptiert)!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Asgard",
+          "type": "Reich"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Odin war der König von Asgard - dem Reich der Götter!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Chris Hemsworth",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Chris Hemsworth spielte Thor - nicht Odin!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Captain America",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Odin war nicht in Captain America - er war nur in Thor!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Charakter", "MCU"],
+      "related": ["MCU_THOR"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_BIFROST",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 3,
+    "waveDuration": 10,
+    "base": {
+      "word": "Bifröst",
+      "type": "Brücke",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Thor",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Der Bifröst wurde in Thor eingeführt - die Regenbogenbrücke zwischen den Welten!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Regenbogenbrücke",
+          "type": "Beschreibung"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Der Bifröst ist die Regenbogenbrücke - die Welten verbindet!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Asgard",
+          "type": "Startpunkt"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Der Bifröst verbindet Asgard mit der Erde - eine magische Brücke!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Heimdall",
+          "type": "Wächter"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Heimdall wacht über den Bifröst - der Wächter der Brücke!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Captain America",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Der Bifröst war nicht in Captain America - er war nur in Thor!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Tesserakt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Der Bifröst ist eine Brücke - nicht der Tesserakt!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Thor", "MCU"],
+      "related": ["MCU_THOR"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_WHIPLASH",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 3,
+    "waveDuration": 10,
+    "base": {
+      "word": "Whiplash",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Iron Man 2",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Whiplash war der Hauptgegner in Iron Man 2 - mit elektrischen Peitschen!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Mickey Rourke",
+          "type": "Schauspieler"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Mickey Rourke spielte Whiplash - den gefährlichsten Gegner von Iron Man!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Ivan Vanko",
+          "type": "Echter Name"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Whiplashs echter Name ist Ivan Vanko - der Sohn von Anton Vanko!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Elektrische Peitschen",
+          "type": "Waffe"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Whiplash kämpfte mit elektrischen Peitschen - sehr gefährlich!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Whiplash war nicht im ersten Iron Man - er kam erst in Iron Man 2!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Robert Downey Jr.",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Robert Downey Jr. spielte Iron Man - nicht Whiplash!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "2010", "MCU"],
+      "related": ["MCU_IRON_MAN_2"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_DISNEY_ACQUISITION",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 4,
+    "waveDuration": 10,
+    "base": {
+      "word": "Walt Disney Studios",
+      "type": "Verleih",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "The Avengers",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Disney verlieh The Avengers - der erste MCU-Film unter Disney!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2012",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Disney übernahm 2012 den Verleih - genau zur richtigen Zeit!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Marvel Studios",
+          "type": "Produktionsfirma"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Disney kaufte Marvel Studios - und übernahm damit das MCU!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 1 Ende",
+          "type": "Zeitpunkt"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Disney übernahm am Ende von Phase 1 - perfektes Timing!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Paramount Pictures",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Paramount verlieh die meisten Phase-1-Filme - aber nicht The Avengers!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Universal Pictures",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Universal verlieh nur The Incredible Hulk - nicht The Avengers!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Verleih", "MCU"],
+      "related": ["MCU_AVENGERS"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_INFINITY_SAGA",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 4,
+    "waveDuration": 10,
+    "base": {
+      "word": "The Infinity Saga",
+      "type": "Saga",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Phase"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Phase 1 ist Teil von The Infinity Saga - der Beginn einer Ära!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 2",
+          "type": "Phase"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Phase 2 ist auch Teil von The Infinity Saga - die Fortsetzung!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 3",
+          "type": "Phase"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Phase 3 ist auch Teil von The Infinity Saga - das große Finale!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Infinity Stones",
+          "type": "Thema"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "The Infinity Saga dreht sich um die Infinity Stones - die mächtigsten Gegenstände!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Phase 4",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Phase 4 gehört zu The Multiverse Saga - nicht The Infinity Saga!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Multiverse Saga",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "The Infinity Saga endete mit Phase 3 - Phase 4 startete The Multiverse Saga!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Saga", "MCU"],
+      "related": ["MCU_AVENGERS"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_POST_CREDIT_SCENES",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 4,
+    "waveDuration": 10,
+    "base": {
+      "word": "Post-Credit Scenes",
+      "type": "Feature",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Iron Man hatte die erste Post-Credit-Szene - mit Nick Fury!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Nick Fury",
+          "type": "Charakter"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Nick Fury erschien in der Post-Credit-Szene von Iron Man - legendär!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Thor",
+          "type": "Film"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Thor zeigte den Tesserakt in der Post-Credit-Szene - der Space Stone!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "The Avengers",
+          "type": "Hinweis"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Die Post-Credit-Szenen verbanden alle Filme - und führten zu The Avengers!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Captain America",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Die erste Post-Credit-Szene war in Iron Man - nicht Captain America!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Samuel L. Jackson",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Samuel L. Jackson spielte Nick Fury - aber die Post-Credit-Szene war in Iron Man!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Feature", "MCU"],
+      "related": ["MCU_IRON_MAN"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_BUDGET",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 4,
+    "waveDuration": 10,
+    "base": {
+      "word": "$956 Millionen - $1 Milliarde",
+      "type": "Budget",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Phase"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Phase 1 kostete zwischen $956 Millionen und $1 Milliarde - ein riesiges Budget!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "6 Filme",
+          "type": "Anzahl"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "6 Filme kosteten zusammen fast $1 Milliarde - aber es hat sich gelohnt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Marvel Studios",
+          "type": "Produktionsfirma"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Marvel Studios investierte fast $1 Milliarde in Phase 1 - ein mutiger Schritt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2008-2012",
+          "type": "Zeitraum"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Von 2008 bis 2012 wurden fast $1 Milliarde investiert - und es zahlte sich aus!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "$3.8 Milliarden",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "$3.8 Milliarden war der Box Office - nicht das Budget!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 2",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Das Budget war für Phase 1 - Phase 2 hatte ein anderes Budget!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Budget", "MCU"],
+      "related": ["MCU_BOX_OFFICE"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_MARVEL_ONE_SHOTS",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 4,
+    "waveDuration": 10,
+    "base": {
+      "word": "Marvel One-Shots",
+      "type": "Kurzfilme",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Phase"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Marvel One-Shots wurden in Phase 1 gestartet - kurze Filme für das MCU!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "3 Kurzfilme",
+          "type": "Anzahl"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Phase 1 hatte 3 Marvel One-Shots - The Consultant, A Funny Thing..., Item 47!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "MCU erweitern",
+          "type": "Zweck"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Marvel One-Shots erweiterten das MCU - kleine Geschichten zwischen den Filmen!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Blu-ray",
+          "type": "Veröffentlichung"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Marvel One-Shots wurden auf Blu-ray veröffentlicht - Bonusmaterial für Fans!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Kino",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Marvel One-Shots liefen nicht im Kino - sie waren auf Blu-ray!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 2",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Marvel One-Shots starteten in Phase 1 - nicht Phase 2!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Kurzfilme", "MCU"],
+      "related": ["MCU_AVENGERS"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_UNIVERSAL_HULK",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 4,
+    "waveDuration": 10,
+    "base": {
+      "word": "Universal Pictures",
+      "type": "Verleih",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "The Incredible Hulk",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Universal Pictures verlieh The Incredible Hulk - der einzige Film von Universal!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2008",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Universal verlieh The Incredible Hulk 2008 - im selben Jahr wie Iron Man!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Verteilungsrechte",
+          "type": "Recht"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Universal hatte die Verteilungsrechte für The Incredible Hulk - ein Deal!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Nur ein Film",
+          "type": "Besonderheit"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Universal verlieh nur einen Film in Phase 1 - alle anderen waren Paramount oder Disney!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Iron Man wurde von Paramount verliehen - nicht Universal!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "The Avengers",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "The Avengers wurde von Disney verliehen - nicht Universal!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Verleih", "MCU"],
+      "related": ["MCU_EDWARD_NORTON"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_MARK_RUFFALO_REPLACEMENT",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 5,
+    "waveDuration": 10,
+    "base": {
+      "word": "Mark Ruffalo",
+      "type": "Schauspieler",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Edward Norton",
+          "type": "Vorgänger"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Mark Ruffalo ersetzte Edward Norton - der neue Hulk für The Avengers!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "The Avengers",
+          "type": "Film"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Mark Ruffalo spielte Hulk erstmals in The Avengers - sein MCU-Debüt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Bruce Banner",
+          "type": "Charakter"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Mark Ruffalo spielte Bruce Banner - den Wissenschaftler, der grün wird!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2012",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Mark Ruffalo übernahm die Rolle 2012 - genau für The Avengers!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "The Incredible Hulk",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Mark Ruffalo war nicht in The Incredible Hulk - Edward Norton spielte dort!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "2008",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Mark Ruffalo kam erst 2012 ins MCU - nicht 2008!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "2012", "MCU"],
+      "related": ["MCU_EDWARD_NORTON", "MCU_AVENGERS"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_DON_CHEADLE_REPLACEMENT",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 5,
+    "waveDuration": 10,
+    "base": {
+      "word": "Don Cheadle",
+      "type": "Schauspieler",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Terrence Howard",
+          "type": "Vorgänger"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Don Cheadle ersetzte Terrence Howard - der neue Rhodey für Iron Man 2!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Iron Man 2",
+          "type": "Film"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Don Cheadle spielte Rhodey erstmals in Iron Man 2 - sein MCU-Debüt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "James Rhodes",
+          "type": "Charakter"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Don Cheadle spielte James 'Rhodey' Rhodes - den besten Freund von Tony Stark!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2010",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Don Cheadle übernahm die Rolle 2010 - genau für Iron Man 2!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Don Cheadle war nicht im ersten Iron Man - Terrence Howard spielte dort!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "2008",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Don Cheadle kam erst 2010 ins MCU - nicht 2008!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "2010", "MCU"],
+      "related": ["MCU_IRON_MAN_2"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_CRITICAL_RESPONSE",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 5,
+    "waveDuration": 10,
+    "base": {
+      "word": "Positive Kritiken",
+      "type": "Rezeption",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Phase"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Phase 1 erhielt positive Kritiken - sowohl von Kritikern als auch vom Publikum!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Kritiker",
+          "type": "Zielgruppe"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Kritiker lobten Phase 1 - besonders die Verbindung der Filme!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Publikum",
+          "type": "Zielgruppe"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Das Publikum liebte Phase 1 - besonders The Avengers!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Foundation",
+          "type": "Erfolg"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Phase 1 legte die Foundation für spätere Phasen - ein Meisterwerk!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Negative Kritiken",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Phase 1 erhielt positive Kritiken - nicht negative!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 2",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Die positiven Kritiken waren für Phase 1 - nicht Phase 2!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Rezeption", "MCU"],
+      "related": ["MCU_AVENGERS"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_SHARED_UNIVERSE",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 5,
+    "waveDuration": 10,
+    "base": {
+      "word": "Shared Universe",
+      "type": "Konzept",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Kevin Feige",
+          "type": "Erfinder"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Kevin Feige erfand das Shared Universe - die Vision für das MCU!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Start"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Phase 1 startete das Shared Universe - alle Filme sind verbunden!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "The Avengers",
+          "type": "Höhepunkt"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "The Avengers war der Höhepunkt des Shared Universe - alle Helden zusammen!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Post-Credit Scenes",
+          "type": "Verbindung"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Post-Credit Scenes verbanden alle Filme - das Shared Universe in Aktion!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Stan Lee",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Stan Lee war Comic-Schöpfer - Kevin Feige erfand das Shared Universe für Filme!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 2",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Das Shared Universe startete in Phase 1 - nicht Phase 2!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Konzept", "MCU"],
+      "related": ["MCU_KEVIN_FEIGE"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_MARVEL_STUDIOS_FORMATION",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 5,
+    "waveDuration": 10,
+    "base": {
+      "word": "Marvel Studios",
+      "type": "Produktionsfirma",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "2005",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Marvel Studios wurde 2005 gegründet - die erste große unabhängige Filmproduktion seit DreamWorks!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Avi Arad",
+          "type": "Gründer"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Avi Arad gründete Marvel Studios - der Kopf der Filmabteilung!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Unabhängig",
+          "type": "Status"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Marvel Studios war unabhängig - die erste große unabhängige Filmproduktion seit DreamWorks!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Erste Phase"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Marvel Studios produzierte Phase 1 - der Beginn einer Ära!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "2008",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Marvel Studios wurde 2005 gegründet - nicht 2008!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Kevin Feige",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Avi Arad gründete Marvel Studios - Kevin Feige war sein Stellvertreter!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Produktionsfirma", "MCU"],
+      "related": ["MCU_KEVIN_FEIGE"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_AVENGERS_ASSEMBLED",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 5,
+    "waveDuration": 10,
+    "base": {
+      "word": "Avengers Assembled",
+      "type": "Slogan",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "The Avengers",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "'Avengers Assembled' war der Slogan für The Avengers - die Helden vereint!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Phase"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "'Avengers Assembled' war das Finale von Phase 1 - alle Helden zusammen!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2012",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "'Avengers Assembled' kam 2012 - das große Finale von Phase 1!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Team-Up",
+          "type": "Typ"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "'Avengers Assembled' war der erste Team-Up-Film des MCU - historisch!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "'Avengers Assembled' war für The Avengers - nicht Iron Man!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 2",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "'Avengers Assembled' war das Finale von Phase 1 - nicht Phase 2!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "2012", "MCU"],
+      "related": ["MCU_AVENGERS"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_CREATIVE_COMMITTEE",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 5,
+    "waveDuration": 10,
+    "base": {
+      "word": "Creative Committee",
+      "type": "Gremium",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "6 Mitglieder",
+          "type": "Anzahl"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Das Creative Committee hatte 6 Mitglieder - alle Experten für Marvel-Comics!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Kevin Feige",
+          "type": "Mitglied"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Kevin Feige war Mitglied des Creative Committee - der Mastermind!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Comic-Lore",
+          "type": "Expertise"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Das Creative Committee kannte sich mit Comic-Lore aus - echte Experten!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Phase"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Das Creative Committee überwachte Phase 1 - für künstlerische Integrität!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Phase 2",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Das Creative Committee überwachte Phase 1 - nicht Phase 2!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Avi Arad",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Avi Arad war nicht im Creative Committee - er gründete Marvel Studios!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Gremium", "MCU"],
+      "related": ["MCU_KEVIN_FEIGE"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_FURYS_BIG_WEEK",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 2,
+    "waveDuration": 10,
+    "base": {
+      "word": "Fury's Big Week",
+      "type": "Comic",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Eine Woche",
+          "type": "Zeitraum"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Fury's Big Week zeigt: Hulk, Iron Man 2 und Thor spielen alle in einer Woche!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Offizielle Timeline",
+          "type": "Bestätigung"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Fury's Big Week bestätigte die offizielle Timeline - von Feige abgesegnet!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Chris Yost",
+          "type": "Autor"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Chris Yost schrieb Fury's Big Week - der Comic, der alles zusammenbrachte!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2011",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Fury's Big Week kam 2011 raus - genau zur richtigen Zeit!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Ein Monat",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Es war eine Woche - nicht ein Monat!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 2",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Fury's Big Week war für Phase 1 - nicht Phase 2!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Comic", "MCU"],
+      "related": ["MCU_AVENGERS"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_PETER_PARKER_EASTER_EGG",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 3,
+    "waveDuration": 10,
+    "base": {
+      "word": "Junger Peter Parker",
+      "type": "Easter Egg",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Iron Man 2",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ein Kind mit Iron Man Maske in Iron Man 2 wurde später als Peter Parker identifiziert!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2017",
+          "type": "Bestätigung"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "2017 bestätigten Feige, Tom Holland und Jon Watts: Das Kind war Peter Parker!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Kevin Feige",
+          "type": "Bestätigung"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Kevin Feige bestätigte den Easter Egg - ein genialer Rückblick!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Iron Man Maske",
+          "type": "Detail"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Das Kind trug eine Iron Man Maske - und wurde von Tony gerettet!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Der Easter Egg war in Iron Man 2 - nicht im ersten Film!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "2010",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Die Bestätigung kam 2017 - nicht 2010!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Easter Egg", "MCU"],
+      "related": ["MCU_IRON_MAN_2"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_CAPTAIN_AMERICA_SHIELD_JOKE",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 3,
+    "waveDuration": 10,
+    "base": {
+      "word": "Captain America's Shield",
+      "type": "Easter Egg",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Captain America's Shield wurde als Witz von einem ILM-Künstler in Iron Man hinzugefügt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "ILM Künstler",
+          "type": "Ursprung"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Ein Industrial Light & Magic Künstler fügte den Shield als Witz hinzu!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Jon Favreau",
+          "type": "Entscheidung"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Jon Favreau entschied, den Shield im Film zu lassen - genial!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Als Witz",
+          "type": "Ursprung"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Der Shield wurde als Witz hinzugefügt - und wurde zu einem wichtigen Easter Egg!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man 2",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Der Shield wurde im ersten Iron Man hinzugefügt - nicht Iron Man 2!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Geplant",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Der Shield war nicht geplant - er wurde als Witz hinzugefügt!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Easter Egg", "MCU"],
+      "related": ["MCU_IRON_MAN"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_SAMUEL_JACKSON_SECRET",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 3,
+    "waveDuration": 10,
+    "base": {
+      "word": "Samuel L. Jackson Cameo",
+      "type": "Geheimnis",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Samuel L. Jackson war nur einen Tag am Set von Iron Man - geheim gehalten!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Minimale Crew",
+          "type": "Geheimhaltung"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Minimale Crew wurde verwendet, um das Cameo geheim zu halten!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Post-Credit Scene",
+          "type": "Szene"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Das Cameo war in der Post-Credit-Szene - Nick Fury's erster Auftritt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Avenger Initiative",
+          "type": "Hinweis"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Nick Fury erwähnte die 'Avenger Initiative' - der erste Hinweis auf The Avengers!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Mehrere Tage",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Samuel L. Jackson war nur einen Tag am Set - nicht mehrere!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Iron Man 2",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Das geheime Cameo war im ersten Iron Man - nicht Iron Man 2!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Geheimnis", "MCU"],
+      "related": ["MCU_IRON_MAN"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_THOR_POST_CREDIT_WHEDON",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 4,
+    "waveDuration": 10,
+    "base": {
+      "word": "Thor Post-Credit Scene",
+      "type": "Szene",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Joss Whedon",
+          "type": "Regisseur"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Die Post-Credit-Szene von Thor wurde von Joss Whedon gedreht - nicht Branagh!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Kenneth Branagh",
+          "type": "Nicht Regisseur"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Kenneth Branagh drehte Thor - aber nicht die Post-Credit-Szene!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Tesserakt",
+          "type": "Gegenstand"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Die Szene zeigt Loki, der den Tesserakt beobachtet - perfekt für The Avengers!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "The Avengers",
+          "type": "Vorbereitung"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Whedon drehte die Szene, um The Avengers vorzubereiten - genial!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Kenneth Branagh",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Branagh drehte Thor - aber nicht die Post-Credit-Szene!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Die Szene war in Thor - nicht Iron Man!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "2011", "MCU"],
+      "related": ["MCU_THOR", "MCU_AVENGERS"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_EDGAR_WRIGHT_ANT_MAN",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 4,
+    "waveDuration": 10,
+    "base": {
+      "word": "Edgar Wright",
+      "type": "Regisseur",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ant-Man Pitch",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Edgar Wright's Ant-Man Pitch half dabei, die frühen MCU-Filme zu formen!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Einfluss"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Wright's Pitch beeinflusste Phase 1 - besonders die Avengers-Roster!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Avengers Roster",
+          "type": "Anpassung"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Der Avengers-Roster wurde angepasst, um Wright's Ant-Man zu berücksichtigen!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Kevin Feige",
+          "type": "Bestätigung"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Kevin Feige bestätigte: Wright's Pitch formte die frühen MCU-Filme!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Phase 2",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Wright's Pitch beeinflusste Phase 1 - nicht Phase 2!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Wright's Pitch beeinflusste mehrere Filme - nicht nur Iron Man!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Entwicklung", "MCU"],
+      "related": ["MCU_KEVIN_FEIGE"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_PHASE_CONCEPT",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 5,
+    "waveDuration": 10,
+    "base": {
+      "word": "Phase Konzept",
+      "type": "Idee",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Kevin Feige",
+          "type": "Erfinder"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Kevin Feige erfand das 'Phase'-Konzept - keine 'Trilogien' mehr!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Comics inspiriert",
+          "type": "Ursprung"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Das Phase-Konzept wurde von Comics inspiriert - wie Stan Lee es machte!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Mega-Event",
+          "type": "Struktur"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Jede Phase endet mit einem 'Mega-Event' - wie The Avengers!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Keine Trilogien",
+          "type": "Grund"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Feige wollte nicht 'Iron Man Trilogy' sagen - sondern 'Phases'!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Stan Lee",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Stan Lee inspirierte das Konzept - aber Feige erfand es für Filme!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 2",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Das Konzept wurde in Phase 1 erfunden - nicht Phase 2!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Konzept", "MCU"],
+      "related": ["MCU_KEVIN_FEIGE"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_SIX_MONTHS_LATER",
+    "theme": "mcu",
+    "chapter": "phase_1",
+    "level": 2,
+    "waveDuration": 10,
+    "base": {
+      "word": "6 Monate später",
+      "type": "Timeline",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Iron Man 2",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Iron Man 2 spielt 6 Monate nach Iron Man - genau dokumentiert!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Iron Man",
+          "type": "Ausgangspunkt"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "6 Monate nach Iron Man beginnt Iron Man 2 - die Timeline ist präzise!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Gleichzeitig",
+          "type": "Timeline"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Iron Man 2 spielt gleichzeitig mit Hulk und Thor - in einer Woche!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2008-2010",
+          "type": "Zeitraum"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Von 2008 bis 2010 - genau 6 Monate später in der Timeline!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Ein Jahr",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Es waren 6 Monate - nicht ein Jahr!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Thor",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Thor spielt gleichzeitig mit Iron Man 2 - nicht 6 Monate später!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 1", "Timeline", "MCU"],
+      "related": ["MCU_IRON_MAN", "MCU_IRON_MAN_2"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  }
+]
+

@@ -1,0 +1,353 @@
+[
+  {
+    "id": "FORMEN_001",
+    "theme": "geometrie",
+    "chapter": "formen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Kreis",
+      "type": "Form",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498db",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "rund",
+          "type": "Eigenschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ein Kreis ist rund",
+        "visual": {
+          "color": "#2980b9",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "eckig",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ein Kreis ist nicht eckig",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Geometrie",
+      "tags": ["formen", "level1"]
+    }
+  },
+  {
+    "id": "FORMEN_002",
+    "theme": "geometrie",
+    "chapter": "formen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Quadrat",
+      "type": "Form",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498db",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "4 Ecken",
+          "type": "Eigenschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ein Quadrat hat 4 Ecken",
+        "visual": {
+          "color": "#2980b9",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "3 Ecken",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ein Quadrat hat nicht 3 Ecken",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Geometrie",
+      "tags": ["formen", "level1"]
+    }
+  },
+  {
+    "id": "FORMEN_003",
+    "theme": "geometrie",
+    "chapter": "formen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Dreieck",
+      "type": "Form",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498db",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "3 Seiten",
+          "type": "Eigenschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ein Dreieck hat 3 Seiten",
+        "visual": {
+          "color": "#2980b9",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "4 Seiten",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ein Dreieck hat nicht 4 Seiten",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Geometrie",
+      "tags": ["formen", "level1"]
+    }
+  },
+  {
+    "id": "FORMEN_004",
+    "theme": "geometrie",
+    "chapter": "formen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Rechteck",
+      "type": "Form",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498db",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "4 rechte Winkel",
+          "type": "Eigenschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ein Rechteck hat 4 rechte Winkel",
+        "visual": {
+          "color": "#2980b9",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "3 Winkel",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ein Rechteck hat nicht 3 Winkel",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Geometrie",
+      "tags": ["formen", "level1"]
+    }
+  },
+  {
+    "id": "FORMEN_005",
+    "theme": "geometrie",
+    "chapter": "formen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Raute",
+      "type": "Form",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498db",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "4 gleich lange Seiten",
+          "type": "Eigenschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Eine Raute hat 4 gleich lange Seiten",
+        "visual": {
+          "color": "#2980b9",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "3 Seiten",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Eine Raute hat nicht 3 Seiten",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Geometrie",
+      "tags": ["formen", "level1"]
+    }
+  }
+]
+

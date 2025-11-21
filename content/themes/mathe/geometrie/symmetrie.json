@@ -1,0 +1,353 @@
+[
+  {
+    "id": "SYMMETRIE_001",
+    "theme": "geometrie",
+    "chapter": "symmetrie",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Achsensymmetrie",
+      "type": "Symmetrie",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e91e63",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Spiegelachse",
+          "type": "Eigenschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Achsensymmetrie hat eine Spiegelachse",
+        "visual": {
+          "color": "#c2185b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Drehpunkt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Achsensymmetrie hat keine Drehpunkt",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Geometrie",
+      "tags": ["symmetrie", "level1"]
+    }
+  },
+  {
+    "id": "SYMMETRIE_002",
+    "theme": "geometrie",
+    "chapter": "symmetrie",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Punktsymmetrie",
+      "type": "Symmetrie",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e91e63",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Symmetriepunkt",
+          "type": "Eigenschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Punktsymmetrie hat einen Symmetriepunkt",
+        "visual": {
+          "color": "#c2185b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Spiegelachse",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Punktsymmetrie hat keine Spiegelachse",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Geometrie",
+      "tags": ["symmetrie", "level1"]
+    }
+  },
+  {
+    "id": "SYMMETRIE_003",
+    "theme": "geometrie",
+    "chapter": "symmetrie",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Quadrat Symmetrie",
+      "type": "Symmetrie",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e91e63",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "4 Symmetrieachsen",
+          "type": "Eigenschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ein Quadrat hat 4 Symmetrieachsen",
+        "visual": {
+          "color": "#c2185b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "2 Symmetrieachsen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ein Quadrat hat nicht 2 Symmetrieachsen",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Geometrie",
+      "tags": ["symmetrie", "level1"]
+    }
+  },
+  {
+    "id": "SYMMETRIE_004",
+    "theme": "geometrie",
+    "chapter": "symmetrie",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Kreis Symmetrie",
+      "type": "Symmetrie",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e91e63",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "unendlich viele Achsen",
+          "type": "Eigenschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ein Kreis hat unendlich viele Symmetrieachsen",
+        "visual": {
+          "color": "#c2185b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "4 Achsen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ein Kreis hat nicht nur 4 Achsen",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Geometrie",
+      "tags": ["symmetrie", "level1"]
+    }
+  },
+  {
+    "id": "SYMMETRIE_005",
+    "theme": "geometrie",
+    "chapter": "symmetrie",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Dreieck Symmetrie",
+      "type": "Symmetrie",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e91e63",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "gleichseitig = 3 Achsen",
+          "type": "Eigenschaft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ein gleichseitiges Dreieck hat 3 Symmetrieachsen",
+        "visual": {
+          "color": "#c2185b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "4 Achsen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ein gleichseitiges Dreieck hat nicht 4 Achsen",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Geometrie",
+      "tags": ["symmetrie", "level1"]
+    }
+  }
+]
+

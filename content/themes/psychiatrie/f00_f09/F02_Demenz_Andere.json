@@ -1,0 +1,110 @@
+[
+  {
+    "id": "F02_001",
+    "theme": "f00_f09",
+    "chapter": "F02_Demenz_Andere",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "F02.3",
+      "type": "ICD-10",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#4a6a7a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Parkinson-Demenz",
+          "type": "Diagnose"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "F02.3 = Demenz bei Parkinson.",
+        "visual": {
+          "color": "#6a8a9a",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Huntington",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Huntington = F02.2, nicht F02.3.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F02.2"
+      },
+      {
+        "entry": {
+          "word": "Pick-Krankheit",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Pick = F02.0, nicht F02.3.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F02.0"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": [
+        "demenz",
+        "parkinson",
+        "level1"
+      ],
+      "related": [
+        "F02_002",
+        "F01_001"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]
+

@@ -1,0 +1,250 @@
+[
+    {
+      "id": "FILME_F025",
+      "theme": "klassiker",
+      "chapter": "crime_thriller",
+      "level": 1,
+      "waveDuration": 10,
+      "base": {
+        "word": "The Departed",
+        "type": "Film",
+        "visual": {
+          "tier": 2,
+          "size": 1.2,
+          "appearance": "bold",
+          "color": "#9b59b6",
+          "glow": true,
+          "pulsate": true
+        }
+      },
+      "correct": [
+        {
+          "entry": {
+            "word": "2006",
+            "type": "VÖ-Jahr"
+          },
+          "spawnPosition": 0.2,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 1,
+          "context": "The Departed kam 2006 raus - und hat seitdem alle Undercover-Einsätze komplizierter gemacht!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Crime Thriller",
+            "type": "Primär_Genre"
+          },
+          "spawnPosition": 0.4,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 2,
+          "context": "The Departed ist ein Crime Thriller - perfekt für alle, die gerne Verwirrung spielen!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "Martin Scorsese",
+            "type": "Regisseur"
+          },
+          "spawnPosition": 0.6,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 3,
+          "context": "Martin Scorsese inszenierte The Departed mit seiner typischen Gangster-Ästhetik - perfekt für einen Film über Verrat!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.1
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "L. DiCaprio",
+            "type": "Hauptdarsteller"
+          },
+          "spawnPosition": 0.7,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 4,
+          "context": "Leonardo DiCaprio spielte Billy Costigan - den Mann, der sehr mutig ist und sehr viel riskiert!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "M. Damon",
+            "type": "Hauptdarsteller"
+          },
+          "spawnPosition": 0.8,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 5,
+          "context": "Matt Damon spielte Colin Sullivan - den Mann, der sehr clever ist und sehr viel versteckt!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        },
+        {
+          "entry": {
+            "word": "J. Nicholson",
+            "type": "Hauptdarsteller"
+          },
+          "spawnPosition": 0.9,
+          "spawnSpread": 0.05,
+          "speed": 0.9,
+          "points": 200,
+          "pattern": "linear_inward",
+          "hp": 1,
+          "collectionOrder": 6,
+          "context": "Jack Nicholson spielte Frank Costello - den Mann, der sehr böse ist und sehr viel Macht hat!",
+          "visual": {
+            "color": "#7fe8a2",
+            "variant": "bubble",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "bubble_hit_soft.mp3"
+        }
+      ],
+      "distractors": [
+        {
+          "entry": {
+            "word": "Michael Mann",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.15,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Michael Mann hat The Departed nicht gedreht - aber er hätte sicherlich mehr Action eingebaut!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Quentin Tarantino",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.85,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Quentin Tarantino wäre zu gewalttätig für The Departed gewesen - aber er hätte sicherlich mehr Dialoge eingebaut!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Mark Wahlberg",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.3,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Mark Wahlberg war zwar im Film, aber nicht der Hauptdarsteller - er spielte nur den Polizisten mit dem großen Mund!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        },
+        {
+          "entry": {
+            "word": "Robert De Niro",
+            "type": "Wrong"
+          },
+          "spawnPosition": 0.7,
+          "spawnSpread": 0.05,
+          "speed": 1.2,
+          "points": 100,
+          "hp": 1,
+          "damage": 1,
+          "behavior": "seek_center",
+          "redirect": "",
+          "context": "Robert De Niro war nicht in The Departed - aber er hätte sicherlich auch gut gepasst, besonders als Gangster!",
+          "visual": {
+            "color": "#FF5722",
+            "variant": "diamond",
+            "pulsate": true,
+            "fontSize": 1.0
+          },
+          "sound": "explosion_minor.mp3"
+        }
+      ],
+      "meta": {
+        "source": "Film-Datenbank",
+        "tags": ["Crime Thriller", "2006"],
+        "related": [],
+        "difficultyScaling": {
+          "speedMultiplierPerReplay": 0.1,
+          "colorContrastFade": true,
+          "angleVariance": 5
+        }
+      }
+  }
+]
+

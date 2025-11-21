@@ -1,0 +1,80 @@
+{
+  "id": "typen",
+  "name": "Typen",
+  "description": "Lerne die Pokemon-Typen - Feuer, Wasser, Pflanze und mehr!",
+  "colorPrimary": "#ff6b35",
+  "colorAccent": "#f7931e",
+  "backgroundGradient": [
+    "#e74c3c",
+    "#c0392b"
+  ],
+  "maxLevels": 15,
+  "icon": "🔥",
+  "shipSkin": "/assets/ships/pokemon_ship.svg",
+  "laserColor": "#ff6b35",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "feuer": {
+      "backgroundImage": "feuer_bg.png",
+      "backgroundGradient": [
+        "#e74c3c",
+        "#c0392b"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "feuer_theme.mp3",
+      "particleEffect": "fire_energy"
+    },
+    "wasser": {
+      "backgroundImage": "wasser_bg.png",
+      "backgroundGradient": [
+        "#3498db",
+        "#2980b9"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "wasser_theme.mp3",
+      "particleEffect": "water_energy"
+    },
+    "pflanze": {
+      "backgroundImage": "pflanze_bg.png",
+      "backgroundGradient": [
+        "#27ae60",
+        "#2ecc71"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "pflanze_theme.mp3",
+      "particleEffect": "grass_energy"
+    },
+    "elektro": {
+      "backgroundImage": "elektro_bg.png",
+      "backgroundGradient": [
+        "#f39c12",
+        "#e67e22"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "elektro_theme.mp3",
+      "particleEffect": "electric_energy"
+    },
+    "normal": {
+      "backgroundImage": "normal_bg.png",
+      "backgroundGradient": [
+        "#95a5a6",
+        "#7f8c8d"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "normal_theme.mp3",
+      "particleEffect": "normal_energy"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

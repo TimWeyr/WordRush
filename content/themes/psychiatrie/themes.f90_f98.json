@@ -1,0 +1,30 @@
+{
+  "id": "f90_f98",
+  "name": "F90-F98: Verhaltens- und emotionale Störungen mit Beginn in der Kindheit und Jugend",
+  "description": "Lerne hyperkinetische Störungen, Störungen des Sozialverhaltens, emotionale Störungen des Kindesalters, Tic-Störungen und andere Verhaltens- und emotionale Störungen.",
+  "colorPrimary": "#a5a54a",
+  "colorAccent": "#c8c86b",
+  "backgroundGradient": [
+    "#85852a",
+    "#a5a54a"
+  ],
+  "maxLevels": 15,
+  "icon": "👶",
+  "shipSkin": "/assets/ships/medical_ship.svg",
+  "laserColor": "#a5a54a",
+  "relatedPackages": [
+    "icd10",
+    "psychiatrie",
+    "childhood"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "source": "ICD-10-GM 2025",
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

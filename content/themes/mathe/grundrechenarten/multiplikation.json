@@ -1,0 +1,2193 @@
+[
+  {
+    "id": "MULTIPLIKATION_001",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "2 × 2",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "4",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "2 × 2 = 4",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "3",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "3 ist falsch, 2 × 2 = 4",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_002",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "2 × 3",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "6",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "2 × 3 = 6",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "5",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "5 ist falsch, 2 × 3 = 6",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_003",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "3 × 2",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "6",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "3 × 2 = 6",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "5",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "5 ist falsch, 3 × 2 = 6",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_004",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "2 × 4",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "8",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "2 × 4 = 8",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "6",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "6 ist falsch, 2 × 4 = 8",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_005",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "3 × 3",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "9",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "3 × 3 = 9",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "6",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "6 ist falsch, 3 × 3 = 9",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_006",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "2 × 5",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "10",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "2 × 5 = 10",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "8",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "8 ist falsch, 2 × 5 = 10",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_007",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "4 × 2",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "8",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "4 × 2 = 8",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "6",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "6 ist falsch, 4 × 2 = 8",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_008",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "3 × 4",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "12",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "3 × 4 = 12",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "10",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "10 ist falsch, 3 × 4 = 12",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_009",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "4 × 3",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "12",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "4 × 3 = 12",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "10",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "10 ist falsch, 4 × 3 = 12",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_010",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "5 × 2",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "10",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "5 × 2 = 10",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "8",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "8 ist falsch, 5 × 2 = 10",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_011",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "5 × 5",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "25",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "5 × 5 = 25",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "20",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "20 ist falsch, 5 × 5 = 25",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level3"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_012",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "6 × 4",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "24",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "6 × 4 = 24",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "20",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "20 ist falsch, 6 × 4 = 24",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level3"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_013",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "7 × 3",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "21",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "7 × 3 = 21",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "18",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "18 ist falsch, 7 × 3 = 21",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level3"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_014",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "8 × 3",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "24",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "8 × 3 = 24",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "21",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "21 ist falsch, 8 × 3 = 24",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level3"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_015",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "4 × 6",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "24",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "4 × 6 = 24",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "20",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "20 ist falsch, 4 × 6 = 24",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level3"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_016",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "5 × 6",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "30",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "5 × 6 = 30",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "25",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "25 ist falsch, 5 × 6 = 30",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level3"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_017",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "7 × 4",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "28",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "7 × 4 = 28",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "24",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "24 ist falsch, 7 × 4 = 28",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level3"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_018",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "6 × 5",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "30",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "6 × 5 = 30",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "25",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "25 ist falsch, 6 × 5 = 30",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level3"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_019",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "8 × 4",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "32",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "8 × 4 = 32",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "28",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "28 ist falsch, 8 × 4 = 32",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level3"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_020",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "9 × 3",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "27",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "9 × 3 = 27",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "24",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "24 ist falsch, 9 × 3 = 27",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level3"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_021",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "6 × 6",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "36",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "6 × 6 = 36",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "30",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "30 ist falsch, 6 × 6 = 36",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level5"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_022",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "7 × 5",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "35",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "7 × 5 = 35",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "30",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "30 ist falsch, 7 × 5 = 35",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level5"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_023",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "8 × 5",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "40",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "8 × 5 = 40",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "35",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "35 ist falsch, 8 × 5 = 40",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level5"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_024",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "9 × 4",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "36",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "9 × 4 = 36",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "32",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "32 ist falsch, 9 × 4 = 36",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level5"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_025",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "10 × 3",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "30",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "10 × 3 = 30",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "27",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "27 ist falsch, 10 × 3 = 30",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level5"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_026",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "7 × 6",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "42",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "7 × 6 = 42",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "36",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "36 ist falsch, 7 × 6 = 42",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level5"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_027",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "8 × 6",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "48",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "8 × 6 = 48",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "42",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "42 ist falsch, 8 × 6 = 48",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level5"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_028",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "9 × 5",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "45",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "9 × 5 = 45",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "40",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "40 ist falsch, 9 × 5 = 45",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level5"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_029",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "10 × 4",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "40",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "10 × 4 = 40",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "36",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "36 ist falsch, 10 × 4 = 40",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level5"
+      ]
+    }
+  },
+  {
+    "id": "MULTIPLIKATION_030",
+    "theme": "grundrechenarten",
+    "chapter": "multiplikation",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "9 × 6",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "54",
+          "type": "Ergebnis"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "9 × 6 = 54",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "48",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "48 ist falsch, 9 × 6 = 54",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Grundrechenarten",
+      "tags": [
+        "multiplikation",
+        "level5"
+      ]
+    }
+  }
+]
+

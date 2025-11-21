@@ -1,0 +1,113 @@
+{
+  "id": "blockbuster",
+  "name": "Blockbuster",
+  "description": "Lerne die größten Blockbuster kennen - Von Action bis Fantasy! 🎬",
+  "colorPrimary": "#9b59b6",
+  "colorAccent": "#8e44ad",
+  "backgroundGradient": [
+    "#9b59b6",
+    "#8e44ad"
+  ],
+  "maxLevels": 10,
+  "icon": "🎥",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "crime": {
+      "backgroundGradient": [
+        "#2a1a0a",
+        "#4a2a1a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "action": {
+      "backgroundGradient": [
+        "#3a1a0a",
+        "#5a2a1a"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "scifi": {
+      "backgroundGradient": [
+        "#0a1a2a",
+        "#1a2a4a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "drama": {
+      "backgroundGradient": [
+        "#2a2a2a",
+        "#4a4a4a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "fantasy": {
+      "backgroundGradient": [
+        "#1a0a2a",
+        "#2a1a4a"
+      ],
+      "spawnRate": 1.4,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "musical": {
+      "backgroundGradient": [
+        "#3a2a1a",
+        "#5a4a2a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "thriller": {
+      "backgroundGradient": [
+        "#1a0a0a",
+        "#3d1a1a"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "adventure_fantasy": {
+      "backgroundGradient": [
+        "#1a0a2a",
+        "#2a1a4a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "animation": {
+      "backgroundGradient": [
+        "#2a3a4a",
+        "#4a5a6a"
+      ],
+      "spawnRate": 1.4,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

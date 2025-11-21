@@ -1,0 +1,40 @@
+{
+  "id": "charts",
+  "name": "Charts",
+  "description": "Lerne Chart-Hits - Bands, Alben und Songs aus den Charts.",
+  "colorPrimary": "#FF6B35",
+  "colorAccent": "#F7931E",
+  "backgroundGradient": [
+    "#FF8C42",
+    "#FF6B35"
+  ],
+  "maxLevels": 15,
+  "icon": "📊",
+  "shipSkin": "/assets/ships/music_ship.svg",
+  "laserColor": "#FF6B35",
+  "relatedPackages": [
+    "music_history",
+    "charts_music"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "80er": {
+      "backgroundImage": "charts_80er_bg.png",
+      "backgroundGradient": [
+        "#FF8C42",
+        "#FF6B35"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "charts_80er_theme.mp3",
+      "particleEffect": "charts_energy"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

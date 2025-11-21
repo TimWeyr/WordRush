@@ -1,0 +1,73 @@
+[
+  {
+    "id": "DOENER_001",
+    "theme": "fastfood",
+    "chapter": "döner",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Döner Kebab",
+      "type": "Fast Food",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Türkische Küche",
+          "type": "Herkunft"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Döner kommt aus der türkischen Küche (Sehr beliebt in Deutschland! 🥙)",
+        "visual": {
+          "color": "#e67e22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Italienische Küche",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Das wäre Pizza! (Döner ist türkisch! 🥙)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Fast Food Wissen",
+      "tags": ["döner", "level1"]
+    }
+  }
+]
+

@@ -1,0 +1,123 @@
+/* Galaxy Map Styles */
+
+.galaxy-map-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #0f1038;
+}
+
+.galaxy-map-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: grab;
+}
+
+.galaxy-map-canvas:active {
+  cursor: grabbing;
+}
+
+.galaxy-map-controls {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.universe-select {
+  padding: 10px 15px;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #4a90e2;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.universe-select option {
+  background: #0f1038;
+  color: #ffffff;
+}
+
+.mode-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.mode-toggle button {
+  padding: 10px 20px;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #4a90e2;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mode-toggle button:hover {
+  background: rgba(74, 144, 226, 0.3);
+}
+
+.mode-toggle button.active {
+  background: linear-gradient(180deg, #00ff88 0%, #00aa55 100%);
+  border-color: #ffffff;
+}
+
+.settings-icon-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #4a90e2;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: all 0.2s;
+  color: #4a90e2;
+}
+
+.settings-icon-button:hover {
+  background: rgba(74, 144, 226, 0.3);
+  border-color: #7bb3f0;
+  transform: rotate(90deg);
+  box-shadow: 0 0 15px rgba(74, 144, 226, 0.5);
+}
+
+.back-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.315);
+  border: 2px solid #4a90e2;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4px;
+  height: 40px;
+}
+
+.back-button:hover {
+  background: rgba(74, 144, 226, 0.3);
+  border-color: #7bb3f0;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+.back-button:active {
+  transform: scale(0.95);
+}

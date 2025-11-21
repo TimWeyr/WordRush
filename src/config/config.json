@@ -1,0 +1,19 @@
+{
+  "gameplay": {
+    "baseSpeed": 120,
+    "shipSpeed": 300,
+    "shipSmoothFactor": 0.15,
+    "laserSpeed": 1200,
+    "laserCooldown": 0.2,
+    "startHealth": 10,
+    "maxConcurrentObjects": 10,
+    "waveDuration": 8
+  },
+  "collision": {
+    "shipRadius": 30,
+    "defaultObjectRadius": 40,
+    "overlapTolerance": 0.1
+  },
+  "version": "0.1.0"
+}
+

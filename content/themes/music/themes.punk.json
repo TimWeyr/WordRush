@@ -1,0 +1,62 @@
+{
+  "id": "punk",
+  "name": "Punk",
+  "description": "Lerne Punk Musikgeschichte - Bands, Alben, Songs und Erscheinungsjahre.",
+  "colorPrimary": "#e74c3c",
+  "colorAccent": "#c0392b",
+  "backgroundGradient": [
+    "#3a2a2a",
+    "#5a3a3a"
+  ],
+  "maxLevels": 15,
+  "icon": "🎸",
+  "shipSkin": "/assets/ships/music_ship.svg",
+  "laserColor": "#e74c3c",
+  "relatedPackages": [
+    "music_history",
+    "punk_music"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "mixed": {
+      "backgroundImage": "punk_bg.png",
+      "backgroundGradient": [
+        "#3a2a2a",
+        "#5a3a3a"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "punk_theme.mp3",
+      "particleEffect": "punk_energy"
+    },
+    "riot_girl": {
+      "backgroundImage": "riot_girl_bg.png",
+      "backgroundGradient": [
+        "#5a2a3a",
+        "#7a3a5a"
+      ],
+      "spawnRate": 1.7,
+      "waveDuration": 3,
+      "music": "riot_girl_theme.mp3",
+      "particleEffect": "riot_energy"
+    },
+    "planet_punk": {
+      "backgroundImage": "planet_punk_bg.png",
+      "backgroundGradient": [
+        "#4a3a2a",
+        "#6a4a3a"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "planet_punk_theme.mp3",
+      "particleEffect": "punk_energy"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

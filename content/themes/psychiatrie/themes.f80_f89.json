@@ -1,0 +1,30 @@
+{
+  "id": "f80_f89",
+  "name": "F80-F89: Entwicklungsstörungen",
+  "description": "Lerne umschriebene Entwicklungsstörungen des Sprechens und der Sprache, schulischer Fertigkeiten, der motorischen Funktionen sowie tiefgreifende Entwicklungsstörungen.",
+  "colorPrimary": "#4aa57b",
+  "colorAccent": "#6bc89d",
+  "backgroundGradient": [
+    "#2a855b",
+    "#4aa57b"
+  ],
+  "maxLevels": 15,
+  "icon": "🌱",
+  "shipSkin": "/assets/ships/medical_ship.svg",
+  "laserColor": "#4aa57b",
+  "relatedPackages": [
+    "icd10",
+    "psychiatrie",
+    "developmental"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "source": "ICD-10-GM 2025",
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

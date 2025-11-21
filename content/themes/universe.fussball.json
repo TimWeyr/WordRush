@@ -1,0 +1,31 @@
+{
+  "id": "fussball",
+  "name": "Fußball",
+  "description": "Lerne Fußballwissen durch interaktives Gameplay - Vereine, Spieler, Stadien und mehr.",
+  "colorPrimary": "#00AA00",
+  "colorAccent": "#008800",
+  "backgroundGradient": [
+    "#1a5a1a",
+    "#2d7a2d"
+  ],
+  "icon": "⚽",
+  "available": true,
+  "language": "de",
+  "music": {
+    "theme": "fussball_universe_theme.mp3",
+    "volume": 0.6
+  },
+  "particleEffect": "fussball_particles",
+  "shipSkin": "fussball_ship",
+  "laserColor": "#00AA00",
+  "themes": [
+    "deutschland",
+    "wm"
+  ],
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

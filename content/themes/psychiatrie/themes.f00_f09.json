@@ -1,0 +1,120 @@
+{
+  "id": "f00_f09",
+  "name": "F00-F09: Organische, einschließlich symptomatischer psychischer Störungen",
+  "description": "Lerne organische und symptomatische psychische Störungen - Demenz, Delir, amnestische Syndrome und andere hirnorganische Störungen.",
+  "colorPrimary": "#4a6fa5",
+  "colorAccent": "#6b8db8",
+  "backgroundGradient": [
+    "#2a4a6a",
+    "#4a6a8a"
+  ],
+  "maxLevels": 15,
+  "icon": "🧠",
+  "shipSkin": "/assets/ships/medical_ship.svg",
+  "laserColor": "#4a6fa5",
+  "relatedPackages": [
+    "icd10",
+    "psychiatrie"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "F00_Demenz_Alzheimer": {
+      "backgroundGradient": [
+        "#2a4a6a",
+        "#3a5a7a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "f00_demenz_alzheimer_theme.mp3",
+      "particleEffect": "medical_particles"
+    },
+    "F01_Demenz_Vaskulaer": {
+      "backgroundGradient": [
+        "#3a4a6a",
+        "#5a4a6a"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "f01_demenz_vaskulaer_theme.mp3",
+      "particleEffect": "medical_particles"
+    },
+    "F02_Demenz_Andere": {
+      "backgroundGradient": [
+        "#2a5a6a",
+        "#4a6a7a"
+      ],
+      "spawnRate": 1.7,
+      "waveDuration": 3,
+      "music": "f02_demenz_andere_theme.mp3",
+      "particleEffect": "medical_particles"
+    },
+    "F03_Demenz_NNB": {
+      "backgroundGradient": [
+        "#3a5a6a",
+        "#5a6a7a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "f03_demenz_nnb_theme.mp3",
+      "particleEffect": "medical_particles"
+    },
+    "F04_Amnestisches_Syndrom": {
+      "backgroundGradient": [
+        "#2a4a7a",
+        "#4a5a8a"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "f04_amnestisches_syndrom_theme.mp3",
+      "particleEffect": "medical_particles"
+    },
+    "F05_Delir": {
+      "backgroundGradient": [
+        "#4a3a6a",
+        "#6a4a7a"
+      ],
+      "spawnRate": 1.8,
+      "waveDuration": 3,
+      "music": "f05_delir_theme.mp3",
+      "particleEffect": "medical_particles"
+    },
+    "F06_Organische_Psychosen": {
+      "backgroundGradient": [
+        "#2a5a7a",
+        "#4a6a8a"
+      ],
+      "spawnRate": 1.7,
+      "waveDuration": 3,
+      "music": "f06_organische_psychosen_theme.mp3",
+      "particleEffect": "medical_particles"
+    },
+    "F07_Persoenlichkeitsstoerung": {
+      "backgroundGradient": [
+        "#3a5a7a",
+        "#5a6a8a"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "f07_persoenlichkeitsstoerung_theme.mp3",
+      "particleEffect": "medical_particles"
+    },
+    "F09_NNB": {
+      "backgroundGradient": [
+        "#4a5a6a",
+        "#6a7a8a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "f09_nnb_theme.mp3",
+      "particleEffect": "medical_particles"
+    }
+  },
+  "meta": {
+    "source": "ICD-10-GM 2025",
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

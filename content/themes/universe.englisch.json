@@ -1,0 +1,31 @@
+{
+  "id": "englisch",
+  "name": "Englisch",
+  "description": "Lerne Englisch durch interaktives Gameplay - Vokabeln, Grammatik und Alltagssprache.",
+  "colorPrimary": "#4a90e2",
+  "colorAccent": "#7bb3f0",
+  "backgroundGradient": [
+    "#1a3a5f",
+    "#2d5a8a"
+  ],
+  "icon": "🇬🇧",
+  "available": true,
+  "language": "de",
+  "music": {
+    "theme": "english_universe_theme.mp3",
+    "volume": 0.6
+  },
+  "particleEffect": "language_particles",
+  "shipSkin": "english_ship",
+  "laserColor": "#4a90e2",
+  "themes": [
+    "english_cap",
+    "business_english",
+    "technical_english"
+  ],
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-11-16"
+  }
+}

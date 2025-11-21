@@ -1,0 +1,95 @@
+{
+  "id": "technical_english",
+  "name": "Technik & MINT Englisch",
+  "description": "Lerne wichtiges Technik- und Informatik-Englisch für Computer, Programmierung, Hardware und mehr.",
+  "colorPrimary": "#00d4ff",
+  "colorAccent": "#00a8cc",
+  "backgroundGradient": [
+    "#0a1929",
+    "#132f4c"
+  ],
+  "maxLevels": 36,
+  "icon": "💻",
+  "shipSkin": "/assets/ships/technical_ship.svg",
+  "laserColor": "#00d4ff",
+  "relatedPackages": [
+    "technical_basics",
+    "computer_science"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Computer_Basics": {
+      "backgroundImage": "computer_basics_bg.png",
+      "backgroundGradient": [
+        "#001e3c",
+        "#003d7a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "computer_basics_theme.mp3",
+      "particleEffect": "tech_particles"
+    },
+    "Programming_Software": {
+      "backgroundImage": "programming_bg.png",
+      "backgroundGradient": [
+        "#1a237e",
+        "#283593"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "programming_theme.mp3",
+      "particleEffect": "code_particles"
+    },
+    "Hardware_Devices": {
+      "backgroundImage": "hardware_bg.png",
+      "backgroundGradient": [
+        "#424242",
+        "#616161"
+      ],
+      "spawnRate": 1.7,
+      "waveDuration": 3,
+      "music": "hardware_theme.mp3",
+      "particleEffect": "circuit_particles"
+    },
+    "Networks_Internet": {
+      "backgroundImage": "networks_bg.png",
+      "backgroundGradient": [
+        "#006064",
+        "#00838f"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "networks_theme.mp3",
+      "particleEffect": "network_particles"
+    },
+    "Data_Science_AI": {
+      "backgroundImage": "ai_bg.png",
+      "backgroundGradient": [
+        "#4a148c",
+        "#6a1b9a"
+      ],
+      "spawnRate": 1.8,
+      "waveDuration": 3,
+      "music": "ai_theme.mp3",
+      "particleEffect": "neural_particles"
+    },
+    "Cybersecurity": {
+      "backgroundImage": "cybersecurity_bg.png",
+      "backgroundGradient": [
+        "#b71c1c",
+        "#c62828"
+      ],
+      "spawnRate": 1.7,
+      "waveDuration": 3,
+      "music": "cybersecurity_theme.mp3",
+      "particleEffect": "shield_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

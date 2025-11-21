@@ -1,0 +1,774 @@
+Gesamtkonzept WordRush – Technische Spezifikation (aktuelle Fassung)
+Stand: Shooter-only + Lern und Testmodus + 2D-Side-Scroller mit Galaxy-Hub
+________________________________________
+1. Gesamtidee
+1.1 Ziel der App
+•	Interaktives Lernspiel für Sprache & Fachwissen (z. B. ICD-10, Psychologie, Sprachen, Mathe).
+•	Kernmechanik:
+o	Ship fliegt, sammelt correct-Wörter ein.
+o	Distractors werden mit Laser abgeschossen oder verursachen Schaden.
+•	Lernen passiert direkt im Shooter:
+o	Lernmodus: correct vs. distractors farblich unterscheidbar, aber nur 10 % Punkte.
+o	Nach erstem korrektem Umgang mit einem Item wird es nicht mehr farblich unterschieden → voller Punktwert.
+•	Fortschritt sichtbar über Galaxy-Map-Hub (Planeten & Orbits) und Statistiken.
+•	Spiel bleibt vollständig 2D, Tiefenwirkung nur visuell (Parallax).
+1.2 Technikgrundlage
+•	Web-first:
+o	React + Vite
+o	HTML5 Canvas (optional Pixi.js als Renderer)
+•	LocalStorage als primärer Speicher:
+o	Fortschritt, Settings, Lernstatus (Stützräder), Orientierung.
+o	Später austauschbar gegen Supabase (Adapter).
+o	System so bauen das sich Nutzerdaten und Fortschritt leicht mit Supabase schreiben lassen. 
+•	PWA-fähig, Basis für iOS/Android via Capacitor.
+•	Datengetrieben:
+o	Inhalte aus themes.json + words.json.
+o	Engine liest nur JSON, keine Hardcodes in der Logik.
+________________________________________
+2. Architektur & Modularität
+2.1 Verzeichnisstruktur (Vorschlag)
+	Dateien und Logik gut aufteilen, eher mehrere kleine Dateien die übersichtlich sind 
+•	/core
+o	GameLoop, Renderer, SceneManager, Collision, AudioManager.
+•	/logic
+o	ShooterEngine, SmartieView (optional), Difficulty, Scoring.
+•	/ui
+o	Galaxy-Map-Hub, HUD, Settings-Panel, Dialoge.
+•	/ui/grafics
+o	Ship.png schiff grafik.
+•	/audio
+o	/music/ – Theme-Musik (z. B. depression_theme.mp3)
+o	/sfx/ – Sound-Effekte (z. B. bubble_hit_soft.mp3, explosion_minor.mp3)
+•	/content
+o	themes/ – Universe- und Theme-Struktur:
+	universe.<id>.json – Universe-Definitionen (z. B. universe.englisch.json, universe.psychiatrie.json).
+	themes/<universe_id>/themes.<theme_id>.json – Theme-Definitionen liegen direkt im Universe-Ordner.
+	themes/<universe_id>/<theme_id>/ – Theme-Ordner für Chapter-Dateien.
+	themes/<universe_id>/<theme_id>/<chapter_id>.json – Chapter-Definitionen (words.json).
+	Engine lädt alle verfügbaren universe.json für die Universe-Auswahl.
+	Nach Universe-Auswahl lädt Engine alle themes.json aus dem gewählten Universe-Ordner.
+•	/infra
+o	ProgressProvider (LocalStorage), zukünftiger SupabaseProvider.
+•	/config
+o	config.json – Gameplay-Konstanten, Geschwindigkeiten, Collision-Werte
+o	ui.json – UI-Spezifische Einstellungen
+o	keybindings.json – Tastenbelegung (optional, für spätere Erweiterung)
+•	Audio-Dateien:
+o	In JSON: Nur Dateinamen (z. B. "bubble_hit_soft.mp3")
+o	Engine ergänzt automatisch Pfad: /audio/sfx/ oder /audio/music/
+o	Format: .mp3 (beste Web-Unterstützung)
+o	AudioManager: Preload per Chapter, automatisches Fallback auf Stille bei fehlendem File.
+2.2 Entkopplung über Provider
+•	Engine spricht nur mit Interfaces:
+o	ProgressProvider, SettingsProvider, AudioProvider.
+•	Default: Local-Adapter:
+o	LocalProgress, LocalSettings, LocalAudio.
+•	Später: SupabaseProgress, RemoteSettings etc. einklinkbar ohne Änderung der Engine.
+________________________________________
+3. Kern-Spielmodus: Shooter
+3.1 Grundobjekte
+•	Base
+o	Feste Position:
+	Vertikale Orientierung: Base unten am Screen.
+	Horizontale Orientierung: Base links am Screen (um 90° gedreht).
+o	Repräsentiert das aktuelle Lernkonzept (base.word oder base.image).
+o	Wird nicht gesteuert, sondern ist visuelle & semantische Referenz.
+o	Darstellung:
+	Text-Modus: Wird als Text dargestellt (base.word + base.visual), wenn base.image nicht vorhanden ist.
+	Grafik-Modus: Wird als Bild dargestellt (base.image + base.visual), wenn base.image vorhanden ist.
+o	Engine-Logik: Wenn base.image vorhanden → Grafik verwenden, sonst base.word als Text.
+o	Wird optisch dargestellt wie in base:visual konfiguriert (size, color, glow, pulsate gelten für beide Modi).
+•	Ship
+o	Eigenständiges Objekt, wird vom Spieler gesteuert.
+o	Bewegt sich frei in 2D (x,y) innerhalb des Spielfeldes.
+o	Hat Health-Balken (Standard: health = 10, aus config.json.startHealth).
+o	Health ist persistent über alle Items einer Session.
+o	Bei Rückkehr zur Galaxy-Map: Health wird auf Startwert zurückgesetzt.
+o	Keine Health-Regeneration während des Spiels.
+•	Correct-Objekte
+o	Semantisch passende Elemente zum base-Konzept.
+	Quelle: words:correct:entry.word oder words:correct:entry.image
+o	Darstellung:
+	Text-Modus: entry.word wird als Text dargestellt (wenn entry.image nicht vorhanden).
+	Grafik-Modus: entry.image wird als Grafik dargestellt (wenn vorhanden).
+	Engine-Logik: Wenn entry.image vorhanden → Grafik, sonst entry.word.
+	entry.visual gilt für beide Modi (color als Overlay/Tint bei Grafiken).
+o	Sollen vom Ship eingesammelt werden (Ship-Kollision).
+o	Wenn sie nicht eingesammelt werden fliegen sie auf base zu.
+•	Distractor-Objekte
+o	Irreführende/ähnliche Begriffe.
+	Quelle: words:distractors:entry.word oder words:distractors:entry.image
+o	Darstellung: Gleiche Logik wie bei Correct (Text oder Grafik).
+o	Sollen mit dem Laser abgeschossen werden, dürfen nicht eingesammelt werden. Sonst schaden distractors:damage auf ship.health
+3.2 Rundenstruktur
+•	Eine Runde = alle correct + distractors eines words.json-Eintrags (Base-Item).
+•	Ablauf:
+0.	Lade Base + zugehörige correct/distractors.
+1. zeige für 1 sekunde introText an wenn das merkmal exisitert und nicht leer ist.
+2.	Spawne Wellen entsprechend spawnPosition, speed, pattern, spawnSpread.
+3.	Spieler steuert Ship, sammelt correct ein, schießt distractors ab.
+4.	Runde endet, wenn:
+	alle Objekte verarbeitet sind (gesammelt oder zerstört), oder
+	Ship-Health 0 erreicht.
+5.	Danach:
+	Bei Health > 0 → Runde ausgewertet, Fortschritt gespeichert.
+	Übergang zur nächsten Runde:
+	Base-Wechsel-Animation (Fade-out alte Base, Fade-in neue Base, 1-1.5s).
+	Während Übergang: Kurze Score-Anzeige der letzten Runde.
+	Ship bleibt sichtbar,  steuerbar während Übergang.
+	Neue Runde startet nach Übergang automatisch. 
+	Bei Health = 0 → Game Over:
+	Sofortige Bewegungs-Freeze des Ships.
+	1.5s Explosion-Animation mit Screen-Shake.
+	Fade-out zur Galaxy-Map.
+	Progress wird trotzdem gespeichert (bereits gesammelte Items bleiben erhalten).
+________________________________________
+4. Steuerung
+4.1 PC-Steuerung
+•	Bewegung
+o	Mausposition steuert die Ship-Position mit Smooth-Follow:
+	shipPos += (mousePos - shipPos) * smoothFactor * deltaTime
+	smoothFactor = 0.15 (aus config.json)
+	Max-Geschwindigkeit: 300 px/s (config.json.shipSpeed)
+o	Ship kann nicht aus Spielfeld-Grenzen (Padding: 20px zum Rand).
+•	Schießen
+o	Linke Maustaste → Laser-Schuss.
+	Startpunkt = Ship-Position.
+	Richtung = zum Mauszeiger.
+	Laser-Geschwindigkeit: 1200 px/s (config.json.laserSpeed)
+	Reichweite: Bis Bildschirmrand, dann despawn
+	Durchschlagskraft: Trifft nur ERSTES Objekt, dann despawn
+	Cooldown: 0.2s zwischen Schüssen (config.json.laserCooldown)
+	Treffer:
+	Distractor → korrekt: Explosion, Punkte +, evtl. redirect-Anzeige.
+	Correct → Fehler: Correct explodiert, Punkte −, Lernstatus angepasst.
+•	Weitere Tasten
+o	ESC → zurück zum Galaxy-Hub.
+•	Pause-Mechanik
+o	Wenn Mauszeiger das Fenster verlässt → Spiel pausiert automatisch.
+o	Resume mit Play-Taste (Overlay mit "Play"-Button erscheint).
+o	Pausiert auch bei: Tab-Wechsel, Fenster verliert Fokus.
+4.2 Touch-Steuerung (Tablet, Smartphone)
+•	Bewegung
+o	Ein Finger auf dem Screen:
+	Ship bewegt sich mit maxSpeed (300 px/s) in Richtung Touch-Position.
+	Stoppt bei Erreichen (Threshold: 5px).
+o	Ship kann nicht aus Spielfeld-Grenzen (Padding: 20px zum Rand).
+•	Schießen
+o	Zweiter Finger → Laser-Schuss von aktueller Ship-Position in Richtung Finger.
+	Gleiche Laser-Eigenschaften wie PC (Geschwindigkeit, Cooldown, Durchschlag).
+o	Alternativ zusätzlich:
+	Fire-Button links unten im Screen:
+	Tap löst Laser-Schuss in Richtung zuletzt genutzter Bewegungsrichtung / Zielreticle aus.
+•	Kollisionen:
+o	Ship + correct → Einsammeln (correct.points)
+o	Ship + distractor → Schaden (distractors.damage)
+o	Base + correct  Punkte addieren (correct.points)
+o	Base + distractor  Punkte abziehen (distractors.points)
+4.3 Kollisionserkennung
+•	Primär: Circle-Collision (Performance, smooth)
+•	Radius-Berechnung:
+o	Text-Objekte: 50% der Textbreite + fontSize-Faktor
+o	Grafik-Objekte: 50% der kleineren Dimension (width/height) * size-Faktor
+o	Ship: Fester Radius von 30px (kleinere Hitbox als Grafik → fairer)
+•	Toleranz: 10% Überlappung nötig für Kollision (verhindert "Touch-Unfälle")
+•	Optional in visual: collisionRadius überschreibt Auto-Berechnung
+•	Definiert in config.json: shipRadius, defaultObjectRadius, overlapTolerance
+________________________________________
+5. Orientierung & Landschaft
+5.1 Orientierung (vertical/horizontal)
+•	Steuerung über config.json.orientationConfig:
+{
+  "orientationConfig": {
+    "vertical": {
+      "spawnFrom": "top",
+      "basePosition": "bottom_center",
+      "shipBounds": "screen"
+    },
+    "horizontal": {
+      "spawnFrom": "right",
+      "basePosition": "center_left",
+      "shipBounds": "screen"
+    }
+  }
+}
+•	Umschaltung:
+o	Automatisch (abhängig von Aspect Ratio) oder
+o	Manuell über Settings (Dropdown: „Vertikal / Horizontal“).
+5.2 Landschaft (Parallax, Mittelkomplexität)
+•	3–4 Parallax-Layer:
+o	Layer 1 (nah): größere Partikel/Strukturen, langsam scrollend.
+o	Layer 2 (mittel): neuronale Linien / synaptische Muster.
+o	Layer 3 (fern): Sternenfeld / diffuse Formen.
+o	Layer 4: Theme-spezifischer Farbverlauf (backgroundGradient).
+•	Scrollrichtung:
+o	Vertikal: von oben nach unten.
+o	Horizontal: von rechts nach links.
+•	Optionaler Partikel-Layer pro chapter über particleEffect.
+________________________________________
+6. Spawn- & Bewegungslogik
+6.1 Spawn-Logik & Timing
+•	Wellen-basiertes Spawning:
+o	Jedes Item (z. B. F32_001) definiert alle correct + distractors.
+o	waveDuration in words.json pro Item (z. B. 8, 12, 15 Sekunden).
+	Anpassbar je nach Anzahl und Schwierigkeit der Objekte.
+	Fallback auf config.json.waveDuration (8s), wenn nicht definiert.
+o	spawnRate in chapters (z. B. 1.5) = Objekte pro Sekunde für dieses Chapter.
+o	Pro Objekt: Optionales spawnDelay (in Sekunden ab Rundenstart, z. B. 0, 2, 5, 8).
+o	Wenn kein spawnDelay angegeben: Gleichmäßige Verteilung über waveDuration.
+•	Maximale Objekte auf Screen:
+o	Max. 8-10 Objekte gleichzeitig (verhindert Chaos).
+o	Definiert in config.json.maxConcurrentObjects.
+•	Runden-Ende:
+o	Runde endet, sobald alle Objekte verarbeitet sind (gesammelt/zerstört).
+o	Spieler kann schneller fertig sein als waveDuration → nächste Runde startet sofort.
+o	Keine erzwungene Wartezeit bis waveDuration abgelaufen ist.
+6.2 Spawn-Position
+•	spawnPosition ∈ [0.0, 1.0]:
+o	Vertikal: relative X-Position (Breite).
+o	Horizontal: relative Y-Position (Höhe).
+•	Spawn-Spread:
+o	Kleine Variation um die Position, z. B. ± spawnSpread = 0.05.
+•	Beispiel:
+"spawnPosition": 0.5,
+"spawnSpread": 0.05,
+"spawnDelay": 2.5,
+"pattern": "linear_inward"
+6.3 Bewegungsmuster
+•	Definiert durch pattern:
+Mögliche Werte:
+•	linear_inward – gerade auf Base/Ship zu.
+•	zigzag – horizontale/vertikale Auslenkungen.
+•	wave – sinusförmige Bewegung.
+•	seek_center – leicht homing-artiges Verhalten.
+Geschwindigkeit: speed (0.0–2.0) als Faktor auf Basis-Geschwindigkeit aus config.json.
+•	Berechnung: finalSpeed = config.baseSpeed * itemSpeed * currentSpeedMultiplier.
+o	baseSpeed aus config.json (z. B. 100 px/s)
+o	itemSpeed aus words.json (z. B. 0.9)
+o	currentSpeedMultiplier aus learningState.difficultyScaling (z. B. 1.157625)
+•	Gilt für ALLE correct und distractors des aktuellen Items.
+•	Wave-Pattern: Amplitude/Frequenz werden auch von currentSpeedMultiplier skaliert.
+•	NICHT beeinflusst: Laser-Speed, Ship-Speed.
+________________________________________
+7. Punkte- & Levelsystem
+7.1 Grundprinzip
+•	Alle Punkte in words.json sind positiv.
+•	Engine entscheidet über Addition oder Subtraktion, abhängig von:
+o	Objekt-Typ (correct vs. distractor),
+o	Player-Aktion (Einsammeln vs. Abschuss),
+o	Lernmodus (10 %-Cap).
+7.2 Punktelogik im Shooter
+•	Correct
+o	Ship sammelt correct ein:
+	Normalmodus:
+	Punkte: +points.
+	Kontext wird eingeblendet.
+	Reaktionsbonus (siehe unten).
+	Lernmodus:
+	Punkte: +points * 0.1.
+o	Laser trifft correct:
+	Punkte: -points.
+	Correct explodiert.
+	Kontext trotzdem angezeigt (Fehler-Erklärung).
+o	Correct trifft Base:
+	Punkte: +points
+•	Distractor
+o	Laser trifft distractor:
+	Punkte: +points.
+	Word wird ausgeblendet an der Stelle wird redirect eingeblendet.
+	Einschlags-Explosion. Erschütterung
+	Fliegt aus dem Bild und verblasst
+o	Ship kollidiert mit distractor:
+	Ship nimmt Schaden: health -= damage.
+	Punkte: -points.
+	Verletztes Kurzes Blinken des ship
+	redirect-Text als Hinweis.
+	Distractor fliegt weiter auf seinem kurs
+o	Distractor trifft base
+	Punkte: -points.
+	Verletztes Kurzes Blinken der base
+	redirect-Text als Hinweis.
+
+•	Leerschuss (optional)
+o	Wenn konfiguriert:
+	config.json.pointsPerMiss → kleine Punktabzüge pro Schuss ohne Treffer.
+7.3 Reaktionszeit-Bonus
+•	Berechnung:
+o	reactionTime = now - spawnTime.
+o	bonusFactor = max(0, 1 - reactionTime / tMax) (z. B. tMax = 5 s).
+o	finalPoints = basePoints * (1 + bonusFactor * 0.5).
+•	Gilt nur beim korrekten Einsammeln eines correct.
+•	HUD zeigt kurz: „⚡ Quick Bonus +X %“.
+7.4 Reihenfolge-Bonus (collectionOrder)
+•	Optional pro correct: collectionOrder: n.
+o	Wenn da ein Wert collectionOrder steht: HUD-Text: „Reihenfolge"
+•	Tracking: Nur innerhalb einer Runde (Reset bei neuem Item)
+•	Anzeige:
+o	Im Lernmodus: Nummern vor correct.word (z. B. "1. Freudlosigkeit")
+o	Im Normalmodus: Keine Nummern, aber Reihenfolge-HUD zeigt Fortschritt (1/3, 2/3...)
+•	Wenn alle correct eines Base-Items in der korrekten Reihenfolge eingesammelt werden:
+o	Bonus-Berechnung: Alle Item-Punkte (correct-Summe) × 2 am Rundenende
+o	HUD-Text: „Reihenfolge! x2 Score"
+•	Falsche Reihenfolge:
+o	Bonus wird SOFORT unwiderruflich für diese Runde verworfen
+o	HUD zeigt: „❌ Reihenfolge verloren"
+o	Normale Punkte werden trotzdem vergeben
+________________________________________
+8. Lernmodus & Lernstatus
+8.1 Idee
+•	Lernmodus = color-coded Mode:
+o	Correct und distractors sind farblich eindeutig unterscheidbar.
+o	Spieler kann sehr leicht testen/lernen.
+o	Dafür nur 10 % der Punkte.
+•	Sobald ein Item einmal richtig benutzt wurde, verschwindet die Farbunterstützung beim nächsten Laden.
+•	Wenn da ein Wert collectionOrder  steht 
+o	steht vor correct:word die collectionOrder
+	Also bsp: „1. Freudlosigkeit“
+
+8.2 „Einmal richtig gemacht“ – Kriterium
+Pro words.id:
+•	Korrektes Verhalten =
+o	Correct wird mindestens einmal eingesammelt (nicht abgeschossen) oder landet in der base und
+o	Distractor wird mindestens einmal abgeschossen (nicht eingesammelt),
+o	innerhalb derselben Runde oder über mehrere Runden kumulativ.
+•	Sobald diese Bedingung erfüllt ist:
+o	trained: true und colorCoded: false.
+o	Beim nächsten Spawn dieses Items:
+	Keine farbliche Unterscheidung mehr.
+	Volle Punkte aktiv.
+	Keine collectionOrder nummerierung mehr vor correct
+8.3 Datenstruktur learningState
+{
+  "wordrush_learningState": {
+    "F32_001": {
+      "attempts": 3,
+      "correctCollects": 2,
+      "correctLaserHits": 0,
+      "distractorKills": 2,
+      "distractorCollisions": 1,
+      "trained": true,
+      "colorCoded": false,
+      "difficultyScaling": {
+        "currentSpeedMultiplier": 1.157625,
+        "replays": 3,
+        "colorContrast": 0.7
+      }
+    },
+    "F20_002": {
+      "attempts": 1,
+      "correctCollects": 0,
+      "correctLaserHits": 1,
+      "distractorKills": 0,
+      "distractorCollisions": 0,
+      "trained": false,
+      "colorCoded": true,
+      "difficultyScaling": {
+        "currentSpeedMultiplier": 1.0,
+        "replays": 1,
+        "colorContrast": 1.0
+      }
+    }
+  }
+}
+•	Engine-Logik:
+o	colorCoded = !trained (außer globaler Lernmodus-Override in Settings).
+o	Punkteskalierung:
+	Wenn colorCoded === true → finalPoints *= 0.1.
+o	Adaptive Schwierigkeit:
+	Bei jedem Replay: currentSpeedMultiplier *= meta.difficultyScaling.speedMultiplierPerReplay.
+	Wenn trained === true und colorContrastFade === true: colorContrast wird reduziert (z. B. 1.0 → 0.7).
+________________________________________
+9. Adaptive Schwierigkeit (nur Shooter)
+9.1 Meta-Konfiguration in words.json
+"meta": {
+  "difficultyScaling": {
+    "speedMultiplierPerReplay": 1.05,
+    "colorContrastFade": true,
+    "angleVariance": 0.3
+  }
+}
+•	Statische Konfiguration (words.json):
+o	Definiert, WIE die Anpassung erfolgt (Multiplikator, Fade-Verhalten, etc.).
+•	Dynamische Werte (learningState):
+o	Speichern die aktuellen Schwierigkeitswerte pro Item (siehe 8.3).
+o	Werden bei jedem Replay aktualisiert.
+•	Gilt nur im Shooter:
+o	Mehrere Replays / hohe Erfolgsquote:
+	speed wird pro Replay mit speedMultiplierPerReplay multipliziert (gespeichert in learningState.difficultyScaling.currentSpeedMultiplier).
+	Farben können subtil angeglichen werden (Kontrast reduziert), wenn nicht mehr colorCoded (gespeichert in learningState.difficultyScaling.colorContrast).
+o	Viele Fehler:
+	Optionale Absenkung:
+	Speed etwas senken (currentSpeedMultiplier reduzieren).
+	SpawnRate reduzieren.
+	Lernmodus global aktivierbar über Settings.
+________________________________________
+10. UI & Progress
+10.1 Galaxy-Map-Hub (Star-Fox-inspiriert)
+•	Universe-Auswahl:
+o	Universe-Auswahl erfolgt über Galaxy-Hub, nicht im HUD während des Spiels.
+o	Im Hub: Dropdown oder horizontale Scroll-Leiste mit Universes (z. B. „Englisch", „Psychiatrie").
+o	Universe definiert eigene Farben, Musik, Hintergründe (aus universe.json).
+o	Nach Universe-Auswahl werden nur Themes dieses Universes angezeigt.
+•	Hierarchie:
+o	Universes = Galaxien/Cluster in der 2D-Galaxie.
+o	Themes = Planeten/Stellen in einer 2D-Galaxie.
+o	Chapters = Monde oder Orbit-Segmente um den Planeten. gelcihmäßig und dynamisch verteilt.
+o	Levels/Items = Marker auf Orbits.
+Funktionen:
+•	Tap/Klick auf Planeten → Zoom in das Theme.
+•	Tap/Klick auf Orbit-Segment (Chapter) → Auswahl dieses Chapters:
+o	Single-Chapter-Mode: Nur Items aus diesem Chapter.
+o	Mix-Mode (optional zuschaltbar): Items aus ALLEN Chapters des aktuellen Themes werden gemischt. wenn man auf den planeten klickt
+	
+  •	Fortschritt:
+o	Farbe/Leuchten des Planeten = themeProgress
+o	Orbit-Dichte = Anzahl gelernter Items.
+
+
+10.2 HUD (In-Game)
+•	Oben links:
+o	Ship-Health-Bar (0–10).
+•	Oben rechts:
+o	Score (gesamt + Sitzungs-Score).
+•	Mitte oben:
+o	Theme-Name + Chapter-Name + Level/Item-ID.
+•	Unterer Bereich (oder schmaler Streifen):
+o	Kontext-Text bei Interaktionen:
+	„Depression zeigt sich durch Freudlosigkeit.“
+	„Wahn gehört zu Schizophrenie.“
+•	Buttons:
+
+o	Settings-Icon (Zahnrad).
+o	Zurück-zum-Hub (ESC / Touch-Button).
+
+10.3 Settings
+•	Gespeichert z. B. in wf_ui_settings:
+{
+  "wf_ui_settings": {
+    "orientation": "vertical",
+    "colorScheme": "dark",
+    "audio": { "music": false, "effects": true },
+    "mixModeGlobal": false,
+    "stützräderGlobal": true
+  }
+}
+•	Optionen:
+o	Orientation: Vertikal / Horizontal.
+o	Audio: Musik an/aus, Effekte an/aus.
+o	Stützräder global an/aus (override des Item-Status).
+o	Mix-Mode global an/aus.
+o	Theme-Sprachauswahl (z. B. DE/EN).
+________________________________________
+11. Datenspeicherung & Progress
+11.1 Progress-Struktur
+{
+  "wordrush_progress": {
+    "themes": {
+      "icd10": {
+        "chapters": {
+          "F32_Depression": {
+            "levelsPlayed": 4,
+            "levelsTotal": 10,
+            "score": 2850,
+            "perfectRuns": 2,
+            "failedRuns": 1,
+            "unlocked": true,
+            "mixMode": false,
+            "lastPlayed": "2025-11-09T10:32:00Z",
+            "collectedCorrectIds": ["F32_001", "F32_002"],
+            "failedIds": ["F32_003"]
+          }
+        },
+        "themeProgress": 0.36,
+        "totalScore": 3450
+      }
+    },
+    "meta": {
+      "lastTheme": "icd10",
+      "lastChapter": "F32_Depression",
+      "mixModeGlobal": false,
+      "created": "2025-11-08T09:00:00Z",
+      "updated": "2025-11-09T10:32:00Z",
+      "version": "1.2"
+    }
+  }
+}
+•	failedIds können genutzt werden, um Items häufiger einzumischen.
+•	collectedCorrectIds = schon mit korrektem Verhalten erreichte Items.
+11.3 Unlocking & Freischaltung
+•	Chapters:
+o	Alle Chapters eines Themes sind sofort verfügbar (unlocked: true).
+o	Kein progressionsbasiertes Unlock-System für Chapters.
+o	Spieler kann frei wählen, welches Chapter gespielt wird.
+•	Items innerhalb Chapter:
+o	Alle Items eines Chapters sind sofort verfügbar.
+o	Kein Item-Level-Lock innerhalb eines Chapters.
+•	Themes:
+o	In themes.json: available: true/false (manuell gesteuert, für DLC/Updates).
+o	Themes mit available: false werden in Galaxy-Map ausgegraut angezeigt.
+o	Ermöglicht Content-Erweiterungen ohne Code-Änderung.
+11.4 Stützräder + Settings
+•	Siehe wordrush_learningState und wf_ui_settings oben.
+•	Alle drei Bereiche zusammen:
+o	wordrush_progress
+o	wordrush_learningState
+o	wf_ui_settings
+können später für Export/Import genutzt werden (Backup).
+________________________________________
+12. Config.json – Vollständige Spezifikation
+{
+  "gameplay": {
+    "baseSpeed": 3100,
+    "shipSpeed": 3020,
+    "shipSmoothFactor": 0.15,
+    "laserSpeed": 1200,
+    "laserCooldown": 0.2,
+    "startHealth": 10,
+    "maxConcurrentObjects": 10,
+    "pointsPerMiss": -5,
+    "waveDuration": 8
+  },
+  "collision": {
+    "shipRadius": 30,
+    "defaultObjectRadius": 40,
+    "overlapTolerance": 0.1
+  },
+  "orientationConfig": {
+    "vertical": {
+      "spawnFrom": "top",
+      "basePosition": "bottom_center",
+      "shipBounds": "screen"
+    },
+    "horizontal": {
+      "spawnFrom": "right",
+      "basePosition": "center_left",
+      "shipBounds": "screen"
+    }
+  },
+  "version": "1.0"
+}
+•	Erklärung:
+o	gameplay.baseSpeed: Basis-Geschwindigkeit für Objekte in px/s
+o	gameplay.shipSpeed: Maximale Ship-Geschwindigkeit in px/s
+o	gameplay.shipSmoothFactor: Smooth-Follow-Faktor für Maus (0.0-1.0)
+o	gameplay.laserSpeed: Laser-Geschwindigkeit in px/s
+o	gameplay.laserCooldown: Cooldown zwischen Schüssen in Sekunden
+o	gameplay.startHealth: Start-Health des Ships
+o	gameplay.maxConcurrentObjects: Max. gleichzeitig aktive Objekte
+o	gameplay.pointsPerMiss: Punktabzug pro Leerschuss (optional, -5 oder 0)
+o	gameplay.waveDuration: Standard-Dauer einer Welle in Sekunden
+o	collision.shipRadius: Kollisions-Radius des Ships in px
+o	collision.defaultObjectRadius: Standard-Radius für Objekte in px
+o	collision.overlapTolerance: Überlappungs-Toleranz (0.0-1.0, z.B. 0.1 = 10%)
+o	orientationConfig: Siehe Abschnitt 5.1
+________________________________________
+13. JSON-Beispiele
+13.1 universe.json (Beispiel: Englisch)
+{
+  "id": "englisch",
+  "name": "Englisch",
+  "description": "Lerne Englisch durch interaktives Gameplay - Vokabeln, Grammatik und Alltagssprache.",
+  "colorPrimary": "#4a90e2",
+  "colorAccent": "#7bb3f0",
+  "backgroundGradient": ["#1a3a5f", "#2d5a8a"],
+  "icon": "🇬🇧",
+  "available": true,
+  "language": "de",
+  "music": {
+    "theme": "english_universe_theme.mp3",
+    "volume": 0.6
+  },
+  "particleEffect": "language_particles",
+  "shipSkin": "english_ship",
+  "laserColor": "#4a90e2",
+  "themes": [
+    "english_cap"
+  ],
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-11-16"
+  }
+}
+•	Erklärung:
+o	id: Eindeutige Universe-ID (wird für Verzeichnisstruktur verwendet).
+o	name: Anzeigename im UI.
+o	description: Beschreibung des Universes.
+o	colorPrimary/colorAccent: Primäre Farben für UI-Elemente dieses Universes.
+o	backgroundGradient: Hintergrundverlauf für Galaxy-Hub.
+o	icon: Emoji oder Icon für Universe-Auswahl.
+o	music: Universe-spezifische Hintergrundmusik.
+o	particleEffect: Partikel-Effekt für dieses Universe.
+o	shipSkin: Optional: Ship-Skin für dieses Universe.
+o	laserColor: Farbe der Laser-Schüsse in diesem Universe.
+o	themes: Array von Theme-IDs, die zu diesem Universe gehören.
+•	Vererbungslogik für Universe-Eigenschaften:
+o	particleEffect, shipSkin, laserColor werden auf Universe-Ebene definiert.
+o	Können durch Theme-Eigenschaften überschrieben werden (in themes.json).
+o	Können durch Chapter-Eigenschaften überschrieben werden (in chapter.json).
+o	Priorität: Chapter > Theme > Universe (höchste Priorität zuerst).
+o	Beispiel: Universe definiert "language_particles", Theme überschreibt mit "business_particles", Chapter überschreibt mit "office_particles" → Chapter-Wert wird verwendet.
+13.2 themes.json (Beispiel: ICD-10)
+{
+  "id": "icd10",
+  "name": "ICD-10 Psychopathologie",
+  "description": "Lerne die wichtigsten Störungsbilder aus dem Kapitel F des ICD-10.",
+  "colorPrimary": "#6b4bff",
+  "colorAccent": "#a58dff",
+  "backgroundGradient": ["#110c33", "#221a66"],
+  "maxLevels": 10,
+  "icon": "🧠",
+  "relatedPackages": ["psychology_basics", "focusing_intro"],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "F32_Depression": {
+      "backgroundImage": "depression_bg.png",
+      "backgroundGradient": ["#2d1b3d", "#4a2c5a"],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "depression_theme.ogg",
+      "particleEffect": "melancholy_dust"
+    },
+    "Manie": {
+      "backgroundImage": "mania_bg.png",
+      "backgroundGradient": ["#ffd700", "#ff8c00"],
+      "spawnRate": 2.5,
+      "music": "mania_theme.ogg",
+      "particleEffect": "energy_sparks"
+    },
+    "Demenz": {
+      "backgroundImage": "dementia_bg.png",
+      "backgroundGradient": ["#4a4a4a", "#6a6a6a"],
+      "spawnRate": 1.0,
+      "music": "dementia_theme.ogg",
+      "particleEffect": "fading_mist"
+    },
+    "Schizophrenie": {
+      "backgroundImage": "schizophrenia_bg.png",
+      "backgroundGradient": ["#8b0000", "#4b0000"],
+      "spawnRate": 2.0,
+      "music": "schizophrenia_theme.ogg",
+      "particleEffect": "chaos_fragments"
+    },
+    "Andere": {
+      "backgroundImage": "other_bg.png",
+      "backgroundGradient": ["#110c33", "#221a66"],
+      "spawnRate": 1.8,
+      "music": "other_theme.ogg",
+      "particleEffect": "neutral_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-11-07"
+  },
+  // Optional: Überschreibung von Universe-Eigenschaften
+  "particleEffect": "psychiatry_theme_particles",
+  "shipSkin": "psychiatry_theme_ship",
+  "laserColor": "#8b4bff"
+}
+•	Erklärung für themes.json:
+o	Themes können Universe-Eigenschaften überschreiben:
+	particleEffect: Überschreibt Universe particleEffect für alle Chapters dieses Themes (außer Chapter hat eigenen Wert).
+	shipSkin: Überschreibt Universe shipSkin für alle Chapters dieses Themes (außer Chapter hat eigenen Wert).
+	laserColor: Überschreibt Universe laserColor für alle Chapters dieses Themes (außer Chapter hat eigenen Wert).
+o	Chapters können diese Werte erneut überschreiben:
+	In der Chapter-Definition innerhalb des chapters-Objekts können particleEffect, shipSkin, laserColor gesetzt werden.
+	Beispiel: Chapter "F32_Depression" mit "particleEffect": "melancholy_dust" überschreibt Theme- und Universe-Werte.
+	Priorität: Chapter > Theme > Universe.
+13.3 words.json (Beispiel: F32_001)
+{
+  "id": "F32_001",
+  "theme": "icd10",
+  "chapter": "F32_Depression",
+  "level": 2,
+  "waveDuration": 3,
+  "base": {
+    "word": "Depression",
+    "type": "CoreConcept",
+    "image": "depression_icon.png",
+    "visual": {
+      "tier": 2,
+      "size": 1.0,
+      "appearance": "bold",
+      "color": "#c05060",
+      "glow": true,
+      "pulsate": true
+    }
+  },
+  // Hinweis: base.image und base.word sind optional.
+  // Wenn base.image vorhanden ist, wird die Grafik verwendet (Pfad relativ zu /ui/grafics oder /content).
+  // Wenn base.image fehlt, wird base.word als Text dargestellt.
+  // base.visual-Eigenschaften (size, color, glow, pulsate) gelten für beide Modi.
+  // waveDuration: Optional pro Item (in Sekunden). Fallback auf config.json.waveDuration (8s).
+  // Anpassbar je nach Anzahl und Schwierigkeit der Objekte eines Items.
+
+  "correct": [
+    {
+      "entry": {
+        "word": "Freudlosigkeit",
+        "type": "Symptom"
+      },
+      "spawnPosition": 0.5,
+      "spawnSpread": 0.05,
+      "speed": 0.9,
+      "points": 200,
+      "pattern": "linear_inward",
+      "hp": 1,
+      "collectionOrder": 1,
+      "reward": {
+        "type": "focus_boost",
+        "effect": "+10% score",
+        "duration": 5
+      },
+      "context": "Depression zeigt sich durch Freudlosigkeit.",
+      "visual": {
+        "color": "#7fe8a2",
+        "variant": "bubble",
+        "pulsate": true,
+        "fontSize": 1.1
+      },
+      "sound": "bubble_hit_soft"
+    }
+  ],
+
+  "distractors": [
+    {
+      "entry": {
+        "word": "Wahn",
+        "type": "Symptom"
+      },
+      "spawnPosition": 0.3,
+      "spawnSpread": 0.05,
+      "speed": 1.2,
+      "points": 150,
+      "hp": 2,
+      "damage": 1,
+      "behavior": "seek_center",
+      "dropChance": 0.2,
+      "redirect": "Schizophrenie",
+      "context": "Wahn gehört zu Schizophrenie.",
+      "visual": {
+        "color": "#ff6666",
+        "variant": "spike",
+        "pulsate": false,
+        "shake": true,
+        "fontSize": 1.0
+      },
+      "sound": "explosion_minor"
+    }
+  ],
+
+  "meta": {
+    "source": "ICD-10 F3",
+    "tags": ["affektive_störungen"],
+    "related": ["F32_002", "F30_001"],
+    "difficultyScaling": {
+      "speedMultiplierPerReplay": 1.05,
+      "colorContrastFade": true,
+      "angleVariance": 0.3
+    }
+  }
+}

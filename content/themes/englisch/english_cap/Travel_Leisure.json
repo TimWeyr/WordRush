@@ -1,0 +1,1596 @@
+[
+  {
+    "id": "TL_001",
+    "theme": "english_cap",
+    "chapter": "Travel_Leisure",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "hotel",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#18FFFF",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Hotel",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.28,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "hotel = Hotel",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Hostel",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Hostel = Jugendherberge, hotel = Hotel",
+        "visual": {
+          "color": "#85C1E2",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Jugendherberge"
+      },
+      {
+        "entry": {
+          "word": "house",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "Haus",
+        "context": "house gehÃ¶rt zu Alltagsleben",
+        "visual": {
+          "color": "#BB8FCE",
+          "variant": "round",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "travel",
+        "leisure",
+        "level1"
+      ],
+      "related": [
+        "TL_002",
+        "TL_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "TL_002",
+    "theme": "english_cap",
+    "chapter": "Travel_Leisure",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "city",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#18FFFF",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Stadt",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.05,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "city = Stadt",
+        "visual": {
+          "color": "#FFA07A",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Land",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Land = country, city = Stadt",
+        "visual": {
+          "color": "#27AE60",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "country"
+      },
+      {
+        "entry": {
+          "word": "citizen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.12,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "citizen = BÃ¼rger, city = Stadt",
+        "visual": {
+          "color": "#18FFFF",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "BÃ¼rger"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "travel",
+        "leisure",
+        "level1"
+      ],
+      "related": [
+        "TL_001",
+        "TL_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "TL_003",
+    "theme": "english_cap",
+    "chapter": "Travel_Leisure",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "plane",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#27AE60",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Flugzeug",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "plane = Flugzeug",
+        "visual": {
+          "color": "#9C27B0",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Ebene",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.04,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ebene = plane (geometrisch), plane = Flugzeug",
+        "visual": {
+          "color": "#00B0FF",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "plane (geometrisch)"
+      },
+      {
+        "entry": {
+          "word": "airplane",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.37,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "airplane = Flugzeug (formell), plane = Flugzeug (umgangssprachlich)",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Flugzeug (formell)"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "travel",
+        "leisure",
+        "level1"
+      ],
+      "related": [
+        "TL_002",
+        "TL_004"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "TL_004",
+    "theme": "english_cap",
+    "chapter": "Travel_Leisure",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "ticket",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FF6E40",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ticket",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.36,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "ticket = Ticket, Fahrkarte",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Karte",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.58,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Karte = card, ticket = Fahrkarte",
+        "visual": {
+          "color": "#00E676",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "card"
+      },
+      {
+        "entry": {
+          "word": "trick",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "trick = Trick, nicht Ticket",
+        "visual": {
+          "color": "#4ECDC4",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Trick"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "travel",
+        "leisure",
+        "level1"
+      ],
+      "related": [
+        "TL_003",
+        "TL_005"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "TL_005",
+    "theme": "english_cap",
+    "chapter": "Travel_Leisure",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "beach",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#F8B739",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Strand",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.64,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "beach = Strand",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bach",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.38,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Bach = brook, beach = Strand",
+        "visual": {
+          "color": "#E74C3C",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "brook"
+      },
+      {
+        "entry": {
+          "word": "peach",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.57,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "peach = Pfirsich, beach = Strand",
+        "visual": {
+          "color": "#FF6E40",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Pfirsich"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "travel",
+        "leisure",
+        "level1"
+      ],
+      "related": [
+        "TL_004",
+        "TL_006"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "TL_006",
+    "theme": "english_cap",
+    "chapter": "Travel_Leisure",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "luggage",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#FF5722",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "GepÃ¤ck",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.03,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "luggage = GepÃ¤ck",
+        "visual": {
+          "color": "#FF6B6B",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Koffer",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.31,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Koffer = suitcase, luggage = GepÃ¤ck (allgemein)",
+        "visual": {
+          "color": "#FF1744",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "suitcase"
+      },
+      {
+        "entry": {
+          "word": "baggage",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.98,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "baggage = GepÃ¤ck (US), luggage = GepÃ¤ck (UK)",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "GepÃ¤ck (US)"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "travel",
+        "leisure",
+        "level2"
+      ],
+      "related": [
+        "TL_005",
+        "TL_007"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "TL_007",
+    "theme": "english_cap",
+    "chapter": "Travel_Leisure",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "passport",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#00BCD4",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Reisepass",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.58,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "passport = Reisepass",
+        "visual": {
+          "color": "#FF4081",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Pass",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.79,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Pass = pass (Verb), passport = Reisepass",
+        "visual": {
+          "color": "#45B7D1",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "pass (Verb)"
+      },
+      {
+        "entry": {
+          "word": "Ausweis",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Ausweis = ID card, passport = Reisepass",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "ID card"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "travel",
+        "leisure",
+        "level2"
+      ],
+      "related": [
+        "TL_006",
+        "TL_008"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "TL_008",
+    "theme": "english_cap",
+    "chapter": "Travel_Leisure",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "reservation",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#85C1E2",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Reservierung",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "reservation = Reservierung",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Reservat",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.79,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Reservat = reservation (Naturschutz), reservation = Reservierung",
+        "visual": {
+          "color": "#FFEB3B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "reservation (Naturschutz)"
+      },
+      {
+        "entry": {
+          "word": "reserve",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.13,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "reserve = reservieren (Verb), reservation = Reservierung (Nomen)",
+        "visual": {
+          "color": "#E67E22",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "reservieren (Verb)"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "travel",
+        "leisure",
+        "level2"
+      ],
+      "related": [
+        "TL_007",
+        "TL_009"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "TL_009",
+    "theme": "english_cap",
+    "chapter": "Travel_Leisure",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "sightseeing",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#1ABC9C",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Sightseeing",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.04,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "sightseeing = Sightseeing, Stadtbesichtigung",
+        "visual": {
+          "color": "#F8B739",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "SehenswÃ¼rdigkeit",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.95,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "SehenswÃ¼rdigkeit = sight, sightseeing = Sightseeing",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "sight"
+      },
+      {
+        "entry": {
+          "word": "seeing",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.58,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "seeing = sehen, sightseeing = Sightseeing",
+        "visual": {
+          "color": "#FFA07A",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "sehen"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "travel",
+        "leisure",
+        "level2"
+      ],
+      "related": [
+        "TL_008",
+        "TL_010"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "TL_010",
+    "theme": "english_cap",
+    "chapter": "Travel_Leisure",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "museum",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#1ABC9C",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Museum",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "museum = Museum",
+        "visual": {
+          "color": "#F1C40F",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Musik",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.53,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Musik = music, museum = Museum",
+        "visual": {
+          "color": "#FF6B6B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "music"
+      },
+      {
+        "entry": {
+          "word": "mausoleum",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.96,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "mausoleum = Mausoleum, museum = Museum",
+        "visual": {
+          "color": "#3F51B5",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Mausoleum"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "travel",
+        "leisure",
+        "level2"
+      ],
+      "related": [
+        "TL_009",
+        "TL_011"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "TL_011",
+    "theme": "english_cap",
+    "chapter": "Travel_Leisure",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "itinerary",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#3498DB",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Reiseroute",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.44,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "itinerary = Reiseroute",
+        "visual": {
+          "color": "#009688",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Route",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.27,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Route = route, itinerary = detaillierte Reiseroute",
+        "visual": {
+          "color": "#FFEB3B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "route"
+      },
+      {
+        "entry": {
+          "word": "itinerant",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.21,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "itinerant = umherziehend (Adjektiv), itinerary = Reiseroute (Nomen)",
+        "visual": {
+          "color": "#98D8C8",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "umherziehend (Adjektiv)"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "travel",
+        "leisure",
+        "level3"
+      ],
+      "related": [
+        "TL_010",
+        "TL_012"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "TL_012",
+    "theme": "english_cap",
+    "chapter": "Travel_Leisure",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "currency",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#E67E22",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "WÃ¤hrung",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.37,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "currency = WÃ¤hrung",
+        "visual": {
+          "color": "#FF4081",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Geld",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.99,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Geld = money, currency = WÃ¤hrung",
+        "visual": {
+          "color": "#3F51B5",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "money"
+      },
+      {
+        "entry": {
+          "word": "current",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "current = aktuell (Adjektiv), currency = WÃ¤hrung (Nomen)",
+        "visual": {
+          "color": "#BB8FCE",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "aktuell (Adjektiv)"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "travel",
+        "leisure",
+        "level3"
+      ],
+      "related": [
+        "TL_011",
+        "TL_013"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "TL_013",
+    "theme": "english_cap",
+    "chapter": "Travel_Leisure",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "accommodation",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#C0392B",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Unterkunft",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "accommodation = Unterkunft",
+        "visual": {
+          "color": "#FF4081",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Anpassung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Anpassung = accommodation (Anpassung), accommodation = Unterkunft (Reise)",
+        "visual": {
+          "color": "#4ECDC4",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "accommodation (Anpassung)"
+      },
+      {
+        "entry": {
+          "word": "accommodate",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.04,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "accommodate = unterbringen (Verb), accommodation = Unterkunft (Nomen)",
+        "visual": {
+          "color": "#00B0FF",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "unterbringen (Verb)"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "travel",
+        "leisure",
+        "level3"
+      ],
+      "related": [
+        "TL_012",
+        "TL_014"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "TL_014",
+    "theme": "english_cap",
+    "chapter": "Travel_Leisure",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "adventure",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#FF5722",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Abenteuer",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "adventure = Abenteuer",
+        "visual": {
+          "color": "#BB8FCE",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Erlebnis",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.38,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Erlebnis = experience, adventure = Abenteuer",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "experience"
+      },
+      {
+        "entry": {
+          "word": "adventurous",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "adventurous = abenteuerlustig (Adjektiv), adventure = Abenteuer (Nomen)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "abenteuerlustig (Adjektiv)"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "travel",
+        "leisure",
+        "level3"
+      ],
+      "related": [
+        "TL_013",
+        "TL_015"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "TL_015",
+    "theme": "english_cap",
+    "chapter": "Travel_Leisure",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "souvenir",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#E74C3C",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Souvenir",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.77,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "souvenir = Souvenir, Andenken",
+        "visual": {
+          "color": "#F8B739",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Geschenk",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.12,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Geschenk = gift, souvenir = Reiseandenken",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "gift"
+      },
+      {
+        "entry": {
+          "word": "memory",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.95,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "memory = Erinnerung, souvenir = Souvenir",
+        "visual": {
+          "color": "#E74C3C",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Erinnerung"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "travel",
+        "leisure",
+        "level3"
+      ],
+      "related": [
+        "TL_014"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]

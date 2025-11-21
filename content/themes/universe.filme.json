@@ -1,0 +1,37 @@
+{
+  "id": "filme",
+  "name": "Filme & Serien",
+  "description": "Lerne die besten Filme und Serien kennen - Von Blockbuster bis B-Movie! 🎬",
+  "colorPrimary": "#9b59b6",
+  "colorAccent": "#8e44ad",
+  "backgroundGradient": [
+    "#9b59b6",
+    "#8e44ad"
+  ],
+  "icon": "🎥",
+  "available": true,
+  "language": "de",
+  "music": {
+    "theme": "filme_universe_theme.mp3",
+    "volume": 0.6
+  },
+  "particleEffect": "movie_particles",
+  "shipSkin": "movie_ship",
+  "laserColor": "#9b59b6",
+  "themes": [
+    "klassiker",
+    "blockbuster",
+    "mcu",
+    "komoedien",
+    "action",
+    "scifi",
+    "horror",
+    "animiert"
+  ],
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

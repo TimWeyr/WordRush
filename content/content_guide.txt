@@ -1,0 +1,340 @@
+WORDRUSH – CONTENT GUIDELINE
+Standard für alle Universen, Planeten, Monde und Items
+0. Vorabregel: KI MUSS zuerst fragen
+
+Jede KI, die Content generiert, muss bevor sie Items erstellt, zuerst folgende drei Fragen stellen:
+
+Zu welchem Universum gehört dieses Kapitel?
+
+Welches Stilprofil soll angewendet werden?
+
+didaktisch
+
+neutral
+
+humorvoll
+
+Wie ernsthaft ist das Thema?
+
+ernst (Psychologie, Medizin, Schule)
+
+locker (Musik, Filme, Popkultur)
+
+KI darf erst nach diesen drei Antworten Content erzeugen.
+
+1. Content-Profile (Stilprofile)
+A) Didaktisch-präzise (Schule, Sprachen, Psychologie, Biologie)
+
+Kontext: kurz, sachlich, eindeutig.
+
+Redirect: fachlich korrekt, nie witzig.
+
+Humor: nur minimale Wortspiele.
+
+B) Neutral (Allgemeinwissen, Soft-Popkultur)
+
+Kontext: informativ oder leicht witzig.
+
+Redirect: sachlich, aber nicht trocken.
+
+C) Humorvoll (MCU, Musik, Serien, Games)
+
+Kontext: ironisch, meta, witzig.
+
+Redirect: darf pointiert sein.
+
+Humor darf IMMER eingesetzt werden, aber:
+
+keine Beleidigungen
+
+kein Herabsetzen
+
+keine Themenverharmlosung bei ernsten Themen
+
+2. Struktur eines Items (Felder)
+base
+
+Zentrale Lerneinheit.
+
+1–4 Wörter.
+
+Keine Ableitungen der Correct-Wörter.
+
+Taxonomie-Ebene definiert alle Corrects.
+
+Komplexere Bases = mehr Punkte / langsameres Gameplay.
+
+correct
+
+Worte, die eingesammelt werden.
+
+1–2 Wörter.
+
+Maximal 5 sinnvoll.
+
+Müssen Kernmerkmale der Base sein.
+
+Keine Substrings der Base.
+
+Keine Synonyme der Base.
+
+Bei Prozessen optional: collectionOrder.
+
+distractor
+
+Worte, die abgeschossen werden.
+
+Plausibel, aber eindeutig falsch.
+
+Maximal 5 sinnvoll.
+
+Genau ein korrektes anderes Bedeutungsfeld.
+
+Darf stimmungsmäßig nah sein, aber nicht diagnostisch / faktisch korrekt.
+
+redirect
+
+Wo der Distractor thematisch hingehört.
+
+1–2 Wörter.
+
+Muss eindeutig sein.
+
+Universumsintern konsistent.
+
+context
+
+Kurzer Lerneffekt, erscheint nach Treffer.
+
+Maximal 5 Wörter.
+
+Symbolsprache erwünscht.
+
+Keine Nebensätze.
+
+level
+
+Schwierigkeit 1–15.
+
+Basics 1–5, Fortgeschritten 6–10, Experten 11–15.
+
+Reihenfolgen-Items haben eher höhere Level.
+
+3. Symbolkatalog für Kontext-Sätze
+
+→ führt zu / erzeugt
+
+= bedeutet / ist
+
+∈ gehört zu / Teil von
+
+↯ Gegensatz
+
+↑ steigert
+
+↓ senkt
+
+↔ Zusammenhang
+
+⚠ Warnsignal
+
+🛡 Schutz
+
+⇒ Reihenfolge / Phase
+
+Beispiel:
+
+"Isolation ↑ Risiko."
+
+"Einengung = Tunnelblick."
+
+"Wahn ∈ Schizophrenie."
+
+4. Semantische Grundregeln
+Regel 1 – Keine Tautologien
+
+Correct darf nie Base enthalten.
+
+Regel 2 – Keine Ableitungen
+
+Keine morphologischen Varianten der Base.
+
+Regel 3 – Keine Kategorie-Klone
+
+Keine Corrects, die nur Varianten der Base sind
+(z. B. "Iron Man Suit", "Iron Man Theme").
+
+Regel 4 – Kein „Semantic Mirror“
+
+Correct darf nicht nur eine Umschreibung der Base sein.
+
+Regel 5 – Taxonomie-Ebene muss stimmen
+
+Corrects müssen auf der gleichen Ebene sein wie Base.
+Distractors müssen auf einer anderen Ebene sein.
+
+Regel 6 – Distractor = plausibel, aber eindeutig falsch
+
+NICHT:
+
+synonym
+
+Ober-, Unterbegriff
+
+„kommt drauf an“-Begriff
+
+Regel 7 – Redirect muss klare Kategorie bilden
+
+Immer eine eindeutige Alternative.
+
+Regel 8 – Keine Polysemie bei Corrects
+
+Correct darf nicht mehrere Bedeutungen haben.
+
+Regel 9 – Nähe ja, Kern nein
+
+Distractor darf stimmungsmäßig nah (Traurigkeit), aber nicht diagnostischer Kern (Anhedonie).
+
+Regel 10 – Max. ein tricky Distractor pro Item
+
+Sonst unfair.
+
+5. Psychologie-spezifische Regeln
+Base = Störung
+
+Correct: Kernsymptome, Hauptmerkmale
+Distractor: andere Störungs-Symptome
+
+Base = Symptom
+
+Correct: Unterformen, Beispiele
+Distractor: andere Cluster
+
+Base = Phase/Modell
+
+Correct: Merkmale
+Distractor: andere Phasen / Modelle
+
+Base = Mechanismus
+
+Correct: direkte Konsequenzen
+Distractor: affektiv nah, aber kategorial falsch
+
+Reihenfolge (collectionOrder)
+
+Maximal 5 Schritte
+
+Nur nutzen, wenn es ein echtes Prozessmodell ist
+
+Keine „Pseudo-Reihenfolgen“
+
+6. Humor-Regeln
+Universell erlaubt, aber abhängig vom Content-Profil:
+
+Ernsthafte Themen
+Humor = warm, meta, sanft.
+Nie verharmlosend.
+
+Neutrale Themen
+leichte Ironie möglich.
+
+Popkultur-Themen
+volle Ironie erlaubt.
+Meta-Humor, Nerd-Witze, Wortspiele okay.
+
+Beispiel:
+
+„Tony Stark → Daddy Issues™.“
+
+„Black Sabbath = Urväter des Riffs.“
+
+7. Qualitätsregeln (nicht technisch erzwungen)
+
+Creator entscheidet, aber KI soll alle diese Regeln anwenden, bis sie explizit überschrieben werden.
+
+Kontext max. 5 Wörter
+
+keine überlangen Wörter
+
+keine drei schweren Distractors gleichzeitig
+
+keine polysemen Correct-Wörter
+
+keine Base-Synonyme
+
+Spawnfreundliche Wortlängen (10–14 Zeichen optimal)
+
+humor nur passend zum Profil
+
+8. Minimaler KI-Workflow (für die erste Nachricht)
+
+Jede KI MUSS beim Erstellen eines Items zuerst:
+
+1. Welches Universum?
+2. Welches Stilprofil? (didaktisch / neutral / humorvoll)
+3. Wie ernst ist das Thema?
+4. Soll Humor benutzt werden?
+
+
+Dann erst Content generieren.
+
+9. Beispiel – Perfektes Item
+base: Ambivalenz
+
+correct:
+  - { word: Zweifel, context: "Ambivalenz = Hin-und-her." }
+  - { word: Schwanken, context: "Ambivalenz → Unsicherheit." }
+
+distractor:
+  - { word: Euphorie, redirect: Manie, context: "Euphorie ∈ Manie." }
+  - { word: Anhedonie, redirect: Depression, context: "Anhedonie ∈ Depression." }
+
+level: 4
+
+10. Creator-Checkliste (ein Satz pro Regel)
+
+Passt der Stil zum Content-Profil?
+
+Ist die Base sauber, knapp, eindeutig?
+
+Sind Corrects kernrelevant und eindeutig?
+
+Sind Distractors plausibel, aber klar falsch?
+
+Hat jeder Distractor einen Redirect?
+
+Ist der Kontext ≤ 5 Wörter?
+
+Stimmen Taxonomie-Ebenen?
+
+Ist der Humor passend?
+
+
+
+
+
+
+
+Ziel Format:
+ITEM:
+base: Vorbereitung
+
+correct:
+  - word: Einengung
+    context: "Vorbereitung → Fokus"
+    collectionOrder: 1
+  - word: Rückzug
+    context: "Vorbereitung ↑ Isolation"
+    collectionOrder: 2
+
+distractor:
+  - word: Ideenflucht
+    redirect: Manie
+    context: "Ideenflucht ∈ Manie"
+  - word: Euphorie
+    redirect: Manie
+    context: "Euphorie → Manie"
+
+level: 4
+tags: [suizid, ringel]
+styleProfile: didactic

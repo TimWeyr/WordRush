@@ -1,0 +1,41 @@
+{
+  "id": "psychiatrie",
+  "name": "Psychiatrie",
+  "description": "Lerne ICD-10 F-Diagnosen durch interaktives Gameplay - Psychische und Verhaltensstörungen systematisch erlernen.",
+  "colorPrimary": "#6b7ba5",
+  "colorAccent": "#8d9db8",
+  "backgroundGradient": [
+    "#3a4a6a",
+    "#5a6a8a"
+  ],
+  "icon": "🧠",
+  "available": true,
+  "language": "de",
+  "music": {
+    "theme": "psychiatrie_universe_theme.mp3",
+    "volume": 0.6
+  },
+  "particleEffect": "medical_particles",
+  "shipSkin": "medical_ship",
+  "laserColor": "#6b7ba5",
+  "themes": [
+    "f00_f09",
+    "f10_f19",
+    "f20_f29",
+    "f30_f39",
+    "f40_f48",
+    "f50_f59",
+    "f60_f69",
+    "f70_f79",
+    "f80_f89",
+    "f90_f98",
+    "f99",
+    "suizid"
+  ],
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

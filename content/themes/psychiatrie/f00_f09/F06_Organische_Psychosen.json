@@ -1,0 +1,216 @@
+[
+  {
+    "id": "F06_001",
+    "theme": "f00_f09",
+    "chapter": "F06_Organische_Psychosen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "F06.0",
+      "type": "ICD-10",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#4a6a8a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Organische Halluzinose",
+          "type": "Diagnose"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "F06.0 = Organische Halluzinose.",
+        "visual": {
+          "color": "#6a8aaa",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Alkoholhalluzinose",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Alkoholhalluzinose = F10.5, nicht F06.0.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F10.5"
+      },
+      {
+        "entry": {
+          "word": "Schizophrenie",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Schizophrenie = F20, nicht F06.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F20"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": [
+        "organisch",
+        "halluzinose",
+        "level1"
+      ],
+      "related": [
+        "F06_002",
+        "F10_001"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "F06_002",
+    "theme": "f00_f09",
+    "chapter": "F06_Organische_Psychosen",
+    "level": 2,
+    "waveDuration": 4,
+    "base": {
+      "word": "F06.7",
+      "type": "ICD-10",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#4a6a8a",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Leichte kognitive Störung",
+          "type": "Diagnose"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "F06.7 = Leichte kognitive Störung.",
+        "visual": {
+          "color": "#6a8aaa",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Demenz",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Demenz = F00-F03, nicht F06.7.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F00-F03"
+      },
+      {
+        "entry": {
+          "word": "Delir",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Delir = F05, nicht F06.7.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F05"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": [
+        "organisch",
+        "kognitiv",
+        "level2"
+      ],
+      "related": [
+        "F06_001",
+        "F00_001"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]
+

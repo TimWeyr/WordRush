@@ -1,0 +1,39 @@
+{
+  "id": "suizid",
+  "name": "Suizid",
+  "description": "Lerne Suizid-Modelle und Theorien - Ringel, Pöldinger, Joiner und Medien-Effekte.",
+  "colorPrimary": "#8B0000",
+  "colorAccent": "#DC143C",
+  "backgroundGradient": [
+    "#4a0000",
+    "#6a0000"
+  ],
+  "maxLevels": 10,
+  "icon": "⚠️",
+  "shipSkin": "/assets/ships/medical_ship.svg",
+  "laserColor": "#DC143C",
+  "relatedPackages": [
+    "psychiatrie",
+    "suizid"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "modelle_theorien": {
+      "backgroundGradient": [
+        "#4a0000",
+        "#6a0000"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "suizid_theme.mp3",
+      "particleEffect": "medical_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

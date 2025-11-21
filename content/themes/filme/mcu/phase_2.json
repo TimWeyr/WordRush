@@ -1,0 +1,5197 @@
+[
+  {
+    "id": "MCU_GUARDIANS_PHASE2",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 1,
+    "waveDuration": 10,
+    "base": {
+      "word": "Guardians of the Galaxy",
+      "type": "Film",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "2014",
+          "type": "Erscheinungsjahr"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Guardians of the Galaxy kam 2014 raus - Phase 2 des MCU!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Action, Sci-Fi",
+          "type": "Genre"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Guardians of the Galaxy ist ein Action-Sci-Fi-Film - perfekt für alle, die gerne tanzen!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "James Gunn",
+          "type": "Regisseur"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "James Gunn inszenierte Guardians of the Galaxy - mit viel Musik und Humor!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Chris Pratt",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Chris Pratt spielte Star-Lord - den Mann mit dem besten Musikgeschmack der Galaxie!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Zoe Saldaña",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Zoe Saldaña spielte Gamora - die Frau, die sehr grün ist und sehr gut kämpft!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Dave Bautista",
+          "type": "Hauptdarsteller"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 6,
+        "context": "Dave Bautista spielte Drax - den Mann, der sehr stark ist und sehr wörtlich nimmt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Joss Whedon",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Joss Whedon hat Guardians nicht gedreht - aber er hat The Avengers gemacht!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Robert Downey Jr.",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Robert Downey Jr. war nicht in Guardians - er ist Iron Man!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2014", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_PHASE2_BOX_OFFICE",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 1,
+    "waveDuration": 10,
+    "base": {
+      "word": "$5.272 Milliarden",
+      "type": "Box Office",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Phase 2",
+          "type": "Phase"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Phase 2 spielte $5.272 Milliarden ein - noch mehr als Phase 1!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "6 Filme",
+          "type": "Anzahl"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "6 Filme erzielten zusammen $5.272 Milliarden - ein riesiger Erfolg!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2013-2015",
+          "type": "Zeitraum"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Von 2013 bis 2015 sammelten die Filme $5.272 Milliarden ein!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Mehr als Phase 1",
+          "type": "Vergleich"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Phase 2 spielte mehr ein als Phase 1 - das MCU wächst!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "$3.8 Milliarden",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "$3.8 Milliarden war Phase 1 - Phase 2 hatte mehr!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 3",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Das war Phase 2, nicht Phase 3!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "Box Office", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_JOSS_WHEDON_CONSULTANT",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 1,
+    "waveDuration": 10,
+    "base": {
+      "word": "Joss Whedon",
+      "type": "Konsultant",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Alle Phase 2 Filme",
+          "type": "Aufgabe"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Joss Whedon konsultierte alle Phase 2 Filme - der Mastermind!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Scripts lesen",
+          "type": "Aufgabe"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Whedon las Scripts und schaute Cuts - kreative Beratung!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Age of Ultron",
+          "type": "Film"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Whedon schrieb und inszenierte Age of Ultron - sein Meisterwerk!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2012-2015",
+          "type": "Vertrag"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Whedon hatte einen Exklusivvertrag bis Juni 2015 - für Film und TV!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Nur Age of Ultron",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Whedon konsultierte alle Phase 2 Filme - nicht nur Age of Ultron!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Whedon konsultierte Phase 2 - nicht Phase 1!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "Konsultant", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_IRON_MAN_3",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 1,
+    "waveDuration": 10,
+    "base": {
+      "word": "Iron Man 3",
+      "type": "Film",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "2013",
+          "type": "Erscheinungsjahr"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Iron Man 3 kam 2013 raus - der Start von Phase 2!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Shane Black",
+          "type": "Regisseur"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Shane Black inszenierte Iron Man 3 - neuer Regisseur für Phase 2!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "6 Monate nach Avengers",
+          "type": "Timeline"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Iron Man 3 spielt 6 Monate nach The Avengers - Weihnachten 2012!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "PTSD",
+          "type": "Thema"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Tony Stark leidet unter PTSD nach der Schlacht von New York!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Jon Favreau",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Jon Favreau hat Iron Man 3 nicht gedreht - Shane Black übernahm!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "2012",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Iron Man 3 kam 2013 raus - nicht 2012!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2013", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_ANT_MAN_PHASE_CHANGE",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 2,
+    "waveDuration": 10,
+    "base": {
+      "word": "Ant-Man",
+      "type": "Film",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Phase 2 Finale",
+          "type": "Position"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ant-Man war ursprünglich Phase 3 - wurde aber zu Phase 2 verschoben!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2015",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Ant-Man kam 2015 raus - das Finale von Phase 2!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Age of Ultron Einfluss",
+          "type": "Grund"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Age of Ultron beeinflusste Ant-Man - deshalb Phase 2!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Peyton Reed",
+          "type": "Regisseur"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Peyton Reed inszenierte Ant-Man - nachdem Edgar Wright ging!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Phase 3 Start",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Ant-Man war ursprünglich Phase 3 - wurde aber verschoben!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Edgar Wright",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Edgar Wright verließ das Projekt - Peyton Reed übernahm!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2015", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_CUT_OFF_HANDS",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 2,
+    "waveDuration": 10,
+    "base": {
+      "word": "Abgeschnittene Hände",
+      "type": "Easter Egg",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Jeder Phase 2 Film",
+          "type": "Vorkommen"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Jeder Phase 2 Film hat eine abgeschnittene Hand - Star Wars Referenz!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Star Wars",
+          "type": "Referenz"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Eine Hommage an Star Wars - wo das auch oft passiert!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Nicht geplant",
+          "type": "Ursprung"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Zuerst nicht geplant - dann absichtlich fortgesetzt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Kevin Feige",
+          "type": "Bestätigung"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Kevin Feige bestätigte: Nach dem Muster wurde es fortgesetzt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Das Muster war nur in Phase 2 - nicht Phase 1!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Geplant",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Es war zuerst nicht geplant - dann absichtlich fortgesetzt!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "Easter Egg", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_NEW_MARVEL_LOGO",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 2,
+    "waveDuration": 10,
+    "base": {
+      "word": "Neues Marvel Logo",
+      "type": "Design",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Thor: The Dark World",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Das neue Logo debütierte in Thor: The Dark World - 2013!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Imaginary Forces",
+          "type": "Design Studio"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Imaginary Forces erstellte das neue Logo - geniales Design!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Brian Tyler",
+          "type": "Komponist"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Brian Tyler komponierte die Fanfare für das neue Logo!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Kein Distributor Logo",
+          "type": "Grund"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Erster Film ohne Distributor-Logo - Disney Übernahme!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man 3",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Das neue Logo kam erst in Thor: The Dark World - nicht Iron Man 3!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Das neue Logo kam in Phase 2 - nicht Phase 1!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2013", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_WINTER_SOLDIER",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 2,
+    "waveDuration": 10,
+    "base": {
+      "word": "Winter Soldier",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Captain America: The Winter Soldier",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Winter Soldier wurde in Captain America: The Winter Soldier eingeführt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Sebastian Stan",
+          "type": "Schauspieler"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Sebastian Stan spielte Bucky Barnes/Winter Soldier - zurück aus dem Eis!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Bucky Barnes",
+          "type": "Echter Name"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Winter Soldier ist eigentlich Bucky Barnes - Captain Americas bester Freund!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2014",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Winter Soldier kam 2014 ins MCU - ein gefährlicher Gegner!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Chris Evans",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Chris Evans spielte Captain America - nicht Winter Soldier!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Iron Man 3",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Winter Soldier war nicht in Iron Man 3 - er kam in The Winter Soldier!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2014", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_VISION",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 3,
+    "waveDuration": 10,
+    "base": {
+      "word": "Vision",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Avengers: Age of Ultron",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Vision wurde in Age of Ultron eingeführt - der künstliche Avenger!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Paul Bettany",
+          "type": "Schauspieler"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Paul Bettany spielte Vision - vorher war er J.A.R.V.I.S.!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Mind Stone",
+          "type": "Infinity Stone"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Vision trägt den Mind Stone in seiner Stirn - mächtig!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "J.A.R.V.I.S.",
+          "type": "Vorherige Rolle"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Bettany spielte vorher J.A.R.V.I.S. - jetzt Vision!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Guardians of the Galaxy",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Vision war nicht in Guardians - er kam in Age of Ultron!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Robert Downey Jr.",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Robert Downey Jr. spielte Iron Man - nicht Vision!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2015", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_HYDRA_INFILTRATION",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 3,
+    "waveDuration": 10,
+    "base": {
+      "word": "HYDRA Infiltration",
+      "type": "Plot Twist",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Captain America: The Winter Soldier",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "HYDRA infiltrierte S.H.I.E.L.D. - der große Plot Twist!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "S.H.I.E.L.D.",
+          "type": "Organisation"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "S.H.I.E.L.D. wurde von HYDRA unterwandert - seit Jahrzehnten!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Agents of S.H.I.E.L.D.",
+          "type": "TV Serie"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Die TV-Serie wurde davon beeinflusst - finale 6 Episoden!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2014",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Der Plot Twist kam 2014 - ein Game-Changer für das MCU!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man 3",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Die HYDRA Infiltration war in The Winter Soldier - nicht Iron Man 3!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Die Infiltration wurde in Phase 2 aufgedeckt - nicht Phase 1!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2014", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_FALCON",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 3,
+    "waveDuration": 10,
+    "base": {
+      "word": "Falcon",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Captain America: The Winter Soldier",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Falcon wurde in The Winter Soldier eingeführt - Captain Americas neuer Partner!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Anthony Mackie",
+          "type": "Schauspieler"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Anthony Mackie spielte Sam Wilson/Falcon - der Mann mit den Flügeln!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Sam Wilson",
+          "type": "Echter Name"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Falcons echter Name ist Sam Wilson - ein Veteran!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Ant-Man",
+          "type": "Auftritt"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Falcon hatte auch einen Auftritt in Ant-Man - im Avengers HQ!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man 3",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Falcon war nicht in Iron Man 3 - er kam in The Winter Soldier!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Chris Evans",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Chris Evans spielte Captain America - nicht Falcon!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2014", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_COLLECTOR",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 3,
+    "waveDuration": 10,
+    "base": {
+      "word": "The Collector",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Thor: The Dark World",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "The Collector wurde in Thor: The Dark World eingeführt - Mid-Credit Scene!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Benicio del Toro",
+          "type": "Schauspieler"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Benicio del Toro spielte The Collector - der Sammler von Infinity Stones!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "James Gunn",
+          "type": "Regisseur Scene"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "James Gunn drehte die Mid-Credit Scene - für Guardians Vorbereitung!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Infinity Stones",
+          "type": "Sammelobjekt"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "The Collector sammelt Infinity Stones - Tesserakt und Aether!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Guardians of the Galaxy",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "The Collector wurde in Thor eingeführt - nicht Guardians!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Alan Taylor",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Alan Taylor drehte Thor - aber Gunn drehte die Mid-Credit Scene!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2013", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_THANOS_DEVELOPMENT",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 4,
+    "waveDuration": 10,
+    "base": {
+      "word": "Thanos",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Guardians of the Galaxy",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Thanos wurde in Guardians weiter entwickelt - der große Bösewicht!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Josh Brolin",
+          "type": "Schauspieler"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Josh Brolin spielte Thanos - Voice und Performance Capture!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Infinity Gauntlet",
+          "type": "Gegenstand"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Thanos trägt den Infinity Gauntlet in Age of Ultron - Mid-Credit!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Infinity War",
+          "type": "Verbindung"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Gunn sagte: Guardians verbindet mit Infinity War - Vorbereitung!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "The Avengers",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Thanos wurde in The Avengers eingeführt - aber in Guardians entwickelt!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Mark Ruffalo",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Mark Ruffalo spielte Hulk - nicht Thanos!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2014", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_INFINITY_STONES_PHASE2",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 4,
+    "waveDuration": 10,
+    "base": {
+      "word": "Infinity Stones",
+      "type": "Gegenstände",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Aether",
+          "type": "Stone"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Der Aether aus Thor: The Dark World ist ein Infinity Stone!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Power Stone",
+          "type": "Stone"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Der Orb in Guardians enthält den Power Stone - mächtig!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Mind Stone",
+          "type": "Stone"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Loki's Zepter ist der Mind Stone - in Vision's Stirn!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "The Collector",
+          "type": "Erklärung"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "The Collector erklärt die Geschichte der Infinity Stones!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Diese Stones wurden in Phase 2 eingeführt - nicht Phase 1!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Tesserakt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Der Tesserakt war Phase 1 - Phase 2 hatte neue Stones!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "Infinity Stones", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_RUSSO_BROTHERS",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 4,
+    "waveDuration": 10,
+    "base": {
+      "word": "Russo Brothers",
+      "type": "Regisseure",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Captain America: The Winter Soldier",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Die Russo Brothers inszenierten The Winter Soldier - ihr MCU-Debüt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Anthony & Joe",
+          "type": "Namen"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Anthony und Joe Russo - die Brüder, die das MCU prägten!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2014",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Die Russo Brothers kamen 2014 ins MCU - und blieben!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Ant-Man Post-Credit",
+          "type": "Szene"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Die Russos drehten die Ant-Man Post-Credit Scene - für Civil War!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man 3",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Die Russos haben Iron Man 3 nicht gedreht - Shane Black!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Die Russos kamen in Phase 2 - nicht Phase 1!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2014", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_TIMELINE_REAL_TIME",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 5,
+    "waveDuration": 10,
+    "base": {
+      "word": "Real-Time Timeline",
+      "type": "Konzept",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Phase 2",
+          "type": "Phase"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Phase 2 spielt in Real-Time - einfacher als Phase 1!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "6 Monate",
+          "type": "Iron Man 3"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Iron Man 3: 6 Monate nach Avengers - Weihnachten 2012!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "1 Jahr",
+          "type": "Thor"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Thor: The Dark World: 1 Jahr nach Avengers - 2013!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2 Jahre",
+          "type": "Winter Soldier"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "The Winter Soldier: 2 Jahre nach Avengers - 2014!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Phase 1",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Real-Time Timeline war Phase 2 - Phase 1 war komplizierter!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Kompliziert",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Phase 2 Timeline war einfacher - nicht kompliziert!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "Timeline", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_MARVEL_ONE_SHOTS_PHASE2",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 5,
+    "waveDuration": 10,
+    "base": {
+      "word": "Marvel One-Shots Phase 2",
+      "type": "Kurzfilme",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "2 Kurzfilme",
+          "type": "Anzahl"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Phase 2 hatte 2 Marvel One-Shots - weniger als Phase 1!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Agent Carter",
+          "type": "Kurzfilm"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Agent Carter - führte zur TV-Serie!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "All Hail the King",
+          "type": "Kurzfilm"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "All Hail the King - über Trevor Slattery aus Iron Man 3!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Blu-ray",
+          "type": "Veröffentlichung"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "One-Shots auf Blu-ray - Bonusmaterial für Fans!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "3 Kurzfilme",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Phase 2 hatte 2 One-Shots - Phase 1 hatte 3!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Kino",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "One-Shots liefen nicht im Kino - nur auf Blu-ray!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "Kurzfilme", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_EXTREMIS",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 4,
+    "waveDuration": 10,
+    "base": {
+      "word": "Extremis",
+      "type": "Technologie",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Iron Man 3",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Extremis wurde in Iron Man 3 eingeführt - regenerative Behandlung!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Maya Hansen",
+          "type": "Erfinderin"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Maya Hansen erfand Extremis 1999 - für Verletzungen!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Aldrich Killian",
+          "type": "Missbrauch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Killian missbrauchte Extremis - Soldaten explodierten!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "1999",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Extremis wurde 1999 erfunden - lange vor Iron Man 3!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Guardians of the Galaxy",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Extremis war nur in Iron Man 3 - nicht Guardians!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Tony Stark",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Tony Stark erfand Extremis nicht - Maya Hansen!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2013", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_TREVOR_SLATTERY",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 4,
+    "waveDuration": 10,
+    "base": {
+      "word": "Trevor Slattery",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Iron Man 3",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Trevor Slattery war der falsche Mandarin - ein britischer Schauspieler!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Ben Kingsley",
+          "type": "Schauspieler"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Ben Kingsley spielte Trevor Slattery - der falsche Mandarin!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Aldrich Killian",
+          "type": "Schöpfer"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Killian erschuf Slattery als Ablenkung - genialer Twist!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "All Hail the King",
+          "type": "One-Shot"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Slattery bekam seinen eigenen One-Shot - All Hail the King!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Der echte Mandarin",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Slattery war der falsche Mandarin - Killian war der echte!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Guardians of the Galaxy",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Slattery war nur in Iron Man 3 - nicht Guardians!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2013", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_CONVERGENCE",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 4,
+    "waveDuration": 10,
+    "base": {
+      "word": "Convergence",
+      "type": "Ereignis",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Thor: The Dark World",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Die Convergence war in Thor: The Dark World - Welten verbinden sich!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Nine Realms",
+          "type": "Welten"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Die Convergence verbindet die Nine Realms - alle Welten!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Portale",
+          "type": "Erscheinung"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Portale erscheinen zufällig - Welten verbinden sich!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Jane Foster",
+          "type": "Betroffen"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Jane wurde durch ein Portal teleportiert - und bekam den Aether!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man 3",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Die Convergence war nur in Thor: The Dark World!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Bifröst",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Die Convergence ist nicht der Bifröst - es ist ein Ereignis!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2013", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_FRIGGA_DEATH",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 4,
+    "waveDuration": 10,
+    "base": {
+      "word": "Frigga",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Thor: The Dark World",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Frigga starb in Thor: The Dark World - Thors Mutter!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Malekith",
+          "type": "Mörder"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Malekith tötete Frigga bei seinem Angriff auf Asgard!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Thors Mutter",
+          "type": "Beziehung"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Frigga war Thors Mutter - eine tragische Szene!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Loki vereint",
+          "type": "Effekt"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Friggas Tod vereinte Thor und Loki - gegen Malekith!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man 3",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Frigga war nur in Thor Filmen - nicht Iron Man!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Odin",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Odin ist Thors Vater - Frigga war die Mutter!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2013", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_PROJECT_INSIGHT",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 5,
+    "waveDuration": 10,
+    "base": {
+      "word": "Project Insight",
+      "type": "Projekt",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Captain America: The Winter Soldier",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Project Insight war in The Winter Soldier - drei Helicarriers!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Drei Helicarriers",
+          "type": "Waffe"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Drei Helicarriers verlinkt mit Spionagesatelliten - gefährlich!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "HYDRA Plan",
+          "type": "Zweck"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Project Insight war HYDRA's Plan - Bedrohungen eliminieren!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Zerstört",
+          "type": "Schicksal"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Rogers und Wilson zerstörten die Helicarriers - HYDRA gestoppt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man 3",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Project Insight war nur in The Winter Soldier!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "S.H.I.E.L.D. Projekt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Project Insight war HYDRA's Plan - nicht S.H.I.E.L.D.!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2014", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_ARMIN_ZOLA",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 5,
+    "waveDuration": 10,
+    "base": {
+      "word": "Arnim Zola",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Captain America: The Winter Soldier",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Arnim Zola erschien in The Winter Soldier - als AI!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "KI",
+          "type": "Form"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Zola wurde als KI gespeichert - in einem Computer!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "HYDRA Infiltration",
+          "type": "Enthüllung"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Zola enthüllte die HYDRA Infiltration - seit Jahrzehnten!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Howard Stark",
+          "type": "Mord"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Zola enthüllte: Howard Starks Tod war kein Unfall!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man 3",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Zola war nur in The Winter Soldier - nicht Iron Man 3!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Menschlich",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Zola war eine KI - nicht mehr menschlich!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2014", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_QUANTUM_REALM",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 5,
+    "waveDuration": 10,
+    "base": {
+      "word": "Quantum Realm",
+      "type": "Dimension",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ant-Man",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Der Quantum Realm wurde in Ant-Man eingeführt - subatomare Dimension!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Janet van Dyne",
+          "type": "Gefangen"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Janet van Dyne opferte sich - verschwand im Quantum Realm!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Scott Lang",
+          "type": "Besucht"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Scott Lang ging ins Quantum Realm - und kam zurück!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Subatomar",
+          "type": "Größe"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Der Quantum Realm ist subatomar - kleiner als klein!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Guardians of the Galaxy",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Der Quantum Realm war nur in Ant-Man - nicht Guardians!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Hank Pym",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Hank Pym ging nicht ins Quantum Realm - Janet und Scott!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2015", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_SOKOVIA",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 6,
+    "waveDuration": 10,
+    "base": {
+      "word": "Sokovia",
+      "type": "Ort",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Avengers: Age of Ultron",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Sokovia war in Age of Ultron - die Hauptstadt wurde angehoben!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Ultron Plan",
+          "type": "Zweck"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Ultron hob Sokovia an - um Massenauslöschung zu verursachen!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Zerstört",
+          "type": "Schicksal"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Stark und Thor zerstörten Sokovia - in Stücke gesprengt!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Quicksilver & Scarlet Witch",
+          "type": "Herkunft"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Die Maximoff Zwillinge kamen aus Sokovia - ihre Heimat!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Guardians of the Galaxy",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Sokovia war nur in Age of Ultron - nicht Guardians!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "New York",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "New York war in The Avengers - Sokovia in Age of Ultron!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2015", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_ULYSSES_KLAUE",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 6,
+    "waveDuration": 10,
+    "base": {
+      "word": "Ulysses Klaue",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Avengers: Age of Ultron",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ulysses Klaue wurde in Age of Ultron eingeführt - Waffenhändler!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Andy Serkis",
+          "type": "Schauspieler"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Andy Serkis spielte Klaue - der Waffenhändler!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Vibranium",
+          "type": "Ware"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Klaue verkaufte Vibranium an Ultron - aus Wakanda!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Black Panther",
+          "type": "Verbindung"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Klaue ist traditionell Black Panther's Gegner - Vorbereitung!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Guardians of the Galaxy",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Klaue war nur in Age of Ultron - nicht Guardians!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Iron Man 3",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Klaue kam erst in Age of Ultron - nicht Iron Man 3!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2015", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_GROOT_SACRIFICE",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 6,
+    "waveDuration": 10,
+    "base": {
+      "word": "Groot",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Guardians of the Galaxy",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Groot opferte sich in Guardians - um die Gruppe zu retten!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Wir sind Groot",
+          "type": "Letzte Worte"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Groot's letzte Worte: 'Wir sind Groot' - emotional!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Neuer Spross",
+          "type": "Wiedergeburt"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Ein neuer Groot-Spross wuchs - Mid-Credit Scene!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Vin Diesel",
+          "type": "Stimme"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Vin Diesel sprach Groot - nur drei Worte!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Age of Ultron",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Groot war nur in Guardians - nicht Age of Ultron!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Tot",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Groot starb - aber ein neuer Spross wuchs!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2014", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_PIETRO_DEATH",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 6,
+    "waveDuration": 10,
+    "base": {
+      "word": "Pietro Maximoff",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Avengers: Age of Ultron",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Pietro starb in Age of Ultron - Quicksilver's Tod!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Quicksilver",
+          "type": "Superheldenname"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Pietro war Quicksilver - der schnellste Avenger!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Hawkeye retten",
+          "type": "Heldentat"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Pietro starb, um Hawkeye zu retten - ein Held!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Wanda",
+          "type": "Schwester"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Wanda war traurig über Pietros Tod - ihre Schwester!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Guardians of the Galaxy",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Pietro war nur in Age of Ultron - nicht Guardians!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Überlebt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Pietro starb - er überlebte nicht!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2015", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_HOWARD_THE_DUCK",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 7,
+    "waveDuration": 10,
+    "base": {
+      "word": "Howard the Duck",
+      "type": "Easter Egg",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Guardians of the Galaxy",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Howard the Duck erschien in Guardians - Post-Credit Scene!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Post-Credit Scene",
+          "type": "Auftritt"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Howard erschien in der Post-Credit Scene - mit Cosmo!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Marvel Charakter",
+          "type": "Herkunft"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Howard the Duck ist ein echter Marvel Charakter - Easter Egg!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Cosmo",
+          "type": "Begleiter"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Howard erschien mit Cosmo - dem sprechenden Hund!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Age of Ultron",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Howard war nur in Guardians - nicht Age of Ultron!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Mid-Credit",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Howard war in der Post-Credit Scene - nicht Mid-Credit!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2014", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_JANET_VAN_DYNE",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 7,
+    "waveDuration": 10,
+    "base": {
+      "word": "Janet van Dyne",
+      "type": "Charakter",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ant-Man",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Janet van Dyne wurde in Ant-Man erwähnt - die Wasp!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Die Wasp",
+          "type": "Superheldenname"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Janet war die Wasp - Hank Pym's Frau!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Quantum Realm",
+          "type": "Verschwinden"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Janet opferte sich - verschwand im Quantum Realm!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Wasp Suit",
+          "type": "Mid-Credit"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Mid-Credit: Pym zeigt Hope den Wasp Suit Prototyp!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Guardians of the Galaxy",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Janet war nur in Ant-Man - nicht Guardians!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Überlebt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Janet verschwand im Quantum Realm - Status unklar!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2015", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_NEW_AVENGERS_TEAM",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 7,
+    "waveDuration": 10,
+    "base": {
+      "word": "New Avengers Team",
+      "type": "Team",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Avengers: Age of Ultron",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Das neue Avengers Team wurde in Age of Ultron gegründet!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Rogers & Romanoff",
+          "type": "Führung"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Rogers und Romanoff trainieren das neue Team - Führung!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Vision, Falcon, War Machine, Scarlet Witch",
+          "type": "Mitglieder"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Neue Mitglieder: Vision, Falcon, War Machine, Scarlet Witch!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2015",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Das neue Team wurde 2015 gegründet - nach Age of Ultron!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "The Avengers",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Das neue Team wurde in Age of Ultron gegründet - nicht The Avengers!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Iron Man & Hulk",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Iron Man und Hulk verließen das Team - neue Mitglieder kamen!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2015", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  },
+  {
+    "id": "MCU_LOKI_IMPERSONATES_ODIN",
+    "theme": "mcu",
+    "chapter": "phase_2",
+    "level": 7,
+    "waveDuration": 10,
+    "base": {
+      "word": "Loki als Odin",
+      "type": "Plot Twist",
+      "visual": {
+        "tier": 2,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c41e3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Thor: The Dark World",
+          "type": "Film"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Loki impersoniert Odin am Ende von The Dark World - Twist!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Post-Credit",
+          "type": "Enthüllung"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Der Twist wurde in der Post-Credit Scene enthüllt - genial!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "Loki lebt",
+          "type": "Wahrheit"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Loki war nicht tot - er impersonierte Odin!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft.mp3"
+      },
+      {
+        "entry": {
+          "word": "2013",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Der Twist kam 2013 - perfektes Setup für Ragnarok!",
+        "visual": {
+          "color": "#7fe8a2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft.mp3"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Iron Man 3",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Loki war nur in Thor Filmen - nicht Iron Man!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      },
+      {
+        "entry": {
+          "word": "Loki tot",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "",
+        "context": "Loki war nicht tot - er impersonierte Odin!",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor.mp3"
+      }
+    ],
+    "meta": {
+      "source": "MCU-Datenbank",
+      "tags": ["Phase 2", "2013", "MCU"],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 0.1,
+        "colorContrastFade": true,
+        "angleVariance": 5
+      }
+    }
+  }
+]
+

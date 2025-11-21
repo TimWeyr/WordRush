@@ -1,0 +1,213 @@
+[
+  {
+    "id": "BURGER_001",
+    "theme": "fastfood",
+    "chapter": "burger",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Big Mac",
+      "type": "Burger",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff6b35",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "McDonald's",
+          "type": "Restaurant"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Big Mac ist von McDonald's (Und hat 2 Fleischscheiben! 🍔)",
+        "visual": {
+          "color": "#f7931e",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Burger King",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Burger King hat den Whopper! (Aber nicht den Big Mac! 👑)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Fast Food Wissen",
+      "tags": ["burger", "level1"]
+    }
+  },
+  {
+    "id": "BURGER_002",
+    "theme": "fastfood",
+    "chapter": "burger",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Whopper",
+      "type": "Burger",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff6b35",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Burger King",
+          "type": "Restaurant"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Whopper ist von Burger King (Und ist größer als der Big Mac! 👑)",
+        "visual": {
+          "color": "#f7931e",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "McDonald's",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "McDonald's hat den Big Mac! (Aber nicht den Whopper! 🍔)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Fast Food Wissen",
+      "tags": ["burger", "level1"]
+    }
+  },
+  {
+    "id": "BURGER_003",
+    "theme": "fastfood",
+    "chapter": "burger",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Cheeseburger",
+      "type": "Burger",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff6b35",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Mit Käse",
+          "type": "Zutat"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Cheeseburger hat Käse (Der Name sagt es schon! 🧀)",
+        "visual": {
+          "color": "#f7931e",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Ohne Käse",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Dann wäre es ein Hamburger! (Cheese = Käse! 🧀)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Fast Food Wissen",
+      "tags": ["burger", "level1"]
+    }
+  }
+]
+

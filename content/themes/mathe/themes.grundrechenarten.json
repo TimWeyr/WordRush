@@ -1,0 +1,69 @@
+{
+  "id": "grundrechenarten",
+  "name": "+-x:",
+  "description": "Übe die Grundrechenarten - Addition, Subtraktion, Multiplikation und Division.",
+  "colorPrimary": "#3498db",
+  "colorAccent": "#2980b9",
+  "backgroundGradient": [
+    "#1e3c72",
+    "#2a5298"
+  ],
+  "maxLevels": 15,
+  "icon": "🔢",
+  "shipSkin": "/assets/ships/mathe_ship.svg",
+  "laserColor": "#3498db",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "plus": {
+      "backgroundImage": "plus_bg.png",
+      "backgroundGradient": [
+        "#27ae60",
+        "#2ecc71"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "plus_theme.mp3",
+      "particleEffect": "plus_energy"
+    },
+    "minus": {
+      "backgroundImage": "minus_bg.png",
+      "backgroundGradient": [
+        "#e74c3c",
+        "#c0392b"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "minus_theme.mp3",
+      "particleEffect": "minus_energy"
+    },
+    "multiplikation": {
+      "backgroundImage": "multiplikation_bg.png",
+      "backgroundGradient": [
+        "#f39c12",
+        "#e67e22"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "multiplikation_theme.mp3",
+      "particleEffect": "multiplikation_energy"
+    },
+    "division": {
+      "backgroundImage": "division_bg.png",
+      "backgroundGradient": [
+        "#9b59b6",
+        "#8e44ad"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "division_theme.mp3",
+      "particleEffect": "division_energy"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

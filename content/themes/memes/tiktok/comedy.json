@@ -1,0 +1,213 @@
+[
+  {
+    "id": "TIKTOK_COMEDY_001",
+    "theme": "tiktok",
+    "chapter": "comedy",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "POV: Du bist...",
+      "type": "Format",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff6b35",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Point of View",
+          "type": "Bedeutung"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "POV bedeutet 'Point of View' (Aber auf TikTok bedeutet es meistens 'Plot of Video' 😂)",
+        "visual": {
+          "color": "#f7931e",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "People of Value",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Das wäre zu schön um wahr zu sein! (Aber nein, so funktioniert es nicht 😅)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "TikTok Kultur",
+      "tags": ["comedy", "level1"]
+    }
+  },
+  {
+    "id": "TIKTOK_COMEDY_002",
+    "theme": "tiktok",
+    "chapter": "comedy",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "No Cap",
+      "type": "Slang",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff6b35",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Keine Lüge",
+          "type": "Bedeutung"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "No Cap = Keine Lüge (Aber manchmal ist es trotzdem eine Lüge! 🤥)",
+        "visual": {
+          "color": "#f7931e",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Keine Mütze",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Das wäre wörtlich übersetzt, aber so funktioniert Slang nicht! (Nice try though! 😄)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "TikTok Kultur",
+      "tags": ["comedy", "level1"]
+    }
+  },
+  {
+    "id": "TIKTOK_COMEDY_003",
+    "theme": "tiktok",
+    "chapter": "comedy",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "It's giving...",
+      "type": "Format",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff6b35",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Es erinnert an...",
+          "type": "Bedeutung"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "It's giving... = Es erinnert an... (Aber manchmal gibt es einfach nichts! 😂)",
+        "visual": {
+          "color": "#f7931e",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Es gibt...",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Das wäre zu einfach! (TikTok-Slang ist komplizierter als du denkst! 🤯)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "TikTok Kultur",
+      "tags": ["comedy", "level1"]
+    }
+  }
+]
+

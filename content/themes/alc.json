@@ -1,0 +1,1134 @@
+[
+    {
+        "base": "Schlafstörungen",
+        "correct": [
+            {
+                "text": "Ein- und Durchschlafprobleme",
+                "context": "Typisches körperliches Symptom der Alkoholabhängigkeit."
+            },
+            {
+                "text": "Früherwachen",
+                "context": "Oft im Rahmen des vegetativen Entzugs."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Schlafen wie ein Bär",
+                "context": "Widerspricht den typischen Entzugssymptomen deutlich."
+            },
+            {
+                "text": "Jetlag vom Sofa",
+                "context": "Unabhängig vom Alkoholkonsum."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Vegetative Störungen",
+        "correct": [
+            {
+                "text": "Schwitzen und Zittern",
+                "context": "Kernsymptome des Alkoholentzugs."
+            },
+            {
+                "text": "Kreislaufprobleme",
+                "context": "Typische Folge des chronischen Missbrauchs."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Zittern vor Mathearbeit",
+                "context": "Situative Angst, keine Entzugssymptomatik."
+            },
+            {
+                "text": "Sommerhitze-Schweiß",
+                "context": "Thermische Reaktion, nicht pathologisch."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Kognitive Einbußen",
+        "correct": [
+            {
+                "text": "Gedächtnisstörungen",
+                "context": "Typisch bei fortgeschrittener Alkoholabhängigkeit."
+            },
+            {
+                "text": "Konzentrationsstörungen",
+                "context": "Häufig in allen Phasen der Erkrankung."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Gedächtnisverlust nach Party",
+                "context": "Kurzfristige Blackouts ohne Krankheitswert."
+            },
+            {
+                "text": "Konzentration bei Sudoku schwer",
+                "context": "Nicht krankheitsbedingt, sondern Anspruchsniveau."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Erleichterungstrinken",
+        "correct": [
+            {
+                "text": "Trinken zur Stressreduktion",
+                "context": "Zentrales Merkmal der präalkoholischen Phase."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Trinken zum Durstlöschen",
+                "context": "Normales Verhalten, kein Suchtzeichen."
+            },
+            {
+                "text": "Trinken wegen Langeweile",
+                "context": "Riskant, aber kein Diagnosekriterium per se."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Film­riss",
+        "correct": [
+            {
+                "text": "Amnesie nach Konsum",
+                "context": "Typisches Zeichen der Prodromalphase."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Netflix-Pause vergessen",
+                "context": "Keine Suchtassoziation."
+            },
+            {
+                "text": "Schlüssel verlegt",
+                "context": "Normaler Alltagsschnitzer."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Kontrollverlust",
+        "correct": [
+            {
+                "text": "Unfähigkeit Trinkmenge zu steuern",
+                "context": "Wesentliches Abhängigkeitskriterium."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Kontrolle über Fernbedienung verlieren",
+                "context": "Typische Familiensituation, keine Diagnose."
+            },
+            {
+                "text": "Kontrollverlust beim Klettern",
+                "context": "Motorische Problematik, nicht suchtbezogen."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Toleranzentwicklung",
+        "correct": [
+            {
+                "text": "Mehr Alkohol für gleiche Wirkung",
+                "context": "Zentrales Zeichen fortgeschrittener Abhängigkeit."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Tolerant gegenüber Meinungen",
+                "context": "Soziale Kompetenz, keine Abhängigkeit."
+            },
+            {
+                "text": "Toleranz gegenüber Lärm",
+                "context": "Individuelle Reizschwelle, nicht pathologisch."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Entzugssymptome",
+        "correct": [
+            {
+                "text": "Tremor und Unruhe",
+                "context": "Typische Frühzeichen nach Konsumstopp."
+            },
+            {
+                "text": "Schlafstörungen",
+                "context": "Häufiges Entzugssymptom."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Unruhe vor Geburtstag",
+                "context": "Emotionale Vorfreude, keine Pathologie."
+            },
+            {
+                "text": "Tremor nach zu viel Kaffee",
+                "context": "Koffeinwirkung, kein Alkoholentzug."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Interessenverlust",
+        "correct": [
+            {
+                "text": "Hobbys verlieren Bedeutung",
+                "context": "Typischer psychosozialer Abbau."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Keine Lust auf Staubsaugen",
+                "context": "Universelles Phänomen ohne ICD-10-Relevanz."
+            },
+            {
+                "text": "Interesse an Steuererklärung verloren",
+                "context": "Ebenfalls üblich, nicht pathologisch."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Sozialer Abstieg",
+        "correct": [
+            {
+                "text": "Probleme bei Arbeit und Wohnen",
+                "context": "Typische Folge der Alkoholabhängigkeit."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Abstieg bei Monopoly",
+                "context": "Spielregel, keine Diagnose."
+            },
+            {
+                "text": "Umzug in kleinere Wohnung",
+                "context": "Nicht notwendigerweise pathologisch."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Prodromalphase",
+        "correct": [
+            {
+                "text": "Gedankenkreisen um Alkohol",
+                "context": "Klassisches Vorläufermerkmal."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Kreisen um Parkplatz",
+                "context": "Verkehrssuche, nicht pathologisch."
+            },
+            {
+                "text": "Gedankenkreisen um Pizza",
+                "context": "Heißhunger, keine Suchtprogression."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Kritische Phase",
+        "correct": [
+            {
+                "text": "Zunehmender Kontrollverlust",
+                "context": "Kennzeichnend für Eskalation."
+            },
+            {
+                "text": "Wiederholte Abstinenzversuche",
+                "context": "Typisch für zunehmendes Problemverhalten."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Kritische Phase beim Kochen",
+                "context": "Nur der Moment, in dem die Sauce anbrennt."
+            },
+            {
+                "text": "Kritische Phase beim Schach",
+                "context": "Rein spielbezogen."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Chronische Phase",
+        "correct": [
+            {
+                "text": "Zwanghaftes Trinken",
+                "context": "Letzte Eskalationsphase des Verlaufs."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Zwanghaftes Aufräumen",
+                "context": "Kann andere Gründe haben."
+            },
+            {
+                "text": "Zwanghaftes Serienbingen",
+                "context": "Kein ICD-10-Kriterium."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Akuter Rausch",
+        "correct": [
+            {
+                "text": "Enthemmung und Ataxie",
+                "context": "Typische Symptome des F10.0."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Rausch durch Zucker",
+                "context": "Metaphorisch, nicht medizinisch."
+            },
+            {
+                "text": "Rausch vom Spinning",
+                "context": "Sportliche Endorphine, kein Alkoholrausch."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Mittlerer Rausch",
+        "correct": [
+            {
+                "text": "Euphorie und Erregung",
+                "context": "Typisch für Promillewerte 1.5–2.5."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Euphorie nach Lotto",
+                "context": "Finanziell motiviert, nicht toxikologisch."
+            },
+            {
+                "text": "Erregung wegen WLAN-Ausfall",
+                "context": "Stressreaktion, nichts mit Alkohol."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Schwerer Rausch",
+        "correct": [
+            {
+                "text": "Bewusstseinsstörung",
+                "context": "Kernzeichen bei Promille >2.5."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Bewusstseinsstörung durch Müdigkeit",
+                "context": "Normaler Erschöpfungszustand."
+            },
+            {
+                "text": "Schwere Rausch durch Musik",
+                "context": "Metaphorische Bedeutung."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Pathologischer Rausch",
+        "correct": [
+            {
+                "text": "Kurz, mit Halluzinationen",
+                "context": "Typischerweise kurze Dauer und aggressive Episoden."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Pathologischer Rausch durch Kaffee",
+                "context": "Nicht dokumentiert."
+            },
+            {
+                "text": "Pathologisch lange Party",
+                "context": "Umgangssprachlich, nicht medizinisch."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Entzugssyndrom",
+        "correct": [
+            {
+                "text": "Hyperhidrose und Tremor",
+                "context": "Typische vegetative Zeichen."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Schwitzattacke beim ersten Date",
+                "context": "Soziale Nervosität, nicht Entzug."
+            },
+            {
+                "text": "Tremor nach Horrorfilm",
+                "context": "Emotionaler Reiz."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Delirium tremens",
+        "correct": [
+            {
+                "text": "Bewusstseinsstörung und Halluzinationen",
+                "context": "Lebensbedrohlicher Zustand nach Entzug."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Delir nach zu viel Kaffee",
+                "context": "Kommt nicht vor."
+            },
+            {
+                "text": "Delir beim Steuerbescheid",
+                "context": "Metaphorisch, nicht medizinisch."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Halluzinose",
+        "correct": [
+            {
+                "text": "Akustische Halluzinationen",
+                "context": "Typisch: beschimpfende Stimmen, Chor."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Halluzinationen von Pizza-Geruch",
+                "context": "Kreativ, aber nicht ICD-10-konform."
+            },
+            {
+                "text": "Halluzinationen beim Einschlafen",
+                "context": "Hypnagoge Phänomene, nicht pathologisch."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Wernicke-Trias",
+        "correct": [
+            {
+                "text": "Bewusstsein, Augenmuskeln, Ataxie",
+                "context": "Klassische Trias der Wernicke-Enzephalopathie."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Trias: Hunger, Durst, Pizza",
+                "context": "Nicht klinisch relevant."
+            },
+            {
+                "text": "Trias: Müdigkeit, Kaffee, Laptop",
+                "context": "Modernes Leben, keine Pathologie."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Thiaminmangel",
+        "correct": [
+            {
+                "text": "Ursache Wernicke",
+                "context": "Vitamin-B1-Mangel ist zentral."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Mangel an Sonnenlicht",
+                "context": "Vitamin D, nicht Thiamin."
+            },
+            {
+                "text": "Mangel an WLAN",
+                "context": "Psychologisch belastend, aber kein Vitamin."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Korsakow-Syndrom",
+        "correct": [
+            {
+                "text": "Konfabulationen",
+                "context": "Typisches neuropsychologisches Zeichen."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Konfabulationen beim Smalltalk",
+                "context": "Soziale Ausschmückung, nicht pathologisch."
+            },
+            {
+                "text": "Gedächtnislücken nach Marathon",
+                "context": "Überlastung, nicht Korsakow."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Polyneuropathie",
+        "correct": [
+            {
+                "text": "Kribbeln und Taubheit",
+                "context": "Typisches neurologisches Folgesymptom."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Einschlafende Beine im Bus",
+                "context": "Positionelles Problem."
+            },
+            {
+                "text": "Kribbeln vor Freude",
+                "context": "Emotionale Reaktion."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Leberzirrhose",
+        "correct": [
+            {
+                "text": "Narbengewebe in der Leber",
+                "context": "Klassische körperliche Folge chronischen Missbrauchs."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Leberzirrhose nach zu viel Cola",
+                "context": "Nicht evidenzbasiert."
+            },
+            {
+                "text": "Leberzirrhose durch Ärger",
+                "context": "Emotional, nicht pathologisch."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "CAGE-Test",
+        "correct": [
+            {
+                "text": "Cut Down, Annoyed, Guilty, Eye-Opener",
+                "context": "Standard-Screeningverfahren für Alkoholprobleme."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "CAGE: Käfigtraining",
+                "context": "Sport, nicht Diagnostik."
+            },
+            {
+                "text": "CAGE: Katzenabschätzung",
+                "context": "Niedlich, aber falsch."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Jellinek-Typen",
+        "correct": [
+            {
+                "text": "Alpha bis Epsilon",
+                "context": "Klassisches Alkoholtypologie-Modell."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Typ A bis Z",
+                "context": "Alphabet, kein Klassifikationssystem."
+            },
+            {
+                "text": "Typ Netflix bis Amazon",
+                "context": "Streaming, keine Diagnostik."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Gamma-Typ",
+        "correct": [
+            {
+                "text": "Kontrollverlust + Toleranz",
+                "context": "Häufigster problematischer Typ (65%)."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Gamma-Wellen im Schlaf",
+                "context": "EEG, nicht Sucht."
+            },
+            {
+                "text": "Gamma bei Superhelden",
+                "context": "Popkultur."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Delta-Typ",
+        "correct": [
+            {
+                "text": "Spiegeltrinken",
+                "context": "Kontinuierlicher Konsum ohne Kontrollverlust."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Delta bei Flugzeugen",
+                "context": "Luftfahrt, nicht Sucht."
+            },
+            {
+                "text": "Delta im Matheunterricht",
+                "context": "Symbol, nicht Alkoholtyp."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Suizidgefahr",
+        "correct": [
+            {
+                "text": "Erhöht bei Alkoholabhängigkeit",
+                "context": "Bis zu 10% Suizidalität."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Suizidgefahr durch Mathe",
+                "context": "Übertrieben, nicht klinisch."
+            },
+            {
+                "text": "Suizidgefahr nach Serienfinale",
+                "context": "Emotionale Übertreibung."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Affektstörungen",
+        "correct": [
+            {
+                "text": "Depressive Stimmung",
+                "context": "Häufige Folge von Alkoholabhängigkeit."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Affektstörung nach Spoiler",
+                "context": "Emotionale Reaktion."
+            },
+            {
+                "text": "Affektstörung wegen Wetter",
+                "context": "Stimmung, nicht ICD-10."
+            }
+        ],
+        "level": 2
+    },
+    {
+        "base": "Abstinenzversagen",
+        "correct": [
+            {
+                "text": "Rückfall trotz Vorsatz",
+                "context": "Typischer Verlauf in mittleren und späten Stadien der Abhängigkeit."
+            },
+            {
+                "text": "Unfähigkeit Abstinenz zu halten",
+                "context": "Häufig trotz intensiver Motivation."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Versagen bei Diät",
+                "context": "Alltägliches Scheitern, kein ICD-10-Kriterium."
+            },
+            {
+                "text": "Versagen bei To-Do-Listen",
+                "context": "Organisationsproblem, keine Suchtprogression."
+            },
+            {
+                "text": "Abstinenz vom Aufräumen",
+                "context": "Eher ein Lebensstil als ein Diagnosesymptom."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Sozialer Zerfall",
+        "correct": [
+            {
+                "text": "Familienverlust",
+                "context": "Typische Folge der chronischen Phase."
+            },
+            {
+                "text": "Arbeitsplatzverlust",
+                "context": "Eines der häufigsten langfristigen Schadensmuster."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Verlust der Pokergruppe",
+                "context": "Keine medizinische Relevanz."
+            },
+            {
+                "text": "Alleinsein wegen Umzug",
+                "context": "Soziale Veränderung, nicht pathologisch."
+            },
+            {
+                "text": "Reduzierter Freundeskreis durch Minimalismus",
+                "context": "Lebensstilentscheidung, keine Suchtfolge."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Selbstverachtung",
+        "correct": [
+            {
+                "text": "Massive Schuldgefühle",
+                "context": "Häufig im Rahmen depressiver Komorbidität."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Scham über alte Fotos",
+                "context": "Peinlich, aber nicht psychopathologisch."
+            },
+            {
+                "text": "Unmut über Frisurenwahl",
+                "context": "Keine klinische Dimension."
+            },
+            {
+                "text": "Schuld wegen verpasster Chats",
+                "context": "Sozialer Druck, nicht ICD-relevant."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Wesenszerfall",
+        "correct": [
+            {
+                "text": "Charakterveränderungen",
+                "context": "Typisch in fortgeschrittener Alkoholabhängigkeit."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Stimmungsschwankungen bei Schlafmangel",
+                "context": "Reaktiv, nicht progressiv."
+            },
+            {
+                "text": "Launenhaftigkeit am Montag",
+                "context": "Sozial geteilter Zustand."
+            },
+            {
+                "text": "Wesenswandel durch Midlife-Crisis",
+                "context": "Keine alkoholbedingte Pathologie."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Beginnende Demenz",
+        "correct": [
+            {
+                "text": "Kognitive Einbußen",
+                "context": "Im Rahmen chronischer Alkoholabhängigkeit häufig."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Gedankenleere im Supermarkt",
+                "context": "Alltäglicher Überforderungsmoment."
+            },
+            {
+                "text": "Namen-Fail auf Partys",
+                "context": "Normales Gedächtnisverhalten."
+            },
+            {
+                "text": "Verwirrung nach Nachtschicht",
+                "context": "Schlafentzug, nicht organisch bedingt."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Delirrisiko",
+        "correct": [
+            {
+                "text": "Halluzinationen + Orientierungslosigkeit",
+                "context": "Kerndefinition des Alkoholentzugsdelirs."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Verwirrung nach Horrorfilmen",
+                "context": "Emotionaler Zustand, kein Delir."
+            },
+            {
+                "text": "Halluzinationen beim Fiebertraum",
+                "context": "Physiologische Reaktion, nicht F10."
+            },
+            {
+                "text": "Orientierungslosigkeit am Bahnhof",
+                "context": "Reale Umweltüberforderung."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Koma-Gefahr",
+        "correct": [
+            {
+                "text": "Alkoholisches Koma ab 4 Promille",
+                "context": "Lebensbedrohlicher Endpunkt schwerer Intoxikation."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Koma durch Langeweile",
+                "context": "Metapher, kein medizinischer Zustand."
+            },
+            {
+                "text": "Koma durch zu viel Kuchen",
+                "context": "Ernährungsbedingtes Unwohlsein."
+            },
+            {
+                "text": "Koma durch Serienmarathon",
+                "context": "Popkulturelle Übertreibung."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Spiegeltrinken",
+        "correct": [
+            {
+                "text": "Konstanter Pegel",
+                "context": "Typisches Merkmal des Delta-Typs."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Trinken vor dem Spiegel",
+                "context": "Ritual, aber kein Syndrom."
+            },
+            {
+                "text": "Trinken im Spiegelkabinett",
+                "context": "Optischer Effekt, kein ICD-10-Bezug."
+            },
+            {
+                "text": "Spiegeln beim Lernen",
+                "context": "Gedächtnismethode, nicht Sucht."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Aggressionszunahme",
+        "correct": [
+            {
+                "text": "Häufig in kritischer Phase",
+                "context": "Klassischer sozialer Folgeschaden."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Aggression wegen Stau",
+                "context": "Alltagsfrustration, keine Suchtprogression."
+            },
+            {
+                "text": "Aggression beim Gaming",
+                "context": "Emotionale Reaktion."
+            },
+            {
+                "text": "Aggression gegen Wecker",
+                "context": "Morgendliche Reizbarkeit."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Wahrnehmungsstörung",
+        "correct": [
+            {
+                "text": "Optische Halluzinationen",
+                "context": "Typisch beim Delirium tremens."
+            },
+            {
+                "text": "Akustische Halluzinationen",
+                "context": "Kennzeichnend für Alkoholhalluzinose."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Flecken sehen bei Hunger",
+                "context": "Hypoglykämie, nicht F10."
+            },
+            {
+                "text": "Flüstern im Wind",
+                "context": "Natürlicher Geräuscheindruck."
+            },
+            {
+                "text": "Gesichter in Wolken",
+                "context": "Pareidolie, normalpsychologisch."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Wernicke-Gefahr",
+        "correct": [
+            {
+                "text": "Thiaminmangel-bedingte Enzephalopathie",
+                "context": "Lebensbedrohliches Syndrom bei Alkoholabhängigen."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Gefahr durch Vitamin-Shakes",
+                "context": "Unrealistisch."
+            },
+            {
+                "text": "Gefahr durch Lichtmangel",
+                "context": "Vitamin-D-Thematik, nicht B1."
+            },
+            {
+                "text": "Gefahr durch scharfe Soße",
+                "context": "Kulinarisches Problem."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Konfabulation",
+        "correct": [
+            {
+                "text": "Gedächtnislücke füllen",
+                "context": "Typisch im Korsakow-Syndrom."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Storytelling im Café",
+                "context": "Soziale Färbung, keine Störung."
+            },
+            {
+                "text": "Übertreibung im Smalltalk",
+                "context": "Normales Verhalten."
+            },
+            {
+                "text": "Erfinden von Ausreden",
+                "context": "Sozial motiviert, nicht neurokognitiv."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Amnesie",
+        "correct": [
+            {
+                "text": "Alt- und Neugedächtnisstörung",
+                "context": "Kennzeichnend in chronischen Stadien."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Amnesie nach Mittagsschlaf",
+                "context": "Übergangsphänomen, nicht pathologisch."
+            },
+            {
+                "text": "Film vergessen wegen Langeweile",
+                "context": "Fehlende Aufmerksamkeit."
+            },
+            {
+                "text": "Namen vergessen nach Party",
+                "context": "Teilweise normal."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Spidernävi",
+        "correct": [
+            {
+                "text": "Gefäßveränderungen im Gesicht",
+                "context": "Klassisches körperliches Symptom bei Lebererkrankung."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Spinnen wegen Horrorfilm",
+                "context": "Reaktion, keine Leberpathologie."
+            },
+            {
+                "text": "Spinnenmotiv-Tattoo",
+                "context": "Körperkunst."
+            },
+            {
+                "text": "Spinnen sehen im Halbschlaf",
+                "context": "Hypnagog, nicht hepatologisch."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Alkoholtremor",
+        "correct": [
+            {
+                "text": "Feinschlägiges Zittern",
+                "context": "Typische Entzugsreaktion."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Zittern vor Bewerbungsgespräch",
+                "context": "Angst, kein Entzug."
+            },
+            {
+                "text": "Zittern auf dem Berg",
+                "context": "Kälte, keine Neuropathie."
+            },
+            {
+                "text": "Zittern durch zu viel Espresso",
+                "context": "Koffeinwirkung."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Organabbau",
+        "correct": [
+            {
+                "text": "Leber- und Nervenschäden",
+                "context": "Langfristige Konsequenz chronischen Missbrauchs."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Organabbau durch schlechten Rap",
+                "context": "Ästhetischer Schmerz, kein klinischer."
+            },
+            {
+                "text": "Organabbau durch Regen",
+                "context": "Physikalisch falsch."
+            },
+            {
+                "text": "Organabbau durch Stress",
+                "context": "Nicht in diesem Sinne physiologisch."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Enthemmung",
+        "correct": [
+            {
+                "text": "Risikoverhalten",
+                "context": "Typisch in frühen Intoxikationsphasen."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Risikoverhalten auf Dating-Apps",
+                "context": "Sozial, nicht toxikologisch."
+            },
+            {
+                "text": "Übermut nach Beförderung",
+                "context": "Normale emotionale Reaktion."
+            },
+            {
+                "text": "Enthemmung durch Schokolade",
+                "context": "Nicht medizinisch dokumentiert."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Psychomotorik",
+        "correct": [
+            {
+                "text": "Unruhe, Nesteln",
+                "context": "Typisch im Entzug und Delir."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Nesteln wegen Langeweile",
+                "context": "Gewohnheit."
+            },
+            {
+                "text": "Unruhe durch Koffein",
+                "context": "Arznei-ähnliche Wirkung."
+            },
+            {
+                "text": "Zappeln bei Musik",
+                "context": "Bewegungsfreude."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Suggestibilität",
+        "correct": [
+            {
+                "text": "Gesteigerte Beeinflussbarkeit",
+                "context": "Kennzeichnend im Alkoholentzugsdelir."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Beeindruckbarkeit durch Werbung",
+                "context": "Soziale Manipulation, nicht pathologisch."
+            },
+            {
+                "text": "Suggerierbarkeit in Hypnose",
+                "context": "Kontrollierter Zustand."
+            },
+            {
+                "text": "Glauben an Horoskope",
+                "context": "Nicht klinisch relevant."
+            }
+        ],
+        "level": 3
+    },
+    {
+        "base": "Blutdruckkrisen",
+        "correct": [
+            {
+                "text": "Hypertensive Phasen",
+                "context": "Typisch im akuten Entzug."
+            }
+        ],
+        "distractor": [
+            {
+                "text": "Blutdruckanstieg durch Stau",
+                "context": "Kurzfristige Stressreaktion."
+            },
+            {
+                "text": "Blutdruckanstieg durch Horrorfilm",
+                "context": "Adrenalinbedingt."
+            },
+            {
+                "text": "Blutdruckanstieg durch Steuerbescheid",
+                "context": "Verständlich, aber nicht medizinisch."
+            }
+        ],
+        "level": 3
+    }
+]

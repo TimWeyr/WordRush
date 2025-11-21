@@ -1,0 +1,635 @@
+# WordRush - AI Agents & Automation Guide
+
+**Document Version**: 1.0  
+**Last Updated**: November 2024  
+**Project**: WordRush - Educational 2D Shooter Game
+
+This document provides guidance for AI development assistants, automated scripts, and CI/CD agents working with the WordRush project.
+
+---
+
+## Table of Contents
+
+1. [AI Development Assistants](#ai-development-assistants)
+2. [Automated Content Generation Scripts](#automated-content-generation-scripts)
+3. [CI/CD Agents](#cicd-agents)
+4. [Best Practices](#best-practices)
+5. [Project-Specific Context](#project-specific-context)
+
+---
+
+## AI Development Assistants
+
+### Cursor AI / GitHub Copilot
+
+When working with AI assistants (Cursor, GitHub Copilot, ChatGPT, etc.) on this project, provide the following context:
+
+#### Key Project Files to Reference
+
+**Architecture & Types:**
+- `src/types/content.types.ts` - Content structure types (Universe, Theme, Chapter, Item)
+- `src/types/game.types.ts` - Game entity types (Ship, Laser, GameObject)
+- `src/types/progress.types.ts` - Learning state and progress tracking
+- `TYPES.md` - Complete type documentation
+
+**Core Game Engine:**
+- `src/core/GameLoop.ts` - Main game loop (requestAnimationFrame)
+- `src/core/Renderer.ts` - Canvas rendering system
+- `src/core/CollisionSystem.ts` - Circle-based collision detection
+
+**Game Logic:**
+- `src/logic/ShooterEngine.ts` - Main game orchestration
+- `src/logic/LearningStateManager.ts` - Progress tracking
+- `src/config/config.json` - Game constants and configuration
+
+**Content System:**
+- `src/infra/utils/JSONLoader.ts` - Content loading utilities
+- `content/themes/` - JSON content files (Universe, Theme, Chapter structure)
+
+#### Coding Standards
+
+**TypeScript:**
+- Use strict mode (`strict: true` in tsconfig.json)
+- Prefer interfaces over types for public APIs
+- Use explicit return types for public functions
+- Follow existing naming conventions (PascalCase for classes, camelCase for functions/variables)
+
+**React:**
+- Use functional components with hooks
+- Prefer `useState` and `useEffect` over class components
+- Keep components focused and single-purpose
+- Use CSS Modules for styling (`.module.css` files)
+
+**Game Development:**
+- All game entities extend `GameObject` base class
+- Use composition over inheritance where possible
+- Keep game loop logic separate from rendering
+- Use requestAnimationFrame for smooth 60 FPS gameplay
+
+#### Common Patterns
+
+**Entity Creation:**
+```typescript
+// Entities follow this pattern:
+class MyEntity extends GameObject {
+  constructor(position: Vector2D, config: EntityConfig) {
+    super(position, config);
+    // Initialize entity-specific properties
+  }
+  
+  update(deltaTime: number): void {
+    // Update logic
+    super.update(deltaTime);
+  }
+  
+  render(ctx: CanvasRenderingContext2D): void {
+    // Rendering logic
+    super.render(ctx);
+  }
+}
+```
+
+**Content Loading:**
+```typescript
+// Always use JSONLoader for content:
+import { JSONLoader } from '@/infra/utils/JSONLoader';
+
+const universe = await JSONLoader.loadUniverse('psychiatrie');
+const theme = await JSONLoader.loadTheme('psychiatrie', 'icd10');
+const chapter = await JSONLoader.loadChapter('psychiatrie', 'icd10', 'F32_Depression');
+```
+
+**State Management:**
+```typescript
+// Use LearningStateManager for progress:
+import { LearningStateManager } from '@/logic/LearningStateManager';
+
+const stateManager = new LearningStateManager(progressProvider);
+const learningState = await stateManager.getItemState(itemId);
+```
+
+#### What NOT to Do
+
+- ❌ Don't hardcode content - always use JSON files
+- ❌ Don't modify core game loop without understanding performance implications
+- ❌ Don't create new entity types without extending GameObject
+- ❌ Don't bypass the collision system
+- ❌ Don't modify JSON structure without updating TypeScript types
+
+---
+
+## Automated Content Generation Scripts
+
+### Overview
+
+The project includes Python scripts for automated content generation. These scripts generate JSON chapter files following the WordRush content structure.
+
+### Available Scripts
+
+#### 1. `generate_business_english.py`
+
+**Purpose:** Generates Business English theme entries (6 chapters × 6 levels × 10 terms = 360 entries)
+
+**Usage:**
+```bash
+python generate_business_english.py
+```
+
+**Output:**
+- Creates JSON files in `content/themes/englisch/business_english/`
+- Generates chapters: Business_Communication, Meetings_Presentations, Finance_Accounting, Management_Leadership, Marketing_Sales, Negotiations_Contracts
+- Each chapter contains 60 entries (levels 1-6, 10 terms each)
+
+**Structure Generated:**
+- Entry IDs: `BC_001` to `BC_060` (Business_Communication), `MP_001` to `MP_060`, etc.
+- Each entry includes: base word, correct answers, distractors (3 regular + 1 humorous)
+- Visual configurations, spawn positions, speeds, points, and context strings
+
+**Key Features:**
+- Generates humorous distractors (e.g., "Kaffeepause", "Mittagspause")
+- Creates related entry links
+- Assigns colors and visual variants
+- Sets difficulty scaling parameters
+
+#### 2. `generate_technical_english.py`
+
+**Purpose:** Generates Technical/MINT English theme entries (6 chapters × 6 levels × 10 terms = 360 entries)
+
+**Usage:**
+```bash
+python generate_technical_english.py
+```
+
+**Output:**
+- Creates JSON files in `content/themes/englisch/technical_english/`
+- Generates chapters: Computer_Basics, Programming_Software, Hardware_Devices, Networks_Internet, Data_Science_AI, Cybersecurity
+- Supports emojis in terms (e.g., "computer 💻", "keyboard ⌨️")
+
+**Structure Generated:**
+- Entry IDs: `CB_001` to `CB_060` (Computer_Basics), `PS_001` to `PS_060`, etc.
+- Similar structure to business_english but with technical vocabulary
+- Includes emoji support in word entries
+
+#### 3. `add_bc_level1.py`
+
+**Purpose:** Adds Level 1 entries (BC_001 to BC_010) to Business_Communication.json
+
+**Usage:**
+```bash
+python add_bc_level1.py
+```
+
+**What it does:**
+- Reads existing `Business_Communication.json`
+- Creates 10 Level 1 entries (BC_001 to BC_010)
+- Merges with existing entries (BC_011 to BC_060)
+- Fixes related entry links
+
+**Use Case:**
+- When Business_Communication chapter needs Level 1 entries added
+- After running `generate_business_english.py` (which starts at Level 2)
+
+#### 4. `restore_bc_entries.py`
+
+**Purpose:** Restore BC_001 to BC_010 entries (currently placeholder)
+
+**Usage:**
+```bash
+python restore_bc_entries.py
+```
+
+**Status:** Placeholder script - needs manual entry restoration
+
+#### 5. `temp_update_levels.py`
+
+**Purpose:** Temporary script for updating level configurations (currently empty)
+
+**Usage:**
+```bash
+python temp_update_levels.py
+```
+
+**Status:** Placeholder script
+
+### Content Generation Workflow
+
+**Step 1: Generate Base Content**
+```bash
+# Generate Business English content
+python generate_business_english.py
+
+# Generate Technical English content
+python generate_technical_english.py
+```
+
+**Step 2: Add Missing Levels (if needed)**
+```bash
+# Add Level 1 entries to Business_Communication
+python add_bc_level1.py
+```
+
+**Step 3: Validate JSON**
+```bash
+# Check JSON syntax (manual or use jsonlint)
+python -m json.tool content/themes/englisch/business_english/Business_Communication.json
+```
+
+**Step 4: Test in Game**
+```bash
+npm run dev
+# Navigate to Universe → Theme → Chapter in game
+# Verify entries load correctly
+```
+
+### JSON Structure Requirements
+
+All generated JSON files must follow the structure defined in `src/types/content.types.ts`:
+
+**Required Fields:**
+- `id`: Unique identifier (e.g., "BC_001")
+- `theme`: Theme ID (e.g., "business_english")
+- `chapter`: Chapter name (e.g., "Business_Communication")
+- `level`: Level number (1-6)
+- `base`: Base entry with word, type, and visual config
+- `correct`: Array of correct answer entries
+- `distractors`: Array of distractor entries (minimum 3 regular + 1 humorous)
+- `meta`: Metadata including source, tags, related entries, difficulty scaling
+
+**Visual Config:**
+- `color`: Hex color code (e.g., "#2196F3")
+- `variant`: Shape variant ("hexagon", "star", "bubble", "spike", "square", "diamond")
+- `pulsate`: Boolean for pulsation animation
+- `shake`: Boolean for shake animation
+- `fontSize`: Number (typically 1.0 to 1.2)
+
+**Spawn Configuration:**
+- `spawnPosition`: Number between 0.0 and 1.0 (horizontal position)
+- `spawnSpread`: Number (typically 0.05)
+- `speed`: Number (typically 0.9 for correct, 1.1-1.2 for distractors)
+- `behavior`: Movement pattern ("linear_inward", "seek_center", etc.)
+
+### Creating New Generation Scripts
+
+When creating new content generation scripts:
+
+1. **Follow Existing Patterns:**
+   - Use the same JSON structure
+   - Include humorous distractors
+   - Set proper related entry links
+   - Use consistent color schemes
+
+2. **Include Required Functions:**
+   - `generate_distractors()` - Creates 3 regular + 1 humorous distractor
+   - `generate_entry()` - Creates a single entry
+   - `generate_chapter()` - Generates all entries for a chapter
+
+3. **Output Location:**
+   - Place files in `content/themes/[universe]/[theme]/[chapter].json`
+   - Follow existing naming conventions
+
+4. **Validation:**
+   - Ensure all entries have unique IDs
+   - Verify related entry links are correct
+   - Check that all required fields are present
+
+---
+
+## CI/CD Agents
+
+### Current Status
+
+**No CI/CD workflows are currently configured.**
+
+### Recommended Setup
+
+When setting up CI/CD agents (GitHub Actions, GitLab CI, etc.), include:
+
+#### 1. Automated Testing
+
+```yaml
+# .github/workflows/test.yml
+name: Test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test:unit
+      - run: npm run test:integration
+```
+
+#### 2. Content Validation
+
+```yaml
+# Validate JSON content structure
+- name: Validate Content
+  run: |
+    python scripts/validate_content.py
+    npm run validate-types
+```
+
+#### 3. Build Verification
+
+```yaml
+# Ensure project builds successfully
+- name: Build
+  run: npm run build
+```
+
+#### 4. Deployment (Future)
+
+```yaml
+# Deploy to Vercel/Netlify
+- name: Deploy
+  if: github.ref == 'refs/heads/main'
+  run: |
+    npm run build
+    # Deploy commands
+```
+
+### Future CI/CD Tasks
+
+- [ ] Set up GitHub Actions workflows
+- [ ] Add automated content validation
+- [ ] Configure automated testing
+- [ ] Set up deployment pipelines
+- [ ] Add performance benchmarks
+- [ ] Configure code coverage reporting
+
+---
+
+## Best Practices
+
+### For AI Assistants
+
+#### 1. Context Awareness
+
+**Always provide:**
+- Current file being edited
+- Related files (imports, types, similar components)
+- Project structure context
+- Type definitions from `src/types/`
+
+**Example Prompt:**
+```
+I'm working on src/entities/Ship.ts. 
+The Ship extends GameObject (see src/entities/GameObject.ts).
+It needs to follow the collision system in src/core/CollisionSystem.ts.
+Please add a method to handle laser firing.
+```
+
+#### 2. Type Safety
+
+**Always:**
+- Use TypeScript types from `src/types/`
+- Import types explicitly
+- Don't use `any` - use proper types
+- Check `TYPES.md` for available interfaces
+
+**Example:**
+```typescript
+import { Item, CorrectEntry } from '@/types/content.types';
+import { Vector2D } from '@/types/game.types';
+
+function processItem(item: Item): void {
+  // Type-safe implementation
+}
+```
+
+#### 3. Code Style
+
+**Follow existing patterns:**
+- Use arrow functions for callbacks
+- Use async/await for promises
+- Use destructuring for object properties
+- Use template literals for strings
+- Keep functions focused and small
+
+#### 4. Performance Considerations
+
+**Game Loop:**
+- Keep update/render logic efficient
+- Avoid allocations in game loop
+- Use object pooling for frequently created entities
+- Cache frequently accessed values
+
+**Rendering:**
+- Batch similar draw calls
+- Use `save()`/`restore()` sparingly
+- Avoid unnecessary canvas state changes
+- Use offscreen canvas for complex graphics
+
+### For Content Generation Scripts
+
+#### 1. Consistency
+
+- Use consistent ID patterns (e.g., `BC_001`, `MP_001`)
+- Follow existing color schemes
+- Use similar spawn patterns
+- Maintain consistent difficulty scaling
+
+#### 2. Validation
+
+- Validate JSON before writing
+- Check for duplicate IDs
+- Verify related entry links
+- Ensure all required fields are present
+
+#### 3. Error Handling
+
+- Handle file I/O errors gracefully
+- Validate input data
+- Provide clear error messages
+- Log generation statistics
+
+#### 4. Documentation
+
+- Document script purpose in header
+- Include usage examples
+- Document output structure
+- Note any special requirements
+
+### For CI/CD Agents
+
+#### 1. Fast Feedback
+
+- Run quick checks first (lint, type check)
+- Run slower tests second (integration, e2e)
+- Fail fast on critical errors
+- Provide clear error messages
+
+#### 2. Caching
+
+- Cache node_modules
+- Cache build artifacts
+- Cache test results when possible
+- Use incremental builds
+
+#### 3. Security
+
+- Don't commit secrets
+- Use environment variables
+- Validate dependencies
+- Scan for vulnerabilities
+
+---
+
+## Project-Specific Context
+
+### Architecture Overview
+
+**Layered Architecture:**
+```
+src/
+├── components/     # React UI (UniverseSelector, Game, Settings)
+├── core/          # Game engine (GameLoop, Renderer, CollisionSystem)
+├── entities/      # Game objects (Ship, Laser, CorrectObject, DistractorObject)
+├── logic/         # Game logic (ShooterEngine, LearningStateManager)
+├── infra/         # Infrastructure (providers, utils)
+├── types/         # TypeScript type definitions
+└── config/        # Configuration files
+```
+
+### Content Structure
+
+**Hierarchy:**
+```
+Universe (e.g., "psychiatrie", "englisch")
+  └── Theme (e.g., "icd10", "business_english")
+      └── Chapter (e.g., "F32_Depression", "Business_Communication")
+          └── Items (e.g., "BC_001", "BC_002", ...)
+```
+
+**File Locations:**
+- Universes: `content/themes/universe.[id].json`
+- Themes: `content/themes/[universe]/themes.[id].json`
+- Chapters: `content/themes/[universe]/[theme]/[chapter].json`
+
+### Key Concepts
+
+**Game Modes:**
+- **Lernmodus (Learning Mode):** Color-coded (green=correct, red=distractor), 10% points
+- **Shooter Mode:** Theme colors, full points, no color coding
+
+**Learning State:**
+- Tracks per-item progress in LocalStorage
+- Adaptive difficulty increases speed with successful replays
+- Automatically switches from Lernmodus to Shooter mode
+
+**Scoring:**
+- Correct collected: +points (with reaction time bonus)
+- Correct shot by mistake: -points
+- Distractor destroyed: +points
+- Collection order bonus: x2 score if collected in order
+
+### Common Tasks
+
+**Adding New Content:**
+1. Create JSON files following existing structure
+2. Add Universe/Theme/Chapter entries
+3. Validate JSON syntax
+4. Test in game (`npm run dev`)
+
+**Adding New Features:**
+1. Define types in `src/types/`
+2. Implement in appropriate layer (core/logic/entities)
+3. Update UI components if needed
+4. Test thoroughly
+5. Update documentation
+
+**Debugging:**
+- Check browser console for errors
+- Use React DevTools for component debugging
+- Use Canvas debugging tools for rendering issues
+- Check LocalStorage for progress data
+
+### Dependencies
+
+**Core:**
+- React 18+ (UI framework)
+- TypeScript 5+ (type safety)
+- Vite 5+ (build tool)
+
+**Game Engine:**
+- HTML5 Canvas (rendering)
+- Custom collision system
+- Custom game loop
+
+**Storage:**
+- LocalStorage (default)
+- Supabase adapter (optional, future)
+
+### Performance Targets
+
+- **Frame Rate:** 60 FPS
+- **Load Time:** < 3s on 4G
+- **Bundle Size:** < 2MB gzipped
+- **Memory:** Efficient object management
+
+---
+
+## Quick Reference
+
+### File Paths
+
+| Purpose | Path |
+|---------|------|
+| Type Definitions | `src/types/` |
+| Game Engine | `src/core/` |
+| Game Entities | `src/entities/` |
+| Game Logic | `src/logic/` |
+| UI Components | `src/components/` |
+| Content Files | `content/themes/` |
+| Config | `src/config/config.json` |
+
+### Common Commands
+
+```bash
+# Development
+npm run dev              # Start dev server
+npm run build            # Build for production
+npm run preview          # Preview production build
+npm run lint             # Run ESLint
+
+# Content Generation
+python generate_business_english.py
+python generate_technical_english.py
+python add_bc_level1.py
+```
+
+### Important Types
+
+```typescript
+// Content
+Universe, Theme, Chapter, Item
+BaseEntry, CorrectEntry, DistractorEntry
+
+// Game
+GameObject, Ship, Laser, CorrectObject, DistractorObject
+Vector2D, GameMode, ItemLearningState
+
+// Progress
+LearningState, ProgressProvider
+```
+
+---
+
+## Questions & Support
+
+For questions about:
+- **Architecture:** See `README_BUILD_PLAN.md`
+- **Types:** See `TYPES.md`
+- **Content:** See `content/CONTENT_GUIDE.md`
+- **Deployment:** See `DEPLOYMENT.md` (if exists)
+
+---
+
+**Last Updated:** November 2024  
+**Maintained by:** WordRush Development Team
+

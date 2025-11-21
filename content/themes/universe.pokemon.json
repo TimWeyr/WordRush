@@ -1,0 +1,32 @@
+{
+  "id": "pokemon",
+  "name": "Pokemon",
+  "description": "Lerne alles über Pokemon - Generationen, Typen, Regionen und mehr! Gotta catch 'em all!",
+  "colorPrimary": "#ffd700",
+  "colorAccent": "#ff6b35",
+  "backgroundGradient": [
+    "#ff6b35",
+    "#f7931e"
+  ],
+  "icon": "⚡",
+  "available": true,
+  "language": "de",
+  "music": {
+    "theme": "pokemon_universe_theme.mp3",
+    "volume": 0.6
+  },
+  "particleEffect": "pokemon_particles",
+  "shipSkin": "pokemon_ship",
+  "laserColor": "#ffd700",
+  "themes": [
+    "generationen",
+    "typen",
+    "regionen"
+  ],
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

@@ -1,0 +1,563 @@
+[
+  {
+    "id": "F50_001",
+    "theme": "f50_f59",
+    "chapter": "essstoerungen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Anorexia nervosa",
+      "type": "Störung",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d977a5",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Gewichtsverlust",
+          "type": "Symptom"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Anorexia = Gewichtsverlust.",
+        "visual": {
+          "color": "#e89dc8",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Körperschemastörung",
+          "type": "Symptom"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Anorexia → Körperschemastörung.",
+        "visual": {
+          "color": "#e89dc8",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Angst vor Gewichtszunahme",
+          "type": "Symptom"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Anorexia = Angst vor Gewichtszunahme.",
+        "visual": {
+          "color": "#e89dc8",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Essanfälle",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Essanfälle ∈ Bulimia.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Bulimia"
+      },
+      {
+        "entry": {
+          "word": "Schlafstörung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Schlafstörung ∈ F51.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F51"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": [
+        "f50",
+        "anorexia",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "F50_002",
+    "theme": "f50_f59",
+    "chapter": "essstoerungen",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Bulimia nervosa",
+      "type": "Störung",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d977a5",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Essanfälle",
+          "type": "Symptom"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Bulimia = Essanfälle.",
+        "visual": {
+          "color": "#e89dc8",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Erbrechen",
+          "type": "Symptom"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Bulimia → Erbrechen.",
+        "visual": {
+          "color": "#e89dc8",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Laxantienmissbrauch",
+          "type": "Symptom"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Bulimia = Laxantienmissbrauch.",
+        "visual": {
+          "color": "#e89dc8",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Gewichtsverlust",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Gewichtsverlust ∈ Anorexia.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Anorexia"
+      },
+      {
+        "entry": {
+          "word": "Erektionsstörung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Erektionsstörung ∈ F52.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F52"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": [
+        "f50",
+        "bulimia",
+        "level2"
+      ]
+    }
+  },
+  {
+    "id": "F50_003",
+    "theme": "f50_f59",
+    "chapter": "essstoerungen",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Binge-Eating-Störung",
+      "type": "Störung",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d977a5",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Wiederkehrende Essanfälle",
+          "type": "Symptom"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Binge-Eating = Essanfälle.",
+        "visual": {
+          "color": "#e89dc8",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Kontrollverlust",
+          "type": "Symptom"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Binge-Eating → Kontrollverlust.",
+        "visual": {
+          "color": "#e89dc8",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Kein Erbrechen",
+          "type": "Unterscheidung"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Binge-Eating ≠ Erbrechen.",
+        "visual": {
+          "color": "#e89dc8",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Erbrechen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Erbrechen ∈ Bulimia.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Bulimia"
+      },
+      {
+        "entry": {
+          "word": "Schlaflosigkeit",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Schlaflosigkeit ∈ F51.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F51"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": [
+        "f50",
+        "binge-eating",
+        "level3"
+      ]
+    }
+  },
+  {
+    "id": "F50_004",
+    "theme": "f50_f59",
+    "chapter": "essstoerungen",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "F50 Essstörungen",
+      "type": "Kategorie",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d977a5",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Anorexia nervosa",
+          "type": "Störung"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "F50.0 = Anorexia.",
+        "visual": {
+          "color": "#e89dc8",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Bulimia nervosa",
+          "type": "Störung"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "F50.2 = Bulimia.",
+        "visual": {
+          "color": "#e89dc8",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Binge-Eating",
+          "type": "Störung"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "F50.8 = Binge-Eating.",
+        "visual": {
+          "color": "#e89dc8",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Insomnie",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Insomnie ∈ F51.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F51"
+      },
+      {
+        "entry": {
+          "word": "Erektionsstörung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Erektionsstörung ∈ F52.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F52"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": [
+        "f50",
+        "essstoerungen",
+        "level4"
+      ]
+    }
+  }
+]
+

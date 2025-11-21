@@ -1,0 +1,95 @@
+{
+  "id": "business_english",
+  "name": "Business Englisch",
+  "description": "Lerne wichtiges Business-Englisch für Meetings, Präsentationen, Verhandlungen und mehr.",
+  "colorPrimary": "#1a237e",
+  "colorAccent": "#3f51b5",
+  "backgroundGradient": [
+    "#0d1b2a",
+    "#1b263b"
+  ],
+  "maxLevels": 36,
+  "icon": "💼",
+  "shipSkin": "/assets/ships/business_ship.svg",
+  "laserColor": "#5c6bc0",
+  "relatedPackages": [
+    "business_basics",
+    "professional_english"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Business_Communication": {
+      "backgroundImage": "business_comm_bg.png",
+      "backgroundGradient": [
+        "#1a237e",
+        "#283593"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "business_comm_theme.mp3",
+      "particleEffect": "professional_particles"
+    },
+    "Meetings_Presentations": {
+      "backgroundImage": "meetings_bg.png",
+      "backgroundGradient": [
+        "#1565c0",
+        "#1976d2"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "meetings_theme.mp3",
+      "particleEffect": "presentation_sparks"
+    },
+    "Finance_Accounting": {
+      "backgroundImage": "finance_bg.png",
+      "backgroundGradient": [
+        "#004d40",
+        "#00695c"
+      ],
+      "spawnRate": 1.7,
+      "waveDuration": 3,
+      "music": "finance_theme.mp3",
+      "particleEffect": "money_particles"
+    },
+    "Management_Leadership": {
+      "backgroundImage": "management_bg.png",
+      "backgroundGradient": [
+        "#5d4037",
+        "#6d4c41"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "management_theme.mp3",
+      "particleEffect": "leadership_glow"
+    },
+    "Marketing_Sales": {
+      "backgroundImage": "marketing_bg.png",
+      "backgroundGradient": [
+        "#b71c1c",
+        "#c62828"
+      ],
+      "spawnRate": 1.8,
+      "waveDuration": 3,
+      "music": "marketing_theme.mp3",
+      "particleEffect": "sales_sparks"
+    },
+    "Negotiations_Contracts": {
+      "backgroundImage": "negotiations_bg.png",
+      "backgroundGradient": [
+        "#4a148c",
+        "#6a1b9a"
+      ],
+      "spawnRate": 1.7,
+      "waveDuration": 3,
+      "music": "negotiations_theme.mp3",
+      "particleEffect": "contract_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

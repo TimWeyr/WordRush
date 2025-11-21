@@ -1,0 +1,222 @@
+[
+  {
+    "id": "GEN2_001",
+    "theme": "generationen",
+    "chapter": "gen2",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Togepi",
+      "type": "Pokemon",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#4a90e2",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Fee",
+          "type": "Typ"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Togepi ist ein Fee-Pokemon",
+        "visual": {
+          "color": "#7bb3f0",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Normal",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Togepi ist kein Normal-Pokemon",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Pokemon Generationen",
+      "tags": [
+        "gen2",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "GEN2_002",
+    "theme": "generationen",
+    "chapter": "gen2",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Larvitar",
+      "type": "Pokemon",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#4a90e2",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Gestein",
+          "type": "Typ"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Larvitar ist ein Gestein-Pokemon",
+        "visual": {
+          "color": "#7bb3f0",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Boden",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Larvitar ist kein Boden-Pokemon",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Pokemon Generationen",
+      "tags": [
+        "gen2",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "GEN2_003",
+    "theme": "generationen",
+    "chapter": "gen2",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Phanpy",
+      "type": "Pokemon",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#4a90e2",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Boden",
+          "type": "Typ"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Phanpy ist ein Boden-Pokemon",
+        "visual": {
+          "color": "#7bb3f0",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Normal",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Phanpy ist kein Normal-Pokemon",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Pokemon Generationen",
+      "tags": [
+        "gen2",
+        "level1"
+      ]
+    }
+  }
+]
+

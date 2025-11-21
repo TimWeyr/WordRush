@@ -1,0 +1,34 @@
+{
+  "id": "memes",
+  "name": "Memes & Internet",
+  "description": "Lerne die beste Internet-Kultur kennen - Von TikTok bis Reddit! 🎭",
+  "colorPrimary": "#ff00ff",
+  "colorAccent": "#00ffff",
+  "backgroundGradient": [
+    "#ff00ff",
+    "#00ffff"
+  ],
+  "icon": "😂",
+  "available": true,
+  "language": "de",
+  "music": {
+    "theme": "memes_universe_theme.mp3",
+    "volume": 0.7
+  },
+  "particleEffect": "meme_particles",
+  "shipSkin": "meme_ship",
+  "laserColor": "#ff00ff",
+  "themes": [
+    "tiktok",
+    "reddit",
+    "youtube",
+    "instagram",
+    "twitter"
+  ],
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

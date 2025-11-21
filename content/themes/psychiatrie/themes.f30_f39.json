@@ -1,0 +1,30 @@
+{
+  "id": "f30_f39",
+  "name": "F30-F39: Affektive Störungen",
+  "description": "Lerne manische Episoden, bipolare affektive Störungen, depressive Episoden, rezidivierende depressive Störungen und anhaltende affektive Störungen.",
+  "colorPrimary": "#f4a261",
+  "colorAccent": "#f6c88a",
+  "backgroundGradient": [
+    "#d48241",
+    "#f4a261"
+  ],
+  "maxLevels": 15,
+  "icon": "🌓",
+  "shipSkin": "/assets/ships/medical_ship.svg",
+  "laserColor": "#f4a261",
+  "relatedPackages": [
+    "icd10",
+    "psychiatrie",
+    "mood"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "source": "ICD-10-GM 2025",
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "F09_001",
+    "theme": "f00_f09",
+    "chapter": "F09_NNB",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "F09",
+      "type": "ICD-10",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#6a7a8a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Nicht näher bezeichnet",
+          "type": "Kriterium"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "F09 = Nicht näher bezeichnete organische psychische Störung.",
+        "visual": {
+          "color": "#8a9aaa",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Demenz",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Demenz = F00-F03, nicht F09.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F00-F03"
+      },
+      {
+        "entry": {
+          "word": "Delir",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Delir = F05, nicht F09.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F05"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": [
+        "organisch",
+        "nnb",
+        "level1"
+      ],
+      "related": [
+        "F00_001",
+        "F05_001"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]
+

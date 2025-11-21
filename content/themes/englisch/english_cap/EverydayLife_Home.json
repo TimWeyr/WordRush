@@ -1,0 +1,1596 @@
+[
+  {
+    "id": "ELH_001",
+    "theme": "english_cap",
+    "chapter": "EverydayLife_Home",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "house",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FF9800",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Haus",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "house = Haus",
+        "visual": {
+          "color": "#F39C12",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Maus",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Maus = mouse, nicht house",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "mouse"
+      },
+      {
+        "entry": {
+          "word": "office",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.27,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "Büro",
+        "context": "office gehört zu Beruf & Büro",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "everyday",
+        "home",
+        "level1"
+      ],
+      "related": [
+        "ELH_002",
+        "ELH_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "ELH_002",
+    "theme": "english_cap",
+    "chapter": "EverydayLife_Home",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "eat",
+      "type": "Verb",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#27AE60",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "essen",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "eat = essen",
+        "visual": {
+          "color": "#85C1E2",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "trinken",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "trinken = drink, nicht eat",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "hexagon",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "drink"
+      },
+      {
+        "entry": {
+          "word": "sleep",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.09,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "sleep = schlafen, nicht essen",
+        "visual": {
+          "color": "#CDDC39",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "schlafen"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "everyday",
+        "home",
+        "level1"
+      ],
+      "related": [
+        "ELH_001",
+        "ELH_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "ELH_003",
+    "theme": "english_cap",
+    "chapter": "EverydayLife_Home",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "bed",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#64FFDA",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Bett",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.08,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "bed = Bett",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "spike",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Brot",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.32,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Brot = bread, nicht bed",
+        "visual": {
+          "color": "#4ECDC4",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "bread"
+      },
+      {
+        "entry": {
+          "word": "table",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.78,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "table = Tisch, nicht Bett",
+        "visual": {
+          "color": "#F1C40F",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Tisch"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "everyday",
+        "home",
+        "level1"
+      ],
+      "related": [
+        "ELH_002",
+        "ELH_004"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "ELH_004",
+    "theme": "english_cap",
+    "chapter": "EverydayLife_Home",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "door",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#2ECC71",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "TÃ¼r",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.26,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "door = TÃ¼r",
+        "visual": {
+          "color": "#00BCD4",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Fenster",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Fenster = window, nicht door",
+        "visual": {
+          "color": "#16A085",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "window"
+      },
+      {
+        "entry": {
+          "word": "floor",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.46,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "floor = Boden, nicht TÃ¼r",
+        "visual": {
+          "color": "#FF1744",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Boden"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "everyday",
+        "home",
+        "level1"
+      ],
+      "related": [
+        "ELH_003",
+        "ELH_005"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "ELH_005",
+    "theme": "english_cap",
+    "chapter": "EverydayLife_Home",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "water",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#1ABC9C",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Wasser",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.42,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "water = Wasser",
+        "visual": {
+          "color": "#85C1E2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Feuer",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Feuer = fire, nicht water",
+        "visual": {
+          "color": "#FF6B6B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "fire"
+      },
+      {
+        "entry": {
+          "word": "weather",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "weather = Wetter, nicht Wasser",
+        "visual": {
+          "color": "#FF4081",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Wetter"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "everyday",
+        "home",
+        "level1"
+      ],
+      "related": [
+        "ELH_004",
+        "ELH_006"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "ELH_006",
+    "theme": "english_cap",
+    "chapter": "EverydayLife_Home",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "kitchen",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#E74C3C",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "KÃ¼che",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.99,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "kitchen = KÃ¼che",
+        "visual": {
+          "color": "#64FFDA",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Kissen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Kissen = pillow, nicht kitchen",
+        "visual": {
+          "color": "#16A085",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "pillow"
+      },
+      {
+        "entry": {
+          "word": "chicken",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.95,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "chicken = Huhn, nicht KÃ¼che",
+        "visual": {
+          "color": "#8E44AD",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Huhn"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "everyday",
+        "home",
+        "level2"
+      ],
+      "related": [
+        "ELH_005",
+        "ELH_007"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "ELH_007",
+    "theme": "english_cap",
+    "chapter": "EverydayLife_Home",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "breakfast",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#FF5722",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "FrÃ¼hstÃ¼ck",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.11,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "breakfast = FrÃ¼hstÃ¼ck",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Abendessen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.97,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Abendessen = dinner, nicht breakfast",
+        "visual": {
+          "color": "#00E676",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "dinner"
+      },
+      {
+        "entry": {
+          "word": "lunch",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "lunch = Mittagessen, nicht FrÃ¼hstÃ¼ck",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Mittagessen"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "everyday",
+        "home",
+        "level2"
+      ],
+      "related": [
+        "ELH_006",
+        "ELH_008"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "ELH_008",
+    "theme": "english_cap",
+    "chapter": "EverydayLife_Home",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "clean",
+      "type": "Verb",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#9B59B6",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "putzen",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "clean = putzen",
+        "visual": {
+          "color": "#00B0FF",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "schmutzig",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.0,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "schmutzig = dirty, das Gegenteil von clean",
+        "visual": {
+          "color": "#18FFFF",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "dirty"
+      },
+      {
+        "entry": {
+          "word": "clear",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "clear = klar, nicht putzen",
+        "visual": {
+          "color": "#FFEB3B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "klar"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "everyday",
+        "home",
+        "level2"
+      ],
+      "related": [
+        "ELH_007",
+        "ELH_009"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "ELH_009",
+    "theme": "english_cap",
+    "chapter": "EverydayLife_Home",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "towel",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#FF5722",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Handtuch",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "towel = Handtuch",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Teller",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Teller = plate, nicht towel",
+        "visual": {
+          "color": "#CDDC39",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "plate"
+      },
+      {
+        "entry": {
+          "word": "tower",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "tower = Turm, nicht Handtuch",
+        "visual": {
+          "color": "#C0392B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Turm"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "everyday",
+        "home",
+        "level2"
+      ],
+      "related": [
+        "ELH_008",
+        "ELH_010"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "ELH_010",
+    "theme": "english_cap",
+    "chapter": "EverydayLife_Home",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "neighbor",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#45B7D1",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Nachbar",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.97,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "neighbor = Nachbar",
+        "visual": {
+          "color": "#C0392B",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Freund",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.99,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Freund = friend, nicht neighbor",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "friend"
+      },
+      {
+        "entry": {
+          "word": "neighborhood",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "neighborhood = Nachbarschaft, nicht Nachbar",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Nachbarschaft"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "everyday",
+        "home",
+        "level2"
+      ],
+      "related": [
+        "ELH_009",
+        "ELH_011"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "ELH_011",
+    "theme": "english_cap",
+    "chapter": "EverydayLife_Home",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "appliance",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#98D8C8",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "GerÃ¤t",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.78,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "appliance = GerÃ¤t (HaushaltsgerÃ¤t)",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Anwendung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.84,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Anwendung = application, nicht appliance",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "application"
+      },
+      {
+        "entry": {
+          "word": "device",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.98,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "device = GerÃ¤t (allgemein), appliance = HaushaltsgerÃ¤t",
+        "visual": {
+          "color": "#85C1E2",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "GerÃ¤t (allgemein)"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "everyday",
+        "home",
+        "level3"
+      ],
+      "related": [
+        "ELH_010",
+        "ELH_012"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "ELH_012",
+    "theme": "english_cap",
+    "chapter": "EverydayLife_Home",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "laundry",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#FFA07A",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "WÃ¤sche",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.43,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "laundry = WÃ¤sche",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "WÃ¤scherei",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "WÃ¤scherei = laundry (Ort), laundry = WÃ¤sche (Sache)",
+        "visual": {
+          "color": "#FF6B6B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "laundry (Ort)"
+      },
+      {
+        "entry": {
+          "word": "clothing",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "clothing = Kleidung, laundry = WÃ¤sche (zu waschen)",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kleidung"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "everyday",
+        "home",
+        "level3"
+      ],
+      "related": [
+        "ELH_011",
+        "ELH_013"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "ELH_013",
+    "theme": "english_cap",
+    "chapter": "EverydayLife_Home",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "spacious",
+      "type": "Adjective",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#E67E22",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "gerÃ¤umig",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "spacious = gerÃ¤umig",
+        "visual": {
+          "color": "#1ABC9C",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "eng",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.13,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "eng = narrow, das Gegenteil von spacious",
+        "visual": {
+          "color": "#00E676",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "narrow"
+      },
+      {
+        "entry": {
+          "word": "space",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.37,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "space = Raum (Nomen), spacious = gerÃ¤umig (Adjektiv)",
+        "visual": {
+          "color": "#27AE60",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Raum (Nomen)"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "everyday",
+        "home",
+        "level3"
+      ],
+      "related": [
+        "ELH_012",
+        "ELH_014"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "ELH_014",
+    "theme": "english_cap",
+    "chapter": "EverydayLife_Home",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "commute",
+      "type": "Verb",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#E74C3C",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "pendeln",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "commute = pendeln (zur Arbeit)",
+        "visual": {
+          "color": "#9C27B0",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "reisen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.43,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "reisen = travel, commute = tÃ¤glich pendeln",
+        "visual": {
+          "color": "#FF4081",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "travel"
+      },
+      {
+        "entry": {
+          "word": "communication",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.26,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "communication = Kommunikation, nicht pendeln",
+        "visual": {
+          "color": "#E67E22",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kommunikation"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "everyday",
+        "home",
+        "level3"
+      ],
+      "related": [
+        "ELH_013",
+        "ELH_015"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "ELH_015",
+    "theme": "english_cap",
+    "chapter": "EverydayLife_Home",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "maintenance",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#C0392B",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Wartung",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "maintenance = Wartung",
+        "visual": {
+          "color": "#E040FB",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Warten",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.06,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Warten = wait, maintenance = Wartung",
+        "visual": {
+          "color": "#FF6B6B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "wait"
+      },
+      {
+        "entry": {
+          "word": "maintain",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.41,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "maintain = erhalten (Verb), maintenance = Wartung (Nomen)",
+        "visual": {
+          "color": "#BB8FCE",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "erhalten (Verb)"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "everyday",
+        "home",
+        "level3"
+      ],
+      "related": [
+        "ELH_014"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]

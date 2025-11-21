@@ -1,0 +1,66 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Medical theme ship - Futuristic green combat spaceship top-down view -->
+  
+  <!-- Main fuselage body (green) -->
+  <path d="M 30 5 L 26 18 L 22 22 L 22 32 L 26 36 L 30 42 L 34 36 L 38 32 L 38 22 L 34 18 Z" 
+        fill="#4a9d4a" stroke="#2d5a2d" stroke-width="1"/>
+  
+  <!-- Darker green paneling lines -->
+  <line x1="26" y1="20" x2="34" y2="20" stroke="#3a7d3a" stroke-width="0.5"/>
+  <line x1="24" y1="24" x2="36" y2="24" stroke="#3a7d3a" stroke-width="0.5"/>
+  <line x1="24" y1="30" x2="36" y2="30" stroke="#3a7d3a" stroke-width="0.5"/>
+  
+  <!-- Hexagonal cockpit window (dark grey) -->
+  <path d="M 30 8 L 27 15 L 27 18 L 33 18 L 33 15 Z" fill="#2a2a2a" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Wavy blue stripes on main body -->
+  <path d="M 24 24 Q 28 22, 30 24 T 36 24" fill="none" stroke="#4a90e2" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 24 28 Q 28 26, 30 28 T 36 28" fill="none" stroke="#4a90e2" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Main wings (green, angular) -->
+  <path d="M 22 22 L 10 26 L 10 30 L 22 32" fill="#4a9d4a" stroke="#2d5a2d" stroke-width="1"/>
+  <path d="M 38 22 L 50 26 L 50 30 L 38 32" fill="#4a9d4a" stroke="#2d5a2d" stroke-width="1"/>
+  
+  <!-- Wing extensions (rectangular) -->
+  <rect x="8" y="27" width="4" height="4" fill="#4a9d4a" stroke="#2d5a2d" stroke-width="0.5"/>
+  <rect x="48" y="27" width="4" height="4" fill="#4a9d4a" stroke="#2d5a2d" stroke-width="0.5"/>
+  
+  <!-- Upper cylindrical structures (weapon pods) - red, dark grey, green -->
+  <ellipse cx="20" cy="20" rx="2.5" ry="6" fill="#e24a4a"/>
+  <ellipse cx="20" cy="24" rx="2.5" ry="4" fill="#444444"/>
+  <ellipse cx="20" cy="26" rx="2.5" ry="3" fill="#4a9d4a"/>
+  
+  <ellipse cx="40" cy="20" rx="2.5" ry="6" fill="#e24a4a"/>
+  <ellipse cx="40" cy="24" rx="2.5" ry="4" fill="#444444"/>
+  <ellipse cx="40" cy="26" rx="2.5" ry="3" fill="#4a9d4a"/>
+  
+  <!-- Lower engine nacelles/pods (green) -->
+  <ellipse cx="18" cy="38" rx="3" ry="5" fill="#4a9d4a" stroke="#2d5a2d" stroke-width="0.5"/>
+  <ellipse cx="42" cy="38" rx="3" ry="5" fill="#4a9d4a" stroke="#2d5a2d" stroke-width="0.5"/>
+  
+  <!-- Red bands on pods -->
+  <rect x="16" y="40" width="4" height="2.5" fill="#e24a4a" rx="1"/>
+  <rect x="40" y="40" width="4" height="2.5" fill="#e24a4a" rx="1"/>
+  
+  <!-- Central engine -->
+  <ellipse cx="30" cy="46" rx="4" ry="3" fill="#333333"/>
+  <ellipse cx="30" cy="50" rx="5" ry="4" fill="#ffaa00" opacity="0.9"/>
+  <ellipse cx="30" cy="52" rx="4" ry="3" fill="#ff8800" opacity="0.7"/>
+  <ellipse cx="30" cy="54" rx="3" ry="2" fill="#ff6600" opacity="0.5"/>
+  
+  <!-- Side engines -->
+  <ellipse cx="18" cy="44" rx="2.5" ry="2" fill="#333333"/>
+  <ellipse cx="18" cy="47" rx="3" ry="2.5" fill="#ffaa00" opacity="0.9"/>
+  <ellipse cx="18" cy="49" rx="2.5" ry="2" fill="#ff8800" opacity="0.7"/>
+  <ellipse cx="18" cy="50.5" rx="2" ry="1.5" fill="#ff6600" opacity="0.5"/>
+  
+  <ellipse cx="42" cy="44" rx="2.5" ry="2" fill="#333333"/>
+  <ellipse cx="42" cy="47" rx="3" ry="2.5" fill="#ffaa00" opacity="0.9"/>
+  <ellipse cx="42" cy="49" rx="2.5" ry="2" fill="#ff8800" opacity="0.7"/>
+  <ellipse cx="42" cy="50.5" rx="2" ry="1.5" fill="#ff6600" opacity="0.5"/>
+  
+  <!-- Additional structural details -->
+  <line x1="22" y1="22" x2="22" y2="32" stroke="#3a7d3a" stroke-width="0.5" opacity="0.5"/>
+  <line x1="38" y1="22" x2="38" y2="32" stroke="#3a7d3a" stroke-width="0.5" opacity="0.5"/>
+</svg>
+

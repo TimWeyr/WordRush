@@ -1,0 +1,106 @@
+{
+  "id": "wm",
+  "name": "WM",
+  "description": "Lerne Fußball-Weltmeisterschaften - Austragungsorte, Sieger und Fakten.",
+  "colorPrimary": "#FFD700",
+  "colorAccent": "#FFA500",
+  "backgroundGradient": [
+    "#FFD700",
+    "#FF8C00"
+  ],
+  "maxLevels": 10,
+  "icon": "🏆",
+  "shipSkin": "/assets/ships/fussball_ship.svg",
+  "laserColor": "#FFD700",
+  "relatedPackages": [
+    "fussball_history",
+    "weltmeisterschaft"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "wm_2022": {
+      "backgroundImage": "wm_2022_bg.png",
+      "backgroundGradient": [
+        "#8B0000",
+        "#FFD700"
+      ],
+      "spawnRate": 1.2,
+      "waveDuration": 3,
+      "music": "wm_2022_theme.mp3",
+      "particleEffect": "wm_energy"
+    },
+    "wm_2018": {
+      "backgroundImage": "wm_2018_bg.png",
+      "backgroundGradient": [
+        "#0000FF",
+        "#FF0000"
+      ],
+      "spawnRate": 1.2,
+      "waveDuration": 3,
+      "music": "wm_2018_theme.mp3",
+      "particleEffect": "wm_energy"
+    },
+    "wm_2014": {
+      "backgroundImage": "wm_2014_bg.png",
+      "backgroundGradient": [
+        "#FFD700",
+        "#008000"
+      ],
+      "spawnRate": 1.2,
+      "waveDuration": 3,
+      "music": "wm_2014_theme.mp3",
+      "particleEffect": "wm_energy"
+    },
+    "wm_2010": {
+      "backgroundImage": "wm_2010_bg.png",
+      "backgroundGradient": [
+        "#FFD700",
+        "#008000"
+      ],
+      "spawnRate": 1.2,
+      "waveDuration": 3,
+      "music": "wm_2010_theme.mp3",
+      "particleEffect": "wm_energy"
+    },
+    "wm_2006": {
+      "backgroundImage": "wm_2006_bg.png",
+      "backgroundGradient": [
+        "#000000",
+        "#FFD700"
+      ],
+      "spawnRate": 1.2,
+      "waveDuration": 3,
+      "music": "wm_2006_theme.mp3",
+      "particleEffect": "wm_energy"
+    },
+    "wm_2002": {
+      "backgroundImage": "wm_2002_bg.png",
+      "backgroundGradient": [
+        "#FF0000",
+        "#0000FF"
+      ],
+      "spawnRate": 1.2,
+      "waveDuration": 3,
+      "music": "wm_2002_theme.mp3",
+      "particleEffect": "wm_energy"
+    },
+    "wm_1998": {
+      "backgroundImage": "wm_1998_bg.png",
+      "backgroundGradient": [
+        "#0000FF",
+        "#FF0000"
+      ],
+      "spawnRate": 1.2,
+      "waveDuration": 3,
+      "music": "wm_1998_theme.mp3",
+      "particleEffect": "wm_energy"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

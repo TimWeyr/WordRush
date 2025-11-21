@@ -1,0 +1,222 @@
+[
+  {
+    "id": "GEN4_001",
+    "theme": "generationen",
+    "chapter": "gen4",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Plinfa",
+      "type": "Pokemon",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Wasser",
+          "type": "Typ"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Plinfa ist ein Wasser-Pokemon",
+        "visual": {
+          "color": "#8e44ad",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Feuer",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Plinfa ist kein Feuer-Pokemon",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Pokemon Generationen",
+      "tags": [
+        "gen4",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "GEN4_002",
+    "theme": "generationen",
+    "chapter": "gen4",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Panflam",
+      "type": "Pokemon",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Feuer",
+          "type": "Typ"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Panflam ist ein Feuer-Pokemon",
+        "visual": {
+          "color": "#8e44ad",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Wasser",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Panflam ist kein Wasser-Pokemon",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Pokemon Generationen",
+      "tags": [
+        "gen4",
+        "level1"
+      ]
+    }
+  },
+  {
+    "id": "GEN4_003",
+    "theme": "generationen",
+    "chapter": "gen4",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Chelast",
+      "type": "Pokemon",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Pflanze",
+          "type": "Typ"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Chelast ist ein Pflanzen-Pokemon",
+        "visual": {
+          "color": "#8e44ad",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Feuer",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Chelast ist kein Feuer-Pokemon",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Pokemon Generationen",
+      "tags": [
+        "gen4",
+        "level1"
+      ]
+    }
+  }
+]
+

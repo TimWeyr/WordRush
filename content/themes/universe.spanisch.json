@@ -1,0 +1,30 @@
+{
+  "id": "spanisch",
+  "name": "Spanisch",
+  "description": "Lerne Spanisch durch interaktives Gameplay - ¡Vamos a aprender español de forma divertida!",
+  "colorPrimary": "#ff6b35",
+  "colorAccent": "#f7931e",
+  "backgroundGradient": [
+    "#c94b4b",
+    "#4b134f"
+  ],
+  "icon": "🇪🇸",
+  "available": true,
+  "language": "de",
+  "music": {
+    "theme": "spanish_universe_theme.mp3",
+    "volume": 0.6
+  },
+  "particleEffect": "spanish_particles",
+  "shipSkin": "spanish_ship",
+  "laserColor": "#ff6b35",
+  "themes": [
+    "spanisch_cap"
+  ],
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

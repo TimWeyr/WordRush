@@ -1,0 +1,73 @@
+{
+  "id": "deutschland",
+  "name": "Deutschland",
+  "description": "Lerne deutsche Fußballvereine - Spieler, Stadien und Fakten.",
+  "colorPrimary": "#000000",
+  "colorAccent": "#FF0000",
+  "backgroundGradient": [
+    "#000000",
+    "#333333"
+  ],
+  "maxLevels": 10,
+  "icon": "🇩🇪",
+  "shipSkin": "/assets/ships/fussball_ship.svg",
+  "laserColor": "#FF0000",
+  "relatedPackages": [
+    "fussball_history",
+    "bundesliga"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "bayern_muenchen": {
+      "backgroundImage": "bayern_bg.png",
+      "backgroundGradient": [
+        "#DC143C",
+        "#000000"
+      ],
+      "spawnRate": 1.2,
+      "waveDuration": 3,
+      "music": "bayern_theme.mp3",
+      "particleEffect": "bayern_energy"
+    },
+    "holstein_kiel": {
+      "backgroundImage": "holstein_bg.png",
+      "backgroundGradient": [
+        "#000080",
+        "#FFD700"
+      ],
+      "spawnRate": 1.2,
+      "waveDuration": 3,
+      "music": "holstein_theme.mp3",
+      "particleEffect": "holstein_energy"
+    },
+    "leverkusen": {
+      "backgroundImage": "leverkusen_bg.png",
+      "backgroundGradient": [
+        "#DC143C",
+        "#000000"
+      ],
+      "spawnRate": 1.2,
+      "waveDuration": 3,
+      "music": "leverkusen_theme.mp3",
+      "particleEffect": "leverkusen_energy"
+    },
+    "dortmund": {
+      "backgroundImage": "dortmund_bg.png",
+      "backgroundGradient": [
+        "#FFD700",
+        "#000000"
+      ],
+      "spawnRate": 1.2,
+      "waveDuration": 3,
+      "music": "dortmund_theme.mp3",
+      "particleEffect": "dortmund_energy"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

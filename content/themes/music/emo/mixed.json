@@ -1,0 +1,1902 @@
+[
+  {
+    "id": "EMO_001",
+    "theme": "emo",
+    "chapter": "mixed",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Welcome to the Black Parade",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9B59B6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "My Chemical Romance",
+          "type": "Band"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "My Chemical Romance spielte Welcome to the Black Parade",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "The Black Parade",
+          "type": "Album"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Welcome to the Black Parade ist auf The Black Parade",
+        "visual": {
+          "color": "#8E44AD",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "2006",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "The Black Parade erschien 2006",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Three Cheers for Sweet Revenge",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Three Cheers for Sweet Revenge ist ein anderes Album von My Chemical Romance",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Fall Out Boy",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Fall Out Boy ist eine ähnliche Emo Band",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Taylor Swift",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.35,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Taylor Swift ist eine Pop-Sängerin, kein Emo",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2001",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2001 ist falsch, The Black Parade erschien 2006",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "emo",
+        "level1"
+      ],
+      "related": [
+        "EMO_002",
+        "EMO_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "EMO_002",
+    "theme": "emo",
+    "chapter": "mixed",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Sugar, We're Goin Down",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#E74C3C",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Fall Out Boy",
+          "type": "Band"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Fall Out Boy spielte Sugar, We're Goin Down",
+        "visual": {
+          "color": "#E74C3C",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "From Under the Cork Tree",
+          "type": "Album"
+        },
+        "spawnPosition": 0.48,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Sugar, We're Goin Down ist auf From Under the Cork Tree",
+        "visual": {
+          "color": "#C0392B",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "2005",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "From Under the Cork Tree erschien 2005",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Infinity on High",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Infinity on High ist ein anderes Album von Fall Out Boy",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Panic! At The Disco",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Panic! At The Disco ist eine ähnliche Emo Pop-Punk Band",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Ed Sheeran",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.09,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ed Sheeran ist ein Pop-Sänger, kein Emo",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2010",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2010 ist falsch, From Under the Cork Tree erschien 2005",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "emo",
+        "level2"
+      ],
+      "related": [
+        "EMO_001",
+        "EMO_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "EMO_003",
+    "theme": "emo",
+    "chapter": "mixed",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "I Write Sins Not Tragedies",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498DB",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Panic! At The Disco",
+          "type": "Band"
+        },
+        "spawnPosition": 0.18,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Panic! At The Disco spielte I Write Sins Not Tragedies",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "A Fever You Can't Sweat Out",
+          "type": "Album"
+        },
+        "spawnPosition": 0.44,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "I Write Sins Not Tragedies ist auf A Fever You Can't Sweat Out",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "2005",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "A Fever You Can't Sweat Out erschien 2005",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Pretty. Odd.",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.32,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Pretty. Odd. ist ein anderes Album von Panic! At The Disco",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Paramore",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.78,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Paramore ist eine ähnliche Emo Pop-Punk Band",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Justin Bieber",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.08,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Justin Bieber ist ein Pop-Star, kein Emo",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2010",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2010 ist falsch, A Fever You Can't Sweat Out erschien 2005",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "emo",
+        "level3"
+      ],
+      "related": [
+        "EMO_002",
+        "EMO_004"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "EMO_004",
+    "theme": "emo",
+    "chapter": "mixed",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Misery Business",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#E91E63",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Paramore",
+          "type": "Band"
+        },
+        "spawnPosition": 0.26,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Paramore spielte Misery Business",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Riot!",
+          "type": "Album"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Misery Business ist auf Riot!",
+        "visual": {
+          "color": "#C2185B",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "2007",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Riot! erschien 2007",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "All We Know Is Falling",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "All We Know Is Falling ist ein anderes Album von Paramore",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Flyleaf",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.46,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Flyleaf ist eine ähnliche Emo Rock Band",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Adele",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Adele ist eine Pop-Sängerin, kein Emo",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2002",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.92,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2002 ist falsch, Riot! erschien 2007",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "emo",
+        "level4"
+      ],
+      "related": [
+        "EMO_003",
+        "EMO_005"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "EMO_005",
+    "theme": "emo",
+    "chapter": "mixed",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "MakeDamnSure",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#F39C12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Taking Back Sunday",
+          "type": "Band"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Taking Back Sunday spielte MakeDamnSure",
+        "visual": {
+          "color": "#F39C12",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Louder Now",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "MakeDamnSure ist auf Louder Now",
+        "visual": {
+          "color": "#E67E22",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "2006",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Louder Now erschien 2006",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Tell All Your Friends",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Tell All Your Friends ist ein anderes Album von Taking Back Sunday",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Brand New",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Brand New ist eine ähnliche Emo Band",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Bruno Mars",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.38,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Bruno Mars ist ein Pop/R&B Künstler, kein Emo",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2011",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2011 ist falsch, Louder Now erschien 2006",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "emo",
+        "level5"
+      ],
+      "related": [
+        "EMO_004",
+        "EMO_006"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "EMO_006",
+    "theme": "emo",
+    "chapter": "mixed",
+    "level": 6,
+    "waveDuration": 3,
+    "base": {
+      "word": "The Quiet Things That No One Ever Knows",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#16A085",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Brand New",
+          "type": "Band"
+        },
+        "spawnPosition": 0.23,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Brand New spielte The Quiet Things That No One Ever Knows",
+        "visual": {
+          "color": "#16A085",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Deja Entendu",
+          "type": "Album"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "The Quiet Things That No One Ever Knows ist auf Deja Entendu",
+        "visual": {
+          "color": "#138D75",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "2003",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Deja Entendu erschien 2003",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "The Devil and God Are Raging Inside Me",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "The Devil and God Are Raging Inside Me ist ein anderes Album von Brand New",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Senses Fail",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Senses Fail ist eine ähnliche Emo Band",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "John Legend",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "John Legend ist ein R&B/Soul-Künstler, kein Emo",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1998",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1998 ist falsch, Deja Entendu erschien 2003",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "emo",
+        "level6"
+      ],
+      "related": [
+        "EMO_005",
+        "EMO_007"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "EMO_007",
+    "theme": "emo",
+    "chapter": "mixed",
+    "level": 7,
+    "waveDuration": 3,
+    "base": {
+      "word": "The Taste of Ink",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#E67E22",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "The Used",
+          "type": "Band"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "The Used spielte The Taste of Ink",
+        "visual": {
+          "color": "#E67E22",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "The Used",
+          "type": "Album"
+        },
+        "spawnPosition": 0.51,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "The Taste of Ink ist auf The Used",
+        "visual": {
+          "color": "#D35400",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "2002",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "The Used erschien 2002",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "In Love and Death",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.19,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "In Love and Death ist ein anderes Album von The Used",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Hawthorne Heights",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.63,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Hawthorne Heights ist eine ähnliche Emo Band",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Drake",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.37,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Drake ist ein Rapper, kein Emo",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2007",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.89,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2007 ist falsch, The Used erschien 2002",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "emo",
+        "level7"
+      ],
+      "related": [
+        "EMO_006",
+        "EMO_008"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "EMO_008",
+    "theme": "emo",
+    "chapter": "mixed",
+    "level": 8,
+    "waveDuration": 3,
+    "base": {
+      "word": "The Middle",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#1ABC9C",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Jimmy Eat World",
+          "type": "Band"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Jimmy Eat World spielte The Middle",
+        "visual": {
+          "color": "#1ABC9C",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Bleed American",
+          "type": "Album"
+        },
+        "spawnPosition": 0.48,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "The Middle ist auf Bleed American",
+        "visual": {
+          "color": "#16A085",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "2001",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Bleed American erschien 2001",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Futures",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.18,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Futures ist ein anderes Album von Jimmy Eat World",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Weezer",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.64,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Weezer ist eine ähnliche Alternative Rock Band",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Post Malone",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.36,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Post Malone ist ein Rapper/Sänger, kein Emo",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2006",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.86,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2006 ist falsch, Bleed American erschien 2001",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "emo",
+        "level8"
+      ],
+      "related": [
+        "EMO_007",
+        "EMO_009"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "EMO_009",
+    "theme": "emo",
+    "chapter": "mixed",
+    "level": 9,
+    "waveDuration": 3,
+    "base": {
+      "word": "Screaming Infidelities",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#34495E",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Dashboard Confessional",
+          "type": "Band"
+        },
+        "spawnPosition": 0.21,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Dashboard Confessional spielte Screaming Infidelities",
+        "visual": {
+          "color": "#34495E",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "The Places You Have Come to Fear the Most",
+          "type": "Album"
+        },
+        "spawnPosition": 0.47,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Screaming Infidelities ist auf The Places You Have Come to Fear the Most",
+        "visual": {
+          "color": "#2C3E50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "2001",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.71,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "The Places You Have Come to Fear the Most erschien 2001",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "A Mark, A Mission, A Brand, A Scar",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "A Mark, A Mission, A Brand, A Scar ist ein anderes Album von Dashboard Confessional",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Bright Eyes",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.59,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Bright Eyes ist eine ähnliche Emo/Indie Band",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "The Weeknd",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.33,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "The Weeknd ist ein R&B/Pop Künstler, kein Emo",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "2006",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.85,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2006 ist falsch, The Places You Have Come to Fear the Most erschien 2001",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "emo",
+        "level9"
+      ],
+      "related": [
+        "EMO_008",
+        "EMO_010"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "EMO_010",
+    "theme": "emo",
+    "chapter": "mixed",
+    "level": 10,
+    "waveDuration": 3,
+    "base": {
+      "word": "Buried a Lie",
+      "type": "Song",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#8E44AD",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Senses Fail",
+          "type": "Band"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Senses Fail spielte Buried a Lie",
+        "visual": {
+          "color": "#8E44AD",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Let It Enfold You",
+          "type": "Album"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Buried a Lie ist auf Let It Enfold You",
+        "visual": {
+          "color": "#7D3C98",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "2004",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Let It Enfold You erschien 2004",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": true,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Still Searching",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Still Searching ist ein anderes Album von Senses Fail",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Silverstein",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Silverstein ist eine ähnliche Emo Post-Hardcore Band",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Harry Styles",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.38,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Harry Styles ist ein Pop-Sänger, kein Emo",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "1999",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "1999 ist falsch, Let It Enfold You erschien 2004",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Music History",
+      "tags": [
+        "emo",
+        "level10"
+      ],
+      "related": [
+        "EMO_009"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]
+

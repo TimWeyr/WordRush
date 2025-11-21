@@ -1,0 +1,30 @@
+{
+  "id": "f10_f19",
+  "name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+  "description": "Lerne Störungen durch Alkohol, Opioide, Cannabinoide, Sedativa, Kokain, Stimulanzien und andere psychotrope Substanzen.",
+  "colorPrimary": "#d97757",
+  "colorAccent": "#e89d7a",
+  "backgroundGradient": [
+    "#b95737",
+    "#d97757"
+  ],
+  "maxLevels": 15,
+  "icon": "💊",
+  "shipSkin": "/assets/ships/medical_ship.svg",
+  "laserColor": "#d97757",
+  "relatedPackages": [
+    "icd10",
+    "psychiatrie",
+    "addiction"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "source": "ICD-10-GM 2025",
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

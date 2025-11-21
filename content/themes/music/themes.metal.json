@@ -1,0 +1,51 @@
+{
+  "id": "metal",
+  "name": "Metal",
+  "description": "Lerne Metal Musikgeschichte - Bands, Alben, Songs und Erscheinungsjahre.",
+  "colorPrimary": "#1a1a1a",
+  "colorAccent": "#3a3a3a",
+  "backgroundGradient": [
+    "#1a1a1a",
+    "#3a3a3a"
+  ],
+  "maxLevels": 15,
+  "icon": "🤘",
+  "shipSkin": "/assets/ships/music_ship.svg",
+  "laserColor": "#e74c3c",
+  "relatedPackages": [
+    "music_history",
+    "metal_music"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "mixed": {
+      "backgroundImage": "metal_bg.png",
+      "backgroundGradient": [
+        "#1a1a1a",
+        "#3a3a3a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "metal_theme.mp3",
+      "particleEffect": "metal_sparks"
+    },
+    "nu-metal": {
+      "backgroundImage": "numetal_bg.png",
+      "backgroundGradient": [
+        "#2a2a3a",
+        "#4a4a5a"
+      ],
+      "spawnRate": 1.8,
+      "waveDuration": 3,
+      "music": "numetal_theme.mp3",
+      "particleEffect": "industrial_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

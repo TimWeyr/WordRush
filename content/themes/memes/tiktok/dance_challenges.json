@@ -1,0 +1,213 @@
+[
+  {
+    "id": "TIKTOK_DANCE_001",
+    "theme": "tiktok",
+    "chapter": "dance_challenges",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Renegade",
+      "type": "Tanz",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff0050",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Keke Palmer",
+          "type": "Erfinderin"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Renegade wurde von Keke Palmer erfunden (aber alle denken, es war jemand anderes! 😅)",
+        "visual": {
+          "color": "#ff4081",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Charli D'Amelio",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Charli machte ihn nur populär, erfunden hat sie ihn nicht! (Fake News! 🚫)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "TikTok Kultur",
+      "tags": ["dance", "level1"]
+    }
+  },
+  {
+    "id": "TIKTOK_DANCE_002",
+    "theme": "tiktok",
+    "chapter": "dance_challenges",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Savage",
+      "type": "Tanz",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff0050",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Megan Thee Stallion",
+          "type": "Song"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Savage ist ein Song von Megan Thee Stallion (und alle tanzen dazu! 💃)",
+        "visual": {
+          "color": "#ff4081",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Beyoncé",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Beyoncé hat nur ein Remix gemacht, nicht den Original-Song! (Oop! 😬)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "TikTok Kultur",
+      "tags": ["dance", "level1"]
+    }
+  },
+  {
+    "id": "TIKTOK_DANCE_003",
+    "theme": "tiktok",
+    "chapter": "dance_challenges",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "WAP",
+      "type": "Tanz",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff0050",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Cardi B & Megan Thee Stallion",
+          "type": "Künstlerinnen"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "WAP ist ein Song von Cardi B & Megan Thee Stallion (und sehr... explizit! 🔥)",
+        "visual": {
+          "color": "#ff4081",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Nicki Minaj",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Nicki Minaj war nicht dabei (aber sie hätte es sein können! 😏)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "TikTok Kultur",
+      "tags": ["dance", "level1"]
+    }
+  }
+]
+

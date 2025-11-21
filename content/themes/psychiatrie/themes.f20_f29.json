@@ -1,0 +1,30 @@
+{
+  "id": "f20_f29",
+  "name": "F20-F29: Schizophrenie, schizotype und wahnhafte Störungen",
+  "description": "Lerne Schizophrenie, schizotype Störungen, anhaltende wahnhafte Störungen und akute vorübergehende psychotische Störungen.",
+  "colorPrimary": "#7b5fa6",
+  "colorAccent": "#9d7fc8",
+  "backgroundGradient": [
+    "#5b3f86",
+    "#7b5fa6"
+  ],
+  "maxLevels": 15,
+  "icon": "🌀",
+  "shipSkin": "/assets/ships/medical_ship.svg",
+  "laserColor": "#7b5fa6",
+  "relatedPackages": [
+    "icd10",
+    "psychiatrie",
+    "psychosis"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "source": "ICD-10-GM 2025",
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

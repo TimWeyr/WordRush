@@ -1,0 +1,30 @@
+{
+  "id": "f40_f48",
+  "name": "F40-F48: Neurotische, Belastungs- und somatoforme Störungen",
+  "description": "Lerne phobische Störungen, Angststörungen, Zwangsstörungen, Reaktionen auf schwere Belastungen, dissoziative Störungen und somatoforme Störungen.",
+  "colorPrimary": "#4a9fa5",
+  "colorAccent": "#6bb8be",
+  "backgroundGradient": [
+    "#2a7f85",
+    "#4a9fa5"
+  ],
+  "maxLevels": 15,
+  "icon": "🌊",
+  "shipSkin": "/assets/ships/medical_ship.svg",
+  "laserColor": "#4a9fa5",
+  "relatedPackages": [
+    "icd10",
+    "psychiatrie",
+    "anxiety"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "source": "ICD-10-GM 2025",
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

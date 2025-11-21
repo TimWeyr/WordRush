@@ -1,0 +1,73 @@
+{
+  "id": "mcu",
+  "name": "MCU - Marvel Cinematic Universe",
+  "description": "Lerne alle Marvel-Filme kennen - Von Phase 1 bis Phase 5! 🦸",
+  "colorPrimary": "#c41e3a",
+  "colorAccent": "#ed1c24",
+  "backgroundGradient": [
+    "#c41e3a",
+    "#ed1c24"
+  ],
+  "maxLevels": 30,
+  "icon": "🦸",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "phase_1": {
+      "backgroundGradient": [
+        "#1a0a0a",
+        "#3d1a1a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "phase_2": {
+      "backgroundGradient": [
+        "#2a1a0a",
+        "#4a2a1a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "phase_3": {
+      "backgroundGradient": [
+        "#3a2a0a",
+        "#5a4a1a"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "phase_4": {
+      "backgroundGradient": [
+        "#4a3a0a",
+        "#6a5a1a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "phase_5": {
+      "backgroundGradient": [
+        "#5a4a0a",
+        "#7a6a1a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

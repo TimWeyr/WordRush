@@ -1,0 +1,1597 @@
+[
+  {
+    "id": "FF_001",
+    "theme": "english_cap",
+    "chapter": "Friends_Family",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "friend",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FF9800",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Freund",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "friend = Freund",
+        "visual": {
+          "color": "#F39C12",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Feind",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Feind = enemy, nicht friend",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "enemy"
+      },
+      {
+        "entry": {
+          "word": "family",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.27,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "Familie",
+        "context": "family = Familie, friend = Freund",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "friends",
+        "family",
+        "level1"
+      ],
+      "related": [
+        "FF_002",
+        "FF_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FF_002",
+    "theme": "english_cap",
+    "chapter": "Friends_Family",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "mother",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#27AE60",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Mutter",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "mother = Mutter",
+        "visual": {
+          "color": "#85C1E2",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Vater",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Vater = father, nicht mother",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "hexagon",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "father"
+      },
+      {
+        "entry": {
+          "word": "brother",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.09,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "brother = Bruder, nicht Mutter",
+        "visual": {
+          "color": "#CDDC39",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Bruder"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "friends",
+        "family",
+        "level1"
+      ],
+      "related": [
+        "FF_001",
+        "FF_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FF_003",
+    "theme": "english_cap",
+    "chapter": "Friends_Family",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "sister",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#64FFDA",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Schwester",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.08,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "sister = Schwester",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "spike",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bruder",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.32,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Bruder = brother, nicht sister",
+        "visual": {
+          "color": "#4ECDC4",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "brother"
+      },
+      {
+        "entry": {
+          "word": "cousin",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.78,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "cousin = Cousin/Cousine, nicht Schwester",
+        "visual": {
+          "color": "#F1C40F",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Cousin/Cousine"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "friends",
+        "family",
+        "level1"
+      ],
+      "related": [
+        "FF_002",
+        "FF_004"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FF_004",
+    "theme": "english_cap",
+    "chapter": "Friends_Family",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "father",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#2ECC71",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Vater",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.26,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "father = Vater",
+        "visual": {
+          "color": "#00BCD4",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Mutter",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Mutter = mother, nicht father",
+        "visual": {
+          "color": "#16A085",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "mother"
+      },
+      {
+        "entry": {
+          "word": "brother",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.46,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "brother = Bruder, nicht Vater",
+        "visual": {
+          "color": "#FF1744",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Bruder"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "friends",
+        "family",
+        "level1"
+      ],
+      "related": [
+        "FF_003",
+        "FF_005"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FF_005",
+    "theme": "english_cap",
+    "chapter": "Friends_Family",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "love",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#1ABC9C",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Liebe",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.42,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "love = Liebe",
+        "visual": {
+          "color": "#85C1E2",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Hass",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Hass = hate, nicht love",
+        "visual": {
+          "color": "#FF6B6B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "hate"
+      },
+      {
+        "entry": {
+          "word": "like",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "like = mögen, love = lieben",
+        "visual": {
+          "color": "#FF4081",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "mögen"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "friends",
+        "family",
+        "level1"
+      ],
+      "related": [
+        "FF_004",
+        "FF_006"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FF_006",
+    "theme": "english_cap",
+    "chapter": "Friends_Family",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "relationship",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#E74C3C",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Beziehung",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.99,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "relationship = Beziehung",
+        "visual": {
+          "color": "#64FFDA",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Verwandtschaft",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Verwandtschaft = kinship, relationship = Beziehung",
+        "visual": {
+          "color": "#16A085",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "kinship"
+      },
+      {
+        "entry": {
+          "word": "relative",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.95,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "relative = Verwandter, relationship = Beziehung",
+        "visual": {
+          "color": "#8E44AD",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Verwandter"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "friends",
+        "family",
+        "level2"
+      ],
+      "related": [
+        "FF_005",
+        "FF_007"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FF_007",
+    "theme": "english_cap",
+    "chapter": "Friends_Family",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "wedding",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#FF5722",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Hochzeit",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.11,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "wedding = Hochzeit",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Feier",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.97,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Feier = party, wedding = Hochzeit",
+        "visual": {
+          "color": "#00E676",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "party"
+      },
+      {
+        "entry": {
+          "word": "marriage",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "marriage = Ehe, wedding = Hochzeit (Feier)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Ehe"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "friends",
+        "family",
+        "level2"
+      ],
+      "related": [
+        "FF_006",
+        "FF_008"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FF_008",
+    "theme": "english_cap",
+    "chapter": "Friends_Family",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "cousin",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#9B59B6",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Cousin",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "cousin = Cousin/Cousine",
+        "visual": {
+          "color": "#00B0FF",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bruder",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.0,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Bruder = brother, cousin = Cousin",
+        "visual": {
+          "color": "#18FFFF",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "brother"
+      },
+      {
+        "entry": {
+          "word": "uncle",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "uncle = Onkel, cousin = Cousin",
+        "visual": {
+          "color": "#FFEB3B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Onkel"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "friends",
+        "family",
+        "level2"
+      ],
+      "related": [
+        "FF_007",
+        "FF_009"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FF_009",
+    "theme": "english_cap",
+    "chapter": "Friends_Family",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "grandmother",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#FF5722",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Großmutter",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "grandmother = Großmutter",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Großvater",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Großvater = grandfather, grandmother = Großmutter",
+        "visual": {
+          "color": "#CDDC39",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "grandfather"
+      },
+      {
+        "entry": {
+          "word": "grandparent",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "grandparent = Großeltern, grandmother = Großmutter",
+        "visual": {
+          "color": "#C0392B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Großeltern"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "friends",
+        "family",
+        "level2"
+      ],
+      "related": [
+        "FF_008",
+        "FF_010"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FF_010",
+    "theme": "english_cap",
+    "chapter": "Friends_Family",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "grandfather",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#45B7D1",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Großvater",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.97,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "grandfather = Großvater",
+        "visual": {
+          "color": "#C0392B",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Großmutter",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.99,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Großmutter = grandmother, nicht grandfather",
+        "visual": {
+          "color": "#2980B9",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "grandmother"
+      },
+      {
+        "entry": {
+          "word": "father",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "father = Vater, grandfather = Großvater",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Vater"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "friends",
+        "family",
+        "level2"
+      ],
+      "related": [
+        "FF_009",
+        "FF_011"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FF_011",
+    "theme": "english_cap",
+    "chapter": "Friends_Family",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "acquaintance",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#98D8C8",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Bekannter",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.78,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "acquaintance = Bekannter",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Freund",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.84,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Freund = friend, acquaintance = Bekannter",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "friend"
+      },
+      {
+        "entry": {
+          "word": "stranger",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.98,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "stranger = Fremder, acquaintance = Bekannter",
+        "visual": {
+          "color": "#85C1E2",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Fremder"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "friends",
+        "family",
+        "level3"
+      ],
+      "related": [
+        "FF_010",
+        "FF_012"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FF_012",
+    "theme": "english_cap",
+    "chapter": "Friends_Family",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "generation",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#FFA07A",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Generation",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.43,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "generation = Generation",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Familie",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Familie = family, generation = Generation",
+        "visual": {
+          "color": "#FF6B6B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "family"
+      },
+      {
+        "entry": {
+          "word": "age",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "age = Alter, generation = Generation",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Alter"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "friends",
+        "family",
+        "level3"
+      ],
+      "related": [
+        "FF_011",
+        "FF_013"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FF_013",
+    "theme": "english_cap",
+    "chapter": "Friends_Family",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "bond",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#E67E22",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Bindung",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "bond = Bindung",
+        "visual": {
+          "color": "#1ABC9C",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Band",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.13,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Band = band (Musik), bond = Bindung",
+        "visual": {
+          "color": "#00E676",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "band (Musik)"
+      },
+      {
+        "entry": {
+          "word": "connection",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.37,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "connection = Verbindung, bond = Bindung (emotional)",
+        "visual": {
+          "color": "#27AE60",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Verbindung"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "friends",
+        "family",
+        "level3"
+      ],
+      "related": [
+        "FF_012",
+        "FF_014"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FF_014",
+    "theme": "english_cap",
+    "chapter": "Friends_Family",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "support",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#E74C3C",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Unterstützung",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "support = Unterstützung",
+        "visual": {
+          "color": "#9C27B0",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Hilfe",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.43,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Hilfe = help, support = Unterstützung",
+        "visual": {
+          "color": "#FF4081",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "help"
+      },
+      {
+        "entry": {
+          "word": "assistance",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.26,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "assistance = Hilfe, support = Unterstützung",
+        "visual": {
+          "color": "#E67E22",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Hilfe"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "friends",
+        "family",
+        "level3"
+      ],
+      "related": [
+        "FF_013",
+        "FF_015"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FF_015",
+    "theme": "english_cap",
+    "chapter": "Friends_Family",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "trust",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#C0392B",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Vertrauen",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "trust = Vertrauen",
+        "visual": {
+          "color": "#E040FB",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Glaube",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.06,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Glaube = belief, trust = Vertrauen",
+        "visual": {
+          "color": "#FF6B6B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "belief"
+      },
+      {
+        "entry": {
+          "word": "believe",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.41,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "believe = glauben (Verb), trust = Vertrauen (Nomen)",
+        "visual": {
+          "color": "#BB8FCE",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "glauben (Verb)"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "friends",
+        "family",
+        "level3"
+      ],
+      "related": [
+        "FF_014"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]
+

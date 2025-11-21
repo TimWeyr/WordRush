@@ -1,0 +1,213 @@
+[
+  {
+    "id": "REDDIT_MEMES_001",
+    "theme": "reddit",
+    "chapter": "memes",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "r/memes",
+      "type": "Subreddit",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff4500",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Größtes Meme-Subreddit",
+          "type": "Beschreibung"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "r/memes ist das größte Meme-Subreddit (Aber die Qualität... naja! 😅)",
+        "visual": {
+          "color": "#ff6b35",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Kleinstes Meme-Subreddit",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Das wäre r/nichememes! (Aber r/memes ist riesig! 📈)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Reddit Kultur",
+      "tags": ["memes", "level1"]
+    }
+  },
+  {
+    "id": "REDDIT_MEMES_002",
+    "theme": "reddit",
+    "chapter": "memes",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Upvote",
+      "type": "Aktion",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff4500",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Pfeil nach oben",
+          "type": "Symbol"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Upvote = Pfeil nach oben (Und gibt dir Karma! ⬆️)",
+        "visual": {
+          "color": "#ff6b35",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Pfeil nach unten",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Das wäre ein Downvote! (Und nimmt dir Karma weg! ⬇️)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Reddit Kultur",
+      "tags": ["memes", "level1"]
+    }
+  },
+  {
+    "id": "REDDIT_MEMES_003",
+    "theme": "reddit",
+    "chapter": "memes",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Karma",
+      "type": "Konzept",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff4500",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Punkte-System",
+          "type": "Beschreibung"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Karma ist das Punkte-System auf Reddit (Aber es bedeutet nichts! 😂)",
+        "visual": {
+          "color": "#ff6b35",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Echtes Geld",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Wenn Karma echtes Geld wäre, wären wir alle reich! (Aber nein! 💸)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Reddit Kultur",
+      "tags": ["memes", "level1"]
+    }
+  }
+]
+

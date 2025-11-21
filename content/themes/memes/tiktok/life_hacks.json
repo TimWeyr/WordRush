@@ -1,0 +1,213 @@
+[
+  {
+    "id": "TIKTOK_HACKS_001",
+    "theme": "tiktok",
+    "chapter": "life_hacks",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Life Hack",
+      "type": "Format",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498db",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Lebens-Trick",
+          "type": "Bedeutung"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Life Hack = Lebens-Trick (Aber 90% davon funktionieren nicht! 😅)",
+        "visual": {
+          "color": "#2980b9",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Lebens-Hack",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Das ist zu wörtlich! (Aber eigentlich... stimmt es auch! 🤔)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "TikTok Kultur",
+      "tags": ["hacks", "level1"]
+    }
+  },
+  {
+    "id": "TIKTOK_HACKS_002",
+    "theme": "tiktok",
+    "chapter": "life_hacks",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "5-Minuten-Crafts",
+      "type": "Format",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498db",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Meistens nutzlos",
+          "type": "Realität"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "5-Minuten-Crafts sind meistens nutzlos (Aber sie sehen cool aus! 🎨)",
+        "visual": {
+          "color": "#2980b9",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Immer hilfreich",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Wenn das wahr wäre, hätten wir alle perfekte Häuser! (Aber nein! 😂)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "TikTok Kultur",
+      "tags": ["hacks", "level1"]
+    }
+  },
+  {
+    "id": "TIKTOK_HACKS_003",
+    "theme": "tiktok",
+    "chapter": "life_hacks",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "ASMR",
+      "type": "Format",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498db",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Autonomous Sensory Meridian Response",
+          "type": "Bedeutung"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "ASMR = Autonomous Sensory Meridian Response (Oder einfach: entspannende Geräusche! 😌)",
+        "visual": {
+          "color": "#2980b9",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Always Sleepy Morning Routine",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Das wäre zu passend! (Aber leider nicht richtig! 😴)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "TikTok Kultur",
+      "tags": ["hacks", "level1"]
+    }
+  }
+]
+

@@ -1,0 +1,62 @@
+{
+  "id": "emo",
+  "name": "Emo",
+  "description": "Lerne Emo Musikgeschichte - Bands, Alben, Songs und Erscheinungsjahre.",
+  "colorPrimary": "#9B59B6",
+  "colorAccent": "#8E44AD",
+  "backgroundGradient": [
+    "#4a2a4a",
+    "#6a3a6a"
+  ],
+  "maxLevels": 15,
+  "icon": "🎤",
+  "shipSkin": "/assets/ships/music_ship.svg",
+  "laserColor": "#9B59B6",
+  "relatedPackages": [
+    "music_history",
+    "emo_music"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "mixed": {
+      "backgroundImage": "emo_bg.png",
+      "backgroundGradient": [
+        "#4a2a4a",
+        "#6a3a6a"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "emo_theme.mp3",
+      "particleEffect": "emo_energy"
+    },
+    "pop-punk": {
+      "backgroundImage": "emo_pop_punk_bg.png",
+      "backgroundGradient": [
+        "#5a3a5a",
+        "#7a4a7a"
+      ],
+      "spawnRate": 1.7,
+      "waveDuration": 3,
+      "music": "emo_pop_punk_theme.mp3",
+      "particleEffect": "pop_punk_energy"
+    },
+    "scene": {
+      "backgroundImage": "scene_bg.png",
+      "backgroundGradient": [
+        "#6a2a6a",
+        "#8a3a8a"
+      ],
+      "spawnRate": 1.8,
+      "waveDuration": 3,
+      "music": "scene_theme.mp3",
+      "particleEffect": "scene_energy"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

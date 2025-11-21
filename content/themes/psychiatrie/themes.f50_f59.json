@@ -1,0 +1,61 @@
+{
+  "id": "f50_f59",
+  "name": "F50-F59: Verhaltensauffälligkeiten mit körperlichen Störungen und Faktoren",
+  "description": "Lerne Essstörungen, nichtorganische Schlafstörungen, nichtorganische sexuelle Funktionsstörungen und andere Verhaltensauffälligkeiten mit körperlichen Störungen.",
+  "colorPrimary": "#d977a5",
+  "colorAccent": "#e89dc8",
+  "backgroundGradient": [
+    "#b95785",
+    "#d977a5"
+  ],
+  "maxLevels": 15,
+  "icon": "🌸",
+  "shipSkin": "/assets/ships/medical_ship.svg",
+  "laserColor": "#d977a5",
+  "relatedPackages": [
+    "icd10",
+    "psychiatrie",
+    "behavioral"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "essstoerungen": {
+      "backgroundGradient": [
+        "#b95785",
+        "#d977a5"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "medical_theme.mp3",
+      "particleEffect": "medical_particles"
+    },
+    "schlafstoerungen": {
+      "backgroundGradient": [
+        "#b95785",
+        "#d977a5"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "medical_theme.mp3",
+      "particleEffect": "medical_particles"
+    },
+    "sexuelle_funktionsstoerungen": {
+      "backgroundGradient": [
+        "#b95785",
+        "#d977a5"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "medical_theme.mp3",
+      "particleEffect": "medical_particles"
+    }
+  },
+  "meta": {
+    "source": "ICD-10-GM 2025",
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

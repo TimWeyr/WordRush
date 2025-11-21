@@ -1,0 +1,30 @@
+{
+  "id": "f60_f69",
+  "name": "F60-F69: Persönlichkeits- und Verhaltensstörungen",
+  "description": "Lerne spezifische Persönlichkeitsstörungen, kombinierte und andere Persönlichkeitsstörungen, Störungen der Impulskontrolle und Störungen der Geschlechtsidentität.",
+  "colorPrimary": "#a65f4a",
+  "colorAccent": "#c88a7a",
+  "backgroundGradient": [
+    "#863f2a",
+    "#a65f4a"
+  ],
+  "maxLevels": 15,
+  "icon": "🎭",
+  "shipSkin": "/assets/ships/medical_ship.svg",
+  "laserColor": "#a65f4a",
+  "relatedPackages": [
+    "icd10",
+    "psychiatrie",
+    "personality"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "source": "ICD-10-GM 2025",
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

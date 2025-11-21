@@ -1,0 +1,113 @@
+{
+  "id": "klassiker",
+  "name": "Filmklassiker",
+  "description": "Lerne die besten Filme kennen - Von Thrillern bis Sci-Fi! 🎬",
+  "colorPrimary": "#9b59b6",
+  "colorAccent": "#8e44ad",
+  "backgroundGradient": [
+    "#9b59b6",
+    "#8e44ad"
+  ],
+  "maxLevels": 10,
+  "icon": "🎥",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "psychological_thriller": {
+      "backgroundGradient": [
+        "#2c1810",
+        "#4a2c1a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "scifi_romantic_drama": {
+      "backgroundGradient": [
+        "#1a1a3e",
+        "#2d2d5e"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "psychological_horror": {
+      "backgroundGradient": [
+        "#1a0a0a",
+        "#3d1a1a"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "scifi_adventure": {
+      "backgroundGradient": [
+        "#0a1a2a",
+        "#1a2a4a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "crime_thriller": {
+      "backgroundGradient": [
+        "#2a1a0a",
+        "#4a2a1a"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "animated_adventure": {
+      "backgroundGradient": [
+        "#2a3a4a",
+        "#4a5a6a"
+      ],
+      "spawnRate": 1.4,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "comedy_drama": {
+      "backgroundGradient": [
+        "#3a2a1a",
+        "#5a4a2a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "scifi_drama": {
+      "backgroundGradient": [
+        "#1a2a3a",
+        "#2a3a5a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    },
+    "scifi_epic": {
+      "backgroundGradient": [
+        "#0a0a1a",
+        "#1a1a3a"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 10,
+      "music": "filme_universe_theme.mp3",
+      "particleEffect": "movie_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

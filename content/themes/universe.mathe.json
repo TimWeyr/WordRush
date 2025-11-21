@@ -1,0 +1,31 @@
+{
+  "id": "mathe",
+  "name": "Mathe",
+  "description": "Übe die Grundrechenarten durch interaktives Gameplay - Addition, Subtraktion, Multiplikation und Division.",
+  "colorPrimary": "#3498db",
+  "colorAccent": "#2980b9",
+  "backgroundGradient": [
+    "#1e3c72",
+    "#2a5298"
+  ],
+  "icon": "🔢",
+  "available": true,
+  "language": "de",
+  "music": {
+    "theme": "mathe_universe_theme.mp3",
+    "volume": 0.6
+  },
+  "particleEffect": "mathe_particles",
+  "shipSkin": "mathe_ship",
+  "laserColor": "#3498db",
+  "themes": [
+    "grundrechenarten",
+    "geometrie"
+  ],
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

@@ -1,0 +1,353 @@
+[
+  {
+    "id": "FLAECHEN_001",
+    "theme": "geometrie",
+    "chapter": "flaechen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Quadrat Fläche",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e74c3c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Seite × Seite",
+          "type": "Formel"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Quadratfläche = Seite × Seite",
+        "visual": {
+          "color": "#c0392b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Seite + Seite",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Quadratfläche wird multipliziert, nicht addiert",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Geometrie",
+      "tags": ["flaechen", "level1"]
+    }
+  },
+  {
+    "id": "FLAECHEN_002",
+    "theme": "geometrie",
+    "chapter": "flaechen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Rechteck Fläche",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e74c3c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Länge × Breite",
+          "type": "Formel"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Rechteckfläche = Länge × Breite",
+        "visual": {
+          "color": "#c0392b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Länge + Breite",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Rechteckfläche wird multipliziert, nicht addiert",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Geometrie",
+      "tags": ["flaechen", "level1"]
+    }
+  },
+  {
+    "id": "FLAECHEN_003",
+    "theme": "geometrie",
+    "chapter": "flaechen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Dreieck Fläche",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e74c3c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Grundseite × Höhe ÷ 2",
+          "type": "Formel"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Dreiecksfläche = Grundseite × Höhe ÷ 2",
+        "visual": {
+          "color": "#c0392b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Grundseite × Höhe",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Dreiecksfläche muss durch 2 geteilt werden",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Geometrie",
+      "tags": ["flaechen", "level1"]
+    }
+  },
+  {
+    "id": "FLAECHEN_004",
+    "theme": "geometrie",
+    "chapter": "flaechen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Kreis Fläche",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e74c3c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "π × r²",
+          "type": "Formel"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Kreisfläche = π × r²",
+        "visual": {
+          "color": "#c0392b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "2 × π × r",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Das ist die Formel für den Umfang, nicht die Fläche",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Geometrie",
+      "tags": ["flaechen", "level1"]
+    }
+  },
+  {
+    "id": "FLAECHEN_005",
+    "theme": "geometrie",
+    "chapter": "flaechen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Trapez Fläche",
+      "type": "Aufgabe",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e74c3c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "(a + c) × h ÷ 2",
+          "type": "Formel"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Trapezfläche = (a + c) × h ÷ 2",
+        "visual": {
+          "color": "#c0392b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "a × c",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Trapezfläche benötigt beide Grundseiten und die Höhe",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Mathe Geometrie",
+      "tags": ["flaechen", "level1"]
+    }
+  }
+]
+

@@ -1,0 +1,353 @@
+[
+  {
+    "id": "SPAN_CASA_001",
+    "theme": "spanisch_cap",
+    "chapter": "Alltag_Zuhause",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "casa",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff6b35",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Haus",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "casa = Haus (¡Mi casa es tu casa! - Mein Haus ist dein Haus!)",
+        "visual": {
+          "color": "#f7931e",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Käse",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Käse = queso, nicht casa (¡No confundas casa con queso!)",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Spanisch Vokabeln",
+      "tags": ["alltag", "level1"]
+    }
+  },
+  {
+    "id": "SPAN_CASA_002",
+    "theme": "spanisch_cap",
+    "chapter": "Alltag_Zuhause",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "gato",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff6b35",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Katze",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "gato = Katze (¡El gato está en la casa! - Die Katze ist im Haus!)",
+        "visual": {
+          "color": "#f7931e",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Hund",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Hund = perro, nicht gato (¡El perro y el gato son diferentes!)",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Spanisch Vokabeln",
+      "tags": ["alltag", "level1"]
+    }
+  },
+  {
+    "id": "SPAN_CASA_003",
+    "theme": "spanisch_cap",
+    "chapter": "Alltag_Zuhause",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "mesa",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff6b35",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Tisch",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "mesa = Tisch (¡La comida está en la mesa! - Das Essen ist auf dem Tisch!)",
+        "visual": {
+          "color": "#f7931e",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Stuhl",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Stuhl = silla, nicht mesa (¡La silla está cerca de la mesa!)",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Spanisch Vokabeln",
+      "tags": ["alltag", "level1"]
+    }
+  },
+  {
+    "id": "SPAN_CASA_004",
+    "theme": "spanisch_cap",
+    "chapter": "Alltag_Zuhause",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "ventana",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff6b35",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Fenster",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "ventana = Fenster (¡Abre la ventana! - Öffne das Fenster!)",
+        "visual": {
+          "color": "#f7931e",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Tür",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Tür = puerta, nicht ventana (¡La puerta y la ventana son diferentes!)",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Spanisch Vokabeln",
+      "tags": ["alltag", "level1"]
+    }
+  },
+  {
+    "id": "SPAN_CASA_005",
+    "theme": "spanisch_cap",
+    "chapter": "Alltag_Zuhause",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "cama",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff6b35",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Bett",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "cama = Bett (¡Voy a la cama! - Ich gehe ins Bett!)",
+        "visual": {
+          "color": "#f7931e",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Tisch",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Tisch = mesa, nicht cama (¡No duermas en la mesa, duerme en la cama!)",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Spanisch Vokabeln",
+      "tags": ["alltag", "level1"]
+    }
+  }
+]
+

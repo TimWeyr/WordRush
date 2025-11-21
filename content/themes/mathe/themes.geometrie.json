@@ -1,0 +1,80 @@
+{
+  "id": "geometrie",
+  "name": "Geometrie",
+  "description": "Lerne geometrische Formen und Begriffe - Flächen, Körper und Winkel.",
+  "colorPrimary": "#9b59b6",
+  "colorAccent": "#8e44ad",
+  "backgroundGradient": [
+    "#5a2a7a",
+    "#7a3a9a"
+  ],
+  "maxLevels": 15,
+  "icon": "📐",
+  "shipSkin": "/assets/ships/mathe_ship.svg",
+  "laserColor": "#9b59b6",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "formen": {
+      "backgroundImage": "formen_bg.png",
+      "backgroundGradient": [
+        "#3498db",
+        "#2980b9"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "formen_theme.mp3",
+      "particleEffect": "formen_energy"
+    },
+    "flaechen": {
+      "backgroundImage": "flaechen_bg.png",
+      "backgroundGradient": [
+        "#e74c3c",
+        "#c0392b"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "flaechen_theme.mp3",
+      "particleEffect": "flaechen_energy"
+    },
+    "koerper": {
+      "backgroundImage": "koerper_bg.png",
+      "backgroundGradient": [
+        "#f39c12",
+        "#e67e22"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "koerper_theme.mp3",
+      "particleEffect": "koerper_energy"
+    },
+    "winkel": {
+      "backgroundImage": "winkel_bg.png",
+      "backgroundGradient": [
+        "#27ae60",
+        "#2ecc71"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "winkel_theme.mp3",
+      "particleEffect": "winkel_energy"
+    },
+    "symmetrie": {
+      "backgroundImage": "symmetrie_bg.png",
+      "backgroundGradient": [
+        "#e91e63",
+        "#c2185b"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "symmetrie_theme.mp3",
+      "particleEffect": "symmetrie_energy"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

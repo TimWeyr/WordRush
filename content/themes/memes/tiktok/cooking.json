@@ -1,0 +1,213 @@
+[
+  {
+    "id": "TIKTOK_COOKING_001",
+    "theme": "tiktok",
+    "chapter": "cooking",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Feta Pasta",
+      "type": "Trend",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e74c3c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "2021 Trend",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Feta Pasta war der große Trend 2021 (Und alle haben es gemacht! 🍝)",
+        "visual": {
+          "color": "#c0392b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "2020 Trend",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "2020 war das Jahr der Bananen-Brote! (Feta kam später! 🍌)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "TikTok Kultur",
+      "tags": ["cooking", "level1"]
+    }
+  },
+  {
+    "id": "TIKTOK_COOKING_002",
+    "theme": "tiktok",
+    "chapter": "cooking",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Cloud Bread",
+      "type": "Trend",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e74c3c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Eier + Zucker",
+          "type": "Zutaten"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Cloud Bread besteht aus Eiern und Zucker (Und sieht aus wie eine Wolke! ☁️)",
+        "visual": {
+          "color": "#c0392b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Mehl + Wasser",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Das wäre normales Brot! (Cloud Bread ist viel cooler! 🌥️)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "TikTok Kultur",
+      "tags": ["cooking", "level1"]
+    }
+  },
+  {
+    "id": "TIKTOK_COOKING_003",
+    "theme": "tiktok",
+    "chapter": "cooking",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Baked Feta",
+      "type": "Trend",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e74c3c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Im Ofen backen",
+          "type": "Methode"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Baked Feta wird im Ofen gebacken (Und schmilzt perfekt! 🧀)",
+        "visual": {
+          "color": "#c0392b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "In der Mikrowelle",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Das würde nicht so gut schmecken! (Ofen ist der Weg! 🔥)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "TikTok Kultur",
+      "tags": ["cooking", "level1"]
+    }
+  }
+]
+

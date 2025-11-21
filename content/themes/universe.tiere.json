@@ -1,0 +1,34 @@
+{
+  "id": "tiere",
+  "name": "Tiere (lustig)",
+  "description": "Lerne lustige Fakten über Tiere - Von flauschig bis gefährlich! 🐱",
+  "colorPrimary": "#27ae60",
+  "colorAccent": "#2ecc71",
+  "backgroundGradient": [
+    "#27ae60",
+    "#2ecc71"
+  ],
+  "icon": "🐾",
+  "available": true,
+  "language": "de",
+  "music": {
+    "theme": "tiere_universe_theme.mp3",
+    "volume": 0.6
+  },
+  "particleEffect": "animal_particles",
+  "shipSkin": "animal_ship",
+  "laserColor": "#27ae60",
+  "themes": [
+    "haustiere",
+    "wilde_tiere",
+    "meerestiere",
+    "voegel",
+    "insekten"
+  ],
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

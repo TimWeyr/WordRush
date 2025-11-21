@@ -1,0 +1,1596 @@
+[
+  {
+    "id": "WO_001",
+    "theme": "english_cap",
+    "chapter": "Work_Office",
+    "level": 1,
+    "waveDuration": 1,
+    "base": {
+      "word": "job",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9B59B6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Arbeit",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.53,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "job = Arbeit, Stelle",
+        "visual": {
+          "color": "#F8B739",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Hobby",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.93,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Hobby = hobby, nicht job",
+        "visual": {
+          "color": "#8E44AD",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "hobby"
+      },
+      {
+        "entry": {
+          "word": "house",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "redirect": "Haus",
+        "context": "house gehÃ¶rt zu Alltagsleben",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "work",
+        "office",
+        "level1"
+      ],
+      "related": [
+        "WO_002",
+        "WO_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WO_002",
+    "theme": "english_cap",
+    "chapter": "Work_Office",
+    "level": 1,
+    "waveDuration": 1,
+    "base": {
+      "word": "work",
+      "type": "Verb",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#CDDC39",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "arbeiten",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.82,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "work = arbeiten",
+        "visual": {
+          "color": "#3F51B5",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "spielen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.66,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "spielen = play, nicht work",
+        "visual": {
+          "color": "#64FFDA",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "play"
+      },
+      {
+        "entry": {
+          "word": "word",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "word = Wort, nicht arbeiten",
+        "visual": {
+          "color": "#F7DC6F",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Wort"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "work",
+        "office",
+        "level1"
+      ],
+      "related": [
+        "WO_001",
+        "WO_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WO_003",
+    "theme": "english_cap",
+    "chapter": "Work_Office",
+    "level": 1,
+    "waveDuration": 1,
+    "base": {
+      "word": "email",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#F7DC6F",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "E-Mail",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "email = E-Mail",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Brief",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.81,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Brief = letter, email ist elektronisch",
+        "visual": {
+          "color": "#009688",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "letter"
+      },
+      {
+        "entry": {
+          "word": "male",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.38,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "male = mÃ¤nnlich, nicht E-Mail",
+        "visual": {
+          "color": "#FF1744",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "mÃ¤nnlich"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "work",
+        "office",
+        "level1"
+      ],
+      "related": [
+        "WO_002",
+        "WO_004"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WO_004",
+    "theme": "english_cap",
+    "chapter": "Work_Office",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "desk",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#00E676",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Schreibtisch",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.71,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "desk = Schreibtisch",
+        "visual": {
+          "color": "#FFEB3B",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Tisch",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.01,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Tisch = table, desk = Schreibtisch",
+        "visual": {
+          "color": "#FF6B6B",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "table"
+      },
+      {
+        "entry": {
+          "word": "disk",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.99,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "disk = Scheibe, nicht Schreibtisch",
+        "visual": {
+          "color": "#FF6E40",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Scheibe"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "work",
+        "office",
+        "level1"
+      ],
+      "related": [
+        "WO_003",
+        "WO_005"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WO_005",
+    "theme": "english_cap",
+    "chapter": "Work_Office",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "meeting",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#FFEB3B",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Besprechung",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.47,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "meeting = Besprechung, Treffen",
+        "visual": {
+          "color": "#FF1744",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Begegnung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.69,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Begegnung = encounter, meeting = Besprechung",
+        "visual": {
+          "color": "#F1C40F",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "encounter"
+      },
+      {
+        "entry": {
+          "word": "greeting",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "greeting = BegrÃ¼ÃŸung, nicht Besprechung",
+        "visual": {
+          "color": "#CDDC39",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "BegrÃ¼ÃŸung"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "work",
+        "office",
+        "level1"
+      ],
+      "related": [
+        "WO_004",
+        "WO_006"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WO_006",
+    "theme": "english_cap",
+    "chapter": "Work_Office",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "colleague",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#FF9800",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Kollege",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "colleague = Kollege",
+        "visual": {
+          "color": "#4ECDC4",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Freund",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.79,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Freund = friend, colleague = Arbeitskollege",
+        "visual": {
+          "color": "#4ECDC4",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "friend"
+      },
+      {
+        "entry": {
+          "word": "college",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.54,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "college = Hochschule, nicht Kollege",
+        "visual": {
+          "color": "#FF9800",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Hochschule"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "work",
+        "office",
+        "level2"
+      ],
+      "related": [
+        "WO_005",
+        "WO_007"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WO_007",
+    "theme": "english_cap",
+    "chapter": "Work_Office",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "deadline",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#FF9800",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Frist",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.53,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "deadline = Frist, Termin",
+        "visual": {
+          "color": "#98D8C8",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Tod",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.05,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Tod = death, deadline = Frist",
+        "visual": {
+          "color": "#009688",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "death"
+      },
+      {
+        "entry": {
+          "word": "line",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.82,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "line = Linie, deadline = Frist",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Linie"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "work",
+        "office",
+        "level2"
+      ],
+      "related": [
+        "WO_006",
+        "WO_008"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WO_008",
+    "theme": "english_cap",
+    "chapter": "Work_Office",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "report",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#FF5722",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Bericht",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.93,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "report = Bericht",
+        "visual": {
+          "color": "#45B7D1",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "berichten",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "berichten = report (Verb), report = Bericht (Nomen)",
+        "visual": {
+          "color": "#18FFFF",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "report (Verb)"
+      },
+      {
+        "entry": {
+          "word": "support",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "support = UnterstÃ¼tzung, nicht Bericht",
+        "visual": {
+          "color": "#18FFFF",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UnterstÃ¼tzung"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "work",
+        "office",
+        "level2"
+      ],
+      "related": [
+        "WO_007",
+        "WO_009"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WO_009",
+    "theme": "english_cap",
+    "chapter": "Work_Office",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "schedule",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#E74C3C",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Zeitplan",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "schedule = Zeitplan",
+        "visual": {
+          "color": "#E74C3C",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Schule",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.12,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Schule = school, nicht schedule",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "school"
+      },
+      {
+        "entry": {
+          "word": "scheme",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "scheme = Schema, schedule = Zeitplan",
+        "visual": {
+          "color": "#F7DC6F",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Schema"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "work",
+        "office",
+        "level2"
+      ],
+      "related": [
+        "WO_008",
+        "WO_010"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WO_010",
+    "theme": "english_cap",
+    "chapter": "Work_Office",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "project",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#27AE60",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Projekt",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.13,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "project = Projekt",
+        "visual": {
+          "color": "#3F51B5",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Produkt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.91,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Produkt = product, project = Projekt",
+        "visual": {
+          "color": "#45B7D1",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "product"
+      },
+      {
+        "entry": {
+          "word": "object",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.08,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "object = Objekt, project = Projekt",
+        "visual": {
+          "color": "#00B0FF",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Objekt"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "work",
+        "office",
+        "level2"
+      ],
+      "related": [
+        "WO_009",
+        "WO_011"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WO_011",
+    "theme": "english_cap",
+    "chapter": "Work_Office",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "negotiation",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#00BCD4",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Verhandlung",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.44,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "negotiation = Verhandlung",
+        "visual": {
+          "color": "#45B7D1",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Verneinung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.34,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Verneinung = negation, negotiation = Verhandlung",
+        "visual": {
+          "color": "#E67E22",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "negation"
+      },
+      {
+        "entry": {
+          "word": "negotiate",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.09,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "negotiate = verhandeln (Verb), negotiation = Verhandlung (Nomen)",
+        "visual": {
+          "color": "#00E676",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "verhandeln (Verb)"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "work",
+        "office",
+        "level3"
+      ],
+      "related": [
+        "WO_010",
+        "WO_012"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WO_012",
+    "theme": "english_cap",
+    "chapter": "Work_Office",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "strategy",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#C0392B",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Strategie",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.85,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "strategy = Strategie",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Taktik",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Taktik = tactic, strategy = langfristige Strategie",
+        "visual": {
+          "color": "#F8B739",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "tactic"
+      },
+      {
+        "entry": {
+          "word": "strategic",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.28,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "strategic = strategisch (Adjektiv), strategy = Strategie (Nomen)",
+        "visual": {
+          "color": "#E74C3C",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "strategisch (Adjektiv)"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "work",
+        "office",
+        "level3"
+      ],
+      "related": [
+        "WO_011",
+        "WO_013"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WO_013",
+    "theme": "english_cap",
+    "chapter": "Work_Office",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "collaborate",
+      "type": "Verb",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#00E676",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "zusammenarbeiten",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "collaborate = zusammenarbeiten",
+        "visual": {
+          "color": "#F1C40F",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "kooperieren",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.79,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "kooperieren = cooperate, collaborate = enger zusammenarbeiten",
+        "visual": {
+          "color": "#18FFFF",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "cooperate"
+      },
+      {
+        "entry": {
+          "word": "collaboration",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "collaboration = Zusammenarbeit (Nomen), collaborate = zusammenarbeiten (Verb)",
+        "visual": {
+          "color": "#009688",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Zusammenarbeit (Nomen)"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "work",
+        "office",
+        "level3"
+      ],
+      "related": [
+        "WO_012",
+        "WO_014"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WO_014",
+    "theme": "english_cap",
+    "chapter": "Work_Office",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "supervisor",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#E040FB",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Vorgesetzter",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.14,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "supervisor = Vorgesetzter",
+        "visual": {
+          "color": "#E74C3C",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Aufseher",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Aufseher = overseer, supervisor = Vorgesetzter",
+        "visual": {
+          "color": "#2ECC71",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "overseer"
+      },
+      {
+        "entry": {
+          "word": "supervise",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.42,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "supervise = beaufsichtigen (Verb), supervisor = Vorgesetzter (Nomen)",
+        "visual": {
+          "color": "#3498DB",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "beaufsichtigen (Verb)"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "work",
+        "office",
+        "level3"
+      ],
+      "related": [
+        "WO_013",
+        "WO_015"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "WO_015",
+    "theme": "english_cap",
+    "chapter": "Work_Office",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "incentive",
+      "type": "Noun",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#3498DB",
+        "glow": false,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Anreiz",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.32,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 150,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "context": "incentive = Anreiz",
+        "visual": {
+          "color": "#009688",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "anregen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.93,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "anregen = stimulate, incentive = Anreiz (Nomen)",
+        "visual": {
+          "color": "#1ABC9C",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "stimulate"
+      },
+      {
+        "entry": {
+          "word": "motivation",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "motivation = Motivation, incentive = Ã¤uÃŸerer Anreiz",
+        "visual": {
+          "color": "#FF1744",
+          "variant": "spike",
+          "pulsate": false,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Motivation"
+      }
+    ],
+    "meta": {
+      "source": "English CAP",
+      "tags": [
+        "work",
+        "office",
+        "level3"
+      ],
+      "related": [
+        "WO_014"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]

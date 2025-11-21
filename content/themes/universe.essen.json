@@ -1,0 +1,34 @@
+{
+  "id": "essen",
+  "name": "Essen & Trinken",
+  "description": "Lerne alles über leckeres Essen - Von Fast Food bis Gourmet! 🍕",
+  "colorPrimary": "#ff6b35",
+  "colorAccent": "#f7931e",
+  "backgroundGradient": [
+    "#ff6b35",
+    "#f7931e"
+  ],
+  "icon": "🍔",
+  "available": true,
+  "language": "de",
+  "music": {
+    "theme": "essen_universe_theme.mp3",
+    "volume": 0.6
+  },
+  "particleEffect": "food_particles",
+  "shipSkin": "food_ship",
+  "laserColor": "#ff6b35",
+  "themes": [
+    "fastfood",
+    "suessigkeiten",
+    "getraenke",
+    "fruehstueck",
+    "abendessen"
+  ],
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

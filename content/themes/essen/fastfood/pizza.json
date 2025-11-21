@@ -1,0 +1,73 @@
+[
+  {
+    "id": "PIZZA_001",
+    "theme": "fastfood",
+    "chapter": "pizza",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Margherita",
+      "type": "Pizza",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e74c3c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Tomate, Mozzarella, Basilikum",
+          "type": "Zutaten"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.7,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Margherita hat Tomate, Mozzarella und Basilikum (Die klassische Pizza! 🍕)",
+        "visual": {
+          "color": "#c0392b",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Salami",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Das wäre eine Salami-Pizza! (Margherita ist vegetarisch! 🍕)",
+        "visual": {
+          "color": "#e74c3c",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "Fast Food Wissen",
+      "tags": ["pizza", "level1"]
+    }
+  }
+]
+

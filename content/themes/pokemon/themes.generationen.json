@@ -1,0 +1,80 @@
+{
+  "id": "generationen",
+  "name": "Generationen",
+  "description": "Lerne die Pokemon-Generationen - Von Gen 1 bis Gen 5!",
+  "colorPrimary": "#ffd700",
+  "colorAccent": "#ff6b35",
+  "backgroundGradient": [
+    "#ff6b35",
+    "#f7931e"
+  ],
+  "maxLevels": 15,
+  "icon": "⚡",
+  "shipSkin": "/assets/ships/pokemon_ship.svg",
+  "laserColor": "#ffd700",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "gen1": {
+      "backgroundImage": "gen1_bg.png",
+      "backgroundGradient": [
+        "#ff6b35",
+        "#f7931e"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "gen1_theme.mp3",
+      "particleEffect": "pokemon_energy"
+    },
+    "gen2": {
+      "backgroundImage": "gen2_bg.png",
+      "backgroundGradient": [
+        "#4a90e2",
+        "#7bb3f0"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "gen2_theme.mp3",
+      "particleEffect": "pokemon_energy"
+    },
+    "gen3": {
+      "backgroundImage": "gen3_bg.png",
+      "backgroundGradient": [
+        "#27ae60",
+        "#2ecc71"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "gen3_theme.mp3",
+      "particleEffect": "pokemon_energy"
+    },
+    "gen4": {
+      "backgroundImage": "gen4_bg.png",
+      "backgroundGradient": [
+        "#9b59b6",
+        "#8e44ad"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "gen4_theme.mp3",
+      "particleEffect": "pokemon_energy"
+    },
+    "gen5": {
+      "backgroundImage": "gen5_bg.png",
+      "backgroundGradient": [
+        "#e74c3c",
+        "#c0392b"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "gen5_theme.mp3",
+      "particleEffect": "pokemon_energy"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

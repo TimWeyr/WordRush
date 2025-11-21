@@ -1,0 +1,69 @@
+{
+  "id": "tiktok",
+  "name": "TikTok",
+  "description": "Lerne die besten TikTok-Trends - Von Dance-Challenges bis Memes! 💃",
+  "colorPrimary": "#000000",
+  "colorAccent": "#ff0050",
+  "backgroundGradient": [
+    "#000000",
+    "#ff0050"
+  ],
+  "maxLevels": 15,
+  "icon": "🎵",
+  "shipSkin": "/assets/ships/meme_ship.svg",
+  "laserColor": "#ff0050",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "dance_challenges": {
+      "backgroundImage": "dance_bg.png",
+      "backgroundGradient": [
+        "#ff0050",
+        "#ff4081"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "dance_theme.mp3",
+      "particleEffect": "dance_energy"
+    },
+    "comedy": {
+      "backgroundImage": "comedy_bg.png",
+      "backgroundGradient": [
+        "#ff6b35",
+        "#f7931e"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "comedy_theme.mp3",
+      "particleEffect": "comedy_energy"
+    },
+    "life_hacks": {
+      "backgroundImage": "hacks_bg.png",
+      "backgroundGradient": [
+        "#3498db",
+        "#2980b9"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "hacks_theme.mp3",
+      "particleEffect": "hacks_energy"
+    },
+    "cooking": {
+      "backgroundImage": "cooking_bg.png",
+      "backgroundGradient": [
+        "#e74c3c",
+        "#c0392b"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "cooking_theme.mp3",
+      "particleEffect": "cooking_energy"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

@@ -86,7 +86,6 @@ export class ShooterEngine {
     console.log('🧠 Learning State:', learningState);
     
     this.currentItem = item;
-    this.learningState = learningState;
     this.elapsedTime = 0;
     this.roundScore = 0;
     this.collectionOrderTracker = [];

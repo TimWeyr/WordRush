@@ -60,7 +60,7 @@ export class ObjectTrail {
   }
 
   // Spawn trail particles for an object
-  spawnTrail(position: Vector2, velocity: Vector2, color: string, type: 'sparkle' | 'fire' = 'sparkle', wordWidth: number = 60): void {
+  spawnTrail(position: Vector2, velocity: Vector2, color: string, _type: 'sparkle' | 'fire' = 'sparkle', wordWidth: number = 60): void {
     // More particles distributed across word width
     const particleCount = 4; // More particles for better distribution
     

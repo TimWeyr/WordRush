@@ -49,7 +49,6 @@ export class ShooterEngine {
   private roundScore: number = 0;
   private sessionScore: number = 0;
   private gameMode: GameMode;
-  private learningState: ItemLearningState | null = null;
   private collectionOrderTracker: number[] = [];
   private roundCompleted: boolean = false;
   

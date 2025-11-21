@@ -1,7 +1,6 @@
 // Moon Particle Effect
 // Sprinkles small particles from moon when all items reach 100%
 
-import type { Vector2 } from '@/types/game.types';
 import type { Renderer } from '@/core/Renderer';
 
 interface MoonParticle {

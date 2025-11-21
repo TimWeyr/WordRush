@@ -565,25 +565,6 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     pendingFocusThemeIdRef.current = null;
   }, [selectedUniverse, renderer, camera, focusPlanet, themes.length]);
   
-  // Handle center button click
-  // Test function to center planet and zoom to fit moons and rings
-  const handleTestCenter = () => {
-    if (zoomState !== 'zoomed' || !zoomedPlanetId) return;
-    
-    const planet = planetLayoutsRef.current.find(p => p.id === zoomedPlanetId);
-    if (!planet) return;
-    
-    const zoomLevel = focusPlanet(planet);
-    if (zoomLevel) {
-      console.log('🎯 Test center:', {
-        planetWorld: { x: planet.x, y: planet.y },
-        cameraWorld: camera ? { x: camera.x, y: camera.y } : null,
-        screenPos: camera ? camera.worldToScreen({ x: planet.x, y: planet.y }) : null,
-        zoomLevel
-      });
-    }
-  };
-  
   // Handle back button click
   const handleBackClick = () => {
     if (camera && renderer && zoomState === 'zoomed') {

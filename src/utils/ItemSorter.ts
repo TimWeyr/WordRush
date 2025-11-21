@@ -3,7 +3,7 @@
 
 import type { Item } from '@/types/content.types';
 import type { LearningState } from '@/types/progress.types';
-import { calculateMaxPossibleScore, calculateItemScorePercentage } from './ScoreCalculator';
+import { calculateMaxPossibleScore } from './ScoreCalculator';
 
 export type ItemOrder = 'default' | 'random' | 'worst-first-unplayed';
 

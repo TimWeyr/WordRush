@@ -173,7 +173,7 @@ def create_entry(index, word_en, word_de, word_type):
     }
 
 # Read existing file
-with open('content/themes/englisch/business_english/Business_Communication.json', 'r', encoding='utf-8') as f:
+with open('public/content/themes/englisch/business_english/Business_Communication.json', 'r', encoding='utf-8') as f:
     existing_entries = json.load(f)
 
 # Create level 1 entries
@@ -200,7 +200,7 @@ if existing_entries:
 all_entries = level1_entries + existing_entries
 
 # Write back
-with open('content/themes/englisch/business_english/Business_Communication.json', 'w', encoding='utf-8') as f:
+with open('public/content/themes/englisch/business_english/Business_Communication.json', 'w', encoding='utf-8') as f:
     json.dump(all_entries, f, indent=2, ensure_ascii=False)
 
 print(f"Created {len(level1_entries)} level 1 entries")

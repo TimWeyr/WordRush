@@ -4,7 +4,7 @@
 import json
 
 # Read the generated file
-with open('content/themes/englisch/business_english/Business_Communication.json', 'r', encoding='utf-8') as f:
+with open('public/content/themes/englisch/business_english/Business_Communication.json', 'r', encoding='utf-8') as f:
     generated_entries = json.load(f)
 
 # BC_001 to BC_010 were manually created earlier - I'll need to recreate them

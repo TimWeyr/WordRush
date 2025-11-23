@@ -636,7 +636,7 @@ for chapter_name, prefix in chapters.items():
             entry["meta"]["related"][1] = None
     
     # Write to file
-    filename = f"content/themes/englisch/business_english/{chapter_name}.json"
+    filename = f"public/content/themes/englisch/business_english/{chapter_name}.json"
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(entries, f, indent=2, ensure_ascii=False)
     

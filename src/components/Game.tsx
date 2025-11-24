@@ -68,6 +68,9 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const fireButtonPressed = useRef(false);
   
+  // Pause state
+  const [isPaused, setIsPaused] = useState(false);
+  
   // Input state - use refs to avoid re-creating game loop callbacks
   const mousePos = useRef<Vector2 | null>(null);
   const touchPos = useRef<Vector2 | null>(null);
@@ -396,6 +399,9 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
   const updateGame = useCallback((deltaTime: number) => {
     if (!engine) return;
 
+    // Don't update game when paused
+    if (isPaused) return;
+
     // Update game engine (but not during transition)
     if (!roundTransition) {
       const inputPos = touchPos.current || mousePos.current;
@@ -681,27 +687,72 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
       {/* HUD */}
       <div className="hud">
         <div className="hud-left">
-          <div className={`health-bar ${healthBlink ? 'health-blink' : ''}`}>
-            <span>❤️</span>
-            <div className="health-fill" style={{ width: `${(health / 10) * 100}%` }} />
-            <span className="health-text">{health}/10</span>
+          {/* Circular Health Indicator */}
+          <div className={`health-circle ${healthBlink ? 'health-blink' : ''}`}>
+            <svg width="60" height="60" viewBox="0 0 60 60">
+              {/* Background circle */}
+              <circle
+                cx="30"
+                cy="30"
+                r="24"
+                fill="rgba(0, 0, 0, 0.5)"
+                stroke="rgba(255, 255, 255, 0.2)"
+                strokeWidth="2"
+              />
+              
+              {/* Health arc */}
+              <circle
+                cx="30"
+                cy="30"
+                r="24"
+                fill="none"
+                stroke={
+                  health <= 0 ? '#000000' :
+                  health / (engine?.getShip().maxHealth || 10) <= 0.25 ? '#ff3333' :
+                  health / (engine?.getShip().maxHealth || 10) <= 0.5 ? '#ff9933' :
+                  '#00ff88'
+                }
+                strokeWidth="4"
+                strokeDasharray={`${2 * Math.PI * 24}`}
+                strokeDashoffset={`${2 * Math.PI * 24 * (1 - health / (engine?.getShip().maxHealth || 10))}`}
+                strokeLinecap="round"
+                transform="rotate(-90 30 30)"
+                style={{
+                  filter: health > 0 ? 'drop-shadow(0 0 8px currentColor)' : 'none',
+                  transition: 'stroke 0.3s, stroke-dashoffset 0.3s'
+                }}
+              />
+              
+              {/* Health text */}
+              <text
+                x="30"
+                y="35"
+                textAnchor="middle"
+                fill="#ffffff"
+                fontSize="16"
+                fontWeight="bold"
+                style={{ textShadow: '0 0 4px #000' }}
+              >
+                {health}
+              </text>
+            </svg>
           </div>
         </div>
         
         <div className="hud-center">
           <div className="level-info">
-            {theme.name} - {chapterId}
+            <span className="desktop-only">{theme.name} - {chapterId}</span>
           </div>
           <div className="item-progress">
-            Item {currentItemIndex + 1}/{items.length}
+            Runde {currentItemIndex + 1}/{items.length}
           </div>
         </div>
         
         <div className="hud-right">
           <div className="score">
-            Score: <span className="glow-text">{score}</span>
+            <span className="desktop-only">Score: </span><span className="glow-text">{score}</span>
           </div>
-          <div className="mode-badge">
+          <div className="mode-badge desktop-only">
             {mode === 'lernmodus' ? '🎓 Lern' : '🎯 Shooter'}
           </div>
         </div>
@@ -771,7 +822,7 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
       {/* Chapter Complete Overlay */}
       {chapterComplete && (
         <div className="game-over-overlay chapter-complete">
-          <div className="game-over-content">
+          <div className="game-over-content mobile-optimized">
             <h1>🎉 Chapter Complete!</h1>
             <div className="final-score">Final Score: {finalScore}</div>
             <button className="restart-button" onClick={() => {
@@ -791,19 +842,54 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
         </div>
       )}
 
-      {/* Exit Button */}
-      <button className="exit-button" onClick={() => {
-        // Save selection before exiting
-        const lastSelection = {
-          universeId: universe.id,
-          themeId: theme.id,
-          chapterId: chapterId,
-          mode: mode
-        };
-        localStorage.setItem('wordrush_lastSelection', JSON.stringify(lastSelection));
-        onExit();
-      }}>
-        ← Exit
+      {/* Pause Overlay */}
+      {isPaused && !gameOver && !chapterComplete && (
+        <div className="game-over-overlay pause-overlay">
+          <div className="game-over-content mobile-optimized">
+            <h1>⏸️ Paused</h1>
+            <div className="pause-info">
+              <div className="pause-stat">
+                <span className="pause-label">Score:</span>
+                <span className="pause-value">{score}</span>
+              </div>
+              <div className="pause-stat">
+                <span className="pause-label">Runde:</span>
+                <span className="pause-value">{currentItemIndex + 1}/{items.length}</span>
+              </div>
+              <div className="pause-stat">
+                <span className="pause-label">Health:</span>
+                <span className="pause-value">{health}/{engine?.getShip().maxHealth || 10}</span>
+              </div>
+            </div>
+            <div className="pause-buttons">
+              <button className="restart-button" onClick={() => setIsPaused(false)}>
+                ▶ Resume
+              </button>
+              <button className="restart-button secondary" onClick={() => {
+                // Save selection before exiting
+                const lastSelection = {
+                  universeId: universe.id,
+                  themeId: theme.id,
+                  chapterId: chapterId,
+                  mode: mode
+                };
+                localStorage.setItem('wordrush_lastSelection', JSON.stringify(lastSelection));
+                onExit();
+              }}>
+                ← Exit to Menu
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Pause Button */}
+      <button 
+        className="pause-button" 
+        onClick={() => setIsPaused(!isPaused)}
+        title={isPaused ? "Resume" : "Pause"}
+      >
+        <img src="/assets/ui/pause.svg" alt="Pause" />
       </button>
 
       {/* Fire Button (Touch Devices Only) */}

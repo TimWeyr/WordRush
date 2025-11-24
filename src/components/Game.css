@@ -56,40 +56,18 @@
   align-items: flex-end;
 }
 
-/* Health Bar */
-.health-bar {
+/* Circular Health Indicator */
+.health-circle {
   position: relative;
-  width: 200px;
-  height: 30px;
-  background: rgba(0, 0, 0, 0.7);
-  border: 3px solid #ff3333;
-  border-radius: 5px;
-  overflow: hidden;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  justify-content: center;
 }
 
-.health-fill {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, #ff3333 0%, #ff6666 100%);
-  transition: width 0.3s;
-  z-index: 1;
-}
-
-.health-bar span {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  font-weight: bold;
-  text-shadow: 0 0 5px #000, 0 0 10px #000;
-}
-
-.health-text {
-  margin-left: auto;
+.health-circle svg {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
 }
 
 /* Health Blink Animation */
@@ -99,13 +77,24 @@
 
 @keyframes healthBlinkAnim {
   0%, 100% { 
-    border-color: #ff3333;
     transform: scale(1);
+    filter: brightness(1);
   }
   50% { 
-    border-color: #ffff00;
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #ff3333;
+    transform: scale(1.15);
+    filter: brightness(1.5) drop-shadow(0 0 15px #ffff00);
+  }
+}
+
+@media (max-width: 768px) {
+  .health-circle {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .health-circle svg {
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -261,24 +250,51 @@
   text-shadow: 0 0 20px #00ff88;
 }
 
-/* Exit Button */
-.exit-button {
+/* Pause Button */
+.pause-button {
   position: absolute;
   top: 20px;
-  left: 20px;
-  background: rgba(0, 0, 0, 0.7);
-  border: 3px solid #ffffff;
-  color: #ffffff;
-  font-size: 16px;
-  padding: 10px 20px;
+  left: 100px; /* Verschoben nach rechts, damit Health Circle Platz hat */
+  background: rgba(0, 0, 0, 0.8);
+  border: 3px solid #4a90e2;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
   pointer-events: all;
   z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.2s;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
 }
 
-.exit-button:hover {
-  background: rgba(255, 51, 51, 0.7);
-  border-color: #ff3333;
+.pause-button:hover {
+  background: rgba(74, 144, 226, 0.3);
+  border-color: #7bb3f0;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.6);
+}
+
+.pause-button img {
+  width: 32px;
+  height: 32px;
+}
+
+@media (max-width: 768px) {
+  .pause-button {
+    width: 50px;
+    height: 50px;
+    top: 15px;
+    left: 80px; /* Auch auf Mobile verschoben */
+  }
+  
+  .pause-button img {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 /* Game Over / Chapter Complete Overlays */
@@ -310,12 +326,25 @@
   border-radius: 20px;
   box-shadow: 0 0 50px rgba(255, 51, 51, 0.8);
   animation: slideUp 0.5s ease-out;
+  max-width: 90vw;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.game-over-content.mobile-optimized {
+  padding: 40px 30px;
 }
 
 .chapter-complete .game-over-content {
   background: rgba(0, 255, 136, 0.1);
   border-color: #00ff88;
   box-shadow: 0 0 50px rgba(0, 255, 136, 0.8);
+}
+
+.pause-overlay .game-over-content {
+  background: rgba(74, 144, 226, 0.1);
+  border-color: #4a90e2;
+  box-shadow: 0 0 50px rgba(74, 144, 226, 0.8);
 }
 
 @keyframes slideUp {
@@ -335,12 +364,67 @@
   text-shadow: 0 0 20px currentColor;
 }
 
+.mobile-optimized h1 {
+  font-size: 48px;
+}
+
 .final-score {
   font-size: 48px;
   font-weight: bold;
   margin: 30px 0;
   color: #ffffff;
   text-shadow: 0 0 10px #ffffff;
+}
+
+.mobile-optimized .final-score {
+  font-size: 36px;
+  margin: 20px 0;
+}
+
+/* Pause Screen Styles */
+.pause-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.pause-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(74, 144, 226, 0.3);
+  border-radius: 10px;
+}
+
+.pause-label {
+  font-size: 20px;
+  color: #7bb3f0;
+}
+
+.pause-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.pause-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.restart-button.secondary {
+  background: rgba(255, 51, 51, 0.8);
+  border-color: #ff3333;
+}
+
+.restart-button.secondary:hover {
+  background: rgba(255, 51, 51, 1);
+  box-shadow: 0 0 30px rgba(255, 51, 51, 0.8);
 }
 
 .restart-button {
@@ -393,8 +477,17 @@
   box-shadow: 0 2px 10px rgba(255, 68, 0, 0.8);
 }
 
+/* Desktop-only elements */
+.desktop-only {
+  display: inline;
+}
+
 /* Mobile Optimizations */
 @media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+  
   .hud {
     height: 60px;
     padding: 5px 10px;
@@ -407,6 +500,26 @@
     width: 70px;
     height: 70px;
     font-size: 32px;
+  }
+  
+  .mobile-optimized h1 {
+    font-size: 36px;
+  }
+  
+  .mobile-optimized .final-score {
+    font-size: 28px;
+  }
+  
+  .pause-stat {
+    padding: 10px 15px;
+  }
+  
+  .pause-label {
+    font-size: 16px;
+  }
+  
+  .pause-value {
+    font-size: 22px;
   }
   
   .health-bar {

@@ -66,14 +66,19 @@ export class ShooterEngine {
     this.config = config;
     this.gameMode = gameMode;
     
+    // Calculate safe area offset for mobile devices (accounting for browser UI)
+    const safeAreaBottom = 20; // Extra padding for mobile browser UI
+    const baseYPosition = config.screenHeight - 50 - safeAreaBottom;
+    const shipYPosition = config.screenHeight - 100 - safeAreaBottom;
+    
     // Create ship
     this.ship = new Ship(
-      { x: config.screenWidth / 2, y: config.screenHeight - 100 },
+      { x: config.screenWidth / 2, y: shipYPosition },
       config.shipConfig
     );
     
-    // Create base at bottom center
-    this.base = new BaseEntity({ x: config.screenWidth / 2, y: config.screenHeight - 50 });
+    // Create base at bottom center with safe area offset
+    this.base = new BaseEntity({ x: config.screenWidth / 2, y: baseYPosition });
     
     // Collision system
     this.collisionSystem = new CollisionSystem(0.9);

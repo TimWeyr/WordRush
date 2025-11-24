@@ -3,9 +3,13 @@
 .game-container {
   width: 100vw;
   height: 100vh;
+  /* Use actual viewport height on mobile */
+  height: calc(var(--vh, 1vh) * 100);
   position: relative;
   overflow: hidden;
   background: #000;
+  /* Handle safe area insets for notched devices */
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .game-canvas {
@@ -13,6 +17,10 @@
   height: 100%;
   display: block;
   cursor: crosshair;
+  /* Prevent browser gestures */
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 /* HUD */
@@ -355,12 +363,50 @@
   box-shadow: 0 0 30px rgba(74, 144, 226, 0.8);
 }
 
+/* Fire Button (Touch Devices) */
+.fire-button {
+  position: absolute;
+  bottom: 100px;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 68, 0, 0.9);
+  border: 4px solid #ff4400;
+  color: #ffffff;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(255, 68, 0, 0.6);
+  transition: all 0.1s;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fire-button:active {
+  transform: scale(0.95);
+  background: rgba(255, 102, 0, 1);
+  box-shadow: 0 2px 10px rgba(255, 68, 0, 0.8);
+}
+
 /* Mobile Optimizations */
 @media (max-width: 768px) {
   .hud {
     height: 60px;
     padding: 5px 10px;
     font-size: 14px;
+  }
+  
+  .fire-button {
+    bottom: 80px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
   }
   
   .health-bar {

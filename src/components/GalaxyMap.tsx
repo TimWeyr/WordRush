@@ -1201,7 +1201,7 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
             localStorage.setItem('wordrush_lastSelection', JSON.stringify(newSelection));
             console.log('💾 Updated universe selection for PDF export:', newSelection);
           }}
-          className="universe-select"
+          className="universe-select compact"
         >
           {universes.map(u => (
             <option key={u.id} value={u.id}>
@@ -1210,64 +1210,37 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
           ))}
         </select>
         
-        <div className="mode-toggle">
-          <button
-            className={mode === 'lernmodus' ? 'active' : ''}
-            onClick={() => {
-              setMode('lernmodus');
-              // Save mode change
-              const lastSelectionStr = localStorage.getItem('wordrush_lastSelection');
-              try {
-                if (lastSelectionStr) {
-                  const lastSelection = JSON.parse(lastSelectionStr);
-                  lastSelection.mode = 'lernmodus';
-                  localStorage.setItem('wordrush_lastSelection', JSON.stringify(lastSelection));
-                } else if (selectedUniverse) {
-                  // Create new selection if none exists
-                  const newSelection = {
-                    universeId: selectedUniverse.id,
-                    themeId: '',
-                    chapterId: '',
-                    mode: 'lernmodus'
-                  };
-                  localStorage.setItem('wordrush_lastSelection', JSON.stringify(newSelection));
-                }
-              } catch (error) {
-                console.warn('Failed to save mode change:', error);
+        {/* Toggle Button for Mode */}
+        <button
+          className={`mode-toggle-button ${mode === 'lernmodus' ? 'learn-mode' : 'shooter-mode'}`}
+          onClick={() => {
+            const newMode = mode === 'lernmodus' ? 'shooter' : 'lernmodus';
+            setMode(newMode);
+            // Save mode change
+            const lastSelectionStr = localStorage.getItem('wordrush_lastSelection');
+            try {
+              if (lastSelectionStr) {
+                const lastSelection = JSON.parse(lastSelectionStr);
+                lastSelection.mode = newMode;
+                localStorage.setItem('wordrush_lastSelection', JSON.stringify(lastSelection));
+              } else if (selectedUniverse) {
+                // Create new selection if none exists
+                const newSelection = {
+                  universeId: selectedUniverse.id,
+                  themeId: '',
+                  chapterId: '',
+                  mode: newMode
+                };
+                localStorage.setItem('wordrush_lastSelection', JSON.stringify(newSelection));
               }
-            }}
-          >
-            🎓 Lernmodus
-          </button>
-          <button
-            className={mode === 'shooter' ? 'active' : ''}
-            onClick={() => {
-              setMode('shooter');
-              // Save mode change
-              const lastSelectionStr = localStorage.getItem('wordrush_lastSelection');
-              try {
-                if (lastSelectionStr) {
-                  const lastSelection = JSON.parse(lastSelectionStr);
-                  lastSelection.mode = 'shooter';
-                  localStorage.setItem('wordrush_lastSelection', JSON.stringify(lastSelection));
-                } else if (selectedUniverse) {
-                  // Create new selection if none exists
-                  const newSelection = {
-                    universeId: selectedUniverse.id,
-                    themeId: '',
-                    chapterId: '',
-                    mode: 'shooter'
-                  };
-                  localStorage.setItem('wordrush_lastSelection', JSON.stringify(newSelection));
-                }
-              } catch (error) {
-                console.warn('Failed to save mode change:', error);
-              }
-            }}
-          >
-            🎯 Shooter
-          </button>
-        </div>
+            } catch (error) {
+              console.warn('Failed to save mode change:', error);
+            }
+          }}
+        >
+          <span className="mode-icon">{mode === 'lernmodus' ? '🎓' : '🎯'}</span>
+          <span className="mode-text">{mode === 'lernmodus' ? 'Lern' : 'Shooter'}</span>
+        </button>
         
         {zoomState === 'zoomed' && (
           <>

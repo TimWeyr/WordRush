@@ -41,12 +41,87 @@ export class BaseEntity extends GameObject {
       // Render the cool arcade glassmorphism base
       this.renderArcadeGlassBase(renderer, color);
       
-      // Render word
+      // Render word with automatic wrapping for long words
+      this.renderBaseText(renderer);
+    }
+  }
+  
+  private renderBaseText(renderer: Renderer): void {
+    if (!this.content) return;
+    
+    const ctx = renderer.getContext();
+    const canvas = ctx.canvas;
+    const platformWidth = canvas.width * 0.8;
+    const maxTextWidth = platformWidth - 40; // Padding on sides
+    
+    // Calculate font size - smaller for long words
+    const wordLength = this.word.length;
+    let baseFontSize = 24 * (this.content.visual.size || 1.0);
+    
+    // Reduce font size for longer words
+    if (wordLength > 20) {
+      baseFontSize *= 0.65;
+    } else if (wordLength > 15) {
+      baseFontSize *= 0.75;
+    } else if (wordLength > 10) {
+      baseFontSize *= 0.85;
+    }
+    
+    const bold = this.content.visual.appearance === 'bold';
+    ctx.font = `${bold ? 'bold' : 'normal'} ${baseFontSize}px Arial`;
+    
+    // Check if text needs wrapping
+    const textWidth = ctx.measureText(this.word).width;
+    
+    if (textWidth > maxTextWidth) {
+      // Wrap text to 2 lines
+      const words = this.word.split(' ');
+      if (words.length > 1) {
+        // Multi-word: split at space
+        const midPoint = Math.ceil(words.length / 2);
+        const line1 = words.slice(0, midPoint).join(' ');
+        const line2 = words.slice(midPoint).join(' ');
+        
+        renderer.renderText(line1, { x: this.position.x, y: this.position.y - baseFontSize / 2 }, {
+          fontSize: baseFontSize,
+          color: '#ffffff',
+          outline: true,
+          bold
+        });
+        
+        renderer.renderText(line2, { x: this.position.x, y: this.position.y + baseFontSize / 2 }, {
+          fontSize: baseFontSize,
+          color: '#ffffff',
+          outline: true,
+          bold
+        });
+      } else {
+        // Single word: split at middle character
+        const midChar = Math.ceil(this.word.length / 2);
+        const line1 = this.word.substring(0, midChar);
+        const line2 = this.word.substring(midChar);
+        
+        renderer.renderText(line1, { x: this.position.x, y: this.position.y - baseFontSize / 2 }, {
+          fontSize: baseFontSize,
+          color: '#ffffff',
+          outline: true,
+          bold
+        });
+        
+        renderer.renderText(line2, { x: this.position.x, y: this.position.y + baseFontSize / 2 }, {
+          fontSize: baseFontSize,
+          color: '#ffffff',
+          outline: true,
+          bold
+        });
+      }
+    } else {
+      // Single line
       renderer.renderText(this.word, this.position, {
-        fontSize: 24 * (this.content.visual.size || 1.0),
+        fontSize: baseFontSize,
         color: '#ffffff',
         outline: true,
-        bold: this.content.visual.appearance === 'bold'
+        bold
       });
     }
   }

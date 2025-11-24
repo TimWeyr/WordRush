@@ -662,6 +662,77 @@ Universe (e.g., "psychiatrie", "englisch")
 - Themes: `content/themes/[universe]/themes.[id].json`
 - Chapters: `content/themes/[universe]/[theme]/[chapter].json`
 
+### Galaxy Map Layout System
+
+#### Mäander-Struktur (Horizontal S-Curve)
+
+Die GalaxyMap verwendet eine **horizontale Mäander-Struktur** (S-Kurve) zur Anordnung der Planeten (Themes) im Überblick. Diese Struktur sorgt für eine organische, fließende Anordnung der Planeten, die visuell ansprechend und navigierbar ist.
+
+**Funktion:** `calculatePlanetPositionsHorizontalMaeander()` in `src/logic/GalaxyLayout.ts`
+
+**Grundprinzip:**
+- **Vertikale Verteilung:** Planeten werden gleichmäßig vertikal über die Bildschirmhöhe verteilt
+- **Horizontale S-Kurve:** Die X-Position jedes Planeten folgt einer Sinus-Kurve, die eine S-Form erzeugt
+- **Zentrierung:** Die S-Kurve ist horizontal zentriert auf dem Bildschirm
+
+**Mathematische Berechnung:**
+
+1. **Vertikale Position (Y):**
+   ```typescript
+   padding = PLANET_RADIUS * 2  // Abstand zu Bildschirmrändern
+   availableHeight = screenHeight - (padding * 2)
+   baseSpacing = availableHeight / (themes.length - 1)
+   variation = (Math.random() - 0.5) * PLANET_SPACING_VARIATION * baseSpacing
+   y = padding + index * baseSpacing + variation
+   ```
+   - Planeten werden gleichmäßig vertikal verteilt
+   - Leichte zufällige Variation (±5%) verhindert starre Linien
+
+2. **Horizontale Position (X) - S-Kurve:**
+   ```typescript
+   centerX = screenWidth / 2
+   amplitude = screenWidth * S_CURVE_AMPLITUDE_FACTOR  // 30% der Bildschirmbreite
+   normalizedY = (y - padding) / availableHeight  // Normalisiert auf 0-1
+   sCurveValue = Math.sin(normalizedY * Math.PI * 2)  // Sinus-Welle
+   x = centerX + amplitude * sCurveValue
+   ```
+   - Die X-Position folgt einer Sinus-Funktion basierend auf der Y-Position
+   - Erzeugt eine fließende S-Form von links nach rechts
+
+**Konstanten:**
+- `S_CURVE_AMPLITUDE_FACTOR = 0.3` - Amplitude der S-Kurve (30% der Bildschirmbreite)
+- `PLANET_SPACING_VARIATION = 0.05` - Variation in Planeten-Abständen (±5%)
+- `PLANET_RADIUS = 40` - Radius jedes Planeten
+
+**Visuelles Ergebnis:**
+```
+     Planet 1 ──┐
+                │
+     Planet 2 ──┘
+                │
+     Planet 3 ──┐
+                │
+     Planet 4 ──┘
+```
+
+Die Planeten bilden eine fließende S-Kurve, die von oben nach unten verläuft und dabei horizontal zwischen links und rechts oszilliert.
+
+**Verwendung in GalaxyMap:**
+- Wird in `calculateLayouts()` aufgerufen (Zeile 256 in `GalaxyMap.tsx`)
+- Berechnet Positionen für alle Themes eines Universums
+- Wird nur im **Overview-Modus** verwendet (alle Planeten sichtbar)
+- Im **Zoomed-Modus** wird auf einen einzelnen Planeten fokussiert
+
+**Anpassungen:**
+- Die Amplitude kann über `S_CURVE_AMPLITUDE_FACTOR` angepasst werden
+- Größere Werte = stärkere horizontale Auslenkung
+- Kleinere Werte = flachere, linearere Anordnung
+- Die Variation kann über `PLANET_SPACING_VARIATION` gesteuert werden
+
+**Randbehandlung:**
+- Planeten werden auf Bildschirmgrenzen begrenzt (`clampedX`, `clampedY`)
+- Verhindert, dass Planeten außerhalb des sichtbaren Bereichs liegen
+
 ### Key Concepts
 
 **Game Modes:**

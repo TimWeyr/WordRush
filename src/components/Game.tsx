@@ -64,9 +64,14 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
   const [warningText, setWarningText] = useState('');
   const [warningBlinks, setWarningBlinks] = useState(0);
   
+  // Touch controls
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const fireButtonPressed = useRef(false);
+  
   // Input state - use refs to avoid re-creating game loop callbacks
   const mousePos = useRef<Vector2 | null>(null);
   const touchPos = useRef<Vector2 | null>(null);
+  const touchOffset = useRef<Vector2 | null>(null); // Offset between finger and ship on touch
   
   // Round transition
   const [roundTransition, setRoundTransition] = useState(false);
@@ -83,6 +88,12 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
   
   // Store difficulty config for background animations
   const difficultyConfigRef = useRef<{ speedMultiplier: number }>({ speedMultiplier: 1.0 });
+
+  // Detect touch device
+  useEffect(() => {
+    const hasTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    setIsTouchDevice(hasTouchScreen);
+  }, []);
 
   // Load chapter items
   useEffect(() => {
@@ -272,6 +283,23 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
     }
   }, [health]);
 
+  // Set CSS custom property for actual viewport height (mobile fix)
+  useEffect(() => {
+    const setVH = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+    
+    setVH();
+    window.addEventListener('resize', setVH);
+    window.addEventListener('orientationchange', setVH);
+    
+    return () => {
+      window.removeEventListener('resize', setVH);
+      window.removeEventListener('orientationchange', setVH);
+    };
+  }, []);
+
   // Initialize game
   useEffect(() => {
     if (!canvasRef.current || items.length === 0) return;
@@ -286,8 +314,11 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
 
       const canvas = canvasRef.current!;
       const rect = canvas.getBoundingClientRect();
+      
+      // Use window.innerHeight instead of 100vh for mobile compatibility
+      const actualHeight = window.innerHeight;
       canvas.width = rect.width;
-      canvas.height = rect.height;
+      canvas.height = actualHeight;
 
       const rend = new Renderer(canvas);
       setRenderer(rend);
@@ -369,6 +400,11 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
     if (!roundTransition) {
       const inputPos = touchPos.current || mousePos.current;
       engine.update(deltaTime, inputPos);
+      
+      // Auto-fire when fire button is pressed (continuous fire)
+      if (fireButtonPressed.current) {
+        engine.shoot();
+      }
     } else {
       // During transition, still update particles so explosions continue animating
       engine.updateParticles(deltaTime);
@@ -566,18 +602,50 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
     if (e.touches.length === 0) return;
     
     const rect = canvasRef.current?.getBoundingClientRect();
-    if (!rect) return;
+    if (!rect || !engine) return;
     
     const touch = e.touches[0];
-    touchPos.current = {
+    const fingerPos = {
       x: touch.clientX - rect.left,
       y: touch.clientY - rect.top
     };
+    
+    // Apply offset to maintain relative position between finger and ship
+    if (touchOffset.current) {
+      touchPos.current = {
+        x: fingerPos.x + touchOffset.current.x,
+        y: fingerPos.y + touchOffset.current.y
+      };
+    } else {
+      touchPos.current = fingerPos;
+    }
   };
 
   const handleTouchStart = (e: React.TouchEvent<HTMLCanvasElement>) => {
     e.preventDefault();
-    handleTouchMove(e);
+    if (e.touches.length === 0) return;
+    
+    const rect = canvasRef.current?.getBoundingClientRect();
+    if (!rect || !engine) return;
+    
+    const touch = e.touches[0];
+    const fingerPos = {
+      x: touch.clientX - rect.left,
+      y: touch.clientY - rect.top
+    };
+    
+    // Calculate offset between finger and ship position
+    const shipPos = engine.getShip().position;
+    touchOffset.current = {
+      x: shipPos.x - fingerPos.x,
+      y: shipPos.y - fingerPos.y
+    };
+    
+    // Set initial touch position with offset
+    touchPos.current = {
+      x: fingerPos.x + touchOffset.current.x,
+      y: fingerPos.y + touchOffset.current.y
+    };
     
     // If second finger, shoot
     if (e.touches.length > 1 && engine) {
@@ -589,7 +657,19 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
     e.preventDefault();
     if (e.touches.length === 0) {
       touchPos.current = null;
+      touchOffset.current = null; // Reset offset when touch ends
     }
+  };
+
+  // Fire button handlers
+  const handleFireButtonDown = (e: React.TouchEvent<HTMLButtonElement> | React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    fireButtonPressed.current = true;
+  };
+
+  const handleFireButtonUp = (e: React.TouchEvent<HTMLButtonElement> | React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    fireButtonPressed.current = false;
   };
 
   if (loading) {
@@ -725,6 +805,20 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
       }}>
         ← Exit
       </button>
+
+      {/* Fire Button (Touch Devices Only) */}
+      {isTouchDevice && (
+        <button
+          className="fire-button"
+          onTouchStart={handleFireButtonDown}
+          onTouchEnd={handleFireButtonUp}
+          onMouseDown={handleFireButtonDown}
+          onMouseUp={handleFireButtonUp}
+          onMouseLeave={() => { fireButtonPressed.current = false; }}
+        >
+          🔥
+        </button>
+      )}
     </div>
   );
 };

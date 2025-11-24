@@ -268,6 +268,157 @@ All generated JSON files must follow the structure defined in `src/types/content
 - `speed`: Number (typically 0.9 for correct, 1.1-1.2 for distractors)
 - `behavior`: Movement pattern ("linear_inward", "seek_center", etc.)
 
+### Color System & Usage
+
+The WordRush project uses a hierarchical color system across different JSON configuration levels. Understanding where each color property is used is crucial for content generation and theming.
+
+#### Color Properties by Level
+
+**1. Universe Level** (`universe.[id].json`):
+- **`colorPrimary`** (required): Main theme color
+  - Used for: Planet rendering in GalaxyMap (`GalaxyRenderer.ts`), glow effects around planets, fallback for ring colors, PDF export headers
+  - Example: `"#4a90e2"` (Englisch universe)
+  - Location in code: `src/components/GalaxyRenderer.ts:56,75`, `src/utils/PDFExporter.ts:153`
+
+- **`colorAccent`** (required): Secondary theme color
+  - Used for: Particle effects (moon particles), secondary UI elements
+  - Example: `"#7bb3f0"` (Englisch universe)
+  - Location in code: `src/components/GalaxyMap.tsx:308`
+
+- **`backgroundGradient`** (required): Array of 2+ hex colors
+  - Used for: Background rendering in GalaxyMap (universe selection screen)
+  - Example: `["#1a3a5f", "#2d5a8a"]` (Englisch universe)
+  - Location in code: `src/components/GalaxyMap.tsx:590`, `src/components/UniverseSelector.tsx:127`
+  - Implementation: Creates linear gradient from top to bottom using `Renderer.renderGradientBackground()`
+
+- **`laserColor`** (optional): Color for laser projectiles
+  - Used for: Laser rendering when firing from ship
+  - Example: `"#4a90e2"` (Englisch universe)
+  - Location in code: `src/entities/Laser.ts:14,55`, `src/logic/ShooterEngine.ts:500`
+  - Fallback: Falls back to `theme.laserColor` or `universe.laserColor` or `"#4a90e2"`
+
+**2. Theme Level** (`themes.[id].json`):
+- **`colorPrimary`** (required): Main theme color
+  - Used for: Planet rendering in GalaxyMap (when zoomed into theme), glow effects, connection lines
+  - Example: `"#1a237e"` (Business English theme)
+  - Location in code: `src/components/GalaxyRenderer.ts:56,75,354,367,377`
+  - Overrides: Universe `colorPrimary` when theme is selected
+
+- **`colorAccent`** (required): Secondary theme color
+  - Used for: Particle effects, secondary visual elements
+  - Example: `"#3f51b5"` (Business English theme)
+  - Location in code: `src/components/GalaxyMap.tsx:308`
+
+- **`backgroundGradient`** (required): Array of 2+ hex colors
+  - Used for: Theme-level background (currently not directly used, chapters override)
+  - Example: `["#0d1b2a", "#1b263b"]` (Business English theme)
+  - Note: Chapter-level `backgroundGradient` takes precedence in game rendering
+
+- **`laserColor`** (optional): Color for laser projectiles
+  - Used for: Laser rendering in game (`Game.tsx`)
+  - Example: `"#5c6bc0"` (Business English theme)
+  - Location in code: `src/components/Game.tsx:307`, `src/logic/ShooterEngine.ts:500`
+  - Priority: `theme.laserColor` > `universe.laserColor` > `"#4a90e2"`
+
+**3. Chapter Level** (`themes.[id].json` → `chapters.{chapterName}`):
+- **`backgroundGradient`** (required): Array of 2+ hex colors
+  - Used for: Game background rendering during gameplay
+  - Example: `["#1a237e", "#283593"]` (Business_Communication chapter)
+  - Location in code: `src/components/Game.tsx:466,469`
+  - Implementation: 
+    - First color (`backgroundGradient[0]`) used for main background layer
+    - Second color (`backgroundGradient[1]`) used for parallax scrolling layer
+    - Creates depth effect with multiple gradient stops
+  - Overrides: Theme-level `backgroundGradient` when chapter is active
+
+**4. Item/Entry Level** (`[chapter].json` → `base.visual.color`, `correct[].visual.color`, `distractors[].visual.color`):
+- **`visual.color`** (required): Individual object color
+  - Used for: Rendering game objects (CorrectObject, DistractorObject, BaseEntity)
+  - Example: `"#00a8cc"` (Hardware_Devices entries)
+  - Location in code: 
+    - `src/entities/CorrectObject.ts:130` - Correct objects (Shooter mode)
+    - `src/entities/DistractorObject.ts:241` - Distractor objects (Shooter mode)
+    - `src/entities/BaseEntity.ts:39` - Base word display
+  - **Important**: In Lernmodus (Learning Mode), colors are overridden:
+    - Correct objects: Always `"#00ff88"` (green) regardless of `visual.color`
+    - Distractor objects: Always `"#ff3333"` (red) regardless of `visual.color`
+  - In Shooter Mode: Uses `visual.color` from JSON entry
+  - Used for: Object shapes, glow effects, explosion particles (Shooter mode)
+
+#### Color Usage Examples
+
+**Example 1: Universe → Theme → Chapter Hierarchy**
+```json
+// universe.englisch.json
+{
+  "colorPrimary": "#4a90e2",
+  "colorAccent": "#7bb3f0",
+  "backgroundGradient": ["#1a3a5f", "#2d5a8a"],
+  "laserColor": "#4a90e2"
+}
+
+// themes.business_english.json
+{
+  "colorPrimary": "#1a237e",
+  "colorAccent": "#3f51b5",
+  "backgroundGradient": ["#0d1b2a", "#1b263b"],
+  "laserColor": "#5c6bc0",
+  "chapters": {
+    "Business_Communication": {
+      "backgroundGradient": ["#1a237e", "#283593"]
+    }
+  }
+}
+```
+
+**Example 2: Entry-Level Colors**
+```json
+// Hardware_Devices.json
+{
+  "base": {
+    "visual": {
+      "color": "#00a8cc"  // Used for base word display
+    }
+  },
+  "correct": [{
+    "visual": {
+      "color": "#00a8cc"  // Used in Shooter mode, overridden in Lernmodus
+    }
+  }],
+  "distractors": [{
+    "visual": {
+      "color": "#00E676"  // Used in Shooter mode, overridden in Lernmodus
+    }
+  }]
+}
+```
+
+#### Color Rendering Flow
+
+1. **GalaxyMap (Universe Selection)**:
+   - Uses `universe.backgroundGradient` for background
+   - Uses `theme.colorPrimary` for planet colors and glow effects
+   - Uses `theme.colorAccent` for particle effects
+
+2. **Game (During Play)**:
+   - Uses `chapter.backgroundGradient` for game background
+   - Uses `theme.laserColor` (or fallback) for laser projectiles
+   - Uses `entry.visual.color` for game objects (Shooter mode)
+   - Overrides to green/red in Lernmodus
+
+3. **Visual Hierarchy**:
+   - Universe colors → Theme colors → Chapter colors → Entry colors
+   - Each level can override or extend the previous level
+   - Chapter-level `backgroundGradient` always takes precedence in game
+
+#### Best Practices for Color Selection
+
+1. **Contrast**: Ensure sufficient contrast between `backgroundGradient` colors and game object colors
+2. **Consistency**: Use similar color families within a theme (e.g., all blues for Business English)
+3. **Accessibility**: Consider colorblind users - don't rely solely on color for differentiation
+4. **Lernmodus Override**: Remember that Lernmodus always uses green/red, so `visual.color` only matters in Shooter mode
+5. **Gradient Colors**: Use 2-3 colors that blend well together for `backgroundGradient`
+
 ### Creating New Generation Scripts
 
 When creating new content generation scripts:

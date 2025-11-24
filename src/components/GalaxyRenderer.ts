@@ -95,6 +95,39 @@ export function renderPlanet(
   ctx.textBaseline = 'middle';
   ctx.fillText(planet.theme.icon || '🌍', screenPos.x, screenPos.y);
   
+  // Render planet name on touch devices (always visible, to the left of planet)
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (isTouchDevice) {
+    const planetName = planet.theme.name;
+    
+    // Use universe colorPrimary for text color
+    const textColor = context.universe?.colorPrimary || planet.theme.colorPrimary;
+    
+    // Responsive font size based on screen width
+    const screenWidth = ctx.canvas.width;
+    const fontSize = screenWidth < 768 ? 14 : 16;
+    
+    ctx.fillStyle = textColor;
+    ctx.font = `600 ${fontSize}px Arial, sans-serif`;
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'middle';
+    
+    // Add text shadow for better readability
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
+    ctx.shadowBlur = 4;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
+    
+    // Position text to the left of planet (ending just before planet edge)
+    const textX = screenPos.x - radius - 10;
+    const textY = screenPos.y;
+    
+    ctx.fillText(planetName, textX, textY);
+    
+    // Reset shadow
+    ctx.shadowBlur = 0;
+  }
+  
   ctx.restore();
 }
 

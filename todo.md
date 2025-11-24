@@ -476,6 +476,41 @@ npm install @stripe/stripe-js
 - **App Store später**: Nach Web-Version stabil und getestet
 - **PWA als Zwischenschritt**: Progressive Web App kann als "App" installiert werden
 
+
+
+
+## 💡 Feature-Ideen
+
+### 12. Damage Points als visueller Hinweis beim Schießen
+
+**Idee**: Wenn ein Objekt `damage > 1` hat, wird beim ersten Treffer kurz sichtbar, ob es ein Distractor ist.
+
+**Mechanik**:
+- Objekt mit `damage > 1` wird getroffen
+- Kurzer visueller Hinweis (0.3-0.5s): Rote Umrandung oder "⚠️ Distractor" Text
+- Danach normal weiter
+- Nur beim ersten Treffer (wenn `currentHp < hp`)
+
+**Vorteile**:
+- Hilft Spielern zu lernen: "Hoher Damage = Distractor"
+- Visuelles Feedback ohne Gameplay zu stören
+- Nutzt bereits vorhandene `damage` Property
+
+**Risiken**:
+- Könnte zu einfach machen (Spieler lernen Pattern)
+- Muss optional sein (Settings: "Damage-Hinweise anzeigen")
+
+**Implementierung**:
+- `DistractorObject.takeDamage()`: Wenn `damage > 1` und erster Treffer → Flash-Effekt
+- Visual: Rote Umrandung oder Icon über Objekt
+- Optional: Nur im Lernmodus aktiv
+
+**Status**: 📋 Idee - Noch nicht implementiert
+
+
+
+
+
 **Timeline**:
 1. ✅ MVP fertig (aktuell)
 2. 🔄 Web-Version auf Vercel (nächster Schritt)

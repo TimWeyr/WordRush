@@ -13,6 +13,10 @@
   height: 100%;
   display: block;
   cursor: grab;
+  /* Prevent browser gestures */
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .galaxy-map-canvas:active {

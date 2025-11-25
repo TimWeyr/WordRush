@@ -1,0 +1,303 @@
+[
+  {
+    "id": "SN_001",
+    "theme": "gemischte_levels",
+    "chapter": "Snacks",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Chips",
+      "type": "Nahrung",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#f1c40f",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Chips",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 300,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Chips = Chips",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Chipstüte",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Chipstüte = chip bag (die Tüte, nicht die Chips!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "spike",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Verpackung"
+      },
+      {
+        "entry": {
+          "word": "Chipshersteller",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Chipshersteller = chip manufacturer (der Hersteller, nicht die Chips!)",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Unternehmen"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["snacks", "level3"],
+      "related": [null, "SN_002"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "SN_002",
+    "theme": "gemischte_levels",
+    "chapter": "Snacks",
+    "level": 6,
+    "waveDuration": 3,
+    "base": {
+      "word": "Schokolade",
+      "type": "Nahrung",
+      "visual": {
+        "tier": 2,
+        "size": 1.15,
+        "appearance": "bold",
+        "color": "#8b4513",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Chocolate",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.05,
+        "points": 600,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Schokolade = Chocolate",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Schokoladenfabrik",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.28,
+        "points": 300,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Schokoladenfabrik = chocolate factory (die Fabrik, nicht die Schokolade!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Fabriken"
+      },
+      {
+        "entry": {
+          "word": "Schokoladentafel",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.28,
+        "points": 300,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Schokoladentafel = chocolate bar (die Form, nicht die Schokolade selbst!)",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Schokolade"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["snacks", "level6"],
+      "related": ["SN_001", "SN_003"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "SN_003",
+    "theme": "gemischte_levels",
+    "chapter": "Snacks",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Kekse",
+      "type": "Nahrung",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d4af37",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Cookies",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.92,
+        "points": 250,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Kekse = Cookies",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Keksdose",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.22,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Keksdose = cookie jar (die Dose, nicht die Kekse!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Behälter"
+      },
+      {
+        "entry": {
+          "word": "Keksrezept",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.22,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Keksrezept = cookie recipe (die Anleitung, nicht die Kekse!)",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Rezepte"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["snacks", "level2"],
+      "related": ["SN_002", null],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]
+

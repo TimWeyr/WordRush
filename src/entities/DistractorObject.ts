@@ -29,6 +29,7 @@ export class DistractorObject extends GameObject {
   shakeOffset: number = 0;
   glowIntensity: number = 0;
   hasLoggedVariant: boolean = false; // Debug flag to log variant once
+  private isZenMode: boolean = false;
 
   constructor(
     position: Vector2,
@@ -55,6 +56,7 @@ export class DistractorObject extends GameObject {
     this.colorCoded = colorCoded;
     this.isLernmodus = isLernmodus;
     this.isRedirected = false;
+    this.isZenMode = isZenMode;
     
     // Set initial velocity
     if (isZenMode) {
@@ -71,38 +73,45 @@ export class DistractorObject extends GameObject {
   }
 
   update(deltaTime: number): void {
-    // Apply behavior-based movement (only if not redirected)
-    if (!this.isRedirected) {
-      const behavior = this.entry.behavior || 'linear_inward';
-      
-      switch (behavior) {
-        case 'seek_center': {
-          // Move toward screen center
-          const targetX = 400; // Screen width / 2
-          const dx = targetX - this.position.x;
-          const attractForce = 0.3;
-          this.velocity.x = dx * attractForce;
-          break;
-        }
+    // ZEN MODE: No position changes, but still update timers/animations
+    if (!this.isZenMode) {
+      // Apply behavior-based movement (only if not redirected)
+      if (!this.isRedirected) {
+        const behavior = this.entry.behavior || 'linear_inward';
         
-        case 'zigzag': {
-          // Sine wave horizontal movement
-          const amplitude = 80;
-          const frequency = 2;
-          this.velocity.x = Math.cos(this.spawnTime * frequency) * amplitude;
-          break;
+        switch (behavior) {
+          case 'seek_center': {
+            // Move toward screen center
+            const targetX = 400; // Screen width / 2
+            const dx = targetX - this.position.x;
+            const attractForce = 0.3;
+            this.velocity.x = dx * attractForce;
+            break;
+          }
+          
+          case 'zigzag': {
+            // Sine wave horizontal movement
+            const amplitude = 80;
+            const frequency = 2;
+            this.velocity.x = Math.cos(this.spawnTime * frequency) * amplitude;
+            break;
+          }
+          
+          case 'linear_inward':
+          default:
+            // Standard straight down
+            break;
         }
-        
-        case 'linear_inward':
-        default:
-          // Standard straight down
-          break;
       }
+      
+      // Move based on current velocity (only in normal mode)
+      this.position.x += this.velocity.x * deltaTime;
+      this.position.y += this.velocity.y * deltaTime;
+    } else {
+      // ZEN MODE: Keep velocity at 0
+      this.velocity.x = 0;
+      this.velocity.y = 0;
     }
-    
-    // Move based on current velocity
-    this.position.x += this.velocity.x * deltaTime;
-    this.position.y += this.velocity.y * deltaTime;
     
     // Update timers
     if (this.flashTime > 0) {
@@ -136,10 +145,16 @@ export class DistractorObject extends GameObject {
       this.glowIntensity = 0.5 + Math.sin(this.spawnTime * 4) * 0.5;
     }
     
-    // If redirected and flies off-screen (upward), destroy it only if fade timer expired
-    // (Fade timer has priority - let it complete even if off-screen)
-    if (this.isRedirected && this.position.y < -this.radius && this.redirectFadeTime <= 0) {
-      this.destroy();
+    // If redirected: destroy after fade timer expires
+    // In Zen mode: position doesn't change, so we rely only on timer
+    // In normal mode: destroy when off-screen OR timer expires
+    if (this.isRedirected) {
+      if (this.redirectFadeTime <= 0) {
+        this.destroy();
+      } else if (!this.isZenMode && this.position.y < -this.radius) {
+        // In normal mode: also destroy if flew off-screen (but respect fade timer)
+        this.destroy();
+      }
     }
   }
 

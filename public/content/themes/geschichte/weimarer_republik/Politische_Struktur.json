@@ -1,0 +1,3929 @@
+[
+  {
+    "id": "PS_001",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Reichspräsident",
+      "type": "Politik",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ebert",
+          "type": "Person"
+        },
+        "spawnPosition": 0.82,
+        "spawnSpread": 0.05,
+        "speed": 0.88,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ebert = erster Präsident.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Hindenburg",
+          "type": "Person"
+        },
+        "spawnPosition": 0.26,
+        "spawnSpread": 0.05,
+        "speed": 0.92,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Hindenburg → spätere Phase.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bismarck",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.53,
+        "spawnSpread": 0.05,
+        "speed": 1.11,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "context": "Bismarck ∈ Kaiserreich.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kaiserreich"
+      },
+      {
+        "entry": {
+          "word": "Adenauer",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.09,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Adenauer ∈ BRD.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "BRD"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "politische_struktur",
+        "level1"
+      ],
+      "related": [
+        null,
+        "PS_002"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_002",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Reichstag",
+      "type": "Politik",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Gesetzgebung",
+          "type": "Funktion"
+        },
+        "spawnPosition": 0.58,
+        "spawnSpread": 0.05,
+        "speed": 0.85,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Reichstag = Gesetze.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Abgeordnete",
+          "type": "Person"
+        },
+        "spawnPosition": 0.42,
+        "spawnSpread": 0.05,
+        "speed": 0.97,
+        "points": 200,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Abgeordnete ∈ Parlament.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Oberhaus",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.89,
+        "spawnSpread": 0.05,
+        "speed": 1.07,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Oberhaus ∈ Großbritannien.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Großbritannien"
+      },
+      {
+        "entry": {
+          "word": "Senat",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.69,
+        "spawnSpread": 0.05,
+        "speed": 1.03,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "wave",
+        "context": "Senat ∈ USA.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "politische_struktur",
+        "level1"
+      ],
+      "related": [
+        "PS_001",
+        "PS_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_003",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Parteien",
+      "type": "Politik",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "SPD",
+          "type": "Partei"
+        },
+        "spawnPosition": 0.86,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 200,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "SPD = Arbeiterpartei.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Zentrum",
+          "type": "Partei"
+        },
+        "spawnPosition": 0.28,
+        "spawnSpread": 0.05,
+        "speed": 1.12,
+        "points": 200,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Zentrum → katholisch.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "CDU",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.26,
+        "spawnSpread": 0.05,
+        "speed": 1.12,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "CDU ∈ BRD.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "BRD"
+      },
+      {
+        "entry": {
+          "word": "Labour",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.99,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Labour ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "politische_struktur",
+        "level1"
+      ],
+      "related": [
+        "PS_002",
+        "PS_004"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_004",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Reichspräsident",
+      "type": "Politik",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Notverordnungen",
+          "type": "Macht"
+        },
+        "spawnPosition": 0.63,
+        "spawnSpread": 0.05,
+        "speed": 0.93,
+        "points": 250,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Notverordnungen ↑ Macht.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Oberbefehl",
+          "type": "Macht"
+        },
+        "spawnPosition": 0.41,
+        "spawnSpread": 0.05,
+        "speed": 0.89,
+        "points": 250,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Oberbefehl = Militär.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Kanzlerwahl",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.33,
+        "spawnSpread": 0.05,
+        "speed": 0.92,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Kanzlerwahl ∈ BRD.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "BRD"
+      },
+      {
+        "entry": {
+          "word": "Monarchenrecht",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.57,
+        "spawnSpread": 0.05,
+        "speed": 1.05,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Monarchenrecht ∈ Kaiserreich.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kaiserreich"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "politische_struktur",
+        "level2"
+      ],
+      "related": [
+        "PS_003",
+        "PS_005"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_005",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Reichstag",
+      "type": "Politik",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Verhältniswahl",
+          "type": "Wahlsystem"
+        },
+        "spawnPosition": 0.89,
+        "spawnSpread": 0.05,
+        "speed": 1.02,
+        "points": 250,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Verhältniswahl → Parteienvielfalt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Misstrauensvotum",
+          "type": "Kontrolle"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 250,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Misstrauensvotum = Kontrolle.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Filibuster",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.16,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Filibuster ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "House of Lords",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.31,
+        "spawnSpread": 0.05,
+        "speed": 0.91,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "House of Lords ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "politische_struktur",
+        "level2"
+      ],
+      "related": [
+        "PS_004",
+        "PS_006"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_006",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Parteienlandschaft",
+      "type": "Politik",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "KPD",
+          "type": "Partei"
+        },
+        "spawnPosition": 0.34,
+        "spawnSpread": 0.05,
+        "speed": 1.03,
+        "points": 250,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "KPD = Kommunisten.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "DNVP",
+          "type": "Partei"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 0.96,
+        "points": 250,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "DNVP → konservativ.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Tories",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Tories ∈ UK.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      },
+      {
+        "entry": {
+          "word": "Demokraten",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 1.11,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Demokraten ∈ USA.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "politische_struktur",
+        "level2"
+      ],
+      "related": [
+        "PS_005",
+        "PS_007"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_007",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Verfassung",
+      "type": "Politik",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Grundrechte",
+          "type": "Recht"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 0.96,
+        "points": 250,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Grundrechte = Schutz.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Volksentscheid",
+          "type": "Demokratie"
+        },
+        "spawnPosition": 0.51,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 250,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Volksentscheid → direkte Demokratie.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bill of Rights",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 1.03,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Bill of Rights ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Magna Carta",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.85,
+        "spawnSpread": 0.05,
+        "speed": 0.97,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Magna Carta ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "politische_struktur",
+        "level2"
+      ],
+      "related": [
+        "PS_006",
+        "PS_008"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_008",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Gewaltenteilung",
+      "type": "Politik",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Legislative",
+          "type": "Gewalt"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 250,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Legislative = Gesetze.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Judikative",
+          "type": "Gewalt"
+        },
+        "spawnPosition": 0.28,
+        "spawnSpread": 0.05,
+        "speed": 1.13,
+        "points": 250,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Judikative → Rechtsprechung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Politbüro",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "context": "Politbüro ∈ Sowjetunion.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Sowjetunion"
+      },
+      {
+        "entry": {
+          "word": "Kronrat",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 0.91,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Kronrat ∈ Monarchie.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Monarchie"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "politische_struktur",
+        "level2"
+      ],
+      "related": [
+        "PS_007",
+        "PS_009"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_009",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Reichspräsident",
+      "type": "Politik",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Artikel 48",
+          "type": "Artikel"
+        },
+        "spawnPosition": 0.27,
+        "spawnSpread": 0.05,
+        "speed": 0.92,
+        "points": 300,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Art. 48 ↑ Macht.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Auflösung Reichstag",
+          "type": "Macht"
+        },
+        "spawnPosition": 0.86,
+        "spawnSpread": 0.05,
+        "speed": 1.03,
+        "points": 300,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Auflösung → Notmaßnahme.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Impeachment",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.66,
+        "spawnSpread": 0.05,
+        "speed": 1.19,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "wave",
+        "context": "Impeachment ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Royal Assent",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.66,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "wave",
+        "context": "Royal Assent ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "politische_struktur",
+        "level3"
+      ],
+      "related": [
+        "PS_008",
+        "PS_010"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_010",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Reichstag",
+      "type": "Politik",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Koalitionszwang",
+          "type": "Mechanismus"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.99,
+        "points": 300,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Koalitionszwang = Mehrheiten.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Fraktionsdisziplin",
+          "type": "Mechanismus"
+        },
+        "spawnPosition": 0.33,
+        "spawnSpread": 0.05,
+        "speed": 1.01,
+        "points": 300,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Fraktionsdisziplin → Abstimmung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Gerrymandering",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.63,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Gerrymandering ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Lords Spiritual",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 0.98,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "wave",
+        "context": "Lords Spiritual ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "politische_struktur",
+        "level3"
+      ],
+      "related": [
+        "PS_009",
+        "PS_011"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_011",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Verfassung",
+      "type": "Politik",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Weimarer Nationalversammlung",
+          "type": "Institution"
+        },
+        "spawnPosition": 0.41,
+        "spawnSpread": 0.05,
+        "speed": 1.14,
+        "points": 300,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Nationalversammlung = Ursprung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Grundrechtekatalog",
+          "type": "Recht"
+        },
+        "spawnPosition": 0.83,
+        "spawnSpread": 0.05,
+        "speed": 0.99,
+        "points": 300,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Grundrechtekatalog = Schutz.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Checks and Balances",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Checks ↯ Weimar.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Act of Settlement",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Act of Settlement ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "verfassung",
+        "level3"
+      ],
+      "related": [
+        "PS_010",
+        "PS_012"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_012",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Gewaltenteilung",
+      "type": "Politik",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Exekutive",
+          "type": "Gewalt"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.03,
+        "points": 300,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Exekutive = Regierung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Föderalismus",
+          "type": "Struktur"
+        },
+        "spawnPosition": 0.78,
+        "spawnSpread": 0.05,
+        "speed": 1.19,
+        "points": 300,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Föderalismus → Länderrechte.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Politkommissar",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.29,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "wave",
+        "context": "Politkommissar ∈ UdSSR.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UdSSR"
+      },
+      {
+        "entry": {
+          "word": "Kabinett der Königin",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.82,
+        "spawnSpread": 0.05,
+        "speed": 1.06,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "wave",
+        "context": "Kabinett ∈ Monarchie.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "gewaltenteilung",
+        "level3"
+      ],
+      "related": [
+        "PS_011",
+        "PS_013"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_013",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Wahlrecht",
+      "type": "Politik",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Verhältniswahlrecht",
+          "type": "Wahlsystem"
+        },
+        "spawnPosition": 0.57,
+        "spawnSpread": 0.05,
+        "speed": 1.07,
+        "points": 300,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Verhältniswahlrecht → Vielfalt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Frauenwahlrecht",
+          "type": "Recht"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.01,
+        "points": 300,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Frauenwahlrecht = Fortschritt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Electoral College",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.29,
+        "spawnSpread": 0.05,
+        "speed": 1.12,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "wave",
+        "context": "Electoral College ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Borough System",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.58,
+        "spawnSpread": 0.05,
+        "speed": 0.99,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Borough System ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "wahlrecht",
+        "level3"
+      ],
+      "related": [
+        "PS_012",
+        "PS_014"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_014",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Reichspräsident",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ersatzkaiser",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 400,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ersatzkaiser = Symbolmacht.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Notverordnungsrecht",
+          "type": "Macht"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 400,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Notverordnungsrecht ↑ Autorität.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Veto Power",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.79,
+        "spawnSpread": 0.05,
+        "speed": 1.04,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "wave",
+        "context": "Veto Power ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Royal Prerogative",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.29,
+        "spawnSpread": 0.05,
+        "speed": 1.08,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Royal Prerogative ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "reichspräsident",
+        "level4"
+      ],
+      "related": [
+        "PS_013",
+        "PS_015"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_015",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Reichstag",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Präsidialkabinette",
+          "type": "Regierung"
+        },
+        "spawnPosition": 0.42,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 400,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Präsidialkabinette ↯ Parlament.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Minderheitsregierung",
+          "type": "Regierung"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 1.17,
+        "points": 400,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Minderheitsregierung = Instabilität.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Speaker",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.43,
+        "spawnSpread": 0.05,
+        "speed": 1.13,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "context": "Speaker ∈ UK.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      },
+      {
+        "entry": {
+          "word": "Filibuster",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.83,
+        "spawnSpread": 0.05,
+        "speed": 1.11,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "context": "Filibuster ∈ USA.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "reichstag",
+        "level4"
+      ],
+      "related": [
+        "PS_014",
+        "PS_016"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_016",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Parteienlandschaft",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Fragmentierung",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.92,
+        "points": 400,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Fragmentierung ↑ Krisen.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Polarisierung",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 1.14,
+        "points": 400,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Polarisierung → Konflikt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bipartisanship",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.89,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Bipartisanship ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Whip System",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.37,
+        "spawnSpread": 0.05,
+        "speed": 1.22,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Whip System ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "parteien",
+        "level4"
+      ],
+      "related": [
+        "PS_015",
+        "PS_017"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_017",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Verfassung",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Reichsgericht",
+          "type": "Institution"
+        },
+        "spawnPosition": 0.53,
+        "spawnSpread": 0.05,
+        "speed": 0.96,
+        "points": 400,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Reichsgericht = Judikative.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Reichsrat",
+          "type": "Institution"
+        },
+        "spawnPosition": 0.86,
+        "spawnSpread": 0.05,
+        "speed": 1.19,
+        "points": 400,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Reichsrat → Ländervertretung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Supreme Court",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.97,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Supreme Court ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Privy Council",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.26,
+        "spawnSpread": 0.05,
+        "speed": 1.22,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Privy Council ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "verfassung",
+        "level4"
+      ],
+      "related": [
+        "PS_016",
+        "PS_018"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_018",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Gewaltenteilung",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Föderale Exekutive",
+          "type": "Struktur"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 0.94,
+        "points": 400,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Föderale Exekutive = Länder.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Reichsregierung",
+          "type": "Institution"
+        },
+        "spawnPosition": 0.71,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 400,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Reichsregierung → Exekutive.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Politbüro",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.18,
+        "spawnSpread": 0.05,
+        "speed": 1.07,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "context": "Politbüro ∈ UdSSR.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UdSSR"
+      },
+      {
+        "entry": {
+          "word": "Cabinet Office",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.46,
+        "spawnSpread": 0.05,
+        "speed": 1.19,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Cabinet Office ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "gewaltenteilung",
+        "level4"
+      ],
+      "related": [
+        "PS_017",
+        "PS_019"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_019",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Wahlrecht",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Verhältniswahl",
+          "type": "Wahlsystem"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 1.23,
+        "points": 400,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Verhältniswahl ↑ Vielfalt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Sperrklausel",
+          "type": "Mechanismus"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 400,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Sperrklausel ↓ Splitterparteien.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "First-Past-the-Post",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.63,
+        "spawnSpread": 0.05,
+        "speed": 1.09,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "FPTP ∈ UK.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      },
+      {
+        "entry": {
+          "word": "Ranked Choice",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.53,
+        "spawnSpread": 0.05,
+        "speed": 1.13,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ranked Choice ∈ USA.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "wahlrecht",
+        "level4"
+      ],
+      "related": [
+        "PS_018",
+        "PS_020"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_020",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Reichsrat",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ländervertretung",
+          "type": "Funktion"
+        },
+        "spawnPosition": 0.54,
+        "spawnSpread": 0.05,
+        "speed": 1.09,
+        "points": 400,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ländervertretung = Föderalismus.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Vetorecht",
+          "type": "Macht"
+        },
+        "spawnPosition": 0.81,
+        "spawnSpread": 0.05,
+        "speed": 1.05,
+        "points": 400,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Vetorecht → Einfluss.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "House of Commons",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.81,
+        "spawnSpread": 0.05,
+        "speed": 0.98,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "wave",
+        "context": "Commons ∈ UK.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      },
+      {
+        "entry": {
+          "word": "Senate",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.83,
+        "spawnSpread": 0.05,
+        "speed": 1.18,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "wave",
+        "context": "Senate ∈ USA.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "reichsrat",
+        "level4"
+      ],
+      "related": [
+        "PS_019",
+        "PS_021"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_021",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Präsidialkabinette",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Brünings Regierung",
+          "type": "Regierung"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.02,
+        "points": 400,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Brüning = Präsidialphase.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Papen",
+          "type": "Person"
+        },
+        "spawnPosition": 0.56,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 400,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Papen → Präsidialmacht.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "New Deal",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.44,
+        "spawnSpread": 0.05,
+        "speed": 1.08,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "New Deal ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Cabinet of War",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.96,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "War Cabinet ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "präsidialkabinette",
+        "level4"
+      ],
+      "related": [
+        "PS_020",
+        "PS_022"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PS_022",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Artikel 48",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Notverordnungsrecht",
+          "type": "Macht"
+        },
+        "spawnPosition": 0.32,
+        "spawnSpread": 0.05,
+        "speed": 1.11,
+        "points": 500,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Art. 48 ↑ Exekutivmacht.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Grundrechtsaussetzung",
+          "type": "Macht"
+        },
+        "spawnPosition": 0.81,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Aussetzung → Krisenmodus.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Patriot Act",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.23,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Patriot Act ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Habeas Corpus",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.19,
+        "spawnSpread": 0.05,
+        "speed": 1.13,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "wave",
+        "context": "Habeas Corpus ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "artikel48",
+        "level5"
+      ],
+      "related": [
+        "PS_021",
+        "PS_023"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "PS_023",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Präsidialkabinette",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Schleicher",
+          "type": "Person"
+        },
+        "spawnPosition": 0.54,
+        "spawnSpread": 0.05,
+        "speed": 1.09,
+        "points": 500,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Schleicher = letzte Phase.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Papen",
+          "type": "Person"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.26,
+        "points": 500,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Papen → Präsidialmacht.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "War Cabinet",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.41,
+        "spawnSpread": 0.05,
+        "speed": 1.11,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "wave",
+        "context": "War Cabinet ∈ UK.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      },
+      {
+        "entry": {
+          "word": "Roosevelt Cabinet",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 1.04,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "context": "Roosevelt Cabinet ∈ USA.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "präsidialkabinette",
+        "level5"
+      ],
+      "related": [
+        "PS_022",
+        "PS_024"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "PS_024",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Reichsrat",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ländervertretung",
+          "type": "Funktion"
+        },
+        "spawnPosition": 0.29,
+        "spawnSpread": 0.05,
+        "speed": 1.21,
+        "points": 500,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ländervertretung = Föderalismus.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Vetorecht",
+          "type": "Macht"
+        },
+        "spawnPosition": 0.37,
+        "spawnSpread": 0.05,
+        "speed": 1.19,
+        "points": 500,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Vetorecht → Einfluss.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bundesrat",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.46,
+        "spawnSpread": 0.05,
+        "speed": 1.01,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "context": "Bundesrat ∈ BRD.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "BRD"
+      },
+      {
+        "entry": {
+          "word": "House of Lords",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.78,
+        "spawnSpread": 0.05,
+        "speed": 1.19,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Lords ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "reichsrat",
+        "level5"
+      ],
+      "related": [
+        "PS_023",
+        "PS_025"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "PS_025",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Verhältniswahlrecht",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Fragmentierung",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 1.08,
+        "points": 500,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Fragmentierung ↑ Instabilität.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Koalitionszwang",
+          "type": "Mechanismus"
+        },
+        "spawnPosition": 0.54,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 500,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Koalitionszwang → Kompromisse.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Majority System",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 1.13,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "linear_inward",
+        "context": "Majority System ∈ UK.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      },
+      {
+        "entry": {
+          "word": "Electoral College",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.83,
+        "spawnSpread": 0.05,
+        "speed": 0.99,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "linear_inward",
+        "context": "Electoral College ∈ USA.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "wahlrecht",
+        "level5"
+      ],
+      "related": [
+        "PS_024",
+        "PS_026"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "PS_026",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Reichsgericht",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Höchstgericht",
+          "type": "Institution"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 1.04,
+        "points": 500,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Höchstgericht = Judikative.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Verfassungsinterpretation",
+          "type": "Funktion"
+        },
+        "spawnPosition": 0.69,
+        "spawnSpread": 0.05,
+        "speed": 1.01,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Interpretation → Rechtsklarheit.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Supreme Court",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.35,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "context": "Supreme Court ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "High Court",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.24,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "wave",
+        "context": "High Court ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "reichsgericht",
+        "level5"
+      ],
+      "related": [
+        "PS_025",
+        "PS_027"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "PS_027",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Reichsregierung",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Kabinettsinstabilität",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.53,
+        "spawnSpread": 0.05,
+        "speed": 1.02,
+        "points": 500,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Instabilität ↑ Krisen.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Kanzlerautorität",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.21,
+        "spawnSpread": 0.05,
+        "speed": 1.01,
+        "points": 500,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Autorität → schwach.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Prime Minister",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.27,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "linear_inward",
+        "context": "PM ∈ UK.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      },
+      {
+        "entry": {
+          "word": "Chief Executive",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.12,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "wave",
+        "context": "Chief Exec ∈ USA.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "reichsregierung",
+        "level5"
+      ],
+      "related": [
+        "PS_026",
+        "PS_028"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "PS_028",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Parteienfragmentierung",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Splitterparteien",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 500,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Splitterparteien ↑ Chaos.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Polarisierung",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.64,
+        "spawnSpread": 0.05,
+        "speed": 1.27,
+        "points": 500,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Polarisierung → Konflikt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Two-Party System",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "context": "Two-Party ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Labour-Tory-Dualismus",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.09,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Dualismus ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "parteien",
+        "level5"
+      ],
+      "related": [
+        "PS_027",
+        "PS_029"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "PS_029",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Reichspräsidentenwahl",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Direktwahl",
+          "type": "Wahlsystem"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 0.97,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Direktwahl = Volksmacht.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Stichwahl",
+          "type": "Wahlsystem"
+        },
+        "spawnPosition": 0.28,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Stichwahl → Entscheidung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Electoral College",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.14,
+        "spawnSpread": 0.05,
+        "speed": 1.09,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "zigzag",
+        "context": "Electoral College ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Monarchenproklamation",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.43,
+        "spawnSpread": 0.05,
+        "speed": 1.07,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Proklamation ∈ Kaiserreich.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kaiserreich"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "wahl",
+        "level5"
+      ],
+      "related": [
+        "PS_028",
+        "PS_030"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "PS_030",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Reichstagssitzungen",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Geschäftsordnung",
+          "type": "Regelwerk"
+        },
+        "spawnPosition": 0.41,
+        "spawnSpread": 0.05,
+        "speed": 1.17,
+        "points": 500,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Geschäftsordnung = Ablauf.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Fraktionsdisziplin",
+          "type": "Mechanismus"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 500,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Disziplin → Abstimmung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Filibuster",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.64,
+        "spawnSpread": 0.05,
+        "speed": 0.99,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Filibuster ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Black Rod",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.18,
+        "spawnSpread": 0.05,
+        "speed": 1.22,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "wave",
+        "context": "Black Rod ∈ UK.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UK"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "reichstag",
+        "level5"
+      ],
+      "related": [
+        "PS_029",
+        "PS_031"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "PS_031",
+    "theme": "weimarer_republik",
+    "chapter": "Politische_Struktur",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Verfassungsprinzipien",
+      "type": "Politik",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Republik",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.24,
+        "points": 500,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Republik ↯ Monarchie.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Demokratie",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.18,
+        "points": 500,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Demokratie = Volksherrschaft.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Divine Right",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.82,
+        "spawnSpread": 0.05,
+        "speed": 0.98,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "context": "Divine Right ∈ Monarchie.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Monarchie"
+      },
+      {
+        "entry": {
+          "word": "Checks and Balances",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.57,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "wave",
+        "context": "Checks ∈ USA.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "verfassung",
+        "level5"
+      ],
+      "related": [
+        "PS_030",
+        null
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  }
+]

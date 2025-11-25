@@ -1,0 +1,103 @@
+[
+  {
+    "id": "BA_001",
+    "theme": "zufaellige_levels",
+    "chapter": "Bahn",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Bahn",
+      "type": "Fahrzeug",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Train",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.98,
+        "points": 400,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Bahn = Train",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bahnhof",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.24,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Bahnhof = train station (der Bahnhof, nicht die Bahn!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Infrastruktur"
+      },
+      {
+        "entry": {
+          "word": "Bahnsteig",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.24,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Bahnsteig = platform (der Steig, nicht die Bahn!)",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Infrastruktur"
+      }
+    ],
+    "meta": {
+      "source": "Transport",
+      "tags": ["bahn", "level4"],
+      "related": [null, null],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]
+

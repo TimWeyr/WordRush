@@ -22,6 +22,8 @@ export class CorrectObject extends GameObject {
   glowIntensity: number = 0;
   hasLoggedVariant: boolean = false; // Debug flag to log variant once
 
+  private isZenMode: boolean = false;
+
   constructor(
     position: Vector2,
     entry: CorrectEntry,
@@ -43,6 +45,7 @@ export class CorrectObject extends GameObject {
     this.context = entry.context;
     this.colorCoded = colorCoded;
     this.isLernmodus = isLernmodus;
+    this.isZenMode = isZenMode;
     
     // Set initial velocity
     if (isZenMode) {
@@ -56,36 +59,43 @@ export class CorrectObject extends GameObject {
   }
 
   update(deltaTime: number): void {
-    // Apply behavior-based movement
-    const behavior = this.entry.behavior || 'linear_inward';
-    
-    switch (behavior) {
-      case 'seek_center': {
-        // Move toward screen center
-        const targetX = 400; // Screen width / 2 (from config)
-        const dx = targetX - this.position.x;
-        const attractForce = 0.3;
-        this.velocity.x = dx * attractForce;
-        break;
+    // ZEN MODE: No position changes, but still update animations
+    if (!this.isZenMode) {
+      // Apply behavior-based movement
+      const behavior = this.entry.behavior || 'linear_inward';
+      
+      switch (behavior) {
+        case 'seek_center': {
+          // Move toward screen center
+          const targetX = 400; // Screen width / 2 (from config)
+          const dx = targetX - this.position.x;
+          const attractForce = 0.3;
+          this.velocity.x = dx * attractForce;
+          break;
+        }
+        
+        case 'zigzag': {
+          // Sine wave horizontal movement
+          const amplitude = 80;
+          const frequency = 2;
+          this.velocity.x = Math.cos(this.spawnTime * frequency) * amplitude;
+          break;
+        }
+        
+        case 'linear_inward':
+        default:
+          // Standard straight down (velocity already set in constructor)
+          break;
       }
       
-      case 'zigzag': {
-        // Sine wave horizontal movement
-        const amplitude = 80;
-        const frequency = 2;
-        this.velocity.x = Math.cos(this.spawnTime * frequency) * amplitude;
-        break;
-      }
-      
-      case 'linear_inward':
-      default:
-        // Standard straight down (velocity already set in constructor)
-        break;
+      // Move downward (only in normal mode)
+      this.position.x += this.velocity.x * deltaTime;
+      this.position.y += this.velocity.y * deltaTime;
+    } else {
+      // ZEN MODE: Keep velocity at 0
+      this.velocity.x = 0;
+      this.velocity.y = 0;
     }
-    
-    // Move downward
-    this.position.x += this.velocity.x * deltaTime;
-    this.position.y += this.velocity.y * deltaTime;
     
     // Update animation phases
     if (this.entry.visual.pulsate) {

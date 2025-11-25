@@ -1,0 +1,303 @@
+[
+  {
+    "id": "PU_001",
+    "theme": "gemischte_levels",
+    "chapter": "Putzen",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Besen",
+      "type": "Werkzeug",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#7f8c8d",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Broom",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.98,
+        "points": 400,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Besen = Broom",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Besenkammer",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.24,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Besenkammer = broom closet (der Raum, nicht der Besen!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Haushalt"
+      },
+      {
+        "entry": {
+          "word": "Besenstiel",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.24,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Besenstiel = broomstick (der Stiel, nicht der Besen!)",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Besen"
+      }
+    ],
+    "meta": {
+      "source": "Haushalt",
+      "tags": ["putzen", "level4"],
+      "related": [null, "PU_002"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "PU_002",
+    "theme": "gemischte_levels",
+    "chapter": "Putzen",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Staubsauger",
+      "type": "Werkzeug",
+      "visual": {
+        "tier": 2,
+        "size": 1.15,
+        "appearance": "bold",
+        "color": "#34495e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Vacuum Cleaner",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Staubsauger = Vacuum Cleaner",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Staubsaugerbeutel",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.27,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Staubsaugerbeutel = vacuum bag (der Beutel, nicht der Staubsauger!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "spike",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Zubehör"
+      },
+      {
+        "entry": {
+          "word": "Staubsaugervertreter",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.27,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Staubsaugervertreter = vacuum salesman (der Verkäufer, nicht der Staubsauger!)",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Berufe"
+      }
+    ],
+    "meta": {
+      "source": "Haushalt",
+      "tags": ["putzen", "level5"],
+      "related": ["PU_001", "PU_003"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.06,
+        "colorContrastFade": true,
+        "angleVariance": 0.35
+      }
+    }
+  },
+  {
+    "id": "PU_003",
+    "theme": "gemischte_levels",
+    "chapter": "Putzen",
+    "level": 6,
+    "waveDuration": 3,
+    "base": {
+      "word": "Wischmopp",
+      "type": "Werkzeug",
+      "visual": {
+        "tier": 2,
+        "size": 1.15,
+        "appearance": "bold",
+        "color": "#3498db",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Mop",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.05,
+        "points": 600,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Wischmopp = Mop",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Wischmopp-Eimer",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.28,
+        "points": 300,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Wischmopp-Eimer = mop bucket (der Eimer, nicht der Wischmopp!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Zubehör"
+      },
+      {
+        "entry": {
+          "word": "Wischmopp-Kopf",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.28,
+        "points": 300,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Wischmopp-Kopf = mop head (der Kopf, nicht der Wischmopp!)",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Wischmopp"
+      }
+    ],
+    "meta": {
+      "source": "Haushalt",
+      "tags": ["putzen", "level6"],
+      "related": ["PU_002", null],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  }
+]
+

@@ -1,0 +1,103 @@
+[
+  {
+    "id": "EX_001",
+    "theme": "chaos_planet",
+    "chapter": "Extreme_Werte",
+    "level": 7,
+    "waveDuration": 1,
+    "base": {
+      "word": "Extrem Schnell",
+      "type": "Chaos",
+      "visual": {
+        "tier": 3,
+        "size": 1.5,
+        "appearance": "bold",
+        "color": "#e74c3c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Very Fast",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 2.5,
+        "points": 9999,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Extrem schnelle Geschwindigkeit (UI-Test!)",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.5
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Extrem Langsam",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 0.1,
+        "points": 1,
+        "hp": 1,
+        "damage": 3,
+        "behavior": "seek_center",
+        "context": "Extrem langsam (UI-Test für extreme Werte!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 0.5
+        },
+        "sound": "explosion_minor",
+        "redirect": "Chaos"
+      },
+      {
+        "entry": {
+          "word": "Extrem Viele Punkte",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.5,
+        "points": 50000,
+        "hp": 1,
+        "damage": 3,
+        "behavior": "seek_center",
+        "context": "Extrem viele Punkte (UI-Test!)",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1.5
+        },
+        "sound": "explosion_minor",
+        "redirect": "Chaos"
+      }
+    ],
+    "meta": {
+      "source": "Chaos",
+      "tags": ["extreme_werte", "level7"],
+      "related": [null, null],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.1,
+        "colorContrastFade": true,
+        "angleVariance": 0.5
+      }
+    }
+  }
+]
+

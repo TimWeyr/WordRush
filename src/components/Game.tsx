@@ -301,7 +301,7 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
       if (engine) {
         loadRound(engine, nextIndex);
       }
-    }, 1500); // 1.5s - shorter display time
+    }, 10); // 1.5s - shorter display time
   }, [currentItemIndex, items, theme.id, chapterId, engine, learningManager, loadRound]);
 
   const handleGameOver = useCallback(() => {

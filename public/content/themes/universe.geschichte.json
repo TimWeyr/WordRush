@@ -1,0 +1,30 @@
+{
+  "id": "geschichte",
+  "name": "Geschichte",
+  "description": "Umfasst zentrale Epochen, Ereignisse und Strukturen der Menschheitsgeschichte.",
+  "colorPrimary": "#8b6914",
+  "colorAccent": "#d4af37",
+  "backgroundGradient": [
+    "#2c2416",
+    "#4a3a2a"
+  ],
+  "icon": "🌍",
+  "available": true,
+  "language": "de",
+  "music": {
+    "theme": "history_universe_theme.mp3",
+    "volume": 0.6
+  },
+  "particleEffect": "history_particles",
+  "shipSkin": "history_ship",
+  "laserColor": "#d4af37",
+  "themes": [
+    "weimarer_republik"
+  ],
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

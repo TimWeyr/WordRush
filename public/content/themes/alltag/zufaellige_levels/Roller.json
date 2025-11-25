@@ -1,0 +1,103 @@
+[
+  {
+    "id": "RO_001",
+    "theme": "zufaellige_levels",
+    "chapter": "Roller",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Roller",
+      "type": "Fahrzeug",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#f1c40f",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Scooter",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.98,
+        "points": 400,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Roller = Scooter",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Rollerblades",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.24,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Rollerblades = inline skates (die Rollschuhe, nicht der Roller!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Sport"
+      },
+      {
+        "entry": {
+          "word": "Rollercoaster",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.24,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Rollercoaster = Achterbahn (die Achterbahn, nicht der Roller!)",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Freizeitpark"
+      }
+    ],
+    "meta": {
+      "source": "Transport",
+      "tags": ["roller", "level4"],
+      "related": [null, null],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]
+

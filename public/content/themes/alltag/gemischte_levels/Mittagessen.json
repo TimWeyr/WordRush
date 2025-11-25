@@ -1,0 +1,303 @@
+[
+  {
+    "id": "MI_001",
+    "theme": "gemischte_levels",
+    "chapter": "Mittagessen",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Suppe",
+      "type": "Nahrung",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#e67e22",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Soup",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.92,
+        "points": 250,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Suppe = Soup",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Suppenkelle",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.22,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Suppenkelle = ladle (das Werkzeug, nicht die Suppe!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Küchenutensilien"
+      },
+      {
+        "entry": {
+          "word": "Suppentopf",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.22,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Suppentopf = soup pot (der Topf, nicht der Inhalt!)",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Küchengeräte"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["mittagessen", "level2"],
+      "related": [null, "MI_002"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MI_002",
+    "theme": "gemischte_levels",
+    "chapter": "Mittagessen",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Schnitzel",
+      "type": "Nahrung",
+      "visual": {
+        "tier": 2,
+        "size": 1.15,
+        "appearance": "bold",
+        "color": "#d35400",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Cutlet",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Schnitzel = Cutlet",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Schnitzeljagd",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.27,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Schnitzeljagd = treasure hunt (das Spiel, nicht das Essen!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "spike",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Spiele"
+      },
+      {
+        "entry": {
+          "word": "Schnitzelbesteck",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.27,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Schnitzelbesteck = cutlery (das Besteck, nicht das Schnitzel!)",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Besteck"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["mittagessen", "level5"],
+      "related": ["MI_001", "MI_003"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.06,
+        "colorContrastFade": true,
+        "angleVariance": 0.35
+      }
+    }
+  },
+  {
+    "id": "MI_003",
+    "theme": "gemischte_levels",
+    "chapter": "Mittagessen",
+    "level": 6,
+    "waveDuration": 3,
+    "base": {
+      "word": "Salat",
+      "type": "Nahrung",
+      "visual": {
+        "tier": 2,
+        "size": 1.15,
+        "appearance": "bold",
+        "color": "#27ae60",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Salad",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.05,
+        "points": 600,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Salat = Salad",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Salatsoße",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.28,
+        "points": 300,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Salatsoße = salad dressing (die Soße, nicht der Salat!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Zutaten"
+      },
+      {
+        "entry": {
+          "word": "Salatbar",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.28,
+        "points": 300,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Salatbar = salad bar (die Theke, nicht der Salat!)",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Restaurant"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["mittagessen", "level6"],
+      "related": ["MI_002", null],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  }
+]
+

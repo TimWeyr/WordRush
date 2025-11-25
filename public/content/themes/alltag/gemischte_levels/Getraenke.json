@@ -1,0 +1,303 @@
+[
+  {
+    "id": "GE_001",
+    "theme": "gemischte_levels",
+    "chapter": "Getraenke",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Kaffee",
+      "type": "Getränk",
+      "visual": {
+        "tier": 2,
+        "size": 1.15,
+        "appearance": "bold",
+        "color": "#6f4e37",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Coffee",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Kaffee = Coffee",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Kaffeemaschine",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.27,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Kaffeemaschine = coffee machine (die Maschine, nicht der Kaffee!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "spike",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Küchengeräte"
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.27,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Kaffeepause = coffee break (die Pause, nicht der Kaffee!)",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Arbeit"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["getraenke", "level5"],
+      "related": [null, "GE_002"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.06,
+        "colorContrastFade": true,
+        "angleVariance": 0.35
+      }
+    }
+  },
+  {
+    "id": "GE_002",
+    "theme": "gemischte_levels",
+    "chapter": "Getraenke",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Wasser",
+      "type": "Getränk",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#3498db",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Water",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Wasser = Water",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Wasserkocher",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Wasserkocher = kettle (der Kocher, nicht das Wasser!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Küchengeräte"
+      },
+      {
+        "entry": {
+          "word": "Wasserhahn",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Wasserhahn = faucet (der Hahn, nicht das Wasser!)",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Badezimmer"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["getraenke", "level1"],
+      "related": ["GE_001", "GE_003"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "GE_003",
+    "theme": "gemischte_levels",
+    "chapter": "Getraenke",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Tee",
+      "type": "Getränk",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#27ae60",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Tea",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.98,
+        "points": 400,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Tee = Tea",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Teekanne",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.24,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Teekanne = teapot (die Kanne, nicht der Tee!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Küchengeräte"
+      },
+      {
+        "entry": {
+          "word": "Teezeremonie",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.24,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Teezeremonie = tea ceremony (die Zeremonie, nicht der Tee!)",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kultur"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["getraenke", "level4"],
+      "related": ["GE_002", null],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]
+

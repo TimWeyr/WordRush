@@ -1,0 +1,106 @@
+{
+  "id": "gemischte_levels",
+  "name": "Gemischte Levels",
+  "description": "7 Monde mit je 3 Items - alle auf unterschiedlichen Leveln von 1-7 gemischt!",
+  "colorPrimary": "#9b59b6",
+  "colorAccent": "#8e44ad",
+  "backgroundGradient": [
+    "#2c1810",
+    "#4a2c1a"
+  ],
+  "maxLevels": 7,
+  "icon": "🎲",
+  "shipSkin": "/assets/ships/daily_ship.svg",
+  "laserColor": "#9b59b6",
+  "relatedPackages": [
+    "kueche",
+    "alltag_mix"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Fruehstueck": {
+      "backgroundImage": "fruehstueck_bg.png",
+      "backgroundGradient": [
+        "#f39c12",
+        "#e67e22"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "fruehstueck_theme.mp3",
+      "particleEffect": "food_particles"
+    },
+    "Mittagessen": {
+      "backgroundImage": "mittagessen_bg.png",
+      "backgroundGradient": [
+        "#e74c3c",
+        "#c0392b"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "mittagessen_theme.mp3",
+      "particleEffect": "meal_particles"
+    },
+    "Abendessen": {
+      "backgroundImage": "abendessen_bg.png",
+      "backgroundGradient": [
+        "#34495e",
+        "#2c3e50"
+      ],
+      "spawnRate": 1.7,
+      "waveDuration": 3,
+      "music": "abendessen_theme.mp3",
+      "particleEffect": "dinner_particles"
+    },
+    "Snacks": {
+      "backgroundImage": "snacks_bg.png",
+      "backgroundGradient": [
+        "#f1c40f",
+        "#f39c12"
+      ],
+      "spawnRate": 1.4,
+      "waveDuration": 3,
+      "music": "snacks_theme.mp3",
+      "particleEffect": "snack_particles"
+    },
+    "Getraenke": {
+      "backgroundImage": "getraenke_bg.png",
+      "backgroundGradient": [
+        "#3498db",
+        "#2980b9"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "getraenke_theme.mp3",
+      "particleEffect": "drink_particles"
+    },
+    "Backen": {
+      "backgroundImage": "backen_bg.png",
+      "backgroundGradient": [
+        "#d35400",
+        "#a04000"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "backen_theme.mp3",
+      "particleEffect": "baking_particles"
+    },
+    "Putzen": {
+      "backgroundImage": "putzen_bg.png",
+      "backgroundGradient": [
+        "#95a5a6",
+        "#7f8c8d"
+      ],
+      "spawnRate": 1.8,
+      "waveDuration": 3,
+      "music": "putzen_theme.mp3",
+      "particleEffect": "cleaning_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

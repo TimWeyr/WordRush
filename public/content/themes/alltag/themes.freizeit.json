@@ -1,0 +1,40 @@
+{
+  "id": "freizeit",
+  "name": "Freizeit",
+  "description": "Lerne alles rund um die Freizeit - Hobbys, Sport, Entspannung und mehr!",
+  "colorPrimary": "#27ae60",
+  "colorAccent": "#229954",
+  "backgroundGradient": [
+    "#0d2b1a",
+    "#1a4d2e"
+  ],
+  "maxLevels": 6,
+  "icon": "🎮",
+  "shipSkin": "/assets/ships/daily_ship.svg",
+  "laserColor": "#27ae60",
+  "relatedPackages": [
+    "hobbys",
+    "alltag"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Hobbys": {
+      "backgroundImage": "hobbys_bg.png",
+      "backgroundGradient": [
+        "#27ae60",
+        "#229954"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "hobbys_theme.mp3",
+      "particleEffect": "leisure_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

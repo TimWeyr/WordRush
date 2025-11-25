@@ -1,0 +1,103 @@
+[
+  {
+    "id": "SZ_001",
+    "theme": "chaos_planet",
+    "chapter": "Sonderzeichen_Mix",
+    "level": 6,
+    "waveDuration": 3,
+    "base": {
+      "word": "Test!@#$%^&*()",
+      "type": "Chaos",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#16a085",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Test!@#$%^&*()",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.05,
+        "points": 600,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Sonderzeichen-Test (UI-Test!)",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Test<>?{}[]",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.28,
+        "points": 300,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Andere Sonderzeichen (UI-Test!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Chaos"
+      },
+      {
+        "entry": {
+          "word": "Test±§€£¥",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.28,
+        "points": 300,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Währungssymbole (UI-Test!)",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Chaos"
+      }
+    ],
+    "meta": {
+      "source": "Chaos",
+      "tags": ["sonderzeichen", "level6"],
+      "related": [null, null],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  }
+]
+

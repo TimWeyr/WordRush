@@ -1,0 +1,303 @@
+[
+  {
+    "id": "BA_001",
+    "theme": "gemischte_levels",
+    "chapter": "Backen",
+    "level": 7,
+    "waveDuration": 3,
+    "base": {
+      "word": "Kuchen",
+      "type": "Nahrung",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#d4af37",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Cake",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 700,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Kuchen = Cake",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Kuchenform",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 350,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Kuchenform = cake pan (die Form, nicht der Kuchen!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Küchengeräte"
+      },
+      {
+        "entry": {
+          "word": "Kuchenbäcker",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 350,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Kuchenbäcker = pastry chef (der Bäcker, nicht der Kuchen!)",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Berufe"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["backen", "level7"],
+      "related": [null, "BA_002"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.08,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "BA_002",
+    "theme": "gemischte_levels",
+    "chapter": "Backen",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Mehl",
+      "type": "Zutat",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ecf0f1",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Flour",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.92,
+        "points": 250,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Mehl = Flour",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Mehlsack",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.22,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Mehlsack = flour sack (der Sack, nicht das Mehl!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Verpackung"
+      },
+      {
+        "entry": {
+          "word": "Mehlstaub",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.22,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Mehlstaub = flour dust (der Staub, nicht das Mehl!)",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Backen"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["backen", "level2"],
+      "related": ["BA_001", "BA_003"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "BA_003",
+    "theme": "gemischte_levels",
+    "chapter": "Backen",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Zucker",
+      "type": "Zutat",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#ffffff",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Sugar",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 300,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Zucker = Sugar",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Zuckerdose",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Zuckerdose = sugar bowl (die Dose, nicht der Zucker!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "spike",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Behälter"
+      },
+      {
+        "entry": {
+          "word": "Zuckerrohr",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Zuckerrohr = sugarcane (die Pflanze, nicht der Zucker!)",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Pflanzen"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["backen", "level3"],
+      "related": ["BA_002", null],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]
+

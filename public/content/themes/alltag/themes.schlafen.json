@@ -1,0 +1,40 @@
+{
+  "id": "schlafen",
+  "name": "Schlafen",
+  "description": "Lerne alles rund ums Schlafen - Bett, Traum, Erholung und mehr!",
+  "colorPrimary": "#9b59b6",
+  "colorAccent": "#8e44ad",
+  "backgroundGradient": [
+    "#1a0d2b",
+    "#2d1a4a"
+  ],
+  "maxLevels": 6,
+  "icon": "😴",
+  "shipSkin": "/assets/ships/daily_ship.svg",
+  "laserColor": "#9b59b6",
+  "relatedPackages": [
+    "schlaf",
+    "alltag"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Bett": {
+      "backgroundImage": "bett_bg.png",
+      "backgroundGradient": [
+        "#9b59b6",
+        "#8e44ad"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "bett_theme.mp3",
+      "particleEffect": "sleep_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

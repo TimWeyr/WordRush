@@ -1,0 +1,203 @@
+[
+  {
+    "id": "EW_001",
+    "theme": "chaos_planet",
+    "chapter": "Extremlange_Woerter",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Donaudampfschifffahrtsgesellschaftskapitänsmütze",
+      "type": "Extrem",
+      "visual": {
+        "tier": 3,
+        "size": 0.7,
+        "appearance": "bold",
+        "color": "#8e44ad",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Danube Steamship Company Captain's Cap",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Donaudampfschifffahrtsgesellschaftskapitänsmütze = Danube Steamship Company Captain's Cap",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 0.6
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Donaudampfschifffahrtsgesellschaftskapitänsmützenfabrik",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.27,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Die Fabrik, nicht die Mütze! (extrem lange Wörter testen die UI!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 0.5
+        },
+        "sound": "explosion_minor",
+        "redirect": "Fabriken"
+      },
+      {
+        "entry": {
+          "word": "Donaudampfschifffahrtsgesellschaftskapitänsmützenhersteller",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.27,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Der Hersteller, nicht die Mütze! (UI-Test für lange Wörter!)",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 0.5
+        },
+        "sound": "explosion_minor",
+        "redirect": "Hersteller"
+      }
+    ],
+    "meta": {
+      "source": "Chaos",
+      "tags": ["extremlang", "level5"],
+      "related": [null, "EW_002"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.06,
+        "colorContrastFade": true,
+        "angleVariance": 0.35
+      }
+    }
+  },
+  {
+    "id": "EW_002",
+    "theme": "chaos_planet",
+    "chapter": "Extremlange_Woerter",
+    "level": 6,
+    "waveDuration": 3,
+    "base": {
+      "word": "Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz",
+      "type": "Extrem",
+      "visual": {
+        "tier": 3,
+        "size": 0.65,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Beef Labeling Supervision Duties Transfer Law",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.05,
+        "points": 600,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz = Beef Labeling Supervision Duties Transfer Law",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 0.55
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetzesentwurf",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.28,
+        "points": 300,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Der Entwurf, nicht das Gesetz! (UI-Stresstest!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 0.45
+        },
+        "sound": "explosion_minor",
+        "redirect": "Gesetze"
+      },
+      {
+        "entry": {
+          "word": "Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetzeskommentar",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.28,
+        "points": 300,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Der Kommentar, nicht das Gesetz! (UI-Grenztest!)",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 0.45
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kommentare"
+      }
+    ],
+    "meta": {
+      "source": "Chaos",
+      "tags": ["extremlang", "level6"],
+      "related": ["EW_001", null],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  }
+]
+

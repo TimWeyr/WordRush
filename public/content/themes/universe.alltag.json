@@ -23,7 +23,10 @@
     "einkaufen",
     "arbeit",
     "freizeit",
-    "schlafen"
+    "schlafen",
+    "gemischte_levels",
+    "zufaellige_levels",
+    "chaos_planet"
   ],
   "meta": {
     "author": "Tim Weyrauch",

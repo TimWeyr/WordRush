@@ -22,6 +22,12 @@ export interface ShooterConfig {
   laserSpeed: number;
   laserColor: string;
   spawnRateMultiplier?: number;
+  // New gameplay settings
+  objectSpeedMultiplier?: number;  // Separate from animation speed
+  objectsPerSecond?: number;        // Spawn rate (0 = instant)
+  maxCorrect?: number;              // Max correct objects (1-10)
+  maxDistractors?: number;          // Max distractor objects (1-10)
+  isZenMode?: boolean;              // Zen mode: static objects
 }
 
 export interface SpawnEntry {
@@ -55,12 +61,17 @@ export class ShooterEngine {
   // Config
   private config: ShooterConfig;
   
+  // Context message settings
+  private showContextMessages: boolean = true;
+  private pauseOnContextMessages: boolean = false;
+  
   // Callbacks
   private onScoreChange?: (score: number) => void;
   private onContextShow?: (text: string) => void;
   private onHealthChange?: (health: number) => void;
   private onRoundComplete?: (score: number, perfect: boolean) => void;
   private onGameOver?: () => void;
+  private onPauseRequest?: () => void;
 
   constructor(config: ShooterConfig, gameMode: GameMode) {
     this.config = config;
@@ -109,44 +120,82 @@ export class ShooterEngine {
 
   private buildSpawnQueue(item: Item, learningState: ItemLearningState): void {
     this.spawnQueue = [];
-    const waveDuration = item.waveDuration || 8;
-    // Color-coded ONLY in Lernmodus (ignore learningState)
+    
+    // Color-coded ONLY in Lernmodus
     const colorCoded = this.gameMode === 'lernmodus';
-    const speedMultiplier = learningState.difficultyScaling.currentSpeedMultiplier;
-    const spawnRateMultiplier = this.config.spawnRateMultiplier || 1.0;
     
-    console.log('🎨 Color Coding:', colorCoded, '| Mode:', this.gameMode, '| Trained:', learningState.trained);
-    console.log('⚡ Spawn Rate Multiplier:', spawnRateMultiplier);
+    // Use new objectSpeedMultiplier (separate from animation)
+    const objectSpeedMultiplier = this.config.objectSpeedMultiplier ?? learningState.difficultyScaling.currentSpeedMultiplier;
+    const objectsPerSecond = this.config.objectsPerSecond ?? 2.5; // Default: 2.5 obj/sec
+    const isZenMode = this.config.isZenMode ?? false;
     
-    // Add correct objects
-    item.correct.forEach((correct, index) => {
-      const baseSpawnTime = correct.spawnDelay !== undefined
-        ? correct.spawnDelay
-        : (index / item.correct.length) * waveDuration;
-      const spawnTime = baseSpawnTime / spawnRateMultiplier; // Faster spawn = divide time
+    // Limit objects based on settings
+    const maxCorrect = this.config.maxCorrect ?? 10;
+    const maxDistractors = this.config.maxDistractors ?? 10;
+    
+    // Slice arrays to respect limits
+    const correctEntries = item.correct.slice(0, maxCorrect);
+    const distractorEntries = item.distractors.slice(0, maxDistractors);
+    
+    const totalObjects = correctEntries.length + distractorEntries.length;
+    
+    console.log('🎨 Color Coding:', colorCoded, '| Mode:', this.gameMode);
+    console.log('⚡ Object Speed Multiplier:', objectSpeedMultiplier);
+    console.log('📊 Objects:', totalObjects, `(${correctEntries.length} correct, ${distractorEntries.length} distractors)`);
+    console.log('🧘 Zen Mode:', isZenMode);
+    
+    if (isZenMode || objectsPerSecond === 0) {
+      // ZEN MODE: Instant spawn - all objects at time 0
+      console.log('🧘 ZEN MODE: Instant spawn activated');
       
-      this.spawnQueue.push({
-        type: 'correct',
-        entry: { ...correct, colorCoded, speedMultiplier },
-        spawnTime,
-        spawned: false
+      correctEntries.forEach(correct => {
+        this.spawnQueue.push({
+          type: 'correct',
+          entry: { ...correct, colorCoded, speedMultiplier: objectSpeedMultiplier, isZenMode: true },
+          spawnTime: 0,
+          spawned: false
+        });
       });
-    });
-    
-    // Add distractors
-    item.distractors.forEach((distractor, index) => {
-      const baseSpawnTime = distractor.spawnDelay !== undefined
-        ? distractor.spawnDelay
-        : ((index + 0.5) / item.distractors.length) * waveDuration;
-      const spawnTime = baseSpawnTime / spawnRateMultiplier; // Faster spawn = divide time
       
-      this.spawnQueue.push({
-        type: 'distractor',
-        entry: { ...distractor, colorCoded, speedMultiplier },
-        spawnTime,
-        spawned: false
+      distractorEntries.forEach(distractor => {
+        this.spawnQueue.push({
+          type: 'distractor',
+          entry: { ...distractor, colorCoded, speedMultiplier: objectSpeedMultiplier, isZenMode: true },
+          spawnTime: 0,
+          spawned: false
+        });
       });
-    });
+    } else {
+      // NORMAL MODE: Calculate spawn times based on objects per second
+      const totalSpawnTime = totalObjects / objectsPerSecond;
+      const timePerObject = totalSpawnTime / totalObjects;
+      
+      console.log('⏱️ Total Spawn Time:', totalSpawnTime.toFixed(2), 's');
+      console.log('⏱️ Time per Object:', timePerObject.toFixed(2), 's');
+      
+      // Interleave correct and distractors for better gameplay
+      const allEntries: Array<{ type: 'correct' | 'distractor'; entry: any }> = [
+        ...correctEntries.map(e => ({ type: 'correct' as const, entry: e })),
+        ...distractorEntries.map(e => ({ type: 'distractor' as const, entry: e }))
+      ];
+      
+      // Shuffle for variety (optional - can be removed for predictable spawns)
+      // allEntries.sort(() => Math.random() - 0.5);
+      
+      allEntries.forEach((entry, index) => {
+        // Respect custom spawnDelay if provided
+        const spawnTime = entry.entry.spawnDelay !== undefined
+          ? entry.entry.spawnDelay
+          : index * timePerObject;
+        
+        this.spawnQueue.push({
+          type: entry.type,
+          entry: { ...entry.entry, colorCoded, speedMultiplier: objectSpeedMultiplier, isZenMode: false },
+          spawnTime,
+          spawned: false
+        });
+      });
+    }
     
     // Sort by spawn time
     this.spawnQueue.sort((a, b) => a.spawnTime - b.spawnTime);
@@ -226,22 +275,56 @@ export class ShooterEngine {
     const colorCoded = data.colorCoded;
     const speedMultiplier = data.speedMultiplier;
     const isLernmodus = this.gameMode === 'lernmodus';
+    const isZenMode = data.isZenMode ?? false;
     
-    // Calculate spawn position (top of screen, random X within spread)
-    const spawnX = this.config.screenWidth * data.spawnPosition +
-      (Math.random() - 0.5) * this.config.screenWidth * data.spawnSpread;
-    const spawnY = -50; // Above screen
+    let spawnX: number;
+    let spawnY: number;
+    
+    if (isZenMode) {
+      // ZEN MODE: Random position in upper 2/3 of screen
+      // X: Use spawnPosition as base, with spread
+      spawnX = this.config.screenWidth * data.spawnPosition +
+        (Math.random() - 0.5) * this.config.screenWidth * data.spawnSpread;
+      
+      // Y: Random in upper 2/3 (between 50px and 2/3 * screenHeight)
+      const upperBound = 50; // Top padding
+      const lowerBound = this.config.screenHeight * (2/3);
+      spawnY = upperBound + Math.random() * (lowerBound - upperBound);
+      
+      // Ensure even distribution (optional grid-like adjustment)
+      // This prevents clustering - objects spread out nicely
+      const gridCols = 5;
+      const gridRows = 4;
+      const objectIndex = this.objects.length;
+      const col = objectIndex % gridCols;
+      const row = Math.floor(objectIndex / gridCols) % gridRows;
+      
+      // Add grid bias while keeping randomness
+      const gridX = (col / gridCols) * this.config.screenWidth;
+      const gridY = upperBound + (row / gridRows) * (lowerBound - upperBound);
+      
+      // Blend grid position (40%) with random position (60%)
+      spawnX = spawnX * 0.6 + gridX * 0.4;
+      spawnY = spawnY * 0.6 + gridY * 0.4;
+      
+      console.log('🧘 Zen spawn:', type, 'at', { x: Math.round(spawnX), y: Math.round(spawnY) });
+    } else {
+      // NORMAL MODE: Top of screen, random X within spread
+      spawnX = this.config.screenWidth * data.spawnPosition +
+        (Math.random() - 0.5) * this.config.screenWidth * data.spawnSpread;
+      spawnY = -50; // Above screen
+    }
     
     const position: Vector2 = { x: spawnX, y: spawnY };
     
     if (type === 'correct') {
-      const obj = new CorrectObject(position, data, colorCoded, speedMultiplier, this.config.baseSpeed, isLernmodus);
+      const obj = new CorrectObject(position, data, colorCoded, speedMultiplier, this.config.baseSpeed, isLernmodus, isZenMode);
       this.objects.push(obj);
-      console.log('✅ Spawned CORRECT:', data.entry.word, 'at', position, '| visual.color:', data.visual.color, '| isLernmodus:', isLernmodus);
+      console.log('✅ Spawned CORRECT:', data.entry.word, 'at', position, '| Zen:', isZenMode);
     } else {
-      const obj = new DistractorObject(position, data, colorCoded, speedMultiplier, this.config.baseSpeed, isLernmodus);
+      const obj = new DistractorObject(position, data, colorCoded, speedMultiplier, this.config.baseSpeed, isLernmodus, isZenMode);
       this.objects.push(obj);
-      console.log('❌ Spawned DISTRACTOR:', data.entry.word, 'at', position, '| visual.color:', data.visual.color, '| isLernmodus:', isLernmodus);
+      console.log('❌ Spawned DISTRACTOR:', data.entry.word, 'at', position, '| Zen:', isZenMode);
     }
   }
 
@@ -336,8 +419,13 @@ export class ShooterEngine {
     // Invalidate collection order bonus
     this.collectionOrderTracker = [-1];
     
-    // Show context (as learning feedback)
-    this.onContextShow?.(`⚠️${correct.context}⚠️`);
+    // Show context (as learning feedback) - respect settings
+    if (this.showContextMessages) {
+      this.onContextShow?.(`⚠️${correct.context}⚠️`);
+      if (this.pauseOnContextMessages) {
+        this.onPauseRequest?.();
+      }
+    }
     
     // Spawn sad explosion (gray/white - small)
     const explosion = createExplosion(correct.position, '#aaaaaa', 8, 'correct', correct.points * 0.5, 1);
@@ -383,8 +471,13 @@ export class ShooterEngine {
     const penalty = -distractor.points;
     this.addScore(penalty);
     
-    // Show context
-    this.onContextShow?.(`💥 ${distractor.context}`);
+    // Show context - respect settings
+    if (this.showContextMessages) {
+      this.onContextShow?.(`💥 ${distractor.context}`);
+      if (this.pauseOnContextMessages) {
+        this.onPauseRequest?.();
+      }
+    }
     
     // Distractor continues moving (doesn't destroy)
   }
@@ -397,8 +490,13 @@ export class ShooterEngine {
     const penalty = -distractor.points;
     this.addScore(penalty);
     
-    // Show context
-    this.onContextShow?.(`⚠️ ${distractor.context}`);
+    // Show context - respect settings
+    if (this.showContextMessages) {
+      this.onContextShow?.(`⚠️ ${distractor.context}`);
+      if (this.pauseOnContextMessages) {
+        this.onPauseRequest?.();
+      }
+    }
     
     // Spawn explosion when distractor hits base - SAME as distractor shot explosion
     const explosionColor = this.gameMode === 'lernmodus' ? '#ff4400' : '#ff6600'; // Vibrant red-orange
@@ -420,7 +518,12 @@ export class ShooterEngine {
       // Distractor reached base = bad (lose points, blink base, and explode)
       this.addScore(-obj.points);
       this.base.triggerBlink();
-      this.onContextShow?.(`⚠️ ${obj.context}`);
+      if (this.showContextMessages) {
+        this.onContextShow?.(`⚠️ ${obj.context}`);
+        if (this.pauseOnContextMessages) {
+          this.onPauseRequest?.();
+        }
+      }
       
       // Spawn explosion when distractor reaches base - SAME as distractor shot explosion
       const explosionColor = this.gameMode === 'lernmodus' ? '#ff4400' : '#ff6600';
@@ -566,6 +669,15 @@ export class ShooterEngine {
 
   setOnGameOver(callback: () => void): void {
     this.onGameOver = callback;
+  }
+
+  setOnPauseRequest(callback: () => void): void {
+    this.onPauseRequest = callback;
+  }
+
+  setContextMessageSettings(showMessages: boolean, pauseOnMessages: boolean): void {
+    this.showContextMessages = showMessages;
+    this.pauseOnContextMessages = pauseOnMessages;
   }
 }
 

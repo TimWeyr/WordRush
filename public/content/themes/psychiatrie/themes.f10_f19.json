@@ -19,7 +19,19 @@
   ],
   "available": true,
   "language": "de",
-  "chapters": {},
+  "chapters": {
+    "F10_Alkohol": {
+      "backgroundImage": "alkohol_bg.png",
+      "backgroundGradient": [
+        "#b95737",
+        "#d97757"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "alkohol_theme.mp3",
+      "particleEffect": "medical_particles"
+    }
+  },
   "meta": {
     "source": "ICD-10-GM 2025",
     "author": "Tim Weyrauch",

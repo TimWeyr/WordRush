@@ -170,8 +170,7 @@ export class LocalProgressProvider implements ProgressProvider {
       orientation: 'auto',
       colorScheme: 'dark',
       stützräderGlobal: true,
-      mixModeGlobal: false,
-      difficultyLevel: 'medium'
+      mixModeGlobal: false
     };
   }
 }

@@ -59,7 +59,25 @@ export interface UISettings {
   colorScheme: 'dark' | 'light';
   stützräderGlobal: boolean;
   mixModeGlobal: boolean;
-  difficultyLevel: 'easy' | 'medium' | 'hard';
   itemOrder?: 'default' | 'random' | 'worst-first-unplayed';
+  gameplaySettings?: GameplaySettings;
+}
+
+export type GameplayPreset = 'zen' | 'easy' | 'medium' | 'hard' | 'custom';
+
+export interface GameplaySettings {
+  // Active preset or 'custom' if manually adjusted
+  preset: GameplayPreset;
+  
+  // 5 Sliders (0-100 range for UI, mapped to actual values in game logic)
+  objectSpeed: number;        // 0-100 → maps to speedMultiplier (0-2.0)
+  spawnRate: number;          // 0-100 → maps to objects/second (0-5)
+  maxCorrect: number;         // 1-10
+  maxDistractors: number;     // 1-10
+  animationIntensity: number; // 0-10
+  
+  // Context message settings
+  showContextMessages: boolean;
+  pauseOnContextMessages: boolean;
 }
 

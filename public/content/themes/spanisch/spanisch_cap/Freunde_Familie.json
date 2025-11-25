@@ -1,0 +1,143 @@
+[
+  {
+    "id": "SPAN_AMI_001",
+    "theme": "spanisch_cap",
+    "chapter": "Freunde_Familie",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "amigo",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#8b4a8b",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Freund",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "amigo = Freund (¡Mi amigo es genial! - Mein Freund ist großartig!)",
+        "visual": {
+          "color": "#b86bb8",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Feind",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Feind = enemigo, nicht amigo (¡El enemigo es lo opuesto al amigo!)",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "enemigo"
+      },
+      {
+        "entry": {
+          "word": "Fremder",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Fremder = extraño, nicht amigo (¡Un extraño no es un amigo!)",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "extraño"
+      },
+      {
+        "entry": {
+          "word": "Kollege",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.28,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Kollege = colega, nicht amigo (¡Un colega puede ser un amigo, pero no siempre!)",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "colega"
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "¡La pausa del café con amigos es genial! (Die Kaffeepause mit Freunden ist großartig!)",
+        "visual": {
+          "color": "#9C27B0",
+          "variant": "star",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 0.9
+        },
+        "sound": "explosion_minor",
+        "redirect": "pausa del café"
+      }
+    ],
+    "meta": {
+      "source": "Spanisch Vokabeln",
+      "tags": ["freunde", "level1"]
+    }
+  }
+]
+

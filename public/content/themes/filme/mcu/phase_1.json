@@ -4,15 +4,15 @@
     "theme": "mcu",
     "chapter": "phase_1",
     "level": 1,
-    "waveDuration": 10,
+    "waveDuration": 20,
     "base": {
       "word": "Iron Man",
       "type": "Film",
       "visual": {
-        "tier": 2,
+        "tier": 1,
         "size": 1.2,
         "appearance": "bold",
-        "color": "#c41e3a",
+        "color": "#2F1EC4",
         "glow": true,
         "pulsate": true
       }

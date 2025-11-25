@@ -36,7 +36,8 @@ export class DistractorObject extends GameObject {
     colorCoded: boolean,
     speedMultiplier: number,
     baseSpeed: number,
-    isLernmodus: boolean = false
+    isLernmodus: boolean = false,
+    isZenMode: boolean = false
   ) {
     const radius = entry.visual.collisionRadius || 40;
     super(position, radius);
@@ -55,11 +56,18 @@ export class DistractorObject extends GameObject {
     this.isLernmodus = isLernmodus;
     this.isRedirected = false;
     
-    // Set initial velocity (moving downward/toward base)
-    this.velocity.y = this.speed;
+    // Set initial velocity
+    if (isZenMode) {
+      // ZEN MODE: Static objects (no movement)
+      this.velocity.y = 0;
+      this.velocity.x = 0;
+    } else {
+      // NORMAL MODE: Moving downward/toward base
+      this.velocity.y = this.speed;
+    }
     
     // DEBUG: Log color at spawn
-    console.log('🎨 DISTRACTOR Constructor:', this.word, '| visual.color:', entry.visual.color, '| isLernmodus:', isLernmodus, '| colorCoded:', colorCoded);
+    console.log('🎨 DISTRACTOR Constructor:', this.word, '| Zen:', isZenMode, '| velocity:', this.velocity);
   }
 
   update(deltaTime: number): void {

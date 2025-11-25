@@ -69,7 +69,117 @@
 
 ## 🚀 Deployment & Testing
 
-### 3. Spiel auf Vercel laden und testen
+### 3. JSON Ladezeitoptimierung
+**Beschreibung**: Optimierung des Ladens von JSON-Content-Dateien für bessere Performance und schnellere Ladezeiten.
+
+**Status**: 📋 Geplant  
+**Priorität**: Mittel  
+**Geschätzte Zeit**: 1-2 Tage
+
+**Aktuelle Situation**:
+- ✅ Caching implementiert (Map-basiert, in-memory)
+- ⚠️ Sequentielles Laden (nicht parallel)
+- ⚠️ Kein persistentes Caching (Cache geht bei Reload verloren)
+- ⚠️ Große Chapter-Dateien werden komplett geladen
+
+**Optimierungsmöglichkeiten**:
+
+#### A. Parallel Loading
+- [ ] **Promise.all()** für mehrere Requests gleichzeitig
+  - Beim Laden eines Universums: Alle Themes parallel laden
+  - Beim Laden eines Themes: Alle Chapters parallel laden
+  - **Erwartete Verbesserung**: 50-70% schnellere Ladezeit bei mehreren Dateien
+
+**Code-Stelle**: `src/infra/utils/JSONLoader.ts` und `src/components/GalaxyMap.tsx`
+
+#### B. Preloading & Lazy Loading
+- [ ] **Preloading**: Universen beim App-Start im Hintergrund laden
+- [ ] **Lazy Loading**: Chapters erst laden wenn Spieler sie auswählt
+- [ ] **Progressive Loading**: Erst Universe → dann Themes → dann Chapters
+- [ ] **Prefetch**: Nächste wahrscheinliche Chapters vorladen
+
+**Vorteil**: Schnellere initiale Ladezeit, bessere UX
+
+#### C. Persistentes Caching (IndexedDB)
+- [ ] **IndexedDB Integration**: Cache über Browser-Reloads hinweg
+- [ ] **Cache-Versionierung**: Bei Content-Updates Cache invalidieren
+- [ ] **Cache-Size Management**: Alte/ungenutzte Daten entfernen
+- [ ] **Offline-Support**: Content auch ohne Internet verfügbar
+
+**Code-Stelle**: Neue Klasse `IndexedDBCache.ts` oder Erweiterung von `JSONLoader.ts`
+
+#### D. Kompression & Chunking
+- [ ] **Gzip/Brotli**: Server-seitige Kompression aktivieren (Vercel macht das automatisch)
+- [ ] **JSON Minification**: Whitespace entfernen (Build-Time)
+- [ ] **Chunking**: Große Chapter-Dateien aufteilen (z.B. nach Level)
+  - Statt `chapter.json` → `chapter_level1.json`, `chapter_level2.json`, etc.
+- [ ] **Tree Shaking**: Nur benötigte Content-Dateien im Bundle
+
+**Vorteil**: Kleinere Dateigrößen = schnellere Downloads
+
+#### E. Service Worker für Offline-Caching
+- [ ] **Service Worker**: Content-Dateien im Cache speichern
+- [ ] **Cache-First Strategy**: Erst Cache prüfen, dann Netzwerk
+- [ ] **Background Updates**: Cache im Hintergrund aktualisieren
+- [ ] **Version Management**: Bei neuen Versionen Cache aktualisieren
+
+**Vorteil**: Offline-Funktionalität, schnellere Ladezeiten bei wiederholten Besuchen
+
+#### F. Request-Batching & Debouncing
+- [ ] **Batching**: Mehrere Requests in einem Batch zusammenfassen
+- [ ] **Debouncing**: Bei schnellen Navigationen Requests zusammenfassen
+- [ ] **Request Queue**: Requests priorisieren (wichtige zuerst)
+
+**Vorteil**: Weniger Netzwerk-Overhead
+
+**Implementierung**:
+
+**Phase 1: Parallel Loading (Schnellste Verbesserung)**
+```typescript
+// Statt:
+for (const themeId of universe.themes) {
+  const theme = await jsonLoader.loadTheme(universeId, themeId);
+}
+
+// Besser:
+const themes = await Promise.all(
+  universe.themes.map(themeId => jsonLoader.loadTheme(universeId, themeId))
+);
+```
+
+**Phase 2: IndexedDB Caching**
+- [ ] `npm install idb` (IndexedDB Wrapper)
+- [ ] Cache-Strategie implementieren
+- [ ] Cache-Invalidierung bei Updates
+
+**Phase 3: Service Worker**
+- [ ] Service Worker registrieren
+- [ ] Cache-Strategie konfigurieren
+- [ ] Update-Mechanismus implementieren
+
+**Messung & Monitoring**:
+- [ ] **Performance API**: Ladezeiten messen
+- [ ] **Console Logging**: Ladezeiten loggen
+- [ ] **Metrics**: Durchschnittliche Ladezeit pro Dateityp
+- [ ] **Before/After Vergleich**: Verbesserung dokumentieren
+
+**Ziel-Metriken**:
+- **Initial Load**: < 1 Sekunde (nur Universen)
+- **Theme Load**: < 500ms (alle Themes eines Universums)
+- **Chapter Load**: < 300ms (einzelnes Chapter)
+- **Cache Hit Rate**: > 80% bei wiederholten Besuchen
+
+**Dateien zu ändern**:
+- `src/infra/utils/JSONLoader.ts` - Parallel Loading, IndexedDB
+- `src/components/GalaxyMap.tsx` - Preloading, Lazy Loading
+- `vite.config.ts` - Service Worker Setup (falls nötig)
+- `public/sw.js` - Service Worker (neu)
+
+**Hinweis**: Parallel Loading bringt die größte Verbesserung mit wenig Aufwand!
+
+---
+
+### 4. Spiel auf Vercel laden und testen
 **Beschreibung**: Production-Build auf Vercel deployen und testen.
 
 **Status**: 📋 Geplant  
@@ -98,7 +208,7 @@
 
 ---
 
-### 4. Touch-Controls testen
+### 5. Touch-Controls testen
 **Beschreibung**: Touch-Controls auf echten Geräten testen und optimieren.
 
 **Status**: 📋 Geplant  
@@ -128,7 +238,7 @@
 
 ## 📱 App Store Deployment
 
-### 5. Als App deployen im App Store
+### 6. Als App deployen im App Store
 **Beschreibung**: WordRush als native App für iOS und Android veröffentlichen.
 
 **Status**: 📋 Geplant  
@@ -171,7 +281,7 @@
 
 ## 💾 Backend & Datenbank
 
-### 6. Supabase anbinden
+### 7. Supabase anbinden
 **Beschreibung**: Supabase für Cloud-Sync, User-Management und Analytics einrichten.
 
 **Status**: 📋 Geplant  
@@ -261,7 +371,7 @@ src/infra/providers/
 
 ## 📚 Content-Erstellung
 
-### 7. Content Filme weiter arbeiten
+### 8. Content Filme weiter arbeiten
 **Beschreibung**: Weitere Film-Content erstellen und bestehende erweitern.
 
 **Status**: 📋 In Arbeit  
@@ -283,7 +393,7 @@ src/infra/providers/
 
 ---
 
-### 8. Content Psychiatrie weiter erstellen
+### 9. Content Psychiatrie weiter erstellen
 **Beschreibung**: Weitere psychiatrische Themen und ICD-10 Codes hinzufügen.
 
 **Status**: 📋 In Arbeit  
@@ -304,7 +414,7 @@ src/infra/providers/
 
 ## 💰 Monetarisierung
 
-### 9. Anbindung an Zahlsystem
+### 10. Anbindung an Zahlsystem
 **Beschreibung**: Zahlungssystem für In-App Purchases integrieren.
 
 **Status**: 📋 Geplant  
@@ -365,7 +475,7 @@ npm install @stripe/stripe-js
 
 ---
 
-### 10. Preismodell: Wie viel für Planet/Universum?
+### 11. Preismodell: Wie viel für Planet/Universum?
 **Beschreibung**: Preismodell für Content festlegen.
 
 **Status**: 📋 Diskussion  
@@ -414,7 +524,7 @@ npm install @stripe/stripe-js
 
 ## 🎯 App Store Readiness
 
-### 11. Wie reif ist das Spiel für den App Store?
+### 12. Wie reif ist das Spiel für den App Store?
 **Beschreibung**: Assessment der App Store Readiness.
 
 **Status**: 📋 Review  
@@ -481,7 +591,7 @@ npm install @stripe/stripe-js
 
 ## 💡 Feature-Ideen
 
-### 12. Damage Points als visueller Hinweis beim Schießen
+### 13. Damage Points als visueller Hinweis beim Schießen
 
 **Idee**: Wenn ein Objekt `damage > 1` hat, wird beim ersten Treffer kurz sichtbar, ob es ein Distractor ist.
 
@@ -549,18 +659,21 @@ npm install @stripe/stripe-js
 
 ### Kurzfristig (Diese Woche)
 1. 🔴 Bug: Planet-Klick lädt nicht alle Items
-2. 🚀 Vercel Deployment
-3. 📱 Touch-Testing
+2. ⚡ JSON Ladezeitoptimierung (Parallel Loading)
+3. 🚀 Vercel Deployment
+4. 📱 Touch-Testing
 
 ### Mittelfristig (Dieser Monat)
-4. 🛠️ JSON Editor (nur localhost)
-5. 💾 Supabase Integration
-6. 📚 Content erweitern
+5. 🛠️ JSON Editor (nur localhost)
+6. 💾 Supabase Integration
+7. 📚 Content erweitern
+8. 💾 IndexedDB Caching (Phase 2)
 
 ### Langfristig (Nächste Monate)
-7. 💰 Payment Integration
-8. 📱 App Store Deployment
-9. 🎯 App Store Readiness
+9. 💰 Payment Integration
+10. 📱 App Store Deployment
+11. 🎯 App Store Readiness
+12. 🔧 Service Worker für Offline-Caching (Phase 3)
 
 ---
 

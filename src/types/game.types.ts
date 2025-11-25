@@ -36,6 +36,7 @@ export type GameMode = 'lernmodus' | 'shooter';
 
 export interface ShipConfig {
   health: number;
+  maxHealth: number;
   radius: number;
   smoothFactor: number;
   maxSpeed: number;

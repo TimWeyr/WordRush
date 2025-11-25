@@ -123,15 +123,23 @@ class JSONLoader {
       const response = await fetch(`/content/themes/${universeId}/${themeId}/${chapterId}.json`, {
         headers: { 'Content-Type': 'application/json; charset=utf-8' }
       });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: Chapter file not found`);
+      }
       
       const text = await response.text();
+      
+      // Check if response is actually JSON (not HTML error page)
+      if (text.trim().startsWith('<!') || text.trim().startsWith('<?')) {
+        throw new Error(`Invalid response: received HTML instead of JSON`);
+      }
+      
       const data = JSON.parse(text);
       const items: Item[] = this.fixUTF8(data);
       this.cache.set(cacheKey, items);
       return items;
     } catch (error) {
-      console.error(`Failed to load chapter ${chapterId}:`, error);
+      console.error(`Failed to load chapter ${chapterId} (universe: ${universeId}, theme: ${themeId}):`, error instanceof Error ? error.message : error);
       return [];
     }
   }

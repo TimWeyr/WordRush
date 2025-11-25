@@ -1,0 +1,40 @@
+{
+  "id": "arbeit",
+  "name": "Arbeit",
+  "description": "Lerne alles rund um die Arbeit - Büro, Kollegen, Meetings und mehr!",
+  "colorPrimary": "#34495e",
+  "colorAccent": "#2c3e50",
+  "backgroundGradient": [
+    "#1a1a1a",
+    "#2d2d2d"
+  ],
+  "maxLevels": 6,
+  "icon": "💼",
+  "shipSkin": "/assets/ships/daily_ship.svg",
+  "laserColor": "#34495e",
+  "relatedPackages": [
+    "buero",
+    "alltag"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Büro": {
+      "backgroundImage": "buero_bg.png",
+      "backgroundGradient": [
+        "#34495e",
+        "#2c3e50"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "buero_theme.mp3",
+      "particleEffect": "office_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

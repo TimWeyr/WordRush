@@ -1,0 +1,139 @@
+{
+  "id": "zufaellige_levels",
+  "name": "Zufällige Levels",
+  "description": "10 Monde mit je einem zufälligen Item auf Level 1-4.",
+  "colorPrimary": "#16a085",
+  "colorAccent": "#1abc9c",
+  "backgroundGradient": [
+    "#0d2b1a",
+    "#1a4d2e"
+  ],
+  "maxLevels": 4,
+  "icon": "🚗",
+  "shipSkin": "/assets/ships/daily_ship.svg",
+  "laserColor": "#16a085",
+  "relatedPackages": [
+    "transport",
+    "mobilitaet"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Auto": {
+      "backgroundImage": "auto_bg.png",
+      "backgroundGradient": [
+        "#e74c3c",
+        "#c0392b"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "auto_theme.mp3",
+      "particleEffect": "car_particles"
+    },
+    "Fahrrad": {
+      "backgroundImage": "fahrrad_bg.png",
+      "backgroundGradient": [
+        "#3498db",
+        "#2980b9"
+      ],
+      "spawnRate": 1.4,
+      "waveDuration": 3,
+      "music": "fahrrad_theme.mp3",
+      "particleEffect": "bike_particles"
+    },
+    "Bus": {
+      "backgroundImage": "bus_bg.png",
+      "backgroundGradient": [
+        "#f39c12",
+        "#e67e22"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "bus_theme.mp3",
+      "particleEffect": "bus_particles"
+    },
+    "Bahn": {
+      "backgroundImage": "bahn_bg.png",
+      "backgroundGradient": [
+        "#9b59b6",
+        "#8e44ad"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "bahn_theme.mp3",
+      "particleEffect": "train_particles"
+    },
+    "Flugzeug": {
+      "backgroundImage": "flugzeug_bg.png",
+      "backgroundGradient": [
+        "#ecf0f1",
+        "#bdc3c7"
+      ],
+      "spawnRate": 1.7,
+      "waveDuration": 3,
+      "music": "flugzeug_theme.mp3",
+      "particleEffect": "plane_particles"
+    },
+    "Schiff": {
+      "backgroundImage": "schiff_bg.png",
+      "backgroundGradient": [
+        "#3498db",
+        "#2980b9"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "schiff_theme.mp3",
+      "particleEffect": "ship_particles"
+    },
+    "Motorrad": {
+      "backgroundImage": "motorrad_bg.png",
+      "backgroundGradient": [
+        "#e67e22",
+        "#d35400"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "motorrad_theme.mp3",
+      "particleEffect": "motorcycle_particles"
+    },
+    "Roller": {
+      "backgroundImage": "roller_bg.png",
+      "backgroundGradient": [
+        "#f1c40f",
+        "#f39c12"
+      ],
+      "spawnRate": 1.4,
+      "waveDuration": 3,
+      "music": "roller_theme.mp3",
+      "particleEffect": "scooter_particles"
+    },
+    "Taxi": {
+      "backgroundImage": "taxi_bg.png",
+      "backgroundGradient": [
+        "#f1c40f",
+        "#f39c12"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "taxi_theme.mp3",
+      "particleEffect": "taxi_particles"
+    },
+    "LKW": {
+      "backgroundImage": "lkw_bg.png",
+      "backgroundGradient": [
+        "#34495e",
+        "#2c3e50"
+      ],
+      "spawnRate": 1.8,
+      "waveDuration": 3,
+      "music": "lkw_theme.mp3",
+      "particleEffect": "truck_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

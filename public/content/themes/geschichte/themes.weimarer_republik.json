@@ -1,0 +1,84 @@
+{
+  "id": "weimarer_republik",
+  "name": "Weimarer Republik",
+  "description": "Deutsche Demokratie zwischen 1919 und 1933, geprägt von Krisen, Reformen und kultureller Blüte.",
+  "colorPrimary": "#6b4423",
+  "colorAccent": "#8b6914",
+  "backgroundGradient": [
+    "#1a1612",
+    "#2c2416"
+  ],
+  "maxLevels": 30,
+  "icon": "🏛️",
+  "shipSkin": "/assets/ships/history_ship.svg",
+  "laserColor": "#d4af37",
+  "relatedPackages": [
+    "deutsche_geschichte",
+    "20_jahrhundert"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Politische_Struktur": {
+      "backgroundImage": "politische_struktur_bg.png",
+      "backgroundGradient": [
+        "#1a237e",
+        "#283593"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "politik_theme.mp3",
+      "particleEffect": "political_particles"
+    },
+    "Krisen_Konflikte": {
+      "backgroundImage": "krisen_konflikte_bg.png",
+      "backgroundGradient": [
+        "#b71c1c",
+        "#c62828"
+      ],
+      "spawnRate": 1.7,
+      "waveDuration": 3,
+      "music": "krisen_theme.mp3",
+      "particleEffect": "crisis_particles"
+    },
+    "Gesellschaft_Kultur": {
+      "backgroundImage": "gesellschaft_kultur_bg.png",
+      "backgroundGradient": [
+        "#f57f17",
+        "#fbc02d"
+      ],
+      "spawnRate": 1.4,
+      "waveDuration": 3,
+      "music": "goldene_zwanziger_theme.mp3",
+      "particleEffect": "cultural_glow"
+    },
+    "Aussenpolitik_Vertraege": {
+      "backgroundImage": "aussenpolitik_vertraege_bg.png",
+      "backgroundGradient": [
+        "#004d40",
+        "#00695c"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "diplomacy_theme.mp3",
+      "particleEffect": "treaty_particles"
+    },
+    "Ende_Republik": {
+      "backgroundImage": "ende_republik_bg.png",
+      "backgroundGradient": [
+        "#3e2723",
+        "#5d4037"
+      ],
+      "spawnRate": 1.8,
+      "waveDuration": 3,
+      "music": "niedergang_theme.mp3",
+      "particleEffect": "dark_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

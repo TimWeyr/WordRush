@@ -1,0 +1,40 @@
+{
+  "id": "einkaufen",
+  "name": "Einkaufen",
+  "description": "Lerne alles rund ums Einkaufen - Supermarkt, Produkte, Bezahlen und mehr!",
+  "colorPrimary": "#3498db",
+  "colorAccent": "#2980b9",
+  "backgroundGradient": [
+    "#0d1b2a",
+    "#1b263b"
+  ],
+  "maxLevels": 6,
+  "icon": "🛒",
+  "shipSkin": "/assets/ships/daily_ship.svg",
+  "laserColor": "#3498db",
+  "relatedPackages": [
+    "supermarkt",
+    "alltag"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Supermarkt": {
+      "backgroundImage": "supermarkt_bg.png",
+      "backgroundGradient": [
+        "#3498db",
+        "#2980b9"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "supermarkt_theme.mp3",
+      "particleEffect": "shopping_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

@@ -1,0 +1,303 @@
+[
+  {
+    "id": "FR_001",
+    "theme": "gemischte_levels",
+    "chapter": "Fruehstueck",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Brot",
+      "type": "Nahrung",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d4af37",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Bread",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Brot = Bread",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Stein",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Stein = stone (hart wie Brot, aber nicht essbar!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Geologie"
+      },
+      {
+        "entry": {
+          "word": "Bett",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Bett = bed (klingt ähnlich, aber kein Frühstück!)",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Schlafzimmer"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["fruehstueck", "level1"],
+      "related": [null, "FR_002"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FR_002",
+    "theme": "gemischte_levels",
+    "chapter": "Fruehstueck",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Marmelade",
+      "type": "Nahrung",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#e74c3c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Jam",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 300,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Marmelade = Jam",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Marmeladeglas",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Marmeladeglas = jar (der Behälter, nicht der Inhalt!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "spike",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Verpackung"
+      },
+      {
+        "entry": {
+          "word": "Marmeladenbrot",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Marmeladenbrot = bread with jam (das fertige Produkt, nicht die Marmelade!)",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Frühstück"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["fruehstueck", "level3"],
+      "related": ["FR_001", "FR_003"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FR_003",
+    "theme": "gemischte_levels",
+    "chapter": "Fruehstueck",
+    "level": 7,
+    "waveDuration": 3,
+    "base": {
+      "word": "Rührei",
+      "type": "Nahrung",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Scrambled Eggs",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 700,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Rührei = Scrambled Eggs",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Rührmaschine",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 350,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Rührmaschine = mixer (das Gerät zum Rühren, nicht das Ergebnis!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Küchengeräte"
+      },
+      {
+        "entry": {
+          "word": "Rührei mit Speck",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 350,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Rührei mit Speck = scrambled eggs with bacon (die Variante, nicht das Basisgericht!)",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Frühstück"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["fruehstueck", "level7"],
+      "related": ["FR_002", null],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.08,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  }
+]
+

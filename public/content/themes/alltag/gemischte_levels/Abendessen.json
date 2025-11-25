@@ -1,0 +1,303 @@
+[
+  {
+    "id": "AB_001",
+    "theme": "gemischte_levels",
+    "chapter": "Abendessen",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Pizza",
+      "type": "Nahrung",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#e74c3c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Pizza",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.98,
+        "points": 400,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Pizza = Pizza",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Pizzakarton",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.24,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Pizzakarton = pizza box (die Verpackung, nicht die Pizza!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Verpackung"
+      },
+      {
+        "entry": {
+          "word": "Pizzabäcker",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.24,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Pizzabäcker = pizza baker (der Bäcker, nicht die Pizza!)",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Berufe"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["abendessen", "level4"],
+      "related": [null, "AB_002"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "AB_002",
+    "theme": "gemischte_levels",
+    "chapter": "Abendessen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Nudeln",
+      "type": "Nahrung",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#f39c12",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Pasta",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Nudeln = Pasta",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Nudelholz",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Nudelholz = rolling pin (das Werkzeug, nicht die Nudeln!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Küchenutensilien"
+      },
+      {
+        "entry": {
+          "word": "Nudelsieb",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Nudelsieb = colander (das Sieb, nicht die Nudeln!)",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Küchengeräte"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["abendessen", "level1"],
+      "related": ["AB_001", "AB_003"],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "AB_003",
+    "theme": "gemischte_levels",
+    "chapter": "Abendessen",
+    "level": 7,
+    "waveDuration": 3,
+    "base": {
+      "word": "Lasagne",
+      "type": "Nahrung",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c0392b",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Lasagna",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 700,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Lasagne = Lasagna",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.2
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Lasagneform",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 350,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Lasagneform = lasagna pan (die Form, nicht die Lasagne!)",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Küchengeräte"
+      },
+      {
+        "entry": {
+          "word": "Lasagnerezept",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 350,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Lasagnerezept = lasagna recipe (die Anleitung, nicht die Lasagne!)",
+        "visual": {
+          "color": "#FFC107",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Rezepte"
+      }
+    ],
+    "meta": {
+      "source": "Küche",
+      "tags": ["abendessen", "level7"],
+      "related": ["AB_002", null],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.08,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  }
+]
+

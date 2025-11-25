@@ -1,0 +1,5484 @@
+[
+  {
+    "id": "KK_001",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Kapp-Putsch",
+      "type": "Krise",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#b71c1c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "1920",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.66,
+        "spawnSpread": 0.05,
+        "speed": 1.08,
+        "points": 200,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "1920 = Putschjahr.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Freikorps",
+          "type": "Akteur"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Freikorps → Beteiligte.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "1914",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.56,
+        "spawnSpread": 0.05,
+        "speed": 1.05,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "1914 ∈ Krieg.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Erster Weltkrieg"
+      },
+      {
+        "entry": {
+          "word": "1933",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "context": "1933 ∈ NS-Zeit.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "NS-Machtübernahme"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "krisen",
+        "putsch",
+        "level1"
+      ],
+      "related": [
+        null,
+        "KK_002"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_002",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Krisenjahr",
+      "type": "Krise",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "1923",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.42,
+        "spawnSpread": 0.05,
+        "speed": 1.05,
+        "points": 200,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "1923 = Krisenjahr.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Ruhrbesetzung",
+          "type": "Ereignis"
+        },
+        "spawnPosition": 0.51,
+        "spawnSpread": 0.05,
+        "speed": 1.06,
+        "points": 200,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Ruhrbesetzung → Konfliktzone.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "1948",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.34,
+        "spawnSpread": 0.05,
+        "speed": 1.09,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "1948 ∈ BRD.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Währungsreform"
+      },
+      {
+        "entry": {
+          "word": "1919",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.87,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "context": "1919 ∈ Vertrag.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Versailler Vertrag"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "krisen",
+        "1923",
+        "level1"
+      ],
+      "related": [
+        "KK_001",
+        "KK_003"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_003",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Inflation",
+      "type": "Krise",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d32f2f",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Geldentwertung",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.04,
+        "points": 200,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Geldentwertung ↑ Chaos.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Papiermark",
+          "type": "Währung"
+        },
+        "spawnPosition": 0.32,
+        "spawnSpread": 0.05,
+        "speed": 0.97,
+        "points": 200,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Papiermark = Währung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Euro",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.12,
+        "spawnSpread": 0.05,
+        "speed": 0.92,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Euro ∈ EU.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "EU"
+      },
+      {
+        "entry": {
+          "word": "Goldstandard",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.28,
+        "spawnSpread": 0.05,
+        "speed": 0.89,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Goldstandard ∈ Kaiserreich.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kaiserreich"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "inflation",
+        "wirtschaft",
+        "level1"
+      ],
+      "related": [
+        "KK_002",
+        "KK_004"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_004",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Hitler-Putsch",
+      "type": "Krise",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "1923",
+          "type": "Jahr"
+        },
+        "spawnPosition": 0.35,
+        "spawnSpread": 0.05,
+        "speed": 0.91,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "1923 = Putschjahr.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "München",
+          "type": "Ort"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "München = Ort.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Berlin",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.14,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "wave",
+        "context": "Berlin ∈ Reichstag.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Reichstag"
+      },
+      {
+        "entry": {
+          "word": "1939",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.19,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "context": "1939 ∈ Krieg.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Zweiter Weltkrieg"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "putsch",
+        "hitler",
+        "level1"
+      ],
+      "related": [
+        "KK_003",
+        "KK_005"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_005",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Politische Morde",
+      "type": "Krise",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#b71c1c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Rathenau",
+          "type": "Person"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.06,
+        "points": 200,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Rathenau → Opfer.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Erzberger",
+          "type": "Person"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 0.96,
+        "points": 200,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Erzberger = Attentat.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Adenauer",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.18,
+        "spawnSpread": 0.05,
+        "speed": 0.98,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Adenauer ∈ BRD.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "BRD"
+      },
+      {
+        "entry": {
+          "word": "Bebel",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 1.03,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Bebel ∈ Kaiserreich.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kaiserreich"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "morde",
+        "gewalt",
+        "level1"
+      ],
+      "related": [
+        "KK_004",
+        "KK_006"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_006",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Ruhrbesetzung",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Frankreich",
+          "type": "Land"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.06,
+        "points": 250,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Frankreich = Besatzer.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Belgien",
+          "type": "Land"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.16,
+        "points": 250,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Belgien → beteiligt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Polen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.47,
+        "spawnSpread": 0.05,
+        "speed": 1.04,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Polen ∈ Grenzstreit.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Grenzkonflikte"
+      },
+      {
+        "entry": {
+          "word": "Italien",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 0.93,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "wave",
+        "context": "Italien ∈ Faschismus.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Faschismus"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "ruhr",
+        "besetzung",
+        "level2"
+      ],
+      "related": [
+        "KK_005",
+        "KK_007"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_007",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Hyperinflation",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#d32f2f",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Billionenpreise",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.99,
+        "points": 250,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Billionenpreise ↑ Chaos.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Brotpreis",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.13,
+        "points": 250,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Brotpreis → Symbol.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Ölkrise",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.35,
+        "spawnSpread": 0.05,
+        "speed": 1.04,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "context": "Ölkrise ∈ 1970er.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "1970er"
+      },
+      {
+        "entry": {
+          "word": "Sputnik-Schock",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.42,
+        "spawnSpread": 0.05,
+        "speed": 1.04,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Sputnik ∈ Kalter Krieg.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kalter Krieg"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "inflation",
+        "hyperinflation",
+        "level2"
+      ],
+      "related": [
+        "KK_006",
+        "KK_008"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_008",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Hitler-Putsch",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ludendorff",
+          "type": "Person"
+        },
+        "spawnPosition": 0.84,
+        "spawnSpread": 0.05,
+        "speed": 1.06,
+        "points": 250,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ludendorff → Mitputschist.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Marsch zur Feldherrnhalle",
+          "type": "Ereignis"
+        },
+        "spawnPosition": 0.33,
+        "spawnSpread": 0.05,
+        "speed": 0.92,
+        "points": 250,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Marsch = Symbol.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Reichstagsbrand",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 1.11,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "context": "Brand ∈ NS-Zeit.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "NS-Zeit"
+      },
+      {
+        "entry": {
+          "word": "Spartakusaufstand",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.77,
+        "spawnSpread": 0.05,
+        "speed": 1.13,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "wave",
+        "context": "Spartakus ∈ 1919.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "1919"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "putsch",
+        "hitler",
+        "level2"
+      ],
+      "related": [
+        "KK_007",
+        "KK_009"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_009",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Kapp-Putsch",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#b71c1c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Wolfgang Kapp",
+          "type": "Person"
+        },
+        "spawnPosition": 0.13,
+        "spawnSpread": 0.05,
+        "speed": 1.12,
+        "points": 250,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Kapp = Namensgeber.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "General Lüttwitz",
+          "type": "Person"
+        },
+        "spawnPosition": 0.58,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 250,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Lüttwitz → Militär.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Noske",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.13,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Noske ∈ Reichswehr.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Reichswehrpolitik"
+      },
+      {
+        "entry": {
+          "word": "Stresemann",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.27,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Stresemann ∈ Außenpolitik.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Außenpolitik"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "putsch",
+        "kapp",
+        "level2"
+      ],
+      "related": [
+        "KK_008",
+        "KK_010"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_010",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Krisenjahr 1923",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Separatismus",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.53,
+        "spawnSpread": 0.05,
+        "speed": 1.17,
+        "points": 250,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Separatismus ↑ Unruhe.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Besatzungspolitik",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.85,
+        "spawnSpread": 0.05,
+        "speed": 0.92,
+        "points": 250,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Besatzungspolitik → Konflikt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Marshallplan",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 0.99,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "context": "Marshallplan ∈ Nachkrieg.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Nachkriegszeit"
+      },
+      {
+        "entry": {
+          "word": "Dawes-Plan",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.34,
+        "spawnSpread": 0.05,
+        "speed": 1.08,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "context": "Dawes ∈ später.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Stabilisierung"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "1923",
+        "krisenjahr",
+        "level2"
+      ],
+      "related": [
+        "KK_009",
+        "KK_011"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_011",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Politische Gewalt",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#b71c1c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Fememorde",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.81,
+        "spawnSpread": 0.05,
+        "speed": 0.89,
+        "points": 250,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Fememorde = Geheimjustiz.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Attentate",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.77,
+        "spawnSpread": 0.05,
+        "speed": 0.92,
+        "points": 250,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Attentate → Terror.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Watergate",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 0.91,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Watergate ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Dreyfus-Affäre",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.24,
+        "spawnSpread": 0.05,
+        "speed": 0.91,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Dreyfus ∈ Frankreich.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Frankreich"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "gewalt",
+        "morde",
+        "level2"
+      ],
+      "related": [
+        "KK_010",
+        "KK_012"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_012",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Separatismus",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Rheinland",
+          "type": "Region"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 1.01,
+        "points": 250,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Rheinland → Abspaltung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Pfalz",
+          "type": "Region"
+        },
+        "spawnPosition": 0.27,
+        "spawnSpread": 0.05,
+        "speed": 1.03,
+        "points": 250,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Pfalz = Bewegung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bayern",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.88,
+        "spawnSpread": 0.05,
+        "speed": 0.91,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Bayern ∈ Putsch.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Hitler-Putsch"
+      },
+      {
+        "entry": {
+          "word": "Tirol",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.46,
+        "spawnSpread": 0.05,
+        "speed": 1.14,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "context": "Tirol ∈ Österreich.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Österreich"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "separatismus",
+        "regionen",
+        "level2"
+      ],
+      "related": [
+        "KK_011",
+        "KK_013"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_013",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Krisenbewältigung",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Stresemann",
+          "type": "Person"
+        },
+        "spawnPosition": 0.46,
+        "spawnSpread": 0.05,
+        "speed": 1.13,
+        "points": 250,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Stresemann = Stabilisierung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Währungsreform",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 0.92,
+        "points": 250,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Reform → Rentenmark.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Keynes",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.86,
+        "spawnSpread": 0.05,
+        "speed": 1.01,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Keynes ∈ Theorie.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Weltwirtschaft"
+      },
+      {
+        "entry": {
+          "word": "Roosevelt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.51,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "context": "Roosevelt ∈ USA.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "krisenbewältigung",
+        "stresemann",
+        "level2"
+      ],
+      "related": [
+        "KK_012",
+        "KK_014"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_014",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Ruhrkampf",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Passiver Widerstand",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.06,
+        "points": 250,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Widerstand = Strategie.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Streiks",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.06,
+        "points": 250,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Streiks → Protest.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Blitzkrieg",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.38,
+        "spawnSpread": 0.05,
+        "speed": 1.11,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Blitzkrieg ∈ Krieg.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Zweiter Weltkrieg"
+      },
+      {
+        "entry": {
+          "word": "Guerilla",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.18,
+        "spawnSpread": 0.05,
+        "speed": 0.89,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "wave",
+        "context": "Guerilla ∈ Südamerika.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Lateinamerika"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "ruhrkampf",
+        "widerstand",
+        "level2"
+      ],
+      "related": [
+        "KK_013",
+        "KK_015"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_015",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Krisenakteure",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.1,
+        "appearance": "bold",
+        "color": "#b71c1c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Reichswehr",
+          "type": "Organisation"
+        },
+        "spawnPosition": 0.27,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 250,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Reichswehr = Machtfaktor.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Freikorps",
+          "type": "Organisation"
+        },
+        "spawnPosition": 0.32,
+        "spawnSpread": 0.05,
+        "speed": 1.07,
+        "points": 250,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Freikorps → Gewalt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "NATO",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "NATO ∈ Kalter Krieg.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kalter Krieg"
+      },
+      {
+        "entry": {
+          "word": "SS",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 0.98,
+        "points": 125,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "SS ∈ NS-Zeit.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "NS-Zeit"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "akteure",
+        "reichswehr",
+        "level2"
+      ],
+      "related": [
+        "KK_014",
+        "KK_016"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_016",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Kapp-Putsch",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.15,
+        "appearance": "bold",
+        "color": "#b71c1c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Wolfgang Kapp",
+          "type": "Person"
+        },
+        "spawnPosition": 0.84,
+        "spawnSpread": 0.05,
+        "speed": 1.17,
+        "points": 300,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Kapp = Namensgeber.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "General Lüttwitz",
+          "type": "Person"
+        },
+        "spawnPosition": 0.53,
+        "spawnSpread": 0.05,
+        "speed": 1.01,
+        "points": 300,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Lüttwitz → Militär.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Noske",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.64,
+        "spawnSpread": 0.05,
+        "speed": 1.16,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "context": "Noske ∈ Reichswehr.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Reichswehrpolitik"
+      },
+      {
+        "entry": {
+          "word": "Stresemann",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.16,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "context": "Stresemann ∈ Außenpolitik.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Außenpolitik"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "putsch",
+        "kapp",
+        "level3"
+      ],
+      "related": [
+        "KK_015",
+        "KK_017"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_017",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Hitler-Putsch",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.15,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ludendorff",
+          "type": "Person"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 1.09,
+        "points": 300,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ludendorff → Mitputschist.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Feldherrnhalle",
+          "type": "Ort"
+        },
+        "spawnPosition": 0.29,
+        "spawnSpread": 0.05,
+        "speed": 1.03,
+        "points": 300,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Feldherrnhalle = Symbol.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Reichstagsbrand",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Brand ∈ NS-Zeit.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "NS-Zeit"
+      },
+      {
+        "entry": {
+          "word": "Spartakusaufstand",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 0.98,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Spartakus ∈ 1919.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "1919"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "putsch",
+        "hitler",
+        "level3"
+      ],
+      "related": [
+        "KK_016",
+        "KK_018"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_018",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Krisenjahr 1923",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.15,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ruhrbesetzung",
+          "type": "Ereignis"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 300,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ruhrbesetzung → Konfliktzone.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Separatismus",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.82,
+        "spawnSpread": 0.05,
+        "speed": 1.06,
+        "points": 300,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Separatismus ↑ Unruhe.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Marshallplan",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.78,
+        "spawnSpread": 0.05,
+        "speed": 1.14,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Marshallplan ∈ Nachkrieg.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Nachkriegszeit"
+      },
+      {
+        "entry": {
+          "word": "Dawes-Plan",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.86,
+        "spawnSpread": 0.05,
+        "speed": 1.11,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "context": "Dawes ∈ später.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Stabilisierung"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "1923",
+        "krisenjahr",
+        "level3"
+      ],
+      "related": [
+        "KK_017",
+        "KK_019"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_019",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Hyperinflation",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.15,
+        "appearance": "bold",
+        "color": "#d32f2f",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Billionenpreise",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.18,
+        "points": 300,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Billionenpreise ↑ Chaos.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Rentenmark",
+          "type": "Währung"
+        },
+        "spawnPosition": 0.54,
+        "spawnSpread": 0.05,
+        "speed": 1.18,
+        "points": 300,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Rentenmark = Lösung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Ölkrise",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.54,
+        "spawnSpread": 0.05,
+        "speed": 0.99,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Ölkrise ∈ 1970er.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "1970er"
+      },
+      {
+        "entry": {
+          "word": "Sputnik-Schock",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.32,
+        "spawnSpread": 0.05,
+        "speed": 1.04,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Sputnik ∈ Kalter Krieg.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kalter Krieg"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "inflation",
+        "hyperinflation",
+        "level3"
+      ],
+      "related": [
+        "KK_018",
+        "KK_020"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_020",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Politische Morde",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.15,
+        "appearance": "bold",
+        "color": "#b71c1c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Rathenau",
+          "type": "Person"
+        },
+        "spawnPosition": 0.66,
+        "spawnSpread": 0.05,
+        "speed": 1.01,
+        "points": 300,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Rathenau → Opfer.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Erzberger",
+          "type": "Person"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.91,
+        "points": 300,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Erzberger = Attentat.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Adenauer",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 1.19,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "context": "Adenauer ∈ BRD.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "BRD"
+      },
+      {
+        "entry": {
+          "word": "Bebel",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.12,
+        "spawnSpread": 0.05,
+        "speed": 0.99,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Bebel ∈ Kaiserreich.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kaiserreich"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "morde",
+        "gewalt",
+        "level3"
+      ],
+      "related": [
+        "KK_019",
+        "KK_021"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_021",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Ruhrkampf",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.15,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Passiver Widerstand",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.28,
+        "spawnSpread": 0.05,
+        "speed": 1.01,
+        "points": 300,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Widerstand = Strategie.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Streiks",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.35,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 300,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Streiks → Protest.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Blitzkrieg",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.18,
+        "spawnSpread": 0.05,
+        "speed": 0.98,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Blitzkrieg ∈ Krieg.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Zweiter Weltkrieg"
+      },
+      {
+        "entry": {
+          "word": "Guerilla",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 0.94,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Guerilla ∈ Südamerika.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Lateinamerika"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "ruhrkampf",
+        "widerstand",
+        "level3"
+      ],
+      "related": [
+        "KK_020",
+        "KK_022"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_022",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Krisenakteure",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.15,
+        "appearance": "bold",
+        "color": "#b71c1c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Reichswehr",
+          "type": "Organisation"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 300,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Reichswehr = Machtfaktor.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Freikorps",
+          "type": "Organisation"
+        },
+        "spawnPosition": 0.76,
+        "spawnSpread": 0.05,
+        "speed": 1.19,
+        "points": 300,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Freikorps → Gewalt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "NATO",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.42,
+        "spawnSpread": 0.05,
+        "speed": 0.98,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "context": "NATO ∈ Kalter Krieg.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kalter Krieg"
+      },
+      {
+        "entry": {
+          "word": "SS",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "SS ∈ NS-Zeit.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "NS-Zeit"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "akteure",
+        "reichswehr",
+        "level3"
+      ],
+      "related": [
+        "KK_021",
+        "KK_023"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_023",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Separatismus",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.15,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Rheinland",
+          "type": "Region"
+        },
+        "spawnPosition": 0.66,
+        "spawnSpread": 0.05,
+        "speed": 1.05,
+        "points": 300,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Rheinland → Abspaltung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Pfalz",
+          "type": "Region"
+        },
+        "spawnPosition": 0.68,
+        "spawnSpread": 0.05,
+        "speed": 0.99,
+        "points": 300,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Pfalz = Bewegung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bayern",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.11,
+        "spawnSpread": 0.05,
+        "speed": 1.11,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "context": "Bayern ∈ Putsch.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Hitler-Putsch"
+      },
+      {
+        "entry": {
+          "word": "Tirol",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.01,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Tirol ∈ Österreich.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Österreich"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "separatismus",
+        "regionen",
+        "level3"
+      ],
+      "related": [
+        "KK_022",
+        "KK_024"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_024",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Krisenbewältigung",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.15,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Stresemann",
+          "type": "Person"
+        },
+        "spawnPosition": 0.14,
+        "spawnSpread": 0.05,
+        "speed": 1.07,
+        "points": 300,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Stresemann = Stabilisierung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Währungsreform",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.86,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 300,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Reform → Rentenmark.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Keynes",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Keynes ∈ Theorie.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Weltwirtschaft"
+      },
+      {
+        "entry": {
+          "word": "Roosevelt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.37,
+        "spawnSpread": 0.05,
+        "speed": 1.01,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Roosevelt ∈ USA.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "krisenbewältigung",
+        "stresemann",
+        "level3"
+      ],
+      "related": [
+        "KK_023",
+        "KK_025"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_025",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Fememorde",
+      "type": "Krise",
+      "visual": {
+        "tier": 2,
+        "size": 1.15,
+        "appearance": "bold",
+        "color": "#b71c1c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Geheimjustiz",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.42,
+        "spawnSpread": 0.05,
+        "speed": 1.04,
+        "points": 300,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Geheimjustiz = Terror.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Attentate",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.22,
+        "spawnSpread": 0.05,
+        "speed": 1.13,
+        "points": 300,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Attentate → Gewalt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.15
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Watergate",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.03,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "wave",
+        "context": "Watergate ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Dreyfus-Affäre",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.12,
+        "spawnSpread": 0.05,
+        "speed": 1.03,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Dreyfus ∈ Frankreich.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Frankreich"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "fememorde",
+        "gewalt",
+        "level3"
+      ],
+      "related": [
+        "KK_024",
+        "KK_026"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_026",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Ruhrbesetzung",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Besatzungspolitik",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.83,
+        "spawnSpread": 0.05,
+        "speed": 1.21,
+        "points": 400,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Besatzungspolitik → Konflikt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Reparationsdruck",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.93,
+        "points": 400,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Reparationsdruck ↑ Krise.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "NATO-Truppen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.53,
+        "spawnSpread": 0.05,
+        "speed": 1.21,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "NATO ∈ Kalter Krieg.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kalter Krieg"
+      },
+      {
+        "entry": {
+          "word": "Kolonialverwaltung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 0.93,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Kolonialverwaltung ∈ Kaiserreich.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kaiserreich"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "ruhr",
+        "besetzung",
+        "level4"
+      ],
+      "related": [
+        "KK_025",
+        "KK_027"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_027",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Krisenjahr 1923",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Separatistenbewegung",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.94,
+        "points": 400,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Separatisten ↑ Unruhe.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Inflationsexplosion",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.77,
+        "spawnSpread": 0.05,
+        "speed": 1.17,
+        "points": 400,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Explosion → Geldchaos.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Wirtschaftswunder",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.61,
+        "spawnSpread": 0.05,
+        "speed": 1.17,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Wunder ∈ BRD.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "BRD"
+      },
+      {
+        "entry": {
+          "word": "Great Depression",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.23,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Depression ∈ USA.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "1923",
+        "krisenjahr",
+        "level4"
+      ],
+      "related": [
+        "KK_026",
+        "KK_028"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_028",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Hitler-Putsch",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Marsch zur Feldherrnhalle",
+          "type": "Ereignis"
+        },
+        "spawnPosition": 0.85,
+        "spawnSpread": 0.05,
+        "speed": 1.17,
+        "points": 400,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Marsch = Symbol.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Ludendorff",
+          "type": "Person"
+        },
+        "spawnPosition": 0.38,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 400,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Ludendorff → Mitputschist.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Reichstagsbrand",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.69,
+        "spawnSpread": 0.05,
+        "speed": 1.11,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Brand ∈ NS-Zeit.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "NS-Zeit"
+      },
+      {
+        "entry": {
+          "word": "Beer Hall Riot",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Beer Hall ∈ USA.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "putsch",
+        "hitler",
+        "level4"
+      ],
+      "related": [
+        "KK_027",
+        "KK_029"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_029",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Hyperinflation",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#d32f2f",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Geldschwemme",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.84,
+        "spawnSpread": 0.05,
+        "speed": 1.03,
+        "points": 400,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Geldschwemme ↑ Chaos.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Rentenmark",
+          "type": "Währung"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.13,
+        "points": 400,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Rentenmark = Lösung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bretton Woods",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 1.19,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Bretton Woods ∈ Nachkrieg.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Nachkrieg"
+      },
+      {
+        "entry": {
+          "word": "Goldstandard",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.48,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "wave",
+        "context": "Goldstandard ∈ Kaiserreich.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kaiserreich"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "inflation",
+        "hyperinflation",
+        "level4"
+      ],
+      "related": [
+        "KK_028",
+        "KK_030"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_030",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Politische Gewalt",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#b71c1c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Fememorde",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.84,
+        "spawnSpread": 0.05,
+        "speed": 0.93,
+        "points": 400,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Fememorde = Terror.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Attentate",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.59,
+        "spawnSpread": 0.05,
+        "speed": 1.14,
+        "points": 400,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Attentate → Chaos.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Watergate",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.57,
+        "spawnSpread": 0.05,
+        "speed": 0.93,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "zigzag",
+        "context": "Watergate ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Dreyfus-Affäre",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.37,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "context": "Dreyfus ∈ Frankreich.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Frankreich"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "gewalt",
+        "morde",
+        "level4"
+      ],
+      "related": [
+        "KK_029",
+        "KK_031"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_031",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Krisenakteure",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#b71c1c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Reichswehr",
+          "type": "Organisation"
+        },
+        "spawnPosition": 0.81,
+        "spawnSpread": 0.05,
+        "speed": 1.22,
+        "points": 400,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Reichswehr = Machtfaktor.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Freikorps",
+          "type": "Organisation"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.03,
+        "points": 400,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Freikorps → Gewalt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "NATO",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.12,
+        "spawnSpread": 0.05,
+        "speed": 1.11,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "NATO ∈ Kalter Krieg.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kalter Krieg"
+      },
+      {
+        "entry": {
+          "word": "SS",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.27,
+        "spawnSpread": 0.05,
+        "speed": 0.96,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "SS ∈ NS-Zeit.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "NS-Zeit"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "akteure",
+        "reichswehr",
+        "level4"
+      ],
+      "related": [
+        "KK_030",
+        "KK_032"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_032",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Krisenbewältigung",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Stresemann",
+          "type": "Person"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.04,
+        "points": 400,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Stresemann = Stabilisierung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Dawes-Plan",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.13,
+        "spawnSpread": 0.05,
+        "speed": 1.08,
+        "points": 400,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Dawes-Plan → Hilfe.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Marshallplan",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.42,
+        "spawnSpread": 0.05,
+        "speed": 1.14,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Marshallplan ∈ Nachkrieg.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Nachkrieg"
+      },
+      {
+        "entry": {
+          "word": "Keynes",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 0.98,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Keynes ∈ Theorie.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Weltwirtschaft"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "krisenbewältigung",
+        "stresemann",
+        "level4"
+      ],
+      "related": [
+        "KK_031",
+        "KK_033"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_033",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "Ruhrkampf",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Passiver Widerstand",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 1.19,
+        "points": 400,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Widerstand = Strategie.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Streiks",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 0.95,
+        "points": 400,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Streiks → Protest.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.12
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Guerilla",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.74,
+        "spawnSpread": 0.05,
+        "speed": 1.05,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Guerilla ∈ Südamerika.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Lateinamerika"
+      },
+      {
+        "entry": {
+          "word": "Blitzkrieg",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.16,
+        "spawnSpread": 0.05,
+        "speed": 1.18,
+        "points": 200,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Blitzkrieg ∈ Krieg.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Zweiter Weltkrieg"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "ruhrkampf",
+        "widerstand",
+        "level4"
+      ],
+      "related": [
+        "KK_032",
+        "KK_034"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "KK_034",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Krisenjahr 1923",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Separatistenbewegung",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.35,
+        "spawnSpread": 0.05,
+        "speed": 0.99,
+        "points": 500,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Separatisten ↑ Unruhe.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Ruhrbesetzung",
+          "type": "Ereignis"
+        },
+        "spawnPosition": 0.34,
+        "spawnSpread": 0.05,
+        "speed": 1.17,
+        "points": 500,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Ruhrbesetzung → Konfliktzone.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Wirtschaftswunder",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.35,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Wunder ∈ BRD.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "BRD"
+      },
+      {
+        "entry": {
+          "word": "Great Depression",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.76,
+        "spawnSpread": 0.05,
+        "speed": 1.07,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Depression ∈ USA.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "1923",
+        "krisenjahr",
+        "level5"
+      ],
+      "related": [
+        "KK_033",
+        "KK_035"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "KK_035",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Hyperinflation",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#d32f2f",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Geldschwemme",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Geldschwemme ↑ Chaos.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Rentenmark",
+          "type": "Währung"
+        },
+        "spawnPosition": 0.71,
+        "spawnSpread": 0.05,
+        "speed": 1.12,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Rentenmark = Lösung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bretton Woods",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 1.04,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "wave",
+        "context": "Bretton Woods ∈ Nachkrieg.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Nachkrieg"
+      },
+      {
+        "entry": {
+          "word": "Goldstandard",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.19,
+        "spawnSpread": 0.05,
+        "speed": 1.21,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "context": "Goldstandard ∈ Kaiserreich.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kaiserreich"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "inflation",
+        "hyperinflation",
+        "level5"
+      ],
+      "related": [
+        "KK_034",
+        "KK_036"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "KK_036",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Hitler-Putsch",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ludendorff",
+          "type": "Person"
+        },
+        "spawnPosition": 0.17,
+        "spawnSpread": 0.05,
+        "speed": 1.01,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Ludendorff → Mitputschist.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Feldherrnhalle",
+          "type": "Ort"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.11,
+        "points": 500,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Feldherrnhalle = Symbol.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Reichstagsbrand",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.58,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "linear_inward",
+        "context": "Brand ∈ NS-Zeit.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "NS-Zeit"
+      },
+      {
+        "entry": {
+          "word": "Beer Hall Riot",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.47,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "context": "Beer Hall ∈ USA.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "putsch",
+        "hitler",
+        "level5"
+      ],
+      "related": [
+        "KK_035",
+        "KK_037"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "KK_037",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Ruhrbesetzung",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Besatzungspolitik",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.72,
+        "spawnSpread": 0.05,
+        "speed": 1.17,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Besatzungspolitik → Konflikt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Reparationsdruck",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.86,
+        "spawnSpread": 0.05,
+        "speed": 1.12,
+        "points": 500,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Reparationsdruck ↑ Krise.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "NATO-Truppen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.56,
+        "spawnSpread": 0.05,
+        "speed": 1.14,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "wave",
+        "context": "NATO ∈ Kalter Krieg.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kalter Krieg"
+      },
+      {
+        "entry": {
+          "word": "Kolonialverwaltung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.11,
+        "spawnSpread": 0.05,
+        "speed": 1.01,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "wave",
+        "context": "Kolonialverwaltung ∈ Kaiserreich.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kaiserreich"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "ruhr",
+        "besetzung",
+        "level5"
+      ],
+      "related": [
+        "KK_036",
+        "KK_038"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "KK_038",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Fememorde",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#b71c1c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Geheimjustiz",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.54,
+        "spawnSpread": 0.05,
+        "speed": 1.09,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Geheimjustiz = Terror.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Attentate",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.86,
+        "spawnSpread": 0.05,
+        "speed": 1.07,
+        "points": 500,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Attentate → Gewalt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Watergate",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.07,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "linear_inward",
+        "context": "Watergate ∈ USA.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      },
+      {
+        "entry": {
+          "word": "Dreyfus-Affäre",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "wave",
+        "context": "Dreyfus ∈ Frankreich.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Frankreich"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "fememorde",
+        "gewalt",
+        "level5"
+      ],
+      "related": [
+        "KK_037",
+        "KK_039"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "KK_039",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Krisenakteure",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#b71c1c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Reichswehr",
+          "type": "Organisation"
+        },
+        "spawnPosition": 0.67,
+        "spawnSpread": 0.05,
+        "speed": 1.07,
+        "points": 500,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Reichswehr = Machtfaktor.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Freikorps",
+          "type": "Organisation"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 0.98,
+        "points": 500,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Freikorps → Gewalt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "NATO",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.37,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "NATO ∈ Kalter Krieg.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kalter Krieg"
+      },
+      {
+        "entry": {
+          "word": "SS",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.62,
+        "spawnSpread": 0.05,
+        "speed": 0.99,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "SS ∈ NS-Zeit.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "NS-Zeit"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "akteure",
+        "reichswehr",
+        "level5"
+      ],
+      "related": [
+        "KK_038",
+        "KK_040"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "KK_040",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Krisenbewältigung",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#1a237e",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Stresemann",
+          "type": "Person"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.24,
+        "points": 500,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Stresemann = Stabilisierung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Dawes-Plan",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.73,
+        "spawnSpread": 0.05,
+        "speed": 1.23,
+        "points": 500,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Dawes-Plan → Hilfe.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Marshallplan",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.48,
+        "spawnSpread": 0.05,
+        "speed": 1.23,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "context": "Marshallplan ∈ Nachkrieg.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Nachkrieg"
+      },
+      {
+        "entry": {
+          "word": "Keynes",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.84,
+        "spawnSpread": 0.05,
+        "speed": 1.04,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "wave",
+        "context": "Keynes ∈ Theorie.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Weltwirtschaft"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "krisenbewältigung",
+        "stresemann",
+        "level5"
+      ],
+      "related": [
+        "KK_039",
+        "KK_041"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "KK_041",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Ruhrkampf",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Passiver Widerstand",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.02,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Widerstand = Strategie.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Streiks",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.63,
+        "spawnSpread": 0.05,
+        "speed": 1.25,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Streiks → Protest.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Guerilla",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.89,
+        "spawnSpread": 0.05,
+        "speed": 1.27,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "linear_inward",
+        "context": "Guerilla ∈ Südamerika.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Lateinamerika"
+      },
+      {
+        "entry": {
+          "word": "Blitzkrieg",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.21,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "context": "Blitzkrieg ∈ Krieg.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Zweiter Weltkrieg"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "ruhrkampf",
+        "widerstand",
+        "level5"
+      ],
+      "related": [
+        "KK_040",
+        "KK_042"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "KK_042",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Separatismus",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#c62828",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Rheinland",
+          "type": "Region"
+        },
+        "spawnPosition": 0.29,
+        "spawnSpread": 0.05,
+        "speed": 1.05,
+        "points": 500,
+        "pattern": "wave",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Rheinland → Abspaltung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Pfalz",
+          "type": "Region"
+        },
+        "spawnPosition": 0.87,
+        "spawnSpread": 0.05,
+        "speed": 1.13,
+        "points": 500,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Pfalz = Bewegung.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bayern",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.27,
+        "spawnSpread": 0.05,
+        "speed": 1.19,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Bayern ∈ Putsch.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Hitler-Putsch"
+      },
+      {
+        "entry": {
+          "word": "Tirol",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.05,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "zigzag",
+        "context": "Tirol ∈ Österreich.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Österreich"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "separatismus",
+        "regionen",
+        "level5"
+      ],
+      "related": [
+        "KK_041",
+        "KK_043"
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  },
+  {
+    "id": "KK_043",
+    "theme": "weimarer_republik",
+    "chapter": "Krisen_Konflikte",
+    "level": 5,
+    "waveDuration": 3,
+    "base": {
+      "word": "Krisenfolgen",
+      "type": "Krise",
+      "visual": {
+        "tier": 3,
+        "size": 1.2,
+        "appearance": "bold",
+        "color": "#b71c1c",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Vertrauensverlust",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 500,
+        "pattern": "zigzag",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Vertrauensverlust ↑ Instabilität.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Radikalisierung",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 500,
+        "pattern": "seek_center",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Radikalisierung → Extremismus.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.18
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Glasnost",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.35,
+        "spawnSpread": 0.05,
+        "speed": 0.98,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "behavior": "seek_center",
+        "context": "Glasnost ∈ UdSSR.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "UdSSR"
+      },
+      {
+        "entry": {
+          "word": "New Deal",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.49,
+        "spawnSpread": 0.05,
+        "speed": 1.19,
+        "points": 250,
+        "hp": 1,
+        "damage": 2,
+        "context": "New Deal ∈ USA.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "USA"
+      }
+    ],
+    "meta": {
+      "source": "Weimarer Republik",
+      "tags": [
+        "krisenfolgen",
+        "level5"
+      ],
+      "related": [
+        "KK_042",
+        null
+      ],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.07,
+        "colorContrastFade": true,
+        "angleVariance": 0.4
+      }
+    }
+  }
+]

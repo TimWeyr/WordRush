@@ -27,44 +27,7 @@
 ## 🛠️ Features - Entwicklung
 
 ### 2. JSON Bearbeiter für Content-Management
-**Beschreibung**: Admin-Interface zum Erstellen und Bearbeiten von Universen, Themes, Chapters und Items direkt im Spiel.
-
-**Status**: 📋 Geplant  
-**Priorität**: Hoch  
-**Geschätzte Zeit**: 2-3 Tage
-
-**Anforderungen**:
-- [ ] **Universe Editor**: Neues Universum erstellen, bestehende bearbeiten
-- [ ] **Theme Editor**: Neues Theme erstellen, bestehende bearbeiten
-- [ ] **Chapter Editor**: Neues Chapter erstellen, bestehende bearbeiten
-- [ ] **Item Editor**: Neues Item erstellen, bestehende bearbeiten
-- [ ] JSON-Validierung vor dem Speichern
-- [ ] Vorschau der Änderungen
-- [ ] Undo/Redo Funktionalität
-
-**Zugriff**:
-- [ ] Button in Settings-Menü
-- [ ] Direkter Link aus GalaxyMap (z.B. Rechtsklick auf Planet/Mond)
-- [ ] URL-Parameter: `/editor?type=universe&id=psychiatrie`
-
-**Sicherheit**:
-- [ ] **Nur auf localhost**: `if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')`
-- [ ] Optional: Passwort-Schutz für Production
-- [ ] Environment Variable: `VITE_ENABLE_EDITOR=true` (nur in dev)
-- [ ] Oder: Separate Admin-Route mit Authentication
-
-**UI-Komponenten**:
-- [ ] `src/components/editor/UniverseEditor.tsx`
-- [ ] `src/components/editor/ThemeEditor.tsx`
-- [ ] `src/components/editor/ChapterEditor.tsx`
-- [ ] `src/components/editor/ItemEditor.tsx`
-- [ ] `src/components/editor/EditorLayout.tsx`
-
-**Technische Details**:
-- JSON-Dateien direkt im `public/content/` Ordner bearbeiten
-- Oder: Backend-API für Content-Management (später)
-- File-System API (nur Chrome) oder Backend-Endpoint nötig
-
+siehe @todo.editor.md
 ---
 
 ## 🚀 Deployment & Testing
@@ -179,62 +142,27 @@ const themes = await Promise.all(
 
 ---
 
+
+
+
+
+
 ### 4. Spiel auf Vercel laden und testen
-**Beschreibung**: Production-Build auf Vercel deployen und testen.
 
-**Status**: 📋 Geplant  
-**Priorität**: Mittel  
-**Geschätzte Zeit**: 2-4 Stunden
+DONE!
 
-**Schritte**:
-- [ ] Vercel Account erstellen (falls nicht vorhanden)
-- [ ] Projekt mit GitHub verbinden
-- [ ] `vercel.json` konfigurieren (falls nötig)
-- [ ] Build-Befehle prüfen: `npm run build`
-- [ ] Environment Variables setzen (falls nötig)
-- [ ] Deploy und URL testen
-- [ ] Content-Dateien prüfen (werden sie korrekt geladen?)
-- [ ] Performance testen
-- [ ] Mobile Ansicht testen
 
-**Zu prüfen**:
-- [ ] Alle JSON-Dateien werden korrekt geladen
-- [ ] LocalStorage funktioniert
-- [ ] Routing funktioniert
-- [ ] Assets werden geladen (`/assets/ships/`, etc.)
-- [ ] Keine CORS-Fehler
 
-**Hinweis**: Vercel unterstützt statische Sites. Content-Dateien sollten im `public/` Ordner sein.
 
----
+
+
+
+
 
 ### 5. Touch-Controls testen
 **Beschreibung**: Touch-Controls auf echten Geräten testen und optimieren.
 
-**Status**: 📋 Geplant  
-**Priorität**: Mittel  
-**Geschätzte Zeit**: 1-2 Stunden
-
-**Zu testen**:
-- [ ] **1 Finger = Move**: Ship folgt Finger
-- [ ] **2 Finger = Shoot**: Laser feuert zum zweiten Finger
-- [ ] Responsive Design auf verschiedenen Bildschirmgrößen
-- [ ] Performance auf mobilen Geräten
-- [ ] Touch-Events funktionieren korrekt
-- [ ] Keine versehentlichen Clicks beim Scrollen
-
-**Geräte**:
-- [ ] iPhone (Safari)
-- [ ] Android (Chrome)
-- [ ] iPad (Safari)
-- [ ] Android Tablet
-
-**Bekannte Probleme**:
-- Desktop Touch-Simulation kann buggy sein → Echte Geräte testen!
-
-**Code zu prüfen**: `src/components/Game.tsx` (Touch-Event-Handler)
-
----
+DONE
 
 ## 📱 App Store Deployment
 
@@ -369,6 +297,15 @@ src/infra/providers/
 
 ---
 
+
+
+
+
+
+
+
+
+
 ## 📚 Content-Erstellung
 
 ### 8. Content Filme weiter arbeiten
@@ -393,6 +330,16 @@ src/infra/providers/
 
 ---
 
+
+
+
+
+
+
+
+
+
+
 ### 9. Content Psychiatrie weiter erstellen
 **Beschreibung**: Weitere psychiatrische Themen und ICD-10 Codes hinzufügen.
 
@@ -411,6 +358,15 @@ src/infra/providers/
 **Hinweis**: Medizinische Genauigkeit wichtig! Fachliche Prüfung empfohlen.
 
 ---
+
+
+
+
+
+
+
+
+
 
 ## 💰 Monetarisierung
 
@@ -475,6 +431,15 @@ npm install @stripe/stripe-js
 
 ---
 
+
+
+
+
+
+
+
+
+
 ### 11. Preismodell: Wie viel für Planet/Universum?
 **Beschreibung**: Preismodell für Content festlegen.
 
@@ -522,7 +487,21 @@ npm install @stripe/stripe-js
 
 ---
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 🎯 App Store Readiness
+
 
 ### 12. Wie reif ist das Spiel für den App Store?
 **Beschreibung**: Assessment der App Store Readiness.

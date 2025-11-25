@@ -44,17 +44,15 @@ Universe Selector (Dropdown/Tabs)
 - `colorAccent` (color picker) - Akzentfarbe
 - `backgroundGradient` (color array) - Gradient-Farben (min. 2)
 - `icon` (emoji picker / text input) - Icon/Emoji
-- `available` (checkbox) - Verfügbar?
-- `language` (dropdown) - Sprachcode (de, en, es, etc.)
 - `music.theme` (text input) - Musik-Dateiname
 - `music.volume` (slider 0-1) - Lautstärke
 - `particleEffect` (dropdown) - Partikel-Effekt
 - `shipSkin` (dropdown) - Ship-Skin
 - `laserColor` (color picker) - Laser-Farbe
 - `themes` (multi-select) - Zugehörige Theme-IDs
-- `meta.author` (text input)
-- `meta.version` (text input)
-- `meta.created` (date picker)
+- `meta.author` (text input) (nimm den Names des angemeldeten Users aus settings)
+- `meta.version` (text input) automatisch mit now() befüllt
+- `meta.created` (date picker) automatisch mit now() befüllt
 
 **Aktionen:**
 - "Neues Universum" Button → Erstellt neues Universe mit Default-Werten
@@ -76,7 +74,7 @@ Universe Selector (Dropdown/Tabs)
 - `available` (checkbox)
 - `language` (dropdown)
 - `particleEffect` (dropdown)
-- `shipSkin` (dropdown)
+- `shipSkin` (dropdown) avialbe ships form pubilc / assets / ships
 - `laserColor` (color picker)
 - `meta.author`, `meta.version`, `meta.created`
 

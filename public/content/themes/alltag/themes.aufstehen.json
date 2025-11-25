@@ -1,0 +1,40 @@
+{
+  "id": "aufstehen",
+  "name": "Aufstehen",
+  "description": "Lerne alles rund ums Aufstehen - Wecker, Kaffee, Frühstück und mehr!",
+  "colorPrimary": "#f39c12",
+  "colorAccent": "#e67e22",
+  "backgroundGradient": [
+    "#2c1810",
+    "#4a2c1a"
+  ],
+  "maxLevels": 6,
+  "icon": "⏰",
+  "shipSkin": "/assets/ships/daily_ship.svg",
+  "laserColor": "#f39c12",
+  "relatedPackages": [
+    "morgenroutine",
+    "alltag"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Wecker": {
+      "backgroundImage": "wecker_bg.png",
+      "backgroundGradient": [
+        "#f39c12",
+        "#e67e22"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "wecker_theme.mp3",
+      "particleEffect": "morning_particles"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

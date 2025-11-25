@@ -558,7 +558,16 @@ export class ShooterEngine {
   }
 
   private isRoundComplete(): boolean {
-    return this.spawnQueue.every(entry => entry.spawned) && this.objects.length === 0;
+    const allSpawned = this.spawnQueue.every(entry => entry.spawned);
+    
+    // ZEN MODE: Round is complete when all objects are collected/destroyed
+    // (they won't go off-screen because they're static)
+    if (this.config.isZenMode) {
+      return allSpawned && this.objects.length === 0;
+    }
+    
+    // NORMAL MODE: Round is complete when all spawned and all off-screen/destroyed
+    return allSpawned && this.objects.length === 0;
   }
 
   private completeRound(): void {
@@ -577,7 +586,7 @@ export class ShooterEngine {
         // Add bonus only to session score (roundScore is already included)
         this.sessionScore += bonus;
         this.onScoreChange?.(this.sessionScore);
-        this.onContextShow?.('🎯 Reihenfolge perfekt! x2 Score!');
+       // this.onContextShow?.('🎯 Reihenfolge perfekt! x2 Score!');
       }
     }
     

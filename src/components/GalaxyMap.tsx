@@ -12,9 +12,10 @@ import { jsonLoader } from '@/infra/utils/JSONLoader';
 import { localProgressProvider } from '@/infra/providers/LocalProgressProvider';
 import { getThemeScore, getChapterScore, calculateMaxPossibleScore, getItemScore, getLevelScore } from '@/utils/ScoreCalculator';
 import { Settings } from './Settings';
+import { GAMEPLAY_PRESETS, DEFAULT_GAMEPLAY_SETTINGS } from '@/config/gameplayPresets';
 import type { Universe, Theme, Item } from '@/types/content.types';
 import type { GameMode } from '@/types/game.types';
-import type { LearningState } from '@/types/progress.types';
+import type { LearningState, GameplayPreset } from '@/types/progress.types';
 import './GalaxyMap.css';
 
 interface GalaxyMapProps {
@@ -118,6 +119,62 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     const loadedLearningState = await localProgressProvider.getLearningState();
     setLearningState(loadedLearningState);
     
+    // Check URL params for initial selection FIRST
+    let initialUniverseId: string | null = null;
+    let initialThemeId: string | null = null;
+    let initialMode: GameMode | null = null;
+    let initialPreset: GameplayPreset | null = null;
+    
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      initialUniverseId = params.get('universe');
+      initialThemeId = params.get('theme');
+      
+      // Check for mode parameter
+      const modeParam = params.get('mode');
+      if (modeParam === 'lernmodus' || modeParam === 'shooter') {
+        initialMode = modeParam;
+      }
+      
+      // Check for preset parameter
+      const presetParam = params.get('preset');
+      if (presetParam && presetParam in GAMEPLAY_PRESETS) {
+        initialPreset = presetParam as GameplayPreset;
+      }
+    }
+
+    // Apply Mode from URL if present
+    if (initialMode) {
+      setMode(initialMode);
+      console.log('🎮 URL Param: Set mode to', initialMode);
+    }
+
+    // Apply Gameplay Preset from URL if present
+    if (initialPreset) {
+       const currentSettings = await localProgressProvider.getUISettings();
+       const newGameplaySettings = {
+          ...currentSettings.gameplaySettings || DEFAULT_GAMEPLAY_SETTINGS,
+          ...GAMEPLAY_PRESETS[initialPreset],
+          preset: initialPreset
+       };
+       const newSettings = {
+          ...currentSettings,
+          gameplaySettings: newGameplaySettings
+       };
+       await localProgressProvider.saveUISettings(newSettings);
+       console.log('⚙️ URL Param: Applied gameplay preset', initialPreset);
+    }
+
+    // If URL has universe, try to load it
+    if (initialUniverseId) {
+      const universe = loadedUniverses.find(u => u.id === initialUniverseId);
+      if (universe) {
+        console.log('🔗 URL Param: Selecting universe', universe.id, initialThemeId ? `theme: ${initialThemeId}` : '');
+        await selectUniverse(universe.id, initialThemeId || undefined, initialMode || undefined);
+        return; // Skip localStorage logic
+      }
+    }
+    
     // Restore last selection or load first universe by default
     const lastSelectionStr = localStorage.getItem('wordrush_lastSelection');
     if (lastSelectionStr && loadedUniverses.length > 0) {
@@ -133,7 +190,7 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
         // Find and select the universe from last selection
         const universe = loadedUniverses.find(u => u.id === lastSelection.universeId);
         if (universe) {
-          await selectUniverse(universe.id, lastSelection.themeId);
+          await selectUniverse(universe.id, lastSelection.themeId, lastSelection.mode);
         } else {
           // Fallback to first universe if saved universe not found
           await selectUniverse(loadedUniverses[0].id);
@@ -153,7 +210,7 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     }
   };
   
-  const selectUniverse = async (universeId: string, focusThemeId?: string) => {
+  const selectUniverse = async (universeId: string, focusThemeId?: string, modeOverride?: GameMode) => {
     // If focusThemeId is provided, mark it for focusing IMMEDIATELY
     if (focusThemeId) {
       pendingFocusThemeIdRef.current = focusThemeId;
@@ -172,12 +229,15 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     
     setSelectedUniverse(universe);
     
+    // Determine mode to save (use override if provided, otherwise current state)
+    const currentMode = modeOverride || mode;
+    
     // Save selection when universe is selected (even without theme/chapter)
     const selection = {
       universeId: universe.id,
       themeId: focusThemeId || '',
       chapterId: '',
-      mode: mode
+      mode: currentMode
     };
     localStorage.setItem('wordrush_lastSelection', JSON.stringify(selection));
     

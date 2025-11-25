@@ -305,7 +305,7 @@ export function renderConnectionLines(
   const planetScreen = camera.worldToScreen({ x: planet.x, y: planet.y });
   
   ctx.save();
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)'; // Increased from 0.2 - brighter lines
   ctx.lineWidth = 1;
   
   for (const moon of moons) {

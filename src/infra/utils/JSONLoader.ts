@@ -38,7 +38,20 @@ class JSONLoader {
     const universes: Universe[] = [];
     
     // Try to load common universe files
-    const universeIds = ['psychiatrie', 'englisch', 'music', 'fussball', 'mathe', 'spanisch', 'pokemon', 'memes', 'essen', 'tiere', 'filme', 'alltag'];
+    let universeIds = ['psychiatrie', 'englisch', 'music', 'fussball', 'mathe', 'spanisch', 'pokemon', 'memes', 'essen', 'tiere', 'filme', 'alltag', 'geschichte'];
+    
+    // Check URL parameters for universe filtering
+    // Allows embedding specific universes via URL: ?universes=psychiatrie,englisch
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const urlUniverseIds = params.get('universeIds') || params.get('universes');
+      
+      if (urlUniverseIds) {
+        // Parse comma-separated list and remove array brackets/quotes if present
+        const cleaned = urlUniverseIds.replace(/[\[\]"']/g, '');
+        universeIds = cleaned.split(',').map(id => id.trim()).filter(id => id.length > 0);
+      }
+    }
     
     for (const id of universeIds) {
       try {

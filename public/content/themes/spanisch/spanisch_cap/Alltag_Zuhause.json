@@ -61,7 +61,8 @@
           "shake": false,
           "fontSize": 1
         },
-        "sound": "explosion_minor"
+        "sound": "explosion_minor",
+        "redirect": "queso"
       }
     ],
     "meta": {
@@ -131,7 +132,8 @@
           "shake": false,
           "fontSize": 1
         },
-        "sound": "explosion_minor"
+        "sound": "explosion_minor",
+        "redirect": "perro"
       }
     ],
     "meta": {
@@ -201,7 +203,8 @@
           "shake": false,
           "fontSize": 1
         },
-        "sound": "explosion_minor"
+        "sound": "explosion_minor",
+        "redirect": "silla"
       }
     ],
     "meta": {
@@ -271,7 +274,8 @@
           "shake": false,
           "fontSize": 1
         },
-        "sound": "explosion_minor"
+        "sound": "explosion_minor",
+        "redirect": "puerta"
       }
     ],
     "meta": {
@@ -341,7 +345,8 @@
           "shake": false,
           "fontSize": 1
         },
-        "sound": "explosion_minor"
+        "sound": "explosion_minor",
+        "redirect": "mesa"
       }
     ],
     "meta": {

@@ -28,7 +28,8 @@ export class CorrectObject extends GameObject {
     colorCoded: boolean,
     speedMultiplier: number,
     baseSpeed: number,
-    isLernmodus: boolean = false
+    isLernmodus: boolean = false,
+    isZenMode: boolean = false
   ) {
     const radius = entry.visual.collisionRadius || 40;
     super(position, radius);
@@ -43,8 +44,15 @@ export class CorrectObject extends GameObject {
     this.colorCoded = colorCoded;
     this.isLernmodus = isLernmodus;
     
-    // Set initial velocity (moving downward/toward base)
-    this.velocity.y = this.speed;
+    // Set initial velocity
+    if (isZenMode) {
+      // ZEN MODE: Static objects (no movement)
+      this.velocity.y = 0;
+      this.velocity.x = 0;
+    } else {
+      // NORMAL MODE: Moving downward/toward base
+      this.velocity.y = this.speed;
+    }
   }
 
   update(deltaTime: number): void {

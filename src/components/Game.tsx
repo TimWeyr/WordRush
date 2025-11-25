@@ -11,7 +11,8 @@ import { Starfield } from '@/effects/Starfield';
 import { SpeedLines } from '@/effects/SpeedLines';
 import { NebulaCloud } from '@/effects/NebulaCloud';
 import { ObjectTrail } from '@/effects/ObjectTrail';
-import { getDifficultyConfig } from '@/config/difficulty';
+// Difficulty config now handled by gameplayPresets
+// import { getDifficultyConfig } from '@/config/difficulty';
 import { sortItems } from '@/utils/ItemSorter';
 import type { Universe, Theme, Item } from '@/types/content.types';
 import type { GameMode, Vector2 } from '@/types/game.types';
@@ -70,6 +71,10 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
   
   // Pause state
   const [isPaused, setIsPaused] = useState(false);
+  const [isPausedByContext, setIsPausedByContext] = useState(false); // Pause caused by context message
+  
+  // Context message timers
+  const contextTimerRef = useRef<number | null>(null);
   
   // Input state - use refs to avoid re-creating game loop callbacks
   const mousePos = useRef<Vector2 | null>(null);
@@ -89,8 +94,9 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
   // Background parallax offset
   const parallaxOffset = useRef(0);
   
-  // Store difficulty config for background animations
+  // Store difficulty config for background animations (now separated!)
   const difficultyConfigRef = useRef<{ speedMultiplier: number }>({ speedMultiplier: 1.0 });
+  const animationSpeedMultiplier = useRef<number>(1.0); // Separate from object speed!
 
   // Detect touch device
   useEffect(() => {
@@ -141,23 +147,53 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
   };
 
   // Define callbacks BEFORE useEffects that use them
-  const showContext = useCallback((text: string) => {
+  const showContext = useCallback(async (text: string) => {
+    // Clear any existing timers
+    if (contextTimerRef.current) {
+      clearTimeout(contextTimerRef.current);
+      contextTimerRef.current = null;
+    }
+    
+    // Load gameplay settings to check if pause is enabled
+    const settings = await localProgressProvider.getUISettings();
+    const pauseOnContext = settings.gameplaySettings?.pauseOnContextMessages ?? false;
+    
     // Check if this is a warning/error message
-    if (text.startsWith('Falsch!') || text.includes('⚠️')) {
-      // Show as blinking warning in center (like Round Complete)
+    if (text.startsWith('Falsch!') || text.includes('⚠️') || text.includes('💥')) {
+      // Show as warning in center
       setWarningText(text);
-      setWarningBlinks(6); // 3 blinks = 6 state changes (on/off/on/off/on/off)
       
-      // Clear after 3 blinks (1.8 seconds: 6 x 0.3s)
-      setTimeout(() => {
-        setWarningText('');
-        setWarningBlinks(0);
-      }, 1800);
+      if (pauseOnContext) {
+        // Pause game - message stays until clicked (NO BLINKING)
+        setWarningBlinks(0); // No blink animation during pause
+        setIsPausedByContext(true);
+        console.log('🛑 Context-Pause activated');
+        // Don't auto-clear - wait for user click
+      } else {
+        // Blink animation for non-pause mode
+        setWarningBlinks(6); // 3 blinks = 6 state changes
+        // Auto-clear after 3 blinks (1.8 seconds: 6 x 0.3s)
+        contextTimerRef.current = setTimeout(() => {
+          setWarningText('');
+          setWarningBlinks(0);
+          contextTimerRef.current = null;
+        }, 1800);
+      }
     } else {
       // Normal context display (intro text, etc)
       setContextText(text);
       setContextVisible(true);
-      setTimeout(() => setContextVisible(false), 3000);
+      
+      if (pauseOnContext) {
+        // Pause game - message stays until clicked
+        setIsPausedByContext(true);
+        console.log('🛑 Context-Pause activated (text)');
+      } else {
+        contextTimerRef.current = setTimeout(() => {
+          setContextVisible(false);
+          contextTimerRef.current = null;
+        }, 3000);
+      }
     }
   }, []);
 
@@ -308,12 +344,41 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
     if (!canvasRef.current || items.length === 0) return;
 
     const initializeGame = async () => {
-      // Load settings to get difficulty level
+      // Load settings to get gameplay settings
       const settings = await localProgressProvider.getUISettings();
-      const difficultyConfig = getDifficultyConfig(settings.difficultyLevel || 'medium');
+      const gameplaySettings = settings.gameplaySettings || {
+        preset: 'medium',
+        objectSpeed: 50,
+        spawnRate: 50,
+        maxCorrect: 5,
+        maxDistractors: 5,
+        animationIntensity: 7,
+        showContextMessages: true,
+        pauseOnContextMessages: false
+      };
       
-      // Store difficulty config for background animations
-      difficultyConfigRef.current = { speedMultiplier: difficultyConfig.speedMultiplier };
+      // Import mappers
+      const { mapObjectSpeed, mapSpawnRate, mapAnimationIntensity, getHealthForPreset } = await import('@/config/gameplayPresets');
+      
+      // Calculate game parameters from settings
+      const objectSpeedMultiplier = mapObjectSpeed(gameplaySettings.objectSpeed);
+      const objectsPerSecond = mapSpawnRate(gameplaySettings.spawnRate);
+      const animIntensity = mapAnimationIntensity(gameplaySettings.animationIntensity);
+      const isZenMode = gameplaySettings.preset === 'zen';
+      const health = getHealthForPreset(gameplaySettings.preset);
+      
+      // Store for background animations (separate from object speed!)
+      difficultyConfigRef.current = { speedMultiplier: 1.0 }; // Not used anymore, kept for compatibility
+      animationSpeedMultiplier.current = animIntensity;
+      
+      console.log('🎮 Gameplay Settings:', {
+        preset: gameplaySettings.preset,
+        objectSpeedMultiplier,
+        objectsPerSecond,
+        animIntensity,
+        isZenMode,
+        health
+      });
 
       const canvas = canvasRef.current!;
       const rect = canvas.getBoundingClientRect();
@@ -341,9 +406,9 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
       const laserColor = theme.laserColor || universe.laserColor || '#4a90e2';
       const shipSkin = theme.shipSkin || universe.shipSkin;
 
-      // Apply difficulty multipliers
-      const adjustedBaseSpeed = config.gameplay.baseSpeed * difficultyConfig.speedMultiplier;
-      const adjustedStartHealth = difficultyConfig.startHealth;
+      // Apply difficulty multipliers (base speed now separate from object speed!)
+      const adjustedBaseSpeed = config.gameplay.baseSpeed;
+      const adjustedStartHealth = health; // From gameplay settings
 
       const eng = new ShooterEngine(
         {
@@ -352,6 +417,7 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
           baseSpeed: adjustedBaseSpeed,
           shipConfig: {
             health: adjustedStartHealth,
+            maxHealth: adjustedStartHealth, // Add maxHealth
             radius: config.collision.shipRadius,
             smoothFactor: config.gameplay.shipSmoothFactor,
             maxSpeed: config.gameplay.shipSpeed,
@@ -360,7 +426,12 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
           },
           laserSpeed: config.gameplay.laserSpeed,
           laserColor,
-          spawnRateMultiplier: difficultyConfig.spawnRateMultiplier
+          // NEW gameplay parameters
+          objectSpeedMultiplier,
+          objectsPerSecond,
+          maxCorrect: gameplaySettings.maxCorrect,
+          maxDistractors: gameplaySettings.maxDistractors,
+          isZenMode
         },
         mode
       );
@@ -393,6 +464,24 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
     engine.setOnContextShow(showContext);
     engine.setOnRoundComplete(handleRoundComplete);
     engine.setOnGameOver(handleGameOver);
+    // Context pause should NOT trigger normal pause
+    engine.setOnPauseRequest(() => {
+      // This is called by ShooterEngine when pauseOnContextMessages is true
+      // showContext already handles setting isPausedByContext, so nothing needed here
+    });
+    
+    // Set context message settings from gameplay settings
+    const loadContextSettings = async () => {
+      const settings = await localProgressProvider.getUISettings();
+      const gameplaySettings = settings.gameplaySettings;
+      if (gameplaySettings) {
+        engine.setContextMessageSettings(
+          gameplaySettings.showContextMessages,
+          gameplaySettings.pauseOnContextMessages
+        );
+      }
+    };
+    loadContextSettings();
   }, [engine, showContext, handleRoundComplete, handleGameOver]);
 
   // Define game loop functions as useCallback to avoid stale closures
@@ -400,7 +489,7 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
     if (!engine) return;
 
     // Don't update game when paused
-    if (isPaused) return;
+    if (isPaused || isPausedByContext) return;
 
     // Update game engine (but not during transition)
     if (!roundTransition) {
@@ -417,27 +506,27 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
     }
     
     // Update parallax (always, even during transition)
-    // Apply difficulty multiplier to parallax speed
-    parallaxOffset.current += deltaTime * 20 * difficultyConfigRef.current.speedMultiplier;
+    // Apply animation multiplier to parallax speed (not object speed!)
+    parallaxOffset.current += deltaTime * 20 * animationSpeedMultiplier.current;
     
     // Update visual effects (always, even during transition)
-    if (starfield.current) {
+    // Use animationSpeedMultiplier (separate from object speed!)
+    const animMult = animationSpeedMultiplier.current;
+    
+    if (starfield.current && animMult > 0) {
       const scoreMult = 1 + (score / 2000); // Faster stars at higher scores
-      const difficultyMult = difficultyConfigRef.current.speedMultiplier;
-      starfield.current.setSpeedMultiplier(scoreMult * difficultyMult);
+      starfield.current.setSpeedMultiplier(scoreMult * animMult);
       starfield.current.update(deltaTime);
     }
     
-    if (speedLines.current) {
+    if (speedLines.current && animMult > 0) {
       const scoreIntensity = 1 + (score / 1000); // More lines at higher scores
-      const difficultyMult = difficultyConfigRef.current.speedMultiplier;
-      speedLines.current.setIntensity(scoreIntensity * difficultyMult);
+      speedLines.current.setIntensity(scoreIntensity * animMult);
       speedLines.current.update(deltaTime);
     }
     
-    if (nebulaCloud.current) {
-      const difficultyMult = difficultyConfigRef.current.speedMultiplier;
-      nebulaCloud.current.setSpeedMultiplier(difficultyMult);
+    if (nebulaCloud.current && animMult > 0) {
+      nebulaCloud.current.setSpeedMultiplier(animMult);
       nebulaCloud.current.update(deltaTime);
     }
     
@@ -498,7 +587,7 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
         }
       }
     }
-  }, [engine, roundTransition, score]);
+  }, [engine, roundTransition, score, isPaused, isPausedByContext]);
 
   const renderGame = useCallback(() => {
     if (!renderer || !engine) return;
@@ -787,8 +876,8 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
         </div>
       )}
       
-      {/* Warning Flash (3x blink in center) */}
-      {warningBlinks > 0 && (
+      {/* Warning Flash (3x blink in center) - Hidden during context pause */}
+      {warningBlinks > 0 && !isPausedByContext && (
         <div className={`warning-overlay ${warningBlinks % 2 === 0 ? 'visible' : 'hidden'}`}>
           <div className="warning-content">
              {warningText} 
@@ -842,8 +931,57 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
         </div>
       )}
 
-      {/* Pause Overlay */}
-      {isPaused && !gameOver && !chapterComplete && (
+      {/* Context-Pause Overlay - Shows message, dismissible by click */}
+      {isPausedByContext && !gameOver && !chapterComplete && (
+        <div 
+          className="context-pause-overlay"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            // Clear any pending timers
+            if (contextTimerRef.current) {
+              clearTimeout(contextTimerRef.current);
+              contextTimerRef.current = null;
+            }
+            // Resume game
+            setIsPausedByContext(false);
+            setIsPaused(false); // Ensure normal pause is also cleared
+            setWarningText('');
+            setWarningBlinks(0);
+            setContextVisible(false);
+            console.log('✅ Context-Pause dismissed - Game resuming');
+          }}
+        >
+          <div 
+            className="context-pause-message"
+            onClick={(e) => {
+              // Also handle click on message itself
+              e.preventDefault();
+              e.stopPropagation();
+              // Clear any pending timers
+              if (contextTimerRef.current) {
+                clearTimeout(contextTimerRef.current);
+                contextTimerRef.current = null;
+              }
+              // Resume game
+              setIsPausedByContext(false);
+              setIsPaused(false); // Ensure normal pause is also cleared
+              setWarningText('');
+              setWarningBlinks(0);
+              setContextVisible(false);
+              console.log('✅ Context-Pause dismissed (message click) - Game resuming');
+            }}
+          >
+            {warningText || contextText}
+            <div className="context-pause-hint">
+              👆 Klicken zum Fortfahren
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Normal Pause Overlay - Shows menu */}
+      {isPaused && !isPausedByContext && !gameOver && !chapterComplete && (
         <div className="game-over-overlay pause-overlay">
           <div className="game-over-content mobile-optimized">
             <h1>⏸️ Paused</h1>
@@ -876,21 +1014,23 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
                 localStorage.setItem('wordrush_lastSelection', JSON.stringify(lastSelection));
                 onExit();
               }}>
-                ← Exit to Menu
+                ← Exit 
               </button>
             </div>
           </div>
         </div>
       )}
 
-      {/* Pause Button */}
-      <button 
-        className="pause-button" 
-        onClick={() => setIsPaused(!isPaused)}
-        title={isPaused ? "Resume" : "Pause"}
-      >
-        <img src="/assets/ui/pause.svg" alt="Pause" />
-      </button>
+      {/* Pause Button - Hidden during context-pause */}
+      {!isPausedByContext && (
+        <button 
+          className="pause-button" 
+          onClick={() => setIsPaused(!isPaused)}
+          title={isPaused ? "Resume" : "Pause"}
+        >
+          <img src="/assets/ui/pause.svg" alt="Pause" />
+        </button>
+      )}
 
       {/* Fire Button (Touch Devices Only) */}
       {isTouchDevice && (

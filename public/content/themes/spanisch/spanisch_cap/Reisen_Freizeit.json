@@ -1,0 +1,143 @@
+[
+  {
+    "id": "SPAN_VIA_001",
+    "theme": "spanisch_cap",
+    "chapter": "Reisen_Freizeit",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "viaje",
+      "type": "Noun",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#5a4a3a",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Reise",
+          "type": "Translation"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "viaje = Reise (¡Buen viaje! - Gute Reise!)",
+        "visual": {
+          "color": "#8a6a5a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Haus",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Haus = casa, nicht viaje (¡No confundas el viaje con la casa!)",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "casa"
+      },
+      {
+        "entry": {
+          "word": "Auto",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Auto = coche, nicht viaje (¡El coche es para el viaje, no el viaje mismo!)",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "coche"
+      },
+      {
+        "entry": {
+          "word": "Büro",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.28,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Büro = oficina, nicht viaje (¡El viaje es lo opuesto a la oficina!)",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "oficina"
+      },
+      {
+        "entry": {
+          "word": "Mittagspause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 150,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "¡La pausa del almuerzo no es un viaje! (Die Mittagspause ist keine Reise!)",
+        "visual": {
+          "color": "#9C27B0",
+          "variant": "star",
+          "pulsate": true,
+          "shake": true,
+          "fontSize": 0.9
+        },
+        "sound": "explosion_minor",
+        "redirect": "pausa del almuerzo"
+      }
+    ],
+    "meta": {
+      "source": "Spanisch Vokabeln",
+      "tags": ["reisen", "level1"]
+    }
+  }
+]
+

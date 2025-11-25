@@ -1,0 +1,2366 @@
+[
+  {
+    "id": "F10_001",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "F10.2",
+      "type": "ICD-10 Code",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Alkoholabhängigkeitssyndrom",
+          "type": "Diagnose"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "F10.2 = Alkoholabhängigkeitssyndrom (mindestens 3 von 6 Kriterien müssen erfüllt sein).",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Alkoholintoxikation",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Alkoholintoxikation = F10.0, akute Vergiftung, nicht Abhängigkeit.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F10.0"
+      },
+      {
+        "entry": {
+          "word": "Schädlicher Gebrauch",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Schädlicher Gebrauch = F10.1 (noch keine Abhängigkeit, aber bereits Schäden).",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F10.1"
+      },
+      {
+        "entry": {
+          "word": "Kokainabhängigkeit",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Kokainabhängigkeit = F14.2, gehört nicht zu F10 (Alkohol).",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F14.2"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "alkohol", "abhängigkeit", "level1"],
+      "related": ["F10_002", "F10_003", "F10_004"]
+    }
+  },
+
+  {
+    "id": "F10_002",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Starker Drang zu trinken",
+      "type": "Definition",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Craving",
+          "type": "Begriff"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Craving = Fachbegriff für starken, unwiderstehlichen Drang, Alkohol zu konsumieren (Kriterium 1 von 6 bei F10.2).",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Kontrollverlust",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Kontrollverlust = anderes Kriterium (2), nicht der Begriff für den starken Drang zu trinken.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kontrollverlust"
+      },
+      {
+        "entry": {
+          "word": "Toleranzentwicklung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Toleranzentwicklung = Kriterium 3 (Gewöhnung), nicht Begriff für starken Drang.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Toleranzentwicklung"
+      },
+      {
+        "entry": {
+          "word": "Entzugssymptome",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Entzugssymptome = Kriterium 4 (körperlicher Entzug), nicht der Begriff für den Drang zu trinken.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Entzugssymptome"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "craving", "kriterium", "level1"],
+      "related": ["F10_001", "F10_003"]
+    }
+  },
+
+  {
+    "id": "F10_003",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Unfähigkeit, Konsum zu stoppen",
+      "type": "Definition",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Kontrollverlust",
+          "type": "Kriterium"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Kontrollverlust = Kriterium 2 von 6 (Unfähigkeit, den Konsum zu kontrollieren oder zu stoppen).",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Craving",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Craving = Drang zu trinken (Kriterium 1), nicht der Begriff für die Unfähigkeit zu stoppen.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Craving"
+      },
+      {
+        "entry": {
+          "word": "Toleranz",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Toleranz = Kriterium 3 (Gewöhnung, höhere Dosis nötig), nicht Kontrollverlust.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Toleranzentwicklung"
+      },
+      {
+        "entry": {
+          "word": "Einengung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Einengung = Kriterium 5 (Alkohol bestimmt Tagesplanung), nicht Unfähigkeit zu stoppen.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Einengung"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "kontrollverlust", "kriterium", "level1"],
+      "related": ["F10_001", "F10_002"]
+    }
+  },
+
+  {
+    "id": "F10_004",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Gewöhnung, höhere Dosis nötig",
+      "type": "Definition",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Toleranzentwicklung",
+          "type": "Kriterium"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Toleranzentwicklung = Kriterium 3 (Gewöhnung, für gleiche Wirkung sind höhere Dosen nötig).",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Körperlicher Entzug",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Körperlicher Entzug = Kriterium 4 (Tremor, Schwitzen, Tachykardie), nicht Toleranzentwicklung.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Entzugssymptome"
+      },
+      {
+        "entry": {
+          "word": "Craving",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Craving = Kriterium 1 (Drang), nicht Toleranzentwicklung.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Craving"
+      },
+      {
+        "entry": {
+          "word": "Kontrollverlust",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Kontrollverlust = Kriterium 2, nicht Toleranzentwicklung.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kontrollverlust"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "toleranz", "kriterium", "level1"],
+      "related": ["F10_001", "F10_003"]
+    }
+  },
+
+  {
+    "id": "F10_005",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Körperlicher Entzug",
+      "type": "Kriterium",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Tremor, Schwitzen, Tachykardie",
+          "type": "Symptome"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Körperlicher Entzug zeigt u. a. Tremor, Schwitzen, Tachykardie und Unruhe (Kriterium 4 von 6).",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Manie",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Manie gehört zu affektiven Störungen (F30-F39), nicht zu Entzugssymptomen.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F30-F39"
+      },
+      {
+        "entry": {
+          "word": "Schizophrene Psychose",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Schizophrene Psychosen = F20-F29, nicht typische Alkoholentzugs-Symptome.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F20-F29"
+      },
+      {
+        "entry": {
+          "word": "Panikattacke",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Panikattacken können vorkommen, sind aber kein spezifisches Kriterium des Alkoholentzuges.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "entzug", "symptome", "level1"],
+      "related": ["F10_012", "F10_013", "F10_019"]
+    }
+  },
+
+  {
+    "id": "F10_006",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Alkohol bestimmt Tagesplanung",
+      "type": "Definition",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Einengung",
+          "type": "Kriterium"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Einengung = Kriterium 5: Alkohol dominiert Gedanken, Planung und Freizeitgestaltung.",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Kontrollverlust",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Kontrollverlust = Kriterium 2, nicht die Einengung der Lebensführung um Alkohol.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Kontrollverlust"
+      },
+      {
+        "entry": {
+          "word": "Toleranz",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Toleranz = Kriterium 3 (Gewöhnung), nicht Einengung.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Toleranzentwicklung"
+      },
+      {
+        "entry": {
+          "word": "Weitergebrauch trotz Schäden",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Weitergebrauch trotz Schäden = Kriterium 6, nicht Kriterium 5.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Weitergebrauch"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "einengung", "kriterium", "level1"],
+      "related": ["F10_001", "F10_007"]
+    }
+  },
+
+  {
+    "id": "F10_007",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Trinken trotz körperlicher, psychischer oder sozialer Schäden",
+      "type": "Definition",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Weitergebrauch trotz Schäden",
+          "type": "Kriterium"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Weitergebrauch trotz Schäden = Kriterium 6: Konsum trotz Lebererkrankung, Jobverlust, Partnerschaftskonflikten etc.",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Einengung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Einengung = Kriterium 5 (Tagesstruktur um Alkohol), nicht Weitergebrauch trotz Schäden.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Einengung"
+      },
+      {
+        "entry": {
+          "word": "Körperlicher Entzug",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Körperlicher Entzug = Kriterium 4, nicht Kriterium 6.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Entzugssymptome"
+      },
+      {
+        "entry": {
+          "word": "Craving",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Craving = Drang zu trinken (Kriterium 1), nicht das Weitertrinken trotz Schäden.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Craving"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "weitergebrauch", "kriterium", "level1"],
+      "related": ["F10_001", "F10_006"]
+    }
+  },
+
+  {
+    "id": "F10_008",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Jellinek-Gamma-Phase",
+      "type": "Typologie",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Kontrollverlust + Entzug + Abstinenzunfähigkeit",
+          "type": "Definition"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Gamma-Phase: Kontrollverlust, Entzugssymptome und Verlust der Abstinenzfähigkeit (klassische Abhängigkeit).",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Alpha-Typ (Konflikttrinker)",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Alpha-Typ: Trinken gegen Stress/Spannung, meist noch ohne Kontrollverlust.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Beta-Typ (Gelegenheitstrinker)",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Beta-Typ: viel bei Feiern/Kneipe, Toleranz↑, aber noch keine typische Gamma-Abhängigkeit.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Delta-Typ (Spiegeltrinker)",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Delta-Typ: fast ständig trinken, aber ohne ausgeprägten Kontrollverlust wie in der Gamma-Phase.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "jellinek", "typologie", "level1"],
+      "related": ["F10_001"]
+    }
+  },
+
+  {
+    "id": "F10_009",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "GABA-System",
+      "type": "Neurotransmitter",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Akut: sedierend, anxiolytisch",
+          "type": "Wirkung"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Alkohol verstärkt GABA: akut sedierend, anxiolytisch, muskelrelaxierend.",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Glutamat-System",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Glutamat (NMDA) = exzitatorisch, im Entzug überaktiv (Hyperexzitabilität).",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Glutamat"
+      },
+      {
+        "entry": {
+          "word": "Dopamin-System",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Dopamin = Reward/Verstärkung im mesolimbischen System, nicht primär sedierend.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Dopamin"
+      },
+      {
+        "entry": {
+          "word": "Serotonin-System",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Serotonin beeinflusst Stimmung, nicht die typische GABA-vermittelte Sedierung.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Serotonin"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "gaba", "neurotransmitter", "level1"],
+      "related": ["F10_010", "F10_011"]
+    }
+  },
+
+  {
+    "id": "F10_010",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Glutamat-System",
+      "type": "Neurotransmitter",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Im Entzug: Tremor, Angst, Krampfgefahr",
+          "type": "Wirkung"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Chronischer Konsum → Glutamat-NMDA hochreguliert; im Entzug Überaktivität → Tremor, Angst, Krampfanfälle.",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "GABA-System",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "GABA ist im Entzug eher erschöpft, nicht überaktiv.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "GABA"
+      },
+      {
+        "entry": {
+          "word": "Dopamin-System",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Dopamin vermittelt Reward, nicht die Hyperexzitabilität im Entzug.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Dopamin"
+      },
+      {
+        "entry": {
+          "word": "Serotonin-System",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Serotonin eher Stimmung, nicht Tremor/ Krampfgefahr im Entzug.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Serotonin"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "glutamat", "neurotransmitter", "entzug", "level1"],
+      "related": ["F10_009", "F10_005", "F10_018"]
+    }
+  },
+
+  {
+    "id": "F10_011",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Dopamin-System",
+      "type": "Neurotransmitter",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Reward/Verstärkung im mesolimbischen System",
+          "type": "Wirkung"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Dopamin-Anstieg im mesolimbischen System (Nucleus accumbens) → Reward, Verstärkung des Trinkens.",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "GABA-System",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "GABA = sedierend/anxiolytisch, nicht primär Reward.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "GABA"
+      },
+      {
+        "entry": {
+          "word": "Glutamat-System",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Glutamat = exzitatorisch, v. a. Hyperexzitabilität im Entzug.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Glutamat"
+      },
+      {
+        "entry": {
+          "word": "Serotonin-System",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Serotonin = Stimmung/Impulskontrolle, nicht zentrales Reward-System bei Alkohol.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Serotonin"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "dopamin", "neurotransmitter", "reward", "level1"],
+      "related": ["F10_009", "F10_002"]
+    }
+  },
+
+  {
+    "id": "F10_012",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Tremor",
+      "type": "Entzugssymptom",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Feinschlägiges Zittern",
+          "type": "Symptom"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Tremor = feinschlägiges Zittern, typisches körperliches Entzugssymptom.",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Tachykardie",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Tachykardie = Herzrasen, auch Entzugssymptom, aber nicht Zittern.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Tachykardie"
+      },
+      {
+        "entry": {
+          "word": "Schwitzen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Schwitzen = vegetatives Entzugssymptom, nicht Zittern.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Schwitzen"
+      },
+      {
+        "entry": {
+          "word": "Manie",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Manie gehört zu affektiven Störungen (F30-F39), nicht zu Entzugssymptomen.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "tremor", "entzug", "symptom", "level1"],
+      "related": ["F10_005", "F10_013"]
+    }
+  },
+
+  {
+    "id": "F10_013",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Tachykardie",
+      "type": "Entzugssymptom",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Herzrasen",
+          "type": "Symptom"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Tachykardie = Herzrasen, häufiges vegetatives Entzugssymptom.",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Tremor",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Tremor = Zittern, anderes Entzugssymptom.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Tremor"
+      },
+      {
+        "entry": {
+          "word": "Schwitzen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Schwitzen = vegetatives Entzugssymptom, aber nicht Herzrasen.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Schwitzen"
+      },
+      {
+        "entry": {
+          "word": "Bradykardie",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Bradykardie = langsamer Puls, Gegenteil von Tachykardie.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "tachykardie", "entzug", "symptom", "level1"],
+      "related": ["F10_005", "F10_012"]
+    }
+  },
+
+  {
+    "id": "F10_014",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Delirium tremens",
+      "type": "Komplikation",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "F10.4 – schwerste Entzugsform",
+          "type": "ICD-10 Code"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Delirium tremens = F10.4: schwerste Entzugsform mit Desorientiertheit, Halluzinationen, vegetativer Entgleisung.",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Alkoholabhängigkeitssyndrom (F10.2)",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "F10.2 = Alkoholabhängigkeitssyndrom, Delirium tremens ist F10.4.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F10.2"
+      },
+      {
+        "entry": {
+          "word": "Alkoholintoxikation (F10.0)",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "F10.0 = akute Alkoholintoxikation, nicht Delirium tremens.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F10.0"
+      },
+      {
+        "entry": {
+          "word": "Einfache Entzugssymptome (Tremor, Schwitzen)",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Einfache Entzugssymptome sind viel milder als Delirium tremens.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "delirium_tremens", "komplikation", "level1"],
+      "related": ["F10_005", "F10_018"]
+    }
+  },
+
+  {
+    "id": "F10_015",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Disulfiram",
+      "type": "Medikament",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Aversive Therapie (Antabuse-Effekt)",
+          "type": "Wirkprinzip"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Disulfiram hemmt den Alkoholabbau → bei Trinken unangenehme Reaktion (Flush, Übelkeit, Blutdruckabfall).",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Acamprosat",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Acamprosat = anti-craving, gleicht GABA/Glutamat aus, kein Antabuse-Effekt.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Acamprosat"
+      },
+      {
+        "entry": {
+          "word": "Nalmefen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Nalmefen = Opioidantagonist, reduziert Trinkmengen, aber nicht aversiv wie Disulfiram.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Nalmefen"
+      },
+      {
+        "entry": {
+          "word": "Benzodiazepine",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Benzodiazepine = Entzugsbehandlung (z. B. Krampfprophylaxe), keine längerfristige Aversivtherapie.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "disulfiram", "therapie", "level1"],
+      "related": ["F10_016", "F10_020"]
+    }
+  },
+
+  {
+    "id": "F10_016",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Acamprosat",
+      "type": "Medikament",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Anti-Craving, GABA/Glutamat-Stabilisierung",
+          "type": "Wirkprinzip"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Acamprosat stabilisiert GABA/Glutamat und reduziert Craving in der Rückfallprophylaxe.",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Disulfiram",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Disulfiram = Aversivtherapie, nicht primär anti-craving.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Disulfiram"
+      },
+      {
+        "entry": {
+          "word": "Benzodiazepine",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Benzodiazepine = Akutentzug, nicht Rückfallprophylaxe.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Nalmefen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Nalmefen wirkt über das Opioidsystem, nicht primär über GABA/Glutamat.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "acamprosat", "medikament", "level1"],
+      "related": ["F10_015", "F10_020"]
+    }
+  },
+
+  {
+    "id": "F10_017",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Nalmefen",
+      "type": "Medikament",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Opioidantagonist, reduziert Trinkmenge",
+          "type": "Wirkprinzip"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Nalmefen blockiert Opioidrezeptoren → weniger Reward beim Trinken → Reduktion der Trinkmenge.",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Disulfiram",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Disulfiram = Aversivtherapie, kein Opioidantagonist.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Acamprosat",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Acamprosat wirkt über GABA/Glutamat, nicht über Opioidrezeptoren.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      },
+      {
+        "entry": {
+          "word": "Benzodiazepine",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Benzodiazepine werden im Entzug eingesetzt, nicht zur Trinkmengenreduktion im Alltag.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "nalmefen", "medikament", "level1"],
+      "related": ["F10_015", "F10_016"]
+    }
+  },
+  {
+    "id": "F10_018",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Krampfanfälle",
+      "type": "Komplikation",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Lebensgefährlich im Entzug",
+          "type": "Risiko"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Krampfanfälle = lebensgefährliche Komplikation im schweren Alkoholentzug (durch Glutamat-Überwiegen)",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Tremor",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Tremor = häufiges Entzugssymptom (nicht lebensgefährlich), nicht Krampfanfälle",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Tremor"
+      },
+      {
+        "entry": {
+          "word": "Schwitzen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Schwitzen = häufiges Entzugssymptom (nicht lebensgefährlich), nicht Krampfanfälle",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Schwitzen"
+      },
+      {
+        "entry": {
+          "word": "Tachykardie",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.28,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Tachykardie = häufiges Entzugssymptom (nicht lebensgefährlich), nicht Krampfanfälle",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Tachykardie"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "krampfanfälle", "komplikation", "entzug", "level1"],
+      "related": ["F10_005", "F10_014"]
+    }
+  },
+  {
+    "id": "F10_019",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Entzugssymptome",
+      "type": "Symptomkomplex",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Tremor, Schwitzen, Tachykardie, Angst",
+          "type": "Symptome"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Entzugssymptome = Tremor, Schwitzen, Tachykardie, Herzrasen, Angst, Schlaflosigkeit (durch GABA↓, Glutamat↑)",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Manie",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Manie gehört zu affektiven Störungen (F30-F39), nicht zu Entzug",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F30-F39"
+      },
+      {
+        "entry": {
+          "word": "Wahn",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Wahn gehört zu Schizophrenie (F20-F29), nicht zu Entzug",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "bubble",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F20-F29"
+      },
+      {
+        "entry": {
+          "word": "Delirium tremens",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.28,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Delirium tremens = schwerste Entzugsform (F10.4), nicht einfache Entzugssymptome",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "F10.4"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "entzugssymptome", "symptomkomplex", "level1"],
+      "related": ["F10_005", "F10_010"]
+    }
+  },
+  {
+    "id": "F10_020",
+    "theme": "f10_f19",
+    "chapter": "F10_Alkohol",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Rückfallprävention",
+      "type": "Therapie",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#d97757",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Triggeranalysen, Skills, alternative Rituale",
+          "type": "Strategien"
+        },
+        "spawnPosition": 0.52,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Rückfallprävention = Triggeranalysen (Schichtende, Einsamkeit), Skills (Körperanker, Atemtechniken), alternative Abendrituale",
+        "visual": {
+          "color": "#e89d7a",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Psychoedukation",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.39,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Psychoedukation = Wissensvermittlung (Teufelskreis erklären), nicht Rückfallprävention",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Psychoedukation"
+      },
+      {
+        "entry": {
+          "word": "Medikamente",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.65,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Medikamente (Disulfiram, Naltrexon, Acamprosat) unterstützen, aber Rückfallprävention ist psychotherapeutisch",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Medikamente"
+      },
+      {
+        "entry": {
+          "word": "Entzugsbehandlung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.28,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Entzugsbehandlung = akute Phase (Benzodiazepine), nicht Rückfallprävention",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1
+        },
+        "sound": "explosion_minor",
+        "redirect": "Entzugsbehandlung"
+      }
+    ],
+    "meta": {
+      "source": "ICD-10-GM 2025",
+      "tags": ["f10", "rückfallprävention", "therapie", "level1"],
+      "related": ["F10_001", "F10_015"]
+    }
+  }
+]
+

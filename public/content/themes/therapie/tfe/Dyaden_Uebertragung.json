@@ -1,0 +1,3838 @@
+[
+  {
+    "id": "TFE_DU_001",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Übertragung",
+      "type": "Kernkonzept",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Alles zeigt sich in der Übertragung",
+          "type": "Grundprinzip"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Die Übertragung ist das zentrale Medium, durch das sich innere Objektbeziehungen zeigen. Alles zeigt sich in der Übertragung.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Gefühle für den Therapeuten",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsch: Übertragung ist mehr als nur Gefühle - es sind unbewusste Muster aus der Vergangenheit.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Sympathie",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsch: Übertragung umfasst positive und negative Aspekte, nicht nur Sympathie.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Realistische Beziehung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsch: Übertragung ist von der realen Beziehung zu unterscheiden, aber beide existieren parallel.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Mittagspause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Übertragung findet auch in der Mittagspause statt - aber nicht in der Therapie!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["übertragung", "dyaden", "objektbeziehungen"],
+      "relatedEntries": ["TFE_DU_002", "TFE_DU_003"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_002",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "frühe dyaden",
+      "type": "Kernkonzept",
+      "visual": {
+        "tier": 3,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "wiederholungszwang",
+          "type": "Konzept"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Unbewusstes Reinszenieren früher Beziehungserfahrungen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "reaktivierung alter muster",
+          "type": "Konzept"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Frühe Dyaden werden im Gegenüber erneut ausgelöst und durchgespielt.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "affektive bindungslogik",
+          "type": "Konzept"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Der Erwachsene folgt impliziten Beziehungsregeln aus der frühen Entwicklung.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "dyadisches speed-dating",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Klingt sozial, hat aber null mit innerpsychischen Reinszenierungen zu tun.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "symbiotische fusion deluxe",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Wirkt nach Nähe, beschreibt aber keine rekursiven Musteraktivierungen.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "spontane begegnung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsch: Frühe Dyaden sind nicht spontan, sondern unbewusst strukturiert.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch frühe Dyaden brauchen manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["frühe dyaden", "wiederholungszwang", "reaktivierung"],
+      "relatedEntries": ["TFE_DU_001", "TFE_DU_003"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_003",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "generalized interactions",
+      "type": "Konzept",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "rig schema",
+          "type": "Konzept"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Daniel Sterns Konzept verallgemeinerter Interaktionsmuster.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "implizite beziehungsregeln",
+          "type": "Konzept"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Generalisiert aus frühen Erfahrungen und später automatisch reaktiviert.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "internet interactions",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Erinnert an Social Media, aber hat nichts mit frühen dyadischen Mustern zu tun.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "general interactions deluxe",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Klingt wichtig, benennt aber kein psychodynamisches Konzept.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "oberflächliche begegnungen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsch: Generalized interactions sind tief verwurzelte Muster, nicht oberflächlich.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Mittagspause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch verallgemeinerte Interaktionen brauchen manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["rig schema", "generalized interactions", "daniel stern"],
+      "relatedEntries": ["TFE_DU_001", "TFE_DU_002"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_004",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "hoffnung in der wiederholung",
+      "type": "Kernkonzept",
+      "visual": {
+        "tier": 4,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "trauma-bindung",
+          "type": "Konzept"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Hoffnung, dass vertrauter Schmerz diesmal anders ausgeht.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "wiederholungszwang",
+          "type": "Konzept"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Zwanghafte Reinszenierung früher Beziehungserfahrungen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "dyadische reinszenierung",
+          "type": "Konzept"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Alte innere Beziehungsmuster werden im Heute erneut aktiviert.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "illusion der korrektur",
+          "type": "Konzept"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Erwartung, dass der Partner/Bezugsperson diesmal \"heilen\" könnte.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "unbewusste reparaturfantasie",
+          "type": "Konzept"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Der Wunsch, frühere Verletzungen nachträglich auszugleichen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "optimismus turbo",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Klingt nach Positivpsychologie, hat aber nichts mit unbewusster Reinszenierung zu tun.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "karma retry",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Tut so, als gäbe es Level und Neustarts, verwechselt aber Psychodynamik mit Gaming.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "zweite chance deluxe",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Wirkt plausibel, beschreibt aber kein unbewusste Wiederholungsmuster.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "beziehungs-loop light",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humorvoll, aber konzeptlos; verwechselt ernsthafte Dynamik mit Meme-Sprache.",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      },
+      {
+        "entry": {
+          "word": "serendipity effekt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Zufälliges Glück passt nicht zu zwanghafter Wiederholung.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["hoffnung", "wiederholung", "trauma-bindung", "reparaturfantasie"],
+      "relatedEntries": ["TFE_DU_002", "TFE_DU_005"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_005",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "dyadische reinszenierung",
+      "type": "Kernkonzept",
+      "visual": {
+        "tier": 3,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "rig muster",
+          "type": "Konzept"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Verallgemeinerte Interaktionsmuster nach Daniel Stern.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "implizite beziehungsmodelle",
+          "type": "Konzept"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Frühe dyadische Muster steuern heutige Interaktion.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "affektive erinnerungsspuren",
+          "type": "Konzept"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Nichtsprachliche Relationalerfahrungen werden aktiviert.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "proto-narrative sequenzen",
+          "type": "Konzept"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Frühkindliche Schemata prägen Beziehungserwartungen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "retro beziehungsremix",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Humorvolle Pseudo-Metapher ohne psychodynamischen Gehalt.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "kindheits déjà-vu",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Klingt ähnlich, aber kein präziser Fachbegriff.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "affekt karaoke",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Lustiger Begriff, aber völlig am Konzept vorbei.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "emotionale zeitschleife",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Poetisch, aber nicht fachlich spezifisch.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["dyadische reinszenierung", "rig muster", "daniel stern", "proto-narrative"],
+      "relatedEntries": ["TFE_DU_002", "TFE_DU_004"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_006",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "kreative geste",
+      "type": "Konzept",
+      "visual": {
+        "tier": 3,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "fehlende spontaneität",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Kind lernt nicht, Impulse selbst zu erzeugen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "unterlaufene initiative",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Gute Mutter gibt Antworten bevor das Kind handeln kann.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "blockierte protestfähigkeit",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Schrei/Protest verlieren ihre Wirksamkeit.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "verhinderte selbstwirksamkeit",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Eigenes Tun erzeugt keine Veränderung im Objekt.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "protest karaoke",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Laut, aber nicht entwicklungsrelevant.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "kreativitäts booster mutter",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Gegenteil von dem, was passiert.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "emotionale autopilot mami",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Witzig, aber falsches Konzept.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch kreative Gesten brauchen manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["kreative geste", "winnicott", "spontaneität"],
+      "relatedEntries": ["TFE_DU_007", "TFE_DU_008"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_007",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "verschmolzene beziehung",
+      "type": "Konzept",
+      "visual": {
+        "tier": 3,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "fehlende separation",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Kind erlebt keine klare Grenze zu Mutter.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "regression in symbiose",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Entwicklung bleibt stecken in früher Einheit.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "verlust des ich-gefühls",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Eigenständigkeit bleibt prekär.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "überanpassung an objekt",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Kind orientiert sich vollständig am äußeren Objekt.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "fusion deluxe",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Memehaft, unpassend.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "beziehungs smoothie",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Humorvoll, aber inhaltlich falsch.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "symbiose zum mitnehmen",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Parodie.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch verschmolzene Beziehungen brauchen manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["verschmolzene beziehung", "symbiose", "separation"],
+      "relatedEntries": ["TFE_DU_006", "TFE_DU_008"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_008",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "totale ablehnung",
+      "type": "Konzept",
+      "visual": {
+        "tier": 4,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "reaktive trennung",
+          "type": "Mechanismus"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Kind schützt sein Selbst durch radikale Abgrenzung.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "abwehr der guten mutter",
+          "type": "Mechanismus"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Übermäßige Fürsorge wirkt intrusiv.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "antithetisches selbstgefühl",
+          "type": "Mechanismus"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Identität entsteht durch „gegen die Mutter sein".",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "frühe aggressionsform",
+          "type": "Mechanismus"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Ablehnung als primitiver Selbstschutz.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "mutti exit festival",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Komisch, nicht theoretisch.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "rebellions yoga",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsche Richtung.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "anti-mama filter",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Meme.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch totale Ablehnung braucht manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["totale ablehnung", "abwehr", "aggression"],
+      "relatedEntries": ["TFE_DU_006", "TFE_DU_009"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_009",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "regressive verschmelzung",
+      "type": "Konzept",
+      "visual": {
+        "tier": 4,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "verlust der autonomie",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Rückfall in frühe Abhängigkeitsmuster.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "dauerhafte abhängigkeit",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Entwicklung bleibt in symbiotischer Phase stecken.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "rückfall in frühstadien",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Regression zu frühen Entwicklungsphasen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "überwältigende symbioseangst",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Angst vor Verschmelzung und Verlust des Selbst.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "unfähigkeit zur getrenntheit",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Keine klare Grenze zwischen Selbst und Objekt.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "kuschel regress",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Verniedlichung ohne Theorie.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "emotionale zeitreise",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Verfälscht.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "verbindungs reboot",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Digitaler Unsinn.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch regressive Verschmelzung braucht manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["regressive verschmelzung", "regression", "symbiose"],
+      "relatedEntries": ["TFE_DU_007", "TFE_DU_010"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_010",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "objekt",
+      "type": "Kernkonzept",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "innere repräsentanz",
+          "type": "Definition"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Objekt als internalisierte Beziehungsfigur.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "ziel projektiver prozesse",
+          "type": "Funktion"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Objekt nimmt Anteile auf.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "rolle in dyadischen mustern",
+          "type": "Funktion"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Objekt ist Teil innerer Beziehungsdyaden.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "persekutorisch oder idealisiert",
+          "type": "Qualität"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Polare Qualitäten der frühen Objekte.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "objekt objekt",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Tautologischer Witz.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "ding dong theorie",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Unsinn.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "beziehungs briefkasten",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Zu simpel.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch Objekte brauchen manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["objekt", "repräsentanz", "projektion"],
+      "relatedEntries": ["TFE_DU_011", "TFE_DU_012"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_011",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "selbstanteil",
+      "type": "Kernkonzept",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "affektiver kern",
+          "type": "Definition"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Teil des inneren Selbstsystems.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "projektionsausgangspunkt",
+          "type": "Funktion"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Startpunkt für projektive Identifikation.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "getragen von frühem erleben",
+          "type": "Entstehung"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Entsteht aus frühen Dyaden.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "innerer agens",
+          "type": "Funktion"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Handlungs- und Motivationspol.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "ego snack",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Absurd, aber eindeutig falsch.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "subjekt mini pack",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Absurd, aber eindeutig falsch.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "selfie teilmodus",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Absurd, aber eindeutig falsch.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch Selbstanteile brauchen manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["selbstanteil", "projektion", "agens"],
+      "relatedEntries": ["TFE_DU_010", "TFE_DU_012"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_012",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "projizierter anteil zerstört nicht",
+      "type": "Konzept",
+      "visual": {
+        "tier": 3,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "emotionale haltbarkeit",
+          "type": "Erfahrung"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Affekt wird gehalten, nicht zerstörerisch.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "neue beziehungserfahrung",
+          "type": "Erfahrung"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Objekt bleibt stabil trotz Projektion.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "angstmodulation",
+          "type": "Erfahrung"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Bedrohliche Gefühle verlieren ihre Gewalt.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "korrektive dyadenerfahrung",
+          "type": "Erfahrung"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "„Ich bin nicht zerstörerisch."",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "vertrauensaufbau",
+          "type": "Erfahrung"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Beziehung wird sicherer.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "gefühls bunker test",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Military-Humor, aber unpassend.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "therapeuten crash test dummy",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Lustig, aber kein Konzept.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "affekt feuerwerk show",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Parodie.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch projizierte Anteile brauchen manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["projektion", "korrektive erfahrung", "vertrauen"],
+      "relatedEntries": ["TFE_DU_010", "TFE_IT_007"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_013",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "schrei / protest",
+      "type": "Konzept",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "anfang der eigenen initiative",
+          "type": "Bedeutung"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Der Schrei markiert die erste selbst erzeugte Handlung des Säuglings.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "entwicklung der kreativen geste",
+          "type": "Bedeutung"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Protest signalisiert: „Ich bewirke etwas in dir."",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "beginn der separation",
+          "type": "Bedeutung"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Kind erlebt eigenen Einfluss auf die äußere Welt.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "grundlage der selbstwirksamkeit",
+          "type": "Bedeutung"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Eigenes Tun erzeugt Veränderung im Objekt.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "kommunikation von bedürfnissen",
+          "type": "Bedeutung"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Lautlicher Ausdruck schafft Beziehungskontur.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "protest karaoke",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Laut, aber ohne entwicklungspsychologische Bedeutung.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "wut megafon",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Überzeichnete Machtdemonstration.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "rebellions trommel",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Humorvoll, aber nicht theoretisch.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch Schrei/Protest braucht manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["schrei", "protest", "initiative", "winnicott"],
+      "relatedEntries": ["TFE_DU_006", "TFE_DU_014"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_014",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "intrusivität guter mutter",
+      "type": "Konzept",
+      "visual": {
+        "tier": 3,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "überversorgendes verhalten",
+          "type": "Mechanismus"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Mutter erfüllt Bedürfnisse, bevor sie entstehen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "verhinderung spontaner impulse",
+          "type": "Mechanismus"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Kind braucht keinen Schrei, keine Geste → kein Lernen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "unterlaufene autonomie",
+          "type": "Mechanismus"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Initiative des Kindes wird vorweggenommen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "entwicklungshindernis",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Gute Absicht führt zu strukturellem Schaden.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "vorausschauende fürsorge",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "In jedem Elternratgeber toll, aber hier verhindert sie Entwicklung.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "perfektes responsives parenting",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Klingt wie Goldstandard, ist hier aber Übergriff.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "bedürfnisorientierte superpräsenz",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Normalerweise Kompliment, hier eine strukturelle Falle.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "maximal empathische einschwingung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "In Coaching top, im Klein'schen Setting zu verschmolzen.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "intuitive rundum-versorgung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.75,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Gut gemeint, aber zerstört Kreativität und Autonomie.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "proaktive liebevolle initiative",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "In anderen Kontexten ein Ideal, hier verhindert sie das erste „Ich".",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["intrusivität", "gute mutter", "winnicott"],
+      "relatedEntries": ["TFE_DU_006", "TFE_DU_013", "TFE_DU_015"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_015",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "scheinbar gute mutter",
+      "type": "Konzept",
+      "visual": {
+        "tier": 3,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "perfektes timing",
+          "type": "Charakteristik"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Sie reagiert immer „richtig", zu richtig.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "verdeckte intrusivität",
+          "type": "Charakteristik"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Das Gute verhindert seelische Entwicklung.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "kastrierendes erlebnis",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Kind erlebt Verlust der Wirkmacht.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "illusion von beziehungssicherheit",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Äußere Güte überdeckt innere Abhängigkeit.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "mutti deluxe",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Meme, fehlt theoretische Tiefe.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "wellness mama",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Parodie.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "feelgood caretaker",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsche Richtung.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch scheinbar gute Mütter brauchen manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["scheinbar gute mutter", "intrusivität", "winnicott"],
+      "relatedEntries": ["TFE_DU_014", "TFE_DU_016"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_016",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "antworten zu früh geben",
+      "type": "Konzept",
+      "visual": {
+        "tier": 3,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "verhinderte selbstentdeckung",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Patient oder Kind findet keine eigene Bedeutung.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "induzierte abhängigkeit",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Therapeut oder Mutter wird zur Quelle aller Antworten.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "verlust der agency",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Eigenständiges Denken wird unterlaufen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "regressionsförderung",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Zuviel Führung → Rückfall in Passivität.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "speed coaching",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Unpassend, da TFP das Gegenteil ist.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "antworten flat rate",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Humorvoll, aber nicht klinisch.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "express deutungsservice",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsche therapeutische Haltung.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch zu frühe Antworten brauchen manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["antworten", "abhängigkeit", "regression"],
+      "relatedEntries": ["TFE_DU_015", "TFE_DU_017"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_017",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "regressionsgefahr",
+      "type": "Konzept",
+      "visual": {
+        "tier": 4,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "überwältigende nähe",
+          "type": "Risiko"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Patient regrediert in symbiotische Abhängigkeit.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "verlust von ich-grenzen",
+          "type": "Risiko"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Fusion mit dem Objekt droht.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "bedarf an halt und containment",
+          "type": "Intervention"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Regression braucht sichere Rahmung.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "risiko der ausagierung",
+          "type": "Risiko"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Affekte können primitiv entladen werden.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "zeitreise rückwärts",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsche, aber witzige Metapher.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "kinder modus turbo",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Parodie einer Regression.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "babyfilter",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Memehaft, nicht fachlich.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "tiefes emotionales bonding",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Klingt nach Bindungstheorie, fördert aber Fusion.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["regression", "gefahr", "containment"],
+      "relatedEntries": ["TFE_DU_007", "TFE_DU_009", "TFE_DU_018"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_018",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "gefühl hypnotisiert zu werden",
+      "type": "Konzept",
+      "visual": {
+        "tier": 4,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "intrusion durch falsche deutung",
+          "type": "Mechanismus"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Interpretation gehört nicht dem Patienten.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "verlust der selbstbestimmung",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Patient fühlt sich manipuliert.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "regressionsdrohung",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Gefahr der Verschmelzung mit dem Therapeuten.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "reinszenierung früher abhängigkeit",
+          "type": "Mechanismus"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Alte Mutter-Kind-Dyade aktiviert.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "abwehr gegen fremdes wissen",
+          "type": "Reaktion"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Patient schützt sich durch Misstrauen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "bühnenhypnose effekt",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Show-Variante, aber kein psychodynamischer Prozess.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "therapie trance tiktok",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Humorvoll, nicht theoretisch.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "geistiger zaubertrick",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Parodie.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch Hypnose braucht manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["hypnose", "deutung", "abhängigkeit"],
+      "relatedEntries": ["TFE_DU_017", "TFE_GR_004"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_019",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "verarbeitende funktion des objekts",
+      "type": "Konzept",
+      "visual": {
+        "tier": 3,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "affektmodulation",
+          "type": "Funktion"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Objekt nimmt unbearbeitete Gefühle auf und verändert sie.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "innerpsychische transformation",
+          "type": "Funktion"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Rohes Material wird mentalisierbar.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "entwicklungserleichterung",
+          "type": "Funktion"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Objekt dient als psychischer Verdauungsapparat.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "grundlage von reintrojizieren",
+          "type": "Funktion"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Nur verarbeitete Inhalte sind integrierbar.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "beziehungsgetragene entgiftung",
+          "type": "Funktion"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Objekt entlastet den Säugling/Patienten.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "emotions mixer",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Humorvolle Küchenmetapher.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "gefühls blender",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Parodie.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "psycho küchenmaschine",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsch, aber lustig.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch verarbeitende Funktionen brauchen manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["objekt", "verarbeitung", "bion"],
+      "relatedEntries": ["TFE_DU_010", "TFE_DU_020"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_DU_020",
+    "theme": "tfe",
+    "chapter": "Dyaden_Uebertragung",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "vitalität vs. unbelebtheit",
+      "type": "Konzept",
+      "visual": {
+        "tier": 4,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "vitalität durch emotionale verbindung",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Nur affektiv durchdrungene Container sind lebendig.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "unbelebtheit bei fehlender resonanz",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Ohne Affekt verliert Material seine psychische Qualität.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "entleerung des gehalts",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Ohne Beziehung trocknet der innere Inhalt aus.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "wachstum durch affektintegration",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Entwicklung entsteht durch lebendige Verarbeitung.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "innerpsychische erstarrung",
+          "type": "Konsequenz"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Wenn Container/Contained nicht verbunden sind.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "lebensenergie akku",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Esoterisch, nicht Bion.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "psycho stromausfall",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Witziges Bild, aber fachlich falsch.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "container zombie modus",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Parodie.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch Vitalität braucht manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        }
+      }
+    ],
+    "meta": {
+      "source": "TFE Dyaden & Übertragung",
+      "tags": ["vitalität", "unbelebtheit", "bion"],
+      "relatedEntries": ["TFE_DU_019", "TFE_IT_007"],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  }
+]
+

@@ -1,6 +1,6 @@
 [
   {
-    "id": "NUMETAL_001",
+    "id": "METAL_NUMETAL_001",
     "theme": "metal",
     "chapter": "nu-metal",
     "level": 1,
@@ -157,8 +157,8 @@
         "level1"
       ],
       "related": [
-        "NUMETAL_002",
-        "NUMETAL_003"
+        "METAL_NUMETAL_002",
+        "METAL_NUMETAL_003"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -168,7 +168,7 @@
     }
   },
   {
-    "id": "NUMETAL_002",
+    "id": "METAL_NUMETAL_002",
     "theme": "metal",
     "chapter": "nu-metal",
     "level": 1,
@@ -369,8 +369,8 @@
         "level1"
       ],
       "related": [
-        "NUMETAL_001",
-        "NUMETAL_003"
+        "METAL_NUMETAL_001",
+        "METAL_NUMETAL_003"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -380,7 +380,7 @@
     }
   },
   {
-    "id": "NUMETAL_003",
+    "id": "METAL_NUMETAL_003",
     "theme": "metal",
     "chapter": "nu-metal",
     "level": 1,
@@ -559,8 +559,8 @@
         "level1"
       ],
       "related": [
-        "NUMETAL_002",
-        "NUMETAL_004"
+        "METAL_NUMETAL_002",
+        "METAL_NUMETAL_004"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -570,7 +570,7 @@
     }
   },
   {
-    "id": "NUMETAL_004",
+    "id": "METAL_NUMETAL_004",
     "theme": "metal",
     "chapter": "nu-metal",
     "level": 2,
@@ -749,8 +749,8 @@
         "level2"
       ],
       "related": [
-        "NUMETAL_003",
-        "NUMETAL_005"
+        "METAL_NUMETAL_003",
+        "METAL_NUMETAL_005"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -760,7 +760,7 @@
     }
   },
   {
-    "id": "NUMETAL_005",
+    "id": "METAL_NUMETAL_005",
     "theme": "metal",
     "chapter": "nu-metal",
     "level": 2,
@@ -939,8 +939,8 @@
         "level2"
       ],
       "related": [
-        "NUMETAL_004",
-        "NUMETAL_006"
+        "METAL_NUMETAL_004",
+        "METAL_NUMETAL_006"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -950,7 +950,7 @@
     }
   },
   {
-    "id": "NUMETAL_006",
+    "id": "METAL_NUMETAL_006",
     "theme": "metal",
     "chapter": "nu-metal",
     "level": 2,
@@ -1130,8 +1130,8 @@
         "level2"
       ],
       "related": [
-        "NUMETAL_005",
-        "NUMETAL_007"
+        "METAL_NUMETAL_005",
+        "METAL_NUMETAL_007"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -1141,7 +1141,7 @@
     }
   },
   {
-    "id": "NUMETAL_007",
+    "id": "METAL_NUMETAL_007",
     "theme": "metal",
     "chapter": "nu-metal",
     "level": 3,
@@ -1320,8 +1320,8 @@
         "level3"
       ],
       "related": [
-        "NUMETAL_006",
-        "NUMETAL_008"
+        "METAL_NUMETAL_006",
+        "METAL_NUMETAL_008"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -1331,7 +1331,7 @@
     }
   },
   {
-    "id": "NUMETAL_008",
+    "id": "METAL_NUMETAL_008",
     "theme": "metal",
     "chapter": "nu-metal",
     "level": 3,
@@ -1511,8 +1511,8 @@
         "level3"
       ],
       "related": [
-        "NUMETAL_007",
-        "NUMETAL_009"
+        "METAL_NUMETAL_007",
+        "METAL_NUMETAL_009"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -1522,7 +1522,7 @@
     }
   },
   {
-    "id": "NUMETAL_009",
+    "id": "METAL_NUMETAL_009",
     "theme": "metal",
     "chapter": "nu-metal",
     "level": 3,
@@ -1701,8 +1701,8 @@
         "level3"
       ],
       "related": [
-        "NUMETAL_008",
-        "NUMETAL_010"
+        "METAL_NUMETAL_008",
+        "METAL_NUMETAL_010"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -1712,7 +1712,7 @@
     }
   },
   {
-    "id": "NUMETAL_010",
+    "id": "METAL_NUMETAL_010",
     "theme": "metal",
     "chapter": "nu-metal",
     "level": 3,
@@ -1891,7 +1891,7 @@
         "level3"
       ],
       "related": [
-        "NUMETAL_009"
+        "METAL_NUMETAL_009"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,

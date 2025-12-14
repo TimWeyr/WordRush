@@ -1,0 +1,30 @@
+{
+  "id": "therapie",
+  "name": "Therapie",
+  "description": "Das große All aller psychotherapeutischen Verfahren, Dynamiken, Schulen, Haltungen, Mechanismen, Beziehungsformen und Entwicklungsprozesse.",
+  "colorPrimary": "#7b68ee",
+  "colorAccent": "#9d8ef0",
+  "backgroundGradient": [
+    "#4a3a7a",
+    "#6b5a9a"
+  ],
+  "icon": "🪐",
+  "available": true,
+  "language": "de",
+  "music": {
+    "theme": "therapie_universe_theme.mp3",
+    "volume": 0.6
+  },
+  "particleEffect": "therapy_particles",
+  "shipSkin": "medical_ship",
+  "laserColor": "#7b68ee",
+  "themes": [
+    "tfe"
+  ],
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

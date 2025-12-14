@@ -43,8 +43,11 @@ When working with AI assistants (Cursor, GitHub Copilot, ChatGPT, etc.) on this 
 - `src/config/config.json` - Game constants and configuration
 
 **Content System:**
-- `src/infra/utils/JSONLoader.ts` - Content loading utilities
-- `content/themes/` - JSON content files (Universe, Theme, Chapter structure)
+- `src/infra/utils/JSONLoader.ts` - Content loading utilities (loads from Supabase)
+- `src/infra/utils/SupabaseLoader.ts` - Direct Supabase database operations
+- `src/infra/utils/JSONWriter.ts` - Content writing utilities (saves to Supabase)
+- `src/components/Editor/` - Visual editor for content creation
+- **Note**: All content is stored in Supabase, not JSON files
 
 #### Coding Standards
 
@@ -91,12 +94,13 @@ class MyEntity extends GameObject {
 
 **Content Loading:**
 ```typescript
-// Always use JSONLoader for content:
+// JSONLoader loads from Supabase (not JSON files):
 import { JSONLoader } from '@/infra/utils/JSONLoader';
 
 const universe = await JSONLoader.loadUniverse('psychiatrie');
 const theme = await JSONLoader.loadTheme('psychiatrie', 'icd10');
 const chapter = await JSONLoader.loadChapter('psychiatrie', 'icd10', 'F32_Depression');
+// Content is loaded from Supabase database, not file system
 ```
 
 **State Management:**
@@ -110,11 +114,12 @@ const learningState = await stateManager.getItemState(itemId);
 
 #### What NOT to Do
 
-- ❌ Don't hardcode content - always use JSON files
+- ❌ Don't hardcode content - all content is in Supabase database
+- ❌ Don't create JSON files - use the Editor (`/editor`) instead
 - ❌ Don't modify core game loop without understanding performance implications
 - ❌ Don't create new entity types without extending GameObject
 - ❌ Don't bypass the collision system
-- ❌ Don't modify JSON structure without updating TypeScript types
+- ❌ Don't modify database schema without updating TypeScript types
 
 ---
 
@@ -122,7 +127,12 @@ const learningState = await stateManager.getItemState(itemId);
 
 ### Overview
 
-The project includes Python scripts for automated content generation. These scripts generate JSON chapter files following the WordRush content structure.
+**Note**: Content is now primarily created via the **Editor** (`/editor`) and stored in **Supabase**. Python scripts for JSON generation are legacy and may still exist but are no longer the primary method.
+
+The Editor provides:
+- **Visual UI** for content creation
+- **Text Parser** for bulk item creation (`b.`, `c.`, `d.`, `l.` format)
+- **Direct database integration** - no file management needed
 
 ### Available Scripts
 
@@ -657,10 +667,12 @@ Universe (e.g., "psychiatrie", "englisch")
           └── Items (e.g., "BC_001", "BC_002", ...)
 ```
 
-**File Locations:**
-- Universes: `content/themes/universe.[id].json`
-- Themes: `content/themes/[universe]/themes.[id].json`
-- Chapters: `content/themes/[universe]/[theme]/[chapter].json`
+**Storage:**
+- All content stored in Supabase database (`universes`, `themes`, `chapters`, `rounds`, `items` tables)
+- Editor available at `/editor` route for content creation
+- Content can be created via:
+  - **Visual Editor**: Table View and Detail View
+  - **Text Parser**: Bulk creation with `b.`, `c.`, `d.`, `l.` format
 
 ### Galaxy Map Layout System
 
@@ -739,6 +751,29 @@ Die Planeten bilden eine fließende S-Kurve, die von oben nach unten verläuft u
 - **Lernmodus (Learning Mode):** Color-coded (green=correct, red=distractor), 10% points
 - **Shooter Mode:** Theme colors, full points, no color coding
 
+**Game Feel & Visual Feedback:**
+- **Particles:** `Particle.ts` supports gravity, friction, and floating text.
+  - Types: `'correct'` (small), `'distractor'` (heavy/fiery), `'collection'` (confetti fireworks).
+- **Floating Text:** Spawns at event location (Green for positive, Red for negative).
+- **Screen Shake:** Triggered via `Ship` damage or massive explosions.
+- **HUD Animations:** Score pulses green (gain) or red (loss).
+
+**Ship States:**
+- **State Machine:** `idle`, `damage`, `shield`, `boost`.
+- **Sprites:** Loads separate SVG for each state (e.g., `ship.shield.svg`). Fallbacks to `idle` if missing.
+- **Behavior:**
+  - `damage`: Blinks on hit / low HP.
+  - `shield`: Visual overlay, absorbs 1 hit.
+  - `boost`: Active only during Level-End sequence.
+
+**Gameplay Mechanics:**
+- **Streak System:** Tracks consecutive correct collects.
+  - **Persistent:** Streak count survives round changes (reset only on error/game over).
+  - **Bonus:** 5 Streak -> Activates Shield.
+- **Level End Sequence:**
+  - Normal rounds: Instant/fast transition.
+  - Last round of chapter: Ship engages `boost` and flies out (cinematic exit).
+
 **Learning State:**
 - Tracks per-item progress in LocalStorage
 - Adaptive difficulty increases speed with successful replays
@@ -753,10 +788,11 @@ Die Planeten bilden eine fließende S-Kurve, die von oben nach unten verläuft u
 ### Common Tasks
 
 **Adding New Content:**
-1. Create JSON files following existing structure
-2. Add Universe/Theme/Chapter entries
-3. Validate JSON syntax
-4. Test in game (`npm run dev`)
+1. Use Editor at `/editor` route
+2. Create Universe → Theme → Chapter via UI
+3. Add items via Text Parser (`b.`, `c.`, `d.`, `l.` format) or Table View
+4. Content is automatically saved to Supabase
+5. Test in game (`npm run dev`) - content loads directly from database
 
 **Adding New Features:**
 1. Define types in `src/types/`
@@ -784,8 +820,8 @@ Die Planeten bilden eine fließende S-Kurve, die von oben nach unten verläuft u
 - Custom game loop
 
 **Storage:**
-- LocalStorage (default)
-- Supabase adapter (optional, future)
+- **Content**: Supabase database (all Universes, Themes, Chapters, Items)
+- **Progress**: LocalStorage (default) or Supabase adapter (optional)
 
 ### Performance Targets
 
@@ -807,7 +843,8 @@ Die Planeten bilden eine fließende S-Kurve, die von oben nach unten verläuft u
 | Game Entities | `src/entities/` |
 | Game Logic | `src/logic/` |
 | UI Components | `src/components/` |
-| Content Files | `content/themes/` |
+| Content Editor | `src/components/Editor/` |
+| Database Utils | `src/infra/utils/SupabaseLoader.ts`, `JSONWriter.ts` |
 | Config | `src/config/config.json` |
 
 ### Common Commands
@@ -819,10 +856,8 @@ npm run build            # Build for production
 npm run preview          # Preview production build
 npm run lint             # Run ESLint
 
-# Content Generation
-python generate_business_english.py
-python generate_technical_english.py
-python add_bc_level1.py
+# Content Creation (use Editor at /editor)
+# Or use Text Parser for bulk item creation
 ```
 
 ### Important Types
@@ -852,6 +887,29 @@ For questions about:
 
 ---
 
-**Last Updated:** November 2024  
+## URL Parameter Feature
+
+WordRush supports URL parameters for deep linking, content filtering, and preset configuration. This enables shareable links, kiosk mode, and customizable experiences.
+
+**Supported Parameters:**
+- `universes` / `universeIds`: Comma-separated list of universe IDs to load (e.g., `?universes=psychiatrie,englisch`)
+- `universe`: Universe ID to select on load (e.g., `?universe=psychiatrie`)
+- `theme`: Theme ID to focus/zoom on (e.g., `?theme=f10_f19`)
+- `mode`: Game mode (`lernmodus` or `shooter`)
+- `preset`: Gameplay preset (`zen`, `easy`, `medium`, `hard`, `custom`)
+
+**Implementation:**
+- URL parsing in `src/components/GalaxyMap.tsx` (`loadData` function)
+- Universe filtering in `src/infra/utils/JSONLoader.ts` (`loadUniverses` method)
+- Preset application via `localProgressProvider.saveUISettings()`
+
+**Example URLs:**
+- `?universe=psychiatrie&theme=f10_f19&mode=shooter&preset=hard` - Direct link to specific content with settings
+- `?universes=geschichte,englisch` - Filter to show only specific universes
+- `?universe=englisch&preset=zen` - Zen mode for relaxed learning
+
+---
+
+**Last Updated:** December 2024  
 **Maintained by:** WordRush Development Team
 

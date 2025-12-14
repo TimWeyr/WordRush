@@ -21,7 +21,8 @@
       "spawnRate": 1.5,
       "waveDuration": 10,
       "music": "filme_universe_theme.mp3",
-      "particleEffect": "movie_particles"
+      "particleEffect": "movie_particles",
+      "title": "psychological thriller"
     },
     "scifi_romantic_drama": {
       "backgroundGradient": [
@@ -31,7 +32,8 @@
       "spawnRate": 1.5,
       "waveDuration": 10,
       "music": "filme_universe_theme.mp3",
-      "particleEffect": "movie_particles"
+      "particleEffect": "movie_particles",
+      "title": "scifi romantic drama"
     },
     "psychological_horror": {
       "backgroundGradient": [
@@ -41,7 +43,8 @@
       "spawnRate": 1.6,
       "waveDuration": 10,
       "music": "filme_universe_theme.mp3",
-      "particleEffect": "movie_particles"
+      "particleEffect": "movie_particles",
+      "title": "psychological horror"
     },
     "scifi_adventure": {
       "backgroundGradient": [
@@ -51,7 +54,8 @@
       "spawnRate": 1.5,
       "waveDuration": 10,
       "music": "filme_universe_theme.mp3",
-      "particleEffect": "movie_particles"
+      "particleEffect": "movie_particles",
+      "title": "scifi adventure"
     },
     "crime_thriller": {
       "backgroundGradient": [
@@ -61,7 +65,8 @@
       "spawnRate": 1.6,
       "waveDuration": 10,
       "music": "filme_universe_theme.mp3",
-      "particleEffect": "movie_particles"
+      "particleEffect": "movie_particles",
+      "title": "crime thriller"
     },
     "animated_adventure": {
       "backgroundGradient": [
@@ -71,7 +76,8 @@
       "spawnRate": 1.4,
       "waveDuration": 10,
       "music": "filme_universe_theme.mp3",
-      "particleEffect": "movie_particles"
+      "particleEffect": "movie_particles",
+      "title": "animated adventure"
     },
     "comedy_drama": {
       "backgroundGradient": [
@@ -81,7 +87,8 @@
       "spawnRate": 1.5,
       "waveDuration": 10,
       "music": "filme_universe_theme.mp3",
-      "particleEffect": "movie_particles"
+      "particleEffect": "movie_particles",
+      "title": "comedy drama"
     },
     "scifi_drama": {
       "backgroundGradient": [
@@ -91,7 +98,8 @@
       "spawnRate": 1.5,
       "waveDuration": 10,
       "music": "filme_universe_theme.mp3",
-      "particleEffect": "movie_particles"
+      "particleEffect": "movie_particles",
+      "title": "scifi drama"
     },
     "scifi_epic": {
       "backgroundGradient": [
@@ -101,7 +109,8 @@
       "spawnRate": 1.5,
       "waveDuration": 10,
       "music": "filme_universe_theme.mp3",
-      "particleEffect": "movie_particles"
+      "particleEffect": "movie_particles",
+      "title": "scifi epic"
     }
   },
   "meta": {
@@ -110,4 +119,3 @@
     "created": "2025-01-27"
   }
 }
-

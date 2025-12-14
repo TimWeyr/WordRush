@@ -24,7 +24,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "kanto_theme.mp3",
-      "particleEffect": "region_energy"
+      "particleEffect": "region_energy",
+      "title": "kanto"
     },
     "johto": {
       "backgroundImage": "johto_bg.png",
@@ -35,7 +36,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "johto_theme.mp3",
-      "particleEffect": "region_energy"
+      "particleEffect": "region_energy",
+      "title": "johto"
     },
     "hoenn": {
       "backgroundImage": "hoenn_bg.png",
@@ -46,7 +48,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "hoenn_theme.mp3",
-      "particleEffect": "region_energy"
+      "particleEffect": "region_energy",
+      "title": "hoenn"
     }
   },
   "meta": {
@@ -55,4 +58,3 @@
     "created": "2025-01-27"
   }
 }
-

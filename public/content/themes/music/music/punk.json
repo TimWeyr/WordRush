@@ -1,6 +1,6 @@
 [
   {
-    "id": "PUNK_001",
+    "id": "MUSIC_PUNK_001",
     "theme": "music",
     "chapter": "punk",
     "level": 1,
@@ -179,8 +179,8 @@
         "level1"
       ],
       "related": [
-        "PUNK_002",
-        "PUNK_003"
+        "MUSIC_PUNK_002",
+        "MUSIC_PUNK_003"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -190,7 +190,7 @@
     }
   },
   {
-    "id": "PUNK_002",
+    "id": "MUSIC_PUNK_002",
     "theme": "music",
     "chapter": "punk",
     "level": 1,
@@ -369,8 +369,8 @@
         "level1"
       ],
       "related": [
-        "PUNK_001",
-        "PUNK_003"
+        "MUSIC_PUNK_001",
+        "MUSIC_PUNK_003"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -380,7 +380,7 @@
     }
   },
   {
-    "id": "PUNK_003",
+    "id": "MUSIC_PUNK_003",
     "theme": "music",
     "chapter": "punk",
     "level": 1,
@@ -559,8 +559,8 @@
         "level1"
       ],
       "related": [
-        "PUNK_002",
-        "PUNK_004"
+        "MUSIC_PUNK_002",
+        "MUSIC_PUNK_004"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -570,7 +570,7 @@
     }
   },
   {
-    "id": "PUNK_004",
+    "id": "MUSIC_PUNK_004",
     "theme": "music",
     "chapter": "punk",
     "level": 2,
@@ -749,8 +749,8 @@
         "level2"
       ],
       "related": [
-        "PUNK_003",
-        "PUNK_005"
+        "MUSIC_PUNK_003",
+        "MUSIC_PUNK_005"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -760,7 +760,7 @@
     }
   },
   {
-    "id": "PUNK_005",
+    "id": "MUSIC_PUNK_005",
     "theme": "music",
     "chapter": "punk",
     "level": 2,
@@ -939,8 +939,8 @@
         "level2"
       ],
       "related": [
-        "PUNK_004",
-        "PUNK_006"
+        "MUSIC_PUNK_004",
+        "MUSIC_PUNK_006"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -950,7 +950,7 @@
     }
   },
   {
-    "id": "PUNK_006",
+    "id": "MUSIC_PUNK_006",
     "theme": "music",
     "chapter": "punk",
     "level": 2,
@@ -1130,8 +1130,8 @@
         "level2"
       ],
       "related": [
-        "PUNK_005",
-        "PUNK_007"
+        "MUSIC_PUNK_005",
+        "MUSIC_PUNK_007"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -1141,7 +1141,7 @@
     }
   },
   {
-    "id": "PUNK_007",
+    "id": "MUSIC_PUNK_007",
     "theme": "music",
     "chapter": "punk",
     "level": 3,
@@ -1320,8 +1320,8 @@
         "level3"
       ],
       "related": [
-        "PUNK_006",
-        "PUNK_008"
+        "MUSIC_PUNK_006",
+        "MUSIC_PUNK_008"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -1331,7 +1331,7 @@
     }
   },
   {
-    "id": "PUNK_008",
+    "id": "MUSIC_PUNK_008",
     "theme": "music",
     "chapter": "punk",
     "level": 3,
@@ -1511,8 +1511,8 @@
         "level3"
       ],
       "related": [
-        "PUNK_007",
-        "PUNK_009"
+        "MUSIC_PUNK_007",
+        "MUSIC_PUNK_009"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -1522,7 +1522,7 @@
     }
   },
   {
-    "id": "PUNK_009",
+    "id": "MUSIC_PUNK_009",
     "theme": "music",
     "chapter": "punk",
     "level": 3,
@@ -1701,8 +1701,8 @@
         "level3"
       ],
       "related": [
-        "PUNK_008",
-        "PUNK_010"
+        "MUSIC_PUNK_008",
+        "MUSIC_PUNK_010"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -1712,7 +1712,7 @@
     }
   },
   {
-    "id": "PUNK_010",
+    "id": "MUSIC_PUNK_010",
     "theme": "music",
     "chapter": "punk",
     "level": 3,
@@ -1891,7 +1891,7 @@
         "level3"
       ],
       "related": [
-        "PUNK_009"
+        "MUSIC_PUNK_009"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,

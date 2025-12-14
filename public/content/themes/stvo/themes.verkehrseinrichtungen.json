@@ -1,0 +1,24 @@
+{
+  "id": "verkehrseinrichtungen",
+  "name": "Verkehrseinrichtungen",
+  "description": "Lerne Verkehrseinrichtungen - Leitbaken, Absperrgeräte und andere Einrichtungen.",
+  "colorPrimary": "#ffd93d",
+  "colorAccent": "#f6c23e",
+  "backgroundGradient": [
+    "#f6c23e",
+    "#ffd93d"
+  ],
+  "maxLevels": 15,
+  "icon": "🚧",
+  "shipSkin": "/assets/ships/traffic_ship.svg",
+  "laserColor": "#ffd93d",
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

@@ -1,6 +1,6 @@
 [
   {
-    "id": "METAL_001",
+    "id": "MUSIC_METAL_001",
     "theme": "music",
     "chapter": "metal",
     "level": 1,
@@ -180,8 +180,8 @@
         "level1"
       ],
       "related": [
-        "METAL_002",
-        "METAL_003"
+        "MUSIC_METAL_002",
+        "MUSIC_METAL_003"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -191,7 +191,7 @@
     }
   },
   {
-    "id": "METAL_002",
+    "id": "MUSIC_METAL_002",
     "theme": "music",
     "chapter": "metal",
     "level": 1,
@@ -371,8 +371,8 @@
         "level1"
       ],
       "related": [
-        "METAL_001",
-        "METAL_003"
+        "MUSIC_METAL_001",
+        "MUSIC_METAL_003"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -382,7 +382,7 @@
     }
   },
   {
-    "id": "METAL_003",
+    "id": "MUSIC_METAL_003",
     "theme": "music",
     "chapter": "metal",
     "level": 1,
@@ -562,8 +562,8 @@
         "level1"
       ],
       "related": [
-        "METAL_002",
-        "METAL_004"
+        "MUSIC_METAL_002",
+        "MUSIC_METAL_004"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -573,7 +573,7 @@
     }
   },
   {
-    "id": "METAL_004",
+    "id": "MUSIC_METAL_004",
     "theme": "music",
     "chapter": "metal",
     "level": 2,
@@ -753,8 +753,8 @@
         "level2"
       ],
       "related": [
-        "METAL_003",
-        "METAL_005"
+        "MUSIC_METAL_003",
+        "MUSIC_METAL_005"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -764,7 +764,7 @@
     }
   },
   {
-    "id": "METAL_005",
+    "id": "MUSIC_METAL_005",
     "theme": "music",
     "chapter": "metal",
     "level": 2,
@@ -944,8 +944,8 @@
         "level2"
       ],
       "related": [
-        "METAL_004",
-        "METAL_006"
+        "MUSIC_METAL_004",
+        "MUSIC_METAL_006"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -955,7 +955,7 @@
     }
   },
   {
-    "id": "METAL_006",
+    "id": "MUSIC_METAL_006",
     "theme": "music",
     "chapter": "metal",
     "level": 2,
@@ -1136,8 +1136,8 @@
         "level2"
       ],
       "related": [
-        "METAL_005",
-        "METAL_007"
+        "MUSIC_METAL_005",
+        "MUSIC_METAL_007"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -1147,7 +1147,7 @@
     }
   },
   {
-    "id": "METAL_007",
+    "id": "MUSIC_METAL_007",
     "theme": "music",
     "chapter": "metal",
     "level": 3,
@@ -1327,8 +1327,8 @@
         "level3"
       ],
       "related": [
-        "METAL_006",
-        "METAL_008"
+        "MUSIC_METAL_006",
+        "MUSIC_METAL_008"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -1338,7 +1338,7 @@
     }
   },
   {
-    "id": "METAL_008",
+    "id": "MUSIC_METAL_008",
     "theme": "music",
     "chapter": "metal",
     "level": 3,
@@ -1519,8 +1519,8 @@
         "level3"
       ],
       "related": [
-        "METAL_007",
-        "METAL_009"
+        "MUSIC_METAL_007",
+        "MUSIC_METAL_009"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -1530,7 +1530,7 @@
     }
   },
   {
-    "id": "METAL_009",
+    "id": "MUSIC_METAL_009",
     "theme": "music",
     "chapter": "metal",
     "level": 3,
@@ -1710,8 +1710,8 @@
         "level3"
       ],
       "related": [
-        "METAL_008",
-        "METAL_010"
+        "MUSIC_METAL_008",
+        "MUSIC_METAL_010"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,
@@ -1721,7 +1721,7 @@
     }
   },
   {
-    "id": "METAL_010",
+    "id": "MUSIC_METAL_010",
     "theme": "music",
     "chapter": "metal",
     "level": 3,
@@ -1901,7 +1901,7 @@
         "level3"
       ],
       "related": [
-        "METAL_009"
+        "MUSIC_METAL_009"
       ],
       "difficultyScaling": {
         "speedMultiplierPerReplay": 1.05,

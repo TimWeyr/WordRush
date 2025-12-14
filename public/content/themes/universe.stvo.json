@@ -1,0 +1,41 @@
+{
+  "id": "stvo",
+  "name": "Straßenverkehrsordnung",
+  "description": "Lerne die Straßenverkehrsordnung durch interaktives Gameplay - Verkehrszeichen, Regeln und Verhalten im Straßenverkehr.",
+  "colorPrimary": "#ffa500",
+  "colorAccent": "#ff8c00",
+  "backgroundGradient": [
+    "#ff8c00",
+    "#ffa500"
+  ],
+  "icon": "🚦",
+  "available": true,
+  "language": "de",
+  "music": {
+    "theme": "stvo_universe_theme.mp3",
+    "volume": 0.6
+  },
+  "particleEffect": "traffic_particles",
+  "shipSkin": "traffic_ship",
+  "laserColor": "#ffa500",
+  "themes": [
+    "verkehrszeichen_allgemein",
+    "gefahrenzeichen",
+    "vorschriftzeichen",
+    "richtzeichen",
+    "zusatzzeichen",
+    "verkehrseinrichtungen",
+    "wegweiser_orientierung",
+    "autobahn_schnellstrassen",
+    "baustellenzeichen",
+    "markierungen_fahrbahnregeln",
+    "lichtzeichen_ampeln",
+    "verhalten_strassenverkehr"
+  ],
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

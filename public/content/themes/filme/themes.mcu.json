@@ -21,7 +21,8 @@
       "spawnRate": 1.5,
       "waveDuration": 10,
       "music": "filme_universe_theme.mp3",
-      "particleEffect": "movie_particles"
+      "particleEffect": "movie_particles",
+      "title": "phase 1"
     },
     "phase_2": {
       "backgroundGradient": [
@@ -31,7 +32,8 @@
       "spawnRate": 1.5,
       "waveDuration": 10,
       "music": "filme_universe_theme.mp3",
-      "particleEffect": "movie_particles"
+      "particleEffect": "movie_particles",
+      "title": "phase 2"
     },
     "phase_3": {
       "backgroundGradient": [
@@ -41,7 +43,8 @@
       "spawnRate": 1.6,
       "waveDuration": 10,
       "music": "filme_universe_theme.mp3",
-      "particleEffect": "movie_particles"
+      "particleEffect": "movie_particles",
+      "title": "phase 3"
     },
     "phase_4": {
       "backgroundGradient": [
@@ -51,7 +54,8 @@
       "spawnRate": 1.5,
       "waveDuration": 10,
       "music": "filme_universe_theme.mp3",
-      "particleEffect": "movie_particles"
+      "particleEffect": "movie_particles",
+      "title": "phase 4"
     },
     "phase_5": {
       "backgroundGradient": [
@@ -61,7 +65,8 @@
       "spawnRate": 1.5,
       "waveDuration": 10,
       "music": "filme_universe_theme.mp3",
-      "particleEffect": "movie_particles"
+      "particleEffect": "movie_particles",
+      "title": "phase 5"
     }
   },
   "meta": {
@@ -70,4 +75,3 @@
     "created": "2025-01-27"
   }
 }
-

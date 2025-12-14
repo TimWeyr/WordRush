@@ -19,6 +19,7 @@ export interface Universe {
   laserColor?: string;
   ringColor?: string;
   themes: string[];
+  aiModel?: string; // AI model for content generation (e.g., "gpt-4", "claude-sonnet")
   meta: {
     author: string;
     version: string;
@@ -51,6 +52,7 @@ export interface Theme {
 }
 
 export interface ChapterConfig {
+  title?: string; // Display name for the chapter (fallback to id if not provided)
   backgroundImage?: string;
   backgroundGradient: string[];
   spawnRate: number;
@@ -64,19 +66,24 @@ export interface Item {
   theme: string;
   chapter: string;
   level: number;
+  published?: boolean; // Whether item is published and visible to end users (default: true)
+  freeTier?: boolean; // Whether item is available for free (guest users without login) - default: false (Opt-in for security)
   waveDuration?: number;
   introText?: string;
   base: BaseEntry;
   correct: CorrectEntry[];
   distractors: DistractorEntry[];
   meta: ItemMeta;
+  roundUuid?: string; // UUID from database (only present when loaded from Supabase)
 }
 
 export interface BaseEntry {
   word?: string;
   type: string;
   image?: string;
+  context?: string; // Optional context for base word
   visual: VisualConfig;
+  uuid?: string; // UUID from database (only present when loaded from Supabase)
 }
 
 export interface CorrectEntry {
@@ -97,6 +104,7 @@ export interface CorrectEntry {
   context: string;
   visual: VisualConfig;
   sound?: string;
+  uuid?: string; // UUID from database (only present when loaded from Supabase)
 }
 
 export interface DistractorEntry {
@@ -117,6 +125,7 @@ export interface DistractorEntry {
   context: string;
   visual: VisualConfig;
   sound?: string;
+  uuid?: string; // UUID from database (only present when loaded from Supabase)
 }
 
 export interface VisualConfig {

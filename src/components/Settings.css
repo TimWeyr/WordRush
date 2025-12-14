@@ -533,3 +533,113 @@
   }
 }
 
+/* Auth Status Styles */
+.auth-status {
+  background: rgba(74, 144, 226, 0.1);
+  border-left: 4px solid #4a90e2;
+  padding: 1.25rem !important;
+  border-radius: 8px;
+}
+
+.auth-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.auth-email {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+.auth-icon {
+  font-size: 1.5rem;
+}
+
+.auth-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.25rem;
+}
+
+.auth-value {
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
+}
+
+.logout-button {
+  padding: 0.625rem 1.25rem;
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.logout-button:hover {
+  background: linear-gradient(135deg, #ff5252, #f44336);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4);
+}
+
+.verification-notice {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255, 152, 0, 0.15);
+  border-left: 3px solid #FF9800;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+/* Guest Notice */
+.guest-notice {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid rgba(255, 255, 255, 0.3);
+  padding: 1.25rem !important;
+  border-radius: 8px;
+}
+
+.guest-info {
+  font-size: 1.05rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.guest-notice p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.login-button:hover {
+  background: linear-gradient(135deg, #5fa3f0, #4a90e2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+}
+

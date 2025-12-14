@@ -24,7 +24,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "burger_theme.mp3",
-      "particleEffect": "burger_energy"
+      "particleEffect": "burger_energy",
+      "title": "burger"
     },
     "pizza": {
       "backgroundImage": "pizza_bg.png",
@@ -35,7 +36,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "pizza_theme.mp3",
-      "particleEffect": "pizza_energy"
+      "particleEffect": "pizza_energy",
+      "title": "pizza"
     },
     "döner": {
       "backgroundImage": "doener_bg.png",
@@ -46,7 +48,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "doener_theme.mp3",
-      "particleEffect": "doener_energy"
+      "particleEffect": "doener_energy",
+      "title": "döner"
     },
     "pommes": {
       "backgroundImage": "pommes_bg.png",
@@ -57,7 +60,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "pommes_theme.mp3",
-      "particleEffect": "pommes_energy"
+      "particleEffect": "pommes_energy",
+      "title": "pommes"
     }
   },
   "meta": {
@@ -66,4 +70,3 @@
     "created": "2025-01-27"
   }
 }
-

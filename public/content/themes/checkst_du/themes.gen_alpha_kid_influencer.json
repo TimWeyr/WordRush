@@ -1,0 +1,68 @@
+{
+  "id": "gen_alpha_kid_influencer",
+  "name": "Gen-Alpha & Kid Influencer",
+  "description": "Lerne Gen-Alpha & Kid Influencer Chaos 2025 - Die 12-Jährigen schauen heimlich 6- bis 10-jährigen Influencern zu! 👶✨",
+  "colorPrimary": "#e74c3c",
+  "colorAccent": "#c0392b",
+  "backgroundGradient": [
+    "#c0392b",
+    "#e74c3c"
+  ],
+  "maxLevels": 15,
+  "icon": "👶",
+  "shipSkin": "/assets/ships/trend_ship.svg",
+  "laserColor": "#e74c3c",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Kid_Influencers": {
+      "backgroundGradient": [
+        "#c0392b",
+        "#e74c3c"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "kid_influencers_theme.mp3",
+      "particleEffect": "kid_particles",
+      "title": "Kid Influencers"
+    },
+    "German_Creators": {
+      "backgroundGradient": [
+        "#e74c3c",
+        "#ec7063"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "german_creators_theme.mp3",
+      "particleEffect": "kid_particles",
+      "title": "German Creators"
+    },
+    "Brand_Collabs": {
+      "backgroundGradient": [
+        "#c0392b",
+        "#e74c3c"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "brand_collabs_theme.mp3",
+      "particleEffect": "kid_particles",
+      "title": "Brand Collabs"
+    },
+    "Studies_Reports": {
+      "backgroundGradient": [
+        "#e74c3c",
+        "#ec7063"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "studies_reports_theme.mp3",
+      "particleEffect": "kid_particles",
+      "title": "Studies Reports"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}

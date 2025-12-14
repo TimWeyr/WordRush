@@ -14,11 +14,16 @@ export class Ship extends GameObject {
   shotCooldown: number;
   damageBlink: number; // For visual feedback
   shipSkinPath?: string;
-  shipSkinImage?: HTMLImageElement;
+  sprites: { [key: string]: HTMLImageElement } = {};
   shipSkinLoaded: boolean = false;
+  currentState: 'idle' | 'damage' | 'shield' | 'boost' = 'idle';
+  
   shakeAmount: number = 0; // Screen shake intensity
   shakeTime: number = 0; // Shake duration
   sparks: Array<{x: number; y: number; vx: number; vy: number; life: number; maxLife: number}> = [];
+  
+  isShielded: boolean = false;
+  isBoosting: boolean = false;
 
   constructor(position: Vector2, config: ShipConfig) {
     super(position, config.radius);
@@ -32,30 +37,71 @@ export class Ship extends GameObject {
     this.damageBlink = 0;
     this.shipSkinPath = config.shipSkin;
     
-    // Load ship skin if provided
+    // Load ship skins if provided
     if (this.shipSkinPath) {
-      this.loadShipSkin();
+      this.loadShipSkins();
     }
   }
 
-  private loadShipSkin(): void {
+  private loadShipSkins(): void {
     if (!this.shipSkinPath) return;
     
-    const img = new Image();
-    img.onload = () => {
-      this.shipSkinImage = img;
-      this.shipSkinLoaded = true;
-      console.log('✅ Ship skin loaded:', this.shipSkinPath);
+    // Helper to load an image
+    const loadImage = (state: string, suffix: string) => {
+      const path = suffix === '' 
+        ? this.shipSkinPath!
+        : this.shipSkinPath!.replace('.svg', `.${suffix}.svg`);
+        
+      const img = new Image();
+      img.onload = () => {
+        this.sprites[state] = img;
+        console.log(`✅ Sprite loaded: ${state} (${path})`);
+        if (state === 'idle') {
+          this.shipSkinLoaded = true;
+        }
+      };
+      img.onerror = () => {
+        console.warn(`⚠️ Missing sprite: ${state} (${path}) - Using fallback`);
+        // Fallback to idle sprite if specialized sprite missing
+        if (state !== 'idle' && this.sprites['idle']) {
+          this.sprites[state] = this.sprites['idle'];
+        }
+      };
+      img.src = path;
     };
-    img.onerror = () => {
-      console.warn('⚠️ Failed to load ship skin:', this.shipSkinPath);
-      this.shipSkinLoaded = false;
-    };
-    img.src = this.shipSkinPath;
+
+    // Load all states
+    loadImage('idle', '');
+    loadImage('damage', 'damage'); // e.g., english_ship.damage.svg
+    loadImage('shield', 'shield');
+    loadImage('boost', 'boost');
   }
 
   setTarget(target: Vector2): void {
     this.targetPosition = { ...target };
+  }
+
+  setShield(active: boolean): void {
+    this.isShielded = active;
+    this.updateState();
+  }
+
+  setBoost(active: boolean): void {
+    this.isBoosting = active;
+    this.updateState();
+  }
+
+  private updateState(): void {
+    if (this.isBoosting) {
+      this.currentState = 'boost';
+    } else if (this.isShielded) {
+      this.currentState = 'shield';
+    } else if (this.health < 6 || this.damageBlink > 0) {
+      // Show damage state if health is low (< 6 matches spark effect) OR actively taking damage
+      this.currentState = 'damage';
+    } else {
+      this.currentState = 'idle';
+    }
   }
 
   update(deltaTime: number): void {
@@ -69,6 +115,7 @@ export class Ship extends GameObject {
     // Update damage blink
     if (this.damageBlink > 0) {
       this.damageBlink -= deltaTime;
+      this.updateState(); // Re-evaluate state after blink ends
     }
     
     // Update shake
@@ -79,6 +126,8 @@ export class Ship extends GameObject {
       }
     }
     
+    this.updateState(); // Check health-based state
+
     // Continuous sparks when health < 6
     if (this.health < 6 && this.health > 0) {
       // Spawn rate increases with lower health
@@ -132,20 +181,27 @@ export class Ship extends GameObject {
       y: this.position.y + shakeOffsetY
     };
     
+    // Get current sprite based on state, fallback to idle, then fallback to undefined
+    const currentSprite = this.sprites[this.currentState] || this.sprites['idle'];
+
     // Render ship skin if loaded
-    if (this.shipSkinLoaded && this.shipSkinImage) {
+    if (this.shipSkinLoaded && currentSprite) {
       const size = this.radius * 2; // Size based on collision radius
       renderer.renderImage(
-        this.shipSkinImage,
+        currentSprite,
         renderPos,
         { width: size, height: size }
       );
     } else {
       // Fallback: render simple circle ship
+      const color = this.currentState === 'damage' ? '#ff4444' : 
+                    this.currentState === 'shield' ? '#44ff44' : 
+                    '#4a90e2'; // Dynamic color for fallback
+
       renderer.renderCircle(
         renderPos,
         this.radius,
-        '#4a90e2',
+        color,
         { color: '#2d5a8a', width: 3 }
       );
       

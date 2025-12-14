@@ -28,7 +28,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "auto_theme.mp3",
-      "particleEffect": "car_particles"
+      "particleEffect": "car_particles",
+      "title": "Auto"
     },
     "Fahrrad": {
       "backgroundImage": "fahrrad_bg.png",
@@ -39,7 +40,8 @@
       "spawnRate": 1.4,
       "waveDuration": 3,
       "music": "fahrrad_theme.mp3",
-      "particleEffect": "bike_particles"
+      "particleEffect": "bike_particles",
+      "title": "Fahrrad"
     },
     "Bus": {
       "backgroundImage": "bus_bg.png",
@@ -50,7 +52,8 @@
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "bus_theme.mp3",
-      "particleEffect": "bus_particles"
+      "particleEffect": "bus_particles",
+      "title": "Bus"
     },
     "Bahn": {
       "backgroundImage": "bahn_bg.png",
@@ -61,7 +64,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "bahn_theme.mp3",
-      "particleEffect": "train_particles"
+      "particleEffect": "train_particles",
+      "title": "Bahn"
     },
     "Flugzeug": {
       "backgroundImage": "flugzeug_bg.png",
@@ -72,7 +76,8 @@
       "spawnRate": 1.7,
       "waveDuration": 3,
       "music": "flugzeug_theme.mp3",
-      "particleEffect": "plane_particles"
+      "particleEffect": "plane_particles",
+      "title": "Flugzeug"
     },
     "Schiff": {
       "backgroundImage": "schiff_bg.png",
@@ -83,7 +88,8 @@
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "schiff_theme.mp3",
-      "particleEffect": "ship_particles"
+      "particleEffect": "ship_particles",
+      "title": "Schiff"
     },
     "Motorrad": {
       "backgroundImage": "motorrad_bg.png",
@@ -94,7 +100,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "motorrad_theme.mp3",
-      "particleEffect": "motorcycle_particles"
+      "particleEffect": "motorcycle_particles",
+      "title": "Motorrad"
     },
     "Roller": {
       "backgroundImage": "roller_bg.png",
@@ -105,7 +112,8 @@
       "spawnRate": 1.4,
       "waveDuration": 3,
       "music": "roller_theme.mp3",
-      "particleEffect": "scooter_particles"
+      "particleEffect": "scooter_particles",
+      "title": "Roller"
     },
     "Taxi": {
       "backgroundImage": "taxi_bg.png",
@@ -116,7 +124,8 @@
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "taxi_theme.mp3",
-      "particleEffect": "taxi_particles"
+      "particleEffect": "taxi_particles",
+      "title": "Taxi"
     },
     "LKW": {
       "backgroundImage": "lkw_bg.png",
@@ -127,7 +136,8 @@
       "spawnRate": 1.8,
       "waveDuration": 3,
       "music": "lkw_theme.mp3",
-      "particleEffect": "truck_particles"
+      "particleEffect": "truck_particles",
+      "title": "LKW"
     }
   },
   "meta": {
@@ -136,4 +146,3 @@
     "created": "2025-01-27"
   }
 }
-

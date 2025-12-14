@@ -28,7 +28,8 @@
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "emo_theme.mp3",
-      "particleEffect": "emo_energy"
+      "particleEffect": "emo_energy",
+      "title": "mixed"
     },
     "pop-punk": {
       "backgroundImage": "emo_pop_punk_bg.png",
@@ -39,7 +40,8 @@
       "spawnRate": 1.7,
       "waveDuration": 3,
       "music": "emo_pop_punk_theme.mp3",
-      "particleEffect": "pop_punk_energy"
+      "particleEffect": "pop_punk_energy",
+      "title": "pop-punk"
     },
     "scene": {
       "backgroundImage": "scene_bg.png",
@@ -50,7 +52,8 @@
       "spawnRate": 1.8,
       "waveDuration": 3,
       "music": "scene_theme.mp3",
-      "particleEffect": "scene_energy"
+      "particleEffect": "scene_energy",
+      "title": "scene"
     }
   },
   "meta": {
@@ -59,4 +62,3 @@
     "created": "2025-01-27"
   }
 }
-

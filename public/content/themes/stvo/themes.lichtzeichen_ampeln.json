@@ -1,0 +1,24 @@
+{
+  "id": "lichtzeichen_ampeln",
+  "name": "Lichtzeichen & Ampeln",
+  "description": "Lerne Lichtzeichen und Ampeln - Signale für den Verkehrsfluss.",
+  "colorPrimary": "#fd79a8",
+  "colorAccent": "#e84393",
+  "backgroundGradient": [
+    "#e84393",
+    "#fd79a8"
+  ],
+  "maxLevels": 15,
+  "icon": "🚦",
+  "shipSkin": "/assets/ships/traffic_ship.svg",
+  "laserColor": "#fd79a8",
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

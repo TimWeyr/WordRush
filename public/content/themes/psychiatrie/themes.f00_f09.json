@@ -27,7 +27,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "f00_demenz_alzheimer_theme.mp3",
-      "particleEffect": "medical_particles"
+      "particleEffect": "medical_particles",
+      "title": "F00 Demenz Alzheimer"
     },
     "F01_Demenz_Vaskulaer": {
       "backgroundGradient": [
@@ -37,7 +38,8 @@
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "f01_demenz_vaskulaer_theme.mp3",
-      "particleEffect": "medical_particles"
+      "particleEffect": "medical_particles",
+      "title": "F01 Demenz Vaskulaer"
     },
     "F02_Demenz_Andere": {
       "backgroundGradient": [
@@ -47,7 +49,8 @@
       "spawnRate": 1.7,
       "waveDuration": 3,
       "music": "f02_demenz_andere_theme.mp3",
-      "particleEffect": "medical_particles"
+      "particleEffect": "medical_particles",
+      "title": "F02 Demenz Andere"
     },
     "F03_Demenz_NNB": {
       "backgroundGradient": [
@@ -57,7 +60,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "f03_demenz_nnb_theme.mp3",
-      "particleEffect": "medical_particles"
+      "particleEffect": "medical_particles",
+      "title": "F03 Demenz NNB"
     },
     "F04_Amnestisches_Syndrom": {
       "backgroundGradient": [
@@ -67,7 +71,8 @@
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "f04_amnestisches_syndrom_theme.mp3",
-      "particleEffect": "medical_particles"
+      "particleEffect": "medical_particles",
+      "title": "F04 Amnestisches Syndrom"
     },
     "F05_Delir": {
       "backgroundGradient": [
@@ -77,7 +82,8 @@
       "spawnRate": 1.8,
       "waveDuration": 3,
       "music": "f05_delir_theme.mp3",
-      "particleEffect": "medical_particles"
+      "particleEffect": "medical_particles",
+      "title": "F05 Delir"
     },
     "F06_Organische_Psychosen": {
       "backgroundGradient": [
@@ -87,7 +93,8 @@
       "spawnRate": 1.7,
       "waveDuration": 3,
       "music": "f06_organische_psychosen_theme.mp3",
-      "particleEffect": "medical_particles"
+      "particleEffect": "medical_particles",
+      "title": "F06 Organische Psychosen"
     },
     "F07_Persoenlichkeitsstoerung": {
       "backgroundGradient": [
@@ -97,7 +104,8 @@
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "f07_persoenlichkeitsstoerung_theme.mp3",
-      "particleEffect": "medical_particles"
+      "particleEffect": "medical_particles",
+      "title": "F07 Persoenlichkeitsstoerung"
     },
     "F09_NNB": {
       "backgroundGradient": [
@@ -107,7 +115,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "f09_nnb_theme.mp3",
-      "particleEffect": "medical_particles"
+      "particleEffect": "medical_particles",
+      "title": "F09 NNB"
     }
   },
   "meta": {
@@ -117,4 +126,3 @@
     "created": "2025-01-27"
   }
 }
-

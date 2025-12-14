@@ -1,0 +1,24 @@
+{
+  "id": "gefahrenzeichen",
+  "name": "Gefahrenzeichen",
+  "description": "Lerne Gefahrenzeichen - Dreieckige Warnschilder für Gefahrenstellen.",
+  "colorPrimary": "#ff6b6b",
+  "colorAccent": "#ee5a6f",
+  "backgroundGradient": [
+    "#ee5a6f",
+    "#ff6b6b"
+  ],
+  "maxLevels": 15,
+  "icon": "⚠️",
+  "shipSkin": "/assets/ships/traffic_ship.svg",
+  "laserColor": "#ff6b6b",
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

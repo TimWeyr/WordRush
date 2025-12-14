@@ -28,7 +28,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "computer_basics_theme.mp3",
-      "particleEffect": "tech_particles"
+      "particleEffect": "tech_particles",
+      "title": "Computer Basics"
     },
     "Programming_Software": {
       "backgroundImage": "programming_bg.png",
@@ -39,7 +40,8 @@
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "programming_theme.mp3",
-      "particleEffect": "code_particles"
+      "particleEffect": "code_particles",
+      "title": "Programming Software"
     },
     "Hardware_Devices": {
       "backgroundImage": "hardware_bg.png",
@@ -50,7 +52,8 @@
       "spawnRate": 1.7,
       "waveDuration": 3,
       "music": "hardware_theme.mp3",
-      "particleEffect": "circuit_particles"
+      "particleEffect": "circuit_particles",
+      "title": "Hardware Devices"
     },
     "Networks_Internet": {
       "backgroundImage": "networks_bg.png",
@@ -61,7 +64,8 @@
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "networks_theme.mp3",
-      "particleEffect": "network_particles"
+      "particleEffect": "network_particles",
+      "title": "Networks Internet"
     },
     "Data_Science_AI": {
       "backgroundImage": "ai_bg.png",
@@ -72,7 +76,8 @@
       "spawnRate": 1.8,
       "waveDuration": 3,
       "music": "ai_theme.mp3",
-      "particleEffect": "neural_particles"
+      "particleEffect": "neural_particles",
+      "title": "Data Science AI"
     },
     "Cybersecurity": {
       "backgroundImage": "cybersecurity_bg.png",
@@ -83,7 +88,8 @@
       "spawnRate": 1.7,
       "waveDuration": 3,
       "music": "cybersecurity_theme.mp3",
-      "particleEffect": "shield_particles"
+      "particleEffect": "shield_particles",
+      "title": "Cybersecurity"
     }
   },
   "meta": {
@@ -92,4 +98,3 @@
     "created": "2025-01-27"
   }
 }
-

@@ -2,6 +2,9 @@
 // Allows user to set username, gameplay settings, and export PDF
 
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '@/infra/auth/AuthContext';
+import { useToast } from './Toast/ToastContainer';
 import { localProgressProvider } from '@/infra/providers/LocalProgressProvider';
 import type { UISettings, GameplaySettings, GameplayPreset } from '@/types/progress.types';
 import { pdfExporter, PDFExporter } from '@/utils/PDFExporter';
@@ -16,6 +19,10 @@ interface SettingsProps {
 type TabType = 'settings' | 'gameplay' | 'export';
 
 export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
+  const { user, isVerified, signOut } = useAuth();
+  const { showToast } = useToast();
+  
   const [activeTab, setActiveTab] = useState<TabType>('settings');
   const [username, setUsername] = useState<string>('');
   const [itemOrder, setItemOrder] = useState<'default' | 'random' | 'worst-first-unplayed'>('default');
@@ -117,9 +124,21 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
     }));
   };
 
+  const handleLogout = async () => {
+    try {
+      await signOut();
+      showToast('Erfolgreich ausgeloggt! 👋', 'success');
+      onClose();
+      navigate('/');
+    } catch (error) {
+      showToast('Fehler beim Logout', 'error');
+      console.error('Logout error:', error);
+    }
+  };
+
   const handleSave = async () => {
     try {
-      // Save username
+      // Save username (Display Name)
       if (username.trim()) {
         localProgressProvider.saveUsername(username.trim());
       }
@@ -133,8 +152,10 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
       };
       await localProgressProvider.saveUISettings(updatedSettings);
 
+      showToast('Einstellungen gespeichert! ✅', 'success');
       onClose();
     } catch (error) {
+      showToast('Fehler beim Speichern', 'error');
       console.error('Failed to save settings:', error);
     }
   };
@@ -184,16 +205,63 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
               <div className="settings-loading">Loading...</div>
             ) : (
               <div className="settings-content">
+                {/* Auth Status */}
+                {user ? (
+                  <div className="settings-group auth-status">
+                    <div className="auth-info">
+                      <div className="auth-email">
+                        <span className="auth-icon">
+                          {isVerified ? '✅' : '📧'}
+                        </span>
+                        <div>
+                          <div className="auth-label">
+                            {isVerified ? 'Verifizierter Account' : 'Account (nicht verifiziert)'}
+                          </div>
+                          <div className="auth-value">{user.email}</div>
+                        </div>
+                      </div>
+                      <button className="logout-button" onClick={handleLogout}>
+                        🚪 Logout
+                      </button>
+                    </div>
+                    {!isVerified && (
+                      <div className="verification-notice">
+                        ℹ️ Verifiziere deine E-Mail, um vollen Zugriff (Editor, alle Inhalte) zu erhalten
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div className="settings-group guest-notice">
+                    <div className="guest-info">
+                      👤 Du bist als <strong>Gast</strong> unterwegs
+                    </div>
+                    <p>Nur freeTier-Content verfügbar. Registriere dich für vollen Zugriff!</p>
+                    <button
+                      className="login-button"
+                      onClick={() => {
+                        onClose();
+                        navigate('/login');
+                      }}
+                    >
+                      ✨ Jetzt registrieren / einloggen
+                    </button>
+                  </div>
+                )}
+
+                {/* Display Name */}
                 <div className="settings-group">
-                  <label htmlFor="username">Benutzername:</label>
+                  <label htmlFor="username">Display Name (optional):</label>
                   <input
                     id="username"
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    placeholder="Dein Name"
+                    placeholder="Dein Anzeigename"
                     maxLength={50}
                   />
+                  <small style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '0.85rem' }}>
+                    Wird für Highscores und Export verwendet
+                  </small>
                 </div>
 
                 <div className="settings-group">
@@ -444,6 +512,19 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
               </button>
               <button className="settings-cancel" onClick={onClose}>
                 Schließen
+              </button>
+              <button
+                className="settings-cancel"
+                onClick={() => window.location.href = '/editor'}
+                style={{ 
+                  opacity: 0.3, 
+                  fontSize: '0.7rem', 
+                  padding: '0.3rem 0.6rem',
+                  marginLeft: 'auto'
+                }}
+                title="Editor (Admin)"
+              >
+                ⚙️
               </button>
             </div>
           </div>

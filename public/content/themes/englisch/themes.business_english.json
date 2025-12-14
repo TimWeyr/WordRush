@@ -23,29 +23,38 @@
       "backgroundImage": "business_comm_bg.png",
       "backgroundGradient": [
         "#1a237e",
-        "#283593"
+        "#e91e63",
+        "#ff9800",
+        "#00e676"
       ],
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "business_comm_theme.mp3",
-      "particleEffect": "professional_particles"
+      "particleEffect": "professional_particles",
+      "title": "Business Communication"
     },
     "Meetings_Presentations": {
       "backgroundImage": "meetings_bg.png",
       "backgroundGradient": [
-        "#1565c0",
-        "#1976d2"
+        "#00bcd4",
+        "#ff5722",
+        "#9c27b0",
+        "#ffeb3b"
       ],
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "meetings_theme.mp3",
-      "particleEffect": "presentation_sparks"
+      "particleEffect": "presentation_sparks",
+      "title": "Meetings Presentations"
     },
     "Finance_Accounting": {
+      "title": "Finanz- und Rechnungswesen",
       "backgroundImage": "finance_bg.png",
       "backgroundGradient": [
         "#004d40",
-        "#00695c"
+        "#00695c",
+        "#00796b",
+        "#00897b"
       ],
       "spawnRate": 1.7,
       "waveDuration": 3,
@@ -56,34 +65,43 @@
       "backgroundImage": "management_bg.png",
       "backgroundGradient": [
         "#5d4037",
-        "#6d4c41"
+        "#6d4c41",
+        "#8d6e63",
+        "#a1887f"
       ],
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "management_theme.mp3",
-      "particleEffect": "leadership_glow"
+      "particleEffect": "leadership_glow",
+      "title": "Management Leadership"
     },
     "Marketing_Sales": {
       "backgroundImage": "marketing_bg.png",
       "backgroundGradient": [
-        "#b71c1c",
-        "#c62828"
+        "#c62828",
+        "#d32f2f",
+        "#e53935",
+        "#ef5350"
       ],
       "spawnRate": 1.8,
       "waveDuration": 3,
       "music": "marketing_theme.mp3",
-      "particleEffect": "sales_sparks"
+      "particleEffect": "sales_sparks",
+      "title": "Marketing Sales"
     },
     "Negotiations_Contracts": {
       "backgroundImage": "negotiations_bg.png",
       "backgroundGradient": [
         "#4a148c",
-        "#6a1b9a"
+        "#6a1b9a",
+        "#7b1fa2",
+        "#9c27b0"
       ],
       "spawnRate": 1.7,
       "waveDuration": 3,
       "music": "negotiations_theme.mp3",
-      "particleEffect": "contract_particles"
+      "particleEffect": "contract_particles",
+      "title": "Negotiations Contracts"
     }
   },
   "meta": {
@@ -92,4 +110,3 @@
     "created": "2025-01-27"
   }
 }
-

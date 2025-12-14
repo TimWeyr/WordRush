@@ -1,0 +1,24 @@
+{
+  "id": "autobahn_schnellstrassen",
+  "name": "Autobahn- und Schnellstraßenschilder",
+  "description": "Lerne Autobahn- und Schnellstraßenschilder - Spezielle Zeichen für Schnellstraßen.",
+  "colorPrimary": "#00b894",
+  "colorAccent": "#00a085",
+  "backgroundGradient": [
+    "#00a085",
+    "#00b894"
+  ],
+  "maxLevels": 15,
+  "icon": "🛣️",
+  "shipSkin": "/assets/ships/traffic_ship.svg",
+  "laserColor": "#00b894",
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

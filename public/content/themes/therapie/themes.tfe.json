@@ -1,0 +1,72 @@
+{
+  "id": "tfe",
+  "name": "TFE - Transference-Focused Exploration",
+  "description": "Der Planet TFE ist ein extrem dynamischer, emotional hoch aufgeladener Patienten-Objekt-Therapeuten-Planet. Sein Kern besteht aus inneren Objektbeziehungen, seine Atmosphäre aus Übertragung und Gegenübertragung, seine Gravitation aus technischer Neutralität, und seine Umlaufbahn beruht auf der Integration gespalterner Anteile (identity consolidation).",
+  "colorPrimary": "#8b5cf6",
+  "colorAccent": "#a78bfa",
+  "backgroundGradient": [
+    "#5b3a96",
+    "#7b5ab6"
+  ],
+  "maxLevels": 6,
+  "icon": "🪐",
+  "shipSkin": "/assets/ships/medical_ship.svg",
+  "laserColor": "#8b5cf6",
+  "relatedPackages": [
+    "psychotherapy",
+    "transference",
+    "object_relations",
+    "identity_consolidation"
+  ],
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Grundlage_Rahmen": {
+      "title": "Grundlage & Rahmen",
+      "backgroundGradient": [
+        "#6b4a86",
+        "#8b6aa6"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "particleEffect": "therapy_particles"
+    },
+    "Dyaden_Uebertragung": {
+      "title": "Dyaden & Übertragung",
+      "backgroundGradient": [
+        "#7b5a96",
+        "#9b7ab6"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "particleEffect": "therapy_particles"
+    },
+    "Intervention_Technik": {
+      "title": "Intervention & Technik",
+      "backgroundGradient": [
+        "#8b6aa6",
+        "#ab8ac6"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "particleEffect": "therapy_particles"
+    },
+    "Krisen_Gefaehrdungen_Pathologie": {
+      "title": "Krisen, Gefährdungen & Pathologie",
+      "backgroundGradient": [
+        "#9b7ab6",
+        "#bb9ad6"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "particleEffect": "therapy_particles"
+    }
+  },
+  "meta": {
+    "source": "Transference-Focused Psychotherapy",
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

@@ -1,0 +1,145 @@
+{
+  "id": "gaming_esports",
+  "name": "Gaming & Esports Culture 2025",
+  "description": "Lerne Gaming- und Esports-Kultur 2025 - Spiele, Teams, Begriffe und mehr! 🎮",
+  "colorPrimary": "#6c5ce7",
+  "colorAccent": "#5f3dc4",
+  "backgroundGradient": [
+    "#5f3dc4",
+    "#6c5ce7"
+  ],
+  "maxLevels": 15,
+  "icon": "🎮",
+  "shipSkin": "/assets/ships/trend_ship.svg",
+  "laserColor": "#6c5ce7",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Basic_Terms": {
+      "backgroundGradient": [
+        "#5f3dc4",
+        "#6c5ce7"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "gaming_basic_theme.mp3",
+      "particleEffect": "gaming_particles",
+      "title": "Basic Terms"
+    },
+    "Fortnite": {
+      "backgroundGradient": [
+        "#6c5ce7",
+        "#7d6ce8"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "fortnite_theme.mp3",
+      "particleEffect": "gaming_particles",
+      "title": "Fortnite"
+    },
+    "Roblox": {
+      "backgroundGradient": [
+        "#5f3dc4",
+        "#6c5ce7"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "roblox_theme.mp3",
+      "particleEffect": "gaming_particles",
+      "title": "Roblox"
+    },
+    "Minecraft": {
+      "backgroundGradient": [
+        "#6c5ce7",
+        "#8d7ce9"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "minecraft_theme.mp3",
+      "particleEffect": "gaming_particles",
+      "title": "Minecraft"
+    },
+    "Valorant": {
+      "backgroundGradient": [
+        "#5f3dc4",
+        "#6c5ce7"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "valorant_theme.mp3",
+      "particleEffect": "gaming_particles",
+      "title": "Valorant"
+    },
+    "Rocket_League": {
+      "backgroundGradient": [
+        "#6c5ce7",
+        "#7d6ce8"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "rocket_league_theme.mp3",
+      "particleEffect": "gaming_particles",
+      "title": "Rocket League"
+    },
+    "League_of_Legends": {
+      "backgroundGradient": [
+        "#5f3dc4",
+        "#6c5ce7"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "lol_theme.mp3",
+      "particleEffect": "gaming_particles",
+      "title": "League of Legends"
+    },
+    "CS2": {
+      "backgroundGradient": [
+        "#6c5ce7",
+        "#8d7ce9"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "cs2_theme.mp3",
+      "particleEffect": "gaming_particles",
+      "title": "CS2"
+    },
+    "Mobile_Games": {
+      "backgroundGradient": [
+        "#5f3dc4",
+        "#6c5ce7"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "mobile_games_theme.mp3",
+      "particleEffect": "gaming_particles",
+      "title": "Mobile Games"
+    },
+    "Apex_Legends": {
+      "backgroundGradient": [
+        "#6c5ce7",
+        "#7d6ce8"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "apex_theme.mp3",
+      "particleEffect": "gaming_particles",
+      "title": "Apex Legends"
+    },
+    "Esports_Events": {
+      "backgroundGradient": [
+        "#5f3dc4",
+        "#6c5ce7"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "esports_events_theme.mp3",
+      "particleEffect": "gaming_particles",
+      "title": "Esports Events"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}

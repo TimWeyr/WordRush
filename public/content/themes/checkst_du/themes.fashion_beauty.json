@@ -1,0 +1,145 @@
+{
+  "id": "fashion_beauty",
+  "name": "Fashion und Beauty Trends",
+  "description": "Lerne aktuelle Fashion- und Beauty-Trends 2025 - Von Outfits bis Make-up! 👗💄",
+  "colorPrimary": "#ff6b9d",
+  "colorAccent": "#c44569",
+  "backgroundGradient": [
+    "#c44569",
+    "#ff6b9d"
+  ],
+  "maxLevels": 15,
+  "icon": "👗",
+  "shipSkin": "/assets/ships/trend_ship.svg",
+  "laserColor": "#ff6b9d",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Bottoms_Pants": {
+      "backgroundGradient": [
+        "#c44569",
+        "#ff6b9d"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "fashion_bottoms_theme.mp3",
+      "particleEffect": "fashion_particles",
+      "title": "Bottoms Pants"
+    },
+    "Tops_Tees": {
+      "backgroundGradient": [
+        "#ff6b9d",
+        "#ff8fb3"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "fashion_tops_theme.mp3",
+      "particleEffect": "fashion_particles",
+      "title": "Tops Tees"
+    },
+    "Outerwear": {
+      "backgroundGradient": [
+        "#c44569",
+        "#d63384"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "fashion_outerwear_theme.mp3",
+      "particleEffect": "fashion_particles",
+      "title": "Outerwear"
+    },
+    "Sneakers_Shoes": {
+      "backgroundGradient": [
+        "#ff6b9d",
+        "#e91e63"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "fashion_sneakers_theme.mp3",
+      "particleEffect": "fashion_particles",
+      "title": "Sneakers Shoes"
+    },
+    "Accessoires": {
+      "backgroundGradient": [
+        "#d63384",
+        "#ff6b9d"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "fashion_accessoires_theme.mp3",
+      "particleEffect": "fashion_particles",
+      "title": "Accessoires"
+    },
+    "Beauty_Makeup": {
+      "backgroundGradient": [
+        "#ff8fb3",
+        "#ff6b9d"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "beauty_makeup_theme.mp3",
+      "particleEffect": "beauty_particles",
+      "title": "Beauty Makeup"
+    },
+    "Style_Trends": {
+      "backgroundGradient": [
+        "#c44569",
+        "#ff6b9d"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "fashion_trends_theme.mp3",
+      "particleEffect": "trend_particles",
+      "title": "Style Trends"
+    },
+    "Brands_Shopping": {
+      "backgroundGradient": [
+        "#ff6b9d",
+        "#e91e63"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "brands_shopping_theme.mp3",
+      "particleEffect": "shopping_particles",
+      "title": "Brands Shopping"
+    },
+    "Skincare": {
+      "backgroundGradient": [
+        "#ff8fb3",
+        "#ff6b9d"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "skincare_theme.mp3",
+      "particleEffect": "beauty_particles",
+      "title": "Skincare"
+    },
+    "Tech_Beauty": {
+      "backgroundGradient": [
+        "#9b59b6",
+        "#8e44ad"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "tech_beauty_theme.mp3",
+      "particleEffect": "tech_particles",
+      "title": "Tech Beauty"
+    },
+    "Sustainability": {
+      "backgroundGradient": [
+        "#00b894",
+        "#00a085"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "sustainability_theme.mp3",
+      "particleEffect": "eco_particles",
+      "title": "Sustainability"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}

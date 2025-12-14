@@ -24,7 +24,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "plus_theme.mp3",
-      "particleEffect": "plus_energy"
+      "particleEffect": "plus_energy",
+      "title": "plus"
     },
     "minus": {
       "backgroundImage": "minus_bg.png",
@@ -35,7 +36,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "minus_theme.mp3",
-      "particleEffect": "minus_energy"
+      "particleEffect": "minus_energy",
+      "title": "minus"
     },
     "multiplikation": {
       "backgroundImage": "multiplikation_bg.png",
@@ -46,7 +48,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "multiplikation_theme.mp3",
-      "particleEffect": "multiplikation_energy"
+      "particleEffect": "multiplikation_energy",
+      "title": "multiplikation"
     },
     "division": {
       "backgroundImage": "division_bg.png",
@@ -57,7 +60,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "division_theme.mp3",
-      "particleEffect": "division_energy"
+      "particleEffect": "division_energy",
+      "title": "division"
     }
   },
   "meta": {
@@ -66,4 +70,3 @@
     "created": "2025-01-27"
   }
 }
-

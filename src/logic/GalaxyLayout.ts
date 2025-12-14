@@ -3,6 +3,39 @@
 
 import type { Theme, ChapterConfig, Item } from '@/types/content.types';
 
+// ============================================================================
+// DEBUG CONFIGURATION
+// ============================================================================
+
+/** Enable detailed debug logging for layout calculations */
+const DEBUG_LAYOUT = false;
+
+/** Helper object for conditional debug logging */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const debugLog = DEBUG_LAYOUT ? {
+  log: (...args: any[]): void => {
+    // eslint-disable-next-line no-console
+    console.log('🪐✨🌓🌌', ...args);
+  },
+  group: (...args: any[]): void => {
+    // eslint-disable-next-line no-console
+    console.group('🪐✨🌓🌌', ...args);
+  },
+  groupEnd: (): void => {
+    // eslint-disable-next-line no-console
+    console.groupEnd();
+  },
+  warn: (...args: any[]): void => {
+    // eslint-disable-next-line no-console
+    console.warn('🪐✨🌓🌌', ...args);
+  },
+} : {
+  log: (): void => {},
+  group: (): void => {},
+  groupEnd: (): void => {},
+  warn: (): void => {},
+};
+
 export interface PlanetLayout {
   id: string;
   x: number;
@@ -215,14 +248,14 @@ export function calculateMoonPositionsAdaptive(
     items: Item[] 
   }> = [];
   
-  console.group('🔍 Analyzing Moon Sizes');
+  debugLog.group('🔍 Analyzing Moon Sizes');
   for (const chapterId of chapterIds) {
     const items = chapterItemsMap.get(chapterId) || [];
     const levels = new Set(items.map(item => item.level));
     const levelCount = levels.size;
-    const ringExtent = calculateMoonRingExtent(items, true); // Enable debug logging
+    const ringExtent = calculateMoonRingExtent(items);
     
-    console.log(`  📊 ${chapterId}: ${levelCount} levels, ${items.length} items → ringExtent=${ringExtent.toFixed(1)}px`);
+    debugLog.log(`  📊 ${chapterId}: ${levelCount} levels, ${items.length} items → ringExtent=${ringExtent.toFixed(1)}px`);
     
     chapterInfos.push({
       chapterId,
@@ -231,7 +264,7 @@ export function calculateMoonPositionsAdaptive(
       items
     });
   }
-  console.groupEnd();
+  debugLog.groupEnd();
   
   // Sort by level count (descending)
   chapterInfos.sort((a, b) => b.levelCount - a.levelCount);
@@ -311,10 +344,10 @@ export function calculateMoonPositionsAdaptive(
   // Strategy: Variable distances - small moons close, large moons far
   const moonToPlanetDistances: number[] = [];
   
-  console.group('🌙 Moon Distance Calculation');
-  console.log(`Total moons: ${sortedChapters.length}`);
-  console.log(`PLANET_TO_MOON_BASE_DISTANCE: ${PLANET_TO_MOON_BASE_DISTANCE}px`);
-  console.log(`MOON_EXTRA_DISTANCE_PER_RING_PX: ${MOON_EXTRA_DISTANCE_PER_RING_PX}`);
+  debugLog.group('🌙 Moon Distance Calculation');
+  debugLog.log(`Total moons: ${sortedChapters.length}`);
+  debugLog.log(`PLANET_TO_MOON_BASE_DISTANCE: ${PLANET_TO_MOON_BASE_DISTANCE}px`);
+  debugLog.log(`MOON_EXTRA_DISTANCE_PER_RING_PX: ${MOON_EXTRA_DISTANCE_PER_RING_PX}`);
   
   // Find the largest ring extent among all moons
   const maxRingExtent = Math.max(...sortedChapters.map(info => info.ringExtent));
@@ -324,8 +357,8 @@ export function calculateMoonPositionsAdaptive(
   const minMoonDistance = 100; // Small moons close to planet (130px)
   const maxMoonDistance = 1.1*maxRingExtent + PLANET_RADIUS + MOON_MIN_CLEARANCE; // Large moons far enough to avoid overlap
   
-  console.log(`📏 Ring extents: ${minRingExtent.toFixed(1)}px (min) to ${maxRingExtent.toFixed(1)}px (max)`);
-  console.log(`📏 Distance range: ${minMoonDistance}px (small moons) to ${maxMoonDistance.toFixed(1)}px (large moons)`);
+  debugLog.log(`📏 Ring extents: ${minRingExtent.toFixed(1)}px (min) to ${maxRingExtent.toFixed(1)}px (max)`);
+  debugLog.log(`📏 Distance range: ${minMoonDistance}px (small moons) to ${maxMoonDistance.toFixed(1)}px (large moons)`);
   
   for (const info of sortedChapters) {
     // Scale distance based on moon size relative to largest moon
@@ -337,17 +370,17 @@ export function calculateMoonPositionsAdaptive(
     
     moonToPlanetDistances.push(distanceToPlanet);
     
-    console.log(`  📍 ${info.chapterId}: ${info.levelCount} levels, ringExtent=${info.ringExtent.toFixed(1)}px (${(sizeRatio * 100).toFixed(0)}% of max) → distance=${distanceToPlanet.toFixed(1)}px`);
+    debugLog.log(`  📍 ${info.chapterId}: ${info.levelCount} levels, ringExtent=${info.ringExtent.toFixed(1)}px (${(sizeRatio * 100).toFixed(0)}% of max) → distance=${distanceToPlanet.toFixed(1)}px`);
   }
-  console.groupEnd();
+  debugLog.groupEnd();
   
   // Calculate angles with dynamic spacing to prevent ring overlap
   // Moons with many levels get more angular space
   const angles: number[] = [];
   const totalAngle = Math.PI * 2;
   
-  console.group('📐 Angle Calculation (Collision Avoidance)');
-  console.log(`MOON_MIN_CLEARANCE: ${MOON_MIN_CLEARANCE}px`);
+  debugLog.group('📐 Angle Calculation (Collision Avoidance)');
+  debugLog.log(`MOON_MIN_CLEARANCE: ${MOON_MIN_CLEARANCE}px`);
   
   // Calculate minimum required angles between adjacent moons
   const minAngles: number[] = [];
@@ -390,32 +423,32 @@ export function calculateMoonPositionsAdaptive(
     const angleBonus = minAngle * 0.5 * levelFactor;
     const minAngleWithBonus = minAngle + angleBonus;
     
-    console.log(`  🔀 ${sortedChapters[i].chapterId} ↔ ${sortedChapters[nextIndex].chapterId}:`);
-    console.log(`     Moon1: dist=${moonToPlanetDist1.toFixed(1)}px + rings=${ringExtent1.toFixed(1)}px = ${totalExtentFromPlanet1.toFixed(1)}px total`);
-    console.log(`     Moon2: dist=${moonToPlanetDist2.toFixed(1)}px + rings=${ringExtent2.toFixed(1)}px = ${totalExtentFromPlanet2.toFixed(1)}px total`);
-    console.log(`     Required clearance: ${requiredClearance}px`);
-    console.log(`     Min angle: ${(minAngle * 180 / Math.PI).toFixed(1)}° → with bonus: ${(minAngleWithBonus * 180 / Math.PI).toFixed(1)}°`);
+    debugLog.log(`  🔀 ${sortedChapters[i].chapterId} ↔ ${sortedChapters[nextIndex].chapterId}:`);
+    debugLog.log(`     Moon1: dist=${moonToPlanetDist1.toFixed(1)}px + rings=${ringExtent1.toFixed(1)}px = ${totalExtentFromPlanet1.toFixed(1)}px total`);
+    debugLog.log(`     Moon2: dist=${moonToPlanetDist2.toFixed(1)}px + rings=${ringExtent2.toFixed(1)}px = ${totalExtentFromPlanet2.toFixed(1)}px total`);
+    debugLog.log(`     Required clearance: ${requiredClearance}px`);
+    debugLog.log(`     Min angle: ${(minAngle * 180 / Math.PI).toFixed(1)}° → with bonus: ${(minAngleWithBonus * 180 / Math.PI).toFixed(1)}°`);
     
     minAngles.push(minAngleWithBonus);
   }
-  console.groupEnd();
+  debugLog.groupEnd();
   
   // Distribute angles ensuring all minimum angles are met
   const sumMinAngles = minAngles.reduce((sum, angle) => sum + angle, 0);
   
-  console.group('⚖️ Angle Distribution');
-  console.log(`Sum of min angles: ${(sumMinAngles * 180 / Math.PI).toFixed(1)}° (${(sumMinAngles / (Math.PI * 2) * 100).toFixed(1)}% of circle)`);
-  console.log(`Total available: 360°`);
+  debugLog.group('⚖️ Angle Distribution');
+  debugLog.log(`Sum of min angles: ${(sumMinAngles * 180 / Math.PI).toFixed(1)}° (${(sumMinAngles / (Math.PI * 2) * 100).toFixed(1)}% of circle)`);
+  debugLog.log(`Total available: 360°`);
   
   // Random starting angle to avoid all moons pointing in same direction
   const startAngleOffset = Math.random() * Math.PI * 2;
-  console.log(`Random start offset: ${(startAngleOffset * 180 / Math.PI).toFixed(1)}°`);
+  debugLog.log(`Random start offset: ${(startAngleOffset * 180 / Math.PI).toFixed(1)}°`);
   
   if (sumMinAngles > totalAngle) {
     // Not enough space - scale down proportionally
     const scale = totalAngle / sumMinAngles;
-    console.warn(`⚠️ NOT ENOUGH SPACE! Scaling down by ${(scale * 100).toFixed(1)}%`);
-    console.log(`This means moons WILL overlap! Consider:
+    debugLog.warn(`⚠️ NOT ENOUGH SPACE! Scaling down by ${(scale * 100).toFixed(1)}%`);
+    debugLog.log(`This means moons WILL overlap! Consider:
     - Increasing MOON_MIN_CLEARANCE
     - Increasing moon-to-planet distances
     - Reducing ring extents`);
@@ -424,13 +457,13 @@ export function calculateMoonPositionsAdaptive(
     for (let i = 0; i < sortedChapters.length; i++) {
       angles.push(currentAngle % (Math.PI * 2));
       const scaledAngle = minAngles[i] * scale;
-      console.log(`  Moon ${i} (${sortedChapters[i].chapterId}): ${(currentAngle * 180 / Math.PI).toFixed(1)}° (step: ${(scaledAngle * 180 / Math.PI).toFixed(1)}°)`);
+      debugLog.log(`  Moon ${i} (${sortedChapters[i].chapterId}): ${(currentAngle * 180 / Math.PI).toFixed(1)}° (step: ${(scaledAngle * 180 / Math.PI).toFixed(1)}°)`);
       currentAngle += scaledAngle;
     }
   } else {
     // Enough space - distribute remaining angle proportionally to level count
     const remainingAngle = totalAngle - sumMinAngles;
-    console.log(`✅ Enough space! Remaining: ${(remainingAngle * 180 / Math.PI).toFixed(1)}° to distribute`);
+    debugLog.log(`✅ Enough space! Remaining: ${(remainingAngle * 180 / Math.PI).toFixed(1)}° to distribute`);
     
     // Calculate total level count for proportional distribution
     const totalLevelCount = sortedChapters.reduce((sum, info) => sum + info.levelCount, 0);
@@ -446,15 +479,15 @@ export function calculateMoonPositionsAdaptive(
         : remainingAngle / sortedChapters.length;
       
       const totalStepAngle = minAngles[i] + extraAngle;
-      console.log(`  Moon ${i} (${sortedChapters[i].chapterId}): ${(currentAngle * 180 / Math.PI).toFixed(1)}° (step: ${(totalStepAngle * 180 / Math.PI).toFixed(1)}°)`);
+      debugLog.log(`  Moon ${i} (${sortedChapters[i].chapterId}): ${(currentAngle * 180 / Math.PI).toFixed(1)}° (step: ${(totalStepAngle * 180 / Math.PI).toFixed(1)}°)`);
       
       currentAngle += totalStepAngle;
     }
   }
-  console.groupEnd();
+  debugLog.groupEnd();
   
   // Create layouts with calculated positions
-  console.group('🎯 Final Moon Positions');
+  debugLog.group('🎯 Final Moon Positions');
   for (let i = 0; i < sortedChapters.length; i++) {
     const info = sortedChapters[i];
     const chapterId = info.chapterId;
@@ -464,11 +497,11 @@ export function calculateMoonPositionsAdaptive(
     const x = planetX + Math.cos(angleAroundPlanet) * distanceFromPlanetCenter;
     const y = planetY + Math.sin(angleAroundPlanet) * distanceFromPlanetCenter;
     
-    console.log(`  🌙 ${chapterId}:`);
-    console.log(`     Position: (${x.toFixed(1)}, ${y.toFixed(1)})`);
-    console.log(`     Distance from planet: ${distanceFromPlanetCenter.toFixed(1)}px at ${(angleAroundPlanet * 180 / Math.PI).toFixed(1)}°`);
-    console.log(`     Ring extent: ${info.ringExtent.toFixed(1)}px (outermost ring at ${(distanceFromPlanetCenter + info.ringExtent).toFixed(1)}px from planet)`);
-    console.log(`     Levels: ${info.levelCount}`);
+    debugLog.log(`  🌙 ${chapterId}:`);
+    debugLog.log(`     Position: (${x.toFixed(1)}, ${y.toFixed(1)})`);
+    debugLog.log(`     Distance from planet: ${distanceFromPlanetCenter.toFixed(1)}px at ${(angleAroundPlanet * 180 / Math.PI).toFixed(1)}°`);
+    debugLog.log(`     Ring extent: ${info.ringExtent.toFixed(1)}px (outermost ring at ${(distanceFromPlanetCenter + info.ringExtent).toFixed(1)}px from planet)`);
+    debugLog.log(`     Levels: ${info.levelCount}`);
     
     layouts.push({
       id: `${chapterId}`,
@@ -480,11 +513,11 @@ export function calculateMoonPositionsAdaptive(
       chapter: chapters[chapterId]
     });
   }
-  console.groupEnd();
+  debugLog.groupEnd();
   
-  console.log('📊 Summary: Adaptive moon layout complete');
-  console.log(`   Total moons: ${layouts.length}`);
-  console.log(`   Planet position: (${planetX}, ${planetY})`);
+  debugLog.log('📊 Summary: Adaptive moon layout complete');
+  debugLog.log(`   Total moons: ${layouts.length}`);
+  debugLog.log(`   Planet position: (${planetX}, ${planetY})`);
   
   return layouts;
 }
@@ -495,7 +528,7 @@ export function calculateMoonPositionsAdaptive(
  * 
  * Returns: Distance from moon center to the outermost ring
  */
-export function calculateMoonRingExtent(items: Item[], debugLog = false): number {
+export function calculateMoonRingExtent(items: Item[]): number {
   if (items.length === 0) return MOON_RADIUS + BASE_ITEM_DISTANCE;
   
   const levels = new Set(items.map(item => item.level));
@@ -505,12 +538,10 @@ export function calculateMoonRingExtent(items: Item[], debugLog = false): number
   if (levelsArray.length === 0) return MOON_RADIUS + BASE_ITEM_DISTANCE;
   
   // Calculate dynamic spacing based on maximum level
-  const levelSpacing = calculateLevelSpacing(maxLevel, debugLog);
+  const levelSpacing = calculateLevelSpacing(maxLevel);
   
-  if (debugLog) {
-    console.log(`    Levels: [${levelsArray.join(', ')}]`);
-    console.log(`    MOON_RADIUS=${MOON_RADIUS}, BASE_ITEM_DISTANCE=${BASE_ITEM_DISTANCE}, spacing=${levelSpacing.toFixed(1)}px`);
-  }
+  debugLog.log(`    Levels: [${levelsArray.join(', ')}]`);
+  debugLog.log(`    MOON_RADIUS=${MOON_RADIUS}, BASE_ITEM_DISTANCE=${BASE_ITEM_DISTANCE}, spacing=${levelSpacing.toFixed(1)}px`);
   
   // Calculate maximum ring radius by simulating ring calculation
   // Use same two-pass approach as calculateLevelRings
@@ -520,9 +551,7 @@ export function calculateMoonRingExtent(items: Item[], debugLog = false): number
     const effectiveLevel = Math.max(1, level);
     const baseRadius = MOON_RADIUS + BASE_ITEM_DISTANCE + (levelSpacing * effectiveLevel);
     baseRadii.push(baseRadius);
-    if (debugLog) {
-      console.log(`    Level ${level} (eff=${effectiveLevel}): baseRadius=${baseRadius.toFixed(1)}px`);
-    }
+    debugLog.log(`    Level ${level} (eff=${effectiveLevel}): baseRadius=${baseRadius.toFixed(1)}px`);
   });
   
   // Second pass: adjust radii to ensure MIN_RING_GAP between adjacent rings
@@ -535,9 +564,7 @@ export function calculateMoonRingExtent(items: Item[], debugLog = false): number
       const prevRadius = adjustedRadii[i - 1];
       const minRadius = prevRadius + MIN_RING_GAP;
       if (radius < minRadius) {
-        if (debugLog) {
-          console.log(`    Level ${levelsArray[i]}: adjusted ${radius.toFixed(1)}px → ${minRadius.toFixed(1)}px (gap enforcement)`);
-        }
+        debugLog.log(`    Level ${levelsArray[i]}: adjusted ${radius.toFixed(1)}px → ${minRadius.toFixed(1)}px (gap enforcement)`);
         radius = minRadius;
       }
     }
@@ -547,9 +574,7 @@ export function calculateMoonRingExtent(items: Item[], debugLog = false): number
   
   // Return maximum radius (outermost ring)
   const maxRadius = adjustedRadii.length > 0 ? Math.max(...adjustedRadii) : MOON_RADIUS + BASE_ITEM_DISTANCE;
-  if (debugLog) {
-    console.log(`    → Outermost ring at ${maxRadius.toFixed(1)}px from moon center`);
-  }
+  debugLog.log(`    → Outermost ring at ${maxRadius.toFixed(1)}px from moon center`);
   return maxRadius;
 }
 
@@ -571,7 +596,7 @@ export function calculateRequiredMoonRadius(items: Item[]): number {
  * - Extreme levels (50+): Approaches MIN_LEVEL_SPACING asymptotically
  * - In between: Smooth logarithmic transition
  */
-function calculateLevelSpacing(maxLevel: number, debugLog = false): number {
+function calculateLevelSpacing(maxLevel: number): number {
   if (maxLevel <= 1) return MAX_LEVEL_SPACING;
   
   // Logarithmic scaling: more levels = tighter spacing
@@ -586,9 +611,7 @@ function calculateLevelSpacing(maxLevel: number, debugLog = false): number {
   const spacing = MAX_LEVEL_SPACING - t * (MAX_LEVEL_SPACING - MIN_LEVEL_SPACING);
   const finalSpacing = Math.max(MIN_LEVEL_SPACING, spacing);
   
-  if (debugLog) {
-    console.log(`    Level spacing calc: maxLevel=${maxLevel} → log2=${logFactor.toFixed(2)} → t=${t.toFixed(2)} → ${finalSpacing.toFixed(1)}px`);
-  }
+  debugLog.log(`    Level spacing calc: maxLevel=${maxLevel} → log2=${logFactor.toFixed(2)} → t=${t.toFixed(2)} → ${finalSpacing.toFixed(1)}px`);
   
   return finalSpacing;
 }

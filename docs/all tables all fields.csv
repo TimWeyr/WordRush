@@ -1,0 +1,81 @@
+table_name,column_name,data_type,is_nullable,column_default
+chapters,id,text,YES,null
+chapters,title,text,YES,null
+chapters,description,text,YES,null
+chapters,backgroundimage,text,YES,null
+chapters,background_gradient,jsonb,YES,null
+chapters,meta,jsonb,YES,null
+chapters,created_at,timestamp with time zone,YES,"timezone('utc'::text, now())"
+chapters,updated_at,timestamp with time zone,YES,"timezone('utc'::text, now())"
+chapters,uuid,uuid,NO,gen_random_uuid()
+chapters,themes_uuid_backup,text,YES,null
+chapters,themes_uuid,uuid,YES,null
+items,round_id,text,YES,null
+items,object_type,text,NO,null
+items,collectionorder,integer,YES,0
+items,word,text,YES,null
+items,type,text,YES,null
+items,image,text,YES,null
+items,context,text,YES,null
+items,behavior,text,YES,null
+items,damage,integer,YES,null
+items,redirect,text,YES,null
+items,spawn_position,double precision,YES,null
+items,spawn_spread,double precision,YES,null
+items,spawn_delay,double precision,YES,null
+items,speed,double precision,YES,null
+items,points,integer,YES,null
+items,hp,integer,YES,null
+items,sound,text,YES,null
+items,color,text,YES,null
+items,variant,text,YES,null
+items,pulsate,boolean,YES,null
+items,font_size,double precision,YES,null
+items,created_at,timestamp with time zone,YES,"timezone('utc'::text, now())"
+items,updated_at,timestamp with time zone,YES,"timezone('utc'::text, now())"
+items,round_uuid,uuid,YES,null
+items,uuid,uuid,NO,null
+rounds,id,text,NO,null
+rounds,chapter_id,text,NO,null
+rounds,level,integer,YES,null
+rounds,published,boolean,YES,true
+rounds,wave_duration,numeric,YES,null
+rounds,meta_source,text,YES,null
+rounds,meta_tags,ARRAY,YES,null
+rounds,meta_difficulty_scaling,jsonb,YES,null
+rounds,created_at,timestamp with time zone,YES,"timezone('utc'::text, now())"
+rounds,updated_at,timestamp with time zone,YES,"timezone('utc'::text, now())"
+rounds,chapter_uuid,uuid,YES,null
+rounds,uuid,uuid,YES,gen_random_uuid()
+themes,id,text,NO,null
+themes,obsoloete_uuid,uuid,NO,null
+themes,name,text,NO,null
+themes,description,text,YES,null
+themes,color_primary,text,YES,null
+themes,color_accent,text,YES,null
+themes,background_gradient,jsonb,YES,null
+themes,laser_color,text,YES,null
+themes,icon,text,YES,null
+themes,music,jsonb,YES,null
+themes,particle_effect,text,YES,null
+themes,created_at,timestamp with time zone,YES,"timezone('utc'::text, now())"
+themes,updated_at,timestamp with time zone,YES,"timezone('utc'::text, now())"
+themes,uuid,uuid,NO,gen_random_uuid()
+themes,universe_uuid,uuid,YES,null
+universes,id,text,NO,null
+universes,name,text,NO,null
+universes,description,text,YES,null
+universes,color_primary,text,YES,null
+universes,color_accent,text,YES,null
+universes,background_gradient,jsonb,YES,null
+universes,laser_color,text,YES,null
+universes,icon,text,YES,null
+universes,available,boolean,YES,true
+universes,language,text,YES,null
+universes,music,text,YES,null
+universes,particle_effect,text,YES,null
+universes,ship_skin,text,YES,null
+universes,meta,jsonb,YES,null
+universes,created_at,timestamp with time zone,YES,"timezone('utc'::text, now())"
+universes,updated_at,timestamp with time zone,YES,"timezone('utc'::text, now())"
+universes,uuid,uuid,NO,gen_random_uuid()

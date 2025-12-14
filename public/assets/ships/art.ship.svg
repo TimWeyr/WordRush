@@ -1,0 +1,261 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Art ship - Highly detailed rocket/spaceship design -->
+  
+  <defs>
+    <!-- Gradient for main body -->
+    <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8e8e8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#d0d0d0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8b8b8;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient for wings -->
+    <linearGradient id="wingGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d8d8d8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#c0c0c0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a8a8a8;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient for engine pods -->
+    <radialGradient id="podGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#555555;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#333333;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Gradient for exhaust -->
+    <radialGradient id="exhaustGradient" cx="50%" cy="0%">
+      <stop offset="0%" style="stop-color:#888888;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#666666;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#444444;stop-opacity:0.3" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Main body (triangular/arrow shape) with gradient -->
+  <path d="M 30 3 L 28 12 L 24 18 L 24 28 L 28 36 L 30 42 L 32 36 L 36 28 L 36 18 L 32 12 Z" 
+        fill="url(#bodyGradient)" stroke="#888888" stroke-width="1.2"/>
+  
+  <!-- Body highlight (top section) -->
+  <path d="M 30 3 L 28 12 L 24 18 L 30 18 L 32 12 Z" 
+        fill="#f0f0f0" opacity="0.6"/>
+  
+  <!-- Body shadow (bottom section) -->
+  <path d="M 30 42 L 32 36 L 36 28 L 36 18 L 32 12 L 30 18 L 28 36 Z" 
+        fill="#a0a0a0" opacity="0.3"/>
+  
+  <!-- Structural panels on body -->
+  <path d="M 28 12 L 24 18 L 24 22 L 28 20 Z" fill="#b8b8b8" opacity="0.4"/>
+  <path d="M 32 12 L 36 18 L 36 22 L 32 20 Z" fill="#b8b8b8" opacity="0.4"/>
+  <path d="M 24 22 L 24 28 L 28 26 L 28 20 Z" fill="#c8c8c8" opacity="0.3"/>
+  <path d="M 36 22 L 36 28 L 32 26 L 32 20 Z" fill="#c8c8c8" opacity="0.3"/>
+  
+  <!-- Panel lines/seams -->
+  <line x1="30" y1="12" x2="30" y2="18" stroke="#999999" stroke-width="0.5" opacity="0.5"/>
+  <line x1="26" y1="20" x2="26" y2="28" stroke="#999999" stroke-width="0.4" opacity="0.4"/>
+  <line x1="34" y1="20" x2="34" y2="28" stroke="#999999" stroke-width="0.4" opacity="0.4"/>
+  <line x1="24" y1="25" x2="36" y2="25" stroke="#999999" stroke-width="0.3" opacity="0.3"/>
+  
+  <!-- Nose cone tip with detailed antenna -->
+  <circle cx="30" cy="3" r="1.2" fill="#777777" stroke="#555555" stroke-width="0.3"/>
+  <circle cx="30" cy="3" r="0.6" fill="#999999"/>
+  <line x1="30" y1="3" x2="30" y2="5.5" stroke="#666666" stroke-width="0.6"/>
+  <line x1="30" y1="3" x2="29.5" y2="4.5" stroke="#666666" stroke-width="0.4"/>
+  <line x1="30" y1="3" x2="30.5" y2="4.5" stroke="#666666" stroke-width="0.4"/>
+  <circle cx="30" cy="5.5" r="0.4" fill="#666666"/>
+  
+  <!-- Detailed cockpit window (oval with multiple vertical lines and frame) -->
+  <ellipse cx="30" cy="15" rx="4.5" ry="3.5" fill="#0a0a0a" stroke="#000000" stroke-width="0.8"/>
+  <ellipse cx="30" cy="15" rx="4" ry="3" fill="#1a1a1a" stroke="#222222" stroke-width="0.3"/>
+  
+  <!-- Cockpit frame (outer) -->
+  <ellipse cx="30" cy="15" rx="4.5" ry="3.5" fill="none" stroke="#666666" stroke-width="0.5" opacity="0.6"/>
+  
+  <!-- Vertical lines inside cockpit (more detailed) -->
+  <line x1="27" y1="12.5" x2="27" y2="17.5" stroke="#333333" stroke-width="0.6"/>
+  <line x1="28.5" y1="12.5" x2="28.5" y2="17.5" stroke="#333333" stroke-width="0.6"/>
+  <line x1="30" y1="12.5" x2="30" y2="17.5" stroke="#333333" stroke-width="0.6"/>
+  <line x1="31.5" y1="12.5" x2="31.5" y2="17.5" stroke="#333333" stroke-width="0.6"/>
+  <line x1="33" y1="12.5" x2="33" y2="17.5" stroke="#333333" stroke-width="0.6"/>
+  
+  <!-- Cockpit highlight/reflection -->
+  <ellipse cx="30" cy="13.5" rx="2" ry="1" fill="#444444" opacity="0.3"/>
+  
+  <!-- Small dots/rivets on main body (more detailed pattern) -->
+  <!-- Top section -->
+  <circle cx="26" cy="19" r="0.9" fill="#666666" stroke="#555555" stroke-width="0.2"/>
+  <circle cx="34" cy="19" r="0.9" fill="#666666" stroke="#555555" stroke-width="0.2"/>
+  <circle cx="27.5" cy="21" r="0.7" fill="#666666" stroke="#555555" stroke-width="0.15"/>
+  <circle cx="32.5" cy="21" r="0.7" fill="#666666" stroke="#555555" stroke-width="0.15"/>
+  
+  <!-- Middle section -->
+  <circle cx="26" cy="24" r="0.9" fill="#666666" stroke="#555555" stroke-width="0.2"/>
+  <circle cx="34" cy="24" r="0.9" fill="#666666" stroke="#555555" stroke-width="0.2"/>
+  <circle cx="27" cy="26" r="0.8" fill="#666666" stroke="#555555" stroke-width="0.2"/>
+  <circle cx="33" cy="26" r="0.8" fill="#666666" stroke="#555555" stroke-width="0.2"/>
+  <circle cx="27.5" cy="28" r="0.7" fill="#666666" stroke="#555555" stroke-width="0.15"/>
+  <circle cx="32.5" cy="28" r="0.7" fill="#666666" stroke="#555555" stroke-width="0.15"/>
+  
+  <!-- Lower section -->
+  <circle cx="26" cy="30" r="0.9" fill="#666666" stroke="#555555" stroke-width="0.2"/>
+  <circle cx="34" cy="30" r="0.9" fill="#666666" stroke="#555555" stroke-width="0.2"/>
+  <circle cx="27" cy="32" r="0.8" fill="#666666" stroke="#555555" stroke-width="0.2"/>
+  <circle cx="33" cy="32" r="0.8" fill="#666666" stroke="#555555" stroke-width="0.2"/>
+  
+  <!-- Rivet highlights -->
+  <circle cx="26" cy="19" r="0.4" fill="#888888" opacity="0.6"/>
+  <circle cx="34" cy="19" r="0.4" fill="#888888" opacity="0.6"/>
+  <circle cx="26" cy="24" r="0.4" fill="#888888" opacity="0.6"/>
+  <circle cx="34" cy="24" r="0.4" fill="#888888" opacity="0.6"/>
+  
+  <!-- Main wings (delta-wing design with more detail) -->
+  <path d="M 24 18 L 15 24 L 15 28 L 24 28" fill="url(#wingGradient)" stroke="#666666" stroke-width="1.2"/>
+  <path d="M 36 18 L 45 24 L 45 28 L 36 28" fill="url(#wingGradient)" stroke="#666666" stroke-width="1.2"/>
+  
+  <!-- Wing highlights -->
+  <path d="M 24 18 L 18 22 L 18 24 L 24 24" fill="#e0e0e0" opacity="0.5"/>
+  <path d="M 36 18 L 42 22 L 42 24 L 36 24" fill="#e0e0e0" opacity="0.5"/>
+  
+  <!-- Wing shadows -->
+  <path d="M 15 24 L 15 28 L 18 26 L 18 24" fill="#999999" opacity="0.4"/>
+  <path d="M 45 24 L 45 28 L 42 26 L 42 24" fill="#999999" opacity="0.4"/>
+  
+  <!-- Wing structural lines -->
+  <line x1="20" y1="20" x2="18" y2="24" stroke="#888888" stroke-width="0.4" opacity="0.5"/>
+  <line x1="20" y1="24" x2="18" y2="26" stroke="#888888" stroke-width="0.4" opacity="0.5"/>
+  <line x1="40" y1="20" x2="42" y2="24" stroke="#888888" stroke-width="0.4" opacity="0.5"/>
+  <line x1="40" y1="24" x2="42" y2="26" stroke="#888888" stroke-width="0.4" opacity="0.5"/>
+  
+  <!-- Wing tips (pointed with more detail) -->
+  <path d="M 15 24 L 12 26 L 15 28" fill="#999999" stroke="#555555" stroke-width="1"/>
+  <path d="M 45 24 L 48 26 L 45 28" fill="#999999" stroke="#555555" stroke-width="1"/>
+  <path d="M 14 25 L 12 26 L 14 27" fill="#777777" opacity="0.6"/>
+  <path d="M 46 25 L 48 26 L 46 27" fill="#777777" opacity="0.6"/>
+  
+  <!-- Wing tip highlights -->
+  <line x1="13.5" y1="25.5" x2="14.5" y2="25.5" stroke="#aaaaaa" stroke-width="0.3"/>
+  <line x1="45.5" y1="25.5" x2="46.5" y2="25.5" stroke="#aaaaaa" stroke-width="0.3"/>
+  
+  <!-- Lower wing pods/nacelles (bulbous engines with gradient) -->
+  <ellipse cx="20" cy="38" rx="3.8" ry="5.2" fill="url(#podGradient)" stroke="#222222" stroke-width="1.2"/>
+  <ellipse cx="40" cy="38" rx="3.8" ry="5.2" fill="url(#podGradient)" stroke="#222222" stroke-width="1.2"/>
+  
+  <!-- Pod highlights -->
+  <ellipse cx="20" cy="36" rx="2" ry="2.5" fill="#666666" opacity="0.4"/>
+  <ellipse cx="40" cy="36" rx="2" ry="2.5" fill="#666666" opacity="0.4"/>
+  
+  <!-- Pod shadows -->
+  <ellipse cx="20" cy="40" rx="2.5" ry="3" fill="#222222" opacity="0.5"/>
+  <ellipse cx="40" cy="40" rx="2.5" ry="3" fill="#222222" opacity="0.5"/>
+  
+  <!-- Engine details (more vertical lines inside) -->
+  <!-- Left pod -->
+  <line x1="20" y1="34" x2="20" y2="42" stroke="#111111" stroke-width="1"/>
+  <line x1="18.2" y1="35" x2="18.2" y2="41" stroke="#222222" stroke-width="0.7"/>
+  <line x1="21.8" y1="35" x2="21.8" y2="41" stroke="#222222" stroke-width="0.7"/>
+  <line x1="17.5" y1="36.5" x2="17.5" y2="39.5" stroke="#333333" stroke-width="0.5"/>
+  <line x1="22.5" y1="36.5" x2="22.5" y2="39.5" stroke="#333333" stroke-width="0.5"/>
+  
+  <!-- Right pod -->
+  <line x1="40" y1="34" x2="40" y2="42" stroke="#111111" stroke-width="1"/>
+  <line x1="38.2" y1="35" x2="38.2" y2="41" stroke="#222222" stroke-width="0.7"/>
+  <line x1="41.8" y1="35" x2="41.8" y2="41" stroke="#222222" stroke-width="0.7"/>
+  <line x1="37.5" y1="36.5" x2="37.5" y2="39.5" stroke="#333333" stroke-width="0.5"/>
+  <line x1="42.5" y1="36.5" x2="42.5" y2="39.5" stroke="#333333" stroke-width="0.5"/>
+  
+  <!-- Pod structural rings -->
+  <ellipse cx="20" cy="36" rx="3.5" ry="1" fill="#444444" opacity="0.3"/>
+  <ellipse cx="20" cy="40" rx="3.5" ry="1" fill="#222222" opacity="0.4"/>
+  <ellipse cx="40" cy="36" rx="3.5" ry="1" fill="#444444" opacity="0.3"/>
+  <ellipse cx="40" cy="40" rx="3.5" ry="1" fill="#222222" opacity="0.4"/>
+  
+  <!-- Central engine (main thruster with more detail) -->
+  <ellipse cx="30" cy="45" rx="5" ry="4" fill="#222222" stroke="#111111" stroke-width="1.2"/>
+  <ellipse cx="30" cy="45" rx="4.5" ry="3.5" fill="#333333" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Engine inner ring -->
+  <ellipse cx="30" cy="45" rx="3.5" ry="2.5" fill="#1a1a1a" opacity="0.8"/>
+  
+  <!-- Vertical lines inside central engine (more detailed) -->
+  <line x1="27.5" y1="42" x2="27.5" y2="48" stroke="#111111" stroke-width="0.9"/>
+  <line x1="30" y1="42" x2="30" y2="48" stroke="#111111" stroke-width="0.9"/>
+  <line x1="32.5" y1="42" x2="32.5" y2="48" stroke="#111111" stroke-width="0.9"/>
+  <line x1="26" y1="43.5" x2="26" y2="46.5" stroke="#222222" stroke-width="0.6"/>
+  <line x1="28.5" y1="43.5" x2="28.5" y2="46.5" stroke="#222222" stroke-width="0.6"/>
+  <line x1="31.5" y1="43.5" x2="31.5" y2="46.5" stroke="#222222" stroke-width="0.6"/>
+  <line x1="34" y1="43.5" x2="34" y2="46.5" stroke="#222222" stroke-width="0.6"/>
+  
+  <!-- Engine structural details -->
+  <ellipse cx="30" cy="43" rx="4.5" ry="1" fill="#444444" opacity="0.4"/>
+  <ellipse cx="30" cy="47" rx="4.5" ry="1" fill="#111111" opacity="0.6"/>
+  
+  <!-- Exhaust plumes (highly detailed swirling smoke with multiple layers) -->
+  <!-- Central engine exhaust - multiple layers -->
+  <ellipse cx="30" cy="50" rx="5" ry="3" fill="url(#exhaustGradient)" opacity="0.7"/>
+  <ellipse cx="30" cy="52" rx="6" ry="4" fill="url(#exhaustGradient)" opacity="0.6"/>
+  <ellipse cx="30" cy="54" rx="5.5" ry="3.5" fill="url(#exhaustGradient)" opacity="0.5"/>
+  
+  <!-- Swirling exhaust paths (more detailed) -->
+  <path d="M 25 48 Q 26 50 25 52 Q 28 51 27 53 Q 30 52 29 54 Q 32 53 31 55 Q 34 54 33 56" 
+        stroke="#666666" stroke-width="1.8" fill="none" opacity="0.7" stroke-linecap="round"/>
+  <path d="M 27.5 48 Q 28.5 50 27.5 52 Q 30.5 51 29.5 53 Q 32.5 52 31.5 54 Q 34.5 53 33.5 55 Q 36.5 54 35.5 56" 
+        stroke="#666666" stroke-width="1.8" fill="none" opacity="0.7" stroke-linecap="round"/>
+  <path d="M 30 48 Q 31 50 30 52 Q 33 51 32 53 Q 35 52 34 54 Q 37 53 36 55 Q 39 54 38 56" 
+        stroke="#666666" stroke-width="1.8" fill="none" opacity="0.7" stroke-linecap="round"/>
+  <path d="M 32.5 48 Q 33.5 50 32.5 52 Q 35.5 51 34.5 53 Q 37.5 52 36.5 54 Q 39.5 53 38.5 55 Q 41.5 54 40.5 56" 
+        stroke="#666666" stroke-width="1.8" fill="none" opacity="0.7" stroke-linecap="round"/>
+  <path d="M 35 48 Q 36 50 35 52 Q 38 51 37 53 Q 40 52 39 54 Q 42 53 41 55 Q 44 54 43 56" 
+        stroke="#666666" stroke-width="1.8" fill="none" opacity="0.7" stroke-linecap="round"/>
+  
+  <!-- Additional exhaust wisps -->
+  <path d="M 26 49 Q 27 51 26 53" stroke="#777777" stroke-width="1.2" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <path d="M 34 49 Q 35 51 34 53" stroke="#777777" stroke-width="1.2" fill="none" opacity="0.5" stroke-linecap="round"/>
+  
+  <!-- Left engine exhaust (more detailed) -->
+  <ellipse cx="20" cy="44" rx="2.5" ry="2" fill="url(#exhaustGradient)" opacity="0.6"/>
+  <ellipse cx="20" cy="46" rx="3" ry="2.5" fill="url(#exhaustGradient)" opacity="0.5"/>
+  
+  <path d="M 17 43 Q 18 45 17 47 Q 20 46 19 48 Q 22 47 21 49 Q 24 48 23 50" 
+        stroke="#666666" stroke-width="1.5" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M 20 43 Q 21 45 20 47 Q 23 46 22 48 Q 25 47 24 49 Q 27 48 26 50" 
+        stroke="#666666" stroke-width="1.5" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M 23 43 Q 24 45 23 47 Q 26 46 25 48 Q 28 47 27 49" 
+        stroke="#666666" stroke-width="1.3" fill="none" opacity="0.5" stroke-linecap="round"/>
+  
+  <!-- Right engine exhaust (more detailed) -->
+  <ellipse cx="40" cy="44" rx="2.5" ry="2" fill="url(#exhaustGradient)" opacity="0.6"/>
+  <ellipse cx="40" cy="46" rx="3" ry="2.5" fill="url(#exhaustGradient)" opacity="0.5"/>
+  
+  <path d="M 40 43 Q 41 45 40 47 Q 43 46 42 48 Q 45 47 44 49 Q 47 48 46 50" 
+        stroke="#666666" stroke-width="1.5" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M 43 43 Q 44 45 43 47 Q 46 46 45 48 Q 48 47 47 49 Q 50 48 49 50" 
+        stroke="#666666" stroke-width="1.5" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M 37 43 Q 38 45 37 47 Q 40 46 39 48 Q 42 47 41 49" 
+        stroke="#666666" stroke-width="1.3" fill="none" opacity="0.5" stroke-linecap="round"/>
+  
+  <!-- Motion lines (vertical lines on sides with more variation) -->
+  <line x1="22" y1="15" x2="22" y2="18" stroke="#999999" stroke-width="1.2" opacity="0.7"/>
+  <line x1="23" y1="13" x2="23" y2="16" stroke="#999999" stroke-width="1.1" opacity="0.7"/>
+  <line x1="21.5" y1="14" x2="21.5" y2="16.5" stroke="#aaaaaa" stroke-width="0.9" opacity="0.6"/>
+  <line x1="38" y1="15" x2="38" y2="18" stroke="#999999" stroke-width="1.2" opacity="0.7"/>
+  <line x1="37" y1="13" x2="37" y2="16" stroke="#999999" stroke-width="1.1" opacity="0.7"/>
+  <line x1="38.5" y1="14" x2="38.5" y2="16.5" stroke="#aaaaaa" stroke-width="0.9" opacity="0.6"/>
+  <line x1="25" y1="11" x2="25" y2="14" stroke="#999999" stroke-width="1" opacity="0.6"/>
+  <line x1="35" y1="11" x2="35" y2="14" stroke="#999999" stroke-width="1" opacity="0.6"/>
+  <line x1="24" y1="12" x2="24" y2="13.5" stroke="#aaaaaa" stroke-width="0.8" opacity="0.5"/>
+  <line x1="36" y1="12" x2="36" y2="13.5" stroke="#aaaaaa" stroke-width="0.8" opacity="0.5"/>
+  
+  <!-- Additional motion wisps -->
+  <line x1="22.5" y1="16.5" x2="22.5" y2="17.5" stroke="#bbbbbb" stroke-width="0.7" opacity="0.4"/>
+  <line x1="37.5" y1="16.5" x2="37.5" y2="17.5" stroke="#bbbbbb" stroke-width="0.7" opacity="0.4"/>
+  
+  <!-- Additional detailed shading for depth -->
+  <path d="M 30 3 L 28 12 L 24 18 L 24 28 L 28 36 L 30 42" 
+        fill="none" stroke="#aaaaaa" stroke-width="0.6" opacity="0.4"/>
+  <path d="M 30 3 L 32 12 L 36 18 L 36 28 L 32 36 L 30 42" 
+        fill="none" stroke="#cccccc" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- Edge highlights -->
+  <path d="M 30 3 L 28 12 L 24 18" 
+        fill="none" stroke="#e8e8e8" stroke-width="0.8" opacity="0.5"/>
+  <path d="M 30 3 L 32 12 L 36 18" 
+        fill="none" stroke="#e8e8e8" stroke-width="0.8" opacity="0.5"/>
+</svg>

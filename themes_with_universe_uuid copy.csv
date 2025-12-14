@@ -1,0 +1,67 @@
+theme_id,theme_name,universe_id,universe_uuid
+arbeit,Arbeit,alltag,2257c848-571c-4300-98e7-d634dfc7952c
+aufstehen,Aufstehen,alltag,2257c848-571c-4300-98e7-d634dfc7952c
+chaos_planet,Chaos Planet,alltag,2257c848-571c-4300-98e7-d634dfc7952c
+einkaufen,Einkaufen,alltag,2257c848-571c-4300-98e7-d634dfc7952c
+freizeit,Freizeit,alltag,2257c848-571c-4300-98e7-d634dfc7952c
+gemischte_levels,Gemischte Levels,alltag,2257c848-571c-4300-98e7-d634dfc7952c
+schlafen,Schlafen,alltag,2257c848-571c-4300-98e7-d634dfc7952c
+zufaellige_levels,Zufällige Levels,alltag,2257c848-571c-4300-98e7-d634dfc7952c
+brainrot,Brainrot,checkst_du,a968398f-0b1c-46ac-b42c-06fcefcc6269
+fashion_beauty,Fashion und Beauty Trends,checkst_du,a968398f-0b1c-46ac-b42c-06fcefcc6269
+gaming_esports,Gaming & Esports Culture 2025,checkst_du,a968398f-0b1c-46ac-b42c-06fcefcc6269
+gen_alpha_kid_influencer,Gen-Alpha & Kid Influencer,checkst_du,a968398f-0b1c-46ac-b42c-06fcefcc6269
+internetslang,Internetslang,checkst_du,a968398f-0b1c-46ac-b42c-06fcefcc6269
+brainrot,Brainrot,checkst_du,a968398f-0b1c-46ac-b42c-06fcefcc6269
+business_english,Business Englisch,englisch,a382080b-f3e2-4584-ad44-ff05af206b3d
+english_cap,Englisch CAP,englisch,a382080b-f3e2-4584-ad44-ff05af206b3d
+technical_english,Technik & MINT Englisch,englisch,a382080b-f3e2-4584-ad44-ff05af206b3d
+fastfood,Fast Food,essen,bb72756c-cbbf-4389-b28b-d713fbc18190
+blockbuster,Blockbuster,filme,fe1e28dd-bc85-49fc-a7a6-ba0848f1f5d3
+disney,Disney,filme,fe1e28dd-bc85-49fc-a7a6-ba0848f1f5d3
+klassiker,Filmklassiker,filme,fe1e28dd-bc85-49fc-a7a6-ba0848f1f5d3
+mcu,MCU - Marvel Cinematic Universe,filme,fe1e28dd-bc85-49fc-a7a6-ba0848f1f5d3
+michael_schur,Michael Schur,filme,fe1e28dd-bc85-49fc-a7a6-ba0848f1f5d3
+neil_gaiman,Neil Gaiman,filme,fe1e28dd-bc85-49fc-a7a6-ba0848f1f5d3
+deutschland,Deutschland,fussball,6499d707-30f0-488f-ab26-2c9accebfaf0
+wm,WM,fussball,6499d707-30f0-488f-ab26-2c9accebfaf0
+weimarer_republik,Weimarer Republik,geschichte,fbb18e5f-0bd7-4669-bcc9-d37b1bcca646
+geometrie,Geometrie,mathe,9fb8d8e6-e476-48bb-be37-7597d48fa0bc
+grundrechenarten,+-x:,mathe,9fb8d8e6-e476-48bb-be37-7597d48fa0bc
+reddit,Reddit,memes,fa7fd33c-6fcf-4c58-99ac-431b961d689d
+tiktok,TikTok,memes,fa7fd33c-6fcf-4c58-99ac-431b961d689d
+charts,Charts,music,f135c867-3b62-496c-bbb3-674c5a528ebf
+emo,Emo,music,f135c867-3b62-496c-bbb3-674c5a528ebf
+metal,Metal,music,f135c867-3b62-496c-bbb3-674c5a528ebf
+music,Music,music,f135c867-3b62-496c-bbb3-674c5a528ebf
+pop,Pop,music,f135c867-3b62-496c-bbb3-674c5a528ebf
+punk,Punk,music,f135c867-3b62-496c-bbb3-674c5a528ebf
+generationen,Generationen,pokemon,ac45ac45-e50a-4608-bf83-fe27949600f4
+regionen,Regionen,pokemon,ac45ac45-e50a-4608-bf83-fe27949600f4
+typen,Typen,pokemon,ac45ac45-e50a-4608-bf83-fe27949600f4
+f00_f09,"F00-F09: Organische, einschließlich symptomatischer psychischer Störungen",psychiatrie,c05fbe5f-2abf-4a05-8ccb-d3afe2b2d1ab
+f10_f19,F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen,psychiatrie,c05fbe5f-2abf-4a05-8ccb-d3afe2b2d1ab
+f20_f29,"F20-F29: Schizophrenie, schizotype und wahnhafte Störungen",psychiatrie,c05fbe5f-2abf-4a05-8ccb-d3afe2b2d1ab
+f30_f39,F30-F39: Affektive Störungen,psychiatrie,c05fbe5f-2abf-4a05-8ccb-d3afe2b2d1ab
+f40_f48,"F40-F48: Neurotische, Belastungs- und somatoforme Störungen",psychiatrie,c05fbe5f-2abf-4a05-8ccb-d3afe2b2d1ab
+f50_f59,F50-F59: Verhaltensauffälligkeiten mit körperlichen Störungen und Faktoren,psychiatrie,c05fbe5f-2abf-4a05-8ccb-d3afe2b2d1ab
+f60_f69,F60-F69: Persönlichkeits- und Verhaltensstörungen,psychiatrie,c05fbe5f-2abf-4a05-8ccb-d3afe2b2d1ab
+f70_f79,F70-F79: Intelligenzstörung,psychiatrie,c05fbe5f-2abf-4a05-8ccb-d3afe2b2d1ab
+f80_f89,F80-F89: Entwicklungsstörungen,psychiatrie,c05fbe5f-2abf-4a05-8ccb-d3afe2b2d1ab
+f90_f98,F90-F98: Verhaltens- und emotionale Störungen mit Beginn in der Kindheit und Jugend,psychiatrie,c05fbe5f-2abf-4a05-8ccb-d3afe2b2d1ab
+suizid,Suizid,psychiatrie,c05fbe5f-2abf-4a05-8ccb-d3afe2b2d1ab
+spanisch_cap,Spanisch CAP,spanisch,4668ea46-f40a-451f-96be-8c11fb6dec65
+autobahn_schnellstrassen,Autobahn- und Schnellstraßenschilder,stvo,f3e41e80-d922-4a33-8541-0744fa8994e4
+baustellenzeichen,Baustellenzeichen,stvo,f3e41e80-d922-4a33-8541-0744fa8994e4
+gefahrenzeichen,Gefahrenzeichen,stvo,f3e41e80-d922-4a33-8541-0744fa8994e4
+lichtzeichen_ampeln,Lichtzeichen & Ampeln,stvo,f3e41e80-d922-4a33-8541-0744fa8994e4
+markierungen_fahrbahnregeln,Markierungen & Fahrbahnregeln,stvo,f3e41e80-d922-4a33-8541-0744fa8994e4
+richtzeichen,Richtzeichen,stvo,f3e41e80-d922-4a33-8541-0744fa8994e4
+verhalten_strassenverkehr,Verhalten im Straßenverkehr,stvo,f3e41e80-d922-4a33-8541-0744fa8994e4
+verkehrseinrichtungen,Verkehrseinrichtungen,stvo,f3e41e80-d922-4a33-8541-0744fa8994e4
+verkehrszeichen_allgemein,Verkehrszeichen allgemein,stvo,f3e41e80-d922-4a33-8541-0744fa8994e4
+vorschriftzeichen,Vorschriftzeichen,stvo,f3e41e80-d922-4a33-8541-0744fa8994e4
+wegweiser_orientierung,Wegweiser & Orientierung,stvo,f3e41e80-d922-4a33-8541-0744fa8994e4
+zusatzzeichen,Zusatzzeichen,stvo,f3e41e80-d922-4a33-8541-0744fa8994e4
+tfe,TFE - Transference-Focused Exploration,therapie,69de24ef-a927-43d5-bdfb-8c3304591a44
+haustiere,Haustiere,tiere,7cf20e04-b218-4cab-bfd4-015a243ccff9

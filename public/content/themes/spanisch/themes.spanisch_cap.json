@@ -28,7 +28,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "casa_theme.mp3",
-      "particleEffect": "warm_particles"
+      "particleEffect": "warm_particles",
+      "title": "Alltag Zuhause"
     },
     "Arbeit_Buero": {
       "backgroundImage": "oficina_bg.png",
@@ -39,7 +40,8 @@
       "spawnRate": 1.8,
       "waveDuration": 3,
       "music": "oficina_theme.mp3",
-      "particleEffect": "business_sparks"
+      "particleEffect": "business_sparks",
+      "title": "Arbeit Buero"
     },
     "Reisen_Freizeit": {
       "backgroundImage": "viaje_bg.png",
@@ -50,7 +52,8 @@
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "viaje_theme.mp3",
-      "particleEffect": "adventure_dust"
+      "particleEffect": "adventure_dust",
+      "title": "Reisen Freizeit"
     },
     "Freunde_Familie": {
       "backgroundImage": "amigos_bg.png",
@@ -61,7 +64,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "amigos_theme.mp3",
-      "particleEffect": "warm_particles"
+      "particleEffect": "warm_particles",
+      "title": "Freunde Familie"
     }
   },
   "meta": {
@@ -70,4 +74,3 @@
     "created": "2025-01-27"
   }
 }
-

@@ -20,6 +20,11 @@ Educational 2D shooter game built with React + TypeScript + Canvas.
 - ✅ **Retro Aesthetic** - Arcade game styling with outlined text
 - ✅ **Progress Persistence** - LocalStorage with Supabase-ready adapter pattern
 - ✅ **Themed Colors** - Colors from JSON universe/theme files
+- ✅ **Authentication System** - Supabase email/password authentication
+- ✅ **User Management** - Login, registration, email verification, password reset
+- ✅ **freeTier Content** - Guest users can play selected free content
+- ✅ **Protected Routes** - Editor requires verified email
+- ✅ **Toast Notifications** - Global toast system for user feedback
 
 ## Quick Start
 
@@ -29,7 +34,28 @@ Educational 2D shooter game built with React + TypeScript + Canvas.
 npm install
 ```
 
-### 2. Run Development Server
+### 2. Setup Supabase (Optional - for Authentication)
+
+If you want to use authentication features:
+
+1. Create a Supabase project at [supabase.com](https://supabase.com)
+2. Go to Project Settings → API
+3. Create `.env.local` in the project root:
+
+```env
+VITE_SUPABASE_URL=your-project-url
+VITE_SUPABASE_ANON_KEY=your-anon-key
+```
+
+4. Configure Supabase Authentication:
+   - Go to Authentication → URL Configuration
+   - Set **Site URL**: `http://localhost:3000`
+   - Add **Redirect URL**: `http://localhost:3000/*`
+   - Enable Email provider in Authentication → Providers
+
+**Note:** The app works without Supabase (guest mode with freeTier content), but authentication features require Supabase configuration.
+
+### 3. Run Development Server
 
 ```bash
 npm run dev
@@ -37,12 +63,39 @@ npm run dev
 
 The game will open at `http://localhost:3000`
 
-### 3. Build for Production
+### 4. Build for Production
 
 ```bash
 npm run build
 npm run preview
 ```
+
+## Authentication & Access Levels
+
+WordRush has a tiered access system:
+
+### Guest Users (No Account)
+- Can play **freeTier** content (items marked with `freeTier: true` in JSON)
+- Progress saved locally (LocalStorage)
+- No email verification required
+- Quick start for trying the game
+
+### Registered Users (Email + Password)
+- After registration: Can play all content (freeTier + premium)
+- Progress saved locally (Supabase sync coming soon)
+- Email verification **not required** for gameplay
+
+### Verified Users (Email Confirmed)
+- Full access to **Editor** (`/editor` routes)
+- Can create, edit, and manage content
+- Future: Cloud sync, leaderboards, purchases
+
+### Registration
+
+1. Click Settings ⚙️ in the game
+2. Click "Jetzt registrieren / einloggen"
+3. Register with email + password
+4. Verification email sent (optional for playing, required for Editor)
 
 ## How to Play
 
@@ -175,15 +228,49 @@ Quick example: Just add a new JSON file following the existing structure!
 - **Storage**: LocalStorage (Supabase adapter ready)
 - **Responsive**: Works on desktop, tablet, mobile
 
-## What's NOT Included (Simplified for MVP)
+## Authentication Routes
+
+- `/` - Main game (public, freeTier content for guests)
+- `/login` - Login/Register screen
+- `/editor/*` - Content editor (requires verified email)
+
+## Environment Variables
+
+Create `.env.local` for Supabase authentication:
+
+```env
+VITE_SUPABASE_URL=your-supabase-project-url
+VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
+```
+
+**Without `.env.local`:** App runs in guest mode (freeTier content only).
+
+## Content: freeTier Property
+
+Items can be marked as free for guest users:
+
+```json
+{
+  "id": "BC_001",
+  "freeTier": true,
+  "theme": "business_english",
+  "chapter": "Business_Communication",
+  ...
+}
+```
+
+- `freeTier: true` → Available for guests
+- `freeTier: false` or missing → Requires registration
+
+## What's NOT Included Yet
 
 - ❌ Audio/music (silent game)
 - ❌ Complex animations (simple movement only)
-- ❌ Galaxy Hub visualization (simple selector instead)
+- ❌ Galaxy Hub 3D visualization
 - ❌ Multiple movement patterns (only linear_inward)
 - ❌ Particle effects (basic parallax only)
-- ❌ PWA/offline mode (dev server only)
-- ❌ Supabase cloud sync (LocalStorage only)
+- ❌ PWA/offline mode
+- ❌ Supabase progress sync (coming soon)
 - ❌ Mobile native apps (web only)
 
 ## Next Steps to Full Build
@@ -198,6 +285,23 @@ To upgrade from MVP → Full Build (see BUILD_PLAN.md):
 6. Build PWA with offline support
 7. Package for iOS/Android with Capacitor
 8. Comprehensive testing
+
+## URL Parameters & Deep Linking
+
+WordRush supports URL parameters for shareable links and customization:
+
+**Available Parameters:**
+- `universes` / `universeIds`: Filter which universes to load (e.g., `?universes=psychiatrie,englisch`)
+- `universe`: Auto-select universe on load (e.g., `?universe=geschichte`)
+- `theme`: Auto-zoom to specific theme/planet (e.g., `?theme=weimarer_republik`)
+- `mode`: Set game mode (`lernmodus` or `shooter`)
+- `preset`: Set gameplay difficulty (`zen`, `easy`, `medium`, `hard`, `custom`)
+
+**Examples:**
+- `https://wordrush-gamma.vercel.app/?universe=psychiatrie&theme=f10_f19&mode=shooter&preset=hard`
+- `https://wordrush-gamma.vercel.app/?universes=englisch&universe=englisch&preset=easy`
+
+Perfect for sharing specific content, kiosk mode, or custom learning experiences!
 
 ## Troubleshooting
 

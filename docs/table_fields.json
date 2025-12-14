@@ -1,0 +1,2178 @@
+[
+    {
+        "table_name": "chapters",
+        "column_name": "id",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Chapter key in Theme.chapters",
+        "code_references": [
+            {
+                "file": "src/infra/utils/JSONLoader.ts",
+                "lines": [
+                    97,
+                    416
+                ],
+                "usage": "Loading themes and chapters"
+            },
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    42
+                ],
+                "usage": "Record<string, ChapterConfig> - chapter keys"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Chapter identifier (key in Theme.chapters object)"
+    },
+    {
+        "table_name": "chapters",
+        "column_name": "title",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "ChapterConfig.title",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    55
+                ],
+                "usage": "TypeScript type definition - optional display name (fallback to id)"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Optional display name for chapter. Falls back to chapter id if not provided."
+    },
+    {
+        "table_name": "chapters",
+        "column_name": "description",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Not in JSON (DB-only field)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Optional description field. Not present in JSON structure."
+    },
+    {
+        "table_name": "chapters",
+        "column_name": "backgroundimage",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "ChapterConfig.backgroundImage",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    56
+                ],
+                "usage": "TypeScript type definition - optional background image"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Optional background image filename. Currently not actively used in rendering."
+    },
+    {
+        "table_name": "chapters",
+        "column_name": "background_gradient",
+        "data_type": "jsonb",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "ChapterConfig.backgroundGradient",
+        "code_references": [
+            {
+                "file": "src/components/Game.tsx",
+                "lines": [
+                    667,
+                    670,
+                    673,
+                    677
+                ],
+                "usage": "Background rendering during gameplay - renderGradientBackground(), parallax layers"
+            },
+            {
+                "file": "src/components/Editor/MetadataEditor.tsx",
+                "lines": [
+                    359,
+                    360
+                ],
+                "usage": "Editor UI - GradientPicker component for editing"
+            },
+            {
+                "file": "src/components/GalaxyRenderer.ts",
+                "lines": [
+                    154
+                ],
+                "usage": "Galaxy Map - moon chapter background gradient"
+            },
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    57
+                ],
+                "usage": "TypeScript type definition - ChapterConfig interface"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Array of 2+ hex colors. First color used for main background, second for parallax layer."
+    },
+    {
+        "table_name": "chapters",
+        "column_name": "meta",
+        "data_type": "jsonb",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "ChapterConfig (extended metadata)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Flexible JSONB field for additional chapter metadata. Currently not actively used."
+    },
+    {
+        "table_name": "chapters",
+        "column_name": "spawn_rate",
+        "data_type": "double precision",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "ChapterConfig.spawnRate",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    58
+                ],
+                "usage": "TypeScript type definition - required spawnRate field"
+            },
+            {
+                "file": "src/components/Editor/MetadataEditor.tsx",
+                "lines": [
+                    339,
+                    340
+                ],
+                "usage": "Editor UI - input field for spawn rate (0.1-5.0)"
+            },
+            {
+                "file": "src/components/Editor/AddNewDialog.tsx",
+                "lines": [
+                    73
+                ],
+                "usage": "Default value when creating new chapter (1.0)"
+            },
+            {
+                "file": "public/content/CONTENT_GUIDE.md",
+                "lines": [
+                    134,
+                    161
+                ],
+                "usage": "Documentation - objects per second (1.0-3.0 recommended)"
+            }
+        ],
+        "migration_status": "missing",
+        "notes": "Objects per second for this chapter. Required field in JSON. Typical range: 1.0-3.0. Maps to gameplay spawn rate."
+    },
+    {
+        "table_name": "chapters",
+        "column_name": "music",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "ChapterConfig.music",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    60
+                ],
+                "usage": "TypeScript type definition - optional music filename"
+            },
+            {
+                "file": "public/content/CONTENT_GUIDE.md",
+                "lines": [
+                    136,
+                    163
+                ],
+                "usage": "Documentation - chapter-specific music file"
+            }
+        ],
+        "migration_status": "missing",
+        "notes": "Optional music filename for chapter-specific background music. Falls back to theme/universe music if not set."
+    },
+    {
+        "table_name": "chapters",
+        "column_name": "particle_effect",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "ChapterConfig.particleEffect",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    61
+                ],
+                "usage": "TypeScript type definition - optional particle effect name"
+            },
+            {
+                "file": "public/content/CONTENT_GUIDE.md",
+                "lines": [
+                    137,
+                    164,
+                    207
+                ],
+                "usage": "Documentation - visual particle effect name (e.g., 'custom_particles', 'energy_sparks')"
+            }
+        ],
+        "migration_status": "missing",
+        "notes": "Optional particle effect name for chapter-specific visual effects. Falls back to theme/universe particle effect."
+    },
+    {
+        "table_name": "chapters",
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES",
+        "column_default": "timezone('utc'::text, now())",
+        "json_source": "DB timestamp (auto-generated)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Auto-generated timestamp when record is created"
+    },
+    {
+        "table_name": "chapters",
+        "column_name": "updated_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES",
+        "column_default": "timezone('utc'::text, now())",
+        "json_source": "DB timestamp (auto-generated)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Auto-generated timestamp when record is updated"
+    },
+    {
+        "table_name": "chapters",
+        "column_name": "uuid",
+        "data_type": "uuid",
+        "is_nullable": "NO",
+        "column_default": "gen_random_uuid()",
+        "json_source": "DB UUID (auto-generated)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Auto-generated UUID for database relationships"
+    },
+    {
+        "table_name": "chapters",
+        "column_name": "themes_uuid_backup",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Migration backup field",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Backup field during migration, may be removed later"
+    },
+    {
+        "table_name": "chapters",
+        "column_name": "themes_uuid",
+        "data_type": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Foreign key to themes.uuid",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Foreign key linking chapter to theme"
+    },
+    {
+        "table_name": "items",
+        "column_name": "round_id",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Item.id",
+        "code_references": [
+            {
+                "file": "docs/example.data.json",
+                "lines": [
+                    42,
+                    105,
+                    168
+                ],
+                "usage": "Example data structure"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Foreign key to rounds.id (e.g., 'F10_012', 'BR_IT_001')"
+    },
+    {
+        "table_name": "items",
+        "column_name": "object_type",
+        "data_type": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "json_source": "Item structure (base/correct/distractor)",
+        "code_references": [
+            {
+                "file": "docs/example.data.json",
+                "lines": [
+                    43,
+                    106,
+                    169
+                ],
+                "usage": "Values: 'base', 'correct', 'distractor'"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Type discriminator: 'base', 'correct', or 'distractor'"
+    },
+    {
+        "table_name": "items",
+        "column_name": "collectionorder",
+        "data_type": "integer",
+        "is_nullable": "YES",
+        "column_default": "0",
+        "json_source": "CorrectEntry.collectionOrder",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    100
+                ],
+                "usage": "Type definition - collection sequence"
+            },
+            {
+                "file": "src/entities/CorrectObject.ts",
+                "lines": [
+                    123
+                ],
+                "usage": "Display collection order in Lernmodus"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Required collection sequence (1, 2, 3, ...). null = no order required. Used in Lernmodus only."
+    },
+    {
+        "table_name": "items",
+        "column_name": "word",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "BaseEntry.word, CorrectEntry.entry.word, DistractorEntry.entry.word",
+        "code_references": [
+            {
+                "file": "src/entities/BaseEntity.ts",
+                "lines": [
+                    10,
+                    58
+                ],
+                "usage": "Base word display"
+            },
+            {
+                "file": "src/entities/CorrectObject.ts",
+                "lines": [
+                    124
+                ],
+                "usage": "Correct object word display"
+            },
+            {
+                "file": "src/entities/DistractorObject.ts",
+                "lines": [
+                    187
+                ],
+                "usage": "Distractor object word display"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Text to display. Either word or image must be present."
+    },
+    {
+        "table_name": "items",
+        "column_name": "type",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "BaseEntry.type, CorrectEntry.entry.type, DistractorEntry.entry.type",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    81,
+                    89,
+                    109
+                ],
+                "usage": "Type definition - category/type for metadata"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Category/type for metadata (e.g., 'Symptom', 'Wrong', 'BrainrotTerm')"
+    },
+    {
+        "table_name": "items",
+        "column_name": "image",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "BaseEntry.image, CorrectEntry.entry.image, DistractorEntry.entry.image",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    82,
+                    90,
+                    110
+                ],
+                "usage": "Type definition - optional image filename"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Optional image filename. Either word or image must be present."
+    },
+    {
+        "table_name": "items",
+        "column_name": "context",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "CorrectEntry.context, DistractorEntry.context",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    101,
+                    121
+                ],
+                "usage": "Type definition - explanation text"
+            },
+            {
+                "file": "src/components/Editor/TableView.tsx",
+                "lines": [
+                    542
+                ],
+                "usage": "Editor UI - context input field"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Explanation text shown after collection/destruction. Required for correct/distractor items."
+    },
+    {
+        "table_name": "items",
+        "column_name": "behavior",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "DistractorEntry.behavior",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    119
+                ],
+                "usage": "Type definition - movement behavior for distractors"
+            },
+            {
+                "file": "src/entities/DistractorObject.ts",
+                "lines": [
+                    80,
+                    82
+                ],
+                "usage": "Movement behavior switch (seek_center, zigzag, linear_inward)"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Movement pattern for distractor items: 'linear_inward', 'seek_center', 'zigzag', 'wave'"
+    },
+    {
+        "table_name": "items",
+        "column_name": "damage",
+        "data_type": "integer",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "DistractorEntry.damage",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    118
+                ],
+                "usage": "Type definition - damage dealt on collision"
+            },
+            {
+                "file": "src/entities/DistractorObject.ts",
+                "lines": [
+                    229
+                ],
+                "usage": "Damage calculation on ship collision"
+            },
+            {
+                "file": "public/content/CONTENT_GUIDE.md",
+                "lines": [
+                    390
+                ],
+                "usage": "Documentation - damage levels (1-3)"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Damage dealt to Ship on collision (1 = light, 2 = medium, 3 = heavy)"
+    },
+    {
+        "table_name": "items",
+        "column_name": "redirect",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "DistractorEntry.redirect",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    120
+                ],
+                "usage": "Type definition - redirect hint"
+            },
+            {
+                "file": "src/entities/DistractorObject.ts",
+                "lines": [
+                    188,
+                    190
+                ],
+                "usage": "Redirect text display during collision"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Correct category hint shown when distractor is hit (e.g., 'Schizophrenie')"
+    },
+    {
+        "table_name": "items",
+        "column_name": "spawn_position",
+        "data_type": "double precision",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "CorrectEntry.spawnPosition, DistractorEntry.spawnPosition",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    92,
+                    112
+                ],
+                "usage": "Type definition - spawn location (0.0-1.0)"
+            },
+            {
+                "file": "public/content/CONTENT_GUIDE.md",
+                "lines": [
+                    281,
+                    296
+                ],
+                "usage": "Documentation - horizontal spawn location"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Horizontal spawn location (0.0-1.0). 0.5 = center, 0.0 = left, 1.0 = right."
+    },
+    {
+        "table_name": "items",
+        "column_name": "spawn_spread",
+        "data_type": "double precision",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "CorrectEntry.spawnSpread, DistractorEntry.spawnSpread",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    93,
+                    113
+                ],
+                "usage": "Type definition - random variance"
+            },
+            {
+                "file": "public/content/CONTENT_GUIDE.md",
+                "lines": [
+                    282,
+                    314
+                ],
+                "usage": "Documentation - random variance around spawnPosition"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Random variance around spawnPosition (typically 0.05 = ±5%)"
+    },
+    {
+        "table_name": "items",
+        "column_name": "spawn_delay",
+        "data_type": "double precision",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "CorrectEntry.spawnDelay, DistractorEntry.spawnDelay",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    94,
+                    114
+                ],
+                "usage": "Type definition - optional delay in seconds"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Optional delay in seconds from round start before spawning"
+    },
+    {
+        "table_name": "items",
+        "column_name": "speed",
+        "data_type": "double precision",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "CorrectEntry.speed, DistractorEntry.speed",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    95,
+                    115
+                ],
+                "usage": "Type definition - speed multiplier"
+            },
+            {
+                "file": "src/entities/CorrectObject.ts",
+                "lines": [
+                    56
+                ],
+                "usage": "Movement speed calculation"
+            },
+            {
+                "file": "src/entities/DistractorObject.ts",
+                "lines": [
+                    65
+                ],
+                "usage": "Movement speed calculation"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Speed multiplier (typically 0.9 for correct, 1.1-1.2 for distractors)"
+    },
+    {
+        "table_name": "items",
+        "column_name": "points",
+        "data_type": "integer",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "CorrectEntry.points, DistractorEntry.points",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    96,
+                    116
+                ],
+                "usage": "Type definition - points awarded"
+            },
+            {
+                "file": "src/logic/ShooterEngine.ts",
+                "lines": [
+                    400,
+                    450
+                ],
+                "usage": "Score calculation on collect/destroy"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Points awarded when collected (correct) or destroyed (distractor)"
+    },
+    {
+        "table_name": "items",
+        "column_name": "hp",
+        "data_type": "integer",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "CorrectEntry.hp, DistractorEntry.hp",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    99,
+                    117
+                ],
+                "usage": "Type definition - optional hit points"
+            },
+            {
+                "file": "src/entities/DistractorObject.ts",
+                "lines": [
+                    215,
+                    229
+                ],
+                "usage": "HP display and damage handling"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Hit points (default: 1). Objects with HP > 1 require multiple hits."
+    },
+    {
+        "table_name": "items",
+        "column_name": "sound",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "CorrectEntry.sound, DistractorEntry.sound",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    103,
+                    123
+                ],
+                "usage": "Type definition - optional sound effect"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Optional sound effect filename (e.g., 'bubble_hit_soft', 'explosion_minor')"
+    },
+    {
+        "table_name": "items",
+        "column_name": "color",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "VisualConfig.color",
+        "code_references": [
+            {
+                "file": "src/entities/CorrectObject.ts",
+                "lines": [
+                    148
+                ],
+                "usage": "Color for correct objects (Shooter mode)"
+            },
+            {
+                "file": "src/entities/DistractorObject.ts",
+                "lines": [
+                    200
+                ],
+                "usage": "Color for distractor objects"
+            },
+            {
+                "file": "src/entities/BaseEntity.ts",
+                "lines": [
+                    39
+                ],
+                "usage": "Color for base word display"
+            },
+            {
+                "file": "agents.md",
+                "lines": [
+                    342,
+                    345
+                ],
+                "usage": "Documentation - overridden in Lernmodus (green/red)"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Hex color code. In Lernmodus: overridden to green (#00ff88) for correct, red (#ff3333) for distractors."
+    },
+    {
+        "table_name": "items",
+        "column_name": "variant",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "VisualConfig.variant",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    134
+                ],
+                "usage": "Type definition - shape variant"
+            },
+            {
+                "file": "src/components/Editor/TableView.tsx",
+                "lines": [
+                    545,
+                    550
+                ],
+                "usage": "Editor UI - variant display"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Shape variant: 'hexagon', 'star', 'bubble', 'spike', 'square', 'diamond'"
+    },
+    {
+        "table_name": "items",
+        "column_name": "pulsate",
+        "data_type": "boolean",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "VisualConfig.pulsate",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    132
+                ],
+                "usage": "Type definition - pulsation animation"
+            },
+            {
+                "file": "src/entities/CorrectObject.ts",
+                "lines": [
+                    101
+                ],
+                "usage": "Pulsate animation update"
+            },
+            {
+                "file": "src/entities/DistractorObject.ts",
+                "lines": [
+                    136
+                ],
+                "usage": "Pulsate animation update"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Whether item has pulsation animation"
+    },
+    {
+        "table_name": "items",
+        "column_name": "font_size",
+        "data_type": "double precision",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "VisualConfig.fontSize",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    135
+                ],
+                "usage": "Type definition - font size multiplier"
+            },
+            {
+                "file": "src/entities/CorrectObject.ts",
+                "lines": [
+                    128
+                ],
+                "usage": "Font size calculation"
+            },
+            {
+                "file": "src/entities/DistractorObject.ts",
+                "lines": [
+                    195
+                ],
+                "usage": "Font size calculation"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Font size multiplier (typically 1.0-1.2)"
+    },
+    {
+        "table_name": "items",
+        "column_name": "tier",
+        "data_type": "integer",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "BaseEntry.visual.tier",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    127
+                ],
+                "usage": "TypeScript type definition - visual tier level"
+            },
+            {
+                "file": "src/entities/BaseEntity.ts",
+                "lines": [
+                    58
+                ],
+                "usage": "Font size calculation based on tier (not directly used, but part of visual config)"
+            },
+            {
+                "file": "public/content/themes/checkst_du/brainrot/Italian.json",
+                "lines": [
+                    12,
+                    118
+                ],
+                "usage": "Example JSON - tier: 2 for base items"
+            }
+        ],
+        "migration_status": "missing",
+        "notes": "Visual tier level for base items (typically 1-3). Higher tier = more prominent display."
+    },
+    {
+        "table_name": "items",
+        "column_name": "size",
+        "data_type": "double precision",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "BaseEntry.visual.size",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    128
+                ],
+                "usage": "TypeScript type definition - visual size multiplier"
+            },
+            {
+                "file": "src/entities/BaseEntity.ts",
+                "lines": [
+                    59
+                ],
+                "usage": "Font size calculation: baseFontSize = 24 * (visual.size || 1.0)"
+            },
+            {
+                "file": "docs/migration_populate_data.sql",
+                "lines": [
+                    88,
+                    92
+                ],
+                "usage": "Data population - size calculated based on word length (0.6-1.5 range)"
+            }
+        ],
+        "migration_status": "missing",
+        "notes": "Visual size multiplier for base items. Typically 0.6-1.5. Calculated based on word length: shorter words = larger size."
+    },
+    {
+        "table_name": "items",
+        "column_name": "appearance",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "BaseEntry.visual.appearance",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    129
+                ],
+                "usage": "TypeScript type definition - visual appearance style"
+            },
+            {
+                "file": "src/entities/BaseEntity.ts",
+                "lines": [
+                    70,
+                    71
+                ],
+                "usage": "Font style: ctx.font = `${bold ? 'bold' : 'normal'} ${baseFontSize}px Arial`"
+            },
+            {
+                "file": "public/content/themes/checkst_du/brainrot/Italian.json",
+                "lines": [
+                    14,
+                    120
+                ],
+                "usage": "Example JSON - appearance: 'bold' for base items"
+            }
+        ],
+        "migration_status": "missing",
+        "notes": "Visual appearance style for base items. Values: 'bold', 'italic', 'normal'. Used for font styling."
+    },
+    {
+        "table_name": "items",
+        "column_name": "glow",
+        "data_type": "boolean",
+        "is_nullable": "YES",
+        "column_default": "false",
+        "json_source": "BaseEntry.visual.glow",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    131
+                ],
+                "usage": "TypeScript type definition - glow effect"
+            },
+            {
+                "file": "src/entities/CorrectObject.ts",
+                "lines": [
+                    109,
+                    110
+                ],
+                "usage": "Glow intensity calculation: glowIntensity = 0.5 + Math.sin(spawnTime * 4) * 0.5"
+            },
+            {
+                "file": "public/content/themes/checkst_du/brainrot/Italian.json",
+                "lines": [
+                    16,
+                    122
+                ],
+                "usage": "Example JSON - glow: true for base items"
+            }
+        ],
+        "migration_status": "missing",
+        "notes": "Whether base item has glow effect. Creates pulsing glow animation around the word."
+    },
+    {
+        "table_name": "items",
+        "column_name": "shake",
+        "data_type": "boolean",
+        "is_nullable": "YES",
+        "column_default": "false",
+        "json_source": "VisualConfig.shake (mainly for distractors)",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    133
+                ],
+                "usage": "TypeScript type definition - shake animation"
+            },
+            {
+                "file": "src/entities/CorrectObject.ts",
+                "lines": [
+                    105,
+                    106
+                ],
+                "usage": "Shake offset calculation: shakeOffset = Math.sin(spawnTime * 10) * 5"
+            },
+            {
+                "file": "src/entities/DistractorObject.ts",
+                "lines": [
+                    140,
+                    141
+                ],
+                "usage": "Shake offset calculation for distractor items"
+            },
+            {
+                "file": "public/content/themes/checkst_du/brainrot/Italian.json",
+                "lines": [
+                    61,
+                    84
+                ],
+                "usage": "Example JSON - shake: false for distractors"
+            }
+        ],
+        "migration_status": "missing",
+        "notes": "Whether item has shake animation. Mainly used for distractor items to draw attention. Creates horizontal shake effect."
+    },
+    {
+        "table_name": "items",
+        "column_name": "pattern",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "CorrectEntry.pattern",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    97
+                ],
+                "usage": "TypeScript type definition - movement pattern for correct items"
+            },
+            {
+                "file": "src/entities/CorrectObject.ts",
+                "lines": [
+                    65,
+                    67,
+                    89
+                ],
+                "usage": "Movement behavior switch: linear_inward, zigzag, wave, seek_center"
+            },
+            {
+                "file": "public/content/CONTENT_GUIDE.md",
+                "lines": [
+                    286,
+                    238
+                ],
+                "usage": "Documentation - movement patterns: 'linear_inward', 'zigzag', 'wave', 'seek_center'"
+            },
+            {
+                "file": "public/content/themes/checkst_du/brainrot/Italian.json",
+                "lines": [
+                    30,
+                    136
+                ],
+                "usage": "Example JSON - pattern: 'linear_inward' for correct items"
+            }
+        ],
+        "migration_status": "missing",
+        "notes": "Movement pattern for correct items. Values: 'linear_inward' (default), 'zigzag', 'wave', 'seek_center'. Note: behavior is for distractors, pattern is for correct items."
+    },
+    {
+        "table_name": "items",
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES",
+        "column_default": "timezone('utc'::text, now())",
+        "json_source": "DB timestamp (auto-generated)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Auto-generated timestamp when record is created"
+    },
+    {
+        "table_name": "items",
+        "column_name": "updated_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES",
+        "column_default": "timezone('utc'::text, now())",
+        "json_source": "DB timestamp (auto-generated)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Auto-generated timestamp when record is updated"
+    },
+    {
+        "table_name": "items",
+        "column_name": "round_uuid",
+        "data_type": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Foreign key to rounds.uuid",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Foreign key linking item to round (UUID)"
+    },
+    {
+        "table_name": "items",
+        "column_name": "uuid",
+        "data_type": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "json_source": "DB UUID (auto-generated)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Auto-generated UUID for database relationships"
+    },
+    {
+        "table_name": "rounds",
+        "column_name": "id",
+        "data_type": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "json_source": "Item.id",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    65
+                ],
+                "usage": "Type definition - item identifier"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Round identifier (e.g., 'F10_012', 'BR_IT_001')"
+    },
+    {
+        "table_name": "rounds",
+        "column_name": "chapter_id",
+        "data_type": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "json_source": "Item.chapter",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    67
+                ],
+                "usage": "Type definition - chapter identifier"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Foreign key to chapters.id"
+    },
+    {
+        "table_name": "rounds",
+        "column_name": "level",
+        "data_type": "integer",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Item.level",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    68
+                ],
+                "usage": "Type definition - level (1-6)"
+            },
+            {
+                "file": "src/components/Game.tsx",
+                "lines": [
+                    140
+                ],
+                "usage": "Filter items by level"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Level number (typically 1-6). Used for difficulty progression."
+    },
+    {
+        "table_name": "rounds",
+        "column_name": "published",
+        "data_type": "boolean",
+        "is_nullable": "YES",
+        "column_default": "true",
+        "json_source": "Item.published",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    69
+                ],
+                "usage": "Type definition - published status"
+            },
+            {
+                "file": "src/infra/utils/JSONLoader.ts",
+                "lines": [
+                    175,
+                    176
+                ],
+                "usage": "Filter by published status"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Whether item is published and visible to end users (default: true)"
+    },
+    {
+        "table_name": "rounds",
+        "column_name": "wave_duration",
+        "data_type": "numeric",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Item.waveDuration",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    71
+                ],
+                "usage": "Type definition - wave duration"
+            },
+            {
+                "file": "src/config/config.json",
+                "lines": [
+                    10
+                ],
+                "usage": "Default fallback value (8 seconds)"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Wave duration in seconds. Fallback to config.json if not set."
+    },
+    {
+        "table_name": "rounds",
+        "column_name": "meta_source",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Item.meta.source",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    141
+                ],
+                "usage": "Type definition - source reference"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Source reference (e.g., 'ICD-10-GM 2025', 'Italian Brainrot 2025')"
+    },
+    {
+        "table_name": "rounds",
+        "column_name": "meta_tags",
+        "data_type": "ARRAY",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Item.meta.tags",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    142
+                ],
+                "usage": "Type definition - tags array"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Array of tags for categorization (e.g., ['brainrot', 'italian', 'memes'])"
+    },
+    {
+        "table_name": "rounds",
+        "column_name": "meta_difficulty_scaling",
+        "data_type": "jsonb",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Item.meta.difficultyScaling",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    144
+                ],
+                "usage": "Type definition - difficulty scaling config"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "JSONB object: {speedMultiplierPerReplay, colorContrastFade, angleVariance}"
+    },
+    {
+        "table_name": "rounds",
+        "column_name": "free_tier",
+        "data_type": "boolean",
+        "is_nullable": "YES",
+        "column_default": "false",
+        "json_source": "Item.freeTier",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    70
+                ],
+                "usage": "Type definition - free tier flag"
+            },
+            {
+                "file": "src/components/Game.tsx",
+                "lines": [
+                    147
+                ],
+                "usage": "Filter items for guest users"
+            }
+        ],
+        "migration_status": "missing",
+        "notes": "Whether item is available for free (guest users without login). Default: false (Opt-in for security)."
+    },
+    {
+        "table_name": "rounds",
+        "column_name": "intro_text",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Item.introText",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    72
+                ],
+                "usage": "Type definition - optional intro text"
+            }
+        ],
+        "migration_status": "missing",
+        "notes": "Optional intro text displayed before round starts"
+    },
+    {
+        "table_name": "rounds",
+        "column_name": "meta_related",
+        "data_type": "ARRAY",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Item.meta.related",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    143
+                ],
+                "usage": "Type definition - related item IDs"
+            }
+        ],
+        "migration_status": "missing",
+        "notes": "Array of related round/item IDs for cross-referencing"
+    },
+    {
+        "table_name": "rounds",
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES",
+        "column_default": "timezone('utc'::text, now())",
+        "json_source": "DB timestamp (auto-generated)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Auto-generated timestamp when record is created"
+    },
+    {
+        "table_name": "rounds",
+        "column_name": "updated_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES",
+        "column_default": "timezone('utc'::text, now())",
+        "json_source": "DB timestamp (auto-generated)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Auto-generated timestamp when record is updated"
+    },
+    {
+        "table_name": "rounds",
+        "column_name": "chapter_uuid",
+        "data_type": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Foreign key to chapters.uuid",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Foreign key linking round to chapter (UUID)"
+    },
+    {
+        "table_name": "rounds",
+        "column_name": "uuid",
+        "data_type": "uuid",
+        "is_nullable": "YES",
+        "column_default": "gen_random_uuid()",
+        "json_source": "DB UUID (auto-generated)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Auto-generated UUID for database relationships"
+    },
+    {
+        "table_name": "themes",
+        "column_name": "id",
+        "data_type": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "json_source": "Theme.id",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    31
+                ],
+                "usage": "Type definition - theme identifier"
+            },
+            {
+                "file": "src/infra/utils/JSONLoader.ts",
+                "lines": [
+                    97,
+                    409
+                ],
+                "usage": "Loading themes"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Theme identifier (e.g., 'business_english', 'icd10')"
+    },
+    {
+        "table_name": "themes",
+        "column_name": "obsoloete_uuid",
+        "data_type": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "json_source": "Migration backup field",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Backup field during migration (typo: 'obsoloete' instead of 'obsolete'), may be removed later"
+    },
+    {
+        "table_name": "themes",
+        "column_name": "name",
+        "data_type": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "json_source": "Theme.name",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    32
+                ],
+                "usage": "Type definition - theme name"
+            },
+            {
+                "file": "src/components/GalaxyRenderer.ts",
+                "lines": [
+                    200
+                ],
+                "usage": "Planet label display"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Display name for theme"
+    },
+    {
+        "table_name": "themes",
+        "column_name": "description",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Theme.description",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    33
+                ],
+                "usage": "Type definition - theme description"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Description of theme content"
+    },
+    {
+        "table_name": "themes",
+        "column_name": "color_primary",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Theme.colorPrimary",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    34
+                ],
+                "usage": "Type definition - primary color"
+            },
+            {
+                "file": "src/components/GalaxyRenderer.ts",
+                "lines": [
+                    56,
+                    75,
+                    354
+                ],
+                "usage": "Planet rendering, glow effects"
+            },
+            {
+                "file": "agents.md",
+                "lines": [
+                    301,
+                    304
+                ],
+                "usage": "Documentation - planet rendering in GalaxyMap"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Main theme color (hex). Used for planet rendering, glow effects, connection lines."
+    },
+    {
+        "table_name": "themes",
+        "column_name": "color_accent",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Theme.colorAccent",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    35
+                ],
+                "usage": "Type definition - accent color"
+            },
+            {
+                "file": "src/components/GalaxyMap.tsx",
+                "lines": [
+                    308
+                ],
+                "usage": "Particle effects"
+            },
+            {
+                "file": "agents.md",
+                "lines": [
+                    307,
+                    310
+                ],
+                "usage": "Documentation - particle effects, secondary UI elements"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Secondary theme color (hex). Used for particle effects, secondary visual elements."
+    },
+    {
+        "table_name": "themes",
+        "column_name": "background_gradient",
+        "data_type": "jsonb",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Theme.backgroundGradient",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    36
+                ],
+                "usage": "Type definition - background gradient"
+            },
+            {
+                "file": "agents.md",
+                "lines": [
+                    312,
+                    315
+                ],
+                "usage": "Documentation - theme-level background (chapters override)"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Array of 2+ hex colors. Chapter-level backgroundGradient takes precedence in game rendering."
+    },
+    {
+        "table_name": "themes",
+        "column_name": "laser_color",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Theme.laserColor",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    51
+                ],
+                "usage": "Type definition - optional laser color"
+            },
+            {
+                "file": "src/components/Game.tsx",
+                "lines": [
+                    307
+                ],
+                "usage": "Laser rendering"
+            },
+            {
+                "file": "src/logic/ShooterEngine.ts",
+                "lines": [
+                    500
+                ],
+                "usage": "Laser color with fallback chain"
+            },
+            {
+                "file": "agents.md",
+                "lines": [
+                    317,
+                    321
+                ],
+                "usage": "Documentation - priority: theme > universe > default"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Color for laser projectiles. Priority: theme.laserColor > universe.laserColor > '#4a90e2'"
+    },
+    {
+        "table_name": "themes",
+        "column_name": "icon",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Theme.icon",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    38
+                ],
+                "usage": "Type definition - icon emoji/identifier"
+            },
+            {
+                "file": "src/components/GalaxyRenderer.ts",
+                "lines": [
+                    150
+                ],
+                "usage": "Planet icon display"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Icon emoji or identifier (e.g., '🧠', '💊')"
+    },
+    {
+        "table_name": "themes",
+        "column_name": "music",
+        "data_type": "jsonb",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Theme.music (JSONB)",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    43
+                ],
+                "usage": "Type definition - music config (not in Theme interface)"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Music configuration as JSONB: {theme: string, volume: number} or string filename"
+    },
+    {
+        "table_name": "themes",
+        "column_name": "particle_effect",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Theme.particleEffect",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    49
+                ],
+                "usage": "Type definition - optional particle effect"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Optional particle effect name. Falls back to universe particle effect."
+    },
+    {
+        "table_name": "themes",
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES",
+        "column_default": "timezone('utc'::text, now())",
+        "json_source": "DB timestamp (auto-generated)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Auto-generated timestamp when record is created"
+    },
+    {
+        "table_name": "themes",
+        "column_name": "updated_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES",
+        "column_default": "timezone('utc'::text, now())",
+        "json_source": "DB timestamp (auto-generated)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Auto-generated timestamp when record is updated"
+    },
+    {
+        "table_name": "themes",
+        "column_name": "uuid",
+        "data_type": "uuid",
+        "is_nullable": "NO",
+        "column_default": "gen_random_uuid()",
+        "json_source": "DB UUID (auto-generated)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Auto-generated UUID for database relationships"
+    },
+    {
+        "table_name": "themes",
+        "column_name": "universe_uuid",
+        "data_type": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Foreign key to universes.uuid",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Foreign key linking theme to universe (UUID)"
+    },
+    {
+        "table_name": "universes",
+        "column_name": "id",
+        "data_type": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "json_source": "Universe.id",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    4
+                ],
+                "usage": "Type definition - universe identifier"
+            },
+            {
+                "file": "src/infra/utils/JSONLoader.ts",
+                "lines": [
+                    71,
+                    78
+                ],
+                "usage": "Loading universes"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Universe identifier (e.g., 'psychiatrie', 'englisch', 'checkst_du')"
+    },
+    {
+        "table_name": "universes",
+        "column_name": "name",
+        "data_type": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "json_source": "Universe.name",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    5
+                ],
+                "usage": "Type definition - universe name"
+            },
+            {
+                "file": "src/components/UniverseSelector.tsx",
+                "lines": [
+                    80
+                ],
+                "usage": "Universe selector display"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Display name for universe"
+    },
+    {
+        "table_name": "universes",
+        "column_name": "description",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Universe.description",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    6
+                ],
+                "usage": "Type definition - universe description"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Description of universe content"
+    },
+    {
+        "table_name": "universes",
+        "column_name": "color_primary",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Universe.colorPrimary",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    7
+                ],
+                "usage": "Type definition - primary color"
+            },
+            {
+                "file": "src/components/GalaxyRenderer.ts",
+                "lines": [
+                    56,
+                    75
+                ],
+                "usage": "Planet rendering, glow effects"
+            },
+            {
+                "file": "agents.md",
+                "lines": [
+                    278,
+                    280
+                ],
+                "usage": "Documentation - planet rendering in GalaxyMap"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Main universe color (hex). Used for planet rendering, glow effects, fallback for ring colors."
+    },
+    {
+        "table_name": "universes",
+        "column_name": "color_accent",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Universe.colorAccent",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    8
+                ],
+                "usage": "Type definition - accent color"
+            },
+            {
+                "file": "src/components/GalaxyMap.tsx",
+                "lines": [
+                    308
+                ],
+                "usage": "Particle effects (moon particles)"
+            },
+            {
+                "file": "agents.md",
+                "lines": [
+                    283,
+                    286
+                ],
+                "usage": "Documentation - particle effects, secondary UI elements"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Secondary universe color (hex). Used for particle effects, secondary UI elements."
+    },
+    {
+        "table_name": "universes",
+        "column_name": "background_gradient",
+        "data_type": "jsonb",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Universe.backgroundGradient",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    9
+                ],
+                "usage": "Type definition - background gradient"
+            },
+            {
+                "file": "src/components/GalaxyMap.tsx",
+                "lines": [
+                    789,
+                    790
+                ],
+                "usage": "Background rendering in GalaxyMap"
+            },
+            {
+                "file": "src/components/UniverseSelector.tsx",
+                "lines": [
+                    127
+                ],
+                "usage": "Universe selector background"
+            },
+            {
+                "file": "agents.md",
+                "lines": [
+                    288,
+                    292
+                ],
+                "usage": "Documentation - background rendering in GalaxyMap"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Array of 2+ hex colors. Used for background rendering in GalaxyMap (universe selection screen)."
+    },
+    {
+        "table_name": "universes",
+        "column_name": "laser_color",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Universe.laserColor",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    19
+                ],
+                "usage": "Type definition - optional laser color"
+            },
+            {
+                "file": "src/entities/Laser.ts",
+                "lines": [
+                    14,
+                    55
+                ],
+                "usage": "Laser rendering"
+            },
+            {
+                "file": "src/logic/ShooterEngine.ts",
+                "lines": [
+                    500
+                ],
+                "usage": "Laser color with fallback chain"
+            },
+            {
+                "file": "agents.md",
+                "lines": [
+                    294,
+                    298
+                ],
+                "usage": "Documentation - fallback chain: theme > universe > default"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Color for laser projectiles. Fallback: theme.laserColor > universe.laserColor > '#4a90e2'"
+    },
+    {
+        "table_name": "universes",
+        "column_name": "icon",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Universe.icon",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    10
+                ],
+                "usage": "Type definition - icon emoji/identifier"
+            },
+            {
+                "file": "src/components/UniverseSelector.tsx",
+                "lines": [
+                    90
+                ],
+                "usage": "Universe selector icon display"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Icon emoji or identifier (e.g., '🎓', '✨', '🇬🇧')"
+    },
+    {
+        "table_name": "universes",
+        "column_name": "available",
+        "data_type": "boolean",
+        "is_nullable": "YES",
+        "column_default": "true",
+        "json_source": "Universe.available",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    11
+                ],
+                "usage": "Type definition - available flag"
+            },
+            {
+                "file": "src/infra/utils/JSONLoader.ts",
+                "lines": [
+                    59
+                ],
+                "usage": "Filter by available status"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Whether universe is available and shown in Galaxy Hub (false = coming soon)"
+    },
+    {
+        "table_name": "universes",
+        "column_name": "language",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Universe.language",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    12
+                ],
+                "usage": "Type definition - language code"
+            },
+            {
+                "file": "public/content/CONTENT_GUIDE.md",
+                "lines": [
+                    93
+                ],
+                "usage": "Documentation - ISO language code"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "ISO language code (e.g., 'de', 'en', 'es')"
+    },
+    {
+        "table_name": "universes",
+        "column_name": "music",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Universe.music (TEXT or JSONB)",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    13
+                ],
+                "usage": "Type definition - music config object"
+            },
+            {
+                "file": "migration_insert_universes.sql",
+                "lines": [
+                    39,
+                    58
+                ],
+                "usage": "Music as TEXT filename"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Music filename (TEXT) or JSONB object: {theme: string, volume: number}"
+    },
+    {
+        "table_name": "universes",
+        "column_name": "particle_effect",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Universe.particleEffect",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    17
+                ],
+                "usage": "Type definition - optional particle effect"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Optional particle effect name (e.g., 'trend_particles', 'language_particles')"
+    },
+    {
+        "table_name": "universes",
+        "column_name": "ship_skin",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Universe.shipSkin",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    18
+                ],
+                "usage": "Type definition - optional ship skin"
+            },
+            {
+                "file": "src/entities/Ship.ts",
+                "lines": [
+                    50
+                ],
+                "usage": "Ship sprite loading"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "Optional ship graphics variant (e.g., 'english_ship', 'trend_ship')"
+    },
+    {
+        "table_name": "universes",
+        "column_name": "meta",
+        "data_type": "jsonb",
+        "is_nullable": "YES",
+        "column_default": null,
+        "json_source": "Universe.meta",
+        "code_references": [
+            {
+                "file": "src/types/content.types.ts",
+                "lines": [
+                    23
+                ],
+                "usage": "Type definition - meta info object"
+            },
+            {
+                "file": "migration_insert_universes.sql",
+                "lines": [
+                    42,
+                    61
+                ],
+                "usage": "Meta as JSONB: {author, version, created}"
+            }
+        ],
+        "migration_status": "migrated",
+        "notes": "JSONB object: {author: string, version: string, created: string}"
+    },
+    {
+        "table_name": "universes",
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES",
+        "column_default": "timezone('utc'::text, now())",
+        "json_source": "DB timestamp (auto-generated)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Auto-generated timestamp when record is created"
+    },
+    {
+        "table_name": "universes",
+        "column_name": "updated_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES",
+        "column_default": "timezone('utc'::text, now())",
+        "json_source": "DB timestamp (auto-generated)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Auto-generated timestamp when record is updated"
+    },
+    {
+        "table_name": "universes",
+        "column_name": "uuid",
+        "data_type": "uuid",
+        "is_nullable": "NO",
+        "column_default": "gen_random_uuid()",
+        "json_source": "DB UUID (auto-generated)",
+        "code_references": [],
+        "migration_status": "migrated",
+        "notes": "Auto-generated UUID for database relationships"
+    }
+]

@@ -24,7 +24,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "feuer_theme.mp3",
-      "particleEffect": "fire_energy"
+      "particleEffect": "fire_energy",
+      "title": "feuer"
     },
     "wasser": {
       "backgroundImage": "wasser_bg.png",
@@ -35,7 +36,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "wasser_theme.mp3",
-      "particleEffect": "water_energy"
+      "particleEffect": "water_energy",
+      "title": "wasser"
     },
     "pflanze": {
       "backgroundImage": "pflanze_bg.png",
@@ -46,7 +48,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "pflanze_theme.mp3",
-      "particleEffect": "grass_energy"
+      "particleEffect": "grass_energy",
+      "title": "pflanze"
     },
     "elektro": {
       "backgroundImage": "elektro_bg.png",
@@ -57,7 +60,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "elektro_theme.mp3",
-      "particleEffect": "electric_energy"
+      "particleEffect": "electric_energy",
+      "title": "elektro"
     },
     "normal": {
       "backgroundImage": "normal_bg.png",
@@ -68,7 +72,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "normal_theme.mp3",
-      "particleEffect": "normal_energy"
+      "particleEffect": "normal_energy",
+      "title": "normal"
     }
   },
   "meta": {
@@ -77,4 +82,3 @@
     "created": "2025-01-27"
   }
 }
-

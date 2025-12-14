@@ -22,24 +22,26 @@
     "90er": {
       "backgroundImage": "pop_90er_bg.png",
       "backgroundGradient": [
-    "#FFB6C1",
-    "#FF69B4"
+        "#FFB6C1",
+        "#FF69B4"
       ],
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "pop_90er_theme.mp3",
-      "particleEffect": "pop_energy"
+      "particleEffect": "pop_energy",
+      "title": "90er"
     },
     "80er": {
       "backgroundImage": "pop_80er_bg.png",
       "backgroundGradient": [
-    "#FFD700",
-    "#FFA500"
+        "#FFD700",
+        "#FFA500"
       ],
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "pop_80er_theme.mp3",
-      "particleEffect": "pop_energy"
+      "particleEffect": "pop_energy",
+      "title": "80er"
     }
   },
   "meta": {
@@ -48,4 +50,3 @@
     "created": "2025-01-27"
   }
 }
-

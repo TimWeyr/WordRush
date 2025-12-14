@@ -1,0 +1,310 @@
+{
+  "id": "disney",
+  "name": "Disney",
+  "description": "Lerne Disney-Filme und -Charaktere - Von Frozen bis Encanto, alle Disney-Klassiker! 🏰✨",
+  "colorPrimary": "#9b59b6",
+  "colorAccent": "#8e44ad",
+  "backgroundGradient": [
+    "#8e44ad",
+    "#9b59b6"
+  ],
+  "maxLevels": 15,
+  "icon": "🏰",
+  "shipSkin": "/assets/ships/movie_ship.svg",
+  "laserColor": "#9b59b6",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Frozen": {
+      "backgroundGradient": [
+        "#5dade2",
+        "#3498db"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "frozen_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Frozen"
+    },
+    "Moana": {
+      "backgroundGradient": [
+        "#1abc9c",
+        "#16a085"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "moana_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Moana"
+    },
+    "Rapunzel": {
+      "backgroundGradient": [
+        "#f39c12",
+        "#e67e22"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "rapunzel_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Rapunzel"
+    },
+    "Encanto": {
+      "backgroundGradient": [
+        "#e74c3c",
+        "#c0392b"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "encanto_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Encanto"
+    },
+    "Merida": {
+      "backgroundGradient": [
+        "#8e44ad",
+        "#7d3c98"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "merida_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Merida"
+    },
+    "Raya": {
+      "backgroundGradient": [
+        "#3498db",
+        "#2980b9"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "raya_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Raya"
+    },
+    "Tiana": {
+      "backgroundGradient": [
+        "#27ae60",
+        "#229954"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "tiana_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Tiana"
+    },
+    "Mulan": {
+      "backgroundGradient": [
+        "#d35400",
+        "#ba4a00"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "mulan_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Mulan"
+    },
+    "Inside_Out": {
+      "backgroundGradient": [
+        "#f1c40f",
+        "#f39c12"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "inside_out_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Inside Out"
+    },
+    "Turning_Red": {
+      "backgroundGradient": [
+        "#e74c3c",
+        "#c0392b"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "turning_red_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Turning Red"
+    },
+    "Wish": {
+      "backgroundGradient": [
+        "#9b59b6",
+        "#8e44ad"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "wish_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Wish"
+    },
+    "Cinderella": {
+      "backgroundGradient": [
+        "#ecf0f1",
+        "#bdc3c7"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "cinderella_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Cinderella"
+    },
+    "Luca": {
+      "backgroundGradient": [
+        "#3498db",
+        "#2980b9"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "luca_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Luca"
+    },
+    "Ariel": {
+      "backgroundGradient": [
+        "#1abc9c",
+        "#16a085"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "ariel_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Ariel"
+    },
+    "Soul": {
+      "backgroundGradient": [
+        "#34495e",
+        "#2c3e50"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "soul_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Soul"
+    },
+    "Aladdin": {
+      "backgroundGradient": [
+        "#f39c12",
+        "#e67e22"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "aladdin_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Aladdin"
+    },
+    "Beauty_Beast": {
+      "backgroundGradient": [
+        "#8e44ad",
+        "#7d3c98"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "beauty_beast_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Beauty Beast"
+    },
+    "Zootopia": {
+      "backgroundGradient": [
+        "#27ae60",
+        "#229954"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "zootopia_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Zootopia"
+    },
+    "Coco": {
+      "backgroundGradient": [
+        "#e67e22",
+        "#d35400"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "coco_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Coco"
+    },
+    "Pocahontas": {
+      "backgroundGradient": [
+        "#16a085",
+        "#138d75"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "pocahontas_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Pocahontas"
+    },
+    "Elemental": {
+      "backgroundGradient": [
+        "#e74c3c",
+        "#c0392b"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "elemental_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Elemental"
+    },
+    "Snow_White": {
+      "backgroundGradient": [
+        "#ecf0f1",
+        "#bdc3c7"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "snow_white_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Snow White"
+    },
+    "Big_Hero_6": {
+      "backgroundGradient": [
+        "#3498db",
+        "#2980b9"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "big_hero_6_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Big Hero 6"
+    },
+    "Strange_World": {
+      "backgroundGradient": [
+        "#1abc9c",
+        "#16a085"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "strange_world_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Strange World"
+    },
+    "Winnie_Pooh": {
+      "backgroundGradient": [
+        "#f39c12",
+        "#e67e22"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "winnie_pooh_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Winnie Pooh"
+    },
+    "Descendants": {
+      "backgroundGradient": [
+        "#9b59b6",
+        "#8e44ad"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "descendants_theme.mp3",
+      "particleEffect": "disney_particles",
+      "title": "Descendants"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}

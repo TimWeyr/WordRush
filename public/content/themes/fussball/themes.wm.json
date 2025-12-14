@@ -28,7 +28,8 @@
       "spawnRate": 1.2,
       "waveDuration": 3,
       "music": "wm_2022_theme.mp3",
-      "particleEffect": "wm_energy"
+      "particleEffect": "wm_energy",
+      "title": "wm 2022"
     },
     "wm_2018": {
       "backgroundImage": "wm_2018_bg.png",
@@ -39,7 +40,8 @@
       "spawnRate": 1.2,
       "waveDuration": 3,
       "music": "wm_2018_theme.mp3",
-      "particleEffect": "wm_energy"
+      "particleEffect": "wm_energy",
+      "title": "wm 2018"
     },
     "wm_2014": {
       "backgroundImage": "wm_2014_bg.png",
@@ -50,7 +52,8 @@
       "spawnRate": 1.2,
       "waveDuration": 3,
       "music": "wm_2014_theme.mp3",
-      "particleEffect": "wm_energy"
+      "particleEffect": "wm_energy",
+      "title": "wm 2014"
     },
     "wm_2010": {
       "backgroundImage": "wm_2010_bg.png",
@@ -61,7 +64,8 @@
       "spawnRate": 1.2,
       "waveDuration": 3,
       "music": "wm_2010_theme.mp3",
-      "particleEffect": "wm_energy"
+      "particleEffect": "wm_energy",
+      "title": "wm 2010"
     },
     "wm_2006": {
       "backgroundImage": "wm_2006_bg.png",
@@ -72,7 +76,8 @@
       "spawnRate": 1.2,
       "waveDuration": 3,
       "music": "wm_2006_theme.mp3",
-      "particleEffect": "wm_energy"
+      "particleEffect": "wm_energy",
+      "title": "wm 2006"
     },
     "wm_2002": {
       "backgroundImage": "wm_2002_bg.png",
@@ -83,7 +88,8 @@
       "spawnRate": 1.2,
       "waveDuration": 3,
       "music": "wm_2002_theme.mp3",
-      "particleEffect": "wm_energy"
+      "particleEffect": "wm_energy",
+      "title": "wm 2002"
     },
     "wm_1998": {
       "backgroundImage": "wm_1998_bg.png",
@@ -94,7 +100,8 @@
       "spawnRate": 1.2,
       "waveDuration": 3,
       "music": "wm_1998_theme.mp3",
-      "particleEffect": "wm_energy"
+      "particleEffect": "wm_energy",
+      "title": "wm 1998"
     }
   },
   "meta": {
@@ -103,4 +110,3 @@
     "created": "2025-01-27"
   }
 }
-

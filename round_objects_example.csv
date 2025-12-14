@@ -1,0 +1,6 @@
+id,round_id,theme_id,object_type,order_index,word,entry_type,image,visual,spawn_position,spawn_spread,speed,points,hp,pattern,collection_order,damage,behavior,redirect,context,sound,created_at,updated_at
+1,ELH_001,english_cap,base,0,house,Noun,,"{""tier"": 2, ""size"": 1, ""appearance"": ""bold"", ""color"": ""#FF9800"", ""glow"": true, ""pulsate"": true}",,,,,,,,,,,,2025-11-30,2025-11-30
+2,ELH_001,english_cap,correct,0,Haus,Translation,,"{""color"": ""#F39C12"", ""variant"": ""hexagon"", ""pulsate"": false, ""fontSize"": 1.1}",0.52,0.05,0.9,200,1,linear_inward,1,,,,"house = Haus",bubble_hit_soft,2025-11-30,2025-11-30
+3,ELH_001,english_cap,distractor,0,Maus,Wrong,,"{""color"": ""#FF5722"", ""variant"": ""diamond"", ""pulsate"": true, ""shake"": false, ""fontSize"": 1}",0.39,0.05,1.2,100,1,,,1,seek_center,mouse,"Maus = mouse, nicht house",explosion_minor,2025-11-30,2025-11-30
+4,ELH_001,english_cap,distractor,1,office,Wrong,,"{""color"": ""#9B59B6"", ""variant"": ""bubble"", ""pulsate"": true, ""shake"": false, ""fontSize"": 1}",0.27,0.05,1.2,100,1,,,1,seek_center,Büro,"office gehört zu Beruf & Büro",explosion_minor,2025-11-30,2025-11-30
+

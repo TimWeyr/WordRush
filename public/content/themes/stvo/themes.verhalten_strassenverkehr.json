@@ -1,0 +1,24 @@
+{
+  "id": "verhalten_strassenverkehr",
+  "name": "Verhalten im Straßenverkehr",
+  "description": "Lerne das richtige Verhalten im Straßenverkehr - Vorfahrt, Abstand, Geschwindigkeit und mehr.",
+  "colorPrimary": "#55efc4",
+  "colorAccent": "#00b894",
+  "backgroundGradient": [
+    "#00b894",
+    "#55efc4"
+  ],
+  "maxLevels": 15,
+  "icon": "🚗",
+  "shipSkin": "/assets/ships/traffic_ship.svg",
+  "laserColor": "#55efc4",
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

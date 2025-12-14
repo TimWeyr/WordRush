@@ -596,9 +596,136 @@ npm install @stripe/stripe-js
 
 **Status**: 📋 Idee - Noch nicht implementiert
 
+---
 
+### 14. Pause-Bildschirm erweitern
 
+**Beschreibung**: Der aktuelle Pause-Bildschirm zeigt nur Score, Runde und Health an. Erweitern um nützliche Features für Content-Erstellung und Gameplay.
 
+**Status**: 📋 Geplant  
+**Priorität**: Mittel  
+**Geschätzte Zeit**: 2-3 Tage
+
+**Verfügbare Daten im Pause-Bildschirm**:
+- ✅ `universe.id` (z.B. "englisch")
+- ✅ `theme.id` (z.B. "business_english")
+- ✅ `chapterId` (z.B. "Business_Communication")
+- ✅ `currentItemIndex` (aktuelle Runde)
+- ✅ `items[currentItemIndex]` mit `item.id` (z.B. "BC_001")
+- ✅ `items` Array (alle Items des Chapters)
+- ✅ `mode` (lernmodus/shooter)
+
+**Geplante Features**:
+
+#### A. Editor-Navigation (Sofort umsetzbar)
+- [ ] **Button "Zum Editor"** im Pause-Menü
+  - Link zu Detail-Ansicht: `/editor/${universe.id}/${theme.id}/${chapterId}/${items[currentItemIndex].id}`
+  - Link zu Tabellen-Ansicht: `/editor/${universe.id}/${theme.id}/${chapterId}`
+  - Öffnet Editor in neuem Tab/Fenster
+  - **Komplexität**: Niedrig (nur Link-Button)
+  - **Hinweis**: Keine UUID nötig, `item.id` reicht
+
+#### B. Items-Liste anzeigen
+- [ ] **Scrollbare Liste aller Items** im Pause-Menü
+  - Zeigt: `item.id`, `item.base.word`, `item.introText`
+  - Klick auf Item → Springt zu diesem Item (nach Resume)
+  - Optional: Accordion/Collapsible für Details (Base, Correct, Distractors, Context)
+  - **Komplexität**: Niedrig-Mittel
+  - **Vorteil**: Lernhilfe während Pause, Übersicht über Chapter
+
+#### C. Settings ändern (Mit Einschränkungen)
+- [ ] **Settings-Button** im Pause-Menü
+  - Öffnet Settings-Modal oder Link zu Settings-Seite
+  - **Problem**: Settings werden beim Game-Init geladen
+  - **Lösung Option 1**: Warnung "Spiel wird neu gestartet" → Engine neu initialisieren
+  - **Lösung Option 2**: Live-Update für bestimmte Settings (z.B. `animationIntensity`)
+  - **Komplexität**: Mittel-Hoch (Engine-Reinitialisierung nötig)
+  - **Empfehlung**: Nur bestimmte Settings live ändern, Rest mit Warnung
+
+#### D. Quick Actions
+- [ ] **"Zurück zum Galaxy Map"** Button (neben Exit)
+- [ ] **"Nächste Runde"** Button (überspringt aktuelle Runde)
+- [ ] **"Runde wiederholen"** Button (lädt aktuelle Runde neu)
+- **Komplexität**: Niedrig
+
+#### E. Statistiken anzeigen
+- [ ] **Best Score** dieser Runde
+- [ ] **Versuche** dieser Runde
+- [ ] **Durchschnittliche Reaktionszeit** (falls getrackt)
+- [ ] **Streak-Status** (aktuelle Streak)
+- **Komplexität**: Mittel (Tracking muss implementiert werden)
+
+#### F. Lernhilfen
+- [ ] **"Zeige Lösung"** Button (zeigt alle Correct-Entries der aktuellen Runde)
+- [ ] **"Zeige Context"** Button (zeigt Context aller Items)
+- [ ] **"Hinweis"** Button (zeigt Meta-Tags/Related Items)
+- **Komplexität**: Niedrig
+
+**Implementierungsreihenfolge**:
+1. **Phase 1** (Schnell): Editor-Links + Quick Actions
+2. **Phase 2** (Mittel): Items-Liste + Lernhilfen
+3. **Phase 3** (Später): Settings ändern + Statistiken
+
+**Dateien zu ändern**:
+- `src/components/Game.tsx` - Pause-Overlay erweitern (Zeile 1079-1118)
+- `src/components/Game.css` - Styling für neue Buttons
+
+**Hinweis**: Editor-Links sind am einfachsten umzusetzen und sehr nützlich für Content-Erstellung!
+
+---
+
+### 15. Test-Level Feature
+
+**Beschreibung**: Spezielles Test-Level für Tutorial/Onboarding mit klaren Anweisungen und speziellen Objekt-Verhalten.
+
+**Status**: 📋 Geplant  
+**Priorität**: Niedrig  
+**Geschätzte Zeit**: 1-2 Tage
+
+**Konzept**:
+- **Base**: "Verteidige diese Basis"
+- **Correct**: "sammel mich" + "Punkte ♥"
+- **Distractor**: "schieß mich ab" + "KEINE Kollision!"
+
+**Implementierungsoptionen**:
+
+#### Option A: Spezielles Test-Chapter (Empfohlen)
+- [ ] Neues Chapter im Starter-Universe (z.B. "Test_Tutorial")
+- [ ] Items mit speziellen Texten und Emojis
+- [ ] Distractor mit "KEINE Kollision!" hat `collisionRadius: 0` oder spezielles Flag
+- [ ] **Vorteil**: Einfach zu implementieren, klar getrennt von normalem Content
+
+#### Option B: Test-Mode Flag
+- [ ] Item hat `meta.testMode: true`
+- [ ] Spezielle Rendering-Logik für Test-Items
+- [ ] Distractor mit "KEINE Kollision!" wird ohne Collision-Box gerendert
+- [ ] **Vorteil**: Flexibler, kann in jedem Chapter verwendet werden
+
+#### Option C: Spezielles Behavior
+- [ ] Distractor mit `behavior: "no_collision"`
+- [ ] Engine ignoriert Collision für dieses Objekt
+- [ ] Visuell deutlich markiert (z.B. durchsichtig/gepunktet)
+- [ ] **Vorteil**: Nutzt bestehende Behavior-Struktur
+
+**Technische Details**:
+- [ ] Emoji-Support in Texten (bereits möglich laut Code)
+- [ ] `collisionRadius: 0` für "KEINE Kollision!" Distractor
+- [ ] Oder: `behavior: "no_collision"` + Engine-Logik
+- [ ] Visuelle Markierung (z.B. gepunktete Umrandung)
+
+**Verwendung**:
+- Tutorial für neue Spieler
+- Onboarding-Flow
+- Erklärung der Gameplay-Mechaniken
+
+**Dateien zu ändern**:
+- `src/entities/DistractorObject.ts` - Collision-Logik für `no_collision` Behavior
+- `src/core/CollisionSystem.ts` - Ignoriere Objekte mit `collisionRadius: 0`
+- Content: Neues Test-Chapter erstellen
+
+**Empfehlung**: Option A (Test-Chapter) ist am einfachsten und klarsten!
+
+---
 
 **Timeline**:
 1. ✅ MVP fertig (aktuell)
@@ -647,6 +774,7 @@ npm install @stripe/stripe-js
 6. 💾 Supabase Integration
 7. 📚 Content erweitern
 8. 💾 IndexedDB Caching (Phase 2)
+9. ⏸️ Pause-Bildschirm erweitern (Phase 1: Editor-Links)
 
 ### Langfristig (Nächste Monate)
 9. 💰 Payment Integration
@@ -656,5 +784,5 @@ npm install @stripe/stripe-js
 
 ---
 
-**Letzte Aktualisierung**: 20. November 2025
+**Letzte Aktualisierung**: 8. Dezember 2025
 

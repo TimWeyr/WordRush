@@ -24,7 +24,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "hunde_theme.mp3",
-      "particleEffect": "dog_energy"
+      "particleEffect": "dog_energy",
+      "title": "hunde"
     },
     "katzen": {
       "backgroundImage": "katzen_bg.png",
@@ -35,7 +36,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "katzen_theme.mp3",
-      "particleEffect": "cat_energy"
+      "particleEffect": "cat_energy",
+      "title": "katzen"
     },
     "hamster": {
       "backgroundImage": "hamster_bg.png",
@@ -46,7 +48,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "hamster_theme.mp3",
-      "particleEffect": "hamster_energy"
+      "particleEffect": "hamster_energy",
+      "title": "hamster"
     },
     "fische": {
       "backgroundImage": "fische_bg.png",
@@ -57,7 +60,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "fische_theme.mp3",
-      "particleEffect": "fish_energy"
+      "particleEffect": "fish_energy",
+      "title": "fische"
     }
   },
   "meta": {
@@ -66,4 +70,3 @@
     "created": "2025-01-27"
   }
 }
-

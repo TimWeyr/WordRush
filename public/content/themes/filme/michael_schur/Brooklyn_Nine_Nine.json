@@ -1,0 +1,2504 @@
+[
+  {
+    "id": "MS_BNN_001",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Jake's Catchphrase",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Noice",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Oder auch: Nine-Nine!",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Cool cool cool",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Wenn er nervös oder happy ist.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Hot damn!",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das sagt nur der Captain.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Holt"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_002",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Holt's Favorite Composer",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Vivaldi",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Er hat sogar einen Vivaldi-Schal.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Mozart",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Holt findet ihn überbewertet.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Too mainstream"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_003",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Gina's Dance Group",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Dance-y Reagan",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Ihr eigenes Tanzteam – legendär.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "The Gina Linetti Dance Crew",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "So nennt sie es nur privat.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Too obvious"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_004",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Terry's Lieblingsessen",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Yogurt",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Terry loves yogurt – immer im Kühlschrank.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Protein Shakes",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Aber Yogurt ist die wahre Liebe.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Also true"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_005",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Boyle's Cousin",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Debbie",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Die mit den Drogen und dem Pferd.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Doug Judy",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Kein Verwandter, nur Bromance.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Best Friend"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_006",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Amy's Smoking Past",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "She was a smoker",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Als Teen – Holt riecht es immer noch.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Never smoked",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Sie schämt sich dafür.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Lie"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_007",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "The Pontiac Bandit",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Doug Judy",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Jake's Nemesis/Bestie.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Rosa's Motorcycle",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Die er immer klaut.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Trucker Hat Guy",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das war nur eine Folge.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Wrong"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_008",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Halloween Heist Winners",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Holt 5×, Jake 2×, Amy 1×, Nine-Nine 1×",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Stand nach Season 8.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Jake 6×",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Holt bleibt der wahre King.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "He wishes"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_009",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Rosa's Sexuality",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Bisexual",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Sie kommt in Season 5 raus.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Straight",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Vorher dachten alle das.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Old assumption"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_010",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Hitchcock & Scully's Talent",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Eating",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Sie sind Weltmeister im Essen.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Detective Work",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Sie sind die schlechtesten Cops ever.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Never"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_011",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Jake's Tattoo",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Die Hard",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Yippie-ki-yay auf dem Unterarm.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bruce Willis Face",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das wäre zu creepy.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Too much"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_012",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "The Vulture's Real Name",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Keith Pembroke",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "The Vulture – total unerwartet.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Mitch Vulture",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "So nennt ihn niemand.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Fake"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_013",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Boyle's Food Names",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Figgy Pudding",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Er nennt alles nach Essen.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Normal Names",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Boyle ist nie normal.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Never"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_014",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Jake & Amy's First Date",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Undercover as a Couple",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Schon bevor sie zusammen waren.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Real Date",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Erst in Season 2 richtig.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Later"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_015",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Cheddar",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Holt's Corgi",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Der beste Hund der Nine-Nine.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Terry's Dog",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Terry hat Kinder, kein Corgi.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "No"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_016",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Full Bullpen Chant",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Nine-Nine!",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Immer wenn jemand etwas Cooles sagt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Nine-Eight!",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das wäre Verrat.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Betrayal"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_017",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Rosa's Axes",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "She collects them",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Hat ein ganzes Arsenal.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Guitars",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das wäre zu soft für Rosa.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Wrong Diaz"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_018",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Kevin's Job",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Classics Professor",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Harvard – super fancy.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Police Captain",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das ist Raymond.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Holt"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_019",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "The Jimmy Jab Games",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Office Olympics",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Wenn Holt weg ist.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Real Sports",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Es geht um Büroklammern und Mülltonnen.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "No"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_020",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Jake's Prison Nickname",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Dad",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Weil er allen hilft.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Die Hard",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Die hätten ihn geliebt.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Too obvious"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_021",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Gina's App",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Gina Knows Best",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Sie kennt alles über jeden.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Gina Linetti App",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Sie ist nicht so basic.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Too simple"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_022",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Terry's Fear",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Halloween",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Terry hates Halloween – wegen der Zwillinge.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Heights",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Er hat keine Höhenangst.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Normal"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_023",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "The Bet",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Jake vs Amy",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Wer mehr Festnahmen hat – Amy gewinnt das Date.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Holt vs Rosa",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Die hätten sich gegenseitig zerstört.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Never happened"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_024",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Wuntch's Nickname for Holt",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Velvet Thunder",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Madeline Wuntch – seine Erzfeindin.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Captain Dad",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das sagt nur Jake.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Jake"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_025",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Rosa's Coming Out Line",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "I'm dating a woman",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Einfach so – total Rosa.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "I'm bi",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Sie sagt es erst später direkt.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Direct"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_026",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Final Heist Winner",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "The Nine-Nine",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Alle zusammen – Ultimate Teamwork.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Holt again",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Aber diesmal gewinnt das Team.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "He tried"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_027",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Boyle's Son",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Nikolaj",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Ursprünglich Nikolai, dann amerikanisiert.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Charles Jr.",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "So kreativ ist Boyle nicht.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Too normal"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_028",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Jake's Dad",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Roger Peralta",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Flieger, Loser, gespielt von Bradley Whitford.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "John McClane",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Jake wünschte es sich.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Die Hard"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_029",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Amy's Brothers",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Seven",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Alle super erfolgreich – sie ist die 'Versagerin'.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Zero",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Dann wäre sie noch gestresster.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Only child"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_BNN_030",
+    "theme": "michael_schur",
+    "chapter": "Brooklyn_Nine_Nine",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Last Line of the Series",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Nine-Nine!",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Gesagt von Holt – Ende perfekt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Cool cool cool",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Wäre auch okay gewesen, aber nein.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Jake"
+      }
+    ],
+    "meta": {
+      "source": "Brooklyn Nine-Nine - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "brooklyn-nine-nine",
+        "tv-show",
+        "brooklyn_nine_nine"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]

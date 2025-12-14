@@ -1,0 +1,1417 @@
+[
+  {
+    "id": "TFE_GR_001",
+    "theme": "tfe",
+    "chapter": "Grundlage_Rahmen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Neutralität",
+      "type": "Grundhaltung",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Technische Neutralität",
+          "type": "Definition"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Neutralität schützt — bis sie verletzt wird; dann wird sie markiert. Technische Neutralität bedeutet, keine Partei zu ergreifen, aber bei Verletzungen zu intervenieren.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Emotionale Distanz",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "damage": 1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsch: Neutralität bedeutet nicht emotionale Distanz, sondern technische Neutralität.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        }
+      },
+      {
+        "entry": {
+          "word": "Gleichgültigkeit",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsch: Neutralität ist nicht Gleichgültigkeit, sondern eine aktive Haltung.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "Passivität",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsch: Neutralität erfordert aktive Aufmerksamkeit und Intervention bei Bedarf.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch Therapeuten brauchen Pausen, aber nicht während der Sitzung!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        },
+        "damage": 1
+      }
+    ],
+    "meta": {
+      "source": "TFE Grundlagen",
+      "tags": [
+        "neutralität",
+        "haltung",
+        "rahmen"
+      ],
+      "relatedEntries": [
+        "TFE_GR_002",
+        "TFE_GR_003"
+      ],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_GR_002",
+    "theme": "tfe",
+    "chapter": "Grundlage_Rahmen",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "technische neutralität",
+      "type": "Grundhaltung",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "äquidistanz zu anteilen",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Therapeut hält gleiche Distanz zu allen Selbst- und Objektrepräsentanzen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "rahmenschutz",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Neutralität dient der Stabilität des Settings.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "ausnahme bei ausagieren",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Neutralität wird verlassen, wenn der Patient den Vertrag gefährdet.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "markierte deutlichkeit",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Therapeut benennt klar, warum das Aussteigen notwendig war.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "schutz der therapie",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Intervention dient explizit der Sicherung des therapeutischen Prozesses.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "emotionale schweigepflicht plus",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Klingt formal, hat aber nichts mit Neutralität zu tun.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "beziehungs-camouflage",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Verwechselt Neutralität mit Tarnung.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "therapeutische schwebeneutralität",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Poetisch, aber kein Konzept.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "zen-enthaltsamkeit",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Entspannt, aber nicht die technische Haltung.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      }
+    ],
+    "meta": {
+      "source": "TFE Grundlagen",
+      "tags": [
+        "technische neutralität",
+        "äquidistanz",
+        "rahmenschutz"
+      ],
+      "relatedEntries": [
+        "TFE_GR_001",
+        "TFE_GR_003"
+      ],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_GR_003",
+    "theme": "tfe",
+    "chapter": "Grundlage_Rahmen",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "diagnostik zuerst",
+      "type": "Prinzip",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "gründliche lebenskenntnis",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Therapeut muss das reale Leben des Patienten verstehen, bevor Therapie startet.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "entscheid über behandlungsart",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Während Diagnostik ist noch keine Methode festgelegt.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "anfängerfehler vermeiden",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Keine Therapie beginnen, bevor Struktur klar ist.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "klarer rahmenstart",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Diagnose schafft die Basis für einen tragfähigen Vertrag.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "differentialdiagnostische sicherheit",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Struktur, Abwehr und Beziehungsmuster müssen verstanden sein.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "speed-diagnose express",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Klingt effizient, aber zerstört jeden therapeutischen Rahmen.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "intuitions basierte behandlungswahl",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Klingt nach Magie, nicht nach klinischem Vorgehen.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "praxiseröffnungs ritual",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Humorvoll, aber ohne Bezug.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch Diagnostik braucht manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        },
+        "damage": 1
+      }
+    ],
+    "meta": {
+      "source": "TFE Grundlagen",
+      "tags": [
+        "diagnostik",
+        "rahmen",
+        "struktur"
+      ],
+      "relatedEntries": [
+        "TFE_GR_001",
+        "TFE_GR_002",
+        "TFE_GR_004"
+      ],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_GR_004",
+    "theme": "tfe",
+    "chapter": "Grundlage_Rahmen",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "richtige deutung als trauma",
+      "type": "Konzept",
+      "visual": {
+        "tier": 3,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "fremdwissen intrusivität",
+          "type": "Problem"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Deutung kommt nicht aus Patientenmaterial.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "verletzung der autonomie",
+          "type": "Problem"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Patient erlebt Deutung als Übergriff.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "gefühl von hypnotisierung",
+          "type": "Problem"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Patient fühlt sich kontrolliert.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "regression in abhängigkeit",
+          "type": "Problem"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Überkluge Deutungen fördern Verschmelzungsfantasie.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "verlust des agency gefühls",
+          "type": "Problem"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Deutung gehört nicht dem Patienten.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "deutung jackpot",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Parodie einer richtigen Deutung.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "psycho spoiler alert",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Witzig, aber fachlich sinnlos.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "therapeuten mic drop",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Meme, nicht TFP.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch traumatische Deutungen brauchen manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        },
+        "damage": 1
+      }
+    ],
+    "meta": {
+      "source": "TFE Grundlagen",
+      "tags": [
+        "deutung",
+        "trauma",
+        "autonomie"
+      ],
+      "relatedEntries": [
+        "TFE_GR_005",
+        "TFE_IT_008"
+      ],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_GR_005",
+    "theme": "tfe",
+    "chapter": "Grundlage_Rahmen",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "patient liefert stichwort",
+      "type": "Prinzip",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "ko-konstruktion der deutung",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Bedeutung entsteht gemeinsam.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "materialbasiertes arbeiten",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Nur aktives Patientenmaterial darf gedeutet werden.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "vermeidung von suggestivität",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Keine induzierten Bedeutungen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "wahrung der autonomie",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Patient bleibt Autor seiner inneren Welt.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "assoziations bingo",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Spaßig, aber kein Konzept.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "psychisches keyword hacking",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Parodie.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "emotionale suchmaschine",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsche Metapher.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch Stichworte brauchen manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        },
+        "damage": 1
+      }
+    ],
+    "meta": {
+      "source": "TFE Grundlagen",
+      "tags": [
+        "patient",
+        "stichwort",
+        "ko-konstruktion"
+      ],
+      "relatedEntries": [
+        "TFE_GR_004",
+        "TFE_GR_006"
+      ],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_GR_006",
+    "theme": "tfe",
+    "chapter": "Grundlage_Rahmen",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "analytische machtbegrenzung",
+      "type": "Prinzip",
+      "visual": {
+        "tier": 3,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "keine allwissenheit",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Therapeut verzichtet bewusst auf Überlegenheit.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "keine identifikation mit guter mutter",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Kein perfektes Beantworten.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "begrenzung der autorität",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Patient braucht Raum zur Eigenwahrnehmung.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "partizipative deutung",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Macht wird geteilt, nicht ausgeübt.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "therapie diktatur",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Grotesk, aber falsch.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "übertragungs monarchie",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Humorvoll, aber nicht zutreffend.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "deutungs chefstuhl",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Parodie der Machtposition.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch Machtbegrenzung braucht manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        },
+        "damage": 1
+      }
+    ],
+    "meta": {
+      "source": "TFE Grundlagen",
+      "tags": [
+        "machtbegrenzung",
+        "autorität",
+        "partizipation"
+      ],
+      "relatedEntries": [
+        "TFE_GR_004",
+        "TFE_GR_005"
+      ],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_GR_007",
+    "theme": "tfe",
+    "chapter": "Grundlage_Rahmen",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "dehnung des rahmens",
+      "type": "Krisenszenario",
+      "visual": {
+        "tier": 4,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "verletzung der settinggrenzen",
+          "type": "Problem"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Patient versucht, Kontaktregeln zu umgehen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "testen der stabilität",
+          "type": "Mechanismus"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Rahmen wird aktiv geprüft.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "regressives bindungsverhalten",
+          "type": "Mechanismus"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Wunsch nach Verschmelzung oder besonderem Status.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "therapiegefährdung",
+          "type": "Risiko"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Struktur droht zu kollabieren.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "markierte neutralitätsunterbrechung",
+          "type": "Intervention"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Therapeut muss aus der Neutralität heraustreten.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "rahmen yoga",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Dehnt nur Muskeln, nicht die Therapiegrenze.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "grenzen gummiband",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Witzig, aber unpräzise.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "session stretch pro",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Parodie.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch Rahmen-Dehnung braucht manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        },
+        "damage": 1
+      }
+    ],
+    "meta": {
+      "source": "TFE Grundlagen",
+      "tags": [
+        "rahmen",
+        "grenzen",
+        "krisen"
+      ],
+      "relatedEntries": [
+        "TFE_GR_001",
+        "TFE_KGP_001"
+      ],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  }
+]

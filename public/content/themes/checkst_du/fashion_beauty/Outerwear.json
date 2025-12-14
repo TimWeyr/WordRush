@@ -1,0 +1,447 @@
+[
+  {
+    "id": "FB_OW_001",
+    "theme": "fashion_beauty",
+    "chapter": "Outerwear",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Oversized Denim Jackets",
+      "type": "FashionTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff6b9d",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Distressed Edges",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Worn-in look for edgy layering.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Patchwork Designs",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Customized patches for personal flair.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Boyfriend Fit",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Loose borrowed-from-boys style.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "bubble",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Leather Jackets",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Edgy biker; denim for casual.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Denim Materials"
+      },
+      {
+        "entry": {
+          "word": "Puffer Coats",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.35,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Bulky winter; oversized denim for transitional.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Light Jackets"
+      },
+      {
+        "entry": {
+          "word": "Trench Coats",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Long formal; short oversized for teens.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "spike",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Denim Oversize"
+      }
+    ],
+    "meta": {
+      "source": "Fashion & Beauty Trends 2025",
+      "tags": [
+        "fashion",
+        "beauty",
+        "trends",
+        "outerwear"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FB_OW_002",
+    "theme": "fashion_beauty",
+    "chapter": "Outerwear",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Varsity Jackets",
+      "type": "FashionTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff6b9d",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Letterman Patches",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "School spirit embroidery on wool jackets.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Bomber Style",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Cropped with snaps for sporty vibe.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Suit Jackets",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Formal blazer; athletic varsity trending.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Varsity Casual"
+      },
+      {
+        "entry": {
+          "word": "Windbreakers",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.35,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Light nylon; wool for statement.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Heavy Varsity"
+      }
+    ],
+    "meta": {
+      "source": "Fashion & Beauty Trends 2025",
+      "tags": [
+        "fashion",
+        "beauty",
+        "trends",
+        "outerwear"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "FB_OW_003",
+    "theme": "fashion_beauty",
+    "chapter": "Outerwear",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Cropped Cardigans",
+      "type": "FashionTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#ff6b9d",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Button Front",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Short sweater for layering over tees.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Cable Knit",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Textured pattern adding cozy detail.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Full Length",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.15,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Long coverage; cropped for modern silhouette.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Cropped Styles"
+      },
+      {
+        "entry": {
+          "word": "Turtleneck Sweaters",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.35,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Closed neck; buttoned for versatility.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Open Cardigans"
+      },
+      {
+        "entry": {
+          "word": "Hooded Sweats",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "seek_center",
+        "context": "Sporty; preppy knit for fashion.",
+        "visual": {
+          "color": "#FF5722",
+          "variant": "spike",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Knit Cardigans"
+      }
+    ],
+    "meta": {
+      "source": "Fashion & Beauty Trends 2025",
+      "tags": [
+        "fashion",
+        "beauty",
+        "trends",
+        "outerwear"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]

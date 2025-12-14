@@ -1,0 +1,3326 @@
+[
+  {
+    "id": "MS_TGP_001",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Eleanor's Real Home",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Arizona",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Scottsdale – wo sie als furchtbare Verkäuferin lebte.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Florida",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Jacksonville, nicht Eleanor.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Jason's Home"
+      },
+      {
+        "entry": {
+          "word": "The Bad Place",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das kommt erst danach.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "After Death"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_002",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "First Frozen Yogurt Shop",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Sprinkles Are for Winners",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Eleanor's Lieblingsladen im Good Place.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Clam Chowder Only",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das gab's nur in der Hölle.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Bad Place"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_003",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Jason's Real Identity",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Jianyu",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Der stille Mönch, den eigentlich niemand versteht.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "DJ Amateur",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das kommt erst später raus.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Jacksonville"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_004",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "The Judge",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Gen",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Hydrogen-Atom, das alles entscheidet.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Maya Rudolph",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Die echte Schauspielerin hinter Gen.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Shawn",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Der hasst sie nur.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Bad Place Boss"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_005",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Chidi's Problem",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Decision Paralysis",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Kann sich nie entscheiden – sogar bei Milch oder Mandel.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Allergies",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das war nur ein Running Gag.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Peanuts Kill Him"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_006",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "The Trolley Problem Episode",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Season 2 Episode 6",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Chidi quält sich 400-mal.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Season 1",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Da war er noch mit Magenta-Mango-Smoothies beschäftigt.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Too Early"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_007",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Tahani's Real Name",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Tahani Al-Jamil",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Heißt eigentlich 'Glückwunsch' und 'Schönheit'.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Kamilah",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Die talentiertere Schwester.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Sister"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_008",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Actual Good Place Committee",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Never Helped",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Seit 521 Jahren hat niemand mehr jemanden reingelassen.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Very Active",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Die machen nur Urlaub.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Lazy AF"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_009",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Janet's Void Button",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Sends to Nowhere",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Eleanor klickt 800+ Mal.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Deletes Janet",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das war der andere Knopf.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Reboot"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_010",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Michael's Real Job",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Bad Place Architect",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Er hat die ganze Nachbarschaft gebaut.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Good Place Architect",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das war sein Fake-Cover.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Lie"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_011",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Soul Squad Final Members",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Eleanor, Chidi, Tahani, Jason, Janet, Michael",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Die sechs, die alles retten.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Plus Doug Forcett",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Der war nur auf Erde.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Earth Only"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_012",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Jeremy Bearimy",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Time is Wavy",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Die Zeitlinie im Jenseits ist ein gekringeltes Wort.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Straight Line",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Nur auf der Erde linear.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Earth Time"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_013",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Jason's Favorite Team",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Jacksonville Jaguars",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Blake Bortles ist sein Gott.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bortles Is Overrated",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Für ihn nicht.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Jason's Religion"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_014",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Eleanor's Mom",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Donna Shellstrop",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Fake-tot, lebt jetzt mit neuem Namen.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Really Dead",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Sie taucht in Season 3 wieder auf.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Lie"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_015",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "The Door",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Exit from Afterlife",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Letzte Erfindung, um für immer Frieden zu finden.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Entrance Only",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Man kann nur raus, nicht rein.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Finale"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_016",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Janet's Boyfriend",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Jason",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Sie heiraten 1000+ Mal.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Derek",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das war ihr selbstgemachter Rebound.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Gong Version"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_017",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Points System Broken",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Unintended Consequences",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Seit 500 Jahren niemand mehr im Good Place.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Too Many Points",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Eigentlich das Gegenteil.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Too Complicated"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_018",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Book Chidi Wrote",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Who Died and Made Me the Boss?",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Sein 3000-Seiten-Werk über Ethik.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "What We Owe to Each Other",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das ist von Scanlon, nicht von Chidi.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Real Book"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_019",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Bad Janet's Fart Sound",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Classic Fart",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Jedes Mal wenn sie lügt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Burp",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Good Janet macht das nicht.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Wrong Janet"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_020",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Michael's Human Name",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Michael Real Estate",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Sein Cover auf der Erde.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Fire Squid",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "So sieht er eigentlich aus.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Real Form"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_021",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Last Line of the Show",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Take it sleazy",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Eleanor an der Janet am Empfang.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Picture a wave",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das war ein paar Minuten vorher.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Earlier"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_022",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Peeps Chili",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Eleanor's Signature",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Marshmallow Chicks + Chili = Chaos.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Clam Chowder",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das gab's nur in der Hölle.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Bad Place"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_023",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Mindy's Real Place",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "The Medium Place",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Cocaine + mittelgutes Bier für immer.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bad Place",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Sie hat nur gelogen, war Medium.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Coke Lie"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_024",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Number of Reboots",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "802",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Michael startet die Nachbarschaft so oft neu.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "119",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das war nur eine frühe Zahl.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Team Cockroach"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_025",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Chidi's Soulmate",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Eleanor",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "In jeder Version außer einer.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Angelique",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Die eine Ausnahme.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "One Timeline"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_026",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Good Janet's Marble",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Makes Anything",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Sie kann alles erschaffen – außer Menschen.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Deletes Things",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das macht die böse Version.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Bad Janet"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_027",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Doug Forcett",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Lives Like a Monk",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Versucht auf Erde 100 % gut zu sein – und ist unglücklich.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "In Good Place",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Er lebt noch, als Michael ihn besucht.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Still on Earth"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_028",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Eleanor's Last Words to Chidi",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "I was never good at this stuff",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Bevor sie durch die Tür geht.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "See you later",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Zu banal für diesen Moment.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Too casual"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_029",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Jason's Perfect Day",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Perfect 60-Person Wedding",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Mit Jaguars-Spielern als Gäste.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Molotov Cocktails",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das war vorher.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Old Jason"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_030",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "The Wave Returns",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Everything is Fine",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Letzte Szene – die Welle wird wieder zu Janet.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Everything is Bonkers",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das war die alte Version.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Bad Place"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_031",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Shawn's Favorite Torture",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Cactus in Butts",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Sein Vorschlag für die Menschen.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Bees with Teeth",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das war Vickys Stil.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Vicky"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_032",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "The Four Main Humans",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Eleanor, Chidi, Tahani, Jason",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Das Original-Team Cockroach.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Plus Brent",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Der kam erst in Season 4.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Later"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_033",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Real Good Place Residents",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Hypatia, Plato",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Die einzigen, die wir kurz sehen.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Lisa Loopner",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Michael's erfundener Name.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Fake"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_034",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Janet Can't",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Lie",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Good Janet kann nicht lügen – Bad Janet schon.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Kill",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Sie hat schon mal Derek gekillt.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "She Can"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_035",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Chidi Sees the Time Knife",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "We've All Seen It",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Die ultimative nihilistische Erkenntnis.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Only Michael",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Alle haben die Zeitklinge gesehen.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Everyone"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_036",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Final Point Total Needed",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "There Is No Fixed Number",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Das System war sowieso kaputt.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "1 Million Points",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das war das alte, kaputte System.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Old System"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_037",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Pillboi's Real Name",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Pillboi",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Er hat keinen anderen Namen – er ist einfach Pillboi.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Donkey Doug Jr.",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das ist Jason's Vater.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Jason's Dad"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_038",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Eleanor Becomes",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Architect",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Sie übernimmt Michael's Job in Season 4.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Judge",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das bleibt Maya Rudolph.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Gen"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_039",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "The Last Human Through the Door",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Eleanor",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Sie ist die Allerletzte, die geht.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Chidi",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Er geht als Erster der Vier.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Earlier"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "MS_TGP_040",
+    "theme": "michael_schur",
+    "chapter": "The_Good_Place",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "What We Owe to Each Other",
+      "type": "TVShowTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Chidi's Favorite Book",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Scanlon's Ethik-Buch – sein Lebensmotto.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Nietzsche",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Zu nihilistisch für Chidi.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Too Dark"
+      }
+    ],
+    "meta": {
+      "source": "The Good Place - Michael Schur",
+      "tags": [
+        "michael-schur",
+        "the-good-place",
+        "tv-show",
+        "the_good_place"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]

@@ -24,7 +24,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "reddit_memes_theme.mp3",
-      "particleEffect": "meme_energy"
+      "particleEffect": "meme_energy",
+      "title": "memes"
     },
     "ama": {
       "backgroundImage": "ama_bg.png",
@@ -35,7 +36,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "ama_theme.mp3",
-      "particleEffect": "ama_energy"
+      "particleEffect": "ama_energy",
+      "title": "ama"
     },
     "tifu": {
       "backgroundImage": "tifu_bg.png",
@@ -46,7 +48,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "tifu_theme.mp3",
-      "particleEffect": "tifu_energy"
+      "particleEffect": "tifu_energy",
+      "title": "tifu"
     }
   },
   "meta": {
@@ -55,4 +58,3 @@
     "created": "2025-01-27"
   }
 }
-

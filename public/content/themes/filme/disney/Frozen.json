@@ -1,0 +1,397 @@
+[
+  {
+    "id": "DS_FR_001",
+    "theme": "disney",
+    "chapter": "Frozen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Frozen Fever",
+      "type": "DisneyTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Let It Go",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Elsa's anthem that every 12-Jährige 2014–2025 mitsingen kann.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Idina Menzel Voice",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Die echte Stimme hinter Elsa – nicht Demi Lovato.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Shut the Door",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das sagt Mama, wenn's zieht.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Let It Go"
+      },
+      {
+        "entry": {
+          "word": "Demi Lovato Only",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Demi singt nur die Radio-Version.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Idina Broadway"
+      }
+    ],
+    "meta": {
+      "source": "Disney Filme & Serien",
+      "tags": [
+        "disney",
+        "filme",
+        "animiert",
+        "frozen"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "DS_FR_002",
+    "theme": "disney",
+    "chapter": "Frozen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Anna's Pferdeschwanz",
+      "type": "DisneyTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Two Braids",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Signature Look aus Frozen 1 + 2.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "One Braid",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das ist die wilde Schotten-Prinzessin.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Merida Style"
+      },
+      {
+        "entry": {
+          "word": "Bun Crown",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Anna trägt nie den strengen Dutt.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Elsa Coronation"
+      }
+    ],
+    "meta": {
+      "source": "Disney Filme & Serien",
+      "tags": [
+        "disney",
+        "filme",
+        "animiert",
+        "frozen"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "DS_FR_003",
+    "theme": "disney",
+    "chapter": "Frozen",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Elsa's Castle",
+      "type": "DisneyTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Ice Palace",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Elsa baut es in einer Nacht auf dem North Mountain.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Arendelle Castle",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Da wohnt sie vorher mit Anna.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Family Home"
+      }
+    ],
+    "meta": {
+      "source": "Disney Filme & Serien",
+      "tags": [
+        "disney",
+        "filme",
+        "animiert",
+        "frozen"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "DS_FR_004",
+    "theme": "disney",
+    "chapter": "Frozen",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Olaf's Dream",
+      "type": "DisneyTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#9b59b6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Summer",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.9,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Schneemann will Sonne – tragisch komisch.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Winter Forever",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Das wäre zu einfach für Olaf.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Elsa Vibes"
+      }
+    ],
+    "meta": {
+      "source": "Disney Filme & Serien",
+      "tags": [
+        "disney",
+        "filme",
+        "animiert",
+        "frozen"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]

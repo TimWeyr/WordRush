@@ -81,8 +81,61 @@
   <line x1="22" y1="22" x2="22" y2="32" stroke="#7d3a9d" stroke-width="0.5" opacity="0.5"/>
   <line x1="38" y1="22" x2="38" y2="32" stroke="#7d3a9d" stroke-width="0.5" opacity="0.5"/>
   
-  <!-- Film strip decorative elements on body -->
-  <rect x="24" y="26" width="12" height="1.5" fill="#8e44ad" rx="0.3"/>
-  <rect x="24" y="28.5" width="12" height="1.5" fill="#8e44ad" rx="0.3"/>
+  <!-- Film strip decorative elements on body (colorful RGB strips) -->
+  <rect x="24" y="26" width="4" height="1.5" fill="#ff3333" rx="0.3"/>
+  <rect x="28" y="26" width="4" height="1.5" fill="#33ff33" rx="0.3"/>
+  <rect x="32" y="26" width="4" height="1.5" fill="#3333ff" rx="0.3"/>
+  <rect x="24" y="28.5" width="4" height="1.5" fill="#ffff33" rx="0.3"/>
+  <rect x="28" y="28.5" width="4" height="1.5" fill="#ff33ff" rx="0.3"/>
+  <rect x="32" y="28.5" width="4" height="1.5" fill="#33ffff" rx="0.3"/>
+  
+  <!-- Colorful projector light beams -->
+  <path d="M 30 5 L 28 8 L 32 8 Z" fill="#ff6b35" opacity="0.6"/>
+  <path d="M 30 5 L 27 9 L 33 9 Z" fill="#ffaa00" opacity="0.5"/>
+  <path d="M 30 5 L 26 10 L 34 10 Z" fill="#ffff00" opacity="0.4"/>
+  
+  <!-- Colorful accents on film reels -->
+  <circle cx="18" cy="20" r="1.5" fill="#ff6b35" opacity="0.7"/>
+  <circle cx="42" cy="20" r="1.5" fill="#00cc88" opacity="0.7"/>
+  
+  <!-- Colorful wing accents -->
+  <rect x="12" y="27" width="2" height="1" fill="#ff3333"/>
+  <rect x="14" y="27" width="2" height="1" fill="#33ff33"/>
+  <rect x="16" y="27" width="2" height="1" fill="#3333ff"/>
+  <rect x="18" y="27" width="2" height="1" fill="#ffff33"/>
+  
+  <rect x="40" y="27" width="2" height="1" fill="#ff33ff"/>
+  <rect x="42" y="27" width="2" height="1" fill="#33ffff"/>
+  <rect x="44" y="27" width="2" height="1" fill="#ff6b35"/>
+  <rect x="46" y="27" width="2" height="1" fill="#00cc88"/>
+  
+  <!-- Colorful accent bands on pods -->
+  <rect x="16" y="40" width="1.3" height="2.5" fill="#ff3333" rx="0.5"/>
+  <rect x="17.3" y="40" width="1.3" height="2.5" fill="#33ff33" rx="0.5"/>
+  <rect x="18.6" y="40" width="1.3" height="2.5" fill="#3333ff" rx="0.5"/>
+  <rect x="19.9" y="40" width="0.1" height="2.5" fill="#ffff33" rx="0.5"/>
+  
+  <rect x="40" y="40" width="1.3" height="2.5" fill="#ff33ff" rx="0.5"/>
+  <rect x="41.3" y="40" width="1.3" height="2.5" fill="#33ffff" rx="0.5"/>
+  <rect x="42.6" y="40" width="1.3" height="2.5" fill="#ff6b35" rx="0.5"/>
+  <rect x="43.9" y="40" width="0.1" height="2.5" fill="#00cc88" rx="0.5"/>
+  
+  <!-- Colorful small panels/details -->
+  <rect x="23" y="18" width="2" height="2" fill="#ff6b35" opacity="0.8" rx="0.5"/>
+  <rect x="35" y="18" width="2" height="2" fill="#00cc88" opacity="0.8" rx="0.5"/>
+  <rect x="23" y="36" width="2" height="2" fill="#ffaa00" opacity="0.8" rx="0.5"/>
+  <rect x="35" y="36" width="2" height="2" fill="#ff33ff" opacity="0.8" rx="0.5"/>
+  
+  <!-- Colorful dots on body -->
+  <circle cx="25" cy="22" r="0.8" fill="#ffff33" opacity="0.8"/>
+  <circle cx="35" cy="22" r="0.8" fill="#33ffff" opacity="0.8"/>
+  <circle cx="25" cy="34" r="0.8" fill="#ff6b35" opacity="0.8"/>
+  <circle cx="35" cy="34" r="0.8" fill="#00cc88" opacity="0.8"/>
+  
+  <!-- Colorful wing tips -->
+  <circle cx="8" cy="28" r="1" fill="#ff6b35" opacity="0.7"/>
+  <circle cx="8" cy="32" r="1" fill="#00cc88" opacity="0.7"/>
+  <circle cx="52" cy="28" r="1" fill="#ffaa00" opacity="0.7"/>
+  <circle cx="52" cy="32" r="1" fill="#ff33ff" opacity="0.7"/>
 </svg>
 

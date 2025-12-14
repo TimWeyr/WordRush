@@ -28,7 +28,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "buero_theme.mp3",
-      "particleEffect": "office_particles"
+      "particleEffect": "office_particles",
+      "title": "Büro"
     }
   },
   "meta": {
@@ -37,4 +38,3 @@
     "created": "2025-01-27"
   }
 }
-

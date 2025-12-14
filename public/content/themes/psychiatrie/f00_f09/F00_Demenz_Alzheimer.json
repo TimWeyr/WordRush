@@ -4,6 +4,7 @@
     "theme": "f00_f09",
     "chapter": "F00_Demenz_Alzheimer",
     "level": 1,
+    "freeTier": true,
     "waveDuration": 3,
     "base": {
       "word": "Alzheimer-Demenz",

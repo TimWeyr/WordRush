@@ -1,0 +1,336 @@
+[
+  {
+    "id": "IS_FC_001",
+    "theme": "internetslang",
+    "chapter": "Fandom_Culture",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Homophobic Jinx",
+      "type": "SlangTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#00b894",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Homophobic Jinx",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": null,
+        "context": "Fandom meme bringing back in 2025.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Ally Flag",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Support wave; homophobic trolls ironic.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Jinx Shade"
+      }
+    ],
+    "meta": {
+      "source": "Internetslang 2025",
+      "tags": [
+        "internetslang",
+        "slang",
+        "trends",
+        "fandom_culture"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "IS_FC_002",
+    "theme": "internetslang",
+    "chapter": "Fandom_Culture",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "Jayce Boyz",
+      "type": "SlangTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#00b894",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Jayce One Of Da Boyzz",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Character inclusion in group memes.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Ur Hot Cupcake",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Flirty phrase revival.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Lone Ranger",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Solo ride; Jayce boys up.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Squad Join"
+      },
+      {
+        "entry": {
+          "word": "Cold Ice",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Freeze burn; cupcake melts hearts.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Hot Bake"
+      }
+    ],
+    "meta": {
+      "source": "Internetslang 2025",
+      "tags": [
+        "internetslang",
+        "slang",
+        "trends",
+        "fandom_culture"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  },
+  {
+    "id": "IS_FC_003",
+    "theme": "internetslang",
+    "chapter": "Fandom_Culture",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "Zaun Stink",
+      "type": "SlangTerm",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#00b894",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Zaunites Stinkin Like Boiled Eggs",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Fandom roast for smelly vibes.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "star",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "Maddie Marcus Daughter",
+          "type": "CorrectMatch"
+        },
+        "spawnPosition": 0.1,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Plot twist meme persisting.",
+        "visual": {
+          "color": "#4CAF50",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.1
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Fresh Breeze",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "Clean air; Zaun boils bad.",
+        "visual": {
+          "color": "#E91E63",
+          "variant": "square",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Egg Stench"
+      },
+      {
+        "entry": {
+          "word": "Stranger Kid",
+          "type": "WrongMatch"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.0,
+        "points": 100,
+        "hp": 1,
+        "damage": 1,
+        "behavior": "linear_inward",
+        "context": "No link; Maddie connects dots lol.",
+        "visual": {
+          "color": "#9B59B6",
+          "variant": "diamond",
+          "pulsate": true,
+          "shake": false,
+          "fontSize": 1.0
+        },
+        "sound": "explosion_minor",
+        "redirect": "Family Tie"
+      }
+    ],
+    "meta": {
+      "source": "Internetslang 2025",
+      "tags": [
+        "internetslang",
+        "slang",
+        "trends",
+        "fandom_culture"
+      ],
+      "related": [],
+      "difficultyScaling": {
+        "speedMultiplierPerReplay": 1.05,
+        "colorContrastFade": true,
+        "angleVariance": 0.3
+      }
+    }
+  }
+]

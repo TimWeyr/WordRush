@@ -28,7 +28,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "fruehstueck_theme.mp3",
-      "particleEffect": "food_particles"
+      "particleEffect": "food_particles",
+      "title": "Fruehstueck"
     },
     "Mittagessen": {
       "backgroundImage": "mittagessen_bg.png",
@@ -39,7 +40,8 @@
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "mittagessen_theme.mp3",
-      "particleEffect": "meal_particles"
+      "particleEffect": "meal_particles",
+      "title": "Mittagessen"
     },
     "Abendessen": {
       "backgroundImage": "abendessen_bg.png",
@@ -50,7 +52,8 @@
       "spawnRate": 1.7,
       "waveDuration": 3,
       "music": "abendessen_theme.mp3",
-      "particleEffect": "dinner_particles"
+      "particleEffect": "dinner_particles",
+      "title": "Abendessen"
     },
     "Snacks": {
       "backgroundImage": "snacks_bg.png",
@@ -61,7 +64,8 @@
       "spawnRate": 1.4,
       "waveDuration": 3,
       "music": "snacks_theme.mp3",
-      "particleEffect": "snack_particles"
+      "particleEffect": "snack_particles",
+      "title": "Snacks"
     },
     "Getraenke": {
       "backgroundImage": "getraenke_bg.png",
@@ -72,7 +76,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "getraenke_theme.mp3",
-      "particleEffect": "drink_particles"
+      "particleEffect": "drink_particles",
+      "title": "Getraenke"
     },
     "Backen": {
       "backgroundImage": "backen_bg.png",
@@ -83,7 +88,8 @@
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "backen_theme.mp3",
-      "particleEffect": "baking_particles"
+      "particleEffect": "baking_particles",
+      "title": "Backen"
     },
     "Putzen": {
       "backgroundImage": "putzen_bg.png",
@@ -94,7 +100,8 @@
       "spawnRate": 1.8,
       "waveDuration": 3,
       "music": "putzen_theme.mp3",
-      "particleEffect": "cleaning_particles"
+      "particleEffect": "cleaning_particles",
+      "title": "Putzen"
     }
   },
   "meta": {
@@ -103,4 +110,3 @@
     "created": "2025-01-27"
   }
 }
-

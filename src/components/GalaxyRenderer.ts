@@ -132,7 +132,7 @@ export function renderPlanet(
 }
 
 /**
- * Render a moon with progress ring
+ * Render a moon with progress ring and angle-based gradient
  */
 export function renderMoon(
   moon: MoonLayout,
@@ -150,8 +150,58 @@ export function renderMoon(
   
   ctx.save();
   
-  // Render moon circle
-  ctx.fillStyle = '#7bb3f0';
+  // Get gradient colors from chapter config (or fallback to theme/universe colors)
+  const gradientColors = moon.chapter?.backgroundGradient;
+  let fillStyle: string | CanvasGradient;
+  
+  if (gradientColors && gradientColors.length > 0) {
+    // Create radial gradient with angle-based offset
+    // The gradient center is shifted in the direction of the moon's angle (away from planet)
+    // This creates a directional lighting effect
+    const gradientOffset = radius * 0.4; // Offset distance (40% of radius)
+    const gradientCenterX = screenPos.x + Math.cos(moon.angle) * gradientOffset;
+    const gradientCenterY = screenPos.y + Math.sin(moon.angle) * gradientOffset;
+    
+    // Create radial gradient
+    const gradient = ctx.createRadialGradient(
+      gradientCenterX, gradientCenterY, 0, // Inner circle (center)
+      screenPos.x, screenPos.y, radius * 1.5 // Outer circle (extends beyond moon)
+    );
+    
+    // Add color stops - distribute evenly across available colors
+    const colorCount = gradientColors.length;
+    if (colorCount === 1) {
+      // Single color: solid fill
+      gradient.addColorStop(0, gradientColors[0]);
+      gradient.addColorStop(1, gradientColors[0]);
+    } else {
+      // Multiple colors: distribute stops evenly
+      for (let i = 0; i < colorCount; i++) {
+        const stop = i / (colorCount - 1);
+        gradient.addColorStop(stop, gradientColors[i]);
+      }
+    }
+    
+    fillStyle = gradient;
+  } else {
+    // Fallback: Use theme colorPrimary or default blue
+    // Try to get from planet theme via context
+    let fallbackColor = '#7bb3f0'; // Default blue
+    
+    // Try to find planet theme from context
+    for (const planet of context.planetLayouts) {
+      const moons = context.moonLayouts.get(planet.id) || [];
+      if (moons.some(m => m.id === moon.id)) {
+        fallbackColor = planet.theme.colorPrimary || fallbackColor;
+        break;
+      }
+    }
+    
+    fillStyle = fallbackColor;
+  }
+  
+  // Render moon circle with gradient
+  ctx.fillStyle = fillStyle;
   ctx.beginPath();
   ctx.arc(screenPos.x, screenPos.y, radius, 0, Math.PI * 2);
   ctx.fill();

@@ -28,7 +28,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "metal_theme.mp3",
-      "particleEffect": "metal_sparks"
+      "particleEffect": "metal_sparks",
+      "title": "metal"
     },
     "nu-metal": {
       "backgroundImage": "numetal_bg.png",
@@ -39,7 +40,8 @@
       "spawnRate": 1.8,
       "waveDuration": 3,
       "music": "numetal_theme.mp3",
-      "particleEffect": "industrial_particles"
+      "particleEffect": "industrial_particles",
+      "title": "nu-metal"
     },
     "punk": {
       "backgroundImage": "punk_bg.png",
@@ -50,7 +52,8 @@
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "punk_theme.mp3",
-      "particleEffect": "punk_energy"
+      "particleEffect": "punk_energy",
+      "title": "punk"
     },
     "riot_girl": {
       "backgroundImage": "riot_girl_bg.png",
@@ -61,7 +64,8 @@
       "spawnRate": 1.7,
       "waveDuration": 3,
       "music": "riot_girl_theme.mp3",
-      "particleEffect": "riot_energy"
+      "particleEffect": "riot_energy",
+      "title": "riot girl"
     }
   },
   "meta": {
@@ -70,4 +74,3 @@
     "created": "2025-01-27"
   }
 }
-

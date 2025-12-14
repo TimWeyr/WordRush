@@ -28,7 +28,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "politik_theme.mp3",
-      "particleEffect": "political_particles"
+      "particleEffect": "political_particles",
+      "title": "Politische Struktur"
     },
     "Krisen_Konflikte": {
       "backgroundImage": "krisen_konflikte_bg.png",
@@ -39,7 +40,8 @@
       "spawnRate": 1.7,
       "waveDuration": 3,
       "music": "krisen_theme.mp3",
-      "particleEffect": "crisis_particles"
+      "particleEffect": "crisis_particles",
+      "title": "Krisen Konflikte"
     },
     "Gesellschaft_Kultur": {
       "backgroundImage": "gesellschaft_kultur_bg.png",
@@ -50,7 +52,8 @@
       "spawnRate": 1.4,
       "waveDuration": 3,
       "music": "goldene_zwanziger_theme.mp3",
-      "particleEffect": "cultural_glow"
+      "particleEffect": "cultural_glow",
+      "title": "Gesellschaft Kultur"
     },
     "Aussenpolitik_Vertraege": {
       "backgroundImage": "aussenpolitik_vertraege_bg.png",
@@ -61,7 +64,8 @@
       "spawnRate": 1.6,
       "waveDuration": 3,
       "music": "diplomacy_theme.mp3",
-      "particleEffect": "treaty_particles"
+      "particleEffect": "treaty_particles",
+      "title": "Aussenpolitik Vertraege"
     },
     "Ende_Republik": {
       "backgroundImage": "ende_republik_bg.png",
@@ -72,7 +76,8 @@
       "spawnRate": 1.8,
       "waveDuration": 3,
       "music": "niedergang_theme.mp3",
-      "particleEffect": "dark_particles"
+      "particleEffect": "dark_particles",
+      "title": "Ende Republik"
     }
   },
   "meta": {
@@ -81,4 +86,3 @@
     "created": "2025-01-27"
   }
 }
-

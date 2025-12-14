@@ -5,21 +5,24 @@
   <path d="M 30 5 L 26 18 L 22 22 L 22 32 L 26 36 L 30 42 L 34 36 L 38 32 L 38 22 L 34 18 Z" 
         fill="#e74c3c" stroke="#c0392b" stroke-width="1"/>
   
-  <!-- Music note cockpit window -->
-  <circle cx="30" cy="12" r="3" fill="#1a1a1a" stroke="#000000" stroke-width="0.5"/>
-  <rect x="29" y="12" width="2" height="6" fill="#1a1a1a"/>
-  <rect x="30" y="15" width="3" height="2" fill="#1a1a1a"/>
+  <!-- Music note cockpit window (more visible) -->
+  <circle cx="30" cy="12" r="3.5" fill="#ffffff" opacity="0.3"/>
+  <circle cx="30" cy="12" r="3" fill="#1a1a1a" stroke="#ffffff" stroke-width="1"/>
+  <circle cx="30" cy="12" r="2.5" fill="#2a2a2a"/>
+  <circle cx="30" cy="12" r="1.5" fill="#4a4a4a"/>
+  <rect x="29" y="12" width="2" height="6" fill="#1a1a1a" stroke="#ffffff" stroke-width="0.5"/>
+  <rect x="30" y="15" width="3" height="2" fill="#1a1a1a" stroke="#ffffff" stroke-width="0.5"/>
   
-  <!-- Musical notes on body -->
+  <!-- Musical notes on body (colorful) -->
   <!-- Note 1 -->
-  <circle cx="24" cy="24" r="2" fill="#ffffff" stroke="#c0392b" stroke-width="0.5"/>
-  <rect x="25" y="22" width="1.5" height="4" fill="#ffffff"/>
-  <rect x="26" y="20" width="2" height="1.5" fill="#ffffff"/>
+  <circle cx="24" cy="24" r="2" fill="#ff6b35" stroke="#ffffff" stroke-width="0.8"/>
+  <rect x="25" y="22" width="1.5" height="4" fill="#ff6b35"/>
+  <rect x="26" y="20" width="2" height="1.5" fill="#ff6b35"/>
   
   <!-- Note 2 -->
-  <circle cx="36" cy="24" r="2" fill="#ffffff" stroke="#c0392b" stroke-width="0.5"/>
-  <rect x="37" y="22" width="1.5" height="4" fill="#ffffff"/>
-  <rect x="38" y="20" width="2" height="1.5" fill="#ffffff"/>
+  <circle cx="36" cy="24" r="2" fill="#00cc88" stroke="#ffffff" stroke-width="0.8"/>
+  <rect x="37" y="22" width="1.5" height="4" fill="#00cc88"/>
+  <rect x="38" y="20" width="2" height="1.5" fill="#00cc88"/>
   
   <!-- Staff lines -->
   <line x1="22" y1="28" x2="38" y2="28" stroke="#ffffff" stroke-width="0.3" opacity="0.5"/>
@@ -34,17 +37,31 @@
   <rect x="8" y="27" width="4" height="4" fill="#e74c3c" stroke="#c0392b" stroke-width="0.5"/>
   <rect x="48" y="27" width="4" height="4" fill="#e74c3c" stroke="#c0392b" stroke-width="0.5"/>
   
-  <!-- Red accent stripes on wings -->
-  <rect x="12" y="27" width="8" height="1" fill="#c0392b"/>
-  <rect x="40" y="27" width="8" height="1" fill="#c0392b"/>
+  <!-- Colorful accent stripes on wings -->
+  <rect x="12" y="27" width="2" height="1" fill="#ff6b35"/>
+  <rect x="14" y="27" width="2" height="1" fill="#ffaa00"/>
+  <rect x="16" y="27" width="2" height="1" fill="#ffff33"/>
+  <rect x="18" y="27" width="2" height="1" fill="#00cc88"/>
+  
+  <rect x="40" y="27" width="2" height="1" fill="#ff6b35"/>
+  <rect x="42" y="27" width="2" height="1" fill="#ffaa00"/>
+  <rect x="44" y="27" width="2" height="1" fill="#ffff33"/>
+  <rect x="46" y="27" width="2" height="1" fill="#00cc88"/>
   
   <!-- Lower engine nacelles/pods (red) -->
   <ellipse cx="18" cy="38" rx="3" ry="5" fill="#e74c3c" stroke="#c0392b" stroke-width="0.5"/>
   <ellipse cx="42" cy="38" rx="3" ry="5" fill="#e74c3c" stroke="#c0392b" stroke-width="0.5"/>
   
-  <!-- Red accent bands on pods -->
-  <rect x="16" y="40" width="4" height="2.5" fill="#c0392b" rx="1"/>
-  <rect x="40" y="40" width="4" height="2.5" fill="#c0392b" rx="1"/>
+  <!-- Colorful accent bands on pods -->
+  <rect x="16" y="40" width="1.3" height="2.5" fill="#ff6b35" rx="0.5"/>
+  <rect x="17.3" y="40" width="1.3" height="2.5" fill="#ffaa00" rx="0.5"/>
+  <rect x="18.6" y="40" width="1.3" height="2.5" fill="#ffff33" rx="0.5"/>
+  <rect x="19.9" y="40" width="0.1" height="2.5" fill="#00cc88" rx="0.5"/>
+  
+  <rect x="40" y="40" width="1.3" height="2.5" fill="#ff6b35" rx="0.5"/>
+  <rect x="41.3" y="40" width="1.3" height="2.5" fill="#ffaa00" rx="0.5"/>
+  <rect x="42.6" y="40" width="1.3" height="2.5" fill="#ffff33" rx="0.5"/>
+  <rect x="43.9" y="40" width="0.1" height="2.5" fill="#00cc88" rx="0.5"/>
   
   <!-- Central engine (red glow) -->
   <ellipse cx="30" cy="46" rx="4" ry="3" fill="#333333"/>
@@ -66,5 +83,17 @@
   <!-- Additional structural details -->
   <line x1="22" y1="22" x2="22" y2="32" stroke="#c0392b" stroke-width="0.5" opacity="0.5"/>
   <line x1="38" y1="22" x2="38" y2="32" stroke="#c0392b" stroke-width="0.5" opacity="0.5"/>
+  
+  <!-- Colorful small panels/details -->
+  <rect x="23" y="18" width="2" height="2" fill="#ffaa00" opacity="0.8" rx="0.5"/>
+  <rect x="35" y="18" width="2" height="2" fill="#00cc88" opacity="0.8" rx="0.5"/>
+  <rect x="23" y="36" width="2" height="2" fill="#ffff33" opacity="0.8" rx="0.5"/>
+  <rect x="35" y="36" width="2" height="2" fill="#ff6b35" opacity="0.8" rx="0.5"/>
+  
+  <!-- Colorful wing tips -->
+  <circle cx="8" cy="28" r="1" fill="#ff6b35" opacity="0.7"/>
+  <circle cx="8" cy="32" r="1" fill="#00cc88" opacity="0.7"/>
+  <circle cx="52" cy="28" r="1" fill="#ffaa00" opacity="0.7"/>
+  <circle cx="52" cy="32" r="1" fill="#ffff33" opacity="0.7"/>
 </svg>
 

@@ -1,23 +1,28 @@
 # WordRush - Content Creation Guide
 
-**Document Version**: 1.0  
-**Last Updated**: November 16, 2024
+**Document Version**: 2.0  
+**Last Updated**: December 2024
 
-This guide explains how to create new educational content for WordRush.
+This guide explains how to create new educational content for WordRush using the **Editor** and **Supabase** database.
+
+**⚠️ Important**: This guide has been updated for Supabase-based content management. JSON files are no longer used - all content is created and managed through the Editor interface.
 
 ---
 
 ## Table of Contents
 
 1. [Content Structure Overview](#content-structure-overview)
-2. [Creating a Universe](#creating-a-universe)
-3. [Creating a Theme](#creating-a-theme)
-4. [Creating Chapters & Items](#creating-chapters--items)
-5. [Visual Configuration](#visual-configuration)
-6. [Audio Integration](#audio-integration)
-7. [Balancing & Difficulty](#balancing--difficulty)
-8. [Testing Your Content](#testing-your-content)
-9. [Content Best Practices](#content-best-practices)
+2. [Accessing the Editor](#accessing-the-editor)
+3. [Creating a Universe](#creating-a-universe)
+4. [Creating a Theme](#creating-a-theme)
+5. [Creating Chapters](#creating-chapters)
+6. [Creating Items - Quick Method (Text Parser)](#creating-items---quick-method-text-parser)
+7. [Creating Items - Advanced Method (Table View)](#creating-items---advanced-method-table-view)
+8. [Visual Configuration](#visual-configuration)
+9. [Audio Integration](#audio-integration)
+10. [Balancing & Difficulty](#balancing--difficulty)
+11. [Testing Your Content](#testing-your-content)
+12. [Content Best Practices](#content-best-practices)
 
 ---
 
@@ -32,176 +37,328 @@ Universe (e.g., "English", "Psychiatrie")
           └─ Item (e.g., "F32_001", "OFFICE_042")
 ```
 
-Each level is defined by JSON files:
+**All content is stored in Supabase database** and managed through the **WordRush Editor**.
 
-- **Universe**: `universe.<id>.json` (e.g., `universe.englisch.json`)
-- **Theme**: `themes.<theme_id>.json` inside Universe folder
-- **Chapter**: `<chapter_id>.json` inside Theme folder (contains array of Items)
+### Key Benefits
+
+✅ **No JSON Files**: Everything is stored in Supabase - no file management needed  
+✅ **Instant Availability**: New content is immediately available in the game  
+✅ **Visual Editor**: User-friendly interface for all content creation  
+✅ **Text Parser**: Quick bulk creation with simple text format  
+✅ **Version Control**: Database tracks all changes automatically  
+✅ **Collaboration**: Multiple editors can work simultaneously  
+
+### Editor Features
+
+The Editor provides:
+- **Visual UI** for creating and editing content
+- **Text Parser** for quick bulk item creation (`b.`, `c.`, `d.`, `l.` format)
+- **Table View** for inline editing and bulk operations
+- **Detail View** for comprehensive single-item editing
+- **Metadata Editor** for Universe/Theme/Chapter settings
+- **Direct database integration** - no JSON files needed
+
+---
+
+## Accessing the Editor
+
+1. Navigate to `/editor` in your WordRush application
+2. Select a Universe from the sidebar (or create a new one)
+3. Select a Theme (or create a new one)
+4. Select a Chapter (or create a new one)
+5. Start creating Items!
+
+**Note**: New universes, themes, and chapters are automatically saved to Supabase and immediately available in the game.
 
 ---
 
 ## Creating a Universe
 
-### Step 1: Create Universe JSON
+### Using the Editor
 
-**Location**: `/content/themes/universe.<your_id>.json`
-
-**Template**:
-
-```json
-{
-  "id": "your_universe_id",
-  "name": "Your Universe Name",
-  "description": "A brief description of what this universe teaches",
-  "colorPrimary": "#4a90e2",
-  "colorAccent": "#7bb3f0",
-  "backgroundGradient": ["#1a3a5f", "#2d5a8a"],
-  "icon": "🎓",
-  "available": true,
-  "language": "de",
-  "music": {
-    "theme": "your_universe_theme.mp3",
-    "volume": 0.6
-  },
-  "particleEffect": "default_particles",
-  "shipSkin": "default_ship",
-  "laserColor": "#4a90e2",
-  "themes": [
-    "theme_id_1",
-    "theme_id_2"
-  ],
-  "meta": {
-    "author": "Your Name",
-    "version": "1.0",
-    "created": "2025-11-16"
-  }
-}
-```
+1. **Navigate to Editor**: Go to `/editor` in your browser
+2. **Click "+" button** next to "Universe" dropdown in the sidebar
+3. **Fill in the form**:
+   - **ID**: Unique identifier (lowercase, letters/numbers/hyphens/underscores, must start with letter)
+     - Example: `psychiatrie`, `englisch`, `mathematik`
+     - Used in URLs: `/?universe=psychiatrie`
+   - **Name**: Display name shown in UI
+     - Example: `Psychiatrie`, `English`, `Mathematics`
+   - **Description**: Brief explanation (optional)
+   - **Primary Color**: Main theme color (hex)
+   - **Accent Color**: Secondary theme color (hex)
+   - **Icon**: Emoji (optional, e.g., `🌌`, `🎓`)
+4. **Click "Create Universe"**
+5. **Universe is automatically selected** and saved to Supabase
 
 ### Field Reference
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `id` | string | ✅ | Unique identifier (lowercase, no spaces) |
+| `id` | string | ✅ | Unique identifier (lowercase, URL-safe: letters, numbers, hyphens, underscores, must start with letter) |
 | `name` | string | ✅ | Display name shown in UI |
-| `description` | string | ✅ | Short explanation of universe content |
+| `description` | string | ❌ | Short explanation of universe content |
 | `colorPrimary` | string | ✅ | Main color (hex) for UI elements |
 | `colorAccent` | string | ✅ | Accent color (hex) for highlights |
-| `backgroundGradient` | string[] | ✅ | 2+ colors for gradient background |
-| `icon` | string | ✅ | Emoji or icon identifier |
-| `available` | boolean | ✅ | Show in Galaxy Hub? (false = coming soon) |
+| `backgroundGradient` | string[] | ✅ | Auto-generated from primary/accent colors |
+| `icon` | string | ❌ | Emoji or icon identifier |
 | `language` | string | ✅ | ISO language code (de, en, es, etc.) |
-| `music.theme` | string | ❌ | Background music filename |
-| `music.volume` | number | ❌ | Music volume (0.0-1.0) |
-| `particleEffect` | string | ❌ | Particle effect identifier |
-| `shipSkin` | string | ❌ | Ship graphics variant |
-| `laserColor` | string | ❌ | Laser beam color (hex) |
-| `themes` | string[] | ✅ | Array of theme IDs in this universe |
 
-### Step 2: Create Universe Folder
-
-**Location**: `/content/themes/<your_universe_id>/`
-
-This folder will contain all Theme JSON files for your universe.
+**Note**: Universes are automatically loaded from Supabase. No code changes needed!
 
 ---
 
 ## Creating a Theme
 
-### Step 1: Create Theme JSON
+### Using the Editor
 
-**Location**: `/content/themes/<universe_id>/themes.<theme_id>.json`
+1. **Select a Universe** first (from sidebar dropdown)
+2. **Click "+" button** next to "Theme" dropdown
+3. **Fill in the form**:
+   - **ID**: Unique identifier (lowercase, URL-safe)
+     - Example: `icd10`, `business_english`, `f10_f19`
+   - **Name**: Display name
+     - Example: `ICD-10`, `Business English`, `F10-F19`
+   - **Description**: What players will learn (optional)
+   - **Primary Color**: Theme color
+   - **Accent Color**: Secondary color
+   - **Icon**: Emoji (optional)
+4. **Click "Create Theme"**
+5. **Theme is automatically selected** and saved to Supabase
 
-**Template**:
-
-```json
-{
-  "id": "your_theme_id",
-  "name": "Your Theme Name",
-  "description": "What will players learn in this theme?",
-  "colorPrimary": "#6b4bff",
-  "colorAccent": "#a58dff",
-  "backgroundGradient": ["#110c33", "#221a66"],
-  "maxLevels": 10,
-  "icon": "🧠",
-  "shipSkin": "/assets/ships/default_ship.svg",
-  "relatedPackages": ["prerequisite_theme_id"],
-  "available": true,
-  "language": "de",
-  "chapters": {
-    "chapter_1": {
-      "backgroundGradient": ["#2d1b3d", "#4a2c5a"],
-      "spawnRate": 1.5,
-      "waveDuration": 8,
-      "music": "chapter1_theme.mp3",
-      "particleEffect": "custom_particles"
-    },
-    "chapter_2": {
-      "backgroundGradient": ["#ffd700", "#ff8c00"],
-      "spawnRate": 2.0,
-      "music": "chapter2_theme.mp3",
-      "particleEffect": "energy_sparks"
-    }
-  },
-  "meta": {
-    "author": "Your Name",
-    "version": "1.0",
-    "created": "2025-11-16"
-  }
-}
-```
-
-### Chapter Configuration
-
-Each chapter in the `chapters` object defines:
+### Field Reference
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `backgroundGradient` | string[] | ✅ | Colors for this chapter's background |
-| `spawnRate` | number | ✅ | Objects per second (1.0-3.0 recommended) |
-| `waveDuration` | number | ❌ | Default wave time in seconds (fallback: 5s) |
-| `music` | string | ❌ | Chapter-specific music file |
-| `particleEffect` | string | ❌ | Visual particle effect name |
-| `backgroundImage` | string | ❌ | Background image filename |
+| `id` | string | ✅ | Unique identifier (lowercase, URL-safe) |
+| `name` | string | ✅ | Display name shown in UI |
+| `description` | string | ❌ | What players will learn |
+| `colorPrimary` | string | ✅ | Main theme color (hex) |
+| `colorAccent` | string | ✅ | Accent color (hex) |
+| `backgroundGradient` | string[] | ✅ | Auto-generated from colors |
+| `icon` | string | ❌ | Emoji identifier |
+| `language` | string | ✅ | ISO language code |
 
-### Step 2: Create Theme Folder
+---
 
-**Location**: `/content/themes/<universe_id>/<theme_id>/`
+## Creating Chapters
 
-This folder will contain all Chapter JSON files (one per chapter).
+### Using the Editor
+
+1. **Select a Universe and Theme** first
+2. **Click "+" button** next to "Chapter" dropdown
+3. **Fill in the form**:
+   - **ID**: Unique identifier (lowercase, URL-safe)
+     - Example: `f32_depression`, `office_terms`, `suizid`
+   - **Title**: Display name
+     - Example: `F32 Depression`, `Office Terms`, `Suizid`
+   - **Primary Color**: Chapter color
+   - **Accent Color**: Secondary color
+4. **Click "Create Chapter"**
+5. **Chapter is automatically selected** and saved to Supabase
+
+### Chapter Configuration (Metadata Editor)
+
+After creating a chapter, you can edit its settings in the **Metadata Editor** panel:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `backgroundGradient` | string[] | ✅ | Colors for chapter background |
+| `spawnRate` | number | ✅ | Objects per second (stored in `meta.spawnRate`) |
+| `waveDuration` | number | ❌ | Default wave time in seconds (stored in `meta.waveDuration`) |
+| `music` | string | ❌ | Music filename (stored in `meta.music`) |
+| `particleEffect` | string | ❌ | Particle effect name (stored in `meta.particleEffect`) |
+
+**Note**: Chapter metadata is stored in the `meta` JSONB field in Supabase.
 
 
 ---
 
-## Creating Chapters & Items
+## Creating Items - Quick Method (Text Parser)
 
-### Chapter File Structure
+The **Text Parser** is the fastest way to create multiple items at once. Perfect for bulk content creation!
 
-**Location**: `/content/themes/<universe_id>/<theme_id>/<chapter_id>.json`
+### Accessing the Text Parser
 
-A chapter file contains an **array of Items** (game rounds):
+1. **Select a Chapter** in the Editor
+2. **Click "+ New Item"** button (top right of table)
+3. **Select "Text Parser"** from the dropdown menu
+4. A modal opens with a large text field
 
-```json
-{
-  "items": [
-    {
-      "id": "ITEM_001",
-      "theme": "your_theme_id",
-      "chapter": "your_chapter_id",
-      "level": 1,
-      "waveDuration": 10,
-      "base": { /* ... */ },
-      "correct": [ /* ... */ ],
-      "distractors": [ /* ... */ ],
-      "meta": { /* ... */ }
-    },
-    {
-      "id": "ITEM_002",
-      /* ... */
-    }
-  ]
-}
+### Text Format
+
+Each item follows this simple format:
+
 ```
+b. Basewort
+c. correct1, context1, order
+c. correct2, context2, order
+d. distractor1, redirect1, context1
+d. distractor2, redirect2, context2
+l. level
+```
+
+**Rules**:
+- **`b.`** = Base word (starts a new item)
+- **`c.`** = Correct entry (`word, context, order`)
+- **`d.`** = Distractor entry (`word, redirect, context`)
+- **`l.`** = Level (1-10, optional, applies to all following items until next `l.`)
+- Field markers are **case-insensitive** (b/B, c/C, d/D, l/L)
+- Empty lines are ignored
+- Multiple items: Each `b.` line starts a new item
+
+### Example: Single Item
+
+```
+b. Depression
+c. Freudlosigkeit, Depression zeigt sich durch Freudlosigkeit., 1
+c. Antriebslosigkeit, Depression zeigt sich durch Antriebslosigkeit., 2
+d. Wahn, Schizophrenie, Wahn gehört zur Schizophrenie.
+d. Manie, Affektive Störungen, Manie gehört zu Affektiven Störungen.
+l. 1
+```
+
+### Example: Multiple Items
+
+```
+b. Depression
+c. Freudlosigkeit, Depression zeigt sich durch Freudlosigkeit., 1
+c. Antriebslosigkeit, Depression zeigt sich durch Antriebslosigkeit., 2
+d. Wahn, Schizophrenie, Wahn gehört zur Schizophrenie.
+l. 1
+
+b. Schizophrenie
+c. Wahn, Schizophrenie zeigt sich durch Wahn., 1
+c. Halluzinationen, Schizophrenie zeigt sich durch Halluzinationen., 2
+d. Manie, Affektive Störungen, Manie gehört zu Affektiven Störungen.
+l. 2
+```
+
+This creates **2 items** with different levels.
+
+### Field Details
+
+#### Base (`b.`)
+- **Format**: `b. Basewort`
+- **Required**: Yes (one per item)
+- **Example**: `b. Depression`
+
+#### Correct (`c.`)
+- **Format**: `c. word, context, order`
+- **Required**: At least one per item
+- **Fields**:
+  - `word`: The correct word/phrase (required)
+  - `context`: Explanation text (optional, can be empty)
+  - `order`: Collection order number (optional, default: 0)
+- **Examples**:
+  - `c. Freudlosigkeit, Depression zeigt sich durch Freudlosigkeit., 1`
+  - `c. Antriebslosigkeit, , 2` (no context)
+  - `c. Traurigkeit` (no context, no order)
+
+#### Distractor (`d.`)
+- **Format**: `d. word, redirect, context`
+- **Required**: No (but recommended)
+- **Fields**:
+  - `word`: The distractor word/phrase (required)
+  - `redirect`: Where this distractor actually belongs (required)
+  - `context`: Explanation text (optional)
+- **Examples**:
+  - `d. Wahn, Schizophrenie, Wahn gehört zur Schizophrenie.`
+  - `d. Manie, Affektive Störungen, ` (no context)
+
+#### Level (`l.`)
+- **Format**: `l. number`
+- **Required**: No (default: 1)
+- **Range**: 1-10
+- **Behavior**: Sets level for all following items until next `l.` line
+- **Examples**:
+  - `l. 1` = Level 1
+  - `l. 5` = Level 5
+
+### Using the Text Parser
+
+1. **Type your content** in the text field (see format above)
+2. **Click "🔍 Prüfen"** to validate:
+   - Checks for errors
+   - Shows validation results
+   - Auto-validates on Enter key (new line)
+3. **Click "💾 Speichern"** to create items:
+   - Parser runs again (final validation)
+   - Items are created with auto-generated IDs
+   - Visual/spawn configs are randomized automatically
+   - Items are saved to Supabase
+   - Modal closes and scrolls to last created item
+
+### Validation Rules
+
+The parser validates:
+- ✅ Base word exists
+- ✅ At least one correct entry per item
+- ✅ Collection order is a number
+- ✅ Level is 1-10
+- ✅ Distractors have redirect
+- ✅ No syntactically unparseable lines
+
+**Errors are shown** with line numbers and descriptions.
+
+### Auto-Generated Properties
+
+When saving, the parser automatically sets:
+- **ID**: `{CHAPTER_PREFIX}_XXX` (e.g., `F32_001`, `F32_002`)
+- **Colors**: Random colors for each object
+- **Variants**: Random shape variants (hexagon, star, bubble, etc.)
+- **Spawn Positions**: Random (0.1-0.9)
+- **Spawn Spreads**: Random (0.05-0.1)
+- **Speeds**: Random (Correct: 0.9-1.1, Distractor: 1.1-1.4)
+- **Published**: `false` (unpublished by default)
+
+You can edit these later in the Table View or Detail View.
+
+---
+
+## Creating Items - Advanced Method (Table View)
+
+For detailed editing, use the **Table View**:
+
+1. **Select a Chapter** in the Editor
+2. **Click "+ New Item"** button (without dropdown)
+3. **Item is created** with randomized configs
+4. **Edit directly in the table**:
+   - Click cells to edit inline
+   - Use dropdowns for level, variants, etc.
+   - Click **💾** button to save individual item
+   - Click **🗑️** button to delete item
+5. **Or click ✏️** to open Detail View for full editing
+
+### Table View Features
+
+- **Inline Editing**: Click any cell to edit
+- **Bulk Actions**: Select multiple items for bulk operations
+- **Sorting**: Sort by ID, Level, or Word
+- **Search**: Filter items by search term
+- **Per-Item Save**: Save individual items without affecting others
+- **Visual Feedback**: Color-coded correct (green tint) and distractor (red tint) columns
+
+### Detail View (Full Editing)
+
+For comprehensive editing of a single item:
+
+1. **Click ✏️ button** on any item row in Table View
+2. **Detail View opens** with full editing capabilities:
+   - **Base Section**: Edit base word, visual config, type
+   - **Correct Entries**: Add/remove/edit correct objects
+   - **Distractor Entries**: Add/remove/edit distractor objects
+   - **Meta Section**: Edit tags, related items, difficulty scaling
+   - **Visual Config**: Full control over colors, variants, animations
+   - **Spawn Config**: Precise control over positions, spreads, speeds
+3. **Click "💾 Save Changes"** to save to Supabase
+4. **Click "← Back to Table"** to return to Table View
+
+**Detail View Features**:
+- **Add/Remove Entries**: Buttons to add new correct/distractor entries
+- **Visual Preview**: See how objects will look
+- **Randomize Button**: 🎲 Randomize All visual and spawn configs
+- **Full Field Access**: Edit all properties not available in Table View
 
 ---
 
@@ -863,11 +1020,11 @@ The `variant` property determines the **shape** of the object. Choose based on t
 
 Before releasing content, verify:
 
-#### JSON Validity
-- [ ] All JSON files parse without errors
-- [ ] All required fields present
-- [ ] Field types correct (string, number, boolean, array)
-- [ ] IDs are unique and consistent across files
+#### Database & Editor
+- [ ] All items saved successfully to Supabase
+- [ ] No console errors when loading content
+- [ ] Items appear correctly in Table View
+- [ ] IDs are unique and follow naming convention (`{PREFIX}_XXX`)
 
 #### Content Quality
 - [ ] All text is spelled correctly
@@ -876,10 +1033,17 @@ Before releasing content, verify:
 - [ ] Tags are relevant and consistent
 
 #### Audio/Visual Assets
-- [ ] All referenced audio files exist
-- [ ] All referenced images exist
+- [ ] All referenced audio files exist (if using audio)
+- [ ] All referenced images exist (if using images)
 - [ ] Audio files are < 500KB each
 - [ ] Images are optimized (WebP or PNG)
+
+#### Editor Workflow
+- [ ] Text Parser validates correctly
+- [ ] Items can be edited in Table View
+- [ ] Items can be edited in Detail View
+- [ ] Save buttons work correctly
+- [ ] Items persist after page reload
 
 #### Gameplay Balance
 - [ ] Round is completable in waveDuration time
@@ -888,10 +1052,26 @@ Before releasing content, verify:
 - [ ] Lernmodus provides enough visual support
 
 #### Learning Effectiveness
-- [ ] Correct/distractor distinction is clear
+- [ ] Correct/distractor distinction is clear (by meaning, not visuals!)
 - [ ] Context text teaches the concept
 - [ ] redirect hints are helpful, not confusing
 - [ ] collectionOrder makes logical sense (if used)
+
+### Testing in Game
+
+1. **Click "▶️ Play Chapter"** button in Editor header
+2. **Game opens in new window** with your content
+3. **Test gameplay**:
+   - Collect correct objects
+   - Shoot distractors
+   - Verify context text appears
+   - Check redirect hints work
+   - Test collection order (if used)
+4. **Verify visual configs**:
+   - Colors display correctly
+   - Variants render properly
+   - Animations work (pulsate, shake, glow)
+   - Font sizes are readable
 
 --- 
 
@@ -1044,210 +1224,96 @@ Items 13-15: Expert (use collectionOrder, complex patterns)
 
 ## Example: Creating "Solar System" Universe
 
-Let's create a complete example:
+Let's create a complete example using the Editor:
 
-### Step 1: Universe JSON
+### Step 1: Create Universe
 
-**File**: `/content/themes/universe.solar_system.json`
+1. Go to `/editor`
+2. Click **"+"** next to "Universe" dropdown
+3. Fill in:
+   - **ID**: `solar_system`
+   - **Name**: `Solar System`
+   - **Description**: `Learn about planets, stars, and space exploration`
+   - **Primary Color**: `#4a90e2`
+   - **Accent Color**: `#f39c12`
+   - **Icon**: `🌍`
+4. Click **"Create Universe"**
+5. Universe is automatically selected
 
-```json
-{
-  "id": "solar_system",
-  "name": "Solar System",
-  "description": "Learn about planets, stars, and space exploration",
-  "colorPrimary": "#4a90e2",
-  "colorAccent": "#f39c12",
-  "backgroundGradient": ["#000000", "#1a1a2e"],
-  "icon": "🌍",
-  "available": true,
-  "language": "en",
-  "music": {
-    "theme": "space_ambient.mp3",
-    "volume": 0.5
-  },
-  "particleEffect": "stars",
-  "laserColor": "#00ff99",
-  "themes": ["planets", "exploration"],
-  "meta": {
-    "author": "Space Education Team",
-    "version": "1.0",
-    "created": "2025-11-16"
-  }
-}
+### Step 2: Create Theme
+
+1. Click **"+"** next to "Theme" dropdown
+2. Fill in:
+   - **ID**: `planets`
+   - **Name**: `Planets of the Solar System`
+   - **Description**: `Learn facts about the 8 planets`
+   - **Primary Color**: `#3498db`
+   - **Accent Color**: `#e74c3c`
+   - **Icon**: `🪐`
+3. Click **"Create Theme"**
+4. Theme is automatically selected
+
+### Step 3: Create Chapter
+
+1. Click **"+"** next to "Chapter" dropdown
+2. Fill in:
+   - **ID**: `inner_planets`
+   - **Title**: `Inner Planets`
+   - **Primary Color**: `#ff6b35`
+   - **Accent Color**: `#f7931e`
+3. Click **"Create Chapter"**
+4. Chapter is automatically selected
+
+### Step 4: Create Items with Text Parser
+
+1. Click **"+ New Item"** → **"Text Parser"**
+2. Enter this text:
+
+```
+b. Earth
+c. Water, Earth is the only planet with liquid water on its surface., 1
+c. Life, Earth is the only known planet to support life., 2
+c. Atmosphere, Earth's atmosphere protects life and retains heat., 3
+d. Rings, Saturn, Rings are a feature of Saturn, not Earth.
+d. Great Red Spot, Jupiter, The Great Red Spot is a storm on Jupiter.
+l. 1
+
+b. Mars
+c. Red Planet, Mars is known as the Red Planet due to iron oxide., 1
+c. Olympus Mons, Mars has the largest volcano in the solar system., 2
+d. Great Red Spot, Jupiter, The Great Red Spot is on Jupiter, not Mars.
+d. Rings, Saturn, Rings belong to Saturn, not Mars.
+l. 1
 ```
 
-### Step 2: Theme JSON
+3. Click **"🔍 Prüfen"** to validate
+4. Click **"💾 Speichern"** to create both items
+5. Items are automatically created with IDs `INN_001` and `INN_002`
 
-**File**: `/content/themes/solar_system/themes.planets.json`
+### Step 5: Edit Chapter Settings (Optional)
 
-```json
-{
-  "id": "planets",
-  "name": "Planets of the Solar System",
-  "description": "Learn facts about the 8 planets",
-  "colorPrimary": "#3498db",
-  "colorAccent": "#e74c3c",
-  "backgroundGradient": ["#0c0c1e", "#1a1a3e"],
-  "icon": "🪐",
-  "available": true,
-  "language": "en",
-  "chapters": {
-    "inner_planets": {
-      "backgroundGradient": ["#ff6b35", "#f7931e"],
-      "spawnRate": 1.5,
-      "music": "inner_planets.mp3",
-      "particleEffect": "heat_waves"
-    },
-    "outer_planets": {
-      "backgroundGradient": ["#2980b9", "#16213e"],
-      "spawnRate": 1.8,
-      "music": "outer_planets.mp3",
-      "particleEffect": "ice_crystals"
-    }
-  },
-  "meta": {
-    "author": "Space Education Team",
-    "version": "1.0",
-    "created": "2025-11-16"
-  }
-}
-```
+1. In the **Metadata Editor** panel, edit chapter settings:
+   - **Background Gradient**: `["#ff6b35", "#f7931e"]`
+   - **Spawn Rate**: `1.5`
+   - **Wave Duration**: `8`
+   - **Music**: `inner_planets.mp3` (if available)
+   - **Particle Effect**: `heat_waves` (if available)
+2. Click **"💾 Save Chapter Settings"**
 
-### Step 3: Chapter JSON
+### Step 6: Fine-Tune Items (Optional)
 
-**File**: `/content/themes/solar_system/planets/inner_planets.json`
+1. In **Table View**, click **✏️** on any item to open Detail View
+2. Adjust visual configs, spawn positions, speeds, etc.
+3. Click **"💾 Save Changes"** to save individual item
 
-```json
-{
-  "items": [
-    {
-      "id": "EARTH_001",
-      "theme": "planets",
-      "chapter": "inner_planets",
-      "level": 1,
-      "waveDuration": 10,
-      "base": {
-        "word": "Earth",
-        "type": "Planet",
-        "visual": {
-          "size": 1.3,
-          "color": "#2980b9",
-          "glow": true,
-          "pulsate": true
-        }
-      },
-      "correct": [
-        {
-          "entry": {
-            "word": "Water",
-            "type": "Feature"
-          },
-          "spawnPosition": 0.5,
-          "spawnSpread": 0.1,
-          "speed": 0.8,
-          "points": 200,
-          "pattern": "linear_inward",
-          "collectionOrder": 1,
-          "context": "Earth is the only planet with liquid water on its surface.",
-          "visual": {
-            "color": "#3498db",
-            "pulsate": true,
-            "fontSize": 1.2
-          },
-          "sound": "water_collect.mp3"
-        },
-        {
-          "entry": {
-            "word": "Life",
-            "type": "Feature"
-          },
-          "spawnPosition": 0.3,
-          "spawnSpread": 0.1,
-          "speed": 0.9,
-          "points": 250,
-          "pattern": "wave",
-          "collectionOrder": 2,
-          "context": "Earth is the only known planet to support life.",
-          "visual": {
-            "color": "#27ae60",
-            "pulsate": true,
-            "fontSize": 1.2
-          },
-          "sound": "life_collect.mp3"
-        },
-        {
-          "entry": {
-            "word": "Atmosphere",
-            "type": "Feature"
-          },
-          "spawnPosition": 0.7,
-          "spawnSpread": 0.1,
-          "speed": 1.0,
-          "points": 200,
-          "pattern": "zigzag",
-          "collectionOrder": 3,
-          "context": "Earth's atmosphere protects life and retains heat.",
-          "visual": {
-            "color": "#85c1e9",
-            "pulsate": false,
-            "fontSize": 1.1
-          },
-          "sound": "atmosphere_collect.mp3"
-        }
-      ],
-      "distractors": [
-        {
-          "entry": {
-            "word": "Rings",
-            "type": "Feature"
-          },
-          "spawnPosition": 0.2,
-          "spawnSpread": 0.05,
-          "speed": 1.1,
-          "points": 150,
-          "damage": 1,
-          "redirect": "Saturn",
-          "context": "Rings are a feature of Saturn, not Earth.",
-          "visual": {
-            "color": "#e74c3c",
-            "shake": true,
-            "fontSize": 1.0
-          },
-          "sound": "error_beep.mp3"
-        },
-        {
-          "entry": {
-            "word": "Great Red Spot",
-            "type": "Feature"
-          },
-          "spawnPosition": 0.8,
-          "spawnSpread": 0.05,
-          "speed": 1.2,
-          "points": 150,
-          "damage": 1,
-          "redirect": "Jupiter",
-          "context": "The Great Red Spot is a storm on Jupiter.",
-          "visual": {
-            "color": "#c0392b",
-            "shake": true,
-            "fontSize": 1.0
-          },
-          "sound": "error_beep.mp3"
-        }
-      ],
-      "meta": {
-        "source": "NASA Educational Materials",
-        "tags": ["earth", "inner_planets", "habitability"],
-        "related": ["MARS_001", "VENUS_001"],
-        "difficultyScaling": {
-          "speedMultiplierPerReplay": 1.05,
-          "colorContrastFade": true,
-          "angleVariance": 0.2
-        }
-      }
-    }
-  ]
-}
-```
+### Result
+
+You now have:
+- ✅ Universe "Solar System" in Supabase
+- ✅ Theme "Planets" linked to universe
+- ✅ Chapter "Inner Planets" with 2 items
+- ✅ All content immediately available in the game!
+
+**Test it**: Click **"▶️ Play Chapter"** button to test your content!
 
 --- 

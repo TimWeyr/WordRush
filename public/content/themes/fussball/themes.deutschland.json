@@ -28,7 +28,8 @@
       "spawnRate": 1.2,
       "waveDuration": 3,
       "music": "bayern_theme.mp3",
-      "particleEffect": "bayern_energy"
+      "particleEffect": "bayern_energy",
+      "title": "bayern muenchen"
     },
     "holstein_kiel": {
       "backgroundImage": "holstein_bg.png",
@@ -39,7 +40,8 @@
       "spawnRate": 1.2,
       "waveDuration": 3,
       "music": "holstein_theme.mp3",
-      "particleEffect": "holstein_energy"
+      "particleEffect": "holstein_energy",
+      "title": "holstein kiel"
     },
     "leverkusen": {
       "backgroundImage": "leverkusen_bg.png",
@@ -50,7 +52,8 @@
       "spawnRate": 1.2,
       "waveDuration": 3,
       "music": "leverkusen_theme.mp3",
-      "particleEffect": "leverkusen_energy"
+      "particleEffect": "leverkusen_energy",
+      "title": "leverkusen"
     },
     "dortmund": {
       "backgroundImage": "dortmund_bg.png",
@@ -61,7 +64,8 @@
       "spawnRate": 1.2,
       "waveDuration": 3,
       "music": "dortmund_theme.mp3",
-      "particleEffect": "dortmund_energy"
+      "particleEffect": "dortmund_energy",
+      "title": "dortmund"
     }
   },
   "meta": {
@@ -70,4 +74,3 @@
     "created": "2025-01-27"
   }
 }
-

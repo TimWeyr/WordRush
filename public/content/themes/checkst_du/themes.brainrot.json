@@ -1,0 +1,35 @@
+{
+  "id": "brainrot",
+  "name": "Brainrot",
+  "description": "Lerne Brainrot - Die viralsten Memes und Trends! 🧠✨",
+  "colorPrimary": "#fdcb6e",
+  "colorAccent": "#e17055",
+  "backgroundGradient": [
+    "#e17055",
+    "#fdcb6e"
+  ],
+  "maxLevels": 15,
+  "icon": "🧠",
+  "shipSkin": "/assets/ships/trend_ship.svg",
+  "laserColor": "#fdcb6e",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Italian": {
+      "backgroundGradient": [
+        "#e17055",
+        "#fdcb6e"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "italian_brainrot_theme.mp3",
+      "particleEffect": "brainrot_particles",
+      "title": "Italian"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}

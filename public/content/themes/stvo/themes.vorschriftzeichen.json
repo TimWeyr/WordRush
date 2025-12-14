@@ -1,0 +1,24 @@
+{
+  "id": "vorschriftzeichen",
+  "name": "Vorschriftzeichen",
+  "description": "Lerne Vorschriftzeichen - Runde Schilder mit Geboten und Verboten.",
+  "colorPrimary": "#4ecdc4",
+  "colorAccent": "#44a08d",
+  "backgroundGradient": [
+    "#44a08d",
+    "#4ecdc4"
+  ],
+  "maxLevels": 15,
+  "icon": "🚫",
+  "shipSkin": "/assets/ships/traffic_ship.svg",
+  "laserColor": "#4ecdc4",
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

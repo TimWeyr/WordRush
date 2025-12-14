@@ -1,0 +1,24 @@
+{
+  "id": "verkehrszeichen_allgemein",
+  "name": "Verkehrszeichen allgemein",
+  "description": "Lerne die Grundlagen der Verkehrszeichen - Formen, Farben und Bedeutung.",
+  "colorPrimary": "#ffa500",
+  "colorAccent": "#ff8c00",
+  "backgroundGradient": [
+    "#ff8c00",
+    "#ffa500"
+  ],
+  "maxLevels": 15,
+  "icon": "🚦",
+  "shipSkin": "/assets/ships/traffic_ship.svg",
+  "laserColor": "#ffa500",
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

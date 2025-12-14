@@ -1,0 +1,24 @@
+{
+  "id": "zusatzzeichen",
+  "name": "Zusatzzeichen",
+  "description": "Lerne Zusatzzeichen - Kleine Schilder, die Hauptzeichen ergänzen und präzisieren.",
+  "colorPrimary": "#a8e6cf",
+  "colorAccent": "#88d8a3",
+  "backgroundGradient": [
+    "#88d8a3",
+    "#a8e6cf"
+  ],
+  "maxLevels": 15,
+  "icon": "📋",
+  "shipSkin": "/assets/ships/traffic_ship.svg",
+  "laserColor": "#a8e6cf",
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

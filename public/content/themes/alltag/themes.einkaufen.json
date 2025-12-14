@@ -28,7 +28,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "supermarkt_theme.mp3",
-      "particleEffect": "shopping_particles"
+      "particleEffect": "shopping_particles",
+      "title": "Supermarkt"
     }
   },
   "meta": {
@@ -37,4 +38,3 @@
     "created": "2025-01-27"
   }
 }
-

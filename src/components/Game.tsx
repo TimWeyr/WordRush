@@ -1,6 +1,7 @@
 // Main Game Component with Canvas, HUD, and Touch Controls
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
+import { useAuth } from '@/infra/auth/AuthContext';
 import { GameLoop } from '@/core/GameLoop';
 import { Renderer } from '@/core/Renderer';
 import { ShooterEngine } from '@/logic/ShooterEngine';
@@ -8,7 +9,6 @@ import { LearningStateManager } from '@/logic/LearningStateManager';
 import { localProgressProvider } from '@/infra/providers/LocalProgressProvider';
 import { jsonLoader } from '@/infra/utils/JSONLoader';
 import { Starfield } from '@/effects/Starfield';
-import { SpeedLines } from '@/effects/SpeedLines';
 import { NebulaCloud } from '@/effects/NebulaCloud';
 import { ObjectTrail } from '@/effects/ObjectTrail';
 // Difficulty config now handled by gameplayPresets
@@ -23,13 +23,20 @@ interface GameProps {
   universe: Universe;
   theme: Theme;
   chapterId: string;
+  chapterIds?: string[]; // Optional: all chapter IDs for chaotic mode
   mode: GameMode;
   startItemId?: string; // Optional: start at specific item
   levelFilter?: number; // Optional: filter items by level
   onExit: () => void;
+  onNextChapter?: () => void; // Optional: load next chapter
+  currentChapterIndex?: number; // Optional: current chapter in sequence
+  totalChapters?: number; // Optional: total chapters in sequence
+  loadAllItems?: boolean; // Optional: load all items from all chapters (chaotic mode)
 }
 
-export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, startItemId, levelFilter, onExit }) => {
+export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterIds, mode, startItemId, levelFilter, onExit, onNextChapter, currentChapterIndex = 0, totalChapters = 1, loadAllItems = false }) => {
+  const { user, isVerified } = useAuth();
+  
   // Save current selection when component mounts
   useEffect(() => {
     const lastSelection = {
@@ -53,11 +60,14 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
   
   // HUD state
   const [score, setScore] = useState(0);
+  const scoreRef = useRef(0); // Track score without triggering re-renders in callbacks
   const [health, setHealth] = useState(10);
   const [healthBlink, setHealthBlink] = useState(false);
+  const [scoreAnimation, setScoreAnimation] = useState<'none' | 'gain' | 'loss'>('none');
   const [contextText, setContextText] = useState('');
   const [contextVisible, setContextVisible] = useState(false);
   const [gameOver, setGameOver] = useState(false);
+  const gameOverRef = useRef(false); // Track if game over was already triggered
   const [chapterComplete, setChapterComplete] = useState(false);
   const [finalScore, setFinalScore] = useState(0);
   
@@ -87,7 +97,6 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
   
   // Visual effects
   const starfield = useRef<Starfield | null>(null);
-  const speedLines = useRef<SpeedLines | null>(null);
   const nebulaCloud = useRef<NebulaCloud | null>(null);
   const objectTrail = useRef<ObjectTrail | null>(null);
   
@@ -104,20 +113,43 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
     setIsTouchDevice(hasTouchScreen);
   }, []);
 
-  // Load chapter items
+  // Load chapter items (reload when chapterId changes)
   useEffect(() => {
     loadChapter();
-  }, []);
+  }, [chapterId]);
 
   const loadChapter = async () => {
     setLoading(true);
     await learningManager.load();
-    let loadedItems = await jsonLoader.loadChapter(universe.id, theme.id, chapterId);
+    
+    let loadedItems: Item[];
+    
+    // CHAOTIC MODE: Load ALL items from ALL chapters
+    if (loadAllItems && chapterIds && chapterIds.length > 0) {
+      console.log('🎲 CHAOTIC MODE: Loading all items from all chapters!');
+      loadedItems = await jsonLoader.loadAllThemeItems(universe.id, theme.id, chapterIds);
+    } else {
+      // NORMAL MODE: Load single chapter
+      loadedItems = await jsonLoader.loadChapter(universe.id, theme.id, chapterId);
+    }
     
     // Filter items by level if levelFilter is provided
     if (levelFilter !== undefined) {
       loadedItems = loadedItems.filter(item => item.level === levelFilter);
       console.log(`🎯 Filtered items by level ${levelFilter}: ${loadedItems.length} items`);
+    }
+    
+    // Filter by freeTier for guests (not logged in)
+    if (!user) {
+      const beforeCount = loadedItems.length;
+      loadedItems = loadedItems.filter(item => item.freeTier === true);
+      console.log(`🔓 Guest user: Filtered to freeTier items (${loadedItems.length} / ${beforeCount})`);
+    } else if (!isVerified) {
+      // Logged in but not verified: Can play freeTier + all items (per requirements)
+      console.log(`📧 User not verified: Full access to all items (verify email for Editor access)`);
+    } else {
+      // Verified user: Full access
+      console.log(`✅ Verified user: Full access to all items`);
     }
     
     // Apply item ordering from settings
@@ -203,6 +235,7 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
     if (index >= items.length) {
       // Chapter complete!
       console.log('✅ CHAPTER COMPLETE!');
+      console.log(`📍 Chapter ${currentChapterIndex + 1}/${totalChapters} finished`);
       setFinalScore(eng.getSessionScore());
       setChapterComplete(true);
       return;
@@ -211,14 +244,15 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
     const item = items[index];
     console.log('📦 Loading item:', item.id);
     const learningState = learningManager.getState(item.id);
-    eng.loadRound(item, learningState);
+    const isLastRound = index === items.length - 1;
+    eng.loadRound(item, learningState, isLastRound);
     setCurrentItemIndex(index);
 
     // Show intro text if present
     if (item.introText) {
       showContext(item.introText);
     }
-  }, [items, learningManager, onExit, showContext]);
+  }, [items, learningManager, showContext, currentChapterIndex, totalChapters]);
 
   const handleRoundComplete = useCallback((roundScore: number, perfect: boolean) => {
     if (!engine) return;
@@ -235,20 +269,23 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
       maxScore = distractorPoints + (correctPoints * 2);
     }
     
-    console.log('🏁 ROUND COMPLETE!');
-    console.log('📍 Current Index:', currentItemIndex, 'Total Items:', items.length);
-    console.log('📊 Score Calculation:');
-    console.log('  - Correct Points:', correctPoints, `(${item.correct.length} items)`);
-    console.log('  - Distractor Points:', distractorPoints, `(${item.distractors.length} items)`);
-    console.log('  - Has Collection Order:', hasCollectionOrder);
-    if (hasCollectionOrder) {
-      console.log('  - Max Score (with 2x bonus):', distractorPoints, '+', `(${correctPoints} × 2)`, '=', maxScore);
-    } else {
-      console.log('  - Max Score:', correctPoints, '+', distractorPoints, '=', maxScore);
-    }
-    console.log('  - Achieved Score:', roundScore);
-    console.log('  - Percentage:', ((roundScore / maxScore) * 100).toFixed(1) + '%');
-    console.log('  - Perfect:', perfect);
+    const maxScoreFormula = hasCollectionOrder 
+      ? `${distractorPoints} + (${correctPoints} × 2) = ${maxScore}`
+      : `${correctPoints} + ${distractorPoints} = ${maxScore}`;
+    
+    console.log('🏁 ROUND COMPLETE!', {
+      currentIndex: currentItemIndex,
+      totalItems: items.length,
+      scoreCalculation: {
+        correctPoints: `${correctPoints} (${item.correct.length} items)`,
+        distractorPoints: `${distractorPoints} (${item.distractors.length} items)`,
+        hasCollectionOrder,
+        maxScore: hasCollectionOrder ? `with 2x bonus: ${maxScoreFormula}` : maxScoreFormula,
+        achievedScore: roundScore,
+        percentage: `${((roundScore / maxScore) * 100).toFixed(1)}%`,
+        perfect
+      }
+    });
     
     // Validate item exists and has correct ID
     if (!item || !item.id) {
@@ -296,6 +333,13 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
     // Transition to next round
     setRoundTransition(true);
     setTimeout(() => {
+      // Check if game is over before loading next round
+      if (gameOverRef.current) {
+        console.log('⚠️ Game is over, not loading next round');
+        setRoundTransition(false);
+        return;
+      }
+      
       console.log('⏭️ Loading next round...');
       setRoundTransition(false);
       if (engine) {
@@ -305,9 +349,21 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
   }, [currentItemIndex, items, theme.id, chapterId, engine, learningManager, loadRound]);
 
   const handleGameOver = useCallback(() => {
+    // Prevent multiple game over calls
+    if (gameOverRef.current) {
+      console.log('⚠️ GAME OVER already triggered, ignoring duplicate call');
+      return;
+    }
+    
+    gameOverRef.current = true;
     console.log('💀 GAME OVER!');
-    setFinalScore(score);
+    setFinalScore(scoreRef.current);
     setGameOver(true);
+  }, []); // No dependencies - uses refs only
+  
+  // Keep scoreRef in sync with score state
+  useEffect(() => {
+    scoreRef.current = score;
   }, [score]);
   
   // Health change with blink effect
@@ -344,6 +400,9 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
     if (!canvasRef.current || items.length === 0) return;
 
     const initializeGame = async () => {
+      // Reset game over flag on initialization
+      gameOverRef.current = false;
+      
       // Load settings to get gameplay settings
       const settings = await localProgressProvider.getUISettings();
       const gameplaySettings = settings.gameplaySettings || {
@@ -399,7 +458,6 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
       ];
       
       starfield.current = new Starfield(canvas.width, canvas.height, 150);
-      speedLines.current = new SpeedLines(canvas.width, canvas.height, 3); // REDUCED: 30 → 3
       nebulaCloud.current = new NebulaCloud(canvas.width, canvas.height, 2, themeColors); // Reduced: 5 → 2 for fewer, more transparent clouds
       objectTrail.current = new ObjectTrail();
 
@@ -431,13 +489,30 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
           objectsPerSecond,
           maxCorrect: gameplaySettings.maxCorrect,
           maxDistractors: gameplaySettings.maxDistractors,
-          isZenMode
+          isZenMode,
+          userId: user?.id, // User UUID from Supabase
+          // Content info for logging
+          chapterId: chapterId,
+          themeId: theme.id,
+          universeId: universe.id
         },
         mode
       );
 
       // Set up callbacks (basic ones)
-      eng.setOnScoreChange(setScore);
+      eng.setOnScoreChange((newScore) => {
+        const oldScore = scoreRef.current;
+        setScore(newScore);
+        
+        if (newScore > oldScore) {
+          setScoreAnimation('gain');
+        } else if (newScore < oldScore) {
+          setScoreAnimation('loss');
+        }
+        
+        // Reset animation
+        setTimeout(() => setScoreAnimation('none'), 300);
+      });
       eng.setOnHealthChange(handleHealthChange);
 
       setEngine(eng);
@@ -457,6 +532,16 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
     };
   }, [items, loadRound]);
   
+  // Flush events when paused
+  useEffect(() => {
+    if (isPaused && engine) {
+      console.log('⏸️ [Game] Paused - flushing events...');
+      engine.flushEventsPublic().catch(error => {
+        console.warn('⚠️ [Game] Failed to flush events on pause:', error);
+      });
+    }
+  }, [isPaused, engine]);
+
   // Update callbacks when they change
   useEffect(() => {
     if (!engine) return;
@@ -517,12 +602,6 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
       const scoreMult = 1 + (score / 2000); // Faster stars at higher scores
       starfield.current.setSpeedMultiplier(scoreMult * animMult);
       starfield.current.update(deltaTime);
-    }
-    
-    if (speedLines.current && animMult > 0) {
-      const scoreIntensity = 1 + (score / 1000); // More lines at higher scores
-      speedLines.current.setIntensity(scoreIntensity * animMult);
-      speedLines.current.update(deltaTime);
     }
     
     if (nebulaCloud.current && animMult > 0) {
@@ -645,12 +724,6 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
 
     // Render ship
     engine.getShip().render(renderer);
-    
-    // === LAYER 3: Foreground Effects ===
-    // Render speed lines (in front of everything for max effect)
-    if (speedLines.current) {
-      speedLines.current.render(renderer);
-    }
   }, [renderer, engine, theme, chapterId]);
 
   // Start game loop
@@ -664,6 +737,14 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
 
     return () => loop.stop();
   }, [renderer, engine, updateGame, renderGame]);
+  
+  // Stop game loop on game over or chapter complete
+  useEffect(() => {
+    if ((gameOver || chapterComplete) && gameLoop) {
+      console.log('🛑 Stopping game loop (gameOver:', gameOver, ', chapterComplete:', chapterComplete, ')');
+      gameLoop.stop();
+    }
+  }, [gameOver, chapterComplete, gameLoop]);
   
   // Warning blink animation
   useEffect(() => {
@@ -830,7 +911,9 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
         
         <div className="hud-center">
           <div className="level-info">
-            <span className="desktop-only">{theme.name} - {chapterId}</span>
+            <span className="desktop-only">
+              {theme.name} - {theme.chapters[chapterId]?.title || chapterId}
+            </span>
           </div>
           <div className="item-progress">
             Runde {currentItemIndex + 1}/{items.length}
@@ -838,7 +921,7 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
         </div>
         
         <div className="hud-right">
-          <div className="score">
+          <div className={`score ${scoreAnimation === 'gain' ? 'score-gain' : scoreAnimation === 'loss' ? 'score-loss' : ''}`}>
             <span className="desktop-only">Score: </span><span className="glow-text">{score}</span>
           </div>
           <div className="mode-badge desktop-only">
@@ -912,21 +995,37 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, mode, st
       {chapterComplete && (
         <div className="game-over-overlay chapter-complete">
           <div className="game-over-content mobile-optimized">
-            <h1>🎉 Chapter Complete!</h1>
+            <h1>🎉 {loadAllItems ? 'Theme Complete!' : 'Chapter Complete!'}</h1>
+            {!loadAllItems && totalChapters > 1 && (
+              <div className="chapter-progress">
+                Chapter {currentChapterIndex + 1} / {totalChapters}
+              </div>
+            )}
             <div className="final-score">Final Score: {finalScore}</div>
-            <button className="restart-button" onClick={() => {
-              // Save selection before exiting
-              const lastSelection = {
-                universeId: universe.id,
-                themeId: theme.id,
-                chapterId: chapterId,
-                mode: mode
-              };
-              localStorage.setItem('wordrush_lastSelection', JSON.stringify(lastSelection));
-              onExit();
-            }}>
-              ← Back to Menu
-            </button>
+            <div className="chapter-complete-buttons">
+              {onNextChapter && !loadAllItems && (
+                <button className="restart-button next-chapter-button" onClick={() => {
+                  setChapterComplete(false);
+                  setCurrentItemIndex(0);
+                  onNextChapter();
+                }}>
+                  Next Chapter →
+                </button>
+              )}
+              <button className="restart-button" onClick={() => {
+                // Save selection before exiting
+                const lastSelection = {
+                  universeId: universe.id,
+                  themeId: theme.id,
+                  chapterId: chapterId,
+                  mode: mode
+                };
+                localStorage.setItem('wordrush_lastSelection', JSON.stringify(lastSelection));
+                onExit();
+              }}>
+                ← Back to Menu
+              </button>
+            </div>
           </div>
         </div>
       )}

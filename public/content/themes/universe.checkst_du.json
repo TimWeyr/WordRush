@@ -1,0 +1,34 @@
+{
+  "id": "checkst_du",
+  "name": "Checkst Du",
+  "description": "Lerne moderne Trends, Gaming-Kultur, Internetslang und mehr - Bleib up-to-date mit der aktuellen Jugendkultur! 🎮✨",
+  "colorPrimary": "#9b59b6",
+  "colorAccent": "#8e44ad",
+  "backgroundGradient": [
+    "#8e44ad",
+    "#9b59b6"
+  ],
+  "icon": "✨",
+  "available": true,
+  "language": "de",
+  "music": {
+    "theme": "checkst_du_universe_theme.mp3",
+    "volume": 0.6
+  },
+  "particleEffect": "trend_particles",
+  "shipSkin": "trend_ship",
+  "laserColor": "#9b59b6",
+  "themes": [
+    "fashion_beauty",
+    "gaming_esports",
+    "internetslang",
+    "brainrot",
+    "gen_alpha_kid_influencer"
+  ],
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

@@ -28,7 +28,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "medical_theme.mp3",
-      "particleEffect": "medical_particles"
+      "particleEffect": "medical_particles",
+      "title": "essstoerungen"
     },
     "schlafstoerungen": {
       "backgroundGradient": [
@@ -38,7 +39,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "medical_theme.mp3",
-      "particleEffect": "medical_particles"
+      "particleEffect": "medical_particles",
+      "title": "schlafstoerungen"
     },
     "sexuelle_funktionsstoerungen": {
       "backgroundGradient": [
@@ -48,7 +50,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "medical_theme.mp3",
-      "particleEffect": "medical_particles"
+      "particleEffect": "medical_particles",
+      "title": "sexuelle funktionsstoerungen"
     }
   },
   "meta": {
@@ -58,4 +61,3 @@
     "created": "2025-01-27"
   }
 }
-

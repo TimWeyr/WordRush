@@ -1,0 +1,90 @@
+{
+  "id": "internetslang",
+  "name": "Internetslang",
+  "description": "Lerne modernen Internetslang - Von TikTok bis Reddit, alle aktuellen Begriffe! 💬",
+  "colorPrimary": "#00b894",
+  "colorAccent": "#00a085",
+  "backgroundGradient": [
+    "#00a085",
+    "#00b894"
+  ],
+  "maxLevels": 15,
+  "icon": "💬",
+  "shipSkin": "/assets/ships/trend_ship.svg",
+  "laserColor": "#00b894",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Basic_Slang": {
+      "backgroundGradient": [
+        "#00a085",
+        "#00b894"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "internetslang_basic_theme.mp3",
+      "particleEffect": "slang_particles",
+      "title": "Basic Slang"
+    },
+    "TikTok_Trends": {
+      "backgroundGradient": [
+        "#00b894",
+        "#00c9a7"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "tiktok_trends_theme.mp3",
+      "particleEffect": "slang_particles",
+      "title": "TikTok Trends"
+    },
+    "Italian_Brainrot": {
+      "backgroundGradient": [
+        "#00a085",
+        "#00b894"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "italian_brainrot_theme.mp3",
+      "particleEffect": "slang_particles",
+      "title": "Italian Brainrot"
+    },
+    "Meme_Culture": {
+      "backgroundGradient": [
+        "#00b894",
+        "#00c9a7"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "meme_culture_theme.mp3",
+      "particleEffect": "slang_particles",
+      "title": "Meme Culture"
+    },
+    "2025_Trends": {
+      "backgroundGradient": [
+        "#00a085",
+        "#00b894"
+      ],
+      "spawnRate": 1.6,
+      "waveDuration": 3,
+      "music": "2025_trends_theme.mp3",
+      "particleEffect": "slang_particles",
+      "title": "2025 Trends"
+    },
+    "Fandom_Culture": {
+      "backgroundGradient": [
+        "#00b894",
+        "#00c9a7"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "fandom_culture_theme.mp3",
+      "particleEffect": "slang_particles",
+      "title": "Fandom Culture"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}

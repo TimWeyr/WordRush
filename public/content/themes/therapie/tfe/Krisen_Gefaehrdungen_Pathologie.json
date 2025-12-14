@@ -1,0 +1,138 @@
+[
+  {
+    "id": "TFE_KGP_001",
+    "theme": "tfe",
+    "chapter": "Krisen_Gefaehrdungen_Pathologie",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Vertragsverletzung",
+      "type": "Krisenszenario",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Neutralität wird markiert",
+          "type": "Interventionsprinzip"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Bei Vertragsverletzungen wird die Neutralität aufgegeben und die Verletzung wird markiert. Der Rahmen muss geschützt werden.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Ignorieren",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsch: Vertragsverletzungen dürfen nicht ignoriert werden - sie müssen markiert werden.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "Bestrafung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsch: Es geht nicht um Bestrafung, sondern um Markierung und Schutz des Rahmens.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "Sofortige Beendigung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsch: Nicht jede Vertragsverletzung führt zur Beendigung - erst nach wiederholten Verletzungen.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "Mittagspause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch in Krisen braucht man manchmal eine Pause - aber nicht während der Sitzung!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        },
+        "damage": 1
+      }
+    ],
+    "meta": {
+      "source": "TFE Krisen, Gefährdungen & Pathologie",
+      "tags": [
+        "krisen",
+        "vertragsverletzung",
+        "rahmen"
+      ],
+      "relatedEntries": [
+        "TFE_KGP_002",
+        "TFE_KGP_003"
+      ],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  }
+]

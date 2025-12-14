@@ -1,0 +1,24 @@
+{
+  "id": "markierungen_fahrbahnregeln",
+  "name": "Markierungen & Fahrbahnregeln",
+  "description": "Lerne Markierungen und Fahrbahnregeln - Linien, Pfeile und andere Fahrbahnmarkierungen.",
+  "colorPrimary": "#74b9ff",
+  "colorAccent": "#0984e3",
+  "backgroundGradient": [
+    "#0984e3",
+    "#74b9ff"
+  ],
+  "maxLevels": 15,
+  "icon": "🛣️",
+  "shipSkin": "/assets/ships/traffic_ship.svg",
+  "laserColor": "#74b9ff",
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

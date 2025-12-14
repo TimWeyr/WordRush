@@ -1,0 +1,5 @@
+round_id,object_type,collectionorder,word,type,image,context,behavior,damage,redirect,spawn_position,spawn_spread,spawn_delay,speed,points,hp,sound,color,variant,pulsate,font_size,created_at,updated_at
+ELH_001,base,0,house,Noun,,,,,,,,,,,,,#FF9800,,true,,2025-11-30,2025-11-30
+ELH_001,correct,1,Haus,Translation,,house = Haus,,,,0.52,0.05,,0.9,200,1,bubble_hit_soft,#F39C12,hexagon,false,1.1,2025-11-30,2025-11-30
+ELH_001,distractor,0,Maus,Wrong,,"Maus = mouse, nicht house",seek_center,1,mouse,0.39,0.05,,1.2,100,1,explosion_minor,#FF5722,diamond,true,1,2025-11-30,2025-11-30
+ELH_001,distractor,0,office,Wrong,,office gehört zu Beruf & Büro,seek_center,1,Büro,0.27,0.05,,1.2,100,1,explosion_minor,#9B59B6,bubble,true,1,2025-11-30,2025-11-30

@@ -28,7 +28,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "bett_theme.mp3",
-      "particleEffect": "sleep_particles"
+      "particleEffect": "sleep_particles",
+      "title": "Bett"
     }
   },
   "meta": {
@@ -37,4 +38,3 @@
     "created": "2025-01-27"
   }
 }
-

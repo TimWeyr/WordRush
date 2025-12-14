@@ -1,0 +1,143 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Förderbereich ship - Cute, friendly, colorful design -->
+  
+  <defs>
+    <!-- Gradient for main body -->
+    <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffb3d9;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff99cc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff80b3;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient for wings -->
+    <linearGradient id="wingGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#b3d9ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#99ccff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#80b3ff;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient for engine -->
+    <radialGradient id="engineGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ffd9b3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffcc99;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Main body (spaceship shape) -->
+  <path d="M 30 5 L 26 16 L 22 22 L 22 30 L 26 36 L 30 40 L 34 36 L 38 30 L 38 22 L 34 16 Z" 
+        fill="url(#bodyGradient)" stroke="#ff66b3" stroke-width="1.5"/>
+  
+  <!-- Body highlight (top section) -->
+  <path d="M 30 5 L 26 16 L 22 22 L 30 22 L 34 16 Z" 
+        fill="#ffcce6" opacity="0.6"/>
+  
+  <!-- Body shadow (bottom section) -->
+  <path d="M 30 40 L 34 36 L 38 30 L 38 22 L 34 16 L 30 22 L 26 36 Z" 
+        fill="#ff80b3" opacity="0.3"/>
+  
+  <!-- Nose cone tip -->
+  <circle cx="30" cy="5" r="1.5" fill="#ff99cc" stroke="#ff66b3" stroke-width="0.5"/>
+  <line x1="30" y1="5" x2="30" y2="7" stroke="#ff99cc" stroke-width="0.8"/>
+  
+  <!-- Cockpit window (oval) -->
+  <ellipse cx="30" cy="18" rx="4" ry="3" fill="#1a1a1a" stroke="#000000" stroke-width="0.8"/>
+  <ellipse cx="30" cy="18" rx="3" ry="2" fill="#4a90e2" opacity="0.4"/>
+  <!-- Cockpit frame -->
+  <ellipse cx="30" cy="18" rx="4" ry="3" fill="none" stroke="#b3d9ff" stroke-width="0.6" opacity="0.7"/>
+  
+  <!-- Structural panels on body -->
+  <path d="M 26 16 L 22 22 L 22 26 L 26 24 Z" fill="#ffcce6" opacity="0.4"/>
+  <path d="M 34 16 L 38 22 L 38 26 L 34 24 Z" fill="#ffcce6" opacity="0.4"/>
+  <line x1="30" y1="16" x2="30" y2="22" stroke="#ff99cc" stroke-width="0.5" opacity="0.5"/>
+  
+  <!-- Decorative stars on body -->
+  <path d="M 24 28 L 24.3 28.8 L 25.2 29 L 24.3 29.2 L 24 30 L 23.7 29.2 L 22.8 29 L 23.7 28.8 Z" 
+        fill="#ffff99" stroke="#ffcc00" stroke-width="0.3"/>
+  <path d="M 36 28 L 36.3 28.8 L 37.2 29 L 36.3 29.2 L 36 30 L 35.7 29.2 L 34.8 29 L 35.7 28.8 Z" 
+        fill="#ffff99" stroke="#ffcc00" stroke-width="0.3"/>
+  
+  <!-- Main wings (spaceship style) -->
+  <path d="M 22 22 L 12 26 L 12 30 L 22 30" fill="url(#wingGradient)" stroke="#66b3ff" stroke-width="1.5"/>
+  <path d="M 38 22 L 48 26 L 48 30 L 38 30" fill="url(#wingGradient)" stroke="#66b3ff" stroke-width="1.5"/>
+  
+  <!-- Wing highlights -->
+  <path d="M 22 22 L 16 24 L 16 26 L 22 26" fill="#cce6ff" opacity="0.6"/>
+  <path d="M 38 22 L 44 24 L 44 26 L 38 26" fill="#cce6ff" opacity="0.6"/>
+  
+  <!-- Wing tips -->
+  <path d="M 12 26 L 9 28 L 12 30" fill="#99ccff" stroke="#66b3ff" stroke-width="1"/>
+  <path d="M 48 26 L 51 28 L 48 30" fill="#99ccff" stroke="#66b3ff" stroke-width="1"/>
+  
+  <!-- Wing decorations (small stars) -->
+  <path d="M 16 27 L 16.2 27.4 L 16.6 27.5 L 16.2 27.6 L 16 28 L 15.8 27.6 L 15.4 27.5 L 15.8 27.4 Z" 
+        fill="#ffff99" opacity="0.8"/>
+  <path d="M 44 27 L 44.2 27.4 L 44.6 27.5 L 44.2 27.6 L 44 28 L 43.8 27.6 L 43.4 27.5 L 43.8 27.4 Z" 
+        fill="#ffff99" opacity="0.8"/>
+  
+  <!-- Lower wing pods/nacelles -->
+  <ellipse cx="20" cy="36" rx="3.5" ry="5" fill="url(#wingGradient)" stroke="#66b3ff" stroke-width="1.5"/>
+  <ellipse cx="40" cy="36" rx="3.5" ry="5" fill="url(#wingGradient)" stroke="#66b3ff" stroke-width="1.5"/>
+  
+  <!-- Pod highlights -->
+  <ellipse cx="20" cy="34" rx="2" ry="3" fill="#cce6ff" opacity="0.6"/>
+  <ellipse cx="40" cy="34" rx="2" ry="3" fill="#cce6ff" opacity="0.6"/>
+  
+  <!-- Pod engine details -->
+  <line x1="20" y1="32" x2="20" y2="40" stroke="#99ccff" stroke-width="0.8"/>
+  <line x1="40" y1="32" x2="40" y2="40" stroke="#99ccff" stroke-width="0.8"/>
+  <circle cx="20" cy="36" r="1" fill="#b3d9ff" opacity="0.7"/>
+  <circle cx="40" cy="36" r="1" fill="#b3d9ff" opacity="0.7"/>
+  
+  <!-- Central engine (main thruster) -->
+  <ellipse cx="30" cy="42" rx="5" ry="4" fill="url(#engineGradient)" stroke="#ffaa66" stroke-width="1.5"/>
+  <ellipse cx="30" cy="42" rx="4" ry="3" fill="#ffe6cc" opacity="0.7"/>
+  
+  <!-- Engine inner details -->
+  <ellipse cx="30" cy="42" rx="2.5" ry="2" fill="#ffaa66" opacity="0.8"/>
+  <line x1="27" y1="40" x2="27" y2="44" stroke="#ffcc99" stroke-width="0.6"/>
+  <line x1="30" y1="40" x2="30" y2="44" stroke="#ffcc99" stroke-width="0.6"/>
+  <line x1="33" y1="40" x2="33" y2="44" stroke="#ffcc99" stroke-width="0.6"/>
+  
+  <!-- Exhaust (soft, colorful clouds) -->
+  <ellipse cx="30" cy="48" rx="6" ry="4" fill="#e6f3ff" opacity="0.7"/>
+  <ellipse cx="28" cy="50" rx="4" ry="3" fill="#cce6ff" opacity="0.6"/>
+  <ellipse cx="32" cy="50" rx="4" ry="3" fill="#cce6ff" opacity="0.6"/>
+  <ellipse cx="30" cy="52" rx="5" ry="3" fill="#b3d9ff" opacity="0.5"/>
+  
+  <!-- Side engine exhaust -->
+  <ellipse cx="20" cy="42" rx="3" ry="2.5" fill="#cce6ff" opacity="0.6"/>
+  <ellipse cx="40" cy="42" rx="3" ry="2.5" fill="#cce6ff" opacity="0.6"/>
+  
+  <!-- Decorative sparkles around ship -->
+  <!-- Top sparkles -->
+  <circle cx="15" cy="10" r="1.5" fill="#ffff99" opacity="0.9"/>
+  <circle cx="30" cy="5" r="1.8" fill="#ff99cc" opacity="0.9"/>
+  <circle cx="45" cy="10" r="1.5" fill="#ffff99" opacity="0.9"/>
+  
+  <!-- Side sparkles -->
+  <circle cx="8" cy="25" r="1.2" fill="#b3d9ff" opacity="0.8"/>
+  <circle cx="52" cy="25" r="1.2" fill="#b3d9ff" opacity="0.8"/>
+  <circle cx="10" cy="35" r="1" fill="#ffcc99" opacity="0.8"/>
+  <circle cx="50" cy="35" r="1" fill="#ffcc99" opacity="0.8"/>
+  
+  <!-- Bottom sparkles -->
+  <circle cx="20" cy="55" r="1.3" fill="#ff99cc" opacity="0.9"/>
+  <circle cx="30" cy="57" r="1.5" fill="#ffff99" opacity="0.9"/>
+  <circle cx="40" cy="55" r="1.3" fill="#ff99cc" opacity="0.9"/>
+  
+  <!-- Motion lines (soft, friendly) -->
+  <line x1="12" y1="18" x2="14" y2="20" stroke="#b3d9ff" stroke-width="1.5" opacity="0.6"/>
+  <line x1="48" y1="18" x2="46" y2="20" stroke="#b3d9ff" stroke-width="1.5" opacity="0.6"/>
+  <line x1="10" y1="22" x2="12" y2="24" stroke="#ffcc99" stroke-width="1.2" opacity="0.5"/>
+  <line x1="50" y1="22" x2="48" y2="24" stroke="#ffcc99" stroke-width="1.2" opacity="0.5"/>
+  
+  <!-- Additional cute decorations -->
+  <!-- Rainbow trail -->
+  <path d="M 25 48 Q 22 50 20 52" stroke="#ff99cc" stroke-width="2" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M 27 49 Q 24 51 22 53" stroke="#ffcc99" stroke-width="2" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M 29 50 Q 26 52 24 54" stroke="#ffff99" stroke-width="2" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M 31 50 Q 34 52 36 54" stroke="#b3d9ff" stroke-width="2" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M 33 49 Q 36 51 38 53" stroke="#ff99cc" stroke-width="2" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M 35 48 Q 38 50 40 52" stroke="#ffcc99" stroke-width="2" fill="none" opacity="0.6" stroke-linecap="round"/>
+</svg>
+

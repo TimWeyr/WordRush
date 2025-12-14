@@ -1,0 +1,35 @@
+{
+  "id": "neil_gaiman",
+  "name": "Neil Gaiman",
+  "description": "Lerne Neil Gaiman Serien - Lucifer und mehr! 📚✨",
+  "colorPrimary": "#9b59b6",
+  "colorAccent": "#8e44ad",
+  "backgroundGradient": [
+    "#8e44ad",
+    "#9b59b6"
+  ],
+  "maxLevels": 15,
+  "icon": "📚",
+  "shipSkin": "/assets/ships/movie_ship.svg",
+  "laserColor": "#9b59b6",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "Lucifer": {
+      "backgroundGradient": [
+        "#c0392b",
+        "#e74c3c"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "lucifer_theme.mp3",
+      "particleEffect": "tv_particles",
+      "title": "Lucifer"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}

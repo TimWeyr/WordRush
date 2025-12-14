@@ -24,7 +24,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "gen1_theme.mp3",
-      "particleEffect": "pokemon_energy"
+      "particleEffect": "pokemon_energy",
+      "title": "gen1"
     },
     "gen2": {
       "backgroundImage": "gen2_bg.png",
@@ -35,7 +36,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "gen2_theme.mp3",
-      "particleEffect": "pokemon_energy"
+      "particleEffect": "pokemon_energy",
+      "title": "gen2"
     },
     "gen3": {
       "backgroundImage": "gen3_bg.png",
@@ -46,7 +48,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "gen3_theme.mp3",
-      "particleEffect": "pokemon_energy"
+      "particleEffect": "pokemon_energy",
+      "title": "gen3"
     },
     "gen4": {
       "backgroundImage": "gen4_bg.png",
@@ -57,7 +60,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "gen4_theme.mp3",
-      "particleEffect": "pokemon_energy"
+      "particleEffect": "pokemon_energy",
+      "title": "gen4"
     },
     "gen5": {
       "backgroundImage": "gen5_bg.png",
@@ -68,7 +72,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "gen5_theme.mp3",
-      "particleEffect": "pokemon_energy"
+      "particleEffect": "pokemon_energy",
+      "title": "gen5"
     }
   },
   "meta": {
@@ -77,4 +82,3 @@
     "created": "2025-01-27"
   }
 }
-

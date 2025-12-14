@@ -1,0 +1,94 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- English theme ship - Damaged version with battle scars -->
+  
+  <!-- Main fuselage body (with damage) -->
+  <path d="M 30 5 L 25 20 L 20 25 L 20 35 L 25 40 L 30 45 L 35 40 L 40 35 L 40 25 L 35 20 Z" 
+        fill="#d0d0d0" stroke="#888888" stroke-width="1"/>
+  
+  <!-- Damage holes in fuselage -->
+  <circle cx="28" cy="30" r="2.5" fill="#1a1a1a" opacity="0.8"/>
+  <ellipse cx="32" cy="18" rx="1.5" ry="2" fill="#1a1a1a" opacity="0.7"/>
+  <ellipse cx="22" cy="32" rx="1" ry="1.5" fill="#1a1a1a" opacity="0.6"/>
+  
+  <!-- Cracks in fuselage -->
+  <path d="M 26 22 L 28 25 L 26 28" stroke="#333333" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M 34 26 L 36 29" stroke="#333333" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M 24 38 L 26 40" stroke="#333333" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Cockpit window (cracked) -->
+  <path d="M 30 8 L 27 18 L 33 18 Z" fill="#1a1a1a" stroke="#000000" stroke-width="0.5"/>
+  <path d="M 30 8 L 30 18" stroke="#ff6b35" stroke-width="0.8" opacity="0.6"/>
+  <path d="M 28 13 L 32 13" stroke="#ff6b35" stroke-width="0.6" opacity="0.5"/>
+  
+  <!-- Orange-red stripes on main body (damaged/missing parts) -->
+  <rect x="22" y="22" width="8" height="3" fill="#ff6b35" rx="1"/>
+  <rect x="32" y="22" width="6" height="3" fill="#ff6b35" rx="1" opacity="0.5"/>
+  <rect x="22" y="28" width="10" height="3" fill="#ff6b35" rx="1"/>
+  <rect x="34" y="28" width="4" height="3" fill="#ff6b35" rx="1" opacity="0.4"/>
+  
+  <!-- Main wings (left wing damaged) -->
+  <path d="M 20 25 L 12 28 L 12 32 L 20 35" fill="#c0c0c0" stroke="#666666" stroke-width="1"/>
+  <!-- Right wing partially missing -->
+  <path d="M 40 25 L 48 28 L 45 30 L 40 30" fill="#c0c0c0" stroke="#666666" stroke-width="1"/>
+  <path d="M 40 30 L 43 32 L 40 35" fill="#c0c0c0" stroke="#666666" stroke-width="1"/>
+  
+  <!-- Wing damage - missing chunk on right wing -->
+  <path d="M 45 30 L 48 32 L 45 34" fill="#1a1a1a" opacity="0.7"/>
+  
+  <!-- Wing tips (left intact, right damaged) -->
+  <circle cx="12" cy="30" r="2" fill="#ff6b35"/>
+  <ellipse cx="45" cy="30" rx="1.5" ry="1" fill="#ff6b35" opacity="0.6"/>
+  
+  <!-- Upper wing structures (left damaged, right missing) -->
+  <ellipse cx="25" cy="22" rx="1.5" ry="3" fill="#555555" transform="rotate(-15 25 22)" opacity="0.7"/>
+  <!-- Right upper wing structure missing -->
+  
+  <!-- Lower wing pods/nacelles (left damaged, right severely damaged) -->
+  <ellipse cx="18" cy="38" rx="2.5" ry="4" fill="#444444" opacity="0.8"/>
+  <ellipse cx="42" cy="38" rx="2" ry="3" fill="#444444" opacity="0.5"/>
+  
+  <!-- Damage on left pod -->
+  <ellipse cx="17" cy="39" rx="1" ry="1.5" fill="#1a1a1a" opacity="0.6"/>
+  
+  <!-- Orange-red bands on pods (damaged) -->
+  <rect x="16" y="40" width="3" height="2" fill="#ff6b35" rx="1" opacity="0.7"/>
+  <rect x="39" y="40" width="2" height="1.5" fill="#ff6b35" rx="1" opacity="0.4"/>
+  
+  <!-- Central engine (damaged - flickering) -->
+  <ellipse cx="30" cy="48" rx="4" ry="3" fill="#333333"/>
+  <ellipse cx="30" cy="52" rx="4" ry="3" fill="#ff6b35" opacity="0.6"/>
+  <ellipse cx="30" cy="54" rx="3" ry="2" fill="#ffaa00" opacity="0.4"/>
+  <!-- Engine damage hole -->
+  <ellipse cx="30" cy="50" rx="1.5" ry="1" fill="#1a1a1a" opacity="0.8"/>
+  
+  <!-- Side engines (left damaged, right destroyed) -->
+  <ellipse cx="18" cy="45" rx="2" ry="1.5" fill="#333333" opacity="0.7"/>
+  <ellipse cx="18" cy="48" rx="2.5" ry="2" fill="#ff6b35" opacity="0.5"/>
+  <ellipse cx="18" cy="50" rx="2" ry="1.5" fill="#ffaa00" opacity="0.3"/>
+  <!-- Left engine damage -->
+  <ellipse cx="17" cy="47" rx="0.8" ry="0.6" fill="#1a1a1a" opacity="0.7"/>
+  
+  <!-- Right engine destroyed (only remnants) -->
+  <ellipse cx="42" cy="45" rx="1.5" ry="1" fill="#333333" opacity="0.3"/>
+  <ellipse cx="41" cy="47" rx="1" ry="0.8" fill="#ff6b35" opacity="0.2"/>
+  
+  <!-- Smoke/plume from damaged right engine -->
+  <ellipse cx="42" cy="42" rx="2" ry="3" fill="#333333" opacity="0.4"/>
+  <ellipse cx="41" cy="40" rx="1.5" ry="2" fill="#444444" opacity="0.3"/>
+  <ellipse cx="40" cy="38" rx="1" ry="1.5" fill="#555555" opacity="0.2"/>
+  
+  <!-- Additional battle damage - scorch marks -->
+  <ellipse cx="26" cy="28" rx="3" ry="2" fill="#222222" opacity="0.3" transform="rotate(-20 26 28)"/>
+  <ellipse cx="35" cy="32" rx="2.5" ry="1.5" fill="#222222" opacity="0.25" transform="rotate(15 35 32)"/>
+  
+  <!-- Additional shading for depth -->
+  <path d="M 30 5 L 25 20 L 20 25 L 20 35 L 25 40 L 30 45" 
+        fill="none" stroke="#aaaaaa" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- Additional damage lines/scratches -->
+  <path d="M 28 15 L 30 18" stroke="#444444" stroke-width="0.8" opacity="0.6"/>
+  <path d="M 32 20 L 34 23" stroke="#444444" stroke-width="0.8" opacity="0.6"/>
+</svg>
+
+
+

@@ -28,7 +28,8 @@
       "spawnRate": 2.0,
       "waveDuration": 5,
       "music": "chaos_theme.mp3",
-      "particleEffect": "chaos_particles"
+      "particleEffect": "chaos_particles",
+      "title": "Extremlange Woerter"
     },
     "Viele_Items": {
       "backgroundImage": "viele_items_bg.png",
@@ -39,7 +40,8 @@
       "spawnRate": 3.0,
       "waveDuration": 10,
       "music": "chaos_theme.mp3",
-      "particleEffect": "chaos_particles"
+      "particleEffect": "chaos_particles",
+      "title": "Viele Items"
     },
     "Extreme_Werte": {
       "backgroundImage": "extreme_werte_bg.png",
@@ -50,7 +52,8 @@
       "spawnRate": 0.5,
       "waveDuration": 1,
       "music": "chaos_theme.mp3",
-      "particleEffect": "chaos_particles"
+      "particleEffect": "chaos_particles",
+      "title": "Extreme Werte"
     },
     "Sonderzeichen_Mix": {
       "backgroundImage": "sonderzeichen_bg.png",
@@ -61,7 +64,8 @@
       "spawnRate": 1.5,
       "waveDuration": 3,
       "music": "chaos_theme.mp3",
-      "particleEffect": "chaos_particles"
+      "particleEffect": "chaos_particles",
+      "title": "Sonderzeichen Mix"
     }
   },
   "meta": {
@@ -70,4 +74,3 @@
     "created": "2025-01-27"
   }
 }
-

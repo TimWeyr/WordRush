@@ -1,7 +1,28 @@
-// Galaxy Map Component
-// Interactive 2D galaxy map with planets (themes) and moons (chapters)
+/**
+ * Galaxy Map Component
+ * 
+ * Interactive 2D galaxy map visualizing the learning universe:
+ * - Planets represent Themes
+ * - Moons represent Chapters (orbiting planets)
+ * - Level Rings show progress within chapters
+ * - Item particles appear when zoomed in deeply
+ * 
+ * Navigation:
+ * - Overview: Horizontal S-curve (Mäander) layout showing all planets
+ * - Zoomed: Focus on single planet with its moons and level rings
+ * - Click planet → zoom to planet
+ * - Click moon → start chapter
+ * - Click level ring → start specific level
+ * - Click item → start specific item
+ * 
+ * State Persistence:
+ * - View state (zoom level, focused planet) saved to localStorage
+ * - Camera position saved per universe
+ * - Last selection (universe/theme/mode) restored on reload
+ */
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
+// import { useAuth } from '@/infra/auth/AuthContext'; // Reserved for future auth features
 import { GameLoop } from '@/core/GameLoop';
 import { Renderer } from '@/core/Renderer';
 import { GalaxyCamera } from '@/logic/GalaxyCamera';
@@ -18,14 +39,72 @@ import type { GameMode } from '@/types/game.types';
 import type { LearningState, GameplayPreset } from '@/types/progress.types';
 import './GalaxyMap.css';
 
+// ============================================================================
+// CONSTANTS
+// ============================================================================
+
+/** Zoom threshold for showing items (needs deep zoom) */
+const ITEM_VISIBILITY_ZOOM_THRESHOLD = 1.8;
+
+/** Zoom threshold for starting game directly from moon click */
+const MOON_DIRECT_START_ZOOM_THRESHOLD = 1.8;
+
+/** Hitbox radius for item hover/click detection (world units) */
+const ITEM_HITBOX_RADIUS = 10;
+
+/** Hitbox width for level ring hover/click detection (world units) */
+const LEVEL_RING_HITBOX_WIDTH = 5;
+
+/** Moon hitbox multiplier (relative to moon radius) */
+const MOON_HITBOX_MULTIPLIER = 2;
+
+/** Planet hitbox multiplier (relative to planet radius) */
+const PLANET_HITBOX_MULTIPLIER = 2;
+
+/** Camera save throttle interval (ms) - avoid excessive localStorage writes */
+const CAMERA_SAVE_THROTTLE_MS = 500;
+
+/** Assumed frame time for particle effects (60 FPS) */
+const PARTICLE_DELTA_TIME = 0.016;
+
+/** Pan speed for keyboard navigation (world units per keypress) */
+const KEYBOARD_PAN_SPEED = 50;
+
+/** Pan speed for mouse wheel in overview mode (screen units) */
+const WHEEL_PAN_SPEED = 30;
+
+/** Zoom factor for wheel zoom in */
+const WHEEL_ZOOM_IN_FACTOR = 1.1;
+
+/** Zoom factor for wheel zoom out */
+const WHEEL_ZOOM_OUT_FACTOR = 0.9;
+
+/** Zoom factor for spacebar toggle */
+const SPACEBAR_ZOOM_OUT_FACTOR = 0.8;
+const SPACEBAR_ZOOM_IN_FACTOR = 1.25;
+
+/** Padding around planets when focusing (world units) */
+const PLANET_FOCUS_PADDING = 40;
+
+/** Padding when showing all planets in overview */
+const OVERVIEW_PADDING = 60;
+
+/** Touch gesture: minimum pinch scale change to register zoom */
+const TOUCH_ZOOM_THRESHOLD = 0.01;
+
+// ============================================================================
+// TYPES
+// ============================================================================
+
 interface GalaxyMapProps {
   onStart: (
     universe: Universe,
     theme: Theme,
-    chapterId: string,
+    chapterId: string | string[],
     mode: GameMode,
     itemId?: string,
-    levelFilter?: number
+    levelFilter?: number,
+    loadAllItems?: boolean
   ) => void;
   initialFocus?: { universeId: string; planetId: string } | null;
   onInitialFocusConsumed?: () => void;
@@ -40,13 +119,93 @@ interface HoveredElement {
   y: number;
 }
 
+type SavedViewState = {
+  universeId: string;
+  zoomState: 'overview' | 'zoomed';
+  zoomedPlanetId?: string | null;
+};
+
+// ============================================================================
+// HELPER FUNCTIONS
+// ============================================================================
+
+/** Check if chapter has any freeTier items (for guest access) */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function hasFreeTierItems(items: Item[], themeId: string, chapterId: string): boolean {
+  const chapterItems = items.filter(item => item.theme === themeId && item.chapter === chapterId);
+  return chapterItems.some(item => item.freeTier === true);
+}
+
+/** Load saved view state from localStorage */
+function loadViewState(): SavedViewState | null {
+  try {
+    const raw = localStorage.getItem('wordrush_galaxy_view');
+    if (!raw) return null;
+    return JSON.parse(raw) as SavedViewState;
+  } catch (error) {
+    console.warn('⚠️ Failed to load galaxy view state:', error);
+    return null;
+  }
+}
+
+/** Save view state to localStorage */
+function saveViewState(state: SavedViewState): void {
+  try {
+    localStorage.setItem('wordrush_galaxy_view', JSON.stringify(state));
+  } catch (error) {
+    console.warn('⚠️ Failed to save galaxy view state:', error);
+  }
+}
+
+/** 
+ * Save camera position to localStorage (helper to reduce duplication)
+ * Used before starting game to preserve map position
+ */
+function saveCameraStateHelper(
+  universeId: string,
+  camera: GalaxyCamera
+): void {
+  localProgressProvider.saveGalaxyCameraState(
+    universeId,
+    camera.x,
+    camera.y,
+    camera.zoom
+  );
+}
+
+/**
+ * Generate tooltip text for an element
+ * Reduces duplication across hover handlers
+ */
+function generateTooltipText(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _elementType: 'planet' | 'moon' | 'item' | 'levelRing',
+  name: string,
+  score: { totalScore: number; maxScore: number; percentage: number }
+): string {
+  return `${name}\nScore: ${score.totalScore}/${score.maxScore} (${score.percentage.toFixed(1)}%)`;
+}
+
+// ============================================================================
+// MAIN COMPONENT
+// ============================================================================
+
 export const GalaxyMap: React.FC<GalaxyMapProps> = ({ onStart, initialFocus, onInitialFocusConsumed }) => {
+  // const { user } = useAuth(); // Currently unused, reserved for future auth features
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  
+  // ============================================================================
+  // CORE STATE
+  // ============================================================================
+  
   const [renderer, setRenderer] = useState<Renderer | null>(null);
   const [camera, setCamera] = useState<GalaxyCamera | null>(null);
   const gameLoopRef = useRef<GameLoop | null>(null);
   
-  // Data
+  // ============================================================================
+  // DATA STATE
+  // ============================================================================
+  
   const [universes, setUniverses] = useState<Universe[]>([]);
   const [selectedUniverse, setSelectedUniverse] = useState<Universe | null>(null);
   const [themes, setThemes] = useState<Theme[]>([]);
@@ -54,54 +213,42 @@ export const GalaxyMap: React.FC<GalaxyMapProps> = ({ onStart, initialFocus, onI
   const [learningState, setLearningState] = useState<LearningState>({});
   const [themeProgress, setThemeProgress] = useState<Map<string, number>>(new Map());
   
-  // Layouts
-const VIEW_STATE_KEY = 'wordrush_galaxy_view';
-
-type SavedViewState = {
-  universeId: string;
-  zoomState: 'overview' | 'zoomed';
-  zoomedPlanetId?: string | null;
-};
-
-function loadViewState(): SavedViewState | null {
-  try {
-    const raw = localStorage.getItem(VIEW_STATE_KEY);
-    if (!raw) return null;
-    return JSON.parse(raw) as SavedViewState;
-  } catch (error) {
-    console.warn('Failed to load galaxy view state:', error);
-    return null;
-  }
-}
-
-function saveViewState(state: SavedViewState): void {
-  try {
-    localStorage.setItem(VIEW_STATE_KEY, JSON.stringify(state));
-  } catch (error) {
-    console.warn('Failed to save galaxy view state:', error);
-  }
-}
-
-const planetLayoutsRef = useRef<PlanetLayout[]>([]);
+  // ============================================================================
+  // LAYOUT STATE (Refs for performance - updated frequently, no re-render needed)
+  // ============================================================================
+  
+  const planetLayoutsRef = useRef<PlanetLayout[]>([]);
   const moonLayoutsRef = useRef<Map<string, MoonLayout[]>>(new Map());
   const itemLayoutsRef = useRef<Map<string, ItemLayout[]>>(new Map());
   const levelRingsRef = useRef<Map<string, LevelRingLayout[]>>(new Map());
   const moonParticleEffectsRef = useRef<Map<string, MoonParticleEffect>>(new Map());
   
-  // Interaction
+  // ============================================================================
+  // INTERACTION STATE
+  // ============================================================================
+  
   const [hoveredElement, setHoveredElement] = useState<HoveredElement | null>(null);
   const [selectedElement, setSelectedElement] = useState<{ type: 'planet' | 'moon' | 'item'; id: string } | null>(null);
   const [tooltipText, setTooltipText] = useState<string>('');
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [mode, setMode] = useState<GameMode>('lernmodus');
+  
+  // ============================================================================
+  // VIEW STATE (zoom level and focused planet)
+  // ============================================================================
+  
   const [zoomState, setZoomState] = useState<'overview' | 'zoomed'>('overview');
-  const zoomStateRef = useRef<'overview' | 'zoomed'>(zoomState);
   const [zoomedPlanetId, setZoomedPlanetId] = useState<string | null>(null);
+  
+  // View state restoration flags
   const viewStateRestoredRef = useRef(false);
   const initialFocusAppliedRef = useRef(false);
   const pendingFocusThemeIdRef = useRef<string | null>(null);
   
-  // Input state
+  // ============================================================================
+  // INPUT STATE (Refs for performance - updated in event handlers)
+  // ============================================================================
+  
   const isDragging = useRef(false);
   const dragStart = useRef<{ x: number; y: number } | null>(null);
   const lastTouchDistance = useRef<number | null>(null);
@@ -146,7 +293,6 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     // Apply Mode from URL if present
     if (initialMode) {
       setMode(initialMode);
-      console.log('🎮 URL Param: Set mode to', initialMode);
     }
 
     // Apply Gameplay Preset from URL if present
@@ -162,14 +308,15 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
           gameplaySettings: newGameplaySettings
        };
        await localProgressProvider.saveUISettings(newSettings);
-       console.log('⚙️ URL Param: Applied gameplay preset', initialPreset);
     }
+
+    // Log initialization summary
+    console.log(`🌌 GalaxyMap Init: ${loadedUniverses.length} universes | URL: ${initialUniverseId || 'none'}${initialThemeId ? `/${initialThemeId}` : ''} | Mode: ${initialMode || 'default'} | Preset: ${initialPreset || 'none'}`);
 
     // If URL has universe, try to load it
     if (initialUniverseId) {
       const universe = loadedUniverses.find(u => u.id === initialUniverseId);
       if (universe) {
-        console.log('🔗 URL Param: Selecting universe', universe.id, initialThemeId ? `theme: ${initialThemeId}` : '');
         await selectUniverse(universe.id, initialThemeId || undefined, initialMode || undefined);
         return; // Skip localStorage logic
       }
@@ -180,7 +327,6 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     if (lastSelectionStr && loadedUniverses.length > 0) {
       try {
         const lastSelection = JSON.parse(lastSelectionStr);
-        console.log('📌 Restoring last selection in GalaxyMap:', lastSelection);
         
         // Restore mode
         if (lastSelection.mode === 'lernmodus' || lastSelection.mode === 'shooter') {
@@ -196,7 +342,7 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
           await selectUniverse(loadedUniverses[0].id);
         }
       } catch (error) {
-        console.warn('Failed to restore last selection:', error);
+        console.warn('⚠️ Failed to restore last selection:', error);
         // Fallback to first universe
         if (loadedUniverses.length > 0) {
           await selectUniverse(loadedUniverses[0].id);
@@ -256,53 +402,141 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
       }
     }
     
-    // Load themes for this universe
-    const loadedThemes: Theme[] = [];
-    const loadedItems: Item[] = [];
+    // 🚀 PERFORMANCE: Batch load ALL themes for this universe (avoids N+1 queries!)
+    console.log(`📦 [GalaxyMap] Loading themes for universe ${universe.name}...`);
+    console.time('⏱️ Theme loading time');
     
-    console.log(`🌌 Loading universe: ${universe.name} with ${universe.themes.length} themes`);
+    const loadedThemes = await jsonLoader.loadAllThemesForUniverse(universeId);
     
-    for (const themeId of universe.themes) {
-      try {
-        const theme = await jsonLoader.loadTheme(universeId, themeId);
-        if (theme) {
-          loadedThemes.push(theme);
-          
-          // Load items for each chapter
-          for (const chapterId of Object.keys(theme.chapters)) {
-            try {
-              const items = await jsonLoader.loadChapter(universeId, themeId, chapterId);
-              loadedItems.push(...items);
-             // console.log(`    📄 Loaded chapter: ${chapterId} with ${items.length} items`);
-            } catch (error) {
-              console.warn(`Failed to load chapter ${chapterId}:`, error);
-            }
-          }
-          
-        }
-      } catch (error) {
-        console.warn(`Failed to load theme ${themeId}:`, error);
-      }
-      
-    }
-    
-    console.log(`✅ Loaded ${loadedThemes.length} themes and ${loadedItems.length} items total`);
+    console.timeEnd('⏱️ Theme loading time');
+    console.log(`✅ [GalaxyMap] Loaded ${loadedThemes.length} themes (items NOT loaded yet - lazy loading!)`);
     
     setThemes(loadedThemes);
-    setAllItems(loadedItems);
+    setAllItems([]); // No items loaded initially!
+    
+    // Don't calculate theme progress yet (no items loaded!)
+    setThemeProgress(new Map());
+    
+    // Recalculate layouts WITHOUT items (initial)
+    if (renderer && camera) {
+      calculateLayouts(loadedThemes, []);
+    }
+    
+    // 🚀 BACKGROUND: Load level stats for better moon positioning (non-blocking!)
+    loadLevelStatsInBackground(universeId, loadedThemes);
+  };
+  
+  /**
+   * 🚀 ULTRA-PERFORMANCE: Load only level stats (not full items!) in background
+   * This allows us to calculate proper moon distances without loading all item data
+   */
+  const loadLevelStatsInBackground = async (universeId: string, loadedThemes: Theme[]) => {
+    try {
+      console.log(`📊 [GalaxyMap] Loading level stats in background...`);
+      console.time('⏱️ Level stats loading');
+      
+      const levelStats = await jsonLoader.loadChapterLevelStats(universeId);
+      
+      console.timeEnd('⏱️ Level stats loading');
+      
+      if (levelStats.size === 0) {
+        console.log(`📊 [GalaxyMap] No level stats available (JSON mode or no data)`);
+        return;
+      }
+      
+      console.log(`✅ [GalaxyMap] Got level stats for ${levelStats.size} chapters`);
+      
+      // Create minimal "fake items" just for layout calculation
+      // These contain only id, theme, chapter, and level - enough for moon positioning!
+      const layoutItems: Item[] = [];
+      
+      for (const theme of loadedThemes) {
+        for (const chapterId of Object.keys(theme.chapters)) {
+          const stats = levelStats.get(chapterId);
+          if (!stats) continue;
+          
+          // Create one fake item per level (for ring calculation)
+          for (let level = 1; level <= stats.maxLevel; level++) {
+            layoutItems.push({
+              id: `_layout_${theme.id}_${chapterId}_${level}`,
+              theme: theme.id,
+              chapter: chapterId,
+              level: level,
+              published: true,
+              freeTier: false,
+              base: { word: '', type: 'term', visual: { color: '#000', variant: 'hexagon' } },
+              correct: [],
+              distractors: [],
+              meta: { source: 'layout', tags: [], relatedEntries: [], difficultyScaling: { speedMultiplierPerReplay: 1, colorContrastFade: false } }
+            });
+          }
+        }
+      }
+      
+      console.log(`📊 [GalaxyMap] Created ${layoutItems.length} layout items from level stats`);
+      
+      // Update layouts with proper moon distances (without triggering full item load)
+      if (renderer && camera && loadedThemes.length > 0) {
+        // Store layout items separately (don't mix with real items!)
+        setAllItems(prev => {
+          // If we already have real items, don't overwrite with layout items
+          if (prev.some(item => !item.id.startsWith('_layout_'))) {
+            return prev;
+          }
+          return layoutItems;
+        });
+      }
+    } catch (error) {
+      console.warn(`⚠️ [GalaxyMap] Failed to load level stats in background:`, error);
+      // Non-critical - layout will work without proper moon distances
+    }
+  };
+  
+  /**
+   * 🚀 Lazy load items for a specific theme when planet is clicked/focused
+   */
+  const loadThemeItems = async (universeId: string, themeId: string) => {
+    if (!selectedUniverse) return;
+    
+    const theme = themes.find(t => t.id === themeId);
+    if (!theme) return;
+    
+    console.log(`🌍 [GalaxyMap] Lazy loading items for theme: ${themeId}...`);
+    console.time(`⏱️ Load items for ${themeId}`);
+    
+    const themeItems: Item[] = [];
+    
+    // Load items for each chapter in this theme
+    for (const chapterId of Object.keys(theme.chapters)) {
+      try {
+        const items = await jsonLoader.loadChapter(universeId, themeId, chapterId);
+        themeItems.push(...items);
+      } catch (error) {
+        console.warn(`⚠️ Failed to load chapter ${universeId}/${themeId}/${chapterId}:`, error);
+      }
+    }
+    
+    console.timeEnd(`⏱️ Load items for ${themeId}`);
+    console.log(`✅ [GalaxyMap] Loaded ${themeItems.length} items for theme ${themeId}`);
+    
+    // Merge with existing items:
+    // 1. Remove layout items for this theme (they were just for positioning)
+    // 2. Remove any old real items for this theme
+    // 3. Add new real items
+    const updatedItems = allItems
+      .filter(item => item.theme !== themeId) // Remove old items for this theme
+      .filter(item => !item.id.startsWith('_layout_') || item.theme !== themeId) // Remove layout items for this theme
+      .concat(themeItems);
+    setAllItems(updatedItems);
+    
+    // Recalculate layouts with new items
+    if (renderer && camera) {
+      calculateLayouts(themes, updatedItems);
+    }
     
     // Calculate theme progress
-    const progressMap = new Map<string, number>();
-    for (const theme of loadedThemes) {
-      const themeScore = getThemeScore(theme.id, theme, loadedItems, learningState);
-      progressMap.set(theme.id, themeScore.percentage / 100);
-    }
-    setThemeProgress(progressMap);
-    
-    // Recalculate layouts
-    if (renderer && camera) {
-      calculateLayouts(loadedThemes, loadedItems);
-    }
+    const themeScore = getThemeScore(themeId, theme, themeItems, learningState);
+    setThemeProgress(prev => new Map(prev).set(themeId, themeScore.percentage / 100));
   };
   
   const calculateLayouts = (themesToLayout: Theme[], itemsToLayout: Item[]) => {
@@ -311,6 +545,8 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     const canvas = renderer.getContext().canvas;
     const screenWidth = canvas.width;
     const screenHeight = canvas.height;
+    
+    console.log(`📐 [GalaxyMap] Calculating layouts for ${themesToLayout.length} themes (${itemsToLayout.length} items)`);
     
     // Calculate planet positions on horizontal S-curve
     planetLayoutsRef.current = calculatePlanetPositionsHorizontalMaeander(themesToLayout, screenWidth, screenHeight);
@@ -321,59 +557,68 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     levelRingsRef.current.clear();
     moonParticleEffectsRef.current.clear();
     
-    // Group items by theme and chapter for moon calculation
+    // Group items by theme and chapter for moon calculation (if items are loaded)
     const itemsByThemeAndChapter = new Map<string, Map<string, Item[]>>();
-    for (const item of itemsToLayout) {
-      if (!itemsByThemeAndChapter.has(item.theme)) {
-        itemsByThemeAndChapter.set(item.theme, new Map());
+    if (itemsToLayout.length > 0) {
+      for (const item of itemsToLayout) {
+        if (!itemsByThemeAndChapter.has(item.theme)) {
+          itemsByThemeAndChapter.set(item.theme, new Map());
+        }
+        const chapterMap = itemsByThemeAndChapter.get(item.theme)!;
+        if (!chapterMap.has(item.chapter)) {
+          chapterMap.set(item.chapter, []);
+        }
+        chapterMap.get(item.chapter)!.push(item);
       }
-      const chapterMap = itemsByThemeAndChapter.get(item.theme)!;
-      if (!chapterMap.has(item.chapter)) {
-        chapterMap.set(item.chapter, []);
-      }
-      chapterMap.get(item.chapter)!.push(item);
     }
     
     for (const planet of planetLayoutsRef.current) {
       const theme = planet.theme;
       const chapterItemsMap = itemsByThemeAndChapter.get(theme.id) || new Map();
       
-      // Calculate adaptive moon positions
+      // Calculate adaptive moon positions (uses empty map if no items loaded)
       const moons = calculateMoonPositionsAdaptive(theme.chapters, planet.x, planet.y, chapterItemsMap);
       moonLayoutsRef.current.set(planet.id, moons);
       
-      // Calculate item positions and level rings for each moon
-      for (const moon of moons) {
-        const chapterItems = itemsToLayout.filter(item => 
-          item.theme === theme.id && item.chapter === moon.chapterId
-        );
-        
-        const items = calculateItemPositions(chapterItems, moon.x, moon.y);
-        itemLayoutsRef.current.set(moon.id, items);
-        
-        // Calculate level rings for this moon
-        const rings = calculateLevelRings(chapterItems, moon.id, moon.chapterId);
-        levelRingsRef.current.set(moon.id, rings);
-        
-        // Check if all items are 100% and create particle effect
-        const allItems100 = chapterItems.length > 0 && chapterItems.every(item => {
-          const itemState = learningState[item.id];
-          if (!itemState) return false;
-          // Use ScoreCalculator to get max score
-          const maxScore = calculateMaxPossibleScore(item);
-          return itemState.totalScore >= maxScore;
-        });
-        
-        if (allItems100 && chapterItems.length > 0) {
-          const effect = new MoonParticleEffect(moon.x, moon.y, [theme.colorPrimary, theme.colorAccent]);
-          effect.activate();
-          moonParticleEffectsRef.current.set(moon.id, effect);
+      // Only calculate item positions and level rings if items are loaded
+      if (itemsToLayout.length > 0) {
+        for (const moon of moons) {
+          const chapterItems = itemsToLayout.filter(item => 
+            item.theme === theme.id && item.chapter === moon.chapterId
+          );
+          
+          const items = calculateItemPositions(chapterItems, moon.x, moon.y);
+          itemLayoutsRef.current.set(moon.id, items);
+          
+          // Calculate level rings for this moon
+          const rings = calculateLevelRings(chapterItems, moon.id, moon.chapterId);
+          levelRingsRef.current.set(moon.id, rings);
+          
+          // Check if all items are 100% and create particle effect
+          const allItems100 = chapterItems.length > 0 && chapterItems.every(item => {
+            const itemState = learningState[item.id];
+            if (!itemState) return false;
+            // Use ScoreCalculator to get max score
+            const maxScore = calculateMaxPossibleScore(item);
+            return itemState.totalScore >= maxScore;
+          });
+          
+          if (allItems100 && chapterItems.length > 0) {
+            const effect = new MoonParticleEffect(moon.x, moon.y, [theme.colorPrimary, theme.colorAccent]);
+            effect.activate();
+            moonParticleEffectsRef.current.set(moon.id, effect);
+          }
         }
+      } else {
+        console.log(`⏭️ [GalaxyMap] Skipping item/ring calculation (no items loaded yet)`);
       }
     }
   };
   
-  // Initialize canvas and camera
+  // ============================================================================
+  // INITIALIZE CANVAS & CAMERA
+  // ============================================================================
+  
   useEffect(() => {
     if (!canvasRef.current) return;
     
@@ -382,30 +627,34 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     canvas.width = rect.width;
     canvas.height = rect.height;
     
-    const rend = new Renderer(canvas);
-    setRenderer(rend);
+    const newRenderer = new Renderer(canvas);
+    setRenderer(newRenderer);
     
-    const cam = new GalaxyCamera(canvas.width, canvas.height);
-    setCamera(cam);
+    const newCamera = new GalaxyCamera(canvas.width, canvas.height);
+    setCamera(newCamera);
     
-    // Register wheel event directly on canvas with passive: false to allow preventDefault
+    console.log(`🎨 Canvas initialized: ${canvas.width}x${canvas.height}`);
+  }, []);
+  
+  // ============================================================================
+  // WHEEL EVENT HANDLER (registered directly on canvas for preventDefault)
+  // ============================================================================
+  
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || !camera) return;
+    
     const handleWheelNative = (e: WheelEvent) => {
-      if (!cam) return;
+      e.preventDefault();
       
-      // Determine current zoom state via ref to avoid re-registering listener
-      const currentZoomState = zoomStateRef.current;
-      
-      if (currentZoomState === 'overview') {
-        // Vertical scrolling in overview
-        e.preventDefault();
-        const panSpeed = 30;
-        cam.pan(0, e.deltaY > 0 ? panSpeed : -panSpeed);
+      if (zoomState === 'overview') {
+        // Vertical panning in overview mode
+        camera.pan(0, e.deltaY > 0 ? WHEEL_PAN_SPEED : -WHEEL_PAN_SPEED);
       } else {
-        // Normal zoom in zoomed mode
-        e.preventDefault();
-        const delta = e.deltaY > 0 ? 0.9 : 1.1;
+        // Zoom in/out in zoomed mode
+        const zoomFactor = e.deltaY > 0 ? WHEEL_ZOOM_OUT_FACTOR : WHEEL_ZOOM_IN_FACTOR;
         const rect = canvas.getBoundingClientRect();
-        cam.zoomBy(delta, e.clientX - rect.left, e.clientY - rect.top);
+        camera.zoomBy(zoomFactor, e.clientX - rect.left, e.clientY - rect.top);
       }
     };
     
@@ -414,12 +663,7 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     return () => {
       canvas.removeEventListener('wheel', handleWheelNative);
     };
-  }, []);
-  
-  // Keep zoomState ref updated
-  useEffect(() => {
-    zoomStateRef.current = zoomState;
-  }, [zoomState]);
+  }, [camera, zoomState]); // Re-register when zoomState changes (fixes the ref issue)
   
   useEffect(() => {
     viewStateRestoredRef.current = false;
@@ -443,7 +687,12 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     saveCurrentViewState();
   }, [saveCurrentViewState]);
   
-  const focusAllPlanets = useCallback((padding: number = 60): number | null => {
+  /**
+   * Focus camera to show all planets in overview
+   * @param padding - Optional padding around planets (default: OVERVIEW_PADDING)
+   * @returns The calculated zoom level, or null if failed
+   */
+  const focusAllPlanets = useCallback((padding: number = OVERVIEW_PADDING): number | null => {
     if (!renderer || !camera) return null;
     const planets = planetLayoutsRef.current;
     if (planets.length === 0) return null;
@@ -479,6 +728,11 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     return zoomLevel;
   }, [renderer, camera]);
   
+  /**
+   * Focus camera on a specific planet and its moons
+   * @param planet - Planet to focus on
+   * @returns The calculated zoom level, or null if failed
+   */
   const focusPlanet = useCallback((planet: PlanetLayout): number | null => {
     if (!renderer || !camera) return null;
     
@@ -502,8 +756,7 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
       maxDistance = Math.max(maxDistance, totalDistance);
     }
     
-    const padding = 40;
-    const requiredSize = maxDistance * 2 + padding * 2;
+    const requiredSize = maxDistance * 2 + PLANET_FOCUS_PADDING * 2;
     const zoomX = screenWidth / requiredSize;
     const zoomY = screenHeight / requiredSize;
     const zoomLevel = Math.max(camera.minZoom, Math.min(zoomX, zoomY, camera.maxZoom));
@@ -512,118 +765,102 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     return zoomLevel;
   }, [renderer, camera]);
   
-  // Recalculate layouts when themes/items change
+  // ============================================================================
+  // LAYOUT CALCULATION (recalculate when themes/items change)
+  // ============================================================================
+  
   useEffect(() => {
     if (renderer && camera && themes.length > 0) {
       calculateLayouts(themes, allItems);
       
       // Don't reset camera if we're restoring a saved position or if we're zoomed in
-      // Only frame overview when we're already in overview mode
-      if (zoomStateRef.current === 'overview' && viewStateRestoredRef.current) {
+      // Only frame overview when we're already in overview mode AND view state has been restored
+      if (zoomState === 'overview' && viewStateRestoredRef.current) {
         focusAllPlanets();
       }
     }
-  }, [themes, allItems, renderer, camera, focusAllPlanets]);
+  }, [themes, allItems, renderer, camera, zoomState, focusAllPlanets]);
+  
+  // ============================================================================
+  // VIEW STATE RESTORATION (consolidated to avoid race conditions)
+  // Priority: pendingFocus > initialFocus > savedViewState > default
+  // ============================================================================
   
   useEffect(() => {
+    // Guard: Only run once per universe
     if (viewStateRestoredRef.current) return;
     if (!selectedUniverse || !renderer || !camera) return;
     if (planetLayoutsRef.current.length === 0) return;
     
-    // If we have a pending focus from game exit, let that handle the zoom
-    if (pendingFocusThemeIdRef.current) return;
-    
-    const saved = loadViewState();
-    
-    if (initialFocus && initialFocus.universeId === selectedUniverse.id) {
-      // Initial focus will handle zooming; skip saved view state this time
-      viewStateRestoredRef.current = true;
-      return;
-    }
-    if (!saved || saved.universeId !== selectedUniverse.id) {
-      focusAllPlanets();
-      viewStateRestoredRef.current = true;
-      return;
-    }
-    
-    if (saved.zoomState === 'zoomed' && saved.zoomedPlanetId) {
-      const targetPlanet = planetLayoutsRef.current.find(p => p.id === saved.zoomedPlanetId);
+    // PRIORITY 1: Pending focus from game exit (highest priority)
+    if (pendingFocusThemeIdRef.current) {
+      const themeId = pendingFocusThemeIdRef.current;
+      const targetPlanet = planetLayoutsRef.current.find(p => p.id === themeId);
+      
       if (targetPlanet) {
         focusPlanet(targetPlanet);
-        if (zoomState !== 'zoomed') {
-          setZoomState('zoomed');
-        }
-        if (zoomedPlanetId !== saved.zoomedPlanetId) {
-          setZoomedPlanetId(saved.zoomedPlanetId);
-        }
+        setZoomState('zoomed');
+        setZoomedPlanetId(themeId);
+        
+        const viewState: SavedViewState = {
+          universeId: selectedUniverse.id,
+          zoomState: 'zoomed',
+          zoomedPlanetId: themeId
+        };
+        saveViewState(viewState);
+        
         viewStateRestoredRef.current = true;
-        return;
+        pendingFocusThemeIdRef.current = null; // Clear pending focus
+        
+        console.log(`🎯 View restored: Game exit focus → ${themeId}`);
       }
-      viewStateRestoredRef.current = true;
       return;
     }
     
-    // Saved state indicates overview or no zoomed planet – show full S curve
+    // PRIORITY 2: Initial focus from props (e.g., from URL or app state)
+    if (initialFocus && initialFocus.universeId === selectedUniverse.id && !initialFocusAppliedRef.current) {
+      const targetPlanet = planetLayoutsRef.current.find(p => p.id === initialFocus.planetId);
+      
+      if (targetPlanet) {
+        focusPlanet(targetPlanet);
+        setZoomState('zoomed');
+        setZoomedPlanetId(targetPlanet.id);
+        
+        viewStateRestoredRef.current = true;
+        initialFocusAppliedRef.current = true;
+        onInitialFocusConsumed?.();
+        
+        console.log(`🎯 View restored: Initial focus → ${initialFocus.planetId}`);
+      }
+      return;
+    }
+    
+    // PRIORITY 3: Saved view state from localStorage
+    const saved = loadViewState();
+    
+    if (saved && saved.universeId === selectedUniverse.id && saved.zoomState === 'zoomed' && saved.zoomedPlanetId) {
+      const targetPlanet = planetLayoutsRef.current.find(p => p.id === saved.zoomedPlanetId);
+      
+      if (targetPlanet) {
+        focusPlanet(targetPlanet);
+        setZoomState('zoomed');
+        setZoomedPlanetId(saved.zoomedPlanetId);
+        
+        viewStateRestoredRef.current = true;
+        
+        console.log(`🎯 View restored: Saved state → ${saved.zoomedPlanetId}`);
+        return;
+      }
+    }
+    
+    // PRIORITY 4: Default - show all planets in overview
     focusAllPlanets();
-    if (zoomState !== 'overview') {
-      setZoomState('overview');
-    }
-    if (zoomedPlanetId !== null) {
-      setZoomedPlanetId(null);
-    }
+    setZoomState('overview');
+    setZoomedPlanetId(null);
     viewStateRestoredRef.current = true;
-  }, [selectedUniverse, renderer, camera, zoomState, zoomedPlanetId, focusPlanet, focusAllPlanets, themes.length, initialFocus]);
-  
-  useEffect(() => {
-    if (!initialFocus || initialFocusAppliedRef.current) return;
-    if (!selectedUniverse || selectedUniverse.id !== initialFocus.universeId) return;
-    if (!renderer || !camera) return;
-    if (planetLayoutsRef.current.length === 0) return;
     
-    const targetPlanet = planetLayoutsRef.current.find(p => p.id === initialFocus.planetId);
-    if (!targetPlanet) return;
-    
-    focusPlanet(targetPlanet);
-    if (zoomState !== 'zoomed') {
-      setZoomState('zoomed');
-    }
-    if (zoomedPlanetId !== targetPlanet.id) {
-      setZoomedPlanetId(targetPlanet.id);
-    }
-    
-    initialFocusAppliedRef.current = true;
-    onInitialFocusConsumed?.();
-  }, [initialFocus, selectedUniverse, renderer, camera, focusPlanet, zoomState, zoomedPlanetId, onInitialFocusConsumed]);
-  
-  // Handle pending focus from game exit
-  useEffect(() => {
-    if (!pendingFocusThemeIdRef.current) return;
-    if (!selectedUniverse || !renderer || !camera) return;
-    if (planetLayoutsRef.current.length === 0) return;
-    
-    const themeId = pendingFocusThemeIdRef.current;
-    const targetPlanet = planetLayoutsRef.current.find(p => p.id === themeId);
-    
-    if (targetPlanet) {
-      focusPlanet(targetPlanet);
-      setZoomState('zoomed');
-      setZoomedPlanetId(themeId);
-      
-      // Save view state
-      const viewState: SavedViewState = {
-        universeId: selectedUniverse.id,
-        zoomState: 'zoomed',
-        zoomedPlanetId: themeId
-      };
-      saveViewState(viewState);
-      
-      // Mark view state as restored so the other useEffect doesn't override
-      viewStateRestoredRef.current = true;
-    }
-    
-    // Clear pending focus
-    pendingFocusThemeIdRef.current = null;
-  }, [selectedUniverse, renderer, camera, focusPlanet, themes.length]);
+    console.log(`🎯 View restored: Default overview (${planetLayoutsRef.current.length} planets)`);
+  }, [selectedUniverse, renderer, camera, focusPlanet, focusAllPlanets, initialFocus, onInitialFocusConsumed, themes.length]);
   
   // Handle back button click
   const handleBackClick = () => {
@@ -636,24 +873,25 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     }
   };
   
-  // Render function
+  /**
+   * Render function called every frame by game loop
+   * Renders background, planets, moons, level rings, items, and tooltips
+   */
   const render = useCallback(() => {
     if (!renderer || !camera) return;
     
     renderer.clear();
-    
-    // Debug: Log camera position when zoomed (only once per render cycle)
-    // Removed to prevent infinite loop - camera position should be set correctly before render
     
     // Render background gradient
     if (selectedUniverse) {
       const gradient = selectedUniverse.backgroundGradient;
       renderer.renderGradientBackground(gradient);
     } else {
+      // Fallback gradient if no universe selected
       renderer.renderGradientBackground(['#0f1038', '#272963']);
     }
     
-    // Create render context
+    // Create render context for all rendering functions
     const renderContext: RenderContext = {
       renderer,
       camera,
@@ -672,7 +910,7 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
       moonLayouts: moonLayoutsRef.current
     };
     
-    // Render connection lines (only if zoomed in)
+    // Layer 1: Connection lines (only in zoomed view, behind everything)
     if (zoomState === 'zoomed') {
       for (const planet of planetLayoutsRef.current) {
         if (planet.id === zoomedPlanetId) {
@@ -682,12 +920,12 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
       }
     }
     
-    // Render planets
+    // Layer 2: Planets (always visible)
     for (const planet of planetLayoutsRef.current) {
       renderPlanet(planet, renderContext);
     }
     
-    // Render moons (only if zoomed in)
+    // Layer 3: Moons and level rings (only in zoomed view)
     if (zoomState === 'zoomed') {
       for (const planet of planetLayoutsRef.current) {
         if (planet.id === zoomedPlanetId) {
@@ -704,12 +942,12 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
               renderLevelRing(ring, moon, chapterItems, renderContext);
             }
             
-            // Update and render moon particle effect
+            // Update and render moon particle effect (if moon is 100% complete)
             const effect = moonParticleEffectsRef.current.get(moon.id);
             if (effect) {
               const screenPos = camera.worldToScreen({ x: moon.x, y: moon.y });
               effect.setPosition(screenPos.x, screenPos.y);
-              effect.update(0.016); // Assume 60fps
+              effect.update(PARTICLE_DELTA_TIME);
               effect.render(renderer);
             }
           }
@@ -717,22 +955,17 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
       }
     }
     
-    // Render items (only if zoomed in more)
-    if (zoomState === 'zoomed' && camera.zoom > 1.8) {
+    // Layer 4: Items (only when deeply zoomed in)
+    if (zoomState === 'zoomed' && camera.zoom > ITEM_VISIBILITY_ZOOM_THRESHOLD) {
       for (const planet of planetLayoutsRef.current) {
         if (planet.id === zoomedPlanetId) {
           const moons = moonLayoutsRef.current.get(planet.id) || [];
           for (const moon of moons) {
             const items = itemLayoutsRef.current.get(moon.id) || [];
-            if (moon.chapterId === 'mixed' && planet.id === 'punk') {
-              console.log(`🎨 Rendering items for moon ${moon.id} (chapter: ${moon.chapterId}): ${items.length} items, zoom: ${camera.zoom.toFixed(2)}`);
-            }
             for (const itemLayout of items) {
               const item = allItems.find(i => i.id === itemLayout.itemId);
               if (item) {
                 renderItemParticle(itemLayout, item, renderContext);
-              } else if (moon.chapterId === 'mixed' && planet.id === 'punk') {
-                console.warn(`⚠️ Item not found in allItems: ${itemLayout.itemId}`);
               }
             }
           }
@@ -740,27 +973,29 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
       }
     }
     
-    // Render tooltip
+    // Layer 5: Tooltip (top layer, always visible if hovering)
     if (tooltipText && hoveredElement) {
       renderTooltip(tooltipText, { x: hoveredElement.x, y: hoveredElement.y }, renderContext);
     }
   }, [renderer, camera, hoveredElement, selectedElement, themeProgress, allItems, learningState, tooltipText, selectedUniverse, zoomState, zoomedPlanetId]);
   
-  // Update function
+  // ============================================================================
+  // GAME LOOP - UPDATE & RENDER
+  // ============================================================================
+  
+  /**
+   * Update function called every frame by game loop
+   * Updates camera, saves camera position periodically, and updates particle effects
+   */
   const update = useCallback((deltaTime: number) => {
     if (!camera || !selectedUniverse) return;
     
     camera.update(deltaTime);
     
-    // Save camera position periodically (throttled - every ~500ms)
+    // Save camera position periodically (throttled to reduce localStorage writes)
     const now = performance.now();
-    if (now - lastCameraSaveTime.current > 500) {
-      localProgressProvider.saveGalaxyCameraState(
-        selectedUniverse.id,
-        camera.x,
-        camera.y,
-        camera.zoom
-      );
+    if (now - lastCameraSaveTime.current > CAMERA_SAVE_THROTTLE_MS) {
+      saveCameraStateHelper(selectedUniverse.id, camera);
       lastCameraSaveTime.current = now;
     }
     
@@ -849,11 +1084,15 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     handleElementClick(worldPos.x, worldPos.y);
   };
   
-  // Touch handlers
+  // ============================================================================
+  // TOUCH HANDLERS (improved for smoother gestures)
+  // ============================================================================
+  
   const handleTouchStart = (e: React.TouchEvent<HTMLCanvasElement>) => {
     if (!camera) return;
     
     if (e.touches.length === 1) {
+      // Single touch - start dragging
       isDragging.current = true;
       const touch = e.touches[0];
       const rect = canvasRef.current?.getBoundingClientRect();
@@ -861,7 +1100,10 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
         dragStart.current = { x: touch.clientX - rect.left, y: touch.clientY - rect.top };
       }
     } else if (e.touches.length === 2) {
-      // Pinch zoom
+      // Two-finger pinch zoom - stop dragging, record initial distance
+      isDragging.current = false;
+      dragStart.current = null;
+      
       const touch1 = e.touches[0];
       const touch2 = e.touches[1];
       const distance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY);
@@ -875,6 +1117,7 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     e.preventDefault();
     
     if (e.touches.length === 1 && isDragging.current && dragStart.current) {
+      // Single touch drag (pan)
       const touch = e.touches[0];
       const rect = canvasRef.current?.getBoundingClientRect();
       if (rect) {
@@ -886,39 +1129,74 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
         dragStart.current = { x: screenX, y: screenY };
       }
     } else if (e.touches.length === 2 && lastTouchDistance.current !== null) {
-      // Pinch zoom
+      // Two-finger pinch zoom
       const touch1 = e.touches[0];
       const touch2 = e.touches[1];
       const distance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY);
-      const scale = distance / lastTouchDistance.current;
-      camera.zoomBy(scale);
-      lastTouchDistance.current = distance;
+      
+      // Calculate scale with threshold to avoid jitter
+      const rawScale = distance / lastTouchDistance.current;
+      const scaleDiff = Math.abs(rawScale - 1.0);
+      
+      if (scaleDiff > TOUCH_ZOOM_THRESHOLD) {
+        // Smooth the scale change for better feel
+        const smoothScale = 1.0 + (rawScale - 1.0) * 0.5;
+        
+        // Zoom towards the midpoint between fingers
+        const rect = canvasRef.current?.getBoundingClientRect();
+        if (rect) {
+          const midX = (touch1.clientX + touch2.clientX) / 2 - rect.left;
+          const midY = (touch1.clientY + touch2.clientY) / 2 - rect.top;
+          camera.zoomBy(smoothScale, midX, midY);
+        } else {
+          camera.zoomBy(smoothScale);
+        }
+        
+        lastTouchDistance.current = distance;
+      }
     }
   };
   
   const handleTouchEnd = (e: React.TouchEvent<HTMLCanvasElement>) => {
     if (e.touches.length === 0) {
+      // All touches released - check if it was a tap (no drag)
+      const wasTap = isDragging.current && dragStart.current !== null;
+      
+      if (wasTap) {
+        const touch = e.changedTouches[0];
+        const rect = canvasRef.current?.getBoundingClientRect();
+        if (rect && camera) {
+          const screenX = touch.clientX - rect.left;
+          const screenY = touch.clientY - rect.top;
+          const worldPos = camera.screenToWorld({ x: screenX, y: screenY });
+          handleElementClick(worldPos.x, worldPos.y);
+        }
+      }
+      
+      // Reset all touch state
       isDragging.current = false;
       dragStart.current = null;
       lastTouchDistance.current = null;
     } else if (e.touches.length === 1) {
-      // Single touch - check for click
+      // One finger remains - switch back to drag mode
       const touch = e.touches[0];
       const rect = canvasRef.current?.getBoundingClientRect();
-      if (rect && camera) {
-        const screenX = touch.clientX - rect.left;
-        const screenY = touch.clientY - rect.top;
-        const worldPos = camera.screenToWorld({ x: screenX, y: screenY });
-        handleElementClick(worldPos.x, worldPos.y);
+      if (rect) {
+        isDragging.current = true;
+        dragStart.current = { x: touch.clientX - rect.left, y: touch.clientY - rect.top };
       }
+      lastTouchDistance.current = null;
     }
   };
   
-  // Check what element is hovered
-  const checkHover = (worldX: number, worldY: number, screenX: number, screenY: number) => {
+  /**
+   * Check what element is hovered at given world coordinates
+   * Updates hoveredElement and tooltipText state
+   */
+  const checkHover = useCallback((worldX: number, worldY: number, screenX: number, screenY: number) => {
     if (!camera) return;
     
-    // Check level rings (only in zoomed view)
+    // Check level rings (only in zoomed view, highest priority)
     if (zoomState === 'zoomed') {
       for (const planet of planetLayoutsRef.current) {
         const moons = moonLayoutsRef.current.get(planet.id) || [];
@@ -926,14 +1204,15 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
           const rings = levelRingsRef.current.get(moon.id) || [];
           for (const ring of rings) {
             const distance = Math.hypot(worldX - moon.x, worldY - moon.y);
-            // Check if mouse is within ring hitbox (ringRadius ± 5px) - increased for better interaction
-            const ringRadius = ring.radius;
-            const distanceFromRing = Math.abs(distance - ringRadius);
-            if (distanceFromRing < 5) {
+            const distanceFromRing = Math.abs(distance - ring.radius);
+            
+            if (distanceFromRing < LEVEL_RING_HITBOX_WIDTH) {
               const chapterItems = allItems.filter(item => 
                 item.theme === planet.id && item.chapter === moon.chapterId
               );
               const levelScore = getLevelScore(moon.chapterId, ring.level, chapterItems, learningState);
+              const tooltipText = generateTooltipText('levelRing', `Level ${ring.level}`, levelScore);
+              
               setHoveredElement({ 
                 type: 'levelRing', 
                 id: `${moon.id}_level_${ring.level}`,
@@ -942,7 +1221,7 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
                 x: screenX, 
                 y: screenY 
               });
-              setTooltipText(`Level ${ring.level}\nScore: ${levelScore.totalScore}/${levelScore.maxScore} (${levelScore.percentage.toFixed(1)}%)`);
+              setTooltipText(tooltipText);
               return;
             }
           }
@@ -950,21 +1229,24 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
       }
     }
     
-    // Check items first (smallest, top layer) - only in zoomed view
-    if (zoomState === 'zoomed' && camera.zoom > 1.8) {
+    // Check items (only in deeply zoomed view, second priority)
+    if (zoomState === 'zoomed' && camera.zoom > ITEM_VISIBILITY_ZOOM_THRESHOLD) {
       for (const planet of planetLayoutsRef.current) {
         const moons = moonLayoutsRef.current.get(planet.id) || [];
         for (const moon of moons) {
           const items = itemLayoutsRef.current.get(moon.id) || [];
           for (const itemLayout of items) {
             const distance = Math.hypot(worldX - itemLayout.x, worldY - itemLayout.y);
-            if (distance < 10) {
+            
+            if (distance < ITEM_HITBOX_RADIUS) {
               const item = allItems.find(i => i.id === itemLayout.itemId);
               if (item) {
                 const scoreData = getItemScore(item.id, item, learningState);
                 const baseWord = item.base?.word || item.id;
+                const tooltipText = generateTooltipText('item', baseWord, scoreData);
+                
                 setHoveredElement({ type: 'item', id: item.id, x: screenX, y: screenY });
-                setTooltipText(`${baseWord}\nScore: ${scoreData.totalScore}/${scoreData.maxScore} (${scoreData.percentage.toFixed(1)}%)`);
+                setTooltipText(tooltipText);
                 return;
               }
             }
@@ -973,20 +1255,25 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
       }
     }
     
-    // Check moons - only in zoomed view
+    // Check moons (only in zoomed view, third priority)
     if (zoomState === 'zoomed') {
       for (const planet of planetLayoutsRef.current) {
         if (planet.id === zoomedPlanetId) {
           const moons = moonLayoutsRef.current.get(planet.id) || [];
           for (const moon of moons) {
             const distance = Math.hypot(worldX - moon.x, worldY - moon.y);
-            if (distance < moon.radius * 2) {
+            
+            if (distance < moon.radius * MOON_HITBOX_MULTIPLIER) {
               const chapterItems = allItems.filter(item => 
                 item.theme === planet.id && item.chapter === moon.chapterId
               );
               const chapterScore = getChapterScore(moon.chapterId, chapterItems, learningState);
+              // Use chapter title if available, fallback to chapterId
+              const chapterTitle = moon.chapter?.title || moon.chapterId;
+              const tooltipText = generateTooltipText('moon', chapterTitle, chapterScore);
+              
               setHoveredElement({ type: 'moon', id: moon.id, x: screenX, y: screenY });
-              setTooltipText(`${moon.chapterId}\nScore: ${chapterScore.totalScore}/${chapterScore.maxScore} (${chapterScore.percentage.toFixed(1)}%)`);
+              setTooltipText(tooltipText);
               return;
             }
           }
@@ -994,22 +1281,16 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
       }
     }
     
-    // Check planets
+    // Check planets (lowest priority, always visible)
     for (const planet of planetLayoutsRef.current) {
       const distance = Math.hypot(worldX - planet.x, worldY - planet.y);
-      if (distance < planet.radius * 2) {
-        // If in overview, show tooltip only (no hover interaction for items)
-        if (zoomState === 'overview') {
-          const themeScore = getThemeScore(planet.id, planet.theme, allItems, learningState);
-          setHoveredElement({ type: 'planet', id: planet.id, x: screenX, y: screenY });
-          setTooltipText(`${planet.theme.name}\nScore: ${themeScore.totalScore}/${themeScore.maxScore} (${themeScore.percentage.toFixed(1)}%)`);
-          return;
-        }
-        
-        // If already zoomed, show tooltip
+      
+      if (distance < planet.radius * PLANET_HITBOX_MULTIPLIER) {
         const themeScore = getThemeScore(planet.id, planet.theme, allItems, learningState);
+        const tooltipText = generateTooltipText('planet', planet.theme.name, themeScore);
+        
         setHoveredElement({ type: 'planet', id: planet.id, x: screenX, y: screenY });
-        setTooltipText(`${planet.theme.name}\nScore: ${themeScore.totalScore}/${themeScore.maxScore} (${themeScore.percentage.toFixed(1)}%)`);
+        setTooltipText(tooltipText);
         return;
       }
     }
@@ -1017,13 +1298,16 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     // No hover
     setHoveredElement(null);
     setTooltipText('');
-  };
+  }, [camera, zoomState, zoomedPlanetId, allItems, learningState]);
   
-  // Handle element click
-  const handleElementClick = (worldX: number, worldY: number) => {
+  /**
+   * Handle element click at given world coordinates
+   * Hierarchical checking: level rings → items → moons → planets
+   */
+  const handleElementClick = useCallback((worldX: number, worldY: number) => {
     if (!selectedUniverse || !camera) return;
     
-    // Check level rings first (before items) - only in zoomed view
+    // Check level rings first (highest priority for clicks)
     if (zoomState === 'zoomed') {
       for (const planet of planetLayoutsRef.current) {
         if (planet.id === zoomedPlanetId) {
@@ -1032,20 +1316,12 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
             const rings = levelRingsRef.current.get(moon.id) || [];
             for (const ring of rings) {
               const distance = Math.hypot(worldX - moon.x, worldY - moon.y);
-              // Check if click is within ring hitbox (ringRadius ± 5px) - increased for better interaction
-              const ringRadius = ring.radius;
-              const distanceFromRing = Math.abs(distance - ringRadius);
-              if (distanceFromRing < 5) {
+              const distanceFromRing = Math.abs(distance - ring.radius);
+              
+              if (distanceFromRing < LEVEL_RING_HITBOX_WIDTH) {
                 const theme = themes.find(t => t.id === planet.id);
                 if (theme) {
-                  // Save camera position before starting game
-                  localProgressProvider.saveGalaxyCameraState(
-                    selectedUniverse.id,
-                    camera.x,
-                    camera.y,
-                    camera.zoom
-                  );
-                  // Start game with level filter
+                  saveCameraStateHelper(selectedUniverse.id, camera);
                   onStart(selectedUniverse, theme, moon.chapterId, mode, undefined, ring.level);
                 }
                 return;
@@ -1056,8 +1332,8 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
       }
     }
     
-    // Check items - only in zoomed view
-    if (zoomState === 'zoomed' && camera.zoom > 1.8) {
+    // Check items (only in deeply zoomed view)
+    if (zoomState === 'zoomed' && camera.zoom > ITEM_VISIBILITY_ZOOM_THRESHOLD) {
       for (const planet of planetLayoutsRef.current) {
         if (planet.id === zoomedPlanetId) {
           const moons = moonLayoutsRef.current.get(planet.id) || [];
@@ -1065,19 +1341,13 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
             const items = itemLayoutsRef.current.get(moon.id) || [];
             for (const itemLayout of items) {
               const distance = Math.hypot(worldX - itemLayout.x, worldY - itemLayout.y);
-              if (distance < 10) {
+              
+              if (distance < ITEM_HITBOX_RADIUS) {
                 const item = allItems.find(i => i.id === itemLayout.itemId);
                 if (item) {
-                  // Start game with specific item
                   const theme = themes.find(t => t.id === item.theme);
-                  if (theme && camera) {
-                    // Save camera position before starting game
-                    localProgressProvider.saveGalaxyCameraState(
-                      selectedUniverse.id,
-                      camera.x,
-                      camera.y,
-                      camera.zoom
-                    );
+                  if (theme) {
+                    saveCameraStateHelper(selectedUniverse.id, camera);
                     onStart(selectedUniverse, theme, item.chapter, mode, item.id);
                   }
                   return;
@@ -1089,31 +1359,25 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
       }
     }
     
-    // Check moons - only in zoomed view
+    // Check moons
     if (zoomState === 'zoomed') {
       for (const planet of planetLayoutsRef.current) {
         if (planet.id === zoomedPlanetId) {
           const moons = moonLayoutsRef.current.get(planet.id) || [];
           for (const moon of moons) {
             const distance = Math.hypot(worldX - moon.x, worldY - moon.y);
-            if (distance < moon.radius * 2) {
+            
+            if (distance < moon.radius * MOON_HITBOX_MULTIPLIER) {
               const theme = themes.find(t => t.id === planet.id);
               if (theme) {
                 setSelectedElement({ type: 'moon', id: moon.id });
                 
-                // If items are already visible (zoomed in), start game
-                if (camera.zoom >= 1.8) {
-                  // Start game immediately
-                  // Save camera position before starting game
-                  localProgressProvider.saveGalaxyCameraState(
-                    selectedUniverse.id,
-                    camera.x,
-                    camera.y,
-                    camera.zoom
-                  );
+                // If already zoomed enough to see items, start game immediately
+                if (camera.zoom >= MOON_DIRECT_START_ZOOM_THRESHOLD) {
+                  saveCameraStateHelper(selectedUniverse.id, camera);
                   onStart(selectedUniverse, theme, moon.chapterId, mode);
                 } else {
-                  // Zoom to moon to show items
+                  // Zoom deeper to show items
                   camera.zoomToElement(moon.x, moon.y, 2.0);
                 }
               }
@@ -1127,17 +1391,22 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     // Check planets
     for (const planet of planetLayoutsRef.current) {
       const distance = Math.hypot(worldX - planet.x, worldY - planet.y);
-      if (distance < planet.radius * 2) {
+      
+      if (distance < planet.radius * PLANET_HITBOX_MULTIPLIER) {
         const theme = themes.find(t => t.id === planet.id);
         if (theme) {
           setSelectedElement({ type: 'planet', id: planet.id });
           
           const shouldFocus = zoomState === 'overview' || zoomedPlanetId !== planet.id;
           if (shouldFocus) {
+            // Zoom to planet
             const zoomLevel = focusPlanet(planet);
             if (zoomLevel !== null) {
               setZoomState('zoomed');
               setZoomedPlanetId(planet.id);
+              
+              // 🚀 LAZY LOAD: Load items for this theme when planet is clicked
+              loadThemeItems(selectedUniverse.id, planet.id);
               
               // Save selection when planet is focused
               const selection = {
@@ -1149,31 +1418,29 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
               localStorage.setItem('wordrush_lastSelection', JSON.stringify(selection));
             }
           } else {
-            // Already zoomed on this planet - start a random chapter game
+            // Already zoomed on this planet - start CHAOTIC MODE (all chapters mixed)
             const chapters = Object.keys(theme.chapters);
             if (chapters.length > 0) {
-              const randomChapter = chapters[Math.floor(Math.random() * chapters.length)];
-              localProgressProvider.saveGalaxyCameraState(
-                selectedUniverse.id,
-                camera.x,
-                camera.y,
-                camera.zoom
-              );
-              onStart(selectedUniverse, theme, randomChapter, mode);
+              saveCameraStateHelper(selectedUniverse.id, camera);
+              // Pass ALL chapter IDs and enable loadAllItems flag for chaotic mode
+              onStart(selectedUniverse, theme, chapters, mode, undefined, undefined, true);
             }
           }
         }
         return;
       }
     }
-  };
+  }, [selectedUniverse, camera, zoomState, zoomedPlanetId, themes, allItems, mode, onStart, focusPlanet]);
   
-  // Keyboard shortcuts
+  // ============================================================================
+  // KEYBOARD SHORTCUTS
+  // ============================================================================
+  
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!camera) return;
       
-      const panSpeed = 50 / camera.zoom;
+      const panSpeed = KEYBOARD_PAN_SPEED / camera.zoom;
       
       switch (e.key.toLowerCase()) {
         case 'w':
@@ -1194,15 +1461,16 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
           break;
         case ' ':
           e.preventDefault();
-          camera.zoomBy(camera.zoom > 1.5 ? 0.8 : 1.25);
+          // Toggle zoom in/out
+          camera.zoomBy(camera.zoom > 1.5 ? SPACEBAR_ZOOM_OUT_FACTOR : SPACEBAR_ZOOM_IN_FACTOR);
           break;
         case '+':
         case '=':
-          camera.zoomBy(1.1);
+          camera.zoomBy(WHEEL_ZOOM_IN_FACTOR);
           break;
         case '-':
         case '_':
-          camera.zoomBy(0.9);
+          camera.zoomBy(WHEEL_ZOOM_OUT_FACTOR);
           break;
         case 'escape':
           if (zoomState === 'zoomed') {
@@ -1220,8 +1488,31 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
           }
           break;
         case 'enter':
+          // Activate selected element (if any)
           if (selectedElement) {
-            handleElementClick(0, 0); // Will use selected element
+            // Find the element's world coordinates
+            if (selectedElement.type === 'planet') {
+              const planet = planetLayoutsRef.current.find(p => p.id === selectedElement.id);
+              if (planet) {
+                handleElementClick(planet.x, planet.y);
+              }
+            } else if (selectedElement.type === 'moon') {
+              for (const moons of moonLayoutsRef.current.values()) {
+                const moon = moons.find(m => m.id === selectedElement.id);
+                if (moon) {
+                  handleElementClick(moon.x, moon.y);
+                  break;
+                }
+              }
+            } else if (selectedElement.type === 'item') {
+              for (const items of itemLayoutsRef.current.values()) {
+                const itemLayout = items.find(i => i.itemId === selectedElement.id);
+                if (itemLayout) {
+                  handleElementClick(itemLayout.x, itemLayout.y);
+                  break;
+                }
+              }
+            }
           }
           break;
       }
@@ -1229,7 +1520,7 @@ const planetLayoutsRef = useRef<PlanetLayout[]>([]);
     
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [camera, selectedElement, zoomState, renderer]);
+  }, [camera, selectedElement, zoomState, renderer, handleElementClick]);
   
   return (
     <div className="galaxy-map-container">

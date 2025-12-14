@@ -1,0 +1,24 @@
+{
+  "id": "wegweiser_orientierung",
+  "name": "Wegweiser & Orientierung",
+  "description": "Lerne Wegweiser und Orientierungsschilder - Navigation im Straßenverkehr.",
+  "colorPrimary": "#6c5ce7",
+  "colorAccent": "#5f3dc4",
+  "backgroundGradient": [
+    "#5f3dc4",
+    "#6c5ce7"
+  ],
+  "maxLevels": 15,
+  "icon": "🧭",
+  "shipSkin": "/assets/ships/traffic_ship.svg",
+  "laserColor": "#6c5ce7",
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

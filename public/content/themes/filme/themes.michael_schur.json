@@ -1,0 +1,57 @@
+{
+  "id": "michael_schur",
+  "name": "Michael Schur",
+  "description": "Lerne Michael Schur Serien - The Good Place und mehr! 🎬✨",
+  "colorPrimary": "#9b59b6",
+  "colorAccent": "#8e44ad",
+  "backgroundGradient": [
+    "#8e44ad",
+    "#9b59b6"
+  ],
+  "maxLevels": 15,
+  "icon": "📺",
+  "shipSkin": "/assets/ships/movie_ship.svg",
+  "laserColor": "#9b59b6",
+  "available": true,
+  "language": "de",
+  "chapters": {
+    "The_Good_Place": {
+      "backgroundGradient": [
+        "#8e44ad",
+        "#9b59b6"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "the_good_place_theme.mp3",
+      "particleEffect": "tv_particles",
+      "title": "The Good Place"
+    },
+    "Brooklyn_Nine_Nine": {
+      "backgroundGradient": [
+        "#3498db",
+        "#2980b9"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "brooklyn_nine_nine_theme.mp3",
+      "particleEffect": "tv_particles",
+      "title": "Brooklyn Nine Nine"
+    },
+    "The_Office": {
+      "backgroundGradient": [
+        "#e67e22",
+        "#d35400"
+      ],
+      "spawnRate": 1.5,
+      "waveDuration": 3,
+      "music": "the_office_theme.mp3",
+      "particleEffect": "tv_particles",
+      "title": "The Office"
+    }
+  },
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "richtzeichen",
+  "name": "Richtzeichen",
+  "description": "Lerne Richtzeichen - Rechteckige und runde Schilder für Anordnungen und Hinweise.",
+  "colorPrimary": "#95e1d3",
+  "colorAccent": "#f38181",
+  "backgroundGradient": [
+    "#f38181",
+    "#95e1d3"
+  ],
+  "maxLevels": 15,
+  "icon": "📍",
+  "shipSkin": "/assets/ships/traffic_ship.svg",
+  "laserColor": "#95e1d3",
+  "available": true,
+  "language": "de",
+  "chapters": {},
+  "meta": {
+    "author": "Tim Weyrauch",
+    "version": "1.0",
+    "created": "2025-01-27"
+  }
+}
+

@@ -1,0 +1,1719 @@
+[
+  {
+    "id": "TFE_IT_001",
+    "theme": "tfe",
+    "chapter": "Intervention_Technik",
+    "level": 1,
+    "waveDuration": 3,
+    "base": {
+      "word": "Deutung",
+      "type": "Intervention",
+      "visual": {
+        "tier": 1,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "Konfrontation, Klärung, Deutung",
+          "type": "Interventionshierarchie"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Die Hierarchie der Interventionen: Zuerst Konfrontation, dann Klärung, schließlich Deutung. Deutung verbindet unbewusste Muster mit der Übertragung.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "Ratschläge geben",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsch: TFE gibt keine Ratschläge, sondern arbeitet mit Deutung und Integration.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "Direkte Anweisungen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsch: TFE arbeitet nicht mit direkten Anweisungen, sondern mit Deutung und Containment.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "Vermittlung von Wissen",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falsch: TFE ist keine Wissensvermittlung, sondern ein explorativer Prozess durch Deutung.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch während der Deutung braucht man manchmal eine Pause zum Nachdenken!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        },
+        "damage": 1
+      }
+    ],
+    "meta": {
+      "source": "TFE Intervention & Technik",
+      "tags": [
+        "deutung",
+        "intervention",
+        "technik"
+      ],
+      "relatedEntries": [
+        "TFE_IT_002",
+        "TFE_IT_003"
+      ],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_IT_002",
+    "theme": "tfe",
+    "chapter": "Intervention_Technik",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "strategische prinzipien clarkin",
+      "type": "Intervention",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "toleranz der verwirrung",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Der Therapeut hält die unklare innere Welt des Patienten aus.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "dominante objektbeziehungen erkennen",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Zentrale Beziehungsmuster der Übertragung identifizieren.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "akteure benennen",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Selbst- und Objektanteile präzise sprachlich herausarbeiten.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "reaktionen beachten",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Registrieren, wie der Patient auf diese Benennung reagiert.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "rollenwechsel beobachten",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Wechsel zwischen Selbst- und Objektpositionen erkennen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "strategische supervision turbo",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Klingt fachlich, gehört aber nicht zu Clarkins Prinzipien.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "objektbeziehungs-diagnose 3000",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Ein übertriebenes Kunstwort ohne theoretische Fundierung.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "taktische empathie polizei",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Humorvoll, aber konzeptuell unpassend.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "metakognitive blitzanalyse",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Bringt ein Fremdkonzept rein, das nicht zu Clarkins Schema gehört.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "interventionsschach",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.25,
+        "spawnSpread": 0.05,
+        "speed": 1.15,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Die Strategie-Metapher wirkt clever, ist aber kein echtes Prinzip.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      }
+    ],
+    "meta": {
+      "source": "TFE Intervention & Technik",
+      "tags": [
+        "clarkin",
+        "strategische prinzipien",
+        "intervention"
+      ],
+      "relatedEntries": [
+        "TFE_IT_001",
+        "TFE_IT_003"
+      ],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_IT_003",
+    "theme": "tfe",
+    "chapter": "Intervention_Technik",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "rollenwechsel beobachten",
+      "type": "Intervention",
+      "visual": {
+        "tier": 3,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "übertragungsdynamik erkennen",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Rollenwechsel erscheinen als Verschiebungen der Positionen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "selbst- und objektspaltung",
+          "type": "Konzept"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Innere Anteile pendeln zwischen Täter, Opfer, Retter etc.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "positionswechsel im dialog",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Der Patient springt zwischen verschiedenen Relationalmodi.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "affektive rolleinnahme",
+          "type": "Konzept"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Affekte zeigen, welche Rolle gerade aktiviert ist.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "method acting vibes",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Klingt nach Schauspielerei, verwechselt aber innere Rollen mit Performance.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "charakter-skins wechseln",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Gaming-Metapher, weit weg von klinischer Dynamik.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "sozialrollen bingo",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Witzige Überzeichnung, aber kein psychodynamisches Konzept.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "impro theater modus",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Hat zwar Rollen, aber nicht die intrapsychische Grundlage.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      }
+    ],
+    "meta": {
+      "source": "TFE Intervention & Technik",
+      "tags": [
+        "rollenwechsel",
+        "übertragungsdynamik",
+        "spaltung"
+      ],
+      "relatedEntries": [
+        "TFE_IT_001",
+        "TFE_IT_002"
+      ],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_IT_004",
+    "theme": "tfe",
+    "chapter": "Intervention_Technik",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "klärung",
+      "type": "Intervention",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "erste phase der deutung",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Klärung bildet den Anfang des Interpretationsprozesses.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "untersuchen von unklarem material",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Vage, widersprüchliche oder unvollständige Inhalte werden sortiert.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "strukturgebende nachfragen",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Der Therapeut hilft, Inhalte präziser zu verstehen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "fokussierung auf bedeutung",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Klärung schafft die Grundlage für Konfrontation und Interpretation.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "zugang zu affekt und motivation",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Klärung macht innere Zustände bewusster.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "psychisches entwirrungsgerät",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Humorvolle Maschine statt Konzept.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "emotionale google-suche",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Zwar suchend, aber kein klinischer Schritt.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "gedanken bildschirmprojektion",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Visuell nett, fachlich sinnfrei.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch während der Klärung braucht man manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        },
+        "damage": 1
+      }
+    ],
+    "meta": {
+      "source": "TFE Intervention & Technik",
+      "tags": [
+        "klärung",
+        "deutung",
+        "intervention"
+      ],
+      "relatedEntries": [
+        "TFE_IT_001",
+        "TFE_IT_005"
+      ],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_IT_005",
+    "theme": "tfe",
+    "chapter": "Intervention_Technik",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "konfrontation",
+      "type": "Intervention",
+      "visual": {
+        "tier": 3,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "zweiter deutungsschritt",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Nach der Klärung wird widersprüchliches Material gegenübergestellt.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "bewusstmachen von widersprüchen",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Patient erkennt unvereinbare Selbstaussagen oder Affekte.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "verbindung von bewusstem und unbewusstem",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Konfrontation bringt abgespaltene Elemente zusammen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "hinweis auf ausagieren",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Verhalten wird als Ausdruck unbewusster Konflikte aufgezeigt.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "integration getrennter elemente",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Abgespaltene Inhalte werden in Zusammenhang gesetzt.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "emotionales standgericht",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Klingt wie Bestrafung, nicht wie Konfrontation.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "affekt showdown",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Drama, aber kein TFP-Prozess.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "psycho-duell",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Komisch, aber falsch.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "gefühlsgerichtsbarkeit",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Juristisches Bild, kein therapeutischer Schritt.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      }
+    ],
+    "meta": {
+      "source": "TFE Intervention & Technik",
+      "tags": [
+        "konfrontation",
+        "deutung",
+        "integration"
+      ],
+      "relatedEntries": [
+        "TFE_IT_001",
+        "TFE_IT_004",
+        "TFE_IT_006"
+      ],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_IT_006",
+    "theme": "tfe",
+    "chapter": "Intervention_Technik",
+    "level": 4,
+    "waveDuration": 3,
+    "base": {
+      "word": "identity consolidation",
+      "type": "Ziel",
+      "visual": {
+        "tier": 4,
+        "size": 1,
+        "appearance": "bold",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": true
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "integration gespaltener anteile",
+          "type": "Ziel"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Idealisiert/persekutorisch werden zu kohärenten Repräsentanzen verbunden.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "kohärentes selbstgefühl",
+          "type": "Ziel"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Stabileres Identitätserleben über verschiedene Situationen hinweg.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "realistisches fremd-erleben",
+          "type": "Ziel"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Andere werden weniger verzerrt und weniger extrem wahrgenommen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "affektregulation",
+          "type": "Ziel"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Integration ermöglicht stabilere Affektmodulation.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "positive beziehungsfähigkeit",
+          "type": "Ziel"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Innenstruktur erlaubt kooperative, dauerhafte Beziehungen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "reduzierte spaltungsmechanismen",
+          "type": "Ziel"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 6,
+        "context": "Weniger extreme Pendelbewegungen zwischen Idealisierung/Entwertung.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "premium identitätsupgrade",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Klingt nach Software, aber nicht nach Psychodynamik.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "selbstfusion deluxe",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Falscher Prozess, da TFP gerade keine Verschmelzung anstrebt.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "beziehungs-quantensprung",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Übertrieben, ohne strukturelle Grundlage.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "persönlichkeits reboot",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Technische Metapher, aber kein klinisches Modell.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      }
+    ],
+    "meta": {
+      "source": "TFE Intervention & Technik",
+      "tags": [
+        "identity consolidation",
+        "integration",
+        "ziel"
+      ],
+      "relatedEntries": [
+        "TFE_IT_001",
+        "TFE_IT_005"
+      ],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_IT_007",
+    "theme": "tfe",
+    "chapter": "Intervention_Technik",
+    "level": 2,
+    "waveDuration": 3,
+    "base": {
+      "word": "containment",
+      "type": "Intervention",
+      "visual": {
+        "tier": 2,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "affekt halten",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Therapeut lässt sich affizieren, ohne zu agieren.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "emotionen bezeugen",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Er spiegelt, benennt und bleibt erreichbar.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "stabile präsenz",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Hält Angst und Chaotik im Rahmen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "selbstregulation modellieren",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Durch eigene Haltung zeigt er Regulation.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "projektive identifikation verarbeiten",
+          "type": "Technik"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Aufgenommene Anteile werden bearbeitet und zurückgegeben.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "therapeutischer staubsauger",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Absurd, als würde der Therapeut Emotionen einsaugen.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "affekt deep freezer",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Witzig, aber Gegenteil von Containment.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "emotions container xl",
+          "type": "Wrong"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Überzeichnete Amazon-Metapher.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch Containment braucht manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        },
+        "damage": 1
+      }
+    ],
+    "meta": {
+      "source": "TFE Intervention & Technik",
+      "tags": [
+        "containment",
+        "bion",
+        "affekt"
+      ],
+      "relatedEntries": [
+        "TFE_IT_001",
+        "TFE_DU_006"
+      ],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  },
+  {
+    "id": "TFE_IT_008",
+    "theme": "tfe",
+    "chapter": "Intervention_Technik",
+    "level": 3,
+    "waveDuration": 3,
+    "base": {
+      "word": "analytiker weiß nicht die antwort",
+      "type": "Haltung",
+      "visual": {
+        "tier": 3,
+        "size": 1,
+        "appearance": "normal",
+        "color": "#8b5cf6",
+        "glow": true,
+        "pulsate": false
+      }
+    },
+    "correct": [
+      {
+        "entry": {
+          "word": "kein vorwissen verwenden",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 1,
+        "context": "Deutungen müssen aus dem aktuellen Material entstehen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "patient liefert stichwort",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.4,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 2,
+        "context": "Ohne Hinweis des Patienten keine Interpretation.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "keine erfahrene mutter werden",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.6,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 3,
+        "context": "Keine Übernahme der allwissenden Position.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "vermeidung falscher deutungen",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.45,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 4,
+        "context": "Nicht auf persönliches Wissen oder Konzepte zurückgreifen.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "neutralität statt führung",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.55,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 5,
+        "context": "Therapeut bleibt strukturierend, nicht leitend.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      },
+      {
+        "entry": {
+          "word": "durch patienten getragene deutung",
+          "type": "Prinzip"
+        },
+        "spawnPosition": 0.5,
+        "spawnSpread": 0.05,
+        "speed": 0.9,
+        "points": 200,
+        "pattern": "linear_inward",
+        "hp": 1,
+        "collectionOrder": 6,
+        "context": "Nur dann wirkt die Interpretation transformierend.",
+        "visual": {
+          "color": "#a78bfa",
+          "variant": "hexagon",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "sound": "bubble_hit_soft"
+      }
+    ],
+    "distractors": [
+      {
+        "entry": {
+          "word": "orakelmodus aktivieren",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.3,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Total falsch, aber lustig.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "deutungsbullshit generator",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.7,
+        "spawnSpread": 0.05,
+        "speed": 1.1,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Humorvoll übertrieben.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "analytiker zauberstab",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.2,
+        "spawnSpread": 0.05,
+        "speed": 1.2,
+        "points": 50,
+        "pattern": "linear_inward",
+        "context": "Märchenhaft, ohne Substanz.",
+        "visual": {
+          "color": "#c4b5fd",
+          "variant": "square",
+          "pulsate": false,
+          "fontSize": 1.0
+        },
+        "damage": 1
+      },
+      {
+        "entry": {
+          "word": "Kaffeepause",
+          "type": "Humorous"
+        },
+        "spawnPosition": 0.8,
+        "spawnSpread": 0.05,
+        "speed": 1.3,
+        "points": 25,
+        "pattern": "linear_inward",
+        "context": "Humor: Auch wenn man die Antwort nicht weiß, braucht man manchmal eine Pause!",
+        "visual": {
+          "color": "#e9d5ff",
+          "variant": "bubble",
+          "pulsate": true,
+          "fontSize": 0.9
+        },
+        "damage": 1
+      }
+    ],
+    "meta": {
+      "source": "TFE Intervention & Technik",
+      "tags": [
+        "haltung",
+        "deutung",
+        "neutralität"
+      ],
+      "relatedEntries": [
+        "TFE_IT_001",
+        "TFE_GR_001"
+      ],
+      "difficulty": {
+        "base": 1.0,
+        "scaling": 0.1
+      }
+    }
+  }
+]

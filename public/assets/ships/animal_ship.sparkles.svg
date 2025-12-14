@@ -1,0 +1,196 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Animal theme ship - With colorful sparkles/sprinkles distributed around -->
+  
+  <!-- Main fuselage body (green) -->
+  <path d="M 30 5 L 26 18 L 22 22 L 22 32 L 26 36 L 30 42 L 34 36 L 38 32 L 38 22 L 34 18 Z" 
+        fill="#27ae60" stroke="#2ecc71" stroke-width="1"/>
+  
+  <!-- Animal face cockpit window (cat/dog eyes) -->
+  <ellipse cx="27" cy="12" rx="2" ry="2.5" fill="#1a1a1a" stroke="#000000" stroke-width="0.5"/>
+  <ellipse cx="33" cy="12" rx="2" ry="2.5" fill="#1a1a1a" stroke="#000000" stroke-width="0.5"/>
+  <ellipse cx="27" cy="12" rx="1" ry="1.2" fill="#ffffff"/>
+  <ellipse cx="33" cy="12" rx="1" ry="1.2" fill="#ffffff"/>
+  <!-- Nose -->
+  <path d="M 30 14 L 29 15 L 31 15 Z" fill="#ff69b4" stroke="#000000" stroke-width="0.3"/>
+  
+  <!-- Paw prints on body -->
+  <!-- Left paw -->
+  <circle cx="24" cy="24" r="2" fill="#1a1a1a" opacity="0.6"/>
+  <circle cx="23" cy="22" r="1" fill="#1a1a1a" opacity="0.6"/>
+  <circle cx="25" cy="22" r="1" fill="#1a1a1a" opacity="0.6"/>
+  <circle cx="23" cy="25" r="1" fill="#1a1a1a" opacity="0.6"/>
+  <circle cx="25" cy="25" r="1" fill="#1a1a1a" opacity="0.6"/>
+  
+  <!-- Right paw -->
+  <circle cx="36" cy="24" r="2" fill="#1a1a1a" opacity="0.6"/>
+  <circle cx="35" cy="22" r="1" fill="#1a1a1a" opacity="0.6"/>
+  <circle cx="37" cy="22" r="1" fill="#1a1a1a" opacity="0.6"/>
+  <circle cx="35" cy="25" r="1" fill="#1a1a1a" opacity="0.6"/>
+  <circle cx="37" cy="25" r="1" fill="#1a1a1a" opacity="0.6"/>
+  
+  <!-- Animal spots/patterns -->
+  <circle cx="28" cy="28" r="1.5" fill="#2ecc71" opacity="0.7"/>
+  <circle cx="32" cy="30" r="1.5" fill="#2ecc71" opacity="0.7"/>
+  
+  <!-- Main wings (green, leaf-like) -->
+  <path d="M 22 22 L 10 26 L 10 30 L 22 32" fill="#27ae60" stroke="#2ecc71" stroke-width="1"/>
+  <path d="M 38 22 L 50 26 L 50 30 L 38 32" fill="#27ae60" stroke="#2ecc71" stroke-width="1"/>
+  
+  <!-- Leaf veins on wings -->
+  <line x1="16" y1="26" x2="16" y2="30" stroke="#2ecc71" stroke-width="0.5" opacity="0.5"/>
+  <line x1="44" y1="26" x2="44" y2="30" stroke="#2ecc71" stroke-width="0.5" opacity="0.5"/>
+  
+  <!-- Wing extensions -->
+  <rect x="8" y="27" width="4" height="4" fill="#27ae60" stroke="#2ecc71" stroke-width="0.5"/>
+  <rect x="48" y="27" width="4" height="4" fill="#27ae60" stroke="#2ecc71" stroke-width="0.5"/>
+  
+  <!-- Green accent stripes on wings -->
+  <rect x="12" y="27" width="8" height="1" fill="#2ecc71"/>
+  <rect x="40" y="27" width="8" height="1" fill="#2ecc71"/>
+  
+  <!-- Lower engine nacelles/pods (green) -->
+  <ellipse cx="18" cy="38" rx="3" ry="5" fill="#27ae60" stroke="#2ecc71" stroke-width="0.5"/>
+  <ellipse cx="42" cy="38" rx="3" ry="5" fill="#27ae60" stroke="#2ecc71" stroke-width="0.5"/>
+  
+  <!-- Green accent bands on pods -->
+  <rect x="16" y="40" width="4" height="2.5" fill="#2ecc71" rx="1"/>
+  <rect x="40" y="40" width="4" height="2.5" fill="#2ecc71" rx="1"/>
+  
+  <!-- Central engine (green glow) -->
+  <ellipse cx="30" cy="46" rx="4" ry="3" fill="#333333"/>
+  <ellipse cx="30" cy="50" rx="5" ry="4" fill="#27ae60" opacity="0.9"/>
+  <ellipse cx="30" cy="52" rx="4" ry="3" fill="#2ecc71" opacity="0.7"/>
+  <ellipse cx="30" cy="54" rx="3" ry="2" fill="#229954" opacity="0.5"/>
+  
+  <!-- Side engines (green glow) -->
+  <ellipse cx="18" cy="44" rx="2.5" ry="2" fill="#333333"/>
+  <ellipse cx="18" cy="47" rx="3" ry="2.5" fill="#27ae60" opacity="0.9"/>
+  <ellipse cx="18" cy="49" rx="2.5" ry="2" fill="#2ecc71" opacity="0.7"/>
+  <ellipse cx="18" cy="50.5" rx="2" ry="1.5" fill="#229954" opacity="0.5"/>
+  
+  <ellipse cx="42" cy="44" rx="2.5" ry="2" fill="#333333"/>
+  <ellipse cx="42" cy="47" rx="3" ry="2.5" fill="#27ae60" opacity="0.9"/>
+  <ellipse cx="42" cy="49" rx="2.5" ry="2" fill="#2ecc71" opacity="0.7"/>
+  <ellipse cx="42" cy="50.5" rx="2" ry="1.5" fill="#229954" opacity="0.5"/>
+  
+  <!-- Additional structural details -->
+  <line x1="22" y1="22" x2="22" y2="32" stroke="#2ecc71" stroke-width="0.5" opacity="0.5"/>
+  <line x1="38" y1="22" x2="38" y2="32" stroke="#2ecc71" stroke-width="0.5" opacity="0.5"/>
+  
+  <!-- Colorful sparkles/sprinkles on the left side -->
+  <circle cx="10" cy="20" r="1.2" fill="#ff3333" opacity="0.9"/>
+  <circle cx="8" cy="25" r="1" fill="#ff5555" opacity="0.8"/>
+  <circle cx="11" cy="35" r="1.1" fill="#ff4444" opacity="0.85"/>
+  <circle cx="9" cy="40" r="0.9" fill="#ff6666" opacity="0.75"/>
+  <circle cx="7" cy="22" r="1" fill="#3366ff" opacity="0.9"/>
+  <circle cx="10" cy="28" r="1.2" fill="#4488ff" opacity="0.85"/>
+  <circle cx="8" cy="32" r="0.9" fill="#5599ff" opacity="0.8"/>
+  <circle cx="11" cy="38" r="1.1" fill="#3377ff" opacity="0.9"/>
+  <circle cx="9" cy="18" r="1.1" fill="#33ff66" opacity="0.85"/>
+  <circle cx="7" cy="27" r="0.9" fill="#44ff88" opacity="0.8"/>
+  <circle cx="10" cy="33" r="1" fill="#55ff99" opacity="0.9"/>
+  <circle cx="8" cy="42" r="1.2" fill="#33ff77" opacity="0.85"/>
+  <circle cx="11" cy="23" r="0.9" fill="#ffff33" opacity="0.9"/>
+  <circle cx="9" cy="30" r="1.1" fill="#ffff55" opacity="0.85"/>
+  <circle cx="7" cy="37" r="1" fill="#ffff44" opacity="0.8"/>
+  <circle cx="8" cy="24" r="1" fill="#ff33ff" opacity="0.85"/>
+  <circle cx="10" cy="31" r="1.1" fill="#ff55ff" opacity="0.9"/>
+  <circle cx="9" cy="39" r="0.9" fill="#ff44ff" opacity="0.8"/>
+  <circle cx="7" cy="26" r="1.1" fill="#33ffff" opacity="0.9"/>
+  <circle cx="11" cy="34" r="0.9" fill="#44ffff" opacity="0.85"/>
+  <circle cx="8" cy="41" r="1" fill="#55ffff" opacity="0.8"/>
+  <circle cx="9" cy="21" r="1" fill="#ff8833" opacity="0.85"/>
+  <circle cx="7" cy="29" r="1.2" fill="#ff9944" opacity="0.9"/>
+  <circle cx="10" cy="36" r="0.9" fill="#ffaa55" opacity="0.8"/>
+  
+  <!-- Colorful sparkles/sprinkles on the right side -->
+  <circle cx="50" cy="20" r="1.2" fill="#ff3333" opacity="0.9"/>
+  <circle cx="52" cy="25" r="1" fill="#ff5555" opacity="0.8"/>
+  <circle cx="49" cy="35" r="1.1" fill="#ff4444" opacity="0.85"/>
+  <circle cx="51" cy="40" r="0.9" fill="#ff6666" opacity="0.75"/>
+  <circle cx="53" cy="22" r="1" fill="#3366ff" opacity="0.9"/>
+  <circle cx="50" cy="28" r="1.2" fill="#4488ff" opacity="0.85"/>
+  <circle cx="52" cy="32" r="0.9" fill="#5599ff" opacity="0.8"/>
+  <circle cx="49" cy="38" r="1.1" fill="#3377ff" opacity="0.9"/>
+  <circle cx="51" cy="18" r="1.1" fill="#33ff66" opacity="0.85"/>
+  <circle cx="53" cy="27" r="0.9" fill="#44ff88" opacity="0.8"/>
+  <circle cx="50" cy="33" r="1" fill="#55ff99" opacity="0.9"/>
+  <circle cx="52" cy="42" r="1.2" fill="#33ff77" opacity="0.85"/>
+  <circle cx="49" cy="23" r="0.9" fill="#ffff33" opacity="0.9"/>
+  <circle cx="51" cy="30" r="1.1" fill="#ffff55" opacity="0.85"/>
+  <circle cx="53" cy="37" r="1" fill="#ffff44" opacity="0.8"/>
+  <circle cx="52" cy="24" r="1" fill="#ff33ff" opacity="0.85"/>
+  <circle cx="50" cy="31" r="1.1" fill="#ff55ff" opacity="0.9"/>
+  <circle cx="51" cy="39" r="0.9" fill="#ff44ff" opacity="0.8"/>
+  <circle cx="53" cy="26" r="1.1" fill="#33ffff" opacity="0.9"/>
+  <circle cx="49" cy="34" r="0.9" fill="#44ffff" opacity="0.85"/>
+  <circle cx="52" cy="41" r="1" fill="#55ffff" opacity="0.8"/>
+  <circle cx="51" cy="21" r="1" fill="#ff8833" opacity="0.85"/>
+  <circle cx="53" cy="29" r="1.2" fill="#ff9944" opacity="0.9"/>
+  <circle cx="50" cy="36" r="0.9" fill="#ffaa55" opacity="0.8"/>
+  
+  <!-- Colorful sparkles/sprinkles on the top -->
+  <circle cx="15" cy="8" r="1" fill="#ff3333" opacity="0.85"/>
+  <circle cx="25" cy="3" r="1.1" fill="#3366ff" opacity="0.9"/>
+  <circle cx="30" cy="2" r="1.2" fill="#33ff66" opacity="0.9"/>
+  <circle cx="35" cy="3" r="1" fill="#ffff33" opacity="0.85"/>
+  <circle cx="45" cy="8" r="1.1" fill="#ff33ff" opacity="0.9"/>
+  <circle cx="20" cy="6" r="0.9" fill="#33ffff" opacity="0.8"/>
+  <circle cx="40" cy="6" r="0.9" fill="#ff8833" opacity="0.8"/>
+  <circle cx="28" cy="4" r="0.8" fill="#ff5555" opacity="0.75"/>
+  <circle cx="32" cy="4" r="0.8" fill="#4488ff" opacity="0.75"/>
+  
+  <!-- Colorful sparkles/sprinkles on the bottom -->
+  <circle cx="15" cy="52" r="1" fill="#ff4444" opacity="0.85"/>
+  <circle cx="25" cy="57" r="1.1" fill="#5599ff" opacity="0.9"/>
+  <circle cx="30" cy="58" r="1.2" fill="#55ff99" opacity="0.9"/>
+  <circle cx="35" cy="57" r="1" fill="#ffff55" opacity="0.85"/>
+  <circle cx="45" cy="52" r="1.1" fill="#ff55ff" opacity="0.9"/>
+  <circle cx="20" cy="54" r="0.9" fill="#55ffff" opacity="0.8"/>
+  <circle cx="40" cy="54" r="0.9" fill="#ffaa55" opacity="0.8"/>
+  <circle cx="28" cy="56" r="0.8" fill="#ff6666" opacity="0.75"/>
+  <circle cx="32" cy="56" r="0.8" fill="#3377ff" opacity="0.75"/>
+  
+  <!-- Colorful sparkles/sprinkles diagonally top-left -->
+  <circle cx="4" cy="12" r="1" fill="#ff3333" opacity="0.85"/>
+  <circle cx="3" cy="15" r="0.9" fill="#3366ff" opacity="0.8"/>
+  <circle cx="5" cy="10" r="1.1" fill="#33ff66" opacity="0.9"/>
+  <circle cx="2" cy="18" r="0.8" fill="#ffff33" opacity="0.75"/>
+  
+  <!-- Colorful sparkles/sprinkles diagonally top-right -->
+  <circle cx="56" cy="12" r="1" fill="#ff4444" opacity="0.85"/>
+  <circle cx="57" cy="15" r="0.9" fill="#4488ff" opacity="0.8"/>
+  <circle cx="55" cy="10" r="1.1" fill="#44ff88" opacity="0.9"/>
+  <circle cx="58" cy="18" r="0.8" fill="#ffff44" opacity="0.75"/>
+  
+  <!-- Colorful sparkles/sprinkles diagonally bottom-left -->
+  <circle cx="4" cy="48" r="1" fill="#ff5555" opacity="0.85"/>
+  <circle cx="3" cy="45" r="0.9" fill="#5599ff" opacity="0.8"/>
+  <circle cx="5" cy="50" r="1.1" fill="#55ff99" opacity="0.9"/>
+  <circle cx="2" cy="42" r="0.8" fill="#ffff55" opacity="0.75"/>
+  
+  <!-- Colorful sparkles/sprinkles diagonally bottom-right -->
+  <circle cx="56" cy="48" r="1" fill="#ff6666" opacity="0.85"/>
+  <circle cx="57" cy="45" r="0.9" fill="#3377ff" opacity="0.8"/>
+  <circle cx="55" cy="50" r="1.1" fill="#33ff77" opacity="0.9"/>
+  <circle cx="58" cy="42" r="0.8" fill="#ffff66" opacity="0.75"/>
+  
+  <!-- Additional smaller sparkles scattered around all sides -->
+  <circle cx="6" cy="19" r="0.7" fill="#ff00ff" opacity="0.7"/>
+  <circle cx="54" cy="19" r="0.7" fill="#00ffff" opacity="0.7"/>
+  <circle cx="5" cy="28" r="0.8" fill="#ffff00" opacity="0.75"/>
+  <circle cx="55" cy="28" r="0.8" fill="#00ff00" opacity="0.75"/>
+  <circle cx="6" cy="43" r="0.7" fill="#ff0088" opacity="0.7"/>
+  <circle cx="54" cy="43" r="0.7" fill="#0088ff" opacity="0.7"/>
+  <circle cx="12" cy="5" r="0.7" fill="#ff3388" opacity="0.7"/>
+  <circle cx="48" cy="5" r="0.7" fill="#3388ff" opacity="0.7"/>
+  <circle cx="12" cy="55" r="0.7" fill="#88ff33" opacity="0.7"/>
+  <circle cx="48" cy="55" r="0.7" fill="#ff8833" opacity="0.7"/>
+  <circle cx="1" cy="30" r="0.6" fill="#ff33aa" opacity="0.65"/>
+  <circle cx="59" cy="30" r="0.6" fill="#33aaff" opacity="0.65"/>
+  <circle cx="30" cy="1" r="0.6" fill="#aaff33" opacity="0.65"/>
+  <circle cx="30" cy="59" r="0.6" fill="#ffaa33" opacity="0.65"/>
+</svg>
+
+
+

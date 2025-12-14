@@ -126,7 +126,7 @@ Universe Selector (Dropdown/Tabs)
 - `waveDuration` (number input, optional)
 
 #### Tab 2: Base Entry
-- `base.word` (text input) - **Zeichenzähler: max 30 Zeichen** ⚠️
+- `base.word` (text input) - **Zeichenzähler: max 30 Zeichen aber nur info** ⚠️
 - `base.type` (text input) - Zeichenzähler: max 20 Zeichen
 - `base.image` (text input, optional)
 - `base.visual` (expandable section):
@@ -142,7 +142,7 @@ Universe Selector (Dropdown/Tabs)
 #### Tab 3: Correct Entries
 - Liste aller Correct-Entries
 - Für jeden Entry:
-  - `entry.word` (text input) - **Zeichenzähler: max 30 Zeichen** ⚠️
+  - `entry.word` (text input) - **Zeichenzähler: max 30 Zeichen aber nur info** ⚠️
   - `entry.type` (text input)
   - `entry.image` (text input, optional)
   - `spawnPosition` (number slider 0.0-1.0)
@@ -162,7 +162,7 @@ Universe Selector (Dropdown/Tabs)
 #### Tab 4: Distractor Entries
 - Liste aller Distractor-Entries
 - Für jeden Entry:
-  - `entry.word` (text input) - **Zeichenzähler: max 30 Zeichen** ⚠️
+  - `entry.word` (text input) - **Zeichenzähler: max 30 Zeichen aber nur info** ⚠️
   - `entry.type` (text input)
   - `entry.image` (text input, optional)
   - `spawnPosition` (number slider 0.0-1.0)
@@ -194,45 +194,11 @@ Universe Selector (Dropdown/Tabs)
 - "Abbrechen" → Verwirft Änderungen
 - "Duplizieren" → Erstellt Kopie mit neuer ID
 
-### 6. Bulk Import Feature
 
-**Zugriff:**
-- Plus-Button (+) in Chapter-Editor
-- Öffnet Modal mit Textfeld
 
-**Format (Vorschlag):**
-```
-ITEM_ID|LEVEL|BASE_WORD|BASE_TYPE|CORRECT_WORD1|CORRECT_WORD2|DISTRACTOR1|DISTRACTOR2|DISTRACTOR3|DISTRACTOR4|CONTEXT
 
-Beispiel:
-BC_061|2|meeting|Noun|Besprechung|Treffen|Kaffee|Mittagessen|Pause|Kuchen|meeting = Besprechung oder Treffen
-BC_062|2|presentation|Noun|Präsentation|Vortrag|Buch|Stift|Papier|Tisch|presentation = Präsentation
-```
 
-**Parser-Funktionen:**
-- Zeilenweise Parsing
-- Validierung:
-  - Item-ID Format prüfen (z.B. `BC_001`)
-  - Level zwischen 1-6
-  - BASE_WORD max 30 Zeichen ⚠️
-  - CORRECT_WORD max 30 Zeichen ⚠️
-  - DISTRACTOR max 30 Zeichen ⚠️
-  - Keine leeren Pflichtfelder
-- Fehleranzeige:
-  - Zeile mit Fehler markieren
-  - Fehlermeldung anzeigen
-  - "Überspringen" Option für fehlerhafte Zeilen
-- Vorschau:
-  - Parsed Items als Liste anzeigen
-  - "Vorschau" Button → Zeigt JSON-Struktur
-- Import:
-  - "Importieren" Button → Fügt Items zu Chapter hinzu
-  - Bestätigung: "X Items werden hinzugefügt"
-
-**Alternative Formate (optional):**
-- JSON-Format (komplettes Item-Objekt)
-- CSV-Format
-- Markdown-Tabelle
+ 
 
 ### 7. Validierung & Zeichenzähler
 
@@ -249,19 +215,19 @@ BC_062|2|presentation|Noun|Präsentation|Vortrag|Buch|Stift|Papier|Tisch|present
 
 | Feld | Max Zeichen | Warnung ab | Blockiert ab |
 |------|-------------|------------|--------------|
-| `id` | 20 | 18 | 20 |
-| `base.word` | 30 | 27 | 30 |
-| `correct[].entry.word` | 30 | 27 | 30 |
-| `distractor[].entry.word` | 30 | 27 | 30 |
-| `context` | 200 | 180 | 200 |
-| `base.type` | 20 | 18 | 20 |
-| `entry.type` | 20 | 18 | 20 |
+| `id` | 20 | 18 | 30 |
+| `base.word` | 30 | 27 | 40 |
+| `correct[].entry.word` | 30 | 27 | 40 |
+| `distractor[].entry.word` | 30 | 27 | 40 |
+| `context` | 200 | 180 | 250 |
+| `base.type` | 20 | 18 | 30 |
+| `entry.type` | 20 | 18 | 30 |
 
 **Validierung beim Speichern:**
 - Alle Pflichtfelder ausgefüllt?
 - Zeichenlimits eingehalten?
 - Item-IDs eindeutig?
-- Level zwischen 1-6?
+- Level zwischen 1-10?
 - Mindestens 1 Correct Entry?
 - Mindestens 3 Distractor Entries?
 - JSON-Syntax gültig?
@@ -282,30 +248,12 @@ BC_062|2|presentation|Noun|Präsentation|Vortrag|Buch|Stift|Papier|Tisch|present
 
 **Passwort-Validierung:**
 - Hardcoded Passwort (z.B. in `.env.local` oder Config)
-- Oder: Passwort-Hash in Config
 - Fehler: "Falsches Passwort" Meldung
 
-**Localhost-Check:**
-```typescript
-// Am Anfang der Editor-Komponente
-useEffect(() => {
-  if (window.location.hostname !== 'localhost' && 
-      window.location.hostname !== '127.0.0.1') {
-    // Redirect oder Fehlerseite anzeigen
-    window.location.href = '/';
-  }
-}, []);
-```
 
 **Datei-Schreibvorgang:**
-- Client-seitig: Nicht möglich (Browser-Sicherheit)
-- Lösung: **Backend-API-Endpoint** oder **Vite-Plugin**
-- Oder: **Download als JSON** → User speichert manuell
-
-**Empfohlene Lösung:**
-1. **Vite Dev Server Plugin** für File-Writes (nur im Dev-Mode)
-2. Oder: **Express/Node.js Backend** für Production
-3. Oder: **Download-Funktion** → User ersetzt Dateien manuell
+- Lösung: es wird das erst nur auf localhost basis geben, da sollte schreiben gehen.
+später ziehen wir den editor auf supabase um, da ist es dann auch für jeden nutzer möglich
 
 ### 9. UI/UX Design
 

@@ -25,8 +25,8 @@ class JSONWriter {
    * @returns Success status
    */
   async saveItem(
-    universeId: string,
-    themeId: string,
+    _universeId: string,
+    _themeId: string,
     chapterId: string,
     item: Item
   ): Promise<{ success: boolean; error?: string }> {
@@ -67,8 +67,8 @@ class JSONWriter {
    * @returns Success status with errors
    */
   async saveChapter(
-    universeId: string,
-    themeId: string,
+    _universeId: string,
+    _themeId: string,
     chapterId: string,
     items: Item[]
   ): Promise<{ success: boolean; errors: string[] }> {
@@ -200,7 +200,7 @@ class JSONWriter {
       background_gradient: theme.backgroundGradient,
       laser_color: theme.laserColor,
       icon: theme.icon,
-      music: theme.music, // JSONB field
+      // Theme doesn't have music field in app format, but ThemeRow supports it
       particle_effect: theme.particleEffect,
     };
 

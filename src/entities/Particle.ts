@@ -154,7 +154,7 @@ export function createExplosion(
     return r > 200 && g > 50 && g < 200 && b < 100;
   };
   
-  const isRedOrangeExplosion = isRedOrangeColor(color);
+  // Removed unused isRedOrangeExplosion variable
   
   // Particle Count Calculation
   let finalParticleCount = particleCount;

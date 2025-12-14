@@ -8,7 +8,7 @@ interface AddNewDialogProps {
   onCancel: () => void;
 }
 
-export function AddNewDialog({ type, universeId, themeId, onAdd, onCancel }: AddNewDialogProps) {
+export function AddNewDialog({ type, universeId: _universeId, themeId: _themeId, onAdd, onCancel }: AddNewDialogProps) {
   const [formData, setFormData] = useState<any>({
     id: '',
     name: '',

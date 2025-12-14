@@ -129,12 +129,7 @@ type SavedViewState = {
 // HELPER FUNCTIONS
 // ============================================================================
 
-/** Check if chapter has any freeTier items (for guest access) */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function hasFreeTierItems(items: Item[], themeId: string, chapterId: string): boolean {
-  const chapterItems = items.filter(item => item.theme === themeId && item.chapter === chapterId);
-  return chapterItems.some(item => item.freeTier === true);
-}
+// Removed unused hasFreeTierItems function
 
 /** Load saved view state from localStorage */
 function loadViewState(): SavedViewState | null {
@@ -467,7 +462,7 @@ export const GalaxyMap: React.FC<GalaxyMapProps> = ({ onStart, initialFocus, onI
               base: { word: '', type: 'term', visual: { color: '#000', variant: 'hexagon' } },
               correct: [],
               distractors: [],
-              meta: { source: 'layout', tags: [], relatedEntries: [], difficultyScaling: { speedMultiplierPerReplay: 1, colorContrastFade: false } }
+              meta: { source: 'layout', tags: [], related: [], difficultyScaling: { speedMultiplierPerReplay: 1, colorContrastFade: false } }
             });
           }
         }

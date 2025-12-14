@@ -84,7 +84,7 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
   const [isPausedByContext, setIsPausedByContext] = useState(false); // Pause caused by context message
   
   // Context message timers
-  const contextTimerRef = useRef<number | null>(null);
+  const contextTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   
   // Input state - use refs to avoid re-creating game loop callbacks
   const mousePos = useRef<Vector2 | null>(null);

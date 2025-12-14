@@ -11,8 +11,7 @@ interface DetailViewProps {
   onBack: () => void;
 }
 
-const MAX_CONTEXT_LENGTH = 60;
-const MAX_WORD_LENGTH = 30;
+// Removed unused constants
 
 export function DetailView({ item, allItems, onItemChange, onBack }: DetailViewProps) {
   const [localItem, setLocalItem] = useState<Item | null>(item);
@@ -207,32 +206,7 @@ export function DetailView({ item, allItems, onItemChange, onBack }: DetailViewP
     );
   };
 
-  const renderTextarea = (
-    label: string,
-    path: string,
-    value: string,
-    maxLength: number,
-    placeholder: string = ''
-  ) => {
-    const isWarning = value.length > maxLength;
-    return (
-      <div className="editor-form-group">
-        <label className="editor-form-label">{label}</label>
-        <textarea
-          className={`editor-form-textarea ${isWarning ? 'warning' : ''}`}
-          value={value}
-          onChange={(e) => handleFieldChange(path, e.target.value)}
-          placeholder={placeholder}
-          rows={3}
-        />
-        {value.length > 0 && (
-          <span className={`editor-form-hint ${isWarning ? 'warning' : ''}`}>
-            {value.length}/{maxLength} {isWarning ? '⚠️ Too long!' : 'characters'}
-          </span>
-        )}
-      </div>
-    );
-  };
+  // Removed unused renderTextarea function
 
   return (
     <div className="editor-detail-container">

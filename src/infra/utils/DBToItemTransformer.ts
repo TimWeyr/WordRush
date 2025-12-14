@@ -79,9 +79,10 @@ export function transformRoundsToItems(rounds: RoundRow[], items: ItemRow[], the
         source: round.meta_source ?? undefined,
         tags: round.meta_tags ?? undefined,
         related: round.meta_related ?? undefined,
-        difficultyScaling: round.meta_difficulty_scaling ?? {
-          speedMultiplierPerReplay: 1.1,
-          colorContrastFade: false
+        difficultyScaling: {
+          speedMultiplierPerReplay: round.meta_difficulty_scaling?.speedMultiplierPerReplay ?? 1.1,
+          colorContrastFade: round.meta_difficulty_scaling?.colorContrastFade ?? false,
+          angleVariance: round.meta_difficulty_scaling?.angleVariance
         }
       },
       roundUuid: round.uuid ?? undefined // Add round UUID if available
@@ -209,10 +210,10 @@ export function transformUniverseRow(row: UniverseRow, themes: string[]): Univer
     shipSkin: row.ship_skin ?? undefined,
     laserColor: row.laser_color ?? undefined,
     themes, // Provided by caller
-    meta: row.meta || {
-      author: 'Unknown',
-      version: '1.0',
-      created: new Date().toISOString()
+    meta: {
+      author: row.meta?.author ?? 'Unknown',
+      version: row.meta?.version ?? '1.0',
+      created: row.meta?.created ?? new Date().toISOString()
     }
   };
 }
@@ -231,10 +232,10 @@ export function transformThemeRow(row: ThemeRow, chaptersMap: Record<string, Cha
     backgroundGradient: row.background_gradient || ['#0d1b2a', '#1b263b'],
     icon: row.icon || '🎓',
     available: true,
-    language: row.language || 'en',
+    language: 'en', // ThemeRow doesn't have language field, use default
     chapters: chaptersMap, // Provided by caller
     meta: {
-      author: 'Unknown',
+      author: 'Unknown', // ThemeRow doesn't have meta field, use defaults
       version: '1.0',
       created: new Date().toISOString()
     },

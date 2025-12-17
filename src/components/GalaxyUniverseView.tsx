@@ -280,6 +280,11 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     const focused = findFocusedPlanet(planetLayoutsRef.current, screenCenterX, screenCenterY);
     setFocusedPlanetId(focused);
     
+    // TEMPORARY DIAGNOSTIC MODE: Auto-snap disabled
+    // "Ensure at least one planet is visible" block commented out.
+    // Snap only happens via explicit input ends (MouseUp/TouchEnd/Wheel).
+    // This helps isolate whether instability comes from auto-snap logic.
+    /*
     // Ensure at least one planet is visible on screen
     // Check if focused planet is within screen bounds
     if (focused) {
@@ -332,6 +337,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
         }
       }
     }
+    */
   }, [renderer, themes, rotationAngle]);
   
   useEffect(() => {

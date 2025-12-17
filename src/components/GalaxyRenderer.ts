@@ -600,12 +600,18 @@ export function renderPlanetNameLabel(
   
   // Position: top-right area
   const padding = 20;
+  const maxWidth = canvas.width - padding * 2; // Available width for text
   const x = canvas.width - padding;
   const y = 60; // Below controls
   
+  // Responsive font size (smaller on mobile)
+  const isMobile = canvas.width < 768;
+  const fontSize = isMobile ? 20 : 28;
+  const lineHeight = fontSize * 1.2;
+  
   // Text style
   ctx.fillStyle = universe.colorPrimary;
-  ctx.font = 'bold 28px Arial, sans-serif';
+  ctx.font = `bold ${fontSize}px Arial, sans-serif`;
   ctx.textAlign = 'right';
   ctx.textBaseline = 'top';
   
@@ -615,7 +621,38 @@ export function renderPlanetNameLabel(
   ctx.shadowOffsetX = 0;
   ctx.shadowOffsetY = 0;
   
-  ctx.fillText(planetName, x, y);
+  // Text wrapping for mobile (if text is too long)
+  if (isMobile) {
+    const words = planetName.split(' ');
+    const lines: string[] = [];
+    let currentLine = '';
+    
+    for (const word of words) {
+      const testLine = currentLine ? `${currentLine} ${word}` : word;
+      const metrics = ctx.measureText(testLine);
+      
+      if (metrics.width > maxWidth && currentLine) {
+        // Current line is full, start new line
+        lines.push(currentLine);
+        currentLine = word;
+      } else {
+        currentLine = testLine;
+      }
+    }
+    
+    // Add last line
+    if (currentLine) {
+      lines.push(currentLine);
+    }
+    
+    // Render each line, right-aligned
+    lines.forEach((line, index) => {
+      ctx.fillText(line, x, y + index * lineHeight);
+    });
+  } else {
+    // Desktop: single line, no wrapping
+    ctx.fillText(planetName, x, y);
+  }
   
   ctx.restore();
 }

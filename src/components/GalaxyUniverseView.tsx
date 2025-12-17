@@ -434,6 +434,12 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       rotationAngleRef.current = newAngle;
       
       if (progress >= 1) {
+        // [SNAP end] - Log when snap finishes
+        console.log('[SNAP end]', {
+          finalAngle: rotationAngleRef.current.toFixed(4),
+          planetId: snapPlanetIdRef.current
+        });
+        
         isSnappingRef.current = false;
         velocityRef.current = 0;
         snapPlanetIdRef.current = null; // Clear frozen snap target
@@ -473,6 +479,12 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     // Prevent starting a new snap while one is already running (prevents oscillation)
     if (isSnappingRef.current) return;
     
+    // [SNAP start] - Log before selecting nearestVisiblePlanet
+    console.log('[SNAP start]', {
+      rotation: rotationAngleRef.current,
+      isSnapping: isSnappingRef.current
+    });
+    
     if (themes.length === 0 || !renderer) return;
     
     const canvas = renderer.getContext().canvas;
@@ -493,6 +505,15 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       
       if (isVisible) {
         const distance = Math.hypot(planet.x - screenCenterX, planet.y - screenCenterY);
+        
+        // [SNAP candidate] - Log each visible planet candidate
+        console.log('[SNAP candidate]', {
+          planetId: planet.id,
+          distance: distance.toFixed(2),
+          x: planet.x.toFixed(1),
+          y: planet.y.toFixed(1)
+        });
+        
         if (distance < smallestDistance) {
           smallestDistance = distance;
           nearestVisiblePlanet = planet;
@@ -515,6 +536,14 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
         // Find how many full rotations we need to add/subtract
         const k = Math.round((current - baseAngle) / (Math.PI * 2));
         const targetAngle = baseAngle + k * (Math.PI * 2);
+        
+        // [SNAP target] - Log when snap target is chosen
+        console.log('[SNAP target]', {
+          planetId: nearestVisiblePlanet.id,
+          baseAngle: baseAngle.toFixed(4),
+          targetAngle: targetAngle.toFixed(4),
+          current: rotationAngleRef.current.toFixed(4)
+        });
         
         // Start snapping animation
         isSnappingRef.current = true;
@@ -541,6 +570,15 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       } else {
         snapPlanetIdRef.current = null;
       }
+      
+      // [SNAP target] - Log fallback snap target
+      console.log('[SNAP target]', {
+        planetId: snapPlanetIdRef.current,
+        baseAngle: baseAngle.toFixed(4),
+        targetAngle: targetAngle.toFixed(4),
+        current: rotationAngleRef.current.toFixed(4),
+        fallback: true
+      });
       
       isSnappingRef.current = true;
       snapStartTimeRef.current = performance.now();

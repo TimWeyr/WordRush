@@ -493,9 +493,25 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     const angleStep = (Math.PI * 2) / themes.length;
     const current = rotationAngleRef.current;
     
+    // Snap threshold: 35% of angle step (prevents snap-back on small movements)
+    const SNAP_THRESHOLD = angleStep * 0.35;
+    
     // Find nearest planet index by angle (works for any rotation value, positive or negative)
     const nearestIndex = Math.round(current / angleStep);
-    const baseAngle = nearestIndex * angleStep;
+    const nearestAngle = nearestIndex * angleStep;
+    
+    // Skip snap if movement is too small (prevents immediate snap-back)
+    if (Math.abs(current - nearestAngle) < SNAP_THRESHOLD) {
+      console.log('[SNAP skipped: below threshold]', {
+        current: current.toFixed(4),
+        nearestAngle: nearestAngle.toFixed(4),
+        diff: Math.abs(current - nearestAngle).toFixed(4),
+        threshold: SNAP_THRESHOLD.toFixed(4)
+      });
+      return;
+    }
+    
+    const baseAngle = nearestAngle;
     
     // Snap to nearest equivalent angle (prevents visible jumps across full rotations)
     const k = Math.round((current - baseAngle) / (Math.PI * 2));

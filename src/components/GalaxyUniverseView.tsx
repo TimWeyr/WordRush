@@ -108,6 +108,8 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   const dragStartAngleRef = useRef(0);
   const lastDragXRef = useRef(0);
   const lastDragTimeRef = useRef(0);
+  const lastWheelTimeRef = useRef(0);
+  const wheelActiveRef = useRef(false);
   
   // Layout cache
   const planetLayoutsRef = useRef<PlanetLayout[]>([]);
@@ -677,8 +679,17 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
       
+      // Track wheel gesture as continuous
+      lastWheelTimeRef.current = performance.now();
+      wheelActiveRef.current = true;
+      
+      // If user is still scrolling during snap, cancel snap and take control
+      if (isSnappingRef.current) {
+        isSnappingRef.current = false;
+        snapPlanetIdRef.current = null;
+      }
+      
       // TEMPORARY: Touch/mouse distinction removed
-      // NOTE: Do NOT cancel ongoing snap - let it finish cleanly
       const delta = e.deltaY * WHEEL_SENSITIVITY;
       // Direct mutation of game state (no React state update)
       rotationAngleRef.current -= delta;
@@ -689,12 +700,14 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
         clearTimeout(wheelTimeout);
       }
       
-      // INERTIA DISABLED: Snap immediately after wheel stops
+      // Snap only once after >=200ms of wheel silence (prevents repeated snap cycles)
       wheelTimeout = setTimeout(() => {
-        if (!isDraggingRef.current) {
+        const quietMs = performance.now() - lastWheelTimeRef.current;
+        if (quietMs >= 200 && !isDraggingRef.current) {
+          wheelActiveRef.current = false;
           snapToNearestPlanet();
         }
-      }, 150); // Shorter delay since no inertia
+      }, 220);
     };
     
     canvas.addEventListener('wheel', handleWheel, { passive: false });

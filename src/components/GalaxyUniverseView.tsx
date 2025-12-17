@@ -84,12 +84,13 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   // ROTATION STATE
   // ============================================================================
   
-  // IMPORTANT: rotationAngleRef is an imperative game state, NOT React state.
+  // IMPORTANT: rotationAngleRef and focusedPlanetIdRef are imperative game state, NOT React state.
   // This prevents async state commits and micro-oscillations during continuous rotation.
-  // The GameLoop (update/render) is the sole source of truth for rotation.
+  // The GameLoop (update/render) is the sole source of truth for rotation and focus.
   // DO NOT convert back to React state - this separation is intentional.
+  // React state updates inside GameLoop paths cause feedback loops and jitter.
   const rotationAngleRef = useRef(0);
-  const [focusedPlanetId, setFocusedPlanetId] = useState<string | null>(null);
+  const focusedPlanetIdRef = useRef<string | null>(null);
   const velocityRef = useRef(0); // Angular velocity for inertia
   const isSnappingRef = useRef(false);
   const snapStartTimeRef = useRef(0);
@@ -166,7 +167,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     if (initialFocusedPlanetId) {
       const targetAngle = calculateRotationAngleForPlanet(loadedThemes, initialFocusedPlanetId);
       rotationAngleRef.current = targetAngle;
-      setFocusedPlanetId(initialFocusedPlanetId);
+      focusedPlanetIdRef.current = initialFocusedPlanetId;
     }
     
     // Save selection
@@ -279,10 +280,11 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     );
     
     // Update focused planet (find closest planet to screen center)
+    // IMPORTANT: Direct ref assignment, NO React setState in GameLoop path
     const screenCenterX = canvas.width / 2;
     const screenCenterY = canvas.height / 2;
     const focused = findFocusedPlanet(planetLayoutsRef.current, screenCenterX, screenCenterY);
-    setFocusedPlanetId(focused);
+    focusedPlanetIdRef.current = focused;
     
     // TEMPORARY DIAGNOSTIC MODE: Auto-snap disabled
     // "Ensure at least one planet is visible" block commented out.
@@ -344,22 +346,9 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     */
   }, [renderer, themes]);
   
-  // NOTE: calculateLayouts now reads from rotationAngleRef.current directly.
-  // No dependency on rotationAngle needed - layout is recalculated on every render.
-  // The GameLoop ensures continuous updates.
-  useEffect(() => {
-    // Throttle calculateLayouts during dragging to prevent race conditions
-    if (isDraggingRef.current) {
-      // During drag, only calculate layout every few frames
-      const timeoutId = setTimeout(() => {
-        calculateLayouts();
-      }, 16); // ~1 frame at 60fps
-      return () => clearTimeout(timeoutId);
-    } else {
-      // When not dragging, calculate immediately
-      calculateLayouts();
-    }
-  }, [calculateLayouts]);
+  // NOTE: calculateLayouts is now called ONLY inside the GameLoop render() function.
+  // This ensures no React state updates happen in GameLoop paths, preventing feedback loops.
+  // The duplicate useEffect that called calculateLayouts() has been removed.
   
   // ============================================================================
   // RENDERING
@@ -404,19 +393,20 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     renderPlanetOrbit(orbitRadius, 0, canvas.height, renderContext);
     
     // Layer 4: Planets
+    // IMPORTANT: Use focusedPlanetIdRef.current (not React state) to avoid feedback loops
     for (const planet of planetLayoutsRef.current) {
-      const isFocused = planet.id === focusedPlanetId;
+      const isFocused = planet.id === focusedPlanetIdRef.current;
       renderUniversePlanet(planet, isFocused, renderContext);
     }
     
     // Layer 5: Planet name label (if focused)
-    if (focusedPlanetId) {
-      const focusedPlanet = planetLayoutsRef.current.find(p => p.id === focusedPlanetId);
+    if (focusedPlanetIdRef.current) {
+      const focusedPlanet = planetLayoutsRef.current.find(p => p.id === focusedPlanetIdRef.current);
       if (focusedPlanet) {
         renderPlanetNameLabel(focusedPlanet.theme.name, selectedUniverse, renderContext);
       }
     }
-  }, [renderer, selectedUniverse, sunImage, focusedPlanetId]);
+  }, [renderer, selectedUniverse, sunImage]);
   
   // ============================================================================
   // UPDATE LOOP (Inertia & Snapping)

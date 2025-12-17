@@ -33,11 +33,9 @@ const ORBIT_RADIUS_FACTOR = 0.55; // 55% of screen diagonal
 // touch-specific logic or from snap/layout logic.
 // ============================================================================
 
-/** Inertia decay factor (higher = faster decay) */
-const INERTIA_DECAY = 0.92;
-
-/** Minimum velocity for inertia to continue */
-const MIN_INERTIA_VELOCITY = 0.003;
+// INERTIA DISABLED: These constants are not used anymore
+// const INERTIA_DECAY = 0.92;
+// const MIN_INERTIA_VELOCITY = 0.003;
 
 /** Snapping animation duration (ms) */
 const SNAP_DURATION = 400;
@@ -407,7 +405,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   // UPDATE LOOP (Inertia & Snapping)
   // ============================================================================
   
-  const update = useCallback((deltaTime: number) => {
+  const update = useCallback((_deltaTime: number) => {
     if (isSnappingRef.current) {
       // Snapping animation
       const elapsed = performance.now() - snapStartTimeRef.current;
@@ -425,11 +423,12 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
         isSnappingRef.current = false;
         velocityRef.current = 0;
       }
-    } else if (!isDraggingRef.current && Math.abs(velocityRef.current) > MIN_INERTIA_VELOCITY) {
-      // Inertia - TEMPORARY: Same decay for all inputs (touch == mouse)
-      setRotationAngle(prev => prev + velocityRef.current * deltaTime * 60);
-      velocityRef.current *= INERTIA_DECAY;
     }
+    // INERTIA DISABLED: No after-scroll effects, immediate snap only
+    // else if (!isDraggingRef.current && Math.abs(velocityRef.current) > MIN_INERTIA_VELOCITY) {
+    //   setRotationAngle(prev => prev + velocityRef.current * deltaTime * 60);
+    //   velocityRef.current *= INERTIA_DECAY;
+    // }
   }, []);
   
   // ============================================================================
@@ -551,19 +550,10 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     // TEMPORARY: Touch/mouse distinction removed
     if (isDraggingRef.current) {
       isDraggingRef.current = false;
+      velocityRef.current = 0; // Clear velocity (inertia disabled)
       
-      // Start inertia or snap (same logic for all inputs)
-      if (Math.abs(velocityRef.current) < 0.02) {
-        // Small velocity: snap immediately
-        snapToNearestPlanet();
-      } else {
-        // High velocity: let inertia run, then snap
-        setTimeout(() => {
-          if (!isDraggingRef.current && Math.abs(velocityRef.current) < MIN_INERTIA_VELOCITY) {
-            snapToNearestPlanet();
-          }
-        }, 300);
-      }
+      // INERTIA DISABLED: Always snap immediately, no after-scroll
+      snapToNearestPlanet();
     }
   };
   
@@ -612,19 +602,19 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       isSnappingRef.current = false;
       const delta = e.deltaY * WHEEL_SENSITIVITY;
       setRotationAngle(prev => prev - delta);
-      velocityRef.current = -delta * 0.3; // Reduced velocity for smoother feel
+      velocityRef.current = 0; // INERTIA DISABLED: No velocity accumulation
       
       // Clear previous timeout
       if (wheelTimeout) {
         clearTimeout(wheelTimeout);
       }
       
-      // Snap after wheel stops (with longer delay for better feel)
+      // INERTIA DISABLED: Snap immediately after wheel stops
       wheelTimeout = setTimeout(() => {
-        if (!isDraggingRef.current && Math.abs(velocityRef.current) < MIN_INERTIA_VELOCITY) {
+        if (!isDraggingRef.current) {
           snapToNearestPlanet();
         }
-      }, 300);
+      }, 150); // Shorter delay since no inertia
     };
     
     canvas.addEventListener('wheel', handleWheel, { passive: false });
@@ -682,22 +672,13 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   };
   
   const handleTouchEnd = () => {
-    // TEMPORARY: Touch uses exact same logic as mouse (including inertia)
+    // TEMPORARY: Touch uses exact same logic as mouse
     if (isDraggingRef.current) {
       isDraggingRef.current = false;
+      velocityRef.current = 0; // Clear velocity (inertia disabled)
       
-      // Same inertia/snap logic as mouse
-      if (Math.abs(velocityRef.current) < 0.02) {
-        // Small velocity: snap immediately
-        snapToNearestPlanet();
-      } else {
-        // High velocity: let inertia run, then snap
-        setTimeout(() => {
-          if (!isDraggingRef.current && Math.abs(velocityRef.current) < MIN_INERTIA_VELOCITY) {
-            snapToNearestPlanet();
-          }
-        }, 300);
-      }
+      // INERTIA DISABLED: Always snap immediately, no after-scroll
+      snapToNearestPlanet();
     }
   };
   

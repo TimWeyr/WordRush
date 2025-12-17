@@ -481,113 +481,46 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     // Prevent starting a new snap while one is already running (prevents oscillation)
     if (isSnappingRef.current) return;
     
-    // [SNAP start] - Log before selecting nearestVisiblePlanet
+    // [SNAP start] - Log before angle-based snap calculation
     console.log('[SNAP start]', {
       rotation: rotationAngleRef.current,
       isSnapping: isSnappingRef.current
     });
     
-    if (themes.length === 0 || !renderer) return;
+    if (themes.length === 0) return;
     
-    const canvas = renderer.getContext().canvas;
-    const screenCenterX = canvas.width / 2;
-    const screenCenterY = canvas.height / 2;
+    // PURE ANGLE-BASED SNAP: No distance, visibility, or screen position used
+    const angleStep = (Math.PI * 2) / themes.length;
+    const current = rotationAngleRef.current;
     
-    // Find nearest VISIBLE planet (within screen bounds)
-    let nearestVisiblePlanet: PlanetLayout | null = null;
-    let smallestDistance = Infinity;
+    // Find nearest planet index by angle (works for any rotation value, positive or negative)
+    const nearestIndex = Math.round(current / angleStep);
+    const baseAngle = nearestIndex * angleStep;
     
-    for (const planet of planetLayoutsRef.current) {
-      // Check if planet is visible (within screen bounds + margin)
-      const isVisible = 
-        planet.x >= -100 && 
-        planet.x <= canvas.width + 100 &&
-        planet.y >= -100 && 
-        planet.y <= canvas.height + 100;
-      
-      if (isVisible) {
-        const distance = Math.hypot(planet.x - screenCenterX, planet.y - screenCenterY);
-        
-        // [SNAP candidate] - Log each visible planet candidate
-        console.log('[SNAP candidate]', {
-          planetId: planet.id,
-          distance: distance.toFixed(2),
-          x: planet.x.toFixed(1),
-          y: planet.y.toFixed(1)
-        });
-        
-        if (distance < smallestDistance) {
-          smallestDistance = distance;
-          nearestVisiblePlanet = planet;
-        }
-      }
-    }
+    // Snap to nearest equivalent angle (prevents visible jumps across full rotations)
+    const k = Math.round((current - baseAngle) / (Math.PI * 2));
+    const targetAngle = baseAngle + k * (Math.PI * 2);
     
-    // If we found a visible planet, snap to it
-    if (nearestVisiblePlanet) {
-      // Freeze snap target planet ID to prevent focus switching during snap
-      snapPlanetIdRef.current = nearestVisiblePlanet.id;
-      
-      const planetIndex = themes.findIndex(t => t.id === nearestVisiblePlanet!.id);
-      if (planetIndex !== -1) {
-        const angleStep = (Math.PI * 2) / themes.length;
-        const baseAngle = planetIndex * angleStep;
-        const current = rotationAngleRef.current;
-        
-        // Snap to nearest equivalent angle (prevents visible jumps)
-        // Find how many full rotations we need to add/subtract
-        const k = Math.round((current - baseAngle) / (Math.PI * 2));
-        const targetAngle = baseAngle + k * (Math.PI * 2);
-        
-        // [SNAP target] - Log when snap target is chosen
-        console.log('[SNAP target]', {
-          planetId: nearestVisiblePlanet.id,
-          baseAngle: baseAngle.toFixed(4),
-          targetAngle: targetAngle.toFixed(4),
-          current: rotationAngleRef.current.toFixed(4)
-        });
-        
-        // Start snapping animation
-        isSnappingRef.current = true;
-        snapStartTimeRef.current = performance.now();
-        snapStartAngleRef.current = rotationAngleRef.current;
-        snapTargetAngleRef.current = targetAngle;
-        velocityRef.current = 0;
-      }
-    } else {
-      // Fallback: If no planet is visible, snap to nearest by angle
-      const angleStep = (Math.PI * 2) / themes.length;
-      const normalizedAngle = ((rotationAngleRef.current % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2);
-      const nearestPlanetIndex = Math.round(normalizedAngle / angleStep);
-      const baseAngle = nearestPlanetIndex * angleStep;
-      const current = rotationAngleRef.current;
-      
-      // Snap to nearest equivalent angle (prevents visible jumps)
-      const k = Math.round((current - baseAngle) / (Math.PI * 2));
-      const targetAngle = baseAngle + k * (Math.PI * 2);
-      
-      // For fallback, find the planet ID from the index
-      if (nearestPlanetIndex >= 0 && nearestPlanetIndex < themes.length) {
-        snapPlanetIdRef.current = themes[nearestPlanetIndex].id;
-      } else {
-        snapPlanetIdRef.current = null;
-      }
-      
-      // [SNAP target] - Log fallback snap target
-      console.log('[SNAP target]', {
-        planetId: snapPlanetIdRef.current,
-        baseAngle: baseAngle.toFixed(4),
-        targetAngle: targetAngle.toFixed(4),
-        current: rotationAngleRef.current.toFixed(4),
-        fallback: true
-      });
-      
-      isSnappingRef.current = true;
-      snapStartTimeRef.current = performance.now();
-      snapStartAngleRef.current = rotationAngleRef.current;
-      snapTargetAngleRef.current = targetAngle;
-      velocityRef.current = 0;
-    }
+    // Get planet ID from index (handle negative indices with modulo)
+    const safeIndex = ((nearestIndex % themes.length) + themes.length) % themes.length;
+    snapPlanetIdRef.current = themes[safeIndex].id;
+    
+    // [SNAP target] - Log angle-based snap target
+    console.log('[SNAP target]', {
+      planetId: snapPlanetIdRef.current,
+      baseAngle: baseAngle.toFixed(4),
+      targetAngle: targetAngle.toFixed(4),
+      current: rotationAngleRef.current.toFixed(4),
+      nearestIndex: nearestIndex,
+      safeIndex: safeIndex
+    });
+    
+    // Start snapping animation
+    isSnappingRef.current = true;
+    snapStartTimeRef.current = performance.now();
+    snapStartAngleRef.current = rotationAngleRef.current;
+    snapTargetAngleRef.current = targetAngle;
+    velocityRef.current = 0;
   }, [themes, renderer]);
   
   // ============================================================================

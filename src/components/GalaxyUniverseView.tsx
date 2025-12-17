@@ -96,6 +96,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   const snapStartTimeRef = useRef(0);
   const snapStartAngleRef = useRef(0);
   const snapTargetAngleRef = useRef(0);
+  const snapPlanetIdRef = useRef<string | null>(null); // Frozen snap target planet ID
   
   // ============================================================================
   // INPUT STATE
@@ -281,10 +282,15 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     
     // Update focused planet (find closest planet to screen center)
     // IMPORTANT: Direct ref assignment, NO React setState in GameLoop path
-    const screenCenterX = canvas.width / 2;
-    const screenCenterY = canvas.height / 2;
-    const focused = findFocusedPlanet(planetLayoutsRef.current, screenCenterX, screenCenterY);
-    focusedPlanetIdRef.current = focused;
+    // During snap, use frozen snap target planet ID to prevent focus switching
+    if (isSnappingRef.current && snapPlanetIdRef.current) {
+      focusedPlanetIdRef.current = snapPlanetIdRef.current;
+    } else {
+      const screenCenterX = canvas.width / 2;
+      const screenCenterY = canvas.height / 2;
+      const focused = findFocusedPlanet(planetLayoutsRef.current, screenCenterX, screenCenterY);
+      focusedPlanetIdRef.current = focused;
+    }
     
     // TEMPORARY DIAGNOSTIC MODE: Auto-snap disabled
     // "Ensure at least one planet is visible" block commented out.
@@ -430,6 +436,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       if (progress >= 1) {
         isSnappingRef.current = false;
         velocityRef.current = 0;
+        snapPlanetIdRef.current = null; // Clear frozen snap target
       }
     }
     // INERTIA DISABLED: No after-scroll effects, immediate snap only
@@ -495,6 +502,9 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     
     // If we found a visible planet, snap to it
     if (nearestVisiblePlanet) {
+      // Freeze snap target planet ID to prevent focus switching during snap
+      snapPlanetIdRef.current = nearestVisiblePlanet.id;
+      
       const planetIndex = themes.findIndex(t => t.id === nearestVisiblePlanet!.id);
       if (planetIndex !== -1) {
         const angleStep = (Math.PI * 2) / themes.length;
@@ -525,6 +535,13 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       const k = Math.round((current - baseAngle) / (Math.PI * 2));
       const targetAngle = baseAngle + k * (Math.PI * 2);
       
+      // For fallback, find the planet ID from the index
+      if (nearestPlanetIndex >= 0 && nearestPlanetIndex < themes.length) {
+        snapPlanetIdRef.current = themes[nearestPlanetIndex].id;
+      } else {
+        snapPlanetIdRef.current = null;
+      }
+      
       isSnappingRef.current = true;
       snapStartTimeRef.current = performance.now();
       snapStartAngleRef.current = rotationAngleRef.current;
@@ -541,6 +558,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     // TEMPORARY: Touch/mouse distinction removed - all inputs treated equally
     isDraggingRef.current = true;
     isSnappingRef.current = false;
+    snapPlanetIdRef.current = null; // Clear frozen snap target when drag starts
     velocityRef.current = 0;
     
     dragStartXRef.current = e.clientX;
@@ -664,6 +682,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       // TEMPORARY: Touch uses exact same logic as mouse
       isDraggingRef.current = true;
       isSnappingRef.current = false;
+      snapPlanetIdRef.current = null; // Clear frozen snap target when drag starts
       velocityRef.current = 0;
       
       dragStartXRef.current = e.touches[0].clientX;

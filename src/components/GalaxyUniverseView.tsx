@@ -463,6 +463,9 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   // ============================================================================
   
   const snapToNearestPlanet = useCallback(() => {
+    // Prevent starting a new snap while one is already running (prevents oscillation)
+    if (isSnappingRef.current) return;
+    
     if (themes.length === 0 || !renderer) return;
     
     const canvas = renderer.getContext().canvas;
@@ -619,7 +622,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       e.preventDefault();
       
       // TEMPORARY: Touch/mouse distinction removed
-      isSnappingRef.current = false;
+      // NOTE: Do NOT cancel ongoing snap - let it finish cleanly
       const delta = e.deltaY * WHEEL_SENSITIVITY;
       // Direct mutation of game state (no React state update)
       rotationAngleRef.current -= delta;

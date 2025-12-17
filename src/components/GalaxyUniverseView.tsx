@@ -495,7 +495,13 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       const planetIndex = themes.findIndex(t => t.id === nearestVisiblePlanet!.id);
       if (planetIndex !== -1) {
         const angleStep = (Math.PI * 2) / themes.length;
-        const targetAngle = planetIndex * angleStep;
+        const baseAngle = planetIndex * angleStep;
+        const current = rotationAngleRef.current;
+        
+        // Snap to nearest equivalent angle (prevents visible jumps)
+        // Find how many full rotations we need to add/subtract
+        const k = Math.round((current - baseAngle) / (Math.PI * 2));
+        const targetAngle = baseAngle + k * (Math.PI * 2);
         
         // Start snapping animation
         isSnappingRef.current = true;
@@ -505,11 +511,16 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
         velocityRef.current = 0;
       }
     } else {
-      // Fallback: If no planet is visible, snap to nearest by angle (old behavior)
+      // Fallback: If no planet is visible, snap to nearest by angle
       const angleStep = (Math.PI * 2) / themes.length;
       const normalizedAngle = ((rotationAngleRef.current % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2);
       const nearestPlanetIndex = Math.round(normalizedAngle / angleStep);
-      const targetAngle = nearestPlanetIndex * angleStep;
+      const baseAngle = nearestPlanetIndex * angleStep;
+      const current = rotationAngleRef.current;
+      
+      // Snap to nearest equivalent angle (prevents visible jumps)
+      const k = Math.round((current - baseAngle) / (Math.PI * 2));
+      const targetAngle = baseAngle + k * (Math.PI * 2);
       
       isSnappingRef.current = true;
       snapStartTimeRef.current = performance.now();

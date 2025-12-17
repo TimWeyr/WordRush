@@ -105,8 +105,10 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   // TEMPORARY: All touch-specific refs removed for diagnostic mode
   const isDraggingRef = useRef(false);
   const dragStartXRef = useRef(0);
+  const dragStartYRef = useRef(0);
   const dragStartAngleRef = useRef(0);
   const lastDragXRef = useRef(0);
+  const lastDragYRef = useRef(0);
   const lastDragTimeRef = useRef(0);
   const lastWheelTimeRef = useRef(0);
   const wheelActiveRef = useRef(false);
@@ -494,7 +496,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     const current = rotationAngleRef.current;
     
     // Snap threshold: 35% of angle step (prevents snap-back on small movements)
-    const SNAP_THRESHOLD = angleStep * 0.35;
+    const SNAP_THRESHOLD = angleStep * 1;
     
     // Find nearest planet index by angle (works for any rotation value, positive or negative)
     const nearestIndex = Math.round(current / angleStep);
@@ -686,8 +688,10 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       velocityRef.current = 0;
       
       dragStartXRef.current = e.touches[0].clientX;
+      dragStartYRef.current = e.touches[0].clientY;
       dragStartAngleRef.current = rotationAngleRef.current;
       lastDragXRef.current = e.touches[0].clientX;
+      lastDragYRef.current = e.touches[0].clientY;
       lastDragTimeRef.current = performance.now();
     }
   };
@@ -696,9 +700,17 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     if (e.touches.length === 1 && isDraggingRef.current) {
       e.preventDefault();
       
-      // TEMPORARY: Touch uses exact same sensitivity and logic as mouse
+      // Support both horizontal and vertical swiping
+      // Use dominant direction (prefer horizontal if equal)
       const deltaX = e.touches[0].clientX - dragStartXRef.current;
-      const newAngle = dragStartAngleRef.current + deltaX * DRAG_SENSITIVITY;
+      const deltaY = e.touches[0].clientY - dragStartYRef.current;
+      const absDeltaX = Math.abs(deltaX);
+      const absDeltaY = Math.abs(deltaY);
+      
+      // Use dominant direction for rotation (horizontal preferred if equal)
+      const dominantDelta = absDeltaX >= absDeltaY ? deltaX : deltaY;
+      const newAngle = dragStartAngleRef.current + dominantDelta * DRAG_SENSITIVITY;
+      
       // Direct mutation of game state (no React state update)
       rotationAngleRef.current = newAngle;
       
@@ -706,11 +718,16 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       const now = performance.now();
       const timeDelta = now - lastDragTimeRef.current;
       if (timeDelta > 0) {
-        const xDelta = e.touches[0].clientX - lastDragXRef.current;
-        velocityRef.current = (xDelta * DRAG_SENSITIVITY) / (timeDelta / 16.67); // Normalize to 60fps
+        const lastDeltaX = e.touches[0].clientX - lastDragXRef.current;
+        const lastDeltaY = e.touches[0].clientY - lastDragYRef.current;
+        const lastAbsDeltaX = Math.abs(lastDeltaX);
+        const lastAbsDeltaY = Math.abs(lastDeltaY);
+        const lastDominantDelta = lastAbsDeltaX >= lastAbsDeltaY ? lastDeltaX : lastDeltaY;
+        velocityRef.current = (lastDominantDelta * DRAG_SENSITIVITY) / (timeDelta / 16.67); // Normalize to 60fps
       }
       
       lastDragXRef.current = e.touches[0].clientX;
+      lastDragYRef.current = e.touches[0].clientY;
       lastDragTimeRef.current = now;
     }
   };

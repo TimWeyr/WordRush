@@ -691,16 +691,9 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     if (isDraggingRef.current) {
       isDraggingRef.current = false;
       
-      // Snap to nearest planet
-      if (Math.abs(velocityRef.current) < 0.02) {
-        snapToNearestPlanet();
-      } else {
-        setTimeout(() => {
-          if (!isDraggingRef.current) {
-            snapToNearestPlanet();
-          }
-        }, 400);
-      }
+      // Touch: No inertia! Stop immediately and snap
+      velocityRef.current = 0;
+      snapToNearestPlanet();
     }
   };
   

@@ -27,33 +27,23 @@ import './GalaxyUniverseView.css';
 /** Orbit radius factor (relative to screen diagonal) */
 const ORBIT_RADIUS_FACTOR = 0.55; // 55% of screen diagonal
 
-/** Inertia decay factor for mouse (higher = faster decay) */
-const INERTIA_DECAY_MOUSE = 0.92;
+// ============================================================================
+// TEMPORARY DIAGNOSTIC MODE: Touch inputs treated exactly like mouse inputs
+// This is a diagnostic step to isolate whether instability comes from
+// touch-specific logic or from snap/layout logic.
+// ============================================================================
 
-/**
- * Inertia decay factor for touch (higher decay → stops sooner)
- * Mobile users reported very long spinning after short taps, so we
- * dampen the touch inertia much more aggressively than before.
- */
-const INERTIA_DECAY_TOUCH = 0.7;
+/** Inertia decay factor (higher = faster decay) */
+const INERTIA_DECAY = 0.92;
 
 /** Minimum velocity for inertia to continue */
 const MIN_INERTIA_VELOCITY = 0.003;
 
-/** Maximum velocity for touch (prevent excessive spinning) */
-const MAX_TOUCH_VELOCITY = 0.08;
-
 /** Snapping animation duration (ms) */
 const SNAP_DURATION = 400;
 
-/** Drag sensitivity for mouse (radians per pixel) */
+/** Drag sensitivity (radians per pixel) - used for both mouse AND touch */
 const DRAG_SENSITIVITY = 0.002;
-
-/** Touch sensitivity (radians per pixel) - even lower for touch */
-const TOUCH_SENSITIVITY = 0.00035;
-
-/** Minimum touch movement threshold (pixels) - ignore tiny touches */
-const TOUCH_MIN_MOVEMENT = 10;
 
 /** Wheel sensitivity (radians per delta) - reduced for better control */
 const WHEEL_SENSITIVITY = 0.001;
@@ -108,14 +98,12 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   // INPUT STATE
   // ============================================================================
   
+  // TEMPORARY: All touch-specific refs removed for diagnostic mode
   const isDraggingRef = useRef(false);
-  const isTouchDragRef = useRef(false); // Track if drag came from touch
-  const touchEndTimeRef = useRef(0); // Track when touch ended (to ignore mouse events)
   const dragStartXRef = useRef(0);
   const dragStartAngleRef = useRef(0);
   const lastDragXRef = useRef(0);
   const lastDragTimeRef = useRef(0);
-  const snapTimeoutRef = useRef<NodeJS.Timeout | null>(null); // Debounce snap calls
   
   // Layout cache
   const planetLayoutsRef = useRef<PlanetLayout[]>([]);
@@ -306,10 +294,8 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
           focusedPlanet.y <= canvas.height + 100;
         
         // If focused planet is not visible, trigger snap to nearest visible planet
-        // BUT: Don't snap during active dragging or right after touch end
-        const timeSinceTouchEnd = performance.now() - touchEndTimeRef.current;
-        const isRecentlyTouched = timeSinceTouchEnd < 300; // 300ms grace period
-        if (!isVisible && !isSnappingRef.current && !isDraggingRef.current && !isRecentlyTouched) {
+        // TEMPORARY: Touch-specific grace period removed for diagnostic mode
+        if (!isVisible && !isSnappingRef.current && !isDraggingRef.current) {
           // Find nearest planet that IS visible
           let nearestVisiblePlanet: PlanetLayout | null = null;
           let smallestDistance = Infinity;
@@ -440,10 +426,9 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
         velocityRef.current = 0;
       }
     } else if (!isDraggingRef.current && Math.abs(velocityRef.current) > MIN_INERTIA_VELOCITY) {
-      // Inertia (use different decay for touch vs mouse)
+      // Inertia - TEMPORARY: Same decay for all inputs (touch == mouse)
       setRotationAngle(prev => prev + velocityRef.current * deltaTime * 60);
-      const decay = isTouchDragRef.current ? INERTIA_DECAY_TOUCH : INERTIA_DECAY_MOUSE;
-      velocityRef.current *= decay;
+      velocityRef.current *= INERTIA_DECAY;
     }
   }, []);
   
@@ -532,14 +517,8 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   // ============================================================================
   
   const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    // Ignore mouse events that come right after touch events (browser compatibility)
-    const timeSinceTouchEnd = performance.now() - touchEndTimeRef.current;
-    if (timeSinceTouchEnd < 500) {
-      return; // Ignore mouse event - it's likely a touch event in disguise
-    }
-    
+    // TEMPORARY: Touch/mouse distinction removed - all inputs treated equally
     isDraggingRef.current = true;
-    isTouchDragRef.current = false; // Mark as mouse interaction
     isSnappingRef.current = false;
     velocityRef.current = 0;
     
@@ -569,16 +548,11 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   };
   
   const handleMouseUp = () => {
-    // Ignore mouse events that come right after touch events
-    const timeSinceTouchEnd = performance.now() - touchEndTimeRef.current;
-    if (timeSinceTouchEnd < 500) {
-      return; // Ignore mouse event - it's likely a touch event in disguise
-    }
-    
+    // TEMPORARY: Touch/mouse distinction removed
     if (isDraggingRef.current) {
       isDraggingRef.current = false;
       
-      // Start inertia or snap
+      // Start inertia or snap (same logic for all inputs)
       if (Math.abs(velocityRef.current) < 0.02) {
         // Small velocity: snap immediately
         snapToNearestPlanet();
@@ -600,12 +574,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   };
   
   const handleClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    // Ignore clicks that come right after touch events
-    const timeSinceTouchEnd = performance.now() - touchEndTimeRef.current;
-    if (timeSinceTouchEnd < 500) {
-      return; // Ignore click - it's likely a touch event in disguise
-    }
-    
+    // TEMPORARY: Touch/mouse distinction removed
     if (!renderer || !selectedUniverse) return;
     
     const rect = canvasRef.current?.getBoundingClientRect();
@@ -639,7 +608,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
       
-      isTouchDragRef.current = false; // Mark as mouse/wheel interaction
+      // TEMPORARY: Touch/mouse distinction removed
       isSnappingRef.current = false;
       const delta = e.deltaY * WHEEL_SENSITIVITY;
       setRotationAngle(prev => prev - delta);
@@ -669,15 +638,19 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   }, [snapToNearestPlanet]);
   
   // ============================================================================
-  // TOUCH INPUT
+  // TOUCH INPUT - TEMPORARY DIAGNOSTIC MODE
+  // ============================================================================
+  // Touch inputs are now treated EXACTLY like mouse inputs for diagnostic purposes.
+  // This helps isolate whether instability comes from touch-specific logic
+  // or from the underlying snap/layout system.
   // ============================================================================
   
   const handleTouchStart = (e: React.TouchEvent<HTMLCanvasElement>) => {
     if (e.touches.length === 1) {
-      // Don't set dragging yet - wait for significant movement
+      // TEMPORARY: Touch uses exact same logic as mouse
+      isDraggingRef.current = true;
       isSnappingRef.current = false;
       velocityRef.current = 0;
-      isTouchDragRef.current = true; // Mark as touch interaction
       
       dragStartXRef.current = e.touches[0].clientX;
       dragStartAngleRef.current = rotationAngle;
@@ -687,36 +660,20 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   };
   
   const handleTouchMove = (e: React.TouchEvent<HTMLCanvasElement>) => {
-    if (e.touches.length === 1) {
-      const totalDeltaX = Math.abs(e.touches[0].clientX - dragStartXRef.current);
-      
-      // Ignore tiny movements (accidental touches)
-      if (totalDeltaX < TOUCH_MIN_MOVEMENT && !isDraggingRef.current) {
-        return;
-      }
-      
-      // Now we're actually dragging
-      if (!isDraggingRef.current) {
-        isDraggingRef.current = true;
-      }
-      
+    if (e.touches.length === 1 && isDraggingRef.current) {
       e.preventDefault();
       
-      // Use TOUCH_SENSITIVITY (much lower than mouse drag)
+      // TEMPORARY: Touch uses exact same sensitivity and logic as mouse
       const deltaX = e.touches[0].clientX - dragStartXRef.current;
-      const newAngle = dragStartAngleRef.current + deltaX * TOUCH_SENSITIVITY;
+      const newAngle = dragStartAngleRef.current + deltaX * DRAG_SENSITIVITY;
       setRotationAngle(newAngle);
       
-      // Calculate velocity (with touch sensitivity + capping)
+      // Calculate velocity (same as mouse, no capping)
       const now = performance.now();
       const timeDelta = now - lastDragTimeRef.current;
       if (timeDelta > 0) {
         const xDelta = e.touches[0].clientX - lastDragXRef.current;
-        let newVelocity = (xDelta * TOUCH_SENSITIVITY) / (timeDelta / 16.67);
-        
-        // Cap velocity to prevent excessive spinning
-        newVelocity = Math.max(-MAX_TOUCH_VELOCITY, Math.min(MAX_TOUCH_VELOCITY, newVelocity));
-        velocityRef.current = newVelocity;
+        velocityRef.current = (xDelta * DRAG_SENSITIVITY) / (timeDelta / 16.67); // Normalize to 60fps
       }
       
       lastDragXRef.current = e.touches[0].clientX;
@@ -725,28 +682,22 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   };
   
   const handleTouchEnd = () => {
+    // TEMPORARY: Touch uses exact same logic as mouse (including inertia)
     if (isDraggingRef.current) {
       isDraggingRef.current = false;
-      touchEndTimeRef.current = performance.now(); // Mark touch end time
       
-      // Touch: No inertia! Stop immediately
-      velocityRef.current = 0;
-      
-      // Debounce snap: Clear any pending snap and set a new one
-      if (snapTimeoutRef.current) {
-        clearTimeout(snapTimeoutRef.current);
+      // Same inertia/snap logic as mouse
+      if (Math.abs(velocityRef.current) < 0.02) {
+        // Small velocity: snap immediately
+        snapToNearestPlanet();
+      } else {
+        // High velocity: let inertia run, then snap
+        setTimeout(() => {
+          if (!isDraggingRef.current && Math.abs(velocityRef.current) < MIN_INERTIA_VELOCITY) {
+            snapToNearestPlanet();
+          }
+        }, 300);
       }
-      
-      // Small delay to prevent rapid-fire snaps during quick gestures
-      snapTimeoutRef.current = setTimeout(() => {
-        if (!isDraggingRef.current && !isSnappingRef.current) {
-          snapToNearestPlanet();
-        }
-        snapTimeoutRef.current = null;
-      }, 50); // 50ms debounce
-    } else {
-      // Touch ended but wasn't dragging - reset touch end time anyway
-      touchEndTimeRef.current = performance.now();
     }
   };
   

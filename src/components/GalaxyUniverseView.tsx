@@ -84,7 +84,11 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   // ROTATION STATE
   // ============================================================================
   
-  const [rotationAngle, setRotationAngle] = useState(0);
+  // IMPORTANT: rotationAngleRef is an imperative game state, NOT React state.
+  // This prevents async state commits and micro-oscillations during continuous rotation.
+  // The GameLoop (update/render) is the sole source of truth for rotation.
+  // DO NOT convert back to React state - this separation is intentional.
+  const rotationAngleRef = useRef(0);
   const [focusedPlanetId, setFocusedPlanetId] = useState<string | null>(null);
   const velocityRef = useRef(0); // Angular velocity for inertia
   const isSnappingRef = useRef(false);
@@ -161,7 +165,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     // If we have an initial focused planet, rotate to it
     if (initialFocusedPlanetId) {
       const targetAngle = calculateRotationAngleForPlanet(loadedThemes, initialFocusedPlanetId);
-      setRotationAngle(targetAngle);
+      rotationAngleRef.current = targetAngle;
       setFocusedPlanetId(initialFocusedPlanetId);
     }
     
@@ -268,7 +272,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     
     planetLayoutsRef.current = calculatePlanetPositionsOnOrbit(
       themes,
-      rotationAngle,
+      rotationAngleRef.current,
       centerX,
       centerY,
       orbitRadius
@@ -329,7 +333,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
               // Snap immediately if no planet visible
               isSnappingRef.current = true;
               snapStartTimeRef.current = performance.now();
-              snapStartAngleRef.current = rotationAngle;
+              snapStartAngleRef.current = rotationAngleRef.current;
               snapTargetAngleRef.current = targetAngle;
               velocityRef.current = 0;
             }
@@ -338,8 +342,11 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       }
     }
     */
-  }, [renderer, themes, rotationAngle]);
+  }, [renderer, themes]);
   
+  // NOTE: calculateLayouts now reads from rotationAngleRef.current directly.
+  // No dependency on rotationAngle needed - layout is recalculated on every render.
+  // The GameLoop ensures continuous updates.
   useEffect(() => {
     // Throttle calculateLayouts during dragging to prevent race conditions
     if (isDraggingRef.current) {
@@ -352,7 +359,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       // When not dragging, calculate immediately
       calculateLayouts();
     }
-  }, [calculateLayouts, rotationAngle]);
+  }, [calculateLayouts]);
   
   // ============================================================================
   // RENDERING
@@ -360,6 +367,10 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   
   const render = useCallback(() => {
     if (!renderer || !selectedUniverse) return;
+    
+    // IMPORTANT: Calculate layouts on every frame to read current rotationAngleRef.current
+    // This ensures layouts are always in sync with the game state.
+    calculateLayouts();
     
     renderer.clear();
     
@@ -405,7 +416,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
         renderPlanetNameLabel(focusedPlanet.theme.name, selectedUniverse, renderContext);
       }
     }
-  }, [renderer, selectedUniverse, sunImage, rotationAngle, focusedPlanetId]);
+  }, [renderer, selectedUniverse, sunImage, focusedPlanetId]);
   
   // ============================================================================
   // UPDATE LOOP (Inertia & Snapping)
@@ -423,7 +434,8 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       const angleDelta = snapTargetAngleRef.current - snapStartAngleRef.current;
       const newAngle = snapStartAngleRef.current + angleDelta * eased;
       
-      setRotationAngle(newAngle);
+      // Direct mutation of game state (no React state update)
+      rotationAngleRef.current = newAngle;
       
       if (progress >= 1) {
         isSnappingRef.current = false;
@@ -498,24 +510,24 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
         // Start snapping animation
         isSnappingRef.current = true;
         snapStartTimeRef.current = performance.now();
-        snapStartAngleRef.current = rotationAngle;
+        snapStartAngleRef.current = rotationAngleRef.current;
         snapTargetAngleRef.current = targetAngle;
         velocityRef.current = 0;
       }
     } else {
       // Fallback: If no planet is visible, snap to nearest by angle (old behavior)
       const angleStep = (Math.PI * 2) / themes.length;
-      const normalizedAngle = ((rotationAngle % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2);
+      const normalizedAngle = ((rotationAngleRef.current % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2);
       const nearestPlanetIndex = Math.round(normalizedAngle / angleStep);
       const targetAngle = nearestPlanetIndex * angleStep;
       
       isSnappingRef.current = true;
       snapStartTimeRef.current = performance.now();
-      snapStartAngleRef.current = rotationAngle;
+      snapStartAngleRef.current = rotationAngleRef.current;
       snapTargetAngleRef.current = targetAngle;
       velocityRef.current = 0;
     }
-  }, [rotationAngle, themes, renderer]);
+  }, [themes, renderer]);
   
   // ============================================================================
   // MOUSE INPUT
@@ -528,7 +540,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     velocityRef.current = 0;
     
     dragStartXRef.current = e.clientX;
-    dragStartAngleRef.current = rotationAngle;
+    dragStartAngleRef.current = rotationAngleRef.current;
     lastDragXRef.current = e.clientX;
     lastDragTimeRef.current = performance.now();
   };
@@ -538,7 +550,8 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     
     const deltaX = e.clientX - dragStartXRef.current;
     const newAngle = dragStartAngleRef.current + deltaX * DRAG_SENSITIVITY;
-    setRotationAngle(newAngle);
+    // Direct mutation of game state (no React state update)
+    rotationAngleRef.current = newAngle;
     
     // Calculate velocity for inertia
     const now = performance.now();
@@ -607,7 +620,8 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       // TEMPORARY: Touch/mouse distinction removed
       isSnappingRef.current = false;
       const delta = e.deltaY * WHEEL_SENSITIVITY;
-      setRotationAngle(prev => prev - delta);
+      // Direct mutation of game state (no React state update)
+      rotationAngleRef.current -= delta;
       velocityRef.current = 0; // INERTIA DISABLED: No velocity accumulation
       
       // Clear previous timeout
@@ -649,7 +663,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       velocityRef.current = 0;
       
       dragStartXRef.current = e.touches[0].clientX;
-      dragStartAngleRef.current = rotationAngle;
+      dragStartAngleRef.current = rotationAngleRef.current;
       lastDragXRef.current = e.touches[0].clientX;
       lastDragTimeRef.current = performance.now();
     }
@@ -662,7 +676,8 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       // TEMPORARY: Touch uses exact same sensitivity and logic as mouse
       const deltaX = e.touches[0].clientX - dragStartXRef.current;
       const newAngle = dragStartAngleRef.current + deltaX * DRAG_SENSITIVITY;
-      setRotationAngle(newAngle);
+      // Direct mutation of game state (no React state update)
+      rotationAngleRef.current = newAngle;
       
       // Calculate velocity (same as mouse, no capping)
       const now = performance.now();

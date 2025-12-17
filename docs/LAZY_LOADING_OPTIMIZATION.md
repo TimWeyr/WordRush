@@ -500,3 +500,4 @@ for (const moon of visibleMoons) {
 **Performance-Gewinn**: **~9.4 Sekunden** bei Universe-Auswahl
 
 
+

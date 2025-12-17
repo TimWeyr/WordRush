@@ -144,6 +144,7 @@ export interface VisualConfig {
 
 export interface ItemMeta {
   source?: string;
+  detail?: string; // Optional detail field (stored in rounds.meta_detail)
   tags?: string[];
   related?: string[];
   difficultyScaling: {

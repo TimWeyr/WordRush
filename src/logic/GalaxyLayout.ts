@@ -735,3 +735,108 @@ export function calculateItemPositions(
   return layouts;
 }
 
+// ============================================================================
+// ORBIT-BASED PLANET LAYOUT (New Universe View)
+// ============================================================================
+
+/** Planet radius in universe view */
+const UNIVERSE_PLANET_RADIUS = 40;
+
+/**
+ * Calculate planet positions on a circular orbit
+ * Planets are distributed evenly around the full 360° orbit
+ * 
+ * @param themes - Array of themes (planets)
+ * @param rotationAngle - Current rotation angle in radians
+ * @param centerX - Center X of the orbit (sun position, typically 0 for bottom-left)
+ * @param centerY - Center Y of the orbit (sun position, typically screen height for bottom-left)
+ * @param orbitRadius - Radius of the orbit (dynamically calculated based on screen size)
+ * @returns Array of planet layouts with positions
+ */
+export function calculatePlanetPositionsOnOrbit(
+  themes: Theme[],
+  rotationAngle: number,
+  centerX: number,
+  centerY: number,
+  orbitRadius: number
+): PlanetLayout[] {
+  const layouts: PlanetLayout[] = [];
+  
+  if (themes.length === 0) return layouts;
+  
+  // Distribute planets evenly around the full 360° orbit
+  const angleStep = (Math.PI * 2) / themes.length;
+  
+  themes.forEach((theme, index) => {
+    // Calculate angle for this planet (base angle + rotation)
+    const baseAngle = index * angleStep;
+    const angle = baseAngle + rotationAngle;
+    
+    // Calculate position on orbit
+    const x = centerX + Math.cos(angle) * orbitRadius;
+    const y = centerY + Math.sin(angle) * orbitRadius;
+    
+    layouts.push({
+      id: theme.id,
+      x,
+      y,
+      radius: UNIVERSE_PLANET_RADIUS,
+      theme
+    });
+  });
+  
+  return layouts;
+}
+
+/**
+ * Find the planet closest to the center of the screen
+ * This is used to determine which planet is "focused"
+ * 
+ * @param planetLayouts - Array of planet layouts
+ * @param screenCenterX - Screen center X coordinate
+ * @param screenCenterY - Screen center Y coordinate
+ * @returns ID of the focused planet, or null if no planets
+ */
+export function findFocusedPlanet(
+  planetLayouts: PlanetLayout[],
+  screenCenterX: number,
+  screenCenterY: number
+): string | null {
+  if (planetLayouts.length === 0) return null;
+  
+  let closestPlanet: PlanetLayout | null = null;
+  let closestDistance = Infinity;
+  
+  for (const planet of planetLayouts) {
+    const distance = Math.hypot(planet.x - screenCenterX, planet.y - screenCenterY);
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closestPlanet = planet;
+    }
+  }
+  
+  return closestPlanet ? closestPlanet.id : null;
+}
+
+/**
+ * Calculate the rotation angle needed to center a specific planet
+ * 
+ * @param themes - Array of themes (planets)
+ * @param targetPlanetId - ID of the planet to center
+ * @returns Rotation angle in radians, or 0 if planet not found
+ */
+export function calculateRotationAngleForPlanet(
+  themes: Theme[],
+  targetPlanetId: string
+): number {
+  const planetIndex = themes.findIndex(t => t.id === targetPlanetId);
+  if (planetIndex === -1) return 0;
+  
+  // Planets are distributed evenly around full 360° orbit
+  const angleStep = (Math.PI * 2) / themes.length;
+  const planetBaseAngle = planetIndex * angleStep;
+  
+  // Calculate rotation needed to center this planet
+  // We want the planet to be at 0° (pointing right, towards screen center)
+  return -planetBaseAngle;
+}

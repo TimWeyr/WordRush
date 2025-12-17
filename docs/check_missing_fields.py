@@ -15,3 +15,4 @@ for f in missing:
     print(f'  - {f["table_name"]}.{f["column_name"]}')
 
 
+

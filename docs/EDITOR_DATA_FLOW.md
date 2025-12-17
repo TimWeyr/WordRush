@@ -362,3 +362,4 @@ class SupabaseLoader {
 Öffne den Editor und schau dir die Console-Logs an. Jede Operation ist nachvollziehbar!
 
 
+

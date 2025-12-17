@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './infra/auth/AuthContext';
 import { ToastProvider } from './components/Toast/ToastContainer';
-import { GalaxyMap } from './components/GalaxyMap';
+import { GalaxyUniverseView } from './components/GalaxyUniverseView';
+import { GalaxyPlanetView } from './components/GalaxyPlanetView';
 import { Game } from './components/Game';
 import { EditorLayout } from './components/Editor/EditorLayout';
 import { LoginScreen } from './components/Auth/LoginScreen';
@@ -17,7 +18,8 @@ import type { GameMode } from './types/game.types';
 import '@/infra/utils/SessionManager';
 
 type AppState =
-  | { screen: 'galaxy' }
+  | { screen: 'universe' }
+  | { screen: 'planet'; universe: Universe; theme: Theme; mode: GameMode }
   | {
       screen: 'game';
       universe: Universe;
@@ -31,9 +33,33 @@ type AppState =
     };
 
 function AppContent() {
-  const [state, setState] = useState<AppState>({ screen: 'galaxy' });
-  const [pendingFocus, setPendingFocus] = useState<{ universeId: string; planetId: string } | null>(null);
-  const [initialFocus, setInitialFocus] = useState<{ universeId: string; planetId: string } | null>(null);
+  const [state, setState] = useState<AppState>({ screen: 'universe' });
+  const [lastFocusedPlanetId, setLastFocusedPlanetId] = useState<string | null>(null);
+
+  const handlePlanetSelect = async (universe: Universe, theme: Theme) => {
+    setLastFocusedPlanetId(theme.id);
+    
+    // Get mode from UISettings (default: shooter)
+    let mode: GameMode = 'shooter';
+    try {
+      const { localProgressProvider } = await import('@/infra/providers/LocalProgressProvider');
+      const settings = await localProgressProvider.getUISettings();
+      mode = settings.gameMode || 'shooter'; // Default: shooter
+    } catch (error) {
+      console.warn('Failed to load game mode from settings:', error);
+    }
+    
+    setState({
+      screen: 'planet',
+      universe,
+      theme,
+      mode
+    });
+  };
+
+  const handleBackToUniverse = () => {
+    setState({ screen: 'universe' });
+  };
 
   const handleStart = (
     universe: Universe,
@@ -44,7 +70,7 @@ function AppContent() {
     levelFilter?: number,
     loadAllItems?: boolean
   ) => {
-    setPendingFocus({ universeId: universe.id, planetId: theme.id });
+    setLastFocusedPlanetId(theme.id);
     const chapters = Array.isArray(chapterIds) ? chapterIds : [chapterIds];
     setState({
       screen: 'game',
@@ -59,9 +85,16 @@ function AppContent() {
     });
   };
 
-  const handleExit = () => {
-    setInitialFocus(pendingFocus);
-    setState({ screen: 'galaxy' });
+  const handleExitGame = () => {
+    // Return to planet view (not universe view)
+    if (state.screen === 'game') {
+      setState({
+        screen: 'planet',
+        universe: state.universe,
+        theme: state.theme,
+        mode: state.mode
+      });
+    }
   };
 
   const handleNextChapter = () => {
@@ -74,12 +107,23 @@ function AppContent() {
     }
   };
 
-  if (state.screen === 'galaxy') {
+  if (state.screen === 'universe') {
     return (
-      <GalaxyMap
+      <GalaxyUniverseView
+        onPlanetSelect={handlePlanetSelect}
+        initialFocusedPlanetId={lastFocusedPlanetId}
+      />
+    );
+  }
+
+  if (state.screen === 'planet') {
+    return (
+      <GalaxyPlanetView
+        universe={state.universe}
+        theme={state.theme}
+        mode={state.mode}
+        onBack={handleBackToUniverse}
         onStart={handleStart}
-        initialFocus={initialFocus}
-        onInitialFocusConsumed={() => setInitialFocus(null)}
       />
     );
   }
@@ -96,7 +140,7 @@ function AppContent() {
       mode={state.mode}
       startItemId={state.startItemId}
       levelFilter={state.levelFilter}
-      onExit={handleExit}
+      onExit={handleExitGame}
       onNextChapter={isLastChapter ? undefined : handleNextChapter}
       currentChapterIndex={state.currentChapterIndex}
       totalChapters={state.chapterIds.length}

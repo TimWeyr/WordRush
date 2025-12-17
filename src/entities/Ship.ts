@@ -37,8 +37,13 @@ export class Ship extends GameObject {
     this.damageBlink = 0;
     this.shipSkinPath = config.shipSkin;
     
-    // Load ship skins if provided
+    // Load ship skins if provided, otherwise load default_ship
     if (this.shipSkinPath) {
+      console.log(`🚀 [Ship] Loading ship skin from path: "${this.shipSkinPath}"`);
+      this.loadShipSkins();
+    } else {
+      console.log(`⚠️ [Ship] No shipSkin provided, loading default_ship.svg`);
+      this.shipSkinPath = '/assets/ships/default_ship.svg';
       this.loadShipSkins();
     }
   }
@@ -52,19 +57,35 @@ export class Ship extends GameObject {
         ? this.shipSkinPath!
         : this.shipSkinPath!.replace('.svg', `.${suffix}.svg`);
         
+      console.log(`📦 [Ship] Attempting to load ${state} sprite from: "${path}"`);
+      
       const img = new Image();
       img.onload = () => {
         this.sprites[state] = img;
-        console.log(`✅ Sprite loaded: ${state} (${path})`);
+        console.log(`✅ [Ship] Successfully loaded ${state} sprite: "${path}"`);
         if (state === 'idle') {
           this.shipSkinLoaded = true;
+          console.log(`✅ [Ship] Ship skin fully loaded and ready!`);
         }
       };
       img.onerror = () => {
-        console.warn(`⚠️ Missing sprite: ${state} (${path}) - Using fallback`);
+        console.error(`❌ [Ship] Failed to load ${state} sprite from: "${path}"`);
+        console.error(`   Full path attempted: ${window.location.origin}${path.startsWith('/') ? path : '/' + path}`);
+        
+        // If idle sprite failed and we're not already loading default_ship, try default_ship
+        if (state === 'idle' && this.shipSkinPath !== '/assets/ships/default_ship.svg') {
+          console.warn(`   ⚠️ Primary ship failed, attempting to load default_ship.svg`);
+          this.shipSkinPath = '/assets/ships/default_ship.svg';
+          this.loadShipSkins();
+          return;
+        }
+        
         // Fallback to idle sprite if specialized sprite missing
         if (state !== 'idle' && this.sprites['idle']) {
+          console.log(`   Using idle sprite as fallback for ${state}`);
           this.sprites[state] = this.sprites['idle'];
+        } else if (state === 'idle') {
+          console.warn(`   ⚠️ No idle sprite available - ship will use circle fallback rendering`);
         }
       };
       img.src = path;
@@ -193,7 +214,17 @@ export class Ship extends GameObject {
         { width: size, height: size }
       );
     } else {
-      // Fallback: render simple circle ship
+      // Fallback: Try to load default_ship if not already loading
+      if (!this.shipSkinPath || (this.shipSkinPath !== '/assets/ships/default_ship.svg' && !this.shipSkinLoaded)) {
+        console.warn(`⚠️ [Ship] Ship skin not loaded, attempting to load default_ship.svg`);
+        const defaultPath = '/assets/ships/default_ship.svg';
+        if (this.shipSkinPath !== defaultPath) {
+          this.shipSkinPath = defaultPath;
+          this.loadShipSkins();
+        }
+      }
+      
+      // Temporary fallback: render simple circle ship while loading
       const color = this.currentState === 'damage' ? '#ff4444' : 
                     this.currentState === 'shield' ? '#44ff44' : 
                     '#4a90e2'; // Dynamic color for fallback

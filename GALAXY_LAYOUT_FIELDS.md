@@ -111,3 +111,4 @@ interface ItemMinimal {
 Die vollständigen Objekte (Theme, ChapterConfig) werden in den Layout-Strukturen gespeichert, aber nur für die spätere Verwendung außerhalb von `GalaxyLayout.ts` (z.B. in `GalaxyRenderer.ts` oder `GalaxyMap.tsx`).
 
 
+

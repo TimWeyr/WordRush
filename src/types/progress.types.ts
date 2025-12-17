@@ -60,6 +60,7 @@ export interface UISettings {
   stützräderGlobal: boolean;
   mixModeGlobal: boolean;
   itemOrder?: 'default' | 'random' | 'worst-first-unplayed';
+  gameMode?: 'lernmodus' | 'shooter'; // Default: 'shooter'
   gameplaySettings?: GameplaySettings;
 }
 

@@ -27,11 +27,17 @@ import './GalaxyUniverseView.css';
 /** Orbit radius factor (relative to screen diagonal) */
 const ORBIT_RADIUS_FACTOR = 0.55; // 55% of screen diagonal
 
-/** Inertia decay factor (higher = faster decay) */
-const INERTIA_DECAY = 0.92;
+/** Inertia decay factor for mouse (higher = faster decay) */
+const INERTIA_DECAY_MOUSE = 0.92;
+
+/** Inertia decay factor for touch (faster decay to stop sooner) */
+const INERTIA_DECAY_TOUCH = 0.85;
 
 /** Minimum velocity for inertia to continue */
 const MIN_INERTIA_VELOCITY = 0.001;
+
+/** Maximum velocity for touch (prevent excessive spinning) */
+const MAX_TOUCH_VELOCITY = 0.15;
 
 /** Snapping animation duration (ms) */
 const SNAP_DURATION = 400;
@@ -99,6 +105,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   // ============================================================================
   
   const isDraggingRef = useRef(false);
+  const isTouchDragRef = useRef(false); // Track if drag came from touch
   const dragStartXRef = useRef(0);
   const dragStartAngleRef = useRef(0);
   const lastDragXRef = useRef(0);
@@ -414,9 +421,10 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
         velocityRef.current = 0;
       }
     } else if (!isDraggingRef.current && Math.abs(velocityRef.current) > MIN_INERTIA_VELOCITY) {
-      // Inertia
+      // Inertia (use different decay for touch vs mouse)
       setRotationAngle(prev => prev + velocityRef.current * deltaTime * 60);
-      velocityRef.current *= INERTIA_DECAY;
+      const decay = isTouchDragRef.current ? INERTIA_DECAY_TOUCH : INERTIA_DECAY_MOUSE;
+      velocityRef.current *= decay;
     }
   }, []);
   
@@ -506,6 +514,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   
   const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
     isDraggingRef.current = true;
+    isTouchDragRef.current = false; // Mark as mouse interaction
     isSnappingRef.current = false;
     velocityRef.current = 0;
     
@@ -593,6 +602,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
       
+      isTouchDragRef.current = false; // Mark as mouse/wheel interaction
       isSnappingRef.current = false;
       const delta = e.deltaY * WHEEL_SENSITIVITY;
       setRotationAngle(prev => prev - delta);
@@ -630,6 +640,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       // Don't set dragging yet - wait for significant movement
       isSnappingRef.current = false;
       velocityRef.current = 0;
+      isTouchDragRef.current = true; // Mark as touch interaction
       
       dragStartXRef.current = e.touches[0].clientX;
       dragStartAngleRef.current = rotationAngle;
@@ -659,12 +670,16 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       const newAngle = dragStartAngleRef.current + deltaX * TOUCH_SENSITIVITY;
       setRotationAngle(newAngle);
       
-      // Calculate velocity (with touch sensitivity)
+      // Calculate velocity (with touch sensitivity + capping)
       const now = performance.now();
       const timeDelta = now - lastDragTimeRef.current;
       if (timeDelta > 0) {
         const xDelta = e.touches[0].clientX - lastDragXRef.current;
-        velocityRef.current = (xDelta * TOUCH_SENSITIVITY) / (timeDelta / 16.67);
+        let newVelocity = (xDelta * TOUCH_SENSITIVITY) / (timeDelta / 16.67);
+        
+        // Cap velocity to prevent excessive spinning
+        newVelocity = Math.max(-MAX_TOUCH_VELOCITY, Math.min(MAX_TOUCH_VELOCITY, newVelocity));
+        velocityRef.current = newVelocity;
       }
       
       lastDragXRef.current = e.touches[0].clientX;

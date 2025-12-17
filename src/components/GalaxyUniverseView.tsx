@@ -36,8 +36,14 @@ const MIN_INERTIA_VELOCITY = 0.001;
 /** Snapping animation duration (ms) */
 const SNAP_DURATION = 400;
 
-/** Drag sensitivity (radians per pixel) - reduced for better control */
+/** Drag sensitivity for mouse (radians per pixel) */
 const DRAG_SENSITIVITY = 0.002;
+
+/** Touch sensitivity (radians per pixel) - much lower for touch */
+const TOUCH_SENSITIVITY = 0.0005;
+
+/** Minimum touch movement threshold (pixels) - ignore tiny touches */
+const TOUCH_MIN_MOVEMENT = 5;
 
 /** Wheel sensitivity (radians per delta) - reduced for better control */
 const WHEEL_SENSITIVITY = 0.001;
@@ -621,7 +627,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   
   const handleTouchStart = (e: React.TouchEvent<HTMLCanvasElement>) => {
     if (e.touches.length === 1) {
-      isDraggingRef.current = true;
+      // Don't set dragging yet - wait for significant movement
       isSnappingRef.current = false;
       velocityRef.current = 0;
       
@@ -633,19 +639,32 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   };
   
   const handleTouchMove = (e: React.TouchEvent<HTMLCanvasElement>) => {
-    if (e.touches.length === 1 && isDraggingRef.current) {
+    if (e.touches.length === 1) {
+      const totalDeltaX = Math.abs(e.touches[0].clientX - dragStartXRef.current);
+      
+      // Ignore tiny movements (accidental touches)
+      if (totalDeltaX < TOUCH_MIN_MOVEMENT && !isDraggingRef.current) {
+        return;
+      }
+      
+      // Now we're actually dragging
+      if (!isDraggingRef.current) {
+        isDraggingRef.current = true;
+      }
+      
       e.preventDefault();
       
+      // Use TOUCH_SENSITIVITY (much lower than mouse drag)
       const deltaX = e.touches[0].clientX - dragStartXRef.current;
-      const newAngle = dragStartAngleRef.current + deltaX * DRAG_SENSITIVITY;
+      const newAngle = dragStartAngleRef.current + deltaX * TOUCH_SENSITIVITY;
       setRotationAngle(newAngle);
       
-      // Calculate velocity
+      // Calculate velocity (with touch sensitivity)
       const now = performance.now();
       const timeDelta = now - lastDragTimeRef.current;
       if (timeDelta > 0) {
         const xDelta = e.touches[0].clientX - lastDragXRef.current;
-        velocityRef.current = (xDelta * DRAG_SENSITIVITY) / (timeDelta / 16.67);
+        velocityRef.current = (xDelta * TOUCH_SENSITIVITY) / (timeDelta / 16.67);
       }
       
       lastDragXRef.current = e.touches[0].clientX;

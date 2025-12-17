@@ -79,3 +79,4 @@ Nach Analyse des Codes wurden **3 fehlende Felder** in der `chapters` Tabelle id
 Siehe: `docs/migration_chapters_missing_fields.sql`
 
 
+

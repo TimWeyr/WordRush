@@ -147,3 +147,4 @@ SELECT
     (SELECT COUNT(*) FROM rounds WHERE meta_difficulty_scaling IS NOT NULL) as rounds_with_difficulty_scaling;
 
 
+

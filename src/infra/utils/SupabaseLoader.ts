@@ -142,6 +142,7 @@ export class SupabaseLoader {
     wave_duration?: number;
     intro_text?: string;
     meta_source?: string;
+    meta_detail?: string;
     meta_tags?: string[];
     meta_related?: string[];
     meta_difficulty_scaling?: any;
@@ -172,6 +173,7 @@ export class SupabaseLoader {
           wave_duration: round.wave_duration,
           intro_text: round.intro_text,
           meta_source: round.meta_source,
+          meta_detail: round.meta_detail,
           meta_tags: round.meta_tags,
           meta_related: round.meta_related,
           meta_difficulty_scaling: round.meta_difficulty_scaling
@@ -200,6 +202,7 @@ export class SupabaseLoader {
     wave_duration: number;
     intro_text: string;
     meta_source: string;
+    meta_detail: string;
     meta_tags: string[];
     meta_related: string[];
     meta_difficulty_scaling: any;
@@ -407,6 +410,7 @@ export class SupabaseLoader {
           wave_duration: item.waveDuration,
           intro_text: item.introText,
           meta_source: item.meta?.source,
+          meta_detail: item.meta?.detail,
           meta_tags: item.meta?.tags,
           meta_related: item.meta?.related,
           meta_difficulty_scaling: item.meta?.difficultyScaling
@@ -435,6 +439,7 @@ export class SupabaseLoader {
           wave_duration: item.waveDuration,
           intro_text: item.introText,
           meta_source: item.meta?.source,
+          meta_detail: item.meta?.detail,
           meta_tags: item.meta?.tags,
           meta_related: item.meta?.related,
           meta_difficulty_scaling: item.meta?.difficultyScaling

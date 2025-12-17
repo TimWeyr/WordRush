@@ -462,7 +462,16 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
       objectTrail.current = new ObjectTrail();
 
       const laserColor = theme.laserColor || universe.laserColor || '#4a90e2';
-      const shipSkin = theme.shipSkin || universe.shipSkin;
+      let shipSkin = theme.shipSkin || universe.shipSkin;
+      
+      // Normalize shipSkin path: if it's just a name (e.g., "foerderung" or "foerderung_ship"), 
+      // convert it to full path "/assets/ships/{name}_ship.svg"
+      if (shipSkin && !shipSkin.startsWith('/') && !shipSkin.startsWith('http')) {
+        // If it doesn't end with _ship, add it
+        const shipName = shipSkin.endsWith('_ship') ? shipSkin : `${shipSkin}_ship`;
+        shipSkin = `/assets/ships/${shipName}.svg`;
+        console.log(`🔧 [Game] Normalized shipSkin: "${theme.shipSkin || universe.shipSkin}" → "${shipSkin}"`);
+      }
 
       // Apply difficulty multipliers (base speed now separate from object speed!)
       const adjustedBaseSpeed = config.gameplay.baseSpeed;
@@ -682,8 +691,8 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
     const layer1Color = backgroundGradient[0] || '#0f1038';
     renderer.setBackgroundColor(layer1Color);
 
-    // Render parallax layers (simple)
-    const layer2Color = backgroundGradient[1] || '#272963';
+    // Render parallax layers (simple) - use colors from current gradient
+    const layer2Color = backgroundGradient[1] || backgroundGradient[0] || '#272963';
     renderer.renderParallaxLayer(parallaxOffset.current * 1.5, layer1Color, 0.3);
     renderer.renderParallaxLayer(parallaxOffset.current, layer2Color, 0.2);
     
@@ -724,7 +733,7 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
 
     // Render ship
     engine.getShip().render(renderer);
-  }, [renderer, engine, theme, chapterId]);
+  }, [renderer, engine, theme, chapterId, loadAllItems, chapterIds]);
 
   // Start game loop
   useEffect(() => {

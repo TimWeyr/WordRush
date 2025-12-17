@@ -285,8 +285,8 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
         spawnPosition: randomSpawn(),
         spawnSpread: 0.05 + Math.random() * 0.05,
         speed: 1.1 + Math.random() * 0.3, // 1.1 to 1.4
-        points: -10,
-        damage: 10,
+        points: 10,
+        damage: 1,
         redirect: '',
         context: '',
         visual: {
@@ -377,7 +377,7 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
         spawnSpread: 0.05 + Math.random() * 0.05,
         speed: 1.1 + Math.random() * 0.3,
         points: -10,
-        damage: 10,
+        damage: 1,
         redirect: d.redirect,
         context: d.context,
         visual: {
@@ -406,7 +406,8 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
         correct: correctEntries,
         distractors: distractors,
         meta: {
-          source: '',
+          source: parsedData.source || '',
+          detail: parsedData.detail,
           tags: [],
           related: [],
           difficultyScaling: {
@@ -546,7 +547,7 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
         spawnSpread: 0.05,
         speed: 1.2,
         points: -10,
-        damage: 10,
+        damage: 1,
         redirect: '',
         context: '',
         visual: {

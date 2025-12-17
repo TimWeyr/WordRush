@@ -99,9 +99,9 @@ export function DetailView({ item, allItems, onItemChange, onBack }: DetailViewP
       },
       spawnPosition: 0.5,
       spawnSpread: 0.05,
-      speed: 1.2,
-      points: -10,
-      damage: 10,
+      speed: 1.0,
+      points: 10,
+      damage: 1,
       redirect: '',
       context: '',
       visual: {

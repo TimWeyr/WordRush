@@ -1,0 +1,35 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simple sun with rays -->
+  
+  <!-- Outer glow -->
+  <circle cx="30" cy="30" r="28" fill="#ffcc00" opacity="0.2"/>
+  <circle cx="30" cy="30" r="26" fill="#ffaa00" opacity="0.3"/>
+  
+  <!-- Sun rays (8 rays) -->
+  <rect x="29" y="2" width="2" height="8" fill="#ffcc00" rx="1"/>
+  <rect x="29" y="50" width="2" height="8" fill="#ffcc00" rx="1"/>
+  <rect x="2" y="29" width="8" height="2" fill="#ffcc00" rx="1"/>
+  <rect x="50" y="29" width="8" height="2" fill="#ffcc00" rx="1"/>
+  
+  <rect x="36" y="6" width="2" height="6" fill="#ffcc00" rx="1" transform="rotate(45 30 30)"/>
+  <rect x="22" y="6" width="2" height="6" fill="#ffcc00" rx="1" transform="rotate(-45 30 30)"/>
+  <rect x="36" y="48" width="2" height="6" fill="#ffcc00" rx="1" transform="rotate(-45 30 30)"/>
+  <rect x="22" y="48" width="2" height="6" fill="#ffcc00" rx="1" transform="rotate(45 30 30)"/>
+  
+  <!-- Main sun body (gradient effect with multiple circles) -->
+  <circle cx="30" cy="30" r="20" fill="#ffaa00" stroke="#ff8800" stroke-width="1"/>
+  <circle cx="30" cy="30" r="18" fill="#ffcc00" opacity="0.8"/>
+  <circle cx="30" cy="30" r="16" fill="#ffdd00"/>
+  
+  <!-- Inner highlight -->
+  <ellipse cx="30" cy="28" rx="8" ry="10" fill="#ffff00" opacity="0.6"/>
+  <ellipse cx="30" cy="26" rx="6" ry="8" fill="#ffffff" opacity="0.4"/>
+  
+  <!-- Surface details (small circles for texture) -->
+  <circle cx="25" cy="25" r="1.5" fill="#ffaa00" opacity="0.5"/>
+  <circle cx="35" cy="25" r="1.5" fill="#ffaa00" opacity="0.5"/>
+  <circle cx="30" cy="32" r="1.5" fill="#ffaa00" opacity="0.5"/>
+  <circle cx="27" cy="30" r="1" fill="#ff8800" opacity="0.4"/>
+  <circle cx="33" cy="30" r="1" fill="#ff8800" opacity="0.4"/>
+</svg>
+

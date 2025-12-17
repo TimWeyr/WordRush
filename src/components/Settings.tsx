@@ -26,6 +26,7 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
   const [activeTab, setActiveTab] = useState<TabType>('settings');
   const [username, setUsername] = useState<string>('');
   const [itemOrder, setItemOrder] = useState<'default' | 'random' | 'worst-first-unplayed'>('default');
+  const [gameMode, setGameMode] = useState<'lernmodus' | 'shooter'>('shooter');
   const [gameplaySettings, setGameplaySettings] = useState<GameplaySettings>(DEFAULT_GAMEPLAY_SETTINGS);
   const [loading, setLoading] = useState(true);
   
@@ -88,6 +89,7 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
       const savedUsername = localProgressProvider.getUsername();
       
       setItemOrder(settings.itemOrder || 'default');
+      setGameMode(settings.gameMode || 'shooter'); // Default: shooter
       setGameplaySettings(settings.gameplaySettings || DEFAULT_GAMEPLAY_SETTINGS);
       setUsername(savedUsername || '');
     } catch (error) {
@@ -148,6 +150,7 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
       const updatedSettings: UISettings = {
         ...settings,
         itemOrder,
+        gameMode,
         gameplaySettings
       };
       await localProgressProvider.saveUISettings(updatedSettings);
@@ -275,6 +278,23 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
                     <option value="random">Zufällig</option>
                     <option value="worst-first-unplayed">Schlechte Scores zuerst, dann ungespielte</option>
                   </select>
+                </div>
+
+                <div className="settings-group">
+                  <label>Spielmodus:</label>
+                  <button
+                    className={`mode-toggle-button ${gameMode === 'lernmodus' ? 'learn-mode' : 'shooter-mode'}`}
+                    onClick={() => setGameMode(gameMode === 'lernmodus' ? 'shooter' : 'lernmodus')}
+                    type="button"
+                  >
+                    <span className="mode-icon">{gameMode === 'lernmodus' ? '🎓' : '🎯'}</span>
+                    <span className="mode-text">{gameMode === 'lernmodus' ? 'Lern' : 'Shooter'}</span>
+                  </button>
+                  <small style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '0.85rem', display: 'block', marginTop: '8px' }}>
+                    {gameMode === 'lernmodus' 
+                      ? '🎓 Lernmodus: Farbcodiert (Grün/Rot), 10% Punkte' 
+                      : '🎯 Shooter-Modus: Volle Punkte, keine Hilfe'}
+                  </small>
                 </div>
 
                 <div className="settings-actions">

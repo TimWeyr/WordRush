@@ -40,7 +40,13 @@ When working with AI assistants (Cursor, GitHub Copilot, ChatGPT, etc.) on this 
 **Game Logic:**
 - `src/logic/ShooterEngine.ts` - Main game orchestration
 - `src/logic/LearningStateManager.ts` - Progress tracking
+- `src/logic/GalaxyLayout.ts` - Planet/moon positioning algorithms
 - `src/config/config.json` - Game constants and configuration
+
+**Navigation:**
+- `src/components/GalaxyUniverseView.tsx` - Rotational planet orbit view
+- `src/components/GalaxyPlanetView.tsx` - Single planet with moons
+- `src/components/GalaxyRenderer.ts` - Galaxy rendering (sun, planets, moons)
 
 **Content System:**
 - `src/infra/utils/JSONLoader.ts` - Content loading utilities (loads from Supabase)
@@ -94,13 +100,13 @@ class MyEntity extends GameObject {
 
 **Content Loading:**
 ```typescript
-// JSONLoader loads from Supabase (not JSON files):
-import { JSONLoader } from '@/infra/utils/JSONLoader';
+// JSONLoader with automatic caching:
+import { jsonLoader } from '@/infra/utils/JSONLoader';
 
-const universe = await JSONLoader.loadUniverse('psychiatrie');
-const theme = await JSONLoader.loadTheme('psychiatrie', 'icd10');
-const chapter = await JSONLoader.loadChapter('psychiatrie', 'icd10', 'F32_Depression');
-// Content is loaded from Supabase database, not file system
+const universe = await jsonLoader.loadUniverse('psychiatrie');
+const theme = await jsonLoader.loadTheme('psychiatrie', 'icd10');
+const items = await jsonLoader.loadChapter('psychiatrie', 'icd10', 'F32_Depression');
+// Repeated calls use cache (instant, no DB query)
 ```
 
 **State Management:**
@@ -674,76 +680,35 @@ Universe (e.g., "psychiatrie", "englisch")
   - **Visual Editor**: Table View and Detail View
   - **Text Parser**: Bulk creation with `b.`, `c.`, `d.`, `l.` format
 
-### Galaxy Map Layout System
+### Galaxy Map Navigation System
 
-#### Mäander-Struktur (Horizontal S-Curve)
+#### Rotational Orbit Layout (Universe → Planets → Moons)
 
-Die GalaxyMap verwendet eine **horizontale Mäander-Struktur** (S-Kurve) zur Anordnung der Planeten (Themes) im Überblick. Diese Struktur sorgt für eine organische, fließende Anordnung der Planeten, die visuell ansprechend und navigierbar ist.
+Die GalaxyMap verwendet eine **3-Ebenen-Hierarchie** mit rotationalem Scroll:
 
-**Funktion:** `calculatePlanetPositionsHorizontalMaeander()` in `src/logic/GalaxyLayout.ts`
+**Komponenten:**
+- `GalaxyUniverseView.tsx` - Planeten-Orbit-Ansicht (horizontal scrollbar)
+- `GalaxyPlanetView.tsx` - Einzelplanet mit Monden (pan & zoom)
+- `GalaxyLayout.ts` - Layout-Berechnungen (`calculatePlanetPositionsOnOrbit`, `calculateMoonPositionsAdaptive`)
+- `GalaxyRenderer.ts` - Rendering (Sonne, Planeten, Monde, Orbit)
 
-**Grundprinzip:**
-- **Vertikale Verteilung:** Planeten werden gleichmäßig vertikal über die Bildschirmhöhe verteilt
-- **Horizontale S-Kurve:** Die X-Position jedes Planeten folgt einer Sinus-Kurve, die eine S-Form erzeugt
-- **Zentrierung:** Die S-Kurve ist horizontal zentriert auf dem Bildschirm
+**Universe View:**
+- Sonne fix in Ecke unten-links (25% sichtbar)
+- Planeten auf Kreisbahn (55% der Bildschirm-Diagonale)
+- Horizontaler Scroll rotiert Orbit (360°)
+- Inertia + Snapping auf nächsten Planeten
+- Fokussierter Planet: Glow-Highlight + Name-Label
 
-**Mathematische Berechnung:**
+**Planet View:**
+- Zentrierter Planet mit Monden auf Ringen
+- Pan & Zoom Navigation
+- Klick auf Mond/Level/Item → Spiel starten
+- "Zurück"-Button → Universe View (fokussiert letzten Planeten)
 
-1. **Vertikale Position (Y):**
-   ```typescript
-   padding = PLANET_RADIUS * 2  // Abstand zu Bildschirmrändern
-   availableHeight = screenHeight - (padding * 2)
-   baseSpacing = availableHeight / (themes.length - 1)
-   variation = (Math.random() - 0.5) * PLANET_SPACING_VARIATION * baseSpacing
-   y = padding + index * baseSpacing + variation
-   ```
-   - Planeten werden gleichmäßig vertikal verteilt
-   - Leichte zufällige Variation (±5%) verhindert starre Linien
-
-2. **Horizontale Position (X) - S-Kurve:**
-   ```typescript
-   centerX = screenWidth / 2
-   amplitude = screenWidth * S_CURVE_AMPLITUDE_FACTOR  // 30% der Bildschirmbreite
-   normalizedY = (y - padding) / availableHeight  // Normalisiert auf 0-1
-   sCurveValue = Math.sin(normalizedY * Math.PI * 2)  // Sinus-Welle
-   x = centerX + amplitude * sCurveValue
-   ```
-   - Die X-Position folgt einer Sinus-Funktion basierend auf der Y-Position
-   - Erzeugt eine fließende S-Form von links nach rechts
-
-**Konstanten:**
-- `S_CURVE_AMPLITUDE_FACTOR = 0.3` - Amplitude der S-Kurve (30% der Bildschirmbreite)
-- `PLANET_SPACING_VARIATION = 0.05` - Variation in Planeten-Abständen (±5%)
-- `PLANET_RADIUS = 40` - Radius jedes Planeten
-
-**Visuelles Ergebnis:**
-```
-     Planet 1 ──┐
-                │
-     Planet 2 ──┘
-                │
-     Planet 3 ──┐
-                │
-     Planet 4 ──┘
-```
-
-Die Planeten bilden eine fließende S-Kurve, die von oben nach unten verläuft und dabei horizontal zwischen links und rechts oszilliert.
-
-**Verwendung in GalaxyMap:**
-- Wird in `calculateLayouts()` aufgerufen (Zeile 256 in `GalaxyMap.tsx`)
-- Berechnet Positionen für alle Themes eines Universums
-- Wird nur im **Overview-Modus** verwendet (alle Planeten sichtbar)
-- Im **Zoomed-Modus** wird auf einen einzelnen Planeten fokussiert
-
-**Anpassungen:**
-- Die Amplitude kann über `S_CURVE_AMPLITUDE_FACTOR` angepasst werden
-- Größere Werte = stärkere horizontale Auslenkung
-- Kleinere Werte = flachere, linearere Anordnung
-- Die Variation kann über `PLANET_SPACING_VARIATION` gesteuert werden
-
-**Randbehandlung:**
-- Planeten werden auf Bildschirmgrenzen begrenzt (`clampedX`, `clampedY`)
-- Verhindert, dass Planeten außerhalb des sichtbaren Bereichs liegen
+**Performance:**
+- **Lazy Loading:** Universe View lädt nur Theme-Metadaten (schnell)
+- **Background Preload:** Chapters werden async im Hintergrund geladen + gecacht
+- **Cache-Nutzung:** Planet View nutzt JSONLoader Cache (instant, kein DB-Call)
 
 ### Key Concepts
 

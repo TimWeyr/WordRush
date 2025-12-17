@@ -402,6 +402,224 @@ function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number)
   return lines;
 }
 
+// ============================================================================
+// UNIVERSE VIEW RENDERING (Sun, Orbit, Focused Planets)
+// ============================================================================
+
+/**
+ * Render the sun at bottom-left corner (25% visible)
+ * @param sunImagePath - Path to sun SVG (already loaded)
+ * @param sunImage - HTMLImageElement or null if not loaded
+ * @param context - Render context
+ */
+export function renderSun(
+  sunImage: HTMLImageElement | null,
+  context: RenderContext
+): void {
+  const { renderer } = context;
+  const ctx = renderer.getContext();
+  const canvas = ctx.canvas;
+  
+  // Sun position: bottom-left corner (center at 0, canvas.height)
+  // We want 25% visible, so 75% is off-screen
+  const sunSize = 400; // Full size of sun
+  const sunRadius = sunSize / 2;
+  
+  // Center of sun at exact corner (0, canvas.height)
+  const sunCenterX = 0;
+  const sunCenterY = canvas.height;
+  
+  // Top-left corner for drawing (image/rect drawing starts at top-left)
+  const sunX = sunCenterX - sunRadius;
+  const sunY = sunCenterY - sunRadius;
+  
+  ctx.save();
+  
+  if (sunImage && sunImage.complete) {
+    // Render sun image
+    ctx.globalAlpha = 0.9;
+    ctx.drawImage(sunImage, sunX, sunY, sunSize, sunSize);
+  } else {
+    // Fallback: render simple circle (centered at corner)
+    ctx.fillStyle = '#FFD700';
+    ctx.globalAlpha = 0.8;
+    ctx.beginPath();
+    ctx.arc(sunCenterX, sunCenterY, sunRadius, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  
+  ctx.restore();
+}
+
+/**
+ * Render radial gradient background from sun position
+ * @param universe - Current universe (for colors)
+ * @param context - Render context
+ */
+export function renderUniverseBackground(
+  universe: Universe,
+  context: RenderContext
+): void {
+  const { renderer } = context;
+  const ctx = renderer.getContext();
+  const canvas = ctx.canvas;
+  
+  // Sun position for gradient center
+  const sunX = 0;
+  const sunY = canvas.height;
+  
+  // Create radial gradient from sun
+  const gradient = ctx.createRadialGradient(
+    sunX, sunY, 0,
+    sunX, sunY, Math.max(canvas.width, canvas.height) * 1.5
+  );
+  
+  // Parse colorPrimary and colorAccent to RGB
+  const parseHex = (hex: string) => {
+    const clean = hex.replace('#', '');
+    return {
+      r: parseInt(clean.substring(0, 2), 16),
+      g: parseInt(clean.substring(2, 4), 16),
+      b: parseInt(clean.substring(4, 6), 16)
+    };
+  };
+  
+  const primary = parseHex(universe.colorPrimary);
+  const accent = parseHex(universe.colorAccent);
+  
+  // Gradient stops: sun → accent → primary → black
+  gradient.addColorStop(0, `rgba(${primary.r}, ${primary.g}, ${primary.b}, 0.8)`);
+  gradient.addColorStop(0.3, `rgba(${accent.r}, ${accent.g}, ${accent.b}, 0.6)`);
+  gradient.addColorStop(0.6, `rgba(${Math.floor(accent.r * 0.5)}, ${Math.floor(accent.g * 0.5)}, ${Math.floor(accent.b * 0.5)}, 0.4)`);
+  gradient.addColorStop(1, 'rgba(0, 0, 0, 0.95)');
+  
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+/**
+ * Render planet orbit circle (full 360°)
+ * @param orbitRadius - Radius of the orbit
+ * @param centerX - Center X of orbit (typically 0 for bottom-left)
+ * @param centerY - Center Y of orbit (typically screen height for bottom-left)
+ * @param context - Render context
+ */
+export function renderPlanetOrbit(
+  orbitRadius: number,
+  centerX: number,
+  centerY: number,
+  context: RenderContext
+): void {
+  const { renderer } = context;
+  const ctx = renderer.getContext();
+  
+  ctx.save();
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+  ctx.lineWidth = 1;
+  ctx.setLineDash([5, 10]);
+  ctx.beginPath();
+  // Draw full circle (0 to 2π)
+  ctx.arc(centerX, centerY, orbitRadius, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.restore();
+}
+
+/**
+ * Render planet in universe view with focus highlighting
+ * @param planet - Planet layout
+ * @param isFocused - Whether this planet is currently focused
+ * @param context - Render context
+ */
+export function renderUniversePlanet(
+  planet: PlanetLayout,
+  isFocused: boolean,
+  context: RenderContext
+): void {
+  const { renderer } = context;
+  const ctx = renderer.getContext();
+  
+  ctx.save();
+  
+  // Glow effect for focused planet
+  if (isFocused) {
+    const glowRadius = planet.radius * 3;
+    const hex = planet.theme.colorPrimary.replace('#', '');
+    const r = parseInt(hex.substring(0, 2), 16);
+    const g = parseInt(hex.substring(2, 4), 16);
+    const b = parseInt(hex.substring(4, 6), 16);
+    
+    const gradient = ctx.createRadialGradient(
+      planet.x, planet.y, 0,
+      planet.x, planet.y, glowRadius
+    );
+    gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, 0.8)`);
+    gradient.addColorStop(0.5, `rgba(${r}, ${g}, ${b}, 0.4)`);
+    gradient.addColorStop(1, 'transparent');
+    
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(planet.x, planet.y, glowRadius, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  
+  // Planet circle (brighter if focused)
+  ctx.fillStyle = planet.theme.colorPrimary;
+  ctx.globalAlpha = isFocused ? 1.0 : 0.7;
+  ctx.beginPath();
+  ctx.arc(planet.x, planet.y, planet.radius, 0, Math.PI * 2);
+  ctx.fill();
+  
+  // Planet icon
+  ctx.globalAlpha = 1.0;
+  ctx.fillStyle = '#ffffff';
+  ctx.font = 'bold 24px Arial';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(planet.theme.icon || '🌍', planet.x, planet.y);
+  
+  ctx.restore();
+}
+
+/**
+ * Render planet name label (top-right of screen)
+ * @param planetName - Name of the focused planet
+ * @param universe - Current universe (for color)
+ * @param context - Render context
+ */
+export function renderPlanetNameLabel(
+  planetName: string,
+  universe: Universe,
+  context: RenderContext
+): void {
+  const { renderer } = context;
+  const ctx = renderer.getContext();
+  const canvas = ctx.canvas;
+  
+  ctx.save();
+  
+  // Position: top-right area
+  const padding = 20;
+  const x = canvas.width - padding;
+  const y = 60; // Below controls
+  
+  // Text style
+  ctx.fillStyle = universe.colorPrimary;
+  ctx.font = 'bold 28px Arial, sans-serif';
+  ctx.textAlign = 'right';
+  ctx.textBaseline = 'top';
+  
+  // Shadow for readability
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
+  ctx.shadowBlur = 8;
+  ctx.shadowOffsetX = 0;
+  ctx.shadowOffsetY = 0;
+  
+  ctx.fillText(planetName, x, y);
+  
+  ctx.restore();
+}
+
 /**
  * Render tooltip for an element with glassmorphism style
  */
@@ -625,4 +843,3 @@ export function renderTooltip(
   
   ctx.restore();
 }
-

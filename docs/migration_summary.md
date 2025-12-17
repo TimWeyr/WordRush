@@ -188,3 +188,4 @@ Dieses Dokument dokumentiert den Abgleich zwischen der JSON-Struktur und der Sup
 Die Datei `docs/table_fields.json` wurde aktualisiert und enthält jetzt alle fehlenden Felder.
 
 
+

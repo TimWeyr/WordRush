@@ -14,6 +14,8 @@ export interface ParsedItemData {
   corrects: Array<{ word: string; context: string; order: number }>;
   distractors: Array<{ word: string; redirect: string; context: string }>;
   level: number;
+  source?: string; // Optional source (from s. line)
+  detail?: string; // Optional detail (from s. line)
 }
 
 interface ValidationError {
@@ -51,6 +53,8 @@ export function TextParserModal({ isOpen, onClose, onSave }: TextParserModalProp
       corrects: item.corrects!,
       distractors: item.distractors || [],
       level: item.level || defaultLevel,
+      source: item.source, // Optional source
+      detail: item.detail, // Optional detail
     };
   };
 
@@ -141,6 +145,30 @@ export function TextParserModal({ isOpen, onClose, onSave }: TextParserModalProp
             parseErrors.push({ line: lineNum, message: 'Distractor word cannot be empty' });
           } else {
             currentItem.distractors!.push({ word, redirect, context });
+          }
+        }
+      }
+      // Source/Detail - OPTIONAL, GILT NUR FÜR AKTUELLES ITEM
+      else if (lowerLine.startsWith('s.')) {
+        if (!currentItem) {
+          parseErrors.push({ line: lineNum, message: 'Source entry must come after a base word (b.)' });
+          return;
+        }
+        
+        const content = line.substring(2).trim();
+        const parts = content.split(',').map(p => p.trim());
+        
+        if (parts.length < 1) {
+          parseErrors.push({ line: lineNum, message: 'Source entry must have at least a source' });
+        } else {
+          const source = parts[0] || '';
+          const detail = parts[1] || '';
+          
+          if (source.length === 0) {
+            parseErrors.push({ line: lineNum, message: 'Source cannot be empty' });
+          } else {
+            currentItem.source = source;
+            currentItem.detail = detail || undefined; // Optional detail
           }
         }
       }
@@ -302,6 +330,7 @@ export function TextParserModal({ isOpen, onClose, onSave }: TextParserModalProp
 c. correct1, context1, 0
 c. correct2, context2, 1
 d. distractor1, redirect1, context1
+s. wikipedia, eine bps ist eine störung bla.....
 l. 1
 
 b. Basewort 2

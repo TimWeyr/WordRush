@@ -1,5 +1,60 @@
 /* Settings Modal Styles */
 
+/* Mode Toggle Button */
+.mode-toggle-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.mode-toggle-button:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mode-toggle-button.learn-mode {
+  border-color: #4caf50;
+  background: rgba(76, 175, 80, 0.2);
+}
+
+.mode-toggle-button.learn-mode:hover {
+  border-color: #66bb6a;
+  background: rgba(76, 175, 80, 0.3);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+.mode-toggle-button.shooter-mode {
+  border-color: #ff9800;
+  background: rgba(255, 152, 0, 0.2);
+}
+
+.mode-toggle-button.shooter-mode:hover {
+  border-color: #ffa726;
+  background: rgba(255, 152, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4);
+}
+
+.mode-icon {
+  font-size: 20px;
+}
+
+.mode-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
 .settings-backdrop {
   position: fixed;
   top: 0;

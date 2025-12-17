@@ -1,0 +1,89 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- History theme ship - Ancient/golden historical spaceship top-down view -->
+  
+  <defs>
+    <!-- Gold gradient -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8860b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main fuselage body (gold/bronze) -->
+  <path d="M 30 5 L 26 18 L 22 22 L 22 32 L 26 36 L 30 42 L 34 36 L 38 32 L 38 22 L 34 18 Z" 
+        fill="url(#goldGradient)" stroke="#8b6914" stroke-width="1.2"/>
+  
+  <!-- Ancient scroll/stone tablet cockpit window -->
+  <rect x="26" y="8" width="8" height="8" fill="#2c2416" stroke="#4a3a2a" stroke-width="0.8" rx="0.5"/>
+  <!-- Hieroglyphic-like patterns -->
+  <line x1="28" y1="10" x2="32" y2="10" stroke="#d4af37" stroke-width="0.5" opacity="0.6"/>
+  <circle cx="28" cy="12" r="0.5" fill="#d4af37" opacity="0.6"/>
+  <circle cx="32" cy="12" r="0.5" fill="#d4af37" opacity="0.6"/>
+  <line x1="28" y1="14" x2="32" y2="14" stroke="#d4af37" stroke-width="0.5" opacity="0.6"/>
+  
+  <!-- Ancient symbols on body - hourglass/time -->
+  <path d="M 30 24 L 28 26 L 28 28 L 30 30 L 32 28 L 32 26 Z" fill="#8b6914" stroke="#2c2416" stroke-width="0.5"/>
+  <circle cx="30" cy="26.5" r="0.8" fill="#2c2416"/>
+  <circle cx="30" cy="27.5" r="0.8" fill="#2c2416"/>
+  
+  <!-- Roman numerals -->
+  <text x="24" y="26" font-family="Arial" font-size="5" fill="#8b6914" font-weight="bold">IV</text>
+  <text x="34" y="26" font-family="Arial" font-size="5" fill="#8b6914" font-weight="bold">X</text>
+  
+  <!-- Ancient wheel/gear symbol -->
+  <circle cx="30" cy="30" r="3" fill="none" stroke="#8b6914" stroke-width="0.8"/>
+  <circle cx="30" cy="30" r="1.5" fill="#8b6914"/>
+  <line x1="30" y1="27" x2="30" y2="33" stroke="#8b6914" stroke-width="0.6"/>
+  <line x1="27" y1="30" x2="33" y2="30" stroke="#8b6914" stroke-width="0.6"/>
+  
+  <!-- Main wings (gold/bronze) -->
+  <path d="M 22 22 L 10 26 L 10 30 L 22 32" fill="url(#goldGradient)" stroke="#8b6914" stroke-width="1.2"/>
+  <path d="M 38 22 L 50 26 L 50 30 L 38 32" fill="url(#goldGradient)" stroke="#8b6914" stroke-width="1.2"/>
+  
+  <!-- Wing extensions -->
+  <rect x="8" y="27" width="4" height="4" fill="url(#goldGradient)" stroke="#8b6914" stroke-width="0.5"/>
+  <rect x="48" y="27" width="4" height="4" fill="url(#goldGradient)" stroke="#8b6914" stroke-width="0.5"/>
+  
+  <!-- Bronze accent stripes on wings -->
+  <rect x="12" y="27" width="8" height="1" fill="#8b6914"/>
+  <rect x="40" y="27" width="8" height="1" fill="#8b6914"/>
+  
+  <!-- Ancient ornamentation on wing tips -->
+  <circle cx="8" cy="29" r="1.5" fill="#d4af37" stroke="#8b6914" stroke-width="0.5"/>
+  <circle cx="52" cy="29" r="1.5" fill="#d4af37" stroke="#8b6914" stroke-width="0.5"/>
+  
+  <!-- Lower engine nacelles/pods (bronze) -->
+  <ellipse cx="18" cy="38" rx="3" ry="5" fill="url(#goldGradient)" stroke="#8b6914" stroke-width="0.5"/>
+  <ellipse cx="42" cy="38" rx="3" ry="5" fill="url(#goldGradient)" stroke="#8b6914" stroke-width="0.5"/>
+  
+  <!-- Bronze accent bands on pods -->
+  <rect x="16" y="40" width="4" height="2.5" fill="#8b6914" rx="1"/>
+  <rect x="40" y="40" width="4" height="2.5" fill="#8b6914" rx="1"/>
+  
+  <!-- Central engine (gold/bronze glow) -->
+  <ellipse cx="30" cy="46" rx="4" ry="3" fill="#2c2416"/>
+  <ellipse cx="30" cy="50" rx="5" ry="4" fill="#d4af37" opacity="0.9"/>
+  <ellipse cx="30" cy="52" rx="4" ry="3" fill="#ffd700" opacity="0.7"/>
+  <ellipse cx="30" cy="54" rx="3" ry="2" fill="#ffaa00" opacity="0.5"/>
+  
+  <!-- Side engines (gold/bronze glow) -->
+  <ellipse cx="18" cy="44" rx="2.5" ry="2" fill="#2c2416"/>
+  <ellipse cx="18" cy="47" rx="3" ry="2.5" fill="#d4af37" opacity="0.9"/>
+  <ellipse cx="18" cy="49" rx="2.5" ry="2" fill="#ffd700" opacity="0.7"/>
+  <ellipse cx="18" cy="50.5" rx="2" ry="1.5" fill="#ffaa00" opacity="0.5"/>
+  
+  <ellipse cx="42" cy="44" rx="2.5" ry="2" fill="#2c2416"/>
+  <ellipse cx="42" cy="47" rx="3" ry="2.5" fill="#d4af37" opacity="0.9"/>
+  <ellipse cx="42" cy="49" rx="2.5" ry="2" fill="#ffd700" opacity="0.7"/>
+  <ellipse cx="42" cy="50.5" rx="2" ry="1.5" fill="#ffaa00" opacity="0.5"/>
+  
+  <!-- Additional structural details -->
+  <line x1="22" y1="22" x2="22" y2="32" stroke="#8b6914" stroke-width="0.5" opacity="0.5"/>
+  <line x1="38" y1="22" x2="38" y2="32" stroke="#8b6914" stroke-width="0.5" opacity="0.5"/>
+  
+  <!-- Ancient decorative patterns -->
+  <path d="M 26 20 L 28 20 L 27 22 Z" fill="#8b6914" opacity="0.5"/>
+  <path d="M 34 20 L 32 20 L 33 22 Z" fill="#8b6914" opacity="0.5"/>
+</svg>
+

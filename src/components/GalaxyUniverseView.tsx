@@ -110,10 +110,12 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   
   const isDraggingRef = useRef(false);
   const isTouchDragRef = useRef(false); // Track if drag came from touch
+  const touchEndTimeRef = useRef(0); // Track when touch ended (to ignore mouse events)
   const dragStartXRef = useRef(0);
   const dragStartAngleRef = useRef(0);
   const lastDragXRef = useRef(0);
   const lastDragTimeRef = useRef(0);
+  const snapTimeoutRef = useRef<NodeJS.Timeout | null>(null); // Debounce snap calls
   
   // Layout cache
   const planetLayoutsRef = useRef<PlanetLayout[]>([]);
@@ -304,7 +306,10 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
           focusedPlanet.y <= canvas.height + 100;
         
         // If focused planet is not visible, trigger snap to nearest visible planet
-        if (!isVisible && !isSnappingRef.current && !isDraggingRef.current) {
+        // BUT: Don't snap during active dragging or right after touch end
+        const timeSinceTouchEnd = performance.now() - touchEndTimeRef.current;
+        const isRecentlyTouched = timeSinceTouchEnd < 300; // 300ms grace period
+        if (!isVisible && !isSnappingRef.current && !isDraggingRef.current && !isRecentlyTouched) {
           // Find nearest planet that IS visible
           let nearestVisiblePlanet: PlanetLayout | null = null;
           let smallestDistance = Infinity;
@@ -346,8 +351,18 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   }, [renderer, themes, rotationAngle]);
   
   useEffect(() => {
-    calculateLayouts();
-  }, [calculateLayouts]);
+    // Throttle calculateLayouts during dragging to prevent race conditions
+    if (isDraggingRef.current) {
+      // During drag, only calculate layout every few frames
+      const timeoutId = setTimeout(() => {
+        calculateLayouts();
+      }, 16); // ~1 frame at 60fps
+      return () => clearTimeout(timeoutId);
+    } else {
+      // When not dragging, calculate immediately
+      calculateLayouts();
+    }
+  }, [calculateLayouts, rotationAngle]);
   
   // ============================================================================
   // RENDERING
@@ -517,6 +532,12 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   // ============================================================================
   
   const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    // Ignore mouse events that come right after touch events (browser compatibility)
+    const timeSinceTouchEnd = performance.now() - touchEndTimeRef.current;
+    if (timeSinceTouchEnd < 500) {
+      return; // Ignore mouse event - it's likely a touch event in disguise
+    }
+    
     isDraggingRef.current = true;
     isTouchDragRef.current = false; // Mark as mouse interaction
     isSnappingRef.current = false;
@@ -548,6 +569,12 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   };
   
   const handleMouseUp = () => {
+    // Ignore mouse events that come right after touch events
+    const timeSinceTouchEnd = performance.now() - touchEndTimeRef.current;
+    if (timeSinceTouchEnd < 500) {
+      return; // Ignore mouse event - it's likely a touch event in disguise
+    }
+    
     if (isDraggingRef.current) {
       isDraggingRef.current = false;
       
@@ -573,6 +600,12 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   };
   
   const handleClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    // Ignore clicks that come right after touch events
+    const timeSinceTouchEnd = performance.now() - touchEndTimeRef.current;
+    if (timeSinceTouchEnd < 500) {
+      return; // Ignore click - it's likely a touch event in disguise
+    }
+    
     if (!renderer || !selectedUniverse) return;
     
     const rect = canvasRef.current?.getBoundingClientRect();
@@ -694,10 +727,26 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   const handleTouchEnd = () => {
     if (isDraggingRef.current) {
       isDraggingRef.current = false;
+      touchEndTimeRef.current = performance.now(); // Mark touch end time
       
-      // Touch: No inertia! Stop immediately and snap
+      // Touch: No inertia! Stop immediately
       velocityRef.current = 0;
-      snapToNearestPlanet();
+      
+      // Debounce snap: Clear any pending snap and set a new one
+      if (snapTimeoutRef.current) {
+        clearTimeout(snapTimeoutRef.current);
+      }
+      
+      // Small delay to prevent rapid-fire snaps during quick gestures
+      snapTimeoutRef.current = setTimeout(() => {
+        if (!isDraggingRef.current && !isSnappingRef.current) {
+          snapToNearestPlanet();
+        }
+        snapTimeoutRef.current = null;
+      }, 50); // 50ms debounce
+    } else {
+      // Touch ended but wasn't dragging - reset touch end time anyway
+      touchEndTimeRef.current = performance.now();
     }
   };
   

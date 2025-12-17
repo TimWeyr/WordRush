@@ -30,14 +30,18 @@ const ORBIT_RADIUS_FACTOR = 0.55; // 55% of screen diagonal
 /** Inertia decay factor for mouse (higher = faster decay) */
 const INERTIA_DECAY_MOUSE = 0.92;
 
-/** Inertia decay factor for touch (faster decay to stop sooner) */
-const INERTIA_DECAY_TOUCH = 0.85;
+/**
+ * Inertia decay factor for touch (higher decay → stops sooner)
+ * Mobile users reported very long spinning after short taps, so we
+ * dampen the touch inertia much more aggressively than before.
+ */
+const INERTIA_DECAY_TOUCH = 0.7;
 
 /** Minimum velocity for inertia to continue */
-const MIN_INERTIA_VELOCITY = 0.001;
+const MIN_INERTIA_VELOCITY = 0.003;
 
 /** Maximum velocity for touch (prevent excessive spinning) */
-const MAX_TOUCH_VELOCITY = 0.15;
+const MAX_TOUCH_VELOCITY = 0.08;
 
 /** Snapping animation duration (ms) */
 const SNAP_DURATION = 400;
@@ -45,11 +49,11 @@ const SNAP_DURATION = 400;
 /** Drag sensitivity for mouse (radians per pixel) */
 const DRAG_SENSITIVITY = 0.002;
 
-/** Touch sensitivity (radians per pixel) - much lower for touch */
-const TOUCH_SENSITIVITY = 0.0005;
+/** Touch sensitivity (radians per pixel) - even lower for touch */
+const TOUCH_SENSITIVITY = 0.00035;
 
 /** Minimum touch movement threshold (pixels) - ignore tiny touches */
-const TOUCH_MIN_MOVEMENT = 5;
+const TOUCH_MIN_MOVEMENT = 10;
 
 /** Wheel sensitivity (radians per delta) - reduced for better control */
 const WHEEL_SENSITIVITY = 0.001;

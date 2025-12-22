@@ -77,7 +77,7 @@ export function transformRoundsToItems(rounds: RoundRow[], items: ItemRow[], the
       distractors: distractorItems.map(transformDistractorItem),
       meta: {
         source: round.meta_source ?? undefined,
-        detail: round.meta_detail ?? undefined,
+        detail: round.detail ?? undefined,
         tags: round.meta_tags ?? undefined,
         related: round.meta_related ?? undefined,
         difficultyScaling: {

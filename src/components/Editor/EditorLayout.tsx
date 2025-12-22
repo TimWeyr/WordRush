@@ -644,6 +644,9 @@ function EditorLayoutContent() {
                         handleItemsChange(updatedItems);
                       }}
                       onBack={handleBackToTable}
+                      universeId={selectedUniverse?.id}
+                      theme={selectedTheme}
+                      chapterId={selectedChapter}
                     />
                   )
                 ) : (

@@ -190,47 +190,61 @@ The **Text Parser** is the fastest way to create multiple items at once. Perfect
 Each item follows this simple format:
 
 ```
-b. Basewort
-c. correct1, context1, order
-c. correct2, context2, order
-d. distractor1, redirect1, context1
-d. distractor2, redirect2, context2
+b. Basewort | base context
+c. correct1 | context1 | order
+c. correct2 | context2 | order
+d. distractor1 | redirect1 | context1
+d. distractor2 | redirect2 | context2
+s. source | detail
+t. tag1 | tag2 | tag3
 l. level
 ```
 
 **Rules**:
-- **`b.`** = Base word (starts a new item)
-- **`c.`** = Correct entry (`word, context, order`)
-- **`d.`** = Distractor entry (`word, redirect, context`)
+- **`b.`** = Base word (starts a new item) - format: `b. Basewort | base context` (context optional)
+- **`c.`** = Correct entry - format: `c. word | context | order` (context and order optional)
+- **`d.`** = Distractor entry - format: `d. word | redirect | context` (context optional)
+- **`s.`** = Source/Detail - format: `s. source | detail` (detail optional)
+- **`t.`** = Tags - format: `t. tag1 | tag2 | tag3` (pipe-separated, optional)
 - **`l.`** = Level (1-10, optional, applies to all following items until next `l.`)
-- Field markers are **case-insensitive** (b/B, c/C, d/D, l/L)
+- **`#`** = Comment line (ignored during parsing)
+- **Field separators**: Use **pipe (`|`)** to separate fields, NOT commas
+- Field markers are **case-insensitive** (b/B, c/C, d/D, s/S, t/T, l/L)
 - Empty lines are ignored
 - Multiple items: Each `b.` line starts a new item
 
 ### Example: Single Item
 
 ```
-b. Depression
-c. Freudlosigkeit, Depression zeigt sich durch Freudlosigkeit., 1
-c. Antriebslosigkeit, Depression zeigt sich durch Antriebslosigkeit., 2
-d. Wahn, Schizophrenie, Wahn gehört zur Schizophrenie.
-d. Manie, Affektive Störungen, Manie gehört zu Affektiven Störungen.
+b. Depression | Affektive Störung
+c. Freudlosigkeit | Depression zeigt sich durch Freudlosigkeit. | 1
+c. Antriebslosigkeit | Depression zeigt sich durch Antriebslosigkeit. | 2
+d. Wahn | Schizophrenie | Wahn gehört zur Schizophrenie.
+d. Manie | Affektive Störungen | Manie gehört zu Affektiven Störungen.
+s. ICD-10 F3 | Depressive Episode
+t. affektive_störungen | mood | depression
 l. 1
 ```
 
 ### Example: Multiple Items
 
 ```
-b. Depression
-c. Freudlosigkeit, Depression zeigt sich durch Freudlosigkeit., 1
-c. Antriebslosigkeit, Depression zeigt sich durch Antriebslosigkeit., 2
-d. Wahn, Schizophrenie, Wahn gehört zur Schizophrenie.
+# First item about Depression
+b. Depression | Affektive Störung
+c. Freudlosigkeit | Depression zeigt sich durch Freudlosigkeit. | 1
+c. Antriebslosigkeit | Depression zeigt sich durch Antriebslosigkeit. | 2
+d. Wahn | Schizophrenie | Wahn gehört zur Schizophrenie.
+s. ICD-10 F3
+t. affektive_störungen | mood
 l. 1
 
-b. Schizophrenie
-c. Wahn, Schizophrenie zeigt sich durch Wahn., 1
-c. Halluzinationen, Schizophrenie zeigt sich durch Halluzinationen., 2
-d. Manie, Affektive Störungen, Manie gehört zu Affektiven Störungen.
+# Second item about Schizophrenia
+b. Schizophrenie | Psychotische Störung
+c. Wahn | Schizophrenie zeigt sich durch Wahn. | 1
+c. Halluzinationen | Schizophrenie zeigt sich durch Halluzinationen. | 2
+d. Manie | Affektive Störungen | Manie gehört zu Affektiven Störungen.
+s. ICD-10 F2
+t. psychose | schizophrenie
 l. 2
 ```
 
@@ -239,32 +253,55 @@ This creates **2 items** with different levels.
 ### Field Details
 
 #### Base (`b.`)
-- **Format**: `b. Basewort`
+- **Format**: `b. Basewort | base context`
 - **Required**: Yes (one per item)
-- **Example**: `b. Depression`
+- **Fields**:
+  - `Basewort`: The base word/phrase (required)
+  - `base context`: Optional context for the base word (optional)
+- **Examples**:
+  - `b. Depression` (no context)
+  - `b. Depression | Affektive Störung` (with context)
 
 #### Correct (`c.`)
-- **Format**: `c. word, context, order`
+- **Format**: `c. word | context | order`
 - **Required**: At least one per item
 - **Fields**:
   - `word`: The correct word/phrase (required)
   - `context`: Explanation text (optional, can be empty)
   - `order`: Collection order number (optional, default: 0)
 - **Examples**:
-  - `c. Freudlosigkeit, Depression zeigt sich durch Freudlosigkeit., 1`
-  - `c. Antriebslosigkeit, , 2` (no context)
+  - `c. Freudlosigkeit | Depression zeigt sich durch Freudlosigkeit. | 1`
+  - `c. Antriebslosigkeit | | 2` (no context)
   - `c. Traurigkeit` (no context, no order)
 
 #### Distractor (`d.`)
-- **Format**: `d. word, redirect, context`
+- **Format**: `d. word | redirect | context`
 - **Required**: No (but recommended)
 - **Fields**:
   - `word`: The distractor word/phrase (required)
   - `redirect`: Where this distractor actually belongs (required)
   - `context`: Explanation text (optional)
 - **Examples**:
-  - `d. Wahn, Schizophrenie, Wahn gehört zur Schizophrenie.`
-  - `d. Manie, Affektive Störungen, ` (no context)
+  - `d. Wahn | Schizophrenie | Wahn gehört zur Schizophrenie.`
+  - `d. Manie | Affektive Störungen |` (no context)
+
+#### Source/Detail (`s.`)
+- **Format**: `s. source | detail`
+- **Required**: No (optional)
+- **Fields**:
+  - `source`: Source reference (required if using s. line)
+  - `detail`: Additional detail text (optional)
+- **Examples**:
+  - `s. ICD-10 F3` (source only)
+  - `s. ICD-10 F3 | Depressive Episode` (source and detail)
+
+#### Tags (`t.`)
+- **Format**: `t. tag1 | tag2 | tag3`
+- **Required**: No (optional)
+- **Fields**: Pipe-separated list of tags
+- **Examples**:
+  - `t. affektive_störungen | mood | depression`
+  - `t. psychose | schizophrenie`
 
 #### Level (`l.`)
 - **Format**: `l. number`
@@ -274,6 +311,14 @@ This creates **2 items** with different levels.
 - **Examples**:
   - `l. 1` = Level 1
   - `l. 5` = Level 5
+
+#### Comments (`#`)
+- **Format**: `# comment text`
+- **Required**: No (optional)
+- **Behavior**: Lines starting with `#` are completely ignored during parsing
+- **Examples**:
+  - `# This is a comment`
+  - `# First item about Depression`
 
 ### Using the Text Parser
 
@@ -297,7 +342,10 @@ The parser validates:
 - ✅ Collection order is a number
 - ✅ Level is 1-10
 - ✅ Distractors have redirect
+- ✅ Tags are non-empty (if t. line is used)
+- ✅ Source is non-empty (if s. line is used)
 - ✅ No syntactically unparseable lines
+- ✅ Comment lines (starting with #) are ignored
 
 **Errors are shown** with line numbers and descriptions.
 
@@ -1270,19 +1318,25 @@ Let's create a complete example using the Editor:
 2. Enter this text:
 
 ```
-b. Earth
-c. Water, Earth is the only planet with liquid water on its surface., 1
-c. Life, Earth is the only known planet to support life., 2
-c. Atmosphere, Earth's atmosphere protects life and retains heat., 3
-d. Rings, Saturn, Rings are a feature of Saturn, not Earth.
-d. Great Red Spot, Jupiter, The Great Red Spot is a storm on Jupiter.
+# Earth - our home planet
+b. Earth | Third planet from the Sun
+c. Water | Earth is the only planet with liquid water on its surface. | 1
+c. Life | Earth is the only known planet to support life. | 2
+c. Atmosphere | Earth's atmosphere protects life and retains heat. | 3
+d. Rings | Saturn | Rings are a feature of Saturn, not Earth.
+d. Great Red Spot | Jupiter | The Great Red Spot is a storm on Jupiter.
+s. NASA | Terrestrial planet
+t. planets | earth | solar_system
 l. 1
 
-b. Mars
-c. Red Planet, Mars is known as the Red Planet due to iron oxide., 1
-c. Olympus Mons, Mars has the largest volcano in the solar system., 2
-d. Great Red Spot, Jupiter, The Great Red Spot is on Jupiter, not Mars.
-d. Rings, Saturn, Rings belong to Saturn, not Mars.
+# Mars - the red planet
+b. Mars | Fourth planet from the Sun
+c. Red Planet | Mars is known as the Red Planet due to iron oxide. | 1
+c. Olympus Mons | Mars has the largest volcano in the solar system. | 2
+d. Great Red Spot | Jupiter | The Great Red Spot is on Jupiter, not Mars.
+d. Rings | Saturn | Rings belong to Saturn, not Mars.
+s. NASA | Terrestrial planet
+t. planets | mars | solar_system
 l. 1
 ```
 

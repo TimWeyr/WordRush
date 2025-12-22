@@ -223,8 +223,9 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
       return;
     }
 
-    // Generate new ID
+    // Generate new ID - SOLUTION 2: Use full chapter ID for uniqueness
     const maxId = items.reduce((max, item) => {
+      // Extract number from end of ID (works with both old format "F40_001" and new format "F40.00_001")
       const match = item.id.match(/\d+$/);
       if (match) {
         const num = parseInt(match[0]);
@@ -233,7 +234,8 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
       return max;
     }, 0);
 
-    const newId = `${chapterId.substring(0, 3).toUpperCase()}_${String(maxId + 1).padStart(3, '0')}`;
+    // SOLUTION 2 Option A: Use full chapter ID (e.g., "F40.00_001" instead of "F40_001")
+    const newId = `${chapterId}_${String(maxId + 1).padStart(3, '0')}`;
 
     // Helper: Generate random color
     const randomColor = () => '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
@@ -327,7 +329,9 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
     }
 
     const newItems: Item[] = [];
+    // SOLUTION 2: Extract max ID from items (works with both old and new format)
     let currentMaxId = items.reduce((max, item) => {
+      // Extract number from end of ID (works with both old format "F40_001" and new format "F40.00_001")
       const match = item.id.match(/\d+$/);
       if (match) {
         const num = parseInt(match[0]);
@@ -335,8 +339,6 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
       }
       return max;
     }, 0);
-
-    const prefix = chapterId.substring(0, 3).toUpperCase();
     
     // Helper functions for randomization (same as handleAddNewItem)
     const randomColor = () => '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
@@ -347,7 +349,8 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
     // Erstelle alle Items
     for (const parsedData of parsedDataArray) {
       currentMaxId++;
-      const newId = `${prefix}_${String(currentMaxId).padStart(3, '0')}`;
+      // SOLUTION 2 Option A: Use full chapter ID for uniqueness (e.g., "F40.00_001" instead of "F40_001")
+      const newId = `${chapterId}_${String(currentMaxId).padStart(3, '0')}`;
 
       const correctEntries = parsedData.corrects.map((c) => ({
         entry: {
@@ -408,7 +411,7 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
         meta: {
           source: parsedData.source || '',
           detail: parsedData.detail,
-          tags: [],
+          tags: parsedData.tags || [],
           related: [],
           difficultyScaling: {
             speedMultiplierPerReplay: 0.1,

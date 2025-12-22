@@ -823,11 +823,15 @@ export function findFocusedPlanet(
  * 
  * @param themes - Array of themes (planets)
  * @param targetPlanetId - ID of the planet to center
+ * @param screenWidth - Screen width (optional, for precise centering)
+ * @param screenHeight - Screen height (optional, for precise centering)
  * @returns Rotation angle in radians, or 0 if planet not found
  */
 export function calculateRotationAngleForPlanet(
   themes: Theme[],
-  targetPlanetId: string
+  targetPlanetId: string,
+  screenWidth?: number,
+  screenHeight?: number
 ): number {
   const planetIndex = themes.findIndex(t => t.id === targetPlanetId);
   if (planetIndex === -1) return 0;
@@ -836,7 +840,24 @@ export function calculateRotationAngleForPlanet(
   const angleStep = (Math.PI * 2) / themes.length;
   const planetBaseAngle = planetIndex * angleStep;
   
-  // Calculate rotation needed to center this planet
-  // We want the planet to be at 0° (pointing right, towards screen center)
-  return -planetBaseAngle;
+  // Calculate the target angle (where we want the planet to be)
+  // If screen dimensions provided, calculate angle from sun (bottom-left) to screen center
+  let targetAngle = 0; // Default: 0° (pointing right)
+  
+  if (screenWidth && screenHeight) {
+    // Sun is at (0, screenHeight) - bottom-left
+    // Screen center is at (screenWidth/2, screenHeight/2)
+    const sunX = 0;
+    const sunY = screenHeight;
+    const centerX = screenWidth / 2;
+    const centerY = screenHeight / 2;
+    
+    // Calculate angle from sun to screen center
+    targetAngle = Math.atan2(centerY - sunY, centerX - sunX);
+  }
+  
+  // Calculate rotation needed: we want planetBaseAngle to end up at targetAngle
+  // rotation + planetBaseAngle = targetAngle
+  // rotation = targetAngle - planetBaseAngle
+  return targetAngle - planetBaseAngle;
 }

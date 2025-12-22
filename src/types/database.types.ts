@@ -75,7 +75,7 @@ export interface RoundRow {
   published: boolean | null;
   wave_duration: number | null; // numeric
   meta_source: string | null;
-  meta_detail: string | null;
+  detail: string | null; // Changed from meta_detail to detail (matches DB schema)
   meta_tags: string[] | null; // TEXT[]
   meta_difficulty_scaling: {
     speedMultiplierPerReplay?: number;

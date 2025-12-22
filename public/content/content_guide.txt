@@ -52,7 +52,7 @@ Humor darf IMMER eingesetzt werden, aber:
 ## 2. Struktur eines Items (Felder)
 
 
-never use a comma, as in a sentence or a word because it is reserved for the parser
+Use PIPE (|) to separate fields, NOT commas. You can now use commas freely in your text content!
 
 
 ### base
@@ -363,44 +363,59 @@ Creating Items
 
 Each item follows this simple format:
 
-b. Basewort, context
-c. correct1, context1, collectionorder
-c. correct2, context2, collectionorder
-d. distractor1, redirect1, context1
-d. distractor2, redirect2, context2
+b. Basewort | context
+c. correct1 | context1 | collectionorder
+c. correct2 | context2 | collectionorder
+d. distractor1 | redirect1 | context1
+d. distractor2 | redirect2 | context2
+s. source | detail
+t. tag1 | tag2 | tag3
 l. level
 
 
 Rules:
 
-b. = Base word (starts a new item) (word, context)
-c. = Correct entry (word, context, order)
-d. = Distractor entry (word, redirect, context)
+b. = Base word (starts a new item) (word | context) - context optional
+c. = Correct entry (word | context | order) - context and order optional
+d. = Distractor entry (word | redirect | context) - context optional
+s. = Source/Detail (source | detail) - detail optional, both optional
+t. = Tags (tag1 | tag2 | tag3) - pipe-separated, optional
 l. = Level (1-10, optional, applies to all following items until next l.)
+# = Comment line (ignored during parsing) - optional
 
-never use a comma, as in a sentence or a word because it is reserved for the parser
+IMPORTANT: Use PIPE (|) to separate fields, NOT commas!
+You can now use commas freely in your text content (words, sentences, etc.)
+Comment lines starting with # are completely ignored
 
 
 Multiple items: Each b. line starts a new item
 Example: Single Item
-b. Depression
-c. Freudlosigkeit, Depression zeigt sich durch Freudlosigkeit., 1
-c. Antriebslosigkeit, Depression zeigt sich durch Antriebslosigkeit., 2
-d. Wahn, Schizophrenie, Wahn gehört zur Schizophrenie.
-d. Manie, Affektive Störungen, Manie gehört zu Affektiven Störungen.
+b. Depression | Affektive Störung
+c. Freudlosigkeit | Depression zeigt sich durch Freudlosigkeit. | 1
+c. Antriebslosigkeit | Depression zeigt sich durch Antriebslosigkeit. | 2
+d. Wahn | Schizophrenie | Wahn gehört zur Schizophrenie.
+d. Manie | Affektive Störungen | Manie gehört zu Affektiven Störungen.
+s. ICD-10 F3 | Depressive Episode
+t. affektive_störungen | mood | depression
 l. 1
 
 
 
 Example: Multiple Items
-b. Depression
-c. Freudlosigkeit, Depression zeigt sich durch Freudlosigkeit., 1
-c. Antriebslosigkeit, Depression zeigt sich durch Antriebslosigkeit., 2
-d. Wahn, Schizophrenie, Wahn gehört zur Schizophrenie.
+# First item about Depression
+b. Depression | Affektive Störung
+c. Freudlosigkeit | Depression zeigt sich durch Freudlosigkeit. | 1
+c. Antriebslosigkeit | Depression zeigt sich durch Antriebslosigkeit. | 2
+d. Wahn | Schizophrenie | Wahn gehört zur Schizophrenie.
+s. ICD-10 F3
+t. affektive_störungen | mood
 l. 1
 
-b. Schizophrenie
-c. Wahn, Schizophrenie zeigt sich durch Wahn., 1
-c. Halluzinationen, Schizophrenie zeigt sich durch Halluzinationen., 2
-d. Manie, Affektive Störungen, Manie gehört zu Affektiven Störungen.
+# Second item about Schizophrenia
+b. Schizophrenie | Psychotische Störung
+c. Wahn | Schizophrenie zeigt sich durch Wahn. | 1
+c. Halluzinationen | Schizophrenie zeigt sich durch Halluzinationen. | 2
+d. Manie | Affektive Störungen | Manie gehört zu Affektiven Störungen.
+s. ICD-10 F2
+t. psychose | schizophrenie
 l. 2

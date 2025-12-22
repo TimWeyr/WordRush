@@ -1203,7 +1203,7 @@ export const GalaxyMap: React.FC<GalaxyMapProps> = ({ onStart, initialFocus, onI
             
             if (distanceFromRing < LEVEL_RING_HITBOX_WIDTH) {
               const chapterItems = allItems.filter(item => 
-                item.theme === planet.id && item.chapter === moon.chapterId
+                item.ch  === planet.id && item.chapter === moon.chapterId
               );
               const levelScore = getLevelScore(moon.chapterId, ring.level, chapterItems, learningState);
               const tooltipText = generateTooltipText('levelRing', `Level ${ring.level}`, levelScore);

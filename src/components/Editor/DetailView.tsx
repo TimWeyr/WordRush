@@ -1,21 +1,34 @@
-import { useState, useMemo } from 'react';
-import type { Item, CorrectEntry, DistractorEntry } from '@/types/content.types';
+import { useState, useMemo, useEffect, useRef } from 'react';
+import type { Item, CorrectEntry, DistractorEntry, Theme } from '@/types/content.types';
 import { VisualConfig } from './VisualConfig';
 import { SpawnConfig } from './SpawnConfigCompact';
 import { randomConfigGenerator } from '@/utils/RandomConfigGenerator';
+import { jsonLoader } from '@/infra/utils/JSONLoader';
+import { jsonWriter } from '@/infra/utils/JSONWriter';
+import { useToast } from '../Toast/ToastContainer';
 
 interface DetailViewProps {
   item: Item | null;
   allItems: Item[];
   onItemChange: (item: Item) => void;
   onBack: () => void;
+  universeId?: string;
+  theme?: Theme | null;
+  chapterId?: string;
 }
 
 // Removed unused constants
 
-export function DetailView({ item, allItems, onItemChange, onBack }: DetailViewProps) {
+export function DetailView({ item, allItems, onItemChange, onBack, universeId, theme, chapterId }: DetailViewProps) {
   const [localItem, setLocalItem] = useState<Item | null>(item);
   const [relatedSearch, setRelatedSearch] = useState('');
+  const [allThemeTags, setAllThemeTags] = useState<string[]>([]);
+  const [tagInput, setTagInput] = useState('');
+  const [showTagSuggestions, setShowTagSuggestions] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const tagInputRef = useRef<HTMLInputElement>(null);
+  const tagSuggestionsRef = useRef<HTMLDivElement>(null);
+  const { showToast } = useToast();
 
   // Update local item when prop changes
   if (item && localItem?.id !== item.id) {
@@ -152,6 +165,38 @@ export function DetailView({ item, allItems, onItemChange, onBack }: DetailViewP
     onItemChange(newItem);
   };
 
+  // Load all tags from theme when universe/theme changes
+  useEffect(() => {
+    const loadThemeTags = async () => {
+      if (!universeId || !theme) return;
+      
+      try {
+        const chapterIds = Object.keys(theme.chapters);
+        const allThemeItems = await jsonLoader.loadAllThemeItems(universeId, theme.id, chapterIds);
+        
+        // Extract all unique tags from all items
+        const tagsSet = new Set<string>();
+        allThemeItems.forEach(item => {
+          if (item.meta.tags) {
+            item.meta.tags.forEach(tag => {
+              if (tag && tag.trim()) {
+                tagsSet.add(tag.trim());
+              }
+            });
+          }
+        });
+        
+        const sortedTags = Array.from(tagsSet).sort();
+        setAllThemeTags(sortedTags);
+        console.log(`🏷️ Loaded ${sortedTags.length} unique tags from theme`);
+      } catch (error) {
+        console.error('Failed to load theme tags:', error);
+      }
+    };
+    
+    loadThemeTags();
+  }, [universeId, theme]);
+
   // Filter related items by search
   const filteredRelatedItems = useMemo(() => {
     if (!relatedSearch) return allItems;
@@ -163,6 +208,139 @@ export function DetailView({ item, allItems, onItemChange, onBack }: DetailViewP
       )
     );
   }, [allItems, relatedSearch, localItem]);
+
+  // Filter tag suggestions based on input
+  const filteredTagSuggestions = useMemo(() => {
+    if (!tagInput.trim()) return allThemeTags.slice(0, 10); // Show first 10 if no input
+    
+    const input = tagInput.toLowerCase().trim();
+    const currentTags = localItem?.meta.tags || [];
+    
+    return allThemeTags
+      .filter(tag => 
+        tag.toLowerCase().includes(input) && 
+        !currentTags.includes(tag)
+      )
+      .slice(0, 10);
+  }, [tagInput, allThemeTags, localItem?.meta.tags]);
+
+  // Handle tag input changes
+  const handleTagInputChange = (value: string) => {
+    setTagInput(value);
+    setShowTagSuggestions(true);
+  };
+
+  // Add tag from input or suggestion
+  const handleAddTag = (tag: string) => {
+    if (!localItem || !tag.trim()) return;
+    
+    const trimmedTag = tag.trim();
+    const currentTags = localItem.meta.tags || [];
+    
+    if (currentTags.includes(trimmedTag)) return; // Already exists
+    
+    const newTags = [...currentTags, trimmedTag];
+    handleFieldChange('meta.tags', newTags);
+    setTagInput('');
+    setShowTagSuggestions(false);
+  };
+
+  // Remove tag
+  const handleRemoveTag = (tagToRemove: string) => {
+    if (!localItem) return;
+    
+    const currentTags = localItem.meta.tags || [];
+    const newTags = currentTags.filter(tag => tag !== tagToRemove);
+    handleFieldChange('meta.tags', newTags);
+  };
+
+  // Handle tag input key events
+  const handleTagInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && tagInput.trim()) {
+      e.preventDefault();
+      handleAddTag(tagInput);
+    } else if (e.key === 'Escape') {
+      setShowTagSuggestions(false);
+    } else if (e.key === 'ArrowDown' && filteredTagSuggestions.length > 0) {
+      e.preventDefault();
+      // Focus first suggestion (could be enhanced with keyboard navigation)
+    }
+  };
+
+  // Close suggestions when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        tagInputRef.current && 
+        !tagInputRef.current.contains(event.target as Node) &&
+        tagSuggestionsRef.current &&
+        !tagSuggestionsRef.current.contains(event.target as Node)
+      ) {
+        setShowTagSuggestions(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Check if there are unsaved changes
+  const hasUnsavedChanges = useMemo(() => {
+    if (!item || !localItem) return false;
+    return JSON.stringify(item) !== JSON.stringify(localItem);
+  }, [item, localItem]);
+
+  // Save item to database
+  const handleSave = async () => {
+    if (!localItem || !universeId || !theme || !chapterId) {
+      showToast('❌ Missing required information to save', 'error');
+      return;
+    }
+
+    setSaving(true);
+    try {
+      const result = await jsonWriter.saveItem(universeId, theme.id, chapterId, localItem);
+      
+      if (result.success) {
+        showToast(`✅ Item ${localItem.id} saved successfully!`, 'success');
+        // Update the original item prop by calling onItemChange
+        onItemChange(localItem);
+        onBack();
+      } else {
+        showToast(`❌ Failed to save item: ${result.error || 'Unknown error'}`, 'error');
+      }
+    } catch (error) {
+      console.error('Error saving item:', error);
+      showToast(`❌ Error saving item: ${error instanceof Error ? error.message : 'Unknown error'}`, 'error');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  // Handle back button - save if there are changes
+  const handleBack = async () => {
+    if (hasUnsavedChanges) {
+      await handleSave();
+    } else {
+      onBack();
+    }
+  };
+
+  // Handle discard - go back without saving
+  const handleDiscard = () => {
+    if (hasUnsavedChanges) {
+      const confirmed = window.confirm('Are you sure you want to discard all unsaved changes?');
+      if (confirmed) {
+        // Reset to original item
+        if (item) {
+          setLocalItem(item);
+        }
+        onBack();
+      }
+    } else {
+      onBack();
+    }
+  };
 
   if (!localItem) {
     return (
@@ -210,10 +388,24 @@ export function DetailView({ item, allItems, onItemChange, onBack }: DetailViewP
 
   return (
     <div className="editor-detail-container">
-      <div style={{ marginBottom: '2rem' }}>
-        <button className="editor-button" onClick={onBack}>
-          ← Back to Table View
+      <div style={{ marginBottom: '2rem', display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+        <button 
+          className="editor-button primary" 
+          onClick={handleBack}
+          disabled={saving}
+        >
+          {saving ? '💾 Saving...' : hasUnsavedChanges ? '💾 Save & Back' : '← Back to Table View'}
         </button>
+        {hasUnsavedChanges && (
+          <button 
+            className="editor-button" 
+            onClick={handleDiscard}
+            disabled={saving}
+            style={{ opacity: 0.8 }}
+          >
+            Discard Changes
+          </button>
+        )}
       </div>
 
       {/* BASIC INFORMATION */}
@@ -572,14 +764,159 @@ export function DetailView({ item, allItems, onItemChange, onBack }: DetailViewP
         </div>
         <div className="editor-form-row">
           {renderTextInput('Source', 'meta.source', localItem.meta.source || '', 100, 'Source reference')}
-          <div className="editor-form-group">
-            <label className="editor-form-label">Tags (comma-separated)</label>
-            <input
-              type="text"
-              className="editor-form-input"
-              value={localItem.meta.tags?.join(', ') || ''}
-              onChange={(e) => handleFieldChange('meta.tags', e.target.value.split(',').map(t => t.trim()).filter(t => t))}
-              placeholder="tag1, tag2, tag3"
+          <div className="editor-form-group" style={{ position: 'relative' }}>
+            <label className="editor-form-label">Tags</label>
+            <div style={{ 
+              display: 'flex', 
+              flexWrap: 'wrap', 
+              gap: '0.4rem', 
+              padding: '0.4rem 0.5rem',
+              background: 'rgba(255, 255, 255, 0.03)',
+              borderRadius: '4px',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              minHeight: '40px',
+              alignItems: 'center'
+            }}>
+              {/* Tag Pills */}
+              {localItem.meta.tags && localItem.meta.tags.length > 0 && (
+                <>
+                  {localItem.meta.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      style={{
+                        background: 'rgba(255, 255, 255, 0.08)',
+                        padding: '0.25rem 0.5rem',
+                        borderRadius: '3px',
+                        fontSize: '0.85rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.35rem',
+                        border: 'none',
+                        color: 'rgba(255, 255, 255, 0.9)',
+                      }}
+                    >
+                      {tag}
+                      <button
+                        onClick={() => handleRemoveTag(tag)}
+                        style={{
+                          background: 'transparent',
+                          border: 'none',
+                          color: 'rgba(255, 255, 255, 0.5)',
+                          cursor: 'pointer',
+                          padding: '0',
+                          fontSize: '1rem',
+                          lineHeight: '1',
+                          width: '16px',
+                          height: '16px',
+                          borderRadius: '2px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          transition: 'all 0.15s',
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                          e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = 'transparent';
+                          e.currentTarget.style.color = 'rgba(255, 255, 255, 0.5)';
+                        }}
+                        title="Remove tag"
+                      >
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                </>
+              )}
+              {/* Tag Input */}
+              <input
+                ref={tagInputRef}
+                type="text"
+                className="editor-form-input"
+                value={tagInput}
+                onChange={(e) => handleTagInputChange(e.target.value)}
+                onKeyDown={handleTagInputKeyDown}
+                onFocus={() => setShowTagSuggestions(true)}
+                placeholder={localItem.meta.tags && localItem.meta.tags.length > 0 ? "Add tag..." : "Type to add tags..."}
+                style={{
+                  border: 'none',
+                  background: 'transparent',
+                  flex: 1,
+                  minWidth: '120px',
+                  outline: 'none',
+                  color: 'white',
+                  fontSize: '0.9rem',
+                  padding: '0.2rem 0',
+                }}
+              />
+            </div>
+            {/* Autocomplete Suggestions */}
+            {showTagSuggestions && filteredTagSuggestions.length > 0 && (
+              <div
+                ref={tagSuggestionsRef}
+                style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: 0,
+                  right: 0,
+                  marginTop: '0.2rem',
+                  background: 'rgba(15, 15, 20, 0.98)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderRadius: '4px',
+                  padding: '0.25rem',
+                  zIndex: 1000,
+                  maxHeight: '180px',
+                  overflowY: 'auto',
+                  backdropFilter: 'blur(8px)',
+                }}
+              >
+                {filteredTagSuggestions.map((tag) => (
+                  <div
+                    key={tag}
+                    onClick={() => handleAddTag(tag)}
+                    style={{
+                      padding: '0.4rem 0.6rem',
+                      cursor: 'pointer',
+                      borderRadius: '3px',
+                      fontSize: '0.875rem',
+                      transition: 'background 0.15s',
+                      color: 'rgba(255, 255, 255, 0.85)',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'transparent';
+                    }}
+                  >
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            )}
+            {tagInput.trim() && !allThemeTags.some(t => t.toLowerCase() === tagInput.toLowerCase().trim()) && (
+              <div style={{ marginTop: '0.4rem', fontSize: '0.8rem', opacity: 0.6, color: 'rgba(255, 255, 255, 0.6)' }}>
+                Press Enter to add "{tagInput.trim()}" as new tag
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="editor-form-row" style={{ marginTop: '1rem' }}>
+          <div className="editor-form-group" style={{ flex: 1 }}>
+            <label className="editor-form-label">Detail</label>
+            <textarea
+              className="editor-form-textarea"
+              value={localItem.meta.detail || ''}
+              onChange={(e) => handleFieldChange('meta.detail', e.target.value)}
+              placeholder="Additional detail information"
+              rows={4}
+              style={{ 
+                resize: 'vertical', 
+                minHeight: '100px',
+                fontSize: '0.95rem',
+              }}
             />
           </div>
         </div>

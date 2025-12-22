@@ -74,7 +74,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   // ============================================================================
   
   const [renderer, setRenderer] = useState<Renderer | null>(null);
-  const [universes, setUniverses] = useState<Universe[]>([]);
+  const [universes, setUniverses] = useState<Array<{ id: string; name: string; icon: string; available: boolean }>>([]);
   const [selectedUniverse, setSelectedUniverse] = useState<Universe | null>(null);
   const [themes, setThemes] = useState<Theme[]>([]);
   const [sunImage, setSunImage] = useState<HTMLImageElement | null>(null);
@@ -124,8 +124,64 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     loadData();
   }, []);
   
+  // React to initialFocusedPlanetId changes (e.g., when returning from PlanetView)
+  useEffect(() => {
+    if (initialFocusedPlanetId && themes.length > 0 && selectedUniverse) {
+      // Get screen dimensions for accurate centering
+      const canvas = renderer?.getContext().canvas;
+      if (!canvas) return;
+      
+      const screenWidth = canvas.width;
+      const screenHeight = canvas.height;
+      
+      // Check if we have a saved focused planet from localStorage
+      try {
+        const savedFocus = localStorage.getItem('wordrush_focusedPlanet');
+        if (savedFocus) {
+          const { universeId, planetId, angle } = JSON.parse(savedFocus);
+          
+          // If it matches current context, use saved angle
+          if (universeId === selectedUniverse.id && planetId === initialFocusedPlanetId) {
+            // Stop any ongoing snap animation
+            isSnappingRef.current = false;
+            snapPlanetIdRef.current = null;
+            velocityRef.current = 0;
+            
+            // Set rotation immediately to saved angle
+            rotationAngleRef.current = angle;
+            focusedPlanetIdRef.current = planetId;
+            console.log(`🎯 [Back Navigation] Restored focus on planet: ${planetId} (angle: ${angle.toFixed(4)} from localStorage)`);
+            return;
+          }
+        }
+      } catch (error) {
+        console.warn('Failed to restore focused planet from localStorage:', error);
+      }
+      
+      // Fallback: calculate angle from themes with screen dimensions
+      const planetExists = themes.some(t => t.id === initialFocusedPlanetId);
+      if (planetExists) {
+        const targetAngle = calculateRotationAngleForPlanet(themes, initialFocusedPlanetId, screenWidth, screenHeight);
+        
+        // Stop any ongoing snap animation
+        isSnappingRef.current = false;
+        snapPlanetIdRef.current = null;
+        velocityRef.current = 0;
+        
+        // Set rotation immediately
+        rotationAngleRef.current = targetAngle;
+        focusedPlanetIdRef.current = initialFocusedPlanetId;
+        console.log(`🎯 [Back Navigation] Focused on planet: ${initialFocusedPlanetId} (angle: ${targetAngle.toFixed(4)}, calculated for screen ${screenWidth}x${screenHeight})`);
+      } else {
+        console.warn(`⚠️ Planet ${initialFocusedPlanetId} not found in current themes`);
+      }
+    }
+  }, [initialFocusedPlanetId, themes, selectedUniverse]);
+  
   const loadData = async () => {
-    const loadedUniverses = await jsonLoader.loadUniverses();
+    // 🚀 OPTIMIZED: Load only universe metadata (no theme data!)
+    console.log('📋 Loading universe list...');
+    const loadedUniverses = await jsonLoader.loadUniversesList();
     setUniverses(loadedUniverses);
     
     // Restore last selection or use first universe
@@ -141,7 +197,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       }
     }
     
-    // Select universe
+    // Select universe (this will load themes + chapters)
     if (initialUniverseId && loadedUniverses.find(u => u.id === initialUniverseId)) {
       await selectUniverse(initialUniverseId);
     } else if (loadedUniverses.length > 0) {
@@ -150,34 +206,45 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   };
   
   const selectUniverse = async (universeId: string) => {
-    const universe = universes.find(u => u.id === universeId) || await jsonLoader.loadUniverse(universeId);
-    if (!universe) {
-      console.error(`Failed to load universe: ${universeId}`);
+    // 🚀 OPTIMIZED: Load full universe object (needed for rendering colors)
+    console.log(`📦 Loading universe ${universeId}...`);
+    const fullUniverse = await jsonLoader.loadUniverse(universeId);
+    if (!fullUniverse) {
+      console.error(`Universe not found: ${universeId}`);
       return;
     }
     
-    setSelectedUniverse(universe);
+    setSelectedUniverse(fullUniverse);
     
-    // Load themes for this universe (fast: basic theme data only)
-    console.log(`📦 Loading themes for universe ${universe.name}...`);
-    console.time('⏱️ Load themes');
+    // 🚀 ULTRA-OPTIMIZED: Load themes + chapters in 2 queries (instead of 1 + N)
+    console.log(`📦 Loading themes + chapters for universe ${fullUniverse.name}...`);
+    console.time('⏱️ Load themes + chapters');
     const loadedThemes = await jsonLoader.loadAllThemesForUniverse(universeId);
-    console.timeEnd('⏱️ Load themes');
+    console.timeEnd('⏱️ Load themes + chapters');
     setThemes(loadedThemes);
     
     // Load sun image
     loadSunImage(universeId);
     
-    // If we have an initial focused planet, rotate to it
-    if (initialFocusedPlanetId) {
-      const targetAngle = calculateRotationAngleForPlanet(loadedThemes, initialFocusedPlanetId);
+    // If we have an initial focused planet, rotate to it (only on first load)
+    if (initialFocusedPlanetId && renderer) {
+      const canvas = renderer.getContext().canvas;
+      const targetAngle = calculateRotationAngleForPlanet(loadedThemes, initialFocusedPlanetId, canvas.width, canvas.height);
       rotationAngleRef.current = targetAngle;
       focusedPlanetIdRef.current = initialFocusedPlanetId;
+      console.log(`🎯 [Initial Load] Focused on planet: ${initialFocusedPlanetId} (angle: ${targetAngle.toFixed(4)} for screen ${canvas.width}x${canvas.height})`);
+      
+      // Save focused planet to localStorage so it persists across re-mounts
+      localStorage.setItem('wordrush_focusedPlanet', JSON.stringify({
+        universeId: fullUniverse.id,
+        planetId: initialFocusedPlanetId,
+        angle: targetAngle
+      }));
     }
     
     // Save selection
     const selection = {
-      universeId: universe.id,
+      universeId: fullUniverse.id,
       themeId: '',
       chapterId: '',
       mode: 'lernmodus'
@@ -610,7 +677,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       const distance = Math.hypot(clickX - planet.x, clickY - planet.y);
       
       if (distance < planet.radius * PLANET_HITBOX_MULTIPLIER) {
-        // Planet clicked!
+        // Planet clicked! selectedUniverse is already the full Universe object
         onPlanetSelect(selectedUniverse, planet.theme);
         return;
       }

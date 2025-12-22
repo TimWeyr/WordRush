@@ -1,6 +1,6 @@
 // Main App Component
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './infra/auth/AuthContext';
 import { ToastProvider } from './components/Toast/ToastContainer';
@@ -35,6 +35,95 @@ type AppState =
 function AppContent() {
   const [state, setState] = useState<AppState>({ screen: 'universe' });
   const [lastFocusedPlanetId, setLastFocusedPlanetId] = useState<string | null>(null);
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  // Handle URL parameters on initial load
+  useEffect(() => {
+    const initializeFromURL = async () => {
+      if (isInitialized) return;
+      
+      const params = new URLSearchParams(window.location.search);
+      const universeParam = params.get('universe');
+      const themeParam = params.get('theme');
+      const modeParam = params.get('mode');
+      const presetParam = params.get('preset');
+      
+      // If theme is specified in URL, navigate directly to planet view
+      if (universeParam && themeParam) {
+        try {
+          const { jsonLoader } = await import('@/infra/utils/JSONLoader');
+          const { localProgressProvider } = await import('@/infra/providers/LocalProgressProvider');
+          
+          // Load universe and theme
+          const universe = await jsonLoader.loadUniverse(universeParam);
+          if (!universe) {
+            console.warn(`Universe not found: ${universeParam}`);
+            setIsInitialized(true);
+            return;
+          }
+          
+          const theme = await jsonLoader.loadTheme(universeParam, themeParam);
+          if (!theme) {
+            console.warn(`Theme not found: ${themeParam}`);
+            setIsInitialized(true);
+            return;
+          }
+          
+          // Get mode from URL or settings
+          let mode: GameMode = 'shooter';
+          if (modeParam === 'lernmodus' || modeParam === 'shooter') {
+            mode = modeParam;
+          } else {
+            try {
+              const settings = await localProgressProvider.getUISettings();
+              mode = settings.gameMode || 'shooter';
+            } catch (error) {
+              console.warn('Failed to load game mode from settings:', error);
+            }
+          }
+          
+          // Apply preset if specified
+          if (presetParam) {
+            try {
+              const { GAMEPLAY_PRESETS, DEFAULT_GAMEPLAY_SETTINGS } = await import('@/config/gameplayPresets');
+              if (presetParam in GAMEPLAY_PRESETS) {
+                const currentSettings = await localProgressProvider.getUISettings();
+                const newGameplaySettings = {
+                  ...currentSettings.gameplaySettings || DEFAULT_GAMEPLAY_SETTINGS,
+                  ...GAMEPLAY_PRESETS[presetParam as keyof typeof GAMEPLAY_PRESETS],
+                  preset: presetParam as any
+                };
+                const newSettings = {
+                  ...currentSettings,
+                  gameplaySettings: newGameplaySettings
+                };
+                await localProgressProvider.saveUISettings(newSettings);
+              }
+            } catch (error) {
+              console.warn('Failed to apply preset:', error);
+            }
+          }
+          
+          // Navigate to planet view
+          setLastFocusedPlanetId(theme.id);
+          setState({
+            screen: 'planet',
+            universe,
+            theme,
+            mode
+          });
+          
+          console.log(`🌌 URL Init: Navigated to ${universe.name} > ${theme.name} (mode: ${mode})`);
+        } catch (error) {
+          console.error('Failed to initialize from URL:', error);
+        }
+      }
+      
+      setIsInitialized(true);
+    };
+    
+    initializeFromURL();
+  }, [isInitialized]);
 
   const handlePlanetSelect = async (universe: Universe, theme: Theme) => {
     setLastFocusedPlanetId(theme.id);
@@ -58,6 +147,7 @@ function AppContent() {
   };
 
   const handleBackToUniverse = () => {
+    // Keep lastFocusedPlanetId so GalaxyUniverseView can focus on it
     setState({ screen: 'universe' });
   };
 

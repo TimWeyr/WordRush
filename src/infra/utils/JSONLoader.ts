@@ -42,7 +42,36 @@ class JSONLoader {
     return obj;
   }
 
-  // Load all available universes
+  /**
+   * 🚀 OPTIMIZED: Load ONLY universe metadata (for dropdown)
+   * No theme data loaded - super fast!
+   * Use this for initial dropdown population.
+   */
+  async loadUniversesList(): Promise<Array<{ id: string; name: string; icon: string; available: boolean }>> {
+    if (import.meta.env.VITE_USE_SUPABASE_CONTENT === 'true') {
+      console.log('📋 [JSONLoader] Loading universe list (metadata only)...');
+      const universeRows = await supabaseLoader.loadUniverses();
+      return universeRows.map(row => ({
+        id: row.id,
+        name: row.name,
+        icon: row.icon || '🌌',
+        available: row.available ?? true
+      }));
+    }
+    
+    // JSON fallback
+    console.log('📋 [JSONLoader] Loading universe list from JSON...');
+    const universes = await this.loadUniversesFromJSON();
+    return universes.map(u => ({
+      id: u.id,
+      name: u.name,
+      icon: u.icon,
+      available: u.available
+    }));
+  }
+
+  // Load all available universes (with theme IDs)
+  // NOTE: This loads theme IDs for all universes. Use loadUniversesList() if you only need metadata.
   async loadUniverses(): Promise<Universe[]> {
     // Feature flag check
     if (import.meta.env.VITE_USE_SUPABASE_CONTENT === 'true') {
@@ -236,8 +265,10 @@ class JSONLoader {
   }
 
   /**
-   * 🚀 PERFORMANCE: Load ALL themes for a universe in ONE query (Batch)
-   * Avoids N+1 query problem when loading multiple themes
+   * 🚀 ULTRA-OPTIMIZED: Load ALL themes + chapters for a universe in 2 queries (Batch)
+   * Avoids N+1 query problem completely!
+   * Query 1: All themes for universe
+   * Query 2: All chapters for all themes
    */
   async loadAllThemesForUniverse(universeId: string): Promise<Theme[]> {
     // Feature flag check
@@ -254,9 +285,9 @@ class JSONLoader {
       return themes;
     }
     
-    // Supabase batch loading
-    console.log(`⚡ [JSONLoader] BATCH loading ALL themes for universe ${universeId}...`);
-    console.time('⏱️ Batch load themes');
+    // Supabase ULTRA-OPTIMIZED batch loading
+    console.log(`⚡ [JSONLoader] ULTRA-BATCH loading themes + chapters for universe ${universeId}...`);
+    console.time('⏱️ Total load time');
     
     try {
       // 1. Load universe to get UUID
@@ -267,9 +298,27 @@ class JSONLoader {
       }
       
       // 2. Batch load ALL theme rows (1 query!)
+      console.time('⏱️ Load themes');
       const themeRows = await supabaseLoader.loadAllThemesForUniverse(universeRow.uuid);
+      console.timeEnd('⏱️ Load themes');
       
-      // 3. For each theme, load its chapters (still N queries, but better than N×2!)
+      // 3. Batch load ALL chapters for ALL themes (1 query!)
+      console.time('⏱️ Load chapters');
+      const allChapterRows = await supabaseLoader.loadAllChaptersForUniverse(universeRow.uuid);
+      console.timeEnd('⏱️ Load chapters');
+      
+      // 4. Group chapters by theme_uuid for fast lookup
+      const chaptersByThemeUuid = new Map<string, typeof allChapterRows>();
+      for (const chapter of allChapterRows) {
+        if (!chapter.themes_uuid) continue;
+        if (!chaptersByThemeUuid.has(chapter.themes_uuid)) {
+          chaptersByThemeUuid.set(chapter.themes_uuid, []);
+        }
+        chaptersByThemeUuid.get(chapter.themes_uuid)!.push(chapter);
+      }
+      
+      // 5. Transform all themes with their chapters
+      console.time('⏱️ Transform data');
       const themes: Theme[] = [];
       for (const themeRow of themeRows) {
         // Check cache first
@@ -279,8 +328,8 @@ class JSONLoader {
           continue;
         }
         
-        // Load chapters for this theme
-        const chapterRows = await supabaseLoader.loadChapters(themeRow.id);
+        // Get chapters for this theme from batch result
+        const chapterRows = chaptersByThemeUuid.get(themeRow.uuid) || [];
         
         // Build chapters map
         const chaptersMap: Record<string, ChapterConfig> = {};
@@ -294,9 +343,10 @@ class JSONLoader {
         this.cache.set(cacheKey, theme);
         themes.push(theme);
       }
+      console.timeEnd('⏱️ Transform data');
       
-      console.timeEnd('⏱️ Batch load themes');
-      console.log(`✅ [JSONLoader] Batch loaded ${themes.length} themes for universe ${universeId}`);
+      console.timeEnd('⏱️ Total load time');
+      console.log(`✅ [JSONLoader] Ultra-batch loaded ${themes.length} themes with ${allChapterRows.length} chapters (2 queries total!)`);
       
       return themes;
     } catch (error) {

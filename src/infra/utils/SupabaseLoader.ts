@@ -142,7 +142,7 @@ export class SupabaseLoader {
     wave_duration?: number;
     intro_text?: string;
     meta_source?: string;
-    meta_detail?: string;
+    detail?: string;
     meta_tags?: string[];
     meta_related?: string[];
     meta_difficulty_scaling?: any;
@@ -173,7 +173,7 @@ export class SupabaseLoader {
           wave_duration: round.wave_duration,
           intro_text: round.intro_text,
           meta_source: round.meta_source,
-          meta_detail: round.meta_detail,
+          detail: round.detail,
           meta_tags: round.meta_tags,
           meta_related: round.meta_related,
           meta_difficulty_scaling: round.meta_difficulty_scaling
@@ -202,7 +202,7 @@ export class SupabaseLoader {
     wave_duration: number;
     intro_text: string;
     meta_source: string;
-    meta_detail: string;
+    detail: string;
     meta_tags: string[];
     meta_related: string[];
     meta_difficulty_scaling: any;
@@ -394,11 +394,26 @@ export class SupabaseLoader {
     console.time(`⏱️ Save ${item.id}`);
     
     try {
-      // Step 1: Check if round exists and get UUID
+      // Step 0: Get chapter UUID first (needed for both search and create)
+      const { data: chapter } = await supabase
+        .from('chapters')
+        .select('uuid')
+        .eq('id', chapterId)
+        .single();
+      
+      if (!chapter) {
+        return { success: false, error: `Chapter ${chapterId} not found` };
+      }
+      
+      const chapterUuid = chapter.uuid;
+      
+      // Step 1: Check if round exists in THIS chapter and get UUID
+      // SOLUTION 1: Also check chapter_uuid to prevent cross-chapter conflicts
       let { data: existingRound } = await supabase
         .from('rounds')
         .select('id, uuid')
         .eq('id', item.id)
+        .eq('chapter_uuid', chapterUuid)
         .single();
       
       if (existingRound) {
@@ -410,7 +425,7 @@ export class SupabaseLoader {
           wave_duration: item.waveDuration,
           intro_text: item.introText,
           meta_source: item.meta?.source,
-          meta_detail: item.meta?.detail,
+          detail: item.meta?.detail,
           meta_tags: item.meta?.tags,
           meta_related: item.meta?.related,
           meta_difficulty_scaling: item.meta?.difficultyScaling
@@ -439,7 +454,7 @@ export class SupabaseLoader {
           wave_duration: item.waveDuration,
           intro_text: item.introText,
           meta_source: item.meta?.source,
-          meta_detail: item.meta?.detail,
+          detail: item.meta?.detail,
           meta_tags: item.meta?.tags,
           meta_related: item.meta?.related,
           meta_difficulty_scaling: item.meta?.difficultyScaling
@@ -450,11 +465,12 @@ export class SupabaseLoader {
           return createResult;
         }
         
-        // Get the newly created round's UUID
+        // Get the newly created round's UUID (also check chapter_uuid for safety)
         const { data: newRound } = await supabase
           .from('rounds')
           .select('id, uuid')
           .eq('id', item.id)
+          .eq('chapter_uuid', chapterUuid)
           .single();
         
         if (!newRound) {
@@ -761,6 +777,44 @@ ORDER BY
     
     console.log(`✅ [SupabaseLoader] Loaded theme: ${data.name} (UUID: ${data.uuid})`);
     return data;
+  }
+
+  /**
+   * 🚀 OPTIMIZED: Load ALL chapters for ALL themes in a universe (BATCH)
+   * Avoids N+1 problem when loading multiple themes
+   * 
+   * @param universeUuid UUID of the universe
+   * @returns Array of ChapterRows for all themes in this universe
+   */
+  async loadAllChaptersForUniverse(universeUuid: string): Promise<ChapterRow[]> {
+    console.log(`⚡ [SupabaseLoader] BATCH loading ALL chapters for universe...`);
+    
+    // Get all theme UUIDs for this universe first
+    const { data: themes, error: themesError } = await supabase
+      .from('themes')
+      .select('uuid')
+      .eq('universe_uuid', universeUuid);
+    
+    if (themesError || !themes || themes.length === 0) {
+      console.error(`❌ [SupabaseLoader] Failed to load themes for batch chapter loading:`, themesError);
+      return [];
+    }
+    
+    const themeUuids = themes.map(t => t.uuid);
+    
+    // Load all chapters for all these themes in ONE query
+    const { data, error } = await supabase
+      .from('chapters')
+      .select('*')
+      .in('themes_uuid', themeUuids);
+    
+    if (error) {
+      console.error(`❌ [SupabaseLoader] Failed to batch load chapters:`, error);
+      return [];
+    }
+    
+    console.log(`✅ [SupabaseLoader] Batch loaded ${data?.length || 0} chapters for universe (1 query!)`);
+    return data || [];
   }
 
   /**

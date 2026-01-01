@@ -145,6 +145,15 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
     console.log(`🌍 [PlanetView] Loading data for theme: ${theme.id}...`);
     console.time('⏱️ [PlanetView] Total load time');
     
+    // Save selection for PDF export (theme selected, but no chapter)
+    const selection = {
+      universeId: universe.id,
+      themeId: theme.id,
+      chapterId: '', // Empty string = no chapter selected (export entire theme)
+      mode: mode
+    };
+    localStorage.setItem('wordrush_lastSelection', JSON.stringify(selection));
+    
     // Load learning state
     const loadedLearningState = await localProgressProvider.getLearningState();
     setLearningState(loadedLearningState);
@@ -400,6 +409,19 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
   const checkHover = useCallback((worldX: number, worldY: number, screenX: number, screenY: number) => {
     if (!camera) return;
     
+    // Check planet first
+    const planet = planetLayoutRef.current;
+    if (planet) {
+      const distance = Math.hypot(worldX - planet.x, worldY - planet.y);
+      if (distance < planet.radius * MOON_HITBOX_MULTIPLIER) {
+        const chapterCount = Object.keys(theme.chapters).length;
+        const itemCount = allItems.length;
+        setHoveredElement({ type: 'moon', id: planet.id, x: screenX, y: screenY });
+        setTooltipText(`${theme.icon} ${theme.name}\n🎲 Chaotic Mode: Alle ${chapterCount} Chapters (${itemCount} Items)`);
+        return;
+      }
+    }
+    
     // Check level rings first
     for (const moon of moonLayoutsRef.current) {
       const rings = levelRingsRef.current.get(moon.id) || [];
@@ -468,7 +490,7 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
     // No hover
     setHoveredElement(null);
     setTooltipText('');
-  }, [camera, allItems, learningState]);
+  }, [camera, allItems, learningState, theme]);
   
   // ============================================================================
   // CLICK HANDLING
@@ -476,6 +498,22 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
   
   const handleElementClick = useCallback((worldX: number, worldY: number) => {
     if (!camera) return;
+    
+    // Check planet first
+    const planet = planetLayoutRef.current;
+    if (planet) {
+      const distance = Math.hypot(worldX - planet.x, worldY - planet.y);
+      if (distance < planet.radius * MOON_HITBOX_MULTIPLIER) {
+        // Click on planet = start CHAOTIC MODE (all chapters mixed)
+        const chapterIds = Object.keys(theme.chapters);
+        if (chapterIds.length > 0) {
+          saveCameraStateHelper(universe.id, camera);
+          // Pass ALL chapter IDs and enable loadAllItems flag for chaotic mode
+          onStart(universe, theme, chapterIds, mode, undefined, undefined, true);
+        }
+        return;
+      }
+    }
     
     // Check level rings first
     for (const moon of moonLayoutsRef.current) {
@@ -526,7 +564,7 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
         return;
       }
     }
-  }, [camera, allItems, universe, theme, mode, onStart]);
+  }, [camera, allItems, universe, theme, mode, onStart, onBack]);
   
   // ============================================================================
   // MOUSE INPUT

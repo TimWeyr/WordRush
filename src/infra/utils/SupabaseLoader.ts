@@ -271,7 +271,8 @@ export class SupabaseLoader {
     speed?: number;
     behavior?: string;
     points?: number;
-    damage?: number;
+    damage?: number;// Item-specific damage to ship  (1-3)
+    level?: number; // Item-specific difficulty level (1-10)
     // Visual config - individual columns (NOT JSONB)
     color?: string;
     variant?: string;
@@ -324,6 +325,7 @@ export class SupabaseLoader {
     points: number;
     damage: number;
     collectionorder: number;
+    level: number; // Item-specific difficulty level (1-10)
     // Visual config - individual columns
     color: string;
     variant: string;
@@ -524,6 +526,7 @@ export class SupabaseLoader {
           image: correct.entry.image,
           context: correct.context,
           collectionorder: correct.collectionOrder ?? (i + 1),
+          level: correct.level ?? 1, // Item-level difficulty
           spawn_position: correct.spawnPosition,
           spawn_spread: correct.spawnSpread,
           speed: correct.speed,
@@ -555,6 +558,7 @@ export class SupabaseLoader {
           image: distractor.entry.image,
           context: distractor.context,
           redirect: distractor.redirect,
+          level: distractor.level ?? 1, // Item-level difficulty
           spawn_position: distractor.spawnPosition,
           spawn_spread: distractor.spawnSpread,
           speed: distractor.speed,

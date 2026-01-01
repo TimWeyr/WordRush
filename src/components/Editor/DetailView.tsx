@@ -6,6 +6,8 @@ import { randomConfigGenerator } from '@/utils/RandomConfigGenerator';
 import { jsonLoader } from '@/infra/utils/JSONLoader';
 import { jsonWriter } from '@/infra/utils/JSONWriter';
 import { useToast } from '../Toast/ToastContainer';
+import { TextParserModal } from './TextParserModal';
+import { SearchableDropdown } from './SearchableDropdown';
 
 interface DetailViewProps {
   item: Item | null;
@@ -26,9 +28,18 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
   const [tagInput, setTagInput] = useState('');
   const [showTagSuggestions, setShowTagSuggestions] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [showTextParserModal, setShowTextParserModal] = useState(false);
   const tagInputRef = useRef<HTMLInputElement>(null);
   const tagSuggestionsRef = useRef<HTMLDivElement>(null);
   const { showToast } = useToast();
+
+  // Filter states for Related Items
+  const [selectedFilterTheme, setSelectedFilterTheme] = useState<string>(theme?.id || '');
+  const [selectedFilterChapter, setSelectedFilterChapter] = useState<string>(chapterId || '');
+  const [filteredItems, setFilteredItems] = useState<Item[]>(allItems);
+  const [availableThemes, setAvailableThemes] = useState<Theme[]>([]);
+  const [availableChapters, setAvailableChapters] = useState<string[]>([]);
+  const [selectedFilterThemeObj, setSelectedFilterThemeObj] = useState<Theme | null>(theme || null);
 
   // Update local item when prop changes
   if (item && localItem?.id !== item.id) {
@@ -165,6 +176,107 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
     onItemChange(newItem);
   };
 
+  // Load universe and all themes when universeId changes
+  useEffect(() => {
+    const loadUniverseAndThemes = async () => {
+      if (!universeId) return;
+      
+      try {
+        const universe = await jsonLoader.loadUniverse(universeId);
+        if (universe) {
+          // Load all themes
+          const themes: Theme[] = [];
+          for (const themeId of universe.themes) {
+            try {
+              const themeObj = await jsonLoader.loadTheme(universeId, themeId);
+              if (themeObj) {
+                themes.push(themeObj);
+              }
+            } catch (error) {
+              console.warn(`Failed to load theme ${themeId}:`, error);
+            }
+          }
+          setAvailableThemes(themes);
+          
+          // Initialize filter theme if not set and theme prop is available
+          if (theme && (!selectedFilterTheme || selectedFilterTheme !== theme.id)) {
+            setSelectedFilterTheme(theme.id);
+            setSelectedFilterThemeObj(theme);
+          } else if (!selectedFilterTheme && themes.length > 0 && theme) {
+            // Fallback: find theme in loaded themes
+            const foundTheme = themes.find(t => t.id === theme.id);
+            if (foundTheme) {
+              setSelectedFilterTheme(foundTheme.id);
+              setSelectedFilterThemeObj(foundTheme);
+            }
+          }
+        }
+      } catch (error) {
+        console.error('Failed to load universe:', error);
+      }
+    };
+    
+    loadUniverseAndThemes();
+  }, [universeId, theme]);
+
+  // Update available chapters when filter theme changes
+  useEffect(() => {
+    if (selectedFilterThemeObj) {
+      const chapters = Object.keys(selectedFilterThemeObj.chapters);
+      setAvailableChapters(chapters);
+      
+      // If current chapter is not in available chapters, clear it
+      if (selectedFilterChapter && !chapters.includes(selectedFilterChapter)) {
+        setSelectedFilterChapter('');
+      }
+    } else {
+      setAvailableChapters([]);
+    }
+  }, [selectedFilterThemeObj, selectedFilterChapter]);
+
+  // Load items based on filter selection
+  useEffect(() => {
+    const loadFilteredItems = async () => {
+      if (!universeId) return;
+      
+      try {
+        let items: Item[] = [];
+        
+        if (selectedFilterChapter && selectedFilterThemeObj) {
+          // Load items from specific chapter
+          items = await jsonLoader.loadChapter(universeId, selectedFilterTheme, selectedFilterChapter, false);
+          console.log(`📚 Loaded ${items.length} items from chapter: ${selectedFilterChapter}`);
+        } else if (selectedFilterThemeObj) {
+          // Load all items from theme
+          const chapterIds = Object.keys(selectedFilterThemeObj.chapters);
+          items = await jsonLoader.loadAllThemeItems(universeId, selectedFilterTheme, chapterIds);
+          console.log(`🎨 Loaded ${items.length} items from theme: ${selectedFilterTheme}`);
+        } else {
+          // Fallback to allItems prop
+          items = allItems;
+        }
+        
+        setFilteredItems(items);
+      } catch (error) {
+        console.error('Failed to load filtered items:', error);
+        setFilteredItems(allItems);
+      }
+    };
+    
+    loadFilteredItems();
+  }, [universeId, selectedFilterTheme, selectedFilterChapter, selectedFilterThemeObj, allItems]);
+
+  // Initialize filter values when props change
+  useEffect(() => {
+    if (theme && theme.id !== selectedFilterTheme) {
+      setSelectedFilterTheme(theme.id);
+      setSelectedFilterThemeObj(theme);
+    }
+    if (chapterId && chapterId !== selectedFilterChapter) {
+      setSelectedFilterChapter(chapterId);
+    }
+  }, [theme, chapterId]);
+
   // Load all tags from theme when universe/theme changes
   useEffect(() => {
     const loadThemeTags = async () => {
@@ -197,17 +309,47 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
     loadThemeTags();
   }, [universeId, theme]);
 
-  // Filter related items by search
+  // Filter related items by search (using filteredItems instead of allItems)
   const filteredRelatedItems = useMemo(() => {
-    if (!relatedSearch) return allItems;
+    if (!relatedSearch) return filteredItems;
     const search = relatedSearch.toLowerCase();
-    return allItems.filter(i => 
+    return filteredItems.filter(i => 
       i.id !== localItem?.id && (
         i.id.toLowerCase().includes(search) ||
         i.base.word?.toLowerCase().includes(search)
       )
     );
-  }, [allItems, relatedSearch, localItem]);
+  }, [filteredItems, relatedSearch, localItem]);
+
+  // Handle filter theme change
+  const handleFilterThemeChange = async (themeId: string) => {
+    if (!universeId) return;
+    
+    try {
+      const themeObj = await jsonLoader.loadTheme(universeId, themeId);
+      if (themeObj) {
+        setSelectedFilterTheme(themeId);
+        setSelectedFilterThemeObj(themeObj);
+        // Clear chapter selection when theme changes
+        setSelectedFilterChapter('');
+      }
+    } catch (error) {
+      console.error('Failed to load theme:', error);
+      showToast('Failed to load theme', 'error');
+    }
+  };
+
+  // Handle filter chapter change
+  const handleFilterChapterChange = (chapterId: string) => {
+    setSelectedFilterChapter(chapterId);
+  };
+
+  // Get chapter title helper
+  const getChapterTitle = (chapterId: string): string => {
+    if (!selectedFilterThemeObj) return chapterId;
+    const chapterConfig = selectedFilterThemeObj.chapters[chapterId];
+    return chapterConfig?.title || chapterId;
+  };
 
   // Filter tag suggestions based on input
   const filteredTagSuggestions = useMemo(() => {
@@ -396,6 +538,14 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
         >
           {saving ? '💾 Saving...' : hasUnsavedChanges ? '💾 Save & Back' : '← Back to Table View'}
         </button>
+        <button 
+          className="editor-button" 
+          onClick={() => setShowTextParserModal(true)}
+          disabled={saving}
+          title="Edit this item in text parser"
+        >
+          📝 Edit in Text Parser
+        </button>
         {hasUnsavedChanges && (
           <button 
             className="editor-button" 
@@ -570,14 +720,27 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
                     <option value="image">Image</option>
                   </select>
                 </div>
-                <textarea
-                  className="editor-form-textarea"
-                  value={correct.context || ''}
-                  onChange={(e) => handleFieldChange(`correct[${index}].context`, e.target.value)}
-                  placeholder="Context"
-                  rows={2}
-                  style={{ resize: 'none', minHeight: '50px' }}
-                />
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <textarea
+                    className="editor-form-textarea"
+                    value={correct.context || ''}
+                    onChange={(e) => handleFieldChange(`correct[${index}].context`, e.target.value)}
+                    placeholder="Context"
+                    rows={2}
+                    style={{ resize: 'none', minHeight: '50px', flex: 1 }}
+                  />
+                  <select
+                    className="editor-form-select"
+                    value={correct.level ?? 1}
+                    onChange={(e) => handleFieldChange(`correct[${index}].level`, parseInt(e.target.value))}
+                    style={{ flex: '0 0 80px' }}
+                    title="Item Level"
+                  >
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(level => (
+                      <option key={level} value={level}>Lvl {level}</option>
+                    ))}
+                  </select>
+                </div>
               </div>
               {localItem.correct.length > 1 && (
                 <button 
@@ -629,14 +792,27 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
                     style={{ flex: 1 }}
                   />
                 </div>
-                <textarea
-                  className="editor-form-textarea"
-                  value={distractor.context || ''}
-                  onChange={(e) => handleFieldChange(`distractors[${index}].context`, e.target.value)}
-                  placeholder="Context"
-                  rows={2}
-                  style={{ resize: 'none', minHeight: '50px' }}
-                />
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <textarea
+                    className="editor-form-textarea"
+                    value={distractor.context || ''}
+                    onChange={(e) => handleFieldChange(`distractors[${index}].context`, e.target.value)}
+                    placeholder="Context"
+                    rows={2}
+                    style={{ resize: 'none', minHeight: '50px', flex: 1 }}
+                  />
+                  <select
+                    className="editor-form-select"
+                    value={distractor.level ?? 1}
+                    onChange={(e) => handleFieldChange(`distractors[${index}].level`, parseInt(e.target.value))}
+                    style={{ flex: '0 0 80px' }}
+                    title="Item Level"
+                  >
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(level => (
+                      <option key={level} value={level}>Lvl {level}</option>
+                    ))}
+                  </select>
+                </div>
               </div>
               {localItem.distractors.length > 1 && (
                 <button 
@@ -657,6 +833,38 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
         <div className="editor-detail-section-title">
           🔗 Related Items
         </div>
+        
+        {/* Theme and Chapter Filter Dropdowns */}
+        {universeId && (
+          <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+            <div style={{ flex: 1 }}>
+              <SearchableDropdown
+                value={selectedFilterTheme}
+                options={availableThemes.map(t => ({ value: t.id, label: t.name || t.id }))}
+                onChange={handleFilterThemeChange}
+                placeholder="Select Theme..."
+                searchPlaceholder="🔍 Search themes..."
+                label="Filter by Theme"
+              />
+            </div>
+            {selectedFilterThemeObj && (
+              <div style={{ flex: 1 }}>
+                <SearchableDropdown
+                  value={selectedFilterChapter}
+                  options={availableChapters.map(c => ({ 
+                    value: c, 
+                    label: getChapterTitle(c)
+                  }))}
+                  onChange={handleFilterChapterChange}
+                  placeholder="All Chapters..."
+                  searchPlaceholder="🔍 Search chapters..."
+                  label="Filter by Chapter"
+                />
+              </div>
+            )}
+          </div>
+        )}
+
         <div className="editor-form-group">
           <label className="editor-form-label">Search Items</label>
           <input
@@ -981,6 +1189,59 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
           </div>
         ))}
       </div>
+      
+      {/* Text Parser Modal */}
+      {chapterId && localItem && (
+        <TextParserModal
+          isOpen={showTextParserModal}
+          onClose={() => setShowTextParserModal(false)}
+          onSave={(parsedDataArray) => {
+            if (parsedDataArray.length === 0) return;
+            const parsedData = parsedDataArray[0]; // Only use first item
+            
+            // Apply changes from parsed data to localItem
+            const updatedItem: Item = {
+              ...localItem,
+              level: parsedData.level,
+              base: {
+                ...localItem.base,
+                context: parsedData.baseContext
+              },
+              correct: parsedData.corrects.map((c, idx) => {
+                const existing = localItem.correct[idx];
+                return existing ? {
+                  ...existing,
+                  context: c.context,
+                  collectionOrder: c.order,
+                  level: c.level
+                } : existing;
+              }).filter(Boolean) as CorrectEntry[],
+              distractors: parsedData.distractors.map((d, idx) => {
+                const existing = localItem.distractors[idx];
+                return existing ? {
+                  ...existing,
+                  redirect: d.redirect,
+                  context: d.context,
+                  level: d.level
+                } : existing;
+              }).filter(Boolean) as DistractorEntry[],
+              meta: {
+                ...localItem.meta,
+                source: parsedData.source ?? localItem.meta.source,
+                detail: parsedData.detail ?? localItem.meta.detail,
+                tags: parsedData.tags ?? localItem.meta.tags
+              }
+            };
+            
+            setLocalItem(updatedItem);
+            setShowTextParserModal(false);
+            showToast('✅ Changes applied from text parser', 'success', 2000);
+          }}
+          chapterId={chapterId}
+          initialItem={localItem}
+          initialChapterId={chapterId}
+        />
+      )}
     </div>
   );
 }

@@ -74,39 +74,47 @@ export class PDFExporter {
 
     const items: Item[] = [];
 
+    // Normalize chapterId and themeId: treat empty strings as undefined
+    const chapterId = selection.chapterId && selection.chapterId.trim() !== '' 
+      ? selection.chapterId 
+      : undefined;
+    const themeId = selection.themeId && selection.themeId.trim() !== '' 
+      ? selection.themeId 
+      : undefined;
+
     // If chapter is selected, load only that chapter
-    if (selection.chapterId && selection.themeId) {
-      const theme = await jsonLoader.loadTheme(selection.universeId, selection.themeId);
+    if (chapterId && themeId) {
+      const theme = await jsonLoader.loadTheme(selection.universeId, themeId);
       if (!theme) {
-        throw new Error(`Theme "${selection.themeId}" konnte nicht geladen werden.`);
+        throw new Error(`Theme "${themeId}" konnte nicht geladen werden.`);
       }
 
       const chapterItems = await jsonLoader.loadChapter(
         selection.universeId,
-        selection.themeId,
-        selection.chapterId
+        themeId,
+        chapterId
       );
       items.push(...chapterItems);
 
       return {
         universe,
         theme,
-        chapterId: selection.chapterId,
+        chapterId: chapterId,
         items
       };
     }
 
     // If theme is selected but no chapter, load all chapters of that theme
-    if (selection.themeId && !selection.chapterId) {
-      const theme = await jsonLoader.loadTheme(selection.universeId, selection.themeId);
+    if (themeId && !chapterId) {
+      const theme = await jsonLoader.loadTheme(selection.universeId, themeId);
       if (!theme) {
-        throw new Error(`Theme "${selection.themeId}" konnte nicht geladen werden.`);
+        throw new Error(`Theme "${themeId}" konnte nicht geladen werden.`);
       }
 
       for (const chapterId of Object.keys(theme.chapters)) {
         const chapterItems = await jsonLoader.loadChapter(
           selection.universeId,
-          selection.themeId,
+          themeId,
           chapterId
         );
         items.push(...chapterItems);
@@ -120,7 +128,7 @@ export class PDFExporter {
     }
 
     // If only universe is selected, load all chapters from all themes
-    if (selection.universeId && !selection.themeId) {
+    if (selection.universeId && !themeId) {
       for (const themeId of universe.themes) {
         const theme = await jsonLoader.loadTheme(selection.universeId, themeId);
         if (!theme) continue;

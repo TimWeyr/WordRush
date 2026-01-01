@@ -363,58 +363,120 @@ Creating Items
 
 Each item follows this simple format:
 
+cid. chapter_id
+rid. round_id
 b. Basewort | context
-c. correct1 | context1 | collectionorder
-c. correct2 | context2 | collectionorder
-d. distractor1 | redirect1 | context1
-d. distractor2 | redirect2 | context2
+c. correct1 | context1 | collectionorder | level
+c. correct2 | context2 | collectionorder | level
+d. distractor1 | redirect1 | context1 | level
+d. distractor2 | redirect2 | context2 | level
 s. source | detail
 t. tag1 | tag2 | tag3
 l. level
 
+Note: collectionorder and level in c./d. are OPTIONAL:
+- collectionorder: Only use if order matters (e.g. phases), otherwise omit (default: 0)
+- level: Only use if entry is harder than round level (l.), otherwise omit (uses round level)
+
 
 Rules:
 
-b. = Base word (starts a new item) (word | context) - context optional
-c. = Correct entry (word | context | order) - context and order optional
-d. = Distractor entry (word | redirect | context) - context optional
-s. = Source/Detail (source | detail) - detail optional, both optional
-t. = Tags (tag1 | tag2 | tag3) - pipe-separated, optional
-l. = Level (1-10, optional, applies to all following items until next l.)
+cid. = Chapter ID (chapter_id) - optional, for cross-chapter updates
+rid. = Round ID (round_id) - optional, identifies existing item to UPDATE instead of CREATE
+b. = Base word (starts a new item) (word | context) - context optional, word CANNOT be changed in updates
+c. = Correct entry (word | context | order | level) - order optional (default: 0/empty, only set if collection order matters, e.g. phases of alcoholism), level optional (default: uses round level l., only specify if this entry is harder than round level). IMPORTANT: Each word must be UNIQUE within the item - do NOT create multiple c. entries with the same word!
+d. = Distractor entry (word | redirect | context | level) - level optional (default: uses round level l., only specify if this entry is harder than round level). IMPORTANT: Each word must be UNIQUE within the item - do NOT create multiple d. entries with the same word!
+s. = Source/Detail (source | detail) - detail optional, if missing in update keeps existing value
+t. = Tags (tag1 | tag2 | tag3) - pipe-separated, optional, OVERRIDES all existing tags
+l. = Round Level (1-10, optional, applies to entire round, different from item-level in c./d.)
 # = Comment line (ignored during parsing) - optional
 
 IMPORTANT: Use PIPE (|) to separate fields, NOT commas!
 You can now use commas freely in your text content (words, sentences, etc.)
 Comment lines starting with # are completely ignored
 
+CRITICAL: UNIQUE WORDS REQUIRED
+- Each c. entry must have a UNIQUE word within the same item
+- Each d. entry must have a UNIQUE word within the same item
+- DO NOT create multiple c./d. entries with the same word - combine contexts in a single entry instead
+- Example WRONG (multiple entries with same word):
+  c. Dwayne Johnson | Context 1
+  c. Dwayne Johnson | Context 2
+- Example CORRECT (single entry with combined context):
+  c. Dwayne Johnson | Context 1. Context 2. Context 3.
+
+UPDATE vs CREATE:
+- WITHOUT rid.: Creates NEW item with auto-generated ID
+- WITH rid.: UPDATES existing item (matches c./d. by word, preserves visual/spawn configs)
+  - Base context can be changed
+  - Correct/Distractor: matches by word → updates context, redirect, level
+  - New c./d. entries with new words are ADDED
+  - Existing entries NOT mentioned are PRESERVED (not deleted)
+  - Source: if s. missing, keeps existing
+  - Tags: t. overrides all existing tags
 
 Multiple items: Each b. line starts a new item
-Example: Single Item
+Example: Single Item (standard - no order, uses round level)
 b. Depression | Affektive Störung
-c. Freudlosigkeit | Depression zeigt sich durch Freudlosigkeit. | 1
-c. Antriebslosigkeit | Depression zeigt sich durch Antriebslosigkeit. | 2
+c. Freudlosigkeit | Depression zeigt sich durch Freudlosigkeit.
+c. Antriebslosigkeit | Depression zeigt sich durch Antriebslosigkeit.
 d. Wahn | Schizophrenie | Wahn gehört zur Schizophrenie.
 d. Manie | Affektive Störungen | Manie gehört zu Affektiven Störungen.
 s. ICD-10 F3 | Depressive Episode
 t. affektive_störungen | mood | depression
 l. 1
 
+Example: Item with collection order (phases must be collected in sequence)
+b. Alkoholismus | Phasen der Suchtentwicklung
+c. Prodromalphase | Erste Anzeichen der Sucht | 1
+c. Kritische Phase | Kontrollverlust | 2
+c. Chronische Phase | Vollständige Abhängigkeit | 3
+d. Entzug | Therapie | Entzug ist Teil der Therapie.
+l. 2
+
+Example: Item with harder entries (some entries harder than round level)
+b. Komplexe Depression | Schwere Form
+c. Freudlosigkeit | Depression zeigt sich durch Freudlosigkeit.
+c. Suizidgedanken | Sehr schweres Symptom | | 4
+d. Wahn | Schizophrenie | Wahn gehört zur Schizophrenie. | 3
+l. 2
+
+Example: Multiple correct entries with same topic (CORRECT - each word is unique)
+b. Depression bei Prominenten | Unipolare major Depression
+c. Dwayne Johnson | Rezidivierende Episoden → Trigger: Karrierebrüche. Anhaltendes Weinen ↓ Antrieb. Traumabelastung (Mutter-Suizidversuch) ↔ Depression. Späte Erkenntnis ↑ Hilfesuche.
+c. Mariah Carey | Bipolare II-Störung: Hypomanie + Depression ∈ Bipolar II.
+c. Demi Lovato | Bipolare Störung: Lovato ∈ Bipolar I/II.
+c. Kanye West | Bipolare I-Störung: Manische Episoden ∈ Bipolar I.
+d. Selena Gomez | Lupus + Angststörung | Keine Depression-Diagnose.
+d. Elon Musk | Asperger + Burnout | Keine Depression-Diagnose.
+s. Öffentliche Interviews & Biografien | Entstigmatisierung
+t. psychiatrie | depression | prominent | differenzialdiagnose
+l. 5
+
+Example: WRONG - multiple entries with same word (DO NOT DO THIS!)
+b. Depression bei Prominenten | Unipolare major Depression
+c. Dwayne Johnson | Rezidivierende Episoden → Trigger: Karrierebrüche.
+c. Dwayne Johnson | Anhaltendes Weinen ↓ Antrieb.
+c. Dwayne Johnson | Traumabelastung (Mutter-Suizidversuch) ↔ Depression.
+# ❌ WRONG: Same word "Dwayne Johnson" appears multiple times!
+# ✅ CORRECT: Combine all contexts into ONE entry (see example above)
+
 
 
 Example: Multiple Items
-# First item about Depression
+# First item about Depression (standard - no order, uses round level)
 b. Depression | Affektive Störung
-c. Freudlosigkeit | Depression zeigt sich durch Freudlosigkeit. | 1
-c. Antriebslosigkeit | Depression zeigt sich durch Antriebslosigkeit. | 2
+c. Freudlosigkeit | Depression zeigt sich durch Freudlosigkeit.
+c. Antriebslosigkeit | Depression zeigt sich durch Antriebslosigkeit.
 d. Wahn | Schizophrenie | Wahn gehört zur Schizophrenie.
 s. ICD-10 F3
 t. affektive_störungen | mood
 l. 1
 
-# Second item about Schizophrenia
+# Second item about Schizophrenia (standard - no order, uses round level)
 b. Schizophrenie | Psychotische Störung
-c. Wahn | Schizophrenie zeigt sich durch Wahn. | 1
-c. Halluzinationen | Schizophrenie zeigt sich durch Halluzinationen. | 2
+c. Wahn | Schizophrenie zeigt sich durch Wahn.
+c. Halluzinationen | Schizophrenie zeigt sich durch Halluzinationen.
 d. Manie | Affektive Störungen | Manie gehört zu Affektiven Störungen.
 s. ICD-10 F2
 t. psychose | schizophrenie

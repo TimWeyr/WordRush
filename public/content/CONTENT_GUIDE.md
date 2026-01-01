@@ -190,41 +190,73 @@ The **Text Parser** is the fastest way to create multiple items at once. Perfect
 Each item follows this simple format:
 
 ```
+cid. chapter_id
+rid. round_id
 b. Basewort | base context
-c. correct1 | context1 | order
-c. correct2 | context2 | order
-d. distractor1 | redirect1 | context1
-d. distractor2 | redirect2 | context2
+c. correct1 | context1 | order | level
+c. correct2 | context2 | order | level
+d. distractor1 | redirect1 | context1 | level
+d. distractor2 | redirect2 | context2 | level
 s. source | detail
 t. tag1 | tag2 | tag3
 l. level
 ```
 
 **Rules**:
+- **`cid.`** = Chapter ID (optional) - for cross-chapter updates, format: `cid. F40.00`
+- **`rid.`** = Round ID (optional) - identifies existing item to update, format: `rid. F40.00_001`
 - **`b.`** = Base word (starts a new item) - format: `b. Basewort | base context` (context optional)
-- **`c.`** = Correct entry - format: `c. word | context | order` (context and order optional)
-- **`d.`** = Distractor entry - format: `d. word | redirect | context` (context optional)
-- **`s.`** = Source/Detail - format: `s. source | detail` (detail optional)
-- **`t.`** = Tags - format: `t. tag1 | tag2 | tag3` (pipe-separated, optional)
-- **`l.`** = Level (1-10, optional, applies to all following items until next `l.`)
+- **`c.`** = Correct entry - format: `c. word | context | order | level` (order and level optional, default level: 1)
+- **`d.`** = Distractor entry - format: `d. word | redirect | context | level` (level optional, default: 1)
+- **`s.`** = Source/Detail - format: `s. source | detail` (detail optional, if missing keeps existing)
+- **`t.`** = Tags - format: `t. tag1 | tag2 | tag3` (pipe-separated, optional, overrides all tags)
+- **`l.`** = Round Level (1-10, optional, applies to all following items until next `l.`)
 - **`#`** = Comment line (ignored during parsing)
 - **Field separators**: Use **pipe (`|`)** to separate fields, NOT commas
 - Field markers are **case-insensitive** (b/B, c/C, d/D, s/S, t/T, l/L)
 - Empty lines are ignored
 - Multiple items: Each `b.` line starts a new item
 
-### Example: Single Item
+**Update vs. Create**:
+- **Without `rid.`**: Creates a new item with auto-generated ID
+- **With `rid.`**: Updates existing item (matches by `object_type + word`, preserves visual configs)
+
+### Example: Creating a New Item
 
 ```
 b. Depression | Affektive Störung
-c. Freudlosigkeit | Depression zeigt sich durch Freudlosigkeit. | 1
-c. Antriebslosigkeit | Depression zeigt sich durch Antriebslosigkeit. | 2
-d. Wahn | Schizophrenie | Wahn gehört zur Schizophrenie.
-d. Manie | Affektive Störungen | Manie gehört zu Affektiven Störungen.
+c. Freudlosigkeit | Depression zeigt sich durch Freudlosigkeit. | 1 | 2
+c. Antriebslosigkeit | Depression zeigt sich durch Antriebslosigkeit. | 2 | 3
+d. Wahn | Schizophrenie | Wahn gehört zur Schizophrenie. | 2
+d. Manie | Affektive Störungen | Manie gehört zu Affektiven Störungen. | 1
 s. ICD-10 F3 | Depressive Episode
 t. affektive_störungen | mood | depression
 l. 1
 ```
+
+**Note**: Correct/Distractor level (4th parameter) is optional, defaults to 1.
+
+### Example: Updating an Existing Item
+
+```
+cid. F32_Depression
+rid. F32_001
+b. Depression | Affektive Störung (updated context)
+c. Freudlosigkeit | NEW context text | 1 | 3
+c. Hoffnungslosigkeit | New correct entry | 3 | 2
+d. Wahn | Schizophrenie | Updated context | 3
+s. ICD-10 F3.2 | Major Depressive Disorder
+t. depression | affective_disorder | mood
+l. 2
+```
+
+**Update Logic**:
+- **Base context**: Can be changed
+- **Correct/Distractor**: Matches by `word` → updates `context`, `redirect`, `level`
+- **New entries**: Items with new `word` values are added
+- **Existing entries**: Preserved if not mentioned (c./d. items are NOT deleted)
+- **Source**: If `s.` missing, keeps existing value
+- **Tags**: `t.` overrides all existing tags
 
 ### Example: Multiple Items
 
@@ -262,28 +294,48 @@ This creates **2 items** with different levels.
   - `b. Depression` (no context)
   - `b. Depression | Affektive Störung` (with context)
 
+#### Chapter ID (`cid.`)
+- **Format**: `cid. chapter_id`
+- **Required**: No (optional, for cross-chapter updates)
+- **Fields**: Chapter ID (e.g., `F40.00`, `Business_Communication`)
+- **Behavior**: Allows updating items in different chapters
+- **Examples**:
+  - `cid. F40.00` = Update item in F40.00 chapter
+  - `cid. Business_Communication` = Update item in Business_Communication chapter
+
+#### Round ID (`rid.`)
+- **Format**: `rid. round_id`
+- **Required**: No (optional, triggers UPDATE mode instead of CREATE)
+- **Fields**: Existing round/item ID (e.g., `F40.00_001`, `BC_023`)
+- **Behavior**: Updates existing item instead of creating new one
+- **Examples**:
+  - `rid. F40.00_001` = Update round F40.00_001
+  - `rid. BC_023` = Update round BC_023
+
 #### Correct (`c.`)
-- **Format**: `c. word | context | order`
+- **Format**: `c. word | context | order | level`
 - **Required**: At least one per item
 - **Fields**:
   - `word`: The correct word/phrase (required)
   - `context`: Explanation text (optional, can be empty)
   - `order`: Collection order number (optional, default: 0)
+  - `level`: Item-specific difficulty level 1-10 (optional, default: 1)
 - **Examples**:
-  - `c. Freudlosigkeit | Depression zeigt sich durch Freudlosigkeit. | 1`
-  - `c. Antriebslosigkeit | | 2` (no context)
-  - `c. Traurigkeit` (no context, no order)
+  - `c. Freudlosigkeit | Depression zeigt sich durch Freudlosigkeit. | 1 | 2` (with level 2)
+  - `c. Antriebslosigkeit | | 2 | 3` (no context, level 3)
+  - `c. Traurigkeit` (no context, no order, default level 1)
 
 #### Distractor (`d.`)
-- **Format**: `d. word | redirect | context`
+- **Format**: `d. word | redirect | context | level`
 - **Required**: No (but recommended)
 - **Fields**:
   - `word`: The distractor word/phrase (required)
   - `redirect`: Where this distractor actually belongs (required)
   - `context`: Explanation text (optional)
+  - `level`: Item-specific difficulty level 1-10 (optional, default: 1)
 - **Examples**:
-  - `d. Wahn | Schizophrenie | Wahn gehört zur Schizophrenie.`
-  - `d. Manie | Affektive Störungen |` (no context)
+  - `d. Wahn | Schizophrenie | Wahn gehört zur Schizophrenie. | 3` (level 3)
+  - `d. Manie | Affektive Störungen | | 2` (no context, level 2)
 
 #### Source/Detail (`s.`)
 - **Format**: `s. source | detail`
@@ -303,14 +355,17 @@ This creates **2 items** with different levels.
   - `t. affektive_störungen | mood | depression`
   - `t. psychose | schizophrenie`
 
-#### Level (`l.`)
+#### Round Level (`l.`)
 - **Format**: `l. number`
 - **Required**: No (default: 1)
 - **Range**: 1-10
-- **Behavior**: Sets level for all following items until next `l.` line
+- **Behavior**: Sets **round-level** difficulty for all following items until next `l.` line
+- **Note**: This is different from item-level (4th parameter in c./d.)
+  - **Round Level (`l.`)**: Overall difficulty of the entire round
+  - **Item Level (c./d. 4th param)**: Individual difficulty of each correct/distractor entry
 - **Examples**:
-  - `l. 1` = Level 1
-  - `l. 5` = Level 5
+  - `l. 1` = Round Level 1 (beginner)
+  - `l. 5` = Round Level 5 (intermediate)
 
 #### Comments (`#`)
 - **Format**: `# comment text`
@@ -319,6 +374,35 @@ This creates **2 items** with different levels.
 - **Examples**:
   - `# This is a comment`
   - `# First item about Depression`
+
+### Editing Existing Items in Text Parser
+
+You can export existing items to the text parser for quick editing:
+
+**From Table View**:
+1. Find the item in the table
+2. Click the **📝** button in the Actions column
+3. Item opens in text parser with `cid.` and `rid.` pre-filled
+4. Edit as needed, click **Save**
+
+**From Detail View**:
+1. Open an item in Detail View (click ✏️ on item)
+2. Click **📝 Edit in Text Parser** button (top-left)
+3. Item opens in text parser with all data
+4. Edit as needed, click **Save**
+
+**What you can edit**:
+- ✅ Base context (word cannot be changed)
+- ✅ Correct/Distractor: context, redirect, order, level
+- ✅ Source, Detail, Tags
+- ✅ Round Level
+- ✅ Add new correct/distractor entries
+
+**What is preserved**:
+- 🔒 Visual configs (colors, variants, etc.)
+- 🔒 Spawn configs (position, spread, speed)
+- 🔒 Base word (cannot be changed)
+- 🔒 Existing entries (not deleted if omitted)
 
 ### Using the Text Parser
 

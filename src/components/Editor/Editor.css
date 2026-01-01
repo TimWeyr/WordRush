@@ -346,22 +346,22 @@
 /* Responsive breakpoints for entry wrapping */
 @media (max-width: 2400px) {
   .editor-entry-item {
-    min-width: 350px;
-    max-width: 450px;
+    min-width: 300px;
+    max-width: 380px;
   }
 }
 
 @media (max-width: 2000px) {
   .editor-entry-item {
-    min-width: 300px;
-    max-width: 400px;
+    min-width: 260px;
+    max-width: 340px;
   }
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1800px) {
   .editor-entry-item {
-    min-width: 250px;
-    max-width: 350px;
+    min-width: 240px;
+    max-width: 320px;
   }
   
   .editor-entry-container {
@@ -369,10 +369,33 @@
   }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
   .editor-entry-item {
     min-width: 220px;
     max-width: 300px;
+  }
+  
+  .editor-entry-container {
+    gap: 0.7rem;
+  }
+}
+
+@media (max-width: 1400px) {
+  .editor-entry-item {
+    min-width: 200px;
+    max-width: 280px;
+    font-size: 0.85rem;
+  }
+  
+  .editor-entry-container {
+    gap: 0.6rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .editor-entry-item {
+    min-width: 180px;
+    max-width: 260px;
     font-size: 0.8rem;
   }
   

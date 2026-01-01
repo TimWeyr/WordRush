@@ -18,6 +18,7 @@ import { renderUniverseBackground, renderSun, renderPlanetOrbit, renderUniverseP
 import { jsonLoader } from '@/infra/utils/JSONLoader';
 import { Settings } from './Settings';
 import type { Universe, Theme, Item } from '@/types/content.types';
+import type { GameMode } from '@/types/game.types';
 import './GalaxyUniverseView.css';
 
 // ============================================================================
@@ -49,12 +50,16 @@ const WHEEL_SENSITIVITY = 0.001;
 /** Planet hitbox radius multiplier */
 const PLANET_HITBOX_MULTIPLIER = 1.5;
 
+/** Sun hitbox radius (25% visible, full size 400px → radius 200px) */
+const SUN_HITBOX_RADIUS = 200;
+
 // ============================================================================
 // TYPES
 // ============================================================================
 
 interface GalaxyUniverseViewProps {
   onPlanetSelect: (universe: Universe, theme: Theme) => void;
+  onUniverseStart?: (universe: Universe, themes: Theme[], mode: GameMode) => void;
   initialFocusedPlanetId?: string | null;
 }
 
@@ -64,6 +69,7 @@ interface GalaxyUniverseViewProps {
 
 export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({ 
   onPlanetSelect,
+  onUniverseStart,
   initialFocusedPlanetId 
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -79,6 +85,14 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   const [themes, setThemes] = useState<Theme[]>([]);
   const [sunImage, setSunImage] = useState<HTMLImageElement | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  
+  // ============================================================================
+  // UNIVERSE CHAOTIC MODE CONFIRMATION
+  // ============================================================================
+  
+  const [showUniverseConfirmation, setShowUniverseConfirmation] = useState(false);
+  const [universeStats, setUniverseStats] = useState<{ themes: number; chapters: number; items: number } | null>(null);
+  const [hoveredSun, setHoveredSun] = useState(false);
   
   // ============================================================================
   // ROTATION STATE
@@ -226,18 +240,24 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     // Load sun image
     loadSunImage(universeId);
     
-    // If we have an initial focused planet, rotate to it (only on first load)
-    if (initialFocusedPlanetId && renderer) {
+    // Rotate to focus planet (or first planet if no focus specified)
+    if (renderer && loadedThemes.length > 0) {
       const canvas = renderer.getContext().canvas;
-      const targetAngle = calculateRotationAngleForPlanet(loadedThemes, initialFocusedPlanetId, canvas.width, canvas.height);
+      const planetToFocus = initialFocusedPlanetId || loadedThemes[0].id;
+      const targetAngle = calculateRotationAngleForPlanet(loadedThemes, planetToFocus, canvas.width, canvas.height);
       rotationAngleRef.current = targetAngle;
-      focusedPlanetIdRef.current = initialFocusedPlanetId;
-      console.log(`🎯 [Initial Load] Focused on planet: ${initialFocusedPlanetId} (angle: ${targetAngle.toFixed(4)} for screen ${canvas.width}x${canvas.height})`);
+      focusedPlanetIdRef.current = planetToFocus;
+      
+      if (initialFocusedPlanetId) {
+        console.log(`🎯 [Initial Load] Focused on planet: ${planetToFocus} (angle: ${targetAngle.toFixed(4)} for screen ${canvas.width}x${canvas.height})`);
+      } else {
+        console.log(`🎯 [Initial Load] Centered first planet: ${planetToFocus} (angle: ${targetAngle.toFixed(4)} for screen ${canvas.width}x${canvas.height})`);
+      }
       
       // Save focused planet to localStorage so it persists across re-mounts
       localStorage.setItem('wordrush_focusedPlanet', JSON.stringify({
         universeId: fullUniverse.id,
-        planetId: initialFocusedPlanetId,
+        planetId: planetToFocus,
         angle: targetAngle
       }));
     }
@@ -305,6 +325,68 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
         setSunImage(null);
       };
     };
+  };
+  
+  // ============================================================================
+  // SUN CLICK HANDLER (Universe Chaotic Mode)
+  // ============================================================================
+  
+  const handleSunClick = async () => {
+    if (!selectedUniverse || themes.length === 0) return;
+    
+    // Calculate stats: count all chapters and items
+    console.log('🌟 Sun clicked! Calculating universe stats...');
+    
+    let totalChapters = 0;
+    let totalItems = 0;
+    
+    for (const theme of themes) {
+      const chapterIds = Object.keys(theme.chapters);
+      totalChapters += chapterIds.length;
+      
+      // Load items for each chapter to count them
+      for (const chapterId of chapterIds) {
+        try {
+          const items = await jsonLoader.loadChapter(selectedUniverse.id, theme.id, chapterId);
+          totalItems += items.length;
+        } catch (error) {
+          console.warn(`Failed to load chapter ${chapterId}:`, error);
+        }
+      }
+    }
+    
+    console.log(`📊 Universe stats: ${themes.length} themes, ${totalChapters} chapters, ${totalItems} items`);
+    
+    // Show confirmation dialog
+    setUniverseStats({
+      themes: themes.length,
+      chapters: totalChapters,
+      items: totalItems
+    });
+    setShowUniverseConfirmation(true);
+  };
+  
+  const handleUniverseConfirm = async () => {
+    if (!selectedUniverse || !onUniverseStart) {
+      console.warn('⚠️ Cannot start universe mode: missing universe or callback');
+      return;
+    }
+    
+    // Get mode from UISettings
+    const { localProgressProvider } = await import('@/infra/providers/LocalProgressProvider');
+    const settings = await localProgressProvider.getUISettings();
+    const mode: GameMode = settings.gameMode || 'shooter';
+    
+    console.log('🚀 Starting Universe Chaotic Mode!');
+    setShowUniverseConfirmation(false);
+    
+    // Call the callback with all themes
+    onUniverseStart(selectedUniverse, themes, mode);
+  };
+  
+  const handleUniverseCancel = () => {
+    setShowUniverseConfirmation(false);
+    setUniverseStats(null);
   };
   
   // ============================================================================
@@ -626,6 +708,23 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   };
   
   const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    // Check for sun hover (even when not dragging)
+    if (!isDraggingRef.current && renderer) {
+      const rect = canvasRef.current?.getBoundingClientRect();
+      if (rect) {
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        const canvas = renderer.getContext().canvas;
+        
+        // Sun position: bottom-left corner at (0, canvas.height)
+        const sunCenterX = 0;
+        const sunCenterY = canvas.height;
+        const distanceToSun = Math.hypot(mouseX - sunCenterX, mouseY - sunCenterY);
+        
+        setHoveredSun(distanceToSun < SUN_HITBOX_RADIUS);
+      }
+    }
+    
     if (!isDraggingRef.current) return;
     
     const deltaX = e.clientX - dragStartXRef.current;
@@ -657,6 +756,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   };
   
   const handleMouseLeave = () => {
+    setHoveredSun(false); // Clear sun hover on mouse leave
     if (isDraggingRef.current) {
       handleMouseUp();
     }
@@ -671,6 +771,18 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     
     const clickX = e.clientX - rect.left;
     const clickY = e.clientY - rect.top;
+    const canvas = renderer.getContext().canvas;
+    
+    // Check if clicked on sun (bottom-left corner at 0, canvas.height)
+    const sunCenterX = 0;
+    const sunCenterY = canvas.height;
+    const distanceToSun = Math.hypot(clickX - sunCenterX, clickY - sunCenterY);
+    
+    if (distanceToSun < SUN_HITBOX_RADIUS) {
+      // Sun clicked! Show confirmation dialog
+      handleSunClick();
+      return;
+    }
     
     // Check if clicked on a planet
     for (const planet of planetLayoutsRef.current) {
@@ -847,6 +959,56 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       />
+      
+      {/* Sun Hover Tooltip */}
+      {hoveredSun && selectedUniverse && (
+        <div className="sun-tooltip">
+          <div className="sun-tooltip-content">
+            <div className="sun-tooltip-title">🌟 {selectedUniverse.name}</div>
+            <div className="sun-tooltip-subtitle">Universe Chaotic Mode</div>
+            <div className="sun-tooltip-hint">Klicken um alle Themes zu spielen</div>
+          </div>
+        </div>
+      )}
+      
+      {/* Universe Chaotic Mode Confirmation Dialog */}
+      {showUniverseConfirmation && universeStats && (
+        <div className="game-over-overlay universe-confirmation">
+          <div className="game-over-content mobile-optimized">
+            <h1>🌟 Universe Chaotic Mode</h1>
+            <div className="universe-stats">
+              <p>Möchtest du <strong>alle Items</strong> aus diesem Universe spielen?</p>
+              <div className="stats-grid">
+                <div className="stat-item">
+                  <span className="stat-value">{universeStats.themes}</span>
+                  <span className="stat-label">Themes</span>
+                </div>
+                <div className="stat-item">
+                  <span className="stat-value">{universeStats.chapters}</span>
+                  <span className="stat-label">Chapters</span>
+                </div>
+                <div className="stat-item">
+                  <span className="stat-value">{universeStats.items}</span>
+                  <span className="stat-label">Items</span>
+                </div>
+              </div>
+              {universeStats.items > 200 && (
+                <div className="warning-message">
+                  ⚠️ Das sind sehr viele Runden! Dies kann eine Weile dauern.
+                </div>
+              )}
+            </div>
+            <div className="chapter-complete-buttons">
+              <button className="restart-button" onClick={handleUniverseConfirm}>
+                🚀 Los geht's!
+              </button>
+              <button className="restart-button secondary" onClick={handleUniverseCancel}>
+                ← Abbrechen
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

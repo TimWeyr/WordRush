@@ -197,10 +197,39 @@ function AppContent() {
     }
   };
 
+  const handleUniverseStart = (universe: Universe, themes: Theme[], mode: GameMode) => {
+    // Collect all chapter IDs from all themes with theme prefix
+    // Format: "themeId:chapterId" to preserve theme context
+    const allChapterIds: string[] = [];
+    for (const theme of themes) {
+      const chapterIds = Object.keys(theme.chapters);
+      for (const chapterId of chapterIds) {
+        allChapterIds.push(`${theme.id}:${chapterId}`);
+      }
+    }
+    
+    console.log(`🌟 Universe Chaotic Mode: ${themes.length} themes, ${allChapterIds.length} chapters`);
+    
+    // Use first theme as "representative" theme (needed for Game component)
+    // But pass all chapter IDs with loadAllItems=true
+    if (themes.length > 0) {
+      setState({
+        screen: 'game',
+        universe,
+        theme: themes[0], // Representative theme (not used in universe mode)
+        chapterIds: allChapterIds,
+        currentChapterIndex: 0,
+        mode,
+        loadAllItems: true // Enable universe chaotic mode
+      });
+    }
+  };
+
   if (state.screen === 'universe') {
     return (
       <GalaxyUniverseView
         onPlanetSelect={handlePlanetSelect}
+        onUniverseStart={handleUniverseStart}
         initialFocusedPlanetId={lastFocusedPlanetId}
       />
     );

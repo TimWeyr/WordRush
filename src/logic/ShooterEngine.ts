@@ -242,25 +242,30 @@ export class ShooterEngine {
     console.log('🧘 Zen Mode:', isZenMode);
     
     if (isZenMode || objectsPerSecond === 0) {
-      // ZEN MODE: Instant spawn - all objects at time 0
-      console.log('🧘 ZEN MODE: Instant spawn activated');
+      // ZEN MODE: Slightly staggered spawn with initial delay for ship positioning
+      const zenInitialDelay = 1.0; // 1s initial delay for ship to reach position
+      const zenSpawnDelay = 0.3; // 300ms between each subsequent spawn
+      console.log('🧘 ZEN MODE: Staggered spawn activated (1s initial + 0.3s between objects)');
       
+      let spawnIndex = 0;
       correctEntries.forEach(correct => {
         this.spawnQueue.push({
           type: 'correct',
           entry: { ...correct, colorCoded, speedMultiplier: objectSpeedMultiplier, isZenMode: true },
-          spawnTime: 0,
+          spawnTime: zenInitialDelay + (spawnIndex * zenSpawnDelay),
           spawned: false
         });
+        spawnIndex++;
       });
       
       distractorEntries.forEach(distractor => {
         this.spawnQueue.push({
           type: 'distractor',
           entry: { ...distractor, colorCoded, speedMultiplier: objectSpeedMultiplier, isZenMode: true },
-          spawnTime: 0,
+          spawnTime: zenInitialDelay + (spawnIndex * zenSpawnDelay),
           spawned: false
         });
+        spawnIndex++;
       });
     } else {
       // NORMAL MODE: Calculate spawn times based on objects per second
@@ -450,13 +455,20 @@ export class ShooterEngine {
     
     if (isZenMode) {
       // ZEN MODE: Random position in upper 2/3 of screen
-      // X: Use spawnPosition as base, with spread
+      // X: Use spawnPosition as base, with spread (clamped to screen bounds)
+      const objectRadius = 30; // Approximate object radius for safety margin
+      const minX = objectRadius;
+      const maxX = this.config.screenWidth - objectRadius;
+      
       spawnX = this.config.screenWidth * data.spawnPosition +
         (Math.random() - 0.5) * this.config.screenWidth * data.spawnSpread;
       
+      // Clamp X to screen bounds
+      spawnX = Math.max(minX, Math.min(maxX, spawnX));
+      
       // Y: Random in upper 2/3 (between 50px and 2/3 * screenHeight)
-      const upperBound = 50; // Top padding
-      const lowerBound = this.config.screenHeight * (2/3);
+      const upperBound = 50 + objectRadius; // Top padding + safety margin
+      const lowerBound = this.config.screenHeight * (2/3) - objectRadius;
       spawnY = upperBound + Math.random() * (lowerBound - upperBound);
       
       // Ensure even distribution (optional grid-like adjustment)
@@ -474,6 +486,10 @@ export class ShooterEngine {
       // Blend grid position (40%) with random position (60%)
       spawnX = spawnX * 0.6 + gridX * 0.4;
       spawnY = spawnY * 0.6 + gridY * 0.4;
+      
+      // Final clamp to ensure nothing spawns off-screen
+      spawnX = Math.max(minX, Math.min(maxX, spawnX));
+      spawnY = Math.max(upperBound, Math.min(lowerBound, spawnY));
       
       console.log('🧘 Zen spawn:', type, 'at', { x: Math.round(spawnX), y: Math.round(spawnY) });
     } else {

@@ -24,6 +24,7 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
   const [savingItems, setSavingItems] = useState<Set<string>>(new Set());
   const [deletingItems, setDeletingItems] = useState<Set<string>>(new Set());
   const [showTextParserModal, setShowTextParserModal] = useState(false);
+  const [editingItem, setEditingItem] = useState<Item | undefined>(undefined); // For editing existing item in text parser
 
   // Filter and sort items
   const filteredItems = useMemo(() => {
@@ -328,17 +329,8 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
       return;
     }
 
-    const newItems: Item[] = [];
-    // SOLUTION 2: Extract max ID from items (works with both old and new format)
-    let currentMaxId = items.reduce((max, item) => {
-      // Extract number from end of ID (works with both old format "F40_001" and new format "F40.00_001")
-      const match = item.id.match(/\d+$/);
-      if (match) {
-        const num = parseInt(match[0]);
-        return Math.max(max, num);
-      }
-      return max;
-    }, 0);
+    const itemsToProcess: Item[] = [];
+    const idsToProcess: string[] = [];
     
     // Helper functions for randomization (same as handleAddNewItem)
     const randomColor = () => '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
@@ -346,104 +338,243 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
     const randomVariant = () => variants[Math.floor(Math.random() * variants.length)];
     const randomSpawn = () => 0.1 + Math.random() * 0.8;
 
-    // Erstelle alle Items
+    // Extract max ID from items (for new items)
+    let currentMaxId = items.reduce((max, item) => {
+      const match = item.id.match(/\d+$/);
+      if (match) {
+        const num = parseInt(match[0]);
+        return Math.max(max, num);
+      }
+      return max;
+    }, 0);
+
+    // Process each parsed item
     for (const parsedData of parsedDataArray) {
-      currentMaxId++;
-      // SOLUTION 2 Option A: Use full chapter ID for uniqueness (e.g., "F40.00_001" instead of "F40_001")
-      const newId = `${chapterId}_${String(currentMaxId).padStart(3, '0')}`;
+      const targetChapterId = parsedData.cid || chapterId; // Use cid if provided, else current chapter
+      const roundId = parsedData.rid; // Round ID for updates
+      
+      // Validate targetChapterId
+      if (!targetChapterId || targetChapterId === 'null' || targetChapterId === 'UNKNOWN') {
+        showToast(`⚠️ Invalid chapter ID: "${targetChapterId}". Please specify cid. or select a chapter.`, 'error', 4000);
+        continue;
+      }
+      
+      // Check if this is an UPDATE (rid provided) or CREATE (no rid)
+      if (roundId) {
+        // UPDATE EXISTING ITEM
+        const existingItem = items.find(i => i.id === roundId);
+        
+        if (!existingItem) {
+          showToast(`⚠️ Item ${roundId} not found, skipping update`, 'warning', 3000);
+          continue;
+        }
+        
+        // Update only editable fields, preserve visual/spawn configs
+        const updatedCorrects = existingItem.correct.map((existing) => {
+          const parsed = parsedData.corrects.find(c => c.word === existing.entry.word);
+          if (parsed) {
+            // Match by word: update context, order, level
+            return {
+              ...existing,
+              context: parsed.context,
+              collectionOrder: parsed.order,
+              level: parsed.level
+            };
+          }
+          // No match: keep existing
+          return existing;
+        });
+        
+        // Add new correct entries that don't exist yet
+        parsedData.corrects.forEach(c => {
+          const exists = existingItem.correct.some(e => e.entry.word === c.word);
+          if (!exists) {
+            updatedCorrects.push({
+              entry: { word: c.word, type: 'word' as const },
+              spawnPosition: randomSpawn(),
+              spawnSpread: 0.05 + Math.random() * 0.05,
+              speed: 0.9 + Math.random() * 0.2,
+              points: 10,
+              pattern: 'single' as const,
+              context: c.context,
+              collectionOrder: c.order,
+              level: c.level,
+              visual: {
+                color: randomColor(),
+                variant: randomVariant(),
+                fontSize: 0.9 + Math.random() * 0.3,
+              },
+            });
+          }
+        });
+        
+        const updatedDistractors = existingItem.distractors.map((existing) => {
+          const parsed = parsedData.distractors.find(d => d.word === existing.entry.word);
+          if (parsed) {
+            // Match by word: update redirect, context, level
+            return {
+              ...existing,
+              redirect: parsed.redirect,
+              context: parsed.context,
+              level: parsed.level
+            };
+          }
+          // No match: keep existing
+          return existing;
+        });
+        
+        // Add new distractor entries that don't exist yet
+        parsedData.distractors.forEach(d => {
+          const exists = existingItem.distractors.some(e => e.entry.word === d.word);
+          if (!exists) {
+            updatedDistractors.push({
+              entry: { word: d.word, type: 'word' as const },
+              spawnPosition: randomSpawn(),
+              spawnSpread: 0.05 + Math.random() * 0.05,
+              speed: 1.1 + Math.random() * 0.3,
+              points: -10,
+              damage: 1,
+              redirect: d.redirect,
+              context: d.context,
+              level: d.level,
+              visual: {
+                color: randomColor(),
+                variant: randomVariant(),
+                fontSize: 0.9 + Math.random() * 0.3,
+              },
+            });
+          }
+        });
+        
+        const updatedItem: Item = {
+          ...existingItem,
+          chapter: targetChapterId, // Allow cross-chapter updates
+          level: parsedData.level,
+          base: {
+            ...existingItem.base,
+            context: parsedData.baseContext // Only context can change, not word
+          },
+          correct: updatedCorrects,
+          distractors: updatedDistractors,
+          meta: {
+            ...existingItem.meta,
+            source: parsedData.source ?? existingItem.meta.source, // s. missing = keep existing
+            detail: parsedData.detail ?? existingItem.meta.detail,
+            tags: parsedData.tags ?? existingItem.meta.tags // t. overrides all tags
+          }
+        };
+        
+        itemsToProcess.push(updatedItem);
+        idsToProcess.push(roundId);
+      } else {
+        // CREATE NEW ITEM
+        currentMaxId++;
+        const newId = `${targetChapterId}_${String(currentMaxId).padStart(3, '0')}`;
 
-      const correctEntries = parsedData.corrects.map((c) => ({
-        entry: {
-          word: c.word,
-          type: 'word' as const,
-        },
-        spawnPosition: randomSpawn(),
-        spawnSpread: 0.05 + Math.random() * 0.05,
-        speed: 0.9 + Math.random() * 0.2,
-        points: 10,
-        pattern: 'single' as const,
-        context: c.context,
-        visual: {
-          color: randomColor(),
-          variant: randomVariant(),
-          fontSize: 0.9 + Math.random() * 0.3,
-        },
-        collectionOrder: c.order,
-      }));
-
-      const distractors = parsedData.distractors.map((d) => ({
-        entry: {
-          word: d.word,
-          type: 'word' as const,
-        },
-        spawnPosition: randomSpawn(),
-        spawnSpread: 0.05 + Math.random() * 0.05,
-        speed: 1.1 + Math.random() * 0.3,
-        points: -10,
-        damage: 1,
-        redirect: d.redirect,
-        context: d.context,
-        visual: {
-          color: randomColor(),
-          variant: randomVariant(),
-          fontSize: 0.9 + Math.random() * 0.3,
-        },
-      }));
-
-      const newItem: Item = {
-        id: newId,
-        theme: themeId,
-        chapter: chapterId,
-        level: parsedData.level,
-        published: false,
-        base: {
-          word: parsedData.base,
-          type: 'word',
-          context: parsedData.baseContext, // Optional context from text parser
+        const correctEntries = parsedData.corrects.map((c) => ({
+          entry: { word: c.word, type: 'word' as const },
+          spawnPosition: randomSpawn(),
+          spawnSpread: 0.05 + Math.random() * 0.05,
+          speed: 0.9 + Math.random() * 0.2,
+          points: 10,
+          pattern: 'single' as const,
+          context: c.context,
+          collectionOrder: c.order,
+          level: c.level,
           visual: {
             color: randomColor(),
             variant: randomVariant(),
             fontSize: 0.9 + Math.random() * 0.3,
           },
-        },
-        correct: correctEntries,
-        distractors: distractors,
-        meta: {
-          source: parsedData.source || '',
-          detail: parsedData.detail,
-          tags: parsedData.tags || [],
-          related: [],
-          difficultyScaling: {
-            speedMultiplierPerReplay: 0.1,
-            colorContrastFade: false,
-          },
-        },
-      };
+        }));
 
-      newItems.push(newItem);
+        const distractors = parsedData.distractors.map((d) => ({
+          entry: { word: d.word, type: 'word' as const },
+          spawnPosition: randomSpawn(),
+          spawnSpread: 0.05 + Math.random() * 0.05,
+          speed: 1.1 + Math.random() * 0.3,
+          points: -10,
+          damage: 1,
+          redirect: d.redirect,
+          context: d.context,
+          level: d.level,
+          visual: {
+            color: randomColor(),
+            variant: randomVariant(),
+            fontSize: 0.9 + Math.random() * 0.3,
+          },
+        }));
+
+        const newItem: Item = {
+          id: newId,
+          theme: themeId,
+          chapter: targetChapterId,
+          level: parsedData.level,
+          published: false,
+          base: {
+            word: parsedData.base,
+            type: 'word',
+            context: parsedData.baseContext,
+            visual: {
+              color: randomColor(),
+              variant: randomVariant(),
+              fontSize: 0.9 + Math.random() * 0.3,
+            },
+          },
+          correct: correctEntries,
+          distractors: distractors,
+          meta: {
+            source: parsedData.source || '',
+            detail: parsedData.detail,
+            tags: parsedData.tags || [],
+            related: [],
+            difficultyScaling: {
+              speedMultiplierPerReplay: 0.1,
+              colorContrastFade: false,
+            },
+          },
+        };
+
+        itemsToProcess.push(newItem);
+        idsToProcess.push(newId);
+      }
     }
 
-    // Alle Items zur Liste hinzufügen
-    const updatedItems = [...items, ...newItems];
-    onItemsChange(updatedItems);
+    // Update items list
+    const updatedItems = items.map(item => {
+      const updated = itemsToProcess.find(i => i.id === item.id);
+      return updated || item;
+    });
+    
+    // Add new items (those not already in list)
+    const newItems = itemsToProcess.filter(i => !items.some(existing => existing.id === i.id));
+    onItemsChange([...updatedItems, ...newItems]);
 
-    // Alle Items in DB speichern
-    const savePromises = newItems.map(item => 
-      jsonWriter.saveItem(universeId || '', themeId, chapterId, item)
-    );
+    // Save to database
+    const savePromises = itemsToProcess.map(item => {
+      const targetChapter = item.chapter;
+      return jsonWriter.saveItem(universeId || '', themeId, targetChapter, item);
+    });
     
     try {
       setSavingItems(prev => {
         const next = new Set(prev);
-        newItems.forEach(item => next.add(item.id));
+        idsToProcess.forEach(id => next.add(id));
         return next;
       });
       
       const results = await Promise.all(savePromises);
       const failed = results.filter(r => !r.success);
       
+      const updateCount = itemsToProcess.filter(i => items.some(existing => existing.id === i.id)).length;
+      const createCount = newItems.length;
+      
       if (failed.length === 0) {
-        showToast(`✅ ${newItems.length} item${newItems.length > 1 ? 's' : ''} created and saved successfully!`, 'success', 3000);
+        const message = [
+          updateCount > 0 ? `${updateCount} updated` : '',
+          createCount > 0 ? `${createCount} created` : ''
+        ].filter(Boolean).join(', ');
+        showToast(`✅ ${message} successfully!`, 'success', 3000);
         setShowTextParserModal(false);
         
         // Scroll zum letzten neuen Item
@@ -661,14 +792,19 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
       {chapterId && (
         <TextParserModal
           isOpen={showTextParserModal}
-          onClose={() => setShowTextParserModal(false)}
+          onClose={() => {
+            setShowTextParserModal(false);
+            setEditingItem(undefined);
+          }}
           onSave={handleSaveParsedItem}
           chapterId={chapterId}
+          initialItem={editingItem}
+          initialChapterId={chapterId}
         />
       )}
 
       <div style={{ overflowX: 'auto', width: '100%' }}>
-        <table className="editor-table editor-table-3line" style={{ minWidth: 'max(100%, 1800px)' }}>
+        <table className="editor-table editor-table-3line" style={{ width: '100%', tableLayout: 'auto' }}>
           <thead>
             <tr>
               {/* Actions first! */}
@@ -718,8 +854,8 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
             </tr>
             <tr>
               <th style={{ width: '35px' }} title="Color">🎨</th>
-              <th style={{ minWidth: '200px', flex: '1 1 300px' }}>Word</th>
-              <th style={{ minWidth: '200px', flex: '1 1 300px' }}>Context</th>
+              <th style={{ minWidth: '120px', maxWidth: '200px' }}>Word</th>
+              <th style={{ minWidth: '150px', maxWidth: '250px' }}>Context</th>
               <th style={{ width: '30px' }} title="Variant">✦</th>
               <th style={{ width: '30px' }} title="Font Size">A</th>
               <th style={{ width: '30px' }} title="Glow">✨</th>
@@ -782,6 +918,17 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
                         title="Edit item in detail view"
                       >
                         ✏️
+                      </button>
+                      <button
+                        className="editor-button small"
+                        onClick={() => {
+                          setEditingItem(item);
+                          setShowTextParserModal(true);
+                        }}
+                        style={{ padding: '0.3rem 0.4rem', fontSize: '0.7rem', width: '100%' }}
+                        title="Edit in text parser"
+                      >
+                        📝
                       </button>
                       <button
                         className="editor-button small"
@@ -872,11 +1019,11 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
                       title={item.base.visual.color}
                     />
                   </td>
-                  <td style={{ background: 'rgba(100, 100, 255, 0.08)' }}>
-                    {renderTextInput(item, 'base.word', item.base.word || '', 40)}
+                  <td style={{ background: 'rgba(100, 100, 255, 0.08)', maxWidth: '180px' }}>
+                    {renderTextInput(item, 'base.word', item.base.word || '', 25)}
                   </td>
-                  <td style={{ background: 'rgba(100, 100, 255, 0.08)' }}>
-                    {renderTextInput(item, 'base.context', item.base.context || '', 40)}
+                  <td style={{ background: 'rgba(100, 100, 255, 0.08)', maxWidth: '200px' }}>
+                    {renderTextInput(item, 'base.context', item.base.context || '', 30)}
                   </td>
                   <td style={{ background: 'rgba(100, 100, 255, 0.08)', textAlign: 'center', fontSize: '0.85rem', padding: '0.3rem' }}>
                     {item.base.visual.variant === 'hexagon' && '⬡'}
@@ -921,9 +1068,9 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
                           <span style={{ fontSize: '0.75rem', fontWeight: 600, opacity: 0.7, flexShrink: 0 }}>
                             #{index + 1}
                           </span>
-                          {renderTextInput(item, `correct[${index}].entry.word`, correct.entry.word || '', 25)}
+                          {renderTextInput(item, `correct[${index}].entry.word`, correct.entry.word || '', 20)}
                           <span style={{ fontSize: '0.7rem', opacity: 0.5, flexShrink: 0 }}>→</span>
-                          {renderTextInput(item, `correct[${index}].context`, correct.context || '', 50)}
+                          {renderTextInput(item, `correct[${index}].context`, correct.context || '', 35)}
                         </div>
                       ))}
                       <button
@@ -962,11 +1109,11 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
                           <span style={{ fontSize: '0.75rem', fontWeight: 600, opacity: 0.7, flexShrink: 0 }}>
                             #{index + 1}
                           </span>
-                          {renderTextInput(item, `distractors[${index}].entry.word`, distractor.entry.word || '', 25)}
+                          {renderTextInput(item, `distractors[${index}].entry.word`, distractor.entry.word || '', 20)}
                           <span style={{ fontSize: '0.7rem', opacity: 0.5, flexShrink: 0 }}>↪</span>
-                          {renderTextInput(item, `distractors[${index}].redirect`, distractor.redirect || '', 20)}
+                          {renderTextInput(item, `distractors[${index}].redirect`, distractor.redirect || '', 18)}
                           <span style={{ fontSize: '0.7rem', opacity: 0.5, flexShrink: 0 }}>→</span>
-                          {renderTextInput(item, `distractors[${index}].context`, distractor.context || '', 50)}
+                          {renderTextInput(item, `distractors[${index}].context`, distractor.context || '', 35)}
                         </div>
                       ))}
                       <button

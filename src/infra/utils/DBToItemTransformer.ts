@@ -48,8 +48,8 @@ export function transformRoundsToItems(rounds: RoundRow[], items: ItemRow[], the
     
     // Separate by object_type
     const baseItem = roundItems.find(i => i.object_type === 'base');
-    const correctItems = roundItems.filter(i => i.object_type === 'correct');
-    const distractorItems = roundItems.filter(i => i.object_type === 'distractor');
+    const correctItems = roundItems.filter(i => i.object_type === 'correct' && (i.word || i.image));
+    const distractorItems = roundItems.filter(i => i.object_type === 'distractor' && (i.word || i.image));
     
     // Validation
     if (!baseItem) {
@@ -135,6 +135,7 @@ function transformCorrectItem(item: ItemRow): CorrectEntry {
     hp: item.hp ?? 1,
     collectionOrder: item.collectionorder ?? undefined,
     context: item.context || '',
+    level: item.level ?? undefined, // Item-level difficulty (1-10)
     visual: transformVisualConfig(item, 'correct'),
     sound: item.sound ?? undefined,
     uuid: item.uuid // Add item UUID
@@ -161,6 +162,7 @@ function transformDistractorItem(item: ItemRow): DistractorEntry {
     behavior: item.behavior ?? undefined,
     redirect: item.redirect || '',
     context: item.context || '',
+    level: item.level ?? undefined, // Item-level difficulty (1-10)
     visual: transformVisualConfig(item, 'distractor'),
     sound: item.sound ?? undefined,
     uuid: item.uuid // Add item UUID

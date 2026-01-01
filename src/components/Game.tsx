@@ -34,6 +34,7 @@ interface GameProps {
   loadAllItems?: boolean; // Optional: load all items from all chapters (chaotic mode)
 }
 
+
 export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterIds, mode, startItemId, levelFilter, onExit, onNextChapter, currentChapterIndex = 0, totalChapters = 1, loadAllItems = false }) => {
   const { user, isVerified } = useAuth();
   
@@ -57,6 +58,10 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
   const [items, setItems] = useState<Item[]>([]);
   const [currentItemIndex, setCurrentItemIndex] = useState(0);
   const [loading, setLoading] = useState(true);
+  
+  // Cache for theme names and chapter titles (for chaotic mode)
+  const [themeNamesCache, setThemeNamesCache] = useState<Map<string, string>>(new Map());
+  const [chapterTitlesCache, setChapterTitlesCache] = useState<Map<string, string>>(new Map());
   
   // HUD state
   const [score, setScore] = useState(0);
@@ -127,7 +132,39 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
     // CHAOTIC MODE: Load ALL items from ALL chapters
     if (loadAllItems && chapterIds && chapterIds.length > 0) {
       console.log('🎲 CHAOTIC MODE: Loading all items from all chapters!');
-      loadedItems = await jsonLoader.loadAllThemeItems(universe.id, theme.id, chapterIds);
+      
+      // Check if chapter IDs contain theme prefix (format: "themeId:chapterId")
+      const hasThemePrefix = chapterIds.some(id => id.includes(':'));
+      
+      if (hasThemePrefix) {
+        // UNIVERSE MODE: Load items from multiple themes
+        console.log('🌟 UNIVERSE MODE: Loading items from multiple themes!');
+        
+        const itemPromises = chapterIds.map(async (fullId) => {
+          const [themeId, chapterId] = fullId.split(':');
+          try {
+            // Load theme and chapter info for cache
+            const themeObj = await jsonLoader.loadTheme(universe.id, themeId);
+            if (themeObj) {
+              setThemeNamesCache(prev => new Map(prev).set(themeId, themeObj.name));
+              const chapterConfig = themeObj.chapters[chapterId];
+              if (chapterConfig?.title) {
+                setChapterTitlesCache(prev => new Map(prev).set(chapterId, chapterConfig.title!));
+              }
+            }
+            return await jsonLoader.loadChapter(universe.id, themeId, chapterId);
+          } catch (error) {
+            console.warn(`Failed to load chapter ${fullId}:`, error);
+            return [];
+          }
+        });
+        const itemArrays = await Promise.all(itemPromises);
+        loadedItems = itemArrays.flat();
+        console.log(`✅ UNIVERSE MODE: Loaded ${loadedItems.length} items from ${chapterIds.length} chapters`);
+      } else {
+        // THEME MODE: Load items from single theme
+        loadedItems = await jsonLoader.loadAllThemeItems(universe.id, theme.id, chapterIds);
+      }
     } else {
       // NORMAL MODE: Load single chapter
       loadedItems = await jsonLoader.loadChapter(universe.id, theme.id, chapterId);
@@ -242,7 +279,8 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
     }
 
     const item = items[index];
-    console.log('📦 Loading item:', item.id);
+    console.log('📦 Loading item:', item.id, 'chapter:', item.chapter, 'theme:', item.theme);
+    
     const learningState = learningManager.getState(item.id);
     const isLastRound = index === items.length - 1;
     eng.loadRound(item, learningState, isLastRound);
@@ -252,7 +290,7 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
     if (item.introText) {
       showContext(item.introText);
     }
-  }, [items, learningManager, showContext, currentChapterIndex, totalChapters]);
+  }, [items, learningManager, showContext, currentChapterIndex, totalChapters, theme, universe]);
 
   const handleRoundComplete = useCallback((roundScore: number, perfect: boolean) => {
     if (!engine) return;
@@ -680,9 +718,10 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
   const renderGame = useCallback(() => {
     if (!renderer || !engine) return;
 
-    // Get chapter config for background
-    const chapterConfig = theme.chapters[chapterId];
-    const backgroundGradient = chapterConfig.backgroundGradient;
+    // Get background gradient from chapter config
+    const actualChapterId = chapterId.includes(':') ? chapterId.split(':')[1] : chapterId;
+    const chapterConfig = theme.chapters[actualChapterId];
+    const backgroundGradient = chapterConfig?.backgroundGradient || theme.backgroundGradient || universe.backgroundGradient;
 
     // Render background gradient
     renderer.renderGradientBackground(backgroundGradient);
@@ -733,7 +772,7 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
 
     // Render ship
     engine.getShip().render(renderer);
-  }, [renderer, engine, theme, chapterId, loadAllItems, chapterIds]);
+  }, [renderer, engine, theme, chapterId, loadAllItems, chapterIds, universe]);
 
   // Start game loop
   useEffect(() => {
@@ -921,7 +960,24 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
         <div className="hud-center">
           <div className="level-info">
             <span className="desktop-only">
-              {theme.name} - {theme.chapters[chapterId]?.title || chapterId}
+              {(() => {
+                const currentItem = items[currentItemIndex];
+                if (!currentItem) return `${theme.name}`;
+                
+                // Use item's theme and chapter for display
+                const itemTheme = currentItem.theme || theme.id;
+                const itemChapter = currentItem.chapter || chapterId;
+                
+                // In Universe Chaotic Mode: Show theme + chapter
+                if (loadAllItems && itemTheme !== theme.id) {
+                  const themeName = themeNamesCache.get(itemTheme) || itemTheme;
+                  const chapterTitle = chapterTitlesCache.get(itemChapter) || itemChapter;
+                  return `${themeName} - ${chapterTitle}`;
+                }
+                
+                // Normal mode: Show theme + chapter title
+                return `${theme.name} - ${theme.chapters[itemChapter]?.title || itemChapter}`;
+              })()}
             </span>
           </div>
           <div className="item-progress">

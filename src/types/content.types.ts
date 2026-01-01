@@ -102,6 +102,7 @@ export interface CorrectEntry {
   hp?: number;
   collectionOrder?: number;
   context: string;
+  level?: number; // Item-specific difficulty level (1-10), default 1
   visual: VisualConfig;
   sound?: string;
   uuid?: string; // UUID from database (only present when loaded from Supabase)
@@ -123,6 +124,7 @@ export interface DistractorEntry {
   behavior?: string;
   redirect: string;
   context: string;
+  level?: number; // Item-specific difficulty level (1-10), default 1
   visual: VisualConfig;
   sound?: string;
   uuid?: string; // UUID from database (only present when loaded from Supabase)

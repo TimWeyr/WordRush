@@ -59,7 +59,7 @@ export interface UISettings {
   colorScheme: 'dark' | 'light';
   stützräderGlobal: boolean;
   mixModeGlobal: boolean;
-  itemOrder?: 'default' | 'random' | 'worst-first-unplayed';
+  itemOrder?: 'default' | 'random' | 'worst-first-unplayed' | 'newest-first';
   gameMode?: 'lernmodus' | 'shooter'; // Default: 'shooter'
   gameplaySettings?: GameplaySettings;
 }

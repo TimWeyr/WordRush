@@ -94,6 +94,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   const [showUniverseConfirmation, setShowUniverseConfirmation] = useState(false);
   const [universeStats, setUniverseStats] = useState<{ themes: number; chapters: number; items: number; freeTierItems: number } | null>(null);
   const [hoveredSun, setHoveredSun] = useState(false);
+  const [settingsClosedTrigger, setSettingsClosedTrigger] = useState(0);
   
   // ============================================================================
   // ROTATION STATE
@@ -935,7 +936,11 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       <button className="settings-icon-button" onClick={() => setSettingsOpen(true)} title="Settings">
         ⚙️
       </button>
-      <Settings isOpen={settingsOpen} onClose={() => setSettingsOpen(false)} />
+      <Settings isOpen={settingsOpen} onClose={() => {
+        setSettingsOpen(false);
+        // Trigger reload in GameStartScreen
+        setSettingsClosedTrigger(prev => prev + 1);
+      }} />
       
       <div className="galaxy-universe-controls">
         <select
@@ -978,6 +983,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       {/* Universe Chaotic Mode Confirmation Dialog */}
       {showUniverseConfirmation && universeStats && selectedUniverse && (
         <GameStartScreen
+          key={settingsClosedTrigger} // Force reload when settings close
           name={selectedUniverse.name}
           itemCount={universeStats.items}
           freeTierItemCount={universeStats.freeTierItems}
@@ -985,6 +991,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
           colorAccent={selectedUniverse.colorAccent}
           onConfirm={handleUniverseConfirm}
           onCancel={handleUniverseCancel}
+          onOpenSettings={() => setSettingsOpen(true)}
           icon="🌟"
           additionalStats={[
             { value: universeStats.themes, label: 'Themes' },

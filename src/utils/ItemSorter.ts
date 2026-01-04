@@ -5,7 +5,7 @@ import type { Item } from '@/types/content.types';
 import type { LearningState } from '@/types/progress.types';
 import { calculateMaxPossibleScore } from './ScoreCalculator';
 
-export type ItemOrder = 'default' | 'random' | 'worst-first-unplayed';
+export type ItemOrder = 'default' | 'random' | 'worst-first-unplayed' | 'newest-first';
 
 /**
  * Sorts items based on the specified order strategy
@@ -20,8 +20,26 @@ export function sortItems(
 
   switch (order) {
     case 'default':
-      // Return items in original order
-      return sortedItems;
+      // Sort by item ID (ascending - oldest first)
+      // Items are loaded from DB ordered by level, but within a level they should be ordered by ID
+      return sortedItems.sort((a, b) => {
+        // Extract numeric part from IDs if possible (e.g., "BC_001" -> 1)
+        const getNumericId = (id: string): number => {
+          const match = id.match(/\d+/);
+          return match ? parseInt(match[0], 10) : 0;
+        };
+        
+        const numA = getNumericId(a.id);
+        const numB = getNumericId(b.id);
+        
+        // If both have numeric IDs, sort by number
+        if (numA !== 0 && numB !== 0) {
+          return numA - numB;
+        }
+        
+        // Fallback: lexicographic sort
+        return a.id.localeCompare(b.id);
+      });
 
     case 'random':
       // Fisher-Yates shuffle
@@ -68,6 +86,27 @@ export function sortItems(
         
         // If both are played or both are unplayed, maintain original order
         return 0;
+      });
+
+    case 'newest-first':
+      // Sort by item ID (descending - newest first)
+      return sortedItems.sort((a, b) => {
+        // Extract numeric part from IDs if possible (e.g., "BC_060" -> 60)
+        const getNumericId = (id: string): number => {
+          const match = id.match(/\d+/);
+          return match ? parseInt(match[0], 10) : 0;
+        };
+        
+        const numA = getNumericId(a.id);
+        const numB = getNumericId(b.id);
+        
+        // If both have numeric IDs, sort by number (descending)
+        if (numA !== 0 && numB !== 0) {
+          return numB - numA; // Reverse order
+        }
+        
+        // Fallback: lexicographic sort (descending)
+        return b.id.localeCompare(a.id);
       });
 
     default:

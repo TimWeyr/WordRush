@@ -25,7 +25,7 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
   
   const [activeTab, setActiveTab] = useState<TabType>('settings');
   const [username, setUsername] = useState<string>('');
-  const [itemOrder, setItemOrder] = useState<'default' | 'random' | 'worst-first-unplayed'>('default');
+  const [itemOrder, setItemOrder] = useState<'default' | 'random' | 'worst-first-unplayed' | 'newest-first'>('default');
   const [gameMode, setGameMode] = useState<'lernmodus' | 'shooter'>('shooter');
   const [gameplaySettings, setGameplaySettings] = useState<GameplaySettings>(DEFAULT_GAMEPLAY_SETTINGS);
   const [loading, setLoading] = useState(true);
@@ -272,11 +272,12 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
                   <select
                     id="itemOrder"
                     value={itemOrder}
-                    onChange={(e) => setItemOrder(e.target.value as 'default' | 'random' | 'worst-first-unplayed')}
+                    onChange={(e) => setItemOrder(e.target.value as 'default' | 'random' | 'worst-first-unplayed' | 'newest-first')}
                   >
                     <option value="default">Standard</option>
                     <option value="random">Zufällig</option>
                     <option value="worst-first-unplayed">Schlechte Scores zuerst, dann ungespielte</option>
+                    <option value="newest-first">Neueste zuerst</option>
                   </select>
                 </div>
 

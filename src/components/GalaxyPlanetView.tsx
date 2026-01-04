@@ -20,6 +20,7 @@ import { jsonLoader } from '@/infra/utils/JSONLoader';
 import { localProgressProvider } from '@/infra/providers/LocalProgressProvider';
 import { getChapterScore, calculateMaxPossibleScore, getItemScore, getLevelScore } from '@/utils/ScoreCalculator';
 import { Settings } from './Settings';
+import { GameStartScreen } from './GameStartScreen';
 import type { Universe, Theme, Item } from '@/types/content.types';
 import type { GameMode } from '@/types/game.types';
 import type { LearningState } from '@/types/progress.types';
@@ -113,6 +114,24 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
   const [settingsOpen, setSettingsOpen] = useState(false);
   
   // ============================================================================
+  // LAUNCH SCREEN STATE
+  // ============================================================================
+  
+  const [showLaunchScreen, setShowLaunchScreen] = useState(false);
+  const [launchScreenData, setLaunchScreenData] = useState<{
+    name: string;
+    itemCount: number;
+    freeTierItemCount?: number;
+    colorPrimary: string;
+    colorAccent: string;
+    icon: string;
+    chapterIds: string | string[];
+    itemId?: string;
+    levelFilter?: number;
+    loadAllItems?: boolean;
+  } | null>(null);
+  
+  // ============================================================================
   // LAYOUT STATE (Refs for performance)
   // ============================================================================
   
@@ -140,6 +159,82 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
   useEffect(() => {
     loadData();
   }, [universe.id, theme.id]);
+  
+  // ============================================================================
+  // LAUNCH SCREEN HANDLERS
+  // ============================================================================
+  
+  const showLaunchScreenForSelection = async (
+    name: string,
+    chapterIds: string | string[],
+    itemId?: string,
+    levelFilter?: number,
+    loadAllItems?: boolean,
+    icon: string = '🚀'
+  ) => {
+    // Calculate item count and freeTier count
+    let itemCount = 0;
+    let freeTierCount = 0;
+    const chapterIdArray = Array.isArray(chapterIds) ? chapterIds : [chapterIds];
+    
+    for (const chapterId of chapterIdArray) {
+      const chapterItems = allItems.filter(item => item.chapter === chapterId);
+      
+      if (itemId) {
+        // Single item
+        const singleItem = allItems.find(i => i.id === itemId);
+        itemCount = 1;
+        freeTierCount = singleItem?.freeTier ? 1 : 0;
+      } else if (levelFilter !== undefined) {
+        // Level filter
+        const levelItems = chapterItems.filter(item => item.level === levelFilter);
+        itemCount += levelItems.length;
+        freeTierCount += levelItems.filter(item => item.freeTier).length;
+      } else {
+        // All items in chapter(s)
+        itemCount += chapterItems.length;
+        freeTierCount += chapterItems.filter(item => item.freeTier).length;
+      }
+    }
+    
+    // Set launch screen data
+    setLaunchScreenData({
+      name,
+      itemCount,
+      freeTierItemCount: freeTierCount,
+      colorPrimary: theme.colorPrimary,
+      colorAccent: theme.colorAccent,
+      icon,
+      chapterIds,
+      itemId,
+      levelFilter,
+      loadAllItems
+    });
+    setShowLaunchScreen(true);
+  };
+  
+  const handleLaunchConfirm = () => {
+    if (!launchScreenData || !camera) return;
+    
+    saveCameraStateHelper(universe.id, camera);
+    onStart(
+      universe,
+      theme,
+      launchScreenData.chapterIds,
+      mode,
+      launchScreenData.itemId,
+      launchScreenData.levelFilter,
+      launchScreenData.loadAllItems
+    );
+    
+    setShowLaunchScreen(false);
+    setLaunchScreenData(null);
+  };
+  
+  const handleLaunchCancel = () => {
+    setShowLaunchScreen(false);
+    setLaunchScreenData(null);
+  };
   
   const loadData = async () => {
     console.log(`🌍 [PlanetView] Loading data for theme: ${theme.id}...`);
@@ -507,9 +602,14 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
         // Click on planet = start CHAOTIC MODE (all chapters mixed)
         const chapterIds = Object.keys(theme.chapters);
         if (chapterIds.length > 0) {
-          saveCameraStateHelper(universe.id, camera);
-          // Pass ALL chapter IDs and enable loadAllItems flag for chaotic mode
-          onStart(universe, theme, chapterIds, mode, undefined, undefined, true);
+          showLaunchScreenForSelection(
+            `${theme.name} - Chaotic Mode`,
+            chapterIds,
+            undefined,
+            undefined,
+            true,
+            '🌍'
+          );
         }
         return;
       }
@@ -523,8 +623,15 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
         const distanceFromRing = Math.abs(distance - ring.radius);
         
         if (distanceFromRing < LEVEL_RING_HITBOX_WIDTH) {
-          saveCameraStateHelper(universe.id, camera);
-          onStart(universe, theme, moon.chapterId, mode, undefined, ring.level);
+          const chapterTitle = moon.chapter?.title || moon.chapterId;
+          showLaunchScreenForSelection(
+            `${chapterTitle} - Level ${ring.level}`,
+            moon.chapterId,
+            undefined,
+            ring.level,
+            undefined,
+            '⭐'
+          );
           return;
         }
       }
@@ -539,9 +646,15 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
           
           if (distance < ITEM_HITBOX_RADIUS) {
             const item = allItems.find(i => i.id === itemLayout.itemId);
-            if (item) {
-              saveCameraStateHelper(universe.id, camera);
-              onStart(universe, theme, item.chapter, mode, item.id);
+            if (item && item.chapter) {
+              showLaunchScreenForSelection(
+                item.base.word || item.id,
+                item.chapter,
+                item.id,
+                undefined,
+                undefined,
+                '🎯'
+              );
               return;
             }
           }
@@ -555,8 +668,15 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
       
       if (distance < moon.radius * MOON_HITBOX_MULTIPLIER) {
         if (camera.zoom >= MOON_DIRECT_START_ZOOM_THRESHOLD) {
-          saveCameraStateHelper(universe.id, camera);
-          onStart(universe, theme, moon.chapterId, mode);
+          const chapterTitle = moon.chapter?.title || moon.chapterId;
+          showLaunchScreenForSelection(
+            chapterTitle,
+            moon.chapterId,
+            undefined,
+            undefined,
+            undefined,
+            '🌙'
+          );
         } else {
           // Zoom deeper to show items
           camera.zoomToElement(moon.x, moon.y, 2.0);
@@ -772,6 +892,19 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       />
+      
+      {showLaunchScreen && launchScreenData && (
+        <GameStartScreen
+          name={launchScreenData.name}
+          itemCount={launchScreenData.itemCount}
+          freeTierItemCount={launchScreenData.freeTierItemCount}
+          colorPrimary={launchScreenData.colorPrimary}
+          colorAccent={launchScreenData.colorAccent}
+          onConfirm={handleLaunchConfirm}
+          onCancel={handleLaunchCancel}
+          icon={launchScreenData.icon}
+        />
+      )}
     </div>
   );
 };

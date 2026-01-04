@@ -34,6 +34,17 @@ export interface GameConfig {
 
 export type GameMode = 'lernmodus' | 'shooter';
 
+export interface ContextEventData {
+  type: 'correct_shot' | 'distractor_collision' | 'distractor_reached_base' | 'intro' | 'generic';
+  word: string; // The word that was shot/collided
+  context: string; // The context message
+  pointsChange: number; // Positive for gain, negative for loss
+  position: { x: number; y: number }; // Position where event occurred
+  streakBroken?: boolean; // True if streak was broken
+  previousStreak?: number; // Previous streak count before breaking
+  reactionTime?: number; // Reaction time in seconds (for correct shots)
+}
+
 export interface ShipConfig {
   health: number;
   maxHealth: number;

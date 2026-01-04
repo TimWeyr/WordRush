@@ -1,0 +1,219 @@
+SPAWN DISTRIBUTION EXAMPLES
+===========================
+
+Visual representation of how objects are distributed across the screen.
+Screen width: 0.0 (left edge) to 1.0 (right edge)
+Safe zone: 0.15 to 0.85 (to avoid edge spawning)
+
+
+EXAMPLE 1: Single Object
+-------------------------
+Screen: |------------[●]------------|
+        0.0          0.5          1.0
+        
+Position: 0.5 (center)
+Spread: 0.05 (small jitter)
+
+
+EXAMPLE 2: Two Objects
+----------------------
+Screen: |-------[●]-----[●]--------|
+        0.0    0.35    0.65      1.0
+        
+Correct:    0.35 (left of center)
+Distractor: 0.65 (right of center)
+Spread: 0.08 each
+
+
+EXAMPLE 3: Small Group (5 objects)
+----------------------------------
+Screen: |-----[●]-[●][●]-[●]-[●]-----|
+        0.0   0.35 0.42 0.5 0.58 0.65  1.0
+        
+Central clustering, natural spacing
+No edge-chasing required
+Spread: 0.05-0.08
+
+
+EXAMPLE 4: Medium Group (8 objects)
+-----------------------------------
+Screen: |--[●]-[●]--[●][●]--[●]-[●][●]-[●]--|
+        0.0  0.2  0.3  0.45 0.55 0.65 0.75 0.8  1.0
+        
+2-3 clusters across wider area
+More spread for variety
+Spread: 0.06-0.10
+
+
+EXAMPLE 5: Large Group (15 objects)
+-----------------------------------
+Screen: |[●][●]-[●]--[●]-[●][●]--[●]-[●][●]-[●]--[●][●]-[●][●]|
+        0.15  0.25  0.35  0.45  0.55  0.65  0.75  0.85
+        
+Full screen utilization
+3-4 clusters with jitter
+Maximum chaos and variety
+Spread: 0.07-0.12
+
+
+TEXT WIDTH IMPACT
+=================
+
+Short Words (e.g., "I", "a", "PC")
+-----------------------------------
+Minimum distance: 0.08
+Can be closer together
+Example: [I]--[a]--[PC]
+
+
+Normal Words (e.g., "mouse", "keyboard")
+----------------------------------------
+Minimum distance: 0.12
+Standard spacing
+Example: [mouse]----[keyboard]
+
+
+Long Words (e.g., "Geschäftsführung", "administration")
+-------------------------------------------------------
+Minimum distance: 0.18
+Extra spacing to prevent overlap
+Example: [Geschäftsführung]--------[administration]
+
+
+REPULSION ALGORITHM VISUALIZATION
+==================================
+
+Initial State (random):
+Screen: |--[●]----[●][●]------[●]--|
+        
+After 10 iterations:
+Screen: |--[●]---[●]-[●]-----[●]---|
+        (objects pushing apart)
+        
+After 30 iterations:
+Screen: |--[●]--[●]---[●]----[●]---|
+        (stable distribution)
+
+
+CLUSTER PATTERNS
+================
+
+Single Cluster (1-5 objects):
+Screen: |--------[●●●●●]--------|
+        (central grouping)
+
+Two Clusters (6-8 objects):
+Screen: |----[●●●]----[●●●]----|
+        (left and right groups)
+
+Three Clusters (9-12 objects):
+Screen: |--[●●●]--[●●●]--[●●●]--|
+        (evenly distributed)
+
+Four Clusters (>12 objects):
+Screen: |-[●●●]-[●●●]-[●●●]-[●●●]-|
+        (maximum distribution)
+
+
+REAL-WORLD EXAMPLE: Business English
+=====================================
+
+Item: Business Communication Level 1
+Base: "email"
+
+Corrects (3):
+  "message"     → 0.38, spread 0.06
+  "letter"      → 0.50, spread 0.05
+  "memo"        → 0.62, spread 0.07
+
+Distractors (4):
+  "Brief"       → 0.33, spread 0.08
+  "Nachricht"   → 0.45, spread 0.07
+  "Post"        → 0.57, spread 0.08
+  "Mitteilung"  → 0.70, spread 0.09
+
+Visual:
+Screen: |--[Brief][message]--[Nachricht][letter][memo][Post]---[Mitteilung]--|
+        0.15      0.33  0.38    0.45     0.50  0.57 0.62  0.70        0.85
+
+Result: Natural distribution, no linear pattern, good spacing
+
+
+COMPARISON: Random vs Smart Distribution
+=========================================
+
+RANDOM (old system):
+Screen: |[●]--------[●●●]----------[●●]|
+        (unpredictable, can cluster badly)
+
+SMART (new system):
+Screen: |--[●]--[●]--[●]--[●]--[●]--[●]--|
+        (balanced, natural, appropriate spacing)
+
+
+EDGE CASES
+==========
+
+All Short Words:
+Screen: |-----[I][a][PC][OS][UI][UX]-----|
+        (tighter spacing, still distributed)
+
+All Long Words:
+Screen: |-[administration]----[communication]----[presentation]-|
+        (wider spacing, fewer fit on screen)
+
+Mixed Lengths:
+Screen: |--[I]--[communication]--[PC]--[presentation]--[a]--|
+        (adaptive spacing based on neighbors)
+
+
+SPREAD VISUALIZATION
+====================
+
+Small Spread (0.05):
+  Position: 0.5
+  Range: 0.475 to 0.525
+  Visual: |----[●]----| (tight)
+
+Medium Spread (0.08):
+  Position: 0.5
+  Range: 0.46 to 0.54
+  Visual: |---[●●●]---| (moderate)
+
+Large Spread (0.12):
+  Position: 0.5
+  Range: 0.44 to 0.56
+  Visual: |--[●●●●●]--| (chaotic)
+
+
+GAMEPLAY IMPACT
+===============
+
+Small Group (3-5 objects):
+  Player stays near center
+  Easy to collect all
+  Low difficulty
+
+Medium Group (6-10 objects):
+  Player moves left-right
+  Moderate challenge
+  Some prioritization needed
+
+Large Group (>10 objects):
+  Full screen coverage
+  High difficulty
+  Strategic collection required
+
+
+NOTES
+=====
+
+- All positions are normalized (0.0 to 1.0)
+- Actual pixel positions calculated at runtime based on screen width
+- Spread adds randomness within range (prevents exact positioning)
+- Clusters prevent linear "row" appearance
+- Algorithm runs in editor, not during gameplay (no performance impact)
+- Positions saved to database, used by ShooterEngine at spawn time
+
+
+

@@ -680,6 +680,12 @@ Universe (e.g., "psychiatrie", "englisch")
   - **Visual Editor**: Table View and Detail View
   - **Text Parser**: Bulk creation with `b.`, `c.`, `d.`, `l.` format
 
+**Database Relations:**
+- `rounds.chapter_uuid` → `chapters.uuid` (primary relation, NOT NULL)
+- `rounds.chapter_id` → `chapters.id` (optional, nullable, human-readable)
+- **Important**: Always load rounds with JOIN to get `chapters.id` for human-readable chapter reference
+- See `SupabaseLoader.loadRounds()` for JOIN pattern
+
 ### Galaxy Map Navigation System
 
 #### Rotational Orbit Layout (Universe → Planets → Moons)

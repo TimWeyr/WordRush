@@ -17,6 +17,7 @@ import { calculatePlanetPositionsOnOrbit, findFocusedPlanet, calculateRotationAn
 import { renderUniverseBackground, renderSun, renderPlanetOrbit, renderUniversePlanet, renderPlanetNameLabel, type RenderContext } from './GalaxyRenderer';
 import { jsonLoader } from '@/infra/utils/JSONLoader';
 import { Settings } from './Settings';
+import { GameStartScreen } from './GameStartScreen';
 import type { Universe, Theme, Item } from '@/types/content.types';
 import type { GameMode } from '@/types/game.types';
 import './GalaxyUniverseView.css';
@@ -91,7 +92,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
   // ============================================================================
   
   const [showUniverseConfirmation, setShowUniverseConfirmation] = useState(false);
-  const [universeStats, setUniverseStats] = useState<{ themes: number; chapters: number; items: number } | null>(null);
+  const [universeStats, setUniverseStats] = useState<{ themes: number; chapters: number; items: number; freeTierItems: number } | null>(null);
   const [hoveredSun, setHoveredSun] = useState(false);
   
   // ============================================================================
@@ -339,6 +340,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     
     let totalChapters = 0;
     let totalItems = 0;
+    let totalFreeTierItems = 0;
     
     for (const theme of themes) {
       const chapterIds = Object.keys(theme.chapters);
@@ -349,19 +351,21 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
         try {
           const items = await jsonLoader.loadChapter(selectedUniverse.id, theme.id, chapterId);
           totalItems += items.length;
+          totalFreeTierItems += items.filter(item => item.freeTier).length;
         } catch (error) {
           console.warn(`Failed to load chapter ${chapterId}:`, error);
         }
       }
     }
     
-    console.log(`📊 Universe stats: ${themes.length} themes, ${totalChapters} chapters, ${totalItems} items`);
+    console.log(`📊 Universe stats: ${themes.length} themes, ${totalChapters} chapters, ${totalItems} items (${totalFreeTierItems} freeTier)`);
     
     // Show confirmation dialog
     setUniverseStats({
       themes: themes.length,
       chapters: totalChapters,
-      items: totalItems
+      items: totalItems,
+      freeTierItems: totalFreeTierItems
     });
     setShowUniverseConfirmation(true);
   };
@@ -972,42 +976,21 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       )}
       
       {/* Universe Chaotic Mode Confirmation Dialog */}
-      {showUniverseConfirmation && universeStats && (
-        <div className="game-over-overlay universe-confirmation">
-          <div className="game-over-content mobile-optimized">
-            <h1>🌟 Universe Chaotic Mode</h1>
-            <div className="universe-stats">
-              <p>Möchtest du <strong>alle Items</strong> aus diesem Universe spielen?</p>
-              <div className="stats-grid">
-                <div className="stat-item">
-                  <span className="stat-value">{universeStats.themes}</span>
-                  <span className="stat-label">Themes</span>
-                </div>
-                <div className="stat-item">
-                  <span className="stat-value">{universeStats.chapters}</span>
-                  <span className="stat-label">Chapters</span>
-                </div>
-                <div className="stat-item">
-                  <span className="stat-value">{universeStats.items}</span>
-                  <span className="stat-label">Items</span>
-                </div>
-              </div>
-              {universeStats.items > 200 && (
-                <div className="warning-message">
-                  ⚠️ Das sind sehr viele Runden! Dies kann eine Weile dauern.
-                </div>
-              )}
-            </div>
-            <div className="chapter-complete-buttons">
-              <button className="restart-button" onClick={handleUniverseConfirm}>
-                🚀 Los geht's!
-              </button>
-              <button className="restart-button secondary" onClick={handleUniverseCancel}>
-                ← Abbrechen
-              </button>
-            </div>
-          </div>
-        </div>
+      {showUniverseConfirmation && universeStats && selectedUniverse && (
+        <GameStartScreen
+          name={selectedUniverse.name}
+          itemCount={universeStats.items}
+          freeTierItemCount={universeStats.freeTierItems}
+          colorPrimary={selectedUniverse.colorPrimary}
+          colorAccent={selectedUniverse.colorAccent}
+          onConfirm={handleUniverseConfirm}
+          onCancel={handleUniverseCancel}
+          icon="🌟"
+          additionalStats={[
+            { value: universeStats.themes, label: 'Themes' },
+            { value: universeStats.chapters, label: 'Chapters' }
+          ]}
+        />
       )}
     </div>
   );

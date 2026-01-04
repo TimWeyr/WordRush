@@ -1,6 +1,27 @@
 # WORDRUSH – CONTENT GUIDELINE
 **Standard für alle Universen, Planeten, Monde und Items**
 
+Wordrush ist ein space-shooter zum lernen.
+Man sieht unten ein Wort. Das ist die Basis (base) die man verteidigen muss.
+
+Wie bei jedem shooter kommen items geflogen von oben.
+
+Items die zur base passen muss man einsammeln. Die heißen correct.
+Mit dem Schiff muss man hinfliegen und mit denen quasi kollidieren.
+
+Items die nicht zur base passen muss man abschiessen. Die heißen distractor.
+Mit dem Schiffslaster muss man die Abschießen.
+Wenn man sie abgeschossen hat verwandeln die sich in eine kleine Info und fliegen wieder raus: Redirect.
+Aber erst dann. Das heißt alle info zu dem item die ein spieler hat sind in "distractor" enthalten
+
+Wenn man ein correct abschießt erscheint der wert context des items.
+Wenn man ein distractor einsammelt erscheint der wert context des items.
+
+Alle items müssen daher relativ kurz sein das sie als fliegende Items lesbar sind.
+context darf etwas länger sein, 1 satz.
+Context erklärt in einem satz warum es falsch war das item abzuschießen / einzusammeln, das wird kurz am Bildschirm eingeblendet.
+
+
 ---
 
 ## 0. Vorabregel: KI MUSS zuerst fragen
@@ -49,11 +70,10 @@ Humor darf IMMER eingesetzt werden, aber:
 
 ---
 
-## 2. Struktur eines Items (Felder)
+## 2. Struktur einer Spielrunde 
 
 
-Use PIPE (|) to separate fields, NOT commas. You can now use commas freely in your text content!
-
+Use PIPE (|) to separate fields
 
 ### base
 
@@ -99,9 +119,7 @@ Use PIPE (|) to separate fields, NOT commas. You can now use commas freely in yo
 
 ### level
 
-- Schwierigkeit **1–15**
-- Basics 1–3, Fortgeschritten 4–6, Experten 7-10
-- Reihenfolgen-Items haben eher höhere Level
+- Schwierigkeit **1–10**
 
 ---
 
@@ -197,14 +215,25 @@ Störungen der Hormonproduktion beeinträchtigen Stimmung und Antrieb
 - „kommt drauf an"-Begriff
 Distractors müssen "plausibel, aber klar falsch" sein
 
+Ein Distractor kann z.b. eine real existierende Fehlstrategie oder verbreitete Fehlannahme darstellen.
+
+#### Regel 5.1 – Unmittelbare Semantische Plausibilität
+
+- Das Distractor-Wort muss eine **unmittelbare, plausible semantische Nähe** zur Base besitzen.
+- Der Redirect darf die fachliche Kategorie korrigieren, aber nicht die gesamte Semantik des Distractors erst etablieren.
+ 
+
+
+
+
 ### Regel 6 – Keine Polysemie bei Corrects
 
-Correct darf nicht mehrere Bedeutungen haben.
+
 
 
 ### Regel 7 - distraktoren sind unterschiedlich schwer zu erkennen
 
-bei humor darf es auch absurd sein
+bei humor darf es auch absurd sein aber lieber ein feiner iromischer humor oder was ganz witzges. nackte kanone-style.
 
 ### Regel 8 – Context von Correct-Einträgen: Keine Tautologien oder Zirkularität
 
@@ -359,6 +388,10 @@ level: 4
 
 ## Ziel Format
 
+Alle finalen Items müssen im Wordrush-Format ausgegeben werden (Base | Kontext, Corrects, Distractors mit Redirect und Kontext, Source, Tags, Level). Keine Zwischenformate oder Listen.
+
+
+
 Creating Items 
 
 Each item follows this simple format:
@@ -391,8 +424,8 @@ t. = Tags (tag1 | tag2 | tag3) - pipe-separated, optional, OVERRIDES all existin
 l. = Round Level (1-10, optional, applies to entire round, different from item-level in c./d.)
 # = Comment line (ignored during parsing) - optional
 
-IMPORTANT: Use PIPE (|) to separate fields, NOT commas!
-You can now use commas freely in your text content (words, sentences, etc.)
+Use PIPE (|) to separate fields
+
 Comment lines starting with # are completely ignored
 
 CRITICAL: UNIQUE WORDS REQUIRED
@@ -481,3 +514,51 @@ d. Manie | Affektive Störungen | Manie gehört zu Affektiven Störungen.
 s. ICD-10 F2
 t. psychose | schizophrenie
 l. 2
+
+
+
+
+
+
+
+
+Ergänzungen
+
+## Ergänzung: Subtiler Humor bei didaktisch-humorvollem Stil (Psychiatrie & Medizin)
+
+### Humor-Level: "Arztwitz-Niveau"
+- Humor darf subtil, warm, selbstironisch oder leicht übertreibend sein – wie ein Psychiater, der mit einem Augenzwinkern über die Absurditäten des Alltags spricht.
+- Bevorzugte Formen:
+  - Leichte Übertreibung des Problems (z.B. "Pillen-Vergess-Marathon")
+  - Wortspiele mit medizinischen Begriffen nur, wenn sie harmlos und clever sind
+- ✅ Erlaubt: Meta-Kommentar zur menschlichen Schwäche, ohne jemanden lächerlich zu machen
+- ❌ Verboten:
+  - Verharmlosung der Erkrankung selbst ("Depression ist ja nur faul sein")
+  - Ironie auf Kosten der Betroffenen
+  - Kalauer, die das Thema bagatellisieren
+  - Zu lauter oder slapstickartiger Humor (kein Naked Gun bei Suizidalität oder Absetzsymptomen)
+
+### Kontext-Länge & Ton bei Correct
+- Kontext von Corrects darf ruhig einen kleinen didaktischen "Merksatz" mit leichtem Schmunzel-Faktor enthalten.
+- Beispiel gut: "Compliance explodiert 🛡" → klarer Lerneffekt + subtile Belohnung
+- Beispiel schlecht: "Endlich mal was, das klappt" → zu wertend, zu locker
+
+### Distractor-Humor: Immer nur bei einem von 2–3 Distraktoren
+- Maximal EIN Distractor pro Item darf humorvoll-ironisch sein.
+- Der andere bleibt rein didaktisch-sachlich → sorgt für Balance und verhindert Übertreibung.
+- Der humorvolle Distractor muss trotzdem fachlich plausibel sein (kein absurder Quatsch wie "Kaffee" bei Antidepressiva).
+
+### Emoji-Nutzung
+- Emojis  sinnvoll:
+  - 🛡 = Schutz / positiv wirksam
+  - ⚠ = Warnung / Risiko
+  - 💥 / 🎉 / 🏃‍♂️ = nur beim humorvollen Distractor, um die Pointe zu unterstreichen
+ 
+
+ 
+
+
+
+
+
+

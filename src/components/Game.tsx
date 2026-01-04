@@ -14,6 +14,7 @@ import { ObjectTrail } from '@/effects/ObjectTrail';
 // Difficulty config now handled by gameplayPresets
 // import { getDifficultyConfig } from '@/config/difficulty';
 import { sortItems } from '@/utils/ItemSorter';
+import { ContextPauseOverlay } from './ContextPauseOverlay';
 import type { Universe, Theme, Item } from '@/types/content.types';
 import type { GameMode, Vector2 } from '@/types/game.types';
 import config from '@/config/config.json';
@@ -71,6 +72,7 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
   const [scoreAnimation, setScoreAnimation] = useState<'none' | 'gain' | 'loss'>('none');
   const [contextText, setContextText] = useState('');
   const [contextVisible, setContextVisible] = useState(false);
+  const [contextEventData, setContextEventData] = useState<import('@/types/game.types').ContextEventData | null>(null);
   const [gameOver, setGameOver] = useState(false);
   const gameOverRef = useRef(false); // Track if game over was already triggered
   const [chapterComplete, setChapterComplete] = useState(false);
@@ -216,7 +218,7 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
   };
 
   // Define callbacks BEFORE useEffects that use them
-  const showContext = useCallback(async (text: string) => {
+  const showContext = useCallback(async (data: import('@/types/game.types').ContextEventData | string) => {
     // Clear any existing timers
     if (contextTimerRef.current) {
       clearTimeout(contextTimerRef.current);
@@ -227,42 +229,64 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
     const settings = await localProgressProvider.getUISettings();
     const pauseOnContext = settings.gameplaySettings?.pauseOnContextMessages ?? false;
     
-    // Check if this is a warning/error message
-    if (text.startsWith('Falsch!') || text.includes('⚠️') || text.includes('💥')) {
-      // Show as warning in center
-      setWarningText(text);
-      
-      if (pauseOnContext) {
-        // Pause game - message stays until clicked (NO BLINKING)
-        setWarningBlinks(0); // No blink animation during pause
-        setIsPausedByContext(true);
-        console.log('🛑 Context-Pause activated');
-        // Don't auto-clear - wait for user click
-      } else {
-        // Blink animation for non-pause mode
-        setWarningBlinks(6); // 3 blinks = 6 state changes
-        // Auto-clear after 3 blinks (1.8 seconds: 6 x 0.3s)
-        contextTimerRef.current = setTimeout(() => {
-          setWarningText('');
-          setWarningBlinks(0);
-          contextTimerRef.current = null;
-        }, 1800);
-      }
-    } else {
-      // Normal context display (intro text, etc)
+    // Handle legacy string format (for intro text)
+    if (typeof data === 'string') {
+      const text = data;
       setContextText(text);
       setContextVisible(true);
+      setContextEventData({
+        type: 'intro',
+        word: '',
+        context: text,
+        pointsChange: 0,
+        position: { x: window.innerWidth / 2, y: window.innerHeight / 2 } // Center for intro
+      });
       
       if (pauseOnContext) {
-        // Pause game - message stays until clicked
         setIsPausedByContext(true);
-        console.log('🛑 Context-Pause activated (text)');
+        console.log('🛑 Context-Pause activated (intro)');
       } else {
         contextTimerRef.current = setTimeout(() => {
           setContextVisible(false);
+          setContextEventData(null);
           contextTimerRef.current = null;
         }, 3000);
       }
+      return;
+    }
+    
+    // Handle ContextEventData format
+    setContextEventData(data);
+    
+    // Format warning text based on event type
+    let warningPrefix = '';
+    if (data.type === 'correct_shot') {
+      warningPrefix = '⚠️';
+    } else if (data.type === 'distractor_collision') {
+      warningPrefix = '💥';
+    } else if (data.type === 'distractor_reached_base') {
+      warningPrefix = '⚠️';
+    }
+    
+    const displayText = `${warningPrefix} ${data.context}`;
+    setWarningText(displayText);
+    
+    if (pauseOnContext) {
+      // Pause game - message stays until clicked (NO BLINKING)
+      setWarningBlinks(0); // No blink animation during pause
+      setIsPausedByContext(true);
+      console.log('🛑 Context-Pause activated');
+      // Don't auto-clear - wait for user click
+    } else {
+      // Blink animation for non-pause mode
+      setWarningBlinks(6); // 3 blinks = 6 state changes
+      
+      contextTimerRef.current = setTimeout(() => {
+        setWarningText('');
+        setWarningBlinks(0);
+        setContextEventData(null);
+        contextTimerRef.current = null;
+      }, 1800);
     }
   }, []);
 
@@ -1095,13 +1119,11 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
         </div>
       )}
 
-      {/* Context-Pause Overlay - Shows message, dismissible by click */}
-      {isPausedByContext && !gameOver && !chapterComplete && (
-        <div 
-          className="context-pause-overlay"
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
+      {/* Context-Pause Overlay - Shows detailed context information */}
+      {isPausedByContext && !gameOver && !chapterComplete && contextEventData && (
+        <ContextPauseOverlay
+          data={contextEventData}
+          onDismiss={() => {
             // Clear any pending timers
             if (contextTimerRef.current) {
               clearTimeout(contextTimerRef.current);
@@ -1113,35 +1135,10 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
             setWarningText('');
             setWarningBlinks(0);
             setContextVisible(false);
+            setContextEventData(null);
             console.log('✅ Context-Pause dismissed - Game resuming');
           }}
-        >
-          <div 
-            className="context-pause-message"
-            onClick={(e) => {
-              // Also handle click on message itself
-              e.preventDefault();
-              e.stopPropagation();
-              // Clear any pending timers
-              if (contextTimerRef.current) {
-                clearTimeout(contextTimerRef.current);
-                contextTimerRef.current = null;
-              }
-              // Resume game
-              setIsPausedByContext(false);
-              setIsPaused(false); // Ensure normal pause is also cleared
-              setWarningText('');
-              setWarningBlinks(0);
-              setContextVisible(false);
-              console.log('✅ Context-Pause dismissed (message click) - Game resuming');
-            }}
-          >
-            {warningText || contextText}
-            <div className="context-pause-hint">
-              👆 Klicken zum Fortfahren
-            </div>
-          </div>
-        </div>
+        />
       )}
 
       {/* Normal Pause Overlay - Shows menu */}

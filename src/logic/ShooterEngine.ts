@@ -10,7 +10,7 @@ import { CollisionSystem } from '@/core/CollisionSystem';
 import { sessionManager } from '@/infra/utils/SessionManager';
 import { supabase } from '@/infra/supabase/client';
 import type { Item } from '@/types/content.types';
-import type { GameMode, Vector2 } from '@/types/game.types';
+import type { GameMode, Vector2, ContextEventData } from '@/types/game.types';
 import type { ItemLearningState } from '@/types/progress.types';
 import type { GameObject } from '@/types/game.types';
 import type { ShipConfig } from '@/types/game.types';
@@ -145,7 +145,7 @@ export class ShooterEngine {
   
   // Callbacks
   private onScoreChange?: (score: number) => void;
-  private onContextShow?: (text: string) => void;
+  private onContextShow?: (data: ContextEventData) => void;
   private onHealthChange?: (health: number) => void;
   private onRoundComplete?: (score: number, perfect: boolean) => void;
   private onGameOver?: () => void;
@@ -623,6 +623,8 @@ export class ShooterEngine {
     // Log event
     this.logGameEvent('correct_shot', correct, penalty);
     
+    // Store previous streak before resetting
+    const previousStreak = this.streak;
     this.streak = 0; // Reset streak
     
     // Invalidate collection order bonus
@@ -633,7 +635,15 @@ export class ShooterEngine {
     
     // Show context (as learning feedback) - respect settings
     if (this.showContextMessages) {
-      this.onContextShow?.(`⚠️${correct.context}⚠️`);
+      this.onContextShow?.({
+        type: 'correct_shot',
+        word: correct.word,
+        context: correct.context,
+        pointsChange: penalty,
+        position: { x: correct.position.x, y: correct.position.y },
+        streakBroken: previousStreak > 0,
+        previousStreak: previousStreak > 0 ? previousStreak : undefined
+      });
       if (this.pauseOnContextMessages) {
         this.onPauseRequest?.();
       }
@@ -685,6 +695,9 @@ export class ShooterEngine {
     // Ship takes damage
     this.ship.takeDamage(distractor.damage);
     this.onHealthChange?.(this.ship.health);
+    
+    // Store previous streak before resetting
+    const previousStreak = this.streak;
     this.streak = 0;
     
     // Floating Text
@@ -707,7 +720,15 @@ export class ShooterEngine {
     
     // Show context - respect settings
     if (this.showContextMessages) {
-      this.onContextShow?.(`💥 ${distractor.context}`);
+      this.onContextShow?.({
+        type: 'distractor_collision',
+        word: distractor.word,
+        context: distractor.context,
+        pointsChange: penalty,
+        position: { x: distractor.position.x, y: distractor.position.y },
+        streakBroken: previousStreak > 0,
+        previousStreak: previousStreak > 0 ? previousStreak : undefined
+      });
       if (this.pauseOnContextMessages) {
         this.onPauseRequest?.();
       }
@@ -729,7 +750,14 @@ export class ShooterEngine {
     
     // Show context - respect settings
     if (this.showContextMessages) {
-      this.onContextShow?.(`⚠️ ${distractor.context}`);
+      this.onContextShow?.({
+        type: 'distractor_reached_base',
+        word: distractor.word,
+        context: distractor.context,
+        pointsChange: penalty,
+        position: { x: distractor.position.x, y: distractor.position.y },
+        streakBroken: false // Base hits don't break streak (only ship collisions)
+      });
       if (this.pauseOnContextMessages) {
         this.onPauseRequest?.();
       }
@@ -763,7 +791,14 @@ export class ShooterEngine {
       this.logGameEvent('distractor_reached_base', obj, penalty);
       this.base.triggerBlink();
       if (this.showContextMessages) {
-        this.onContextShow?.(`⚠️ ${obj.context}`);
+        this.onContextShow?.({
+          type: 'distractor_reached_base',
+          word: obj.word,
+          context: obj.context,
+          pointsChange: penalty,
+          position: { x: obj.position.x, y: obj.position.y },
+          streakBroken: false
+        });
         if (this.pauseOnContextMessages) {
           this.onPauseRequest?.();
         }
@@ -1101,7 +1136,7 @@ export class ShooterEngine {
     this.onScoreChange = callback;
   }
 
-  setOnContextShow(callback: (text: string) => void): void {
+  setOnContextShow(callback: (data: ContextEventData) => void): void {
     this.onContextShow = callback;
   }
 

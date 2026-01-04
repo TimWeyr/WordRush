@@ -880,9 +880,14 @@ ORDER BY
     console.log(`📍 [SupabaseLoader] Chapter ${chapterId} has UUID: ${chapter.uuid}`);
     
     // Now load rounds using chapter_uuid (not chapter_id!)
+    // JOIN with chapters to get the human-readable chapter.id
+    // Specify the foreign key column explicitly to avoid ambiguity
     let query = supabase
       .from('rounds')
-      .select('*')
+      .select(`
+        *,
+        chapters!chapter_uuid(id)
+      `)
       .eq('chapter_uuid', chapter.uuid);
     
     if (levelFilter !== undefined) {

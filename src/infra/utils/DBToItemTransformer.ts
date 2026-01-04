@@ -63,10 +63,13 @@ export function transformRoundsToItems(rounds: RoundRow[], items: ItemRow[], the
     }
     
     // Build Item object
+    // Get chapter_id from JOIN (round.chapters.id) or fallback to round.chapter_id
+    const chapterId = (round as any).chapters?.id || round.chapter_id;
+    
     const item: Item = {
       id: round.id,
       theme: themeId,
-      chapter: round.chapter_id,
+      chapter: chapterId,
       level: round.level || 1,
       published: round.published ?? true,
       freeTier: round.free_tier,

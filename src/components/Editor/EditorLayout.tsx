@@ -532,6 +532,12 @@ function EditorLayoutContent() {
           onCreateUniverse={handleCreateUniverse}
           onCreateTheme={handleCreateTheme}
           onCreateChapter={handleCreateChapter}
+          onLoadAllThemeItems={(themeItems) => {
+            // Load all theme items into TableView
+            setItems(themeItems);
+            setSelectedChapter(''); // Clear chapter selection since we're showing all theme items
+            showToast(`📊 Showing ${themeItems.length} items from entire theme`, 'info', 2000);
+          }}
         />
 
         <div className="editor-main">
@@ -624,8 +630,8 @@ function EditorLayoutContent() {
                   }}
                 />
 
-                {/* Items Editor - Always show TableView when chapter is selected */}
-                {selectedChapter && selectedTheme && selectedUniverse ? (
+                {/* Items Editor - Show TableView when chapter is selected OR when items are loaded */}
+                {(selectedChapter || items.length > 0) && selectedTheme && selectedUniverse ? (
                   viewMode === 'table' ? (
                     <TableView
                       items={items}
@@ -634,6 +640,7 @@ function EditorLayoutContent() {
                       chapterId={selectedChapter}
                       themeId={selectedTheme?.id}
                       universeId={selectedUniverse?.id}
+                      theme={selectedTheme}
                     />
                   ) : (
                     <DetailView

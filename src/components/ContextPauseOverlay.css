@@ -1,0 +1,198 @@
+/**
+ * Context Pause Overlay Styles
+ * 
+ * Styled overlay for context messages with detailed information
+ */
+
+/* ============================================================================
+   OVERLAY
+   ============================================================================ */
+
+.context-pause-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 0, 0, 0.3) !important; /* BRIGHT RED TEST */
+  z-index: 600;
+  animation: fadeIn 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ============================================================================
+   CONTENT BOX
+   ============================================================================ */
+
+.context-pause-content {
+  position: absolute;
+  background: rgba(20, 20, 40, 0.05);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 193, 7, 0.05);
+  border-radius:12px;
+  padding: 20px;
+  width: 220px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.1s ease-out;
+  cursor: default;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* ============================================================================
+   EVENT SUMMARY (Compact)
+   ============================================================================ */
+
+.context-event-summary {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.points-positive {
+  color: #4caf50;
+}
+
+.points-negative {
+  color: #ff4444;
+}
+
+/* ============================================================================
+   STREAK INFO
+   ============================================================================ */
+
+.streak-broken-info {
+  padding: 8px;
+  background: rgba(255, 51, 51, 0.15);
+  border-radius: 6px;
+  color: #FF666650;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* ============================================================================
+   CONTEXT MESSAGE
+   ============================================================================ */
+
+.context-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 12px;
+  padding: 10px 0;
+}
+
+.highlighted-word {
+  color: #ffc107;
+  background: rgba(255, 193, 7, 0.15);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+/* ============================================================================
+   QUICK SETTINGS
+   ============================================================================ */
+
+.context-quick-settings {
+  padding: 8px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.setting-toggle {
+  margin-bottom: 8px;
+}
+
+.setting-toggle:last-child {
+  margin-bottom: 0;
+}
+
+.setting-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s ease;
+}
+
+.setting-toggle label:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.setting-toggle input[type="checkbox"] {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  accent-color: #00ff88;
+}
+
+
+/* ============================================================================
+   MOBILE OPTIMIZATIONS
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .context-pause-content {
+    width: 85%;
+    max-width: 320px;
+    padding: 15px;
+  }
+  
+  .context-event-summary {
+    font-size: 14px;
+  }
+  
+  .context-text {
+    font-size: 12px;
+  }
+  
+  .setting-toggle label {
+    font-size: 11px;
+  }
+  
+  .setting-toggle input[type="checkbox"] {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* ============================================================================
+   ACCESSIBILITY
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .context-pause-overlay,
+  .context-pause-content,
+  .event-points {
+    animation: none;
+  }
+  
+  .context-dismiss-button {
+    transition: none;
+  }
+}
+

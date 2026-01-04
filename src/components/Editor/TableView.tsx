@@ -1,9 +1,10 @@
 import React, { useState, useMemo } from 'react';
-import type { Item } from '@/types/content.types';
+import type { Item, Theme } from '@/types/content.types';
 import { jsonWriter } from '@/infra/utils/JSONWriter';
 import { useToast } from '../Toast/ToastContainer';
 import { SplitDropdownButton } from './SplitDropdownButton';
 import { TextParserModal, type ParsedItemData } from './TextParserModal';
+import { distributeCorrectAndDistractors } from '@/utils/spawnDistribution';
 
 interface TableViewProps {
   items: Item[];
@@ -12,17 +13,55 @@ interface TableViewProps {
   chapterId?: string;
   themeId?: string;
   universeId?: string;
+  theme?: Theme | null; // Theme object for chapter colors
 }
 
 const MAX_CONTEXT_LENGTH = 60;
 
-export function TableView({ items, onItemsChange, onItemSelect, chapterId, themeId, universeId }: TableViewProps) {
+export function TableView({ items, onItemsChange, onItemSelect, chapterId, themeId, universeId, theme }: TableViewProps) {
   const { showToast, showConfirm } = useToast();
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState<'id' | 'level' | 'word'>('id');
   const [selectedItems, setSelectedItems] = useState<Set<string>>(new Set());
   const [savingItems, setSavingItems] = useState<Set<string>>(new Set());
   const [deletingItems, setDeletingItems] = useState<Set<string>>(new Set());
+
+  // Helper function to get chapter color and info
+  const getChapterInfo = (item: Item): { color: string; name: string; id: string } => {
+    if (!theme || !item.chapter) {
+      return { color: 'rgba(33, 150, 243, 0.03)', name: 'Unknown Chapter', id: item.chapter || 'unknown' };
+    }
+    
+    const chapterConfig = theme.chapters[item.chapter];
+    if (!chapterConfig) {
+      return { color: 'rgba(33, 150, 243, 0.03)', name: item.chapter, id: item.chapter };
+    }
+    
+    // Get first color from backgroundGradient
+    const bgColor = chapterConfig.backgroundGradient?.[0] || '#2196F3';
+    
+    // Convert hex to rgba with low opacity
+    let rgbaColor = 'rgba(33, 150, 243, 0.08)'; // fallback
+    if (bgColor.startsWith('#')) {
+      const hex = bgColor.replace('#', '');
+      const r = parseInt(hex.substring(0, 2), 16);
+      const g = parseInt(hex.substring(2, 4), 16);
+      const b = parseInt(hex.substring(4, 6), 16);
+      rgbaColor = `rgba(${r}, ${g}, ${b}, 0.08)`;
+    } else if (bgColor.startsWith('rgb')) {
+      // Already rgb/rgba, just use it with low opacity
+      rgbaColor = bgColor.replace(/rgba?\(([^)]+)\)/, (_match, values) => {
+        const parts = values.split(',').map((v: string) => v.trim());
+        return `rgba(${parts[0]}, ${parts[1]}, ${parts[2]}, 0.08)`;
+      });
+    }
+    
+    return {
+      color: rgbaColor,
+      name: chapterConfig.title || item.chapter,
+      id: item.chapter
+    };
+  };
   const [showTextParserModal, setShowTextParserModal] = useState(false);
   const [editingItem, setEditingItem] = useState<Item | undefined>(undefined); // For editing existing item in text parser
 
@@ -149,6 +188,40 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
     }
   };
 
+  const handleRedistributeSpawns = () => {
+    if (selectedItems.size === 0) return;
+
+    const updatedItems = items.map(item => {
+      if (!selectedItems.has(item.id)) return item;
+
+      // Extract words from corrects and distractors
+      const correctWords = item.correct.map(c => c.entry.word || '');
+      const distractorWords = item.distractors.map(d => d.entry.word || '');
+
+      // Calculate smart distribution
+      const { corrects: correctDist, distractors: distractorDist } = 
+        distributeCorrectAndDistractors(correctWords, distractorWords);
+
+      // Apply distribution to item
+      return {
+        ...item,
+        correct: item.correct.map((c, idx) => ({
+          ...c,
+          spawnPosition: correctDist[idx]?.position ?? c.spawnPosition,
+          spawnSpread: correctDist[idx]?.spread ?? c.spawnSpread,
+        })),
+        distractors: item.distractors.map((d, idx) => ({
+          ...d,
+          spawnPosition: distractorDist[idx]?.position ?? d.spawnPosition,
+          spawnSpread: distractorDist[idx]?.spread ?? d.spawnSpread,
+        })),
+      };
+    });
+
+    onItemsChange(updatedItems);
+    showToast(`✨ Redistributed spawn positions for ${selectedItems.size} item(s)`, 'success', 3000);
+  };
+
   // 💾 Save single item
   const handleSaveItem = async (item: Item) => {
     if (!universeId || !themeId || !chapterId) {
@@ -244,9 +317,6 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
     // Helper: Random variant
     const variants = ['hexagon', 'star', 'bubble', 'spike', 'square', 'diamond'] as const;
     const randomVariant = () => variants[Math.floor(Math.random() * variants.length)];
-    
-    // Helper: Random spawn position (0.1 to 0.9)
-    const randomSpawn = () => 0.1 + Math.random() * 0.8;
 
     const newItem: Item = {
       id: newId,
@@ -268,8 +338,8 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
           word: '',
           type: 'word',
         },
-        spawnPosition: randomSpawn(),
-        spawnSpread: 0.05 + Math.random() * 0.05, // 0.05 to 0.1
+        spawnPosition: 0.35, // Left of center for single correct
+        spawnSpread: 0.08,
         speed: 0.9 + Math.random() * 0.2, // 0.9 to 1.1
         points: 10,
         pattern: 'single',
@@ -285,8 +355,8 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
           word: '',
           type: 'word',
         },
-        spawnPosition: randomSpawn(),
-        spawnSpread: 0.05 + Math.random() * 0.05,
+        spawnPosition: 0.65, // Right of center for single distractor
+        spawnSpread: 0.08,
         speed: 1.1 + Math.random() * 0.3, // 1.1 to 1.4
         points: 10,
         damage: 1,
@@ -471,10 +541,16 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
         currentMaxId++;
         const newId = `${targetChapterId}_${String(currentMaxId).padStart(3, '0')}`;
 
-        const correctEntries = parsedData.corrects.map((c) => ({
+        // Smart spawn distribution based on word lengths and count
+        const correctWords = parsedData.corrects.map(c => c.word);
+        const distractorWords = parsedData.distractors.map(d => d.word);
+        const { corrects: correctDist, distractors: distractorDist } = 
+          distributeCorrectAndDistractors(correctWords, distractorWords);
+
+        const correctEntries = parsedData.corrects.map((c, idx) => ({
           entry: { word: c.word, type: 'word' as const },
-          spawnPosition: randomSpawn(),
-          spawnSpread: 0.05 + Math.random() * 0.05,
+          spawnPosition: correctDist[idx]?.position ?? randomSpawn(),
+          spawnSpread: correctDist[idx]?.spread ?? 0.05,
           speed: 0.9 + Math.random() * 0.2,
           points: 10,
           pattern: 'single' as const,
@@ -488,10 +564,10 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
           },
         }));
 
-        const distractors = parsedData.distractors.map((d) => ({
+        const distractors = parsedData.distractors.map((d, idx) => ({
           entry: { word: d.word, type: 'word' as const },
-          spawnPosition: randomSpawn(),
-          spawnSpread: 0.05 + Math.random() * 0.05,
+          spawnPosition: distractorDist[idx]?.position ?? randomSpawn(),
+          spawnSpread: distractorDist[idx]?.spread ?? 0.05,
           speed: 1.1 + Math.random() * 0.3,
           points: -10,
           damage: 1,
@@ -768,6 +844,9 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
               <button className="editor-button small" onClick={handleBulkPublishToggle}>
                 Toggle Published
               </button>
+              <button className="editor-button small" onClick={handleRedistributeSpawns} title="Smart distribution based on word length and count">
+                ✨ Redistribute Spawns
+              </button>
               <button className="editor-button small danger" onClick={handleBulkDelete}>
                 Delete ({selectedItems.size})
               </button>
@@ -946,7 +1025,7 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
                     verticalAlign: 'middle', 
                     borderRight: '1px solid rgba(255,255,255,0.1)', 
                     padding: '0.5rem 0.3rem',
-                    background: 'rgba(33, 150, 243, 0.03)',
+                    background: getChapterInfo(item).color,
                     textAlign: 'center'
                   }}>
                     <input
@@ -958,7 +1037,7 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
                         height: '18px',
                         cursor: 'pointer'
                       }}
-                      title={`Select ${item.id}`}
+                      title={`Chapter: ${getChapterInfo(item).name}\nID: ${getChapterInfo(item).id}\n\nSelect ${item.id}`}
                     />
                   </td>
                   

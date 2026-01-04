@@ -11,6 +11,7 @@ interface SearchableDropdownProps {
   onAdd?: () => void;
   onLoadAll?: () => void;
   showLoadAll?: boolean;
+  disabled?: boolean;
 }
 
 export function SearchableDropdown({
@@ -23,6 +24,7 @@ export function SearchableDropdown({
   onAdd,
   onLoadAll,
   showLoadAll = false,
+  disabled = false,
 }: SearchableDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState('');
@@ -94,8 +96,10 @@ export function SearchableDropdown({
       {/* Dropdown Button */}
       <button
         className={`searchable-dropdown-button ${isOpen ? 'open' : ''}`}
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => !disabled && setIsOpen(!isOpen)}
         type="button"
+        disabled={disabled}
+        style={{ opacity: disabled ? 0.5 : 1, cursor: disabled ? 'not-allowed' : 'pointer' }}
       >
         <span className={value ? '' : 'placeholder'}>{displayValue}</span>
         <span className="dropdown-arrow">▼</span>

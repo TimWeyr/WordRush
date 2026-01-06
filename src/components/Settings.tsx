@@ -25,7 +25,7 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
   
   const [activeTab, setActiveTab] = useState<TabType>('settings');
   const [username, setUsername] = useState<string>('');
-  const [itemOrder, setItemOrder] = useState<'default' | 'random' | 'worst-first-unplayed'>('default');
+  const [itemOrder, setItemOrder] = useState<'default' | 'random' | 'worst-first-unplayed' | 'newest-first'>('default');
   const [gameMode, setGameMode] = useState<'lernmodus' | 'shooter'>('shooter');
   const [gameplaySettings, setGameplaySettings] = useState<GameplaySettings>(DEFAULT_GAMEPLAY_SETTINGS);
   const [loading, setLoading] = useState(true);
@@ -107,6 +107,17 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
       showContextMessages: gameplaySettings.showContextMessages,
       pauseOnContextMessages: gameplaySettings.pauseOnContextMessages
     });
+    
+    // Show toast notification for preset change
+    const presetMessages: Record<GameplayPreset, string> = {
+      zen: '⏳ Ruhe: nichts bewegt sich außer du',
+      easy: '🟢 Langsam, max 6 Objekte',
+      medium: '🟡 Normal, max 10 Objekte',
+      hard: '🔴 Schnell, max 16 Objekte',
+      custom: '⚙️ Benutzerdefinierte Einstellungen'
+    };
+    
+    showToast(presetMessages[preset], 'info');
   };
 
   // Handle slider change - sets preset to 'custom'
@@ -272,11 +283,12 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
                   <select
                     id="itemOrder"
                     value={itemOrder}
-                    onChange={(e) => setItemOrder(e.target.value as 'default' | 'random' | 'worst-first-unplayed')}
+                    onChange={(e) => setItemOrder(e.target.value as 'default' | 'random' | 'worst-first-unplayed' | 'newest-first')}
                   >
                     <option value="default">Standard</option>
                     <option value="random">Zufällig</option>
                     <option value="worst-first-unplayed">Schlechte Scores zuerst, dann ungespielte</option>
+                    <option value="newest-first">Neueste zuerst</option>
                   </select>
                 </div>
 
@@ -284,7 +296,17 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
                   <label>Spielmodus:</label>
                   <button
                     className={`mode-toggle-button ${gameMode === 'lernmodus' ? 'learn-mode' : 'shooter-mode'}`}
-                    onClick={() => setGameMode(gameMode === 'lernmodus' ? 'shooter' : 'lernmodus')}
+                    onClick={() => {
+                      const newMode = gameMode === 'lernmodus' ? 'shooter' : 'lernmodus';
+                      setGameMode(newMode);
+                      
+                      // Show toast notification
+                      if (newMode === 'lernmodus') {
+                        showToast('Lösungen sind nun grün markiert', 'success');
+                      } else {
+                        showToast('Zeig was du gelernt hast', 'success');
+                      }
+                    }}
                     type="button"
                   >
                     <span className="mode-icon">{gameMode === 'lernmodus' ? '🎓' : '🎯'}</span>

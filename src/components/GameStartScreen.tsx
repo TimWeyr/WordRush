@@ -17,10 +17,11 @@
  * - Warning for large item counts (>200)
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/infra/auth/AuthContext';
 import { localProgressProvider } from '@/infra/providers/LocalProgressProvider';
+import { useToast } from './Toast/ToastContainer';
 import type { GameplayPreset } from '@/types/progress.types';
 import './GameStartScreen.css';
 
@@ -41,8 +42,8 @@ export interface GameStartScreenProps {
   /** Accent color for glow effects (optional, defaults to colorPrimary) */
   colorAccent?: string;
   
-  /** Callback when user confirms start */
-  onConfirm: () => void;
+  /** Callback when user confirms start (receives current game mode and settings) */
+  onConfirm: (gameMode: 'lernmodus' | 'shooter', itemOrder: 'default' | 'random' | 'worst-first-unplayed' | 'newest-first', preset: GameplayPreset) => void;
   
   /** Callback when user cancels */
   onCancel: () => void;
@@ -58,6 +59,12 @@ export interface GameStartScreenProps {
   
   /** Optional: Number of FreeTier items (for auth hint) */
   freeTierItemCount?: number;
+  
+  /** Optional: Callback to open settings (if not provided, navigates to /settings) */
+  onOpenSettings?: () => void;
+  
+  /** Optional: Callback when settings are closed (to reload settings) */
+  onSettingsClosed?: () => void;
 }
 
 // ============================================================================
@@ -73,40 +80,52 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({
   onCancel,
   icon = '🚀',
   additionalStats = [],
-  freeTierItemCount
+  freeTierItemCount,
+  onOpenSettings,
+  onSettingsClosed
 }) => {
   const accentColor = colorAccent || colorPrimary;
   const navigate = useNavigate();
   const { user } = useAuth();
+  const { showToast } = useToast();
   
   // ============================================================================
   // QUICK SETTINGS STATE
   // ============================================================================
   
   const [gameMode, setGameMode] = useState<'lernmodus' | 'shooter'>('shooter');
-  const [preset, setPreset] = useState<GameplayPreset>('medium');
-  const [itemOrder, setItemOrder] = useState<'default' | 'random' | 'worst-first-unplayed'>('default');
+  const [preset, setPreset] = useState<GameplayPreset>('easy');
+  const [itemOrder, setItemOrder] = useState<'default' | 'random' | 'worst-first-unplayed' | 'newest-first'>('default');
   
-  // Load current settings on mount
-  useEffect(() => {
-    const loadSettings = async () => {
-      try {
-        const settings = await localProgressProvider.getUISettings();
-        setGameMode(settings.gameMode || 'shooter');
-        setPreset(settings.gameplaySettings?.preset || 'medium');
-        setItemOrder(settings.itemOrder || 'default');
-      } catch (error) {
-        console.error('Failed to load settings:', error);
-      }
-    };
-    loadSettings();
+  // Load current settings on mount and when settings might have changed
+  const loadSettings = useCallback(async () => {
+    try {
+      const settings = await localProgressProvider.getUISettings();
+      setGameMode(settings.gameMode || 'shooter');
+      setPreset(settings.gameplaySettings?.preset || 'medium');
+      setItemOrder(settings.itemOrder || 'default');
+    } catch (error) {
+      console.error('Failed to load settings:', error);
+    }
   }, []);
+  
+  useEffect(() => {
+    loadSettings();
+  }, [loadSettings]);
+  
+  // Reload settings when onSettingsClosed is called
+  useEffect(() => {
+    if (onSettingsClosed) {
+      // This will be called by the parent when settings close
+      // We expose loadSettings via this callback
+    }
+  }, [onSettingsClosed]);
   
   // Save settings when changed
   const handleSettingsChange = async (
     newGameMode?: 'lernmodus' | 'shooter',
     newPreset?: GameplayPreset,
-    newItemOrder?: 'default' | 'random' | 'worst-first-unplayed'
+    newItemOrder?: 'default' | 'random' | 'worst-first-unplayed' | 'newest-first'
   ) => {
     try {
       const currentSettings = await localProgressProvider.getUISettings();
@@ -121,14 +140,46 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({
         gameMode: newGameMode || gameMode,
         itemOrder: newItemOrder || itemOrder,
         gameplaySettings: {
-          ...presetDefaults,
-          ...currentSettings.gameplaySettings,
-          preset: presetToUse,
+          ...currentSettings.gameplaySettings, // Keep current settings
+          ...presetDefaults, // Apply preset defaults
+          preset: presetToUse, // Set preset
           showContextMessages: currentSettings.gameplaySettings?.showContextMessages ?? true,
           pauseOnContextMessages: currentSettings.gameplaySettings?.pauseOnContextMessages ?? false
         }
       };
       await localProgressProvider.saveUISettings(updatedSettings);
+      console.log('✅ Settings saved:', updatedSettings);
+      
+      // Update local state immediately so UI reflects the change
+      if (newGameMode) {
+        setGameMode(newGameMode);
+        
+        // Show toast notification for game mode change
+        if (newGameMode === 'lernmodus') {
+          showToast('Lösungen sind nun grün markiert', 'success');
+        } else if (newGameMode === 'shooter') {
+          showToast('Zeig was du gelernt hast', 'success');
+        }
+      }
+      
+      if (newPreset) {
+        setPreset(newPreset);
+        
+        // Show toast notification for preset change
+        const presetMessages: Record<GameplayPreset, string> = {
+          zen: '⏳ Ruhe: nichts bewegt sich außer du',
+          easy: '🟢 Langsam, max 6 Objekte',
+          medium: '🟡 Normal, max 10 Objekte',
+          hard: '🔴 Schnell, max 16 Objekte',
+          custom: '⚙️ Benutzerdefinierte Einstellungen'
+        };
+        
+        showToast(presetMessages[newPreset], 'info');
+      }
+      
+      if (newItemOrder) {
+        setItemOrder(newItemOrder);
+      }
     } catch (error) {
       console.error('Failed to save settings:', error);
     }
@@ -160,18 +211,16 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({
   return (
     <div className="launch-overlay">
       <div className="launch-content mobile-optimized" style={contentStyle}>
-        <h1>{icon} {name}</h1>
+        <h1 className="launch-title">{icon} {name}</h1>
         
         <div className="launch-stats">
-          <p>Bereit zum Start?</p>
-          
           <div className="stats-grid">
             {/* Always show item count */}
             <div className="stat-item">
               <span className="stat-value" style={statValueStyle}>
                 {showAuthHint ? freeTierItemCount : itemCount}
               </span>
-              <span className="stat-label">{showAuthHint ? 'FreeTier Items' : 'Items'}</span>
+              <span className="stat-label">{showAuthHint ? 'FreeTier Runden' : 'Runden'}</span>
             </div>
             
             {/* Show additional stats if provided */}
@@ -239,23 +288,55 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({
               </div>
             </div>
             
-            {/* Preset Dropdown */}
-            <div className="quick-setting-item">
-              <label htmlFor="preset-select">Schwierigkeit:</label>
-              <select
-                id="preset-select"
-                value={preset}
-                onChange={(e) => {
-                  const newPreset = e.target.value as GameplayPreset;
-                  setPreset(newPreset);
-                  handleSettingsChange(undefined, newPreset, undefined);
-                }}
-              >
-                <option value="zen">🧘 Zen</option>
-                <option value="easy">😊 Easy</option>
-                <option value="medium">⚡ Medium</option>
-                <option value="hard">🔥 Hard</option>
-              </select>
+            {/* Preset Buttons */}
+            <div className="quick-setting-item full-width">
+              <label>Schwierigkeit:</label>
+              <div className="preset-buttons">
+                <button
+                  className={`preset-button zen ${preset === 'zen' ? 'active' : ''}`}
+                  onClick={() => {
+                    setPreset('zen');
+                    handleSettingsChange(undefined, 'zen', undefined);
+                  }}
+                  title="Keine Bewegung, alle Objekte sofort sichtbar"
+                >
+                  <span className="preset-icon">⏳</span>
+                  <span className="preset-name">Zen</span>
+                </button>
+                <button
+                  className={`preset-button easy ${preset === 'easy' ? 'active' : ''}`}
+                  onClick={() => {
+                    setPreset('easy');
+                    handleSettingsChange(undefined, 'easy', undefined);
+                  }}
+                  title="Langsam, wenige Objekte, einfach"
+                >
+                  <span className="preset-icon">🟢</span>
+                  <span className="preset-name">Easy</span>
+                </button>
+                <button
+                  className={`preset-button medium ${preset === 'medium' ? 'active' : ''}`}
+                  onClick={() => {
+                    setPreset('medium');
+                    handleSettingsChange(undefined, 'medium', undefined);
+                  }}
+                  title="Normale Geschwindigkeit"
+                >
+                  <span className="preset-icon">🟡</span>
+                  <span className="preset-name">Medium</span>
+                </button>
+                <button
+                  className={`preset-button hard ${preset === 'hard' ? 'active' : ''}`}
+                  onClick={() => {
+                    setPreset('hard');
+                    handleSettingsChange(undefined, 'hard', undefined);
+                  }}
+                  title="Schnell, viele Objekte, herausfordernd"
+                >
+                  <span className="preset-icon">🔴</span>
+                  <span className="preset-name">Hard</span>
+                </button>
+              </div>
             </div>
             
             {/* Item Order Dropdown */}
@@ -265,7 +346,7 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({
                 id="order-select"
                 value={itemOrder}
                 onChange={(e) => {
-                  const newOrder = e.target.value as 'default' | 'random' | 'worst-first-unplayed';
+                  const newOrder = e.target.value as 'default' | 'random' | 'worst-first-unplayed' | 'newest-first';
                   setItemOrder(newOrder);
                   handleSettingsChange(undefined, undefined, newOrder);
                 }}
@@ -273,19 +354,32 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({
                 <option value="default">📋 Standard</option>
                 <option value="random">🎲 Zufällig</option>
                 <option value="worst-first-unplayed">📉 Schlechte zuerst</option>
+                <option value="newest-first">🆕 Neueste zuerst</option>
               </select>
             </div>
           </div>
           
-          <p className="settings-hint">💡 Mehr Optionen in den Settings (⚙️)</p>
+          <button 
+            className="settings-link-button"
+            onClick={() => {
+              if (onOpenSettings) {
+                onOpenSettings();
+              } else {
+                navigate('/settings');
+              }
+            }}
+            type="button"
+          >
+            💡 Mehr Optionen in den Settings ⚙️
+          </button>
         </div>
         
         <div className="launch-buttons">
-          <button className="launch-button primary" onClick={onConfirm}>
-            {icon} Los geht's!
+          <button className="launch-button cancel" onClick={onCancel}>
+            ✕
           </button>
-          <button className="launch-button secondary" onClick={onCancel}>
-            ← Zurück
+          <button className="launch-button primary" onClick={() => onConfirm(gameMode, itemOrder, preset)}>
+            {icon} Los geht's!
           </button>
         </div>
       </div>

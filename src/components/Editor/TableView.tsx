@@ -323,7 +323,7 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
       theme: themeId,
       chapter: chapterId,
       level: 1,
-      published: false,
+      published: true,
       base: {
         word: '',
         type: 'word',
@@ -586,7 +586,7 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
           theme: themeId,
           chapter: targetChapterId,
           level: parsedData.level,
-          published: false,
+          published: true,
           base: {
             word: parsedData.base,
             type: 'word',
@@ -693,7 +693,7 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
     const clonedItem: Item = {
       ...item,
       id: newId,
-      published: false,
+      published: true,
       correct: item.correct.map(c => ({
         ...c,
         spawnPosition: 0.2 + Math.random() * 0.6,

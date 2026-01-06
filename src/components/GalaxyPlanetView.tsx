@@ -112,6 +112,7 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
   const [allItems, setAllItems] = useState<Item[]>([]);
   const [learningState, setLearningState] = useState<LearningState>({});
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [settingsClosedTrigger, setSettingsClosedTrigger] = useState(0);
   
   // ============================================================================
   // LAUNCH SCREEN STATE
@@ -213,15 +214,19 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
     setShowLaunchScreen(true);
   };
   
-  const handleLaunchConfirm = () => {
+  const handleLaunchConfirm = (gameMode: 'lernmodus' | 'shooter') => {
     if (!launchScreenData || !camera) return;
     
     saveCameraStateHelper(universe.id, camera);
+    
+    // Use the gameMode passed from GameStartScreen (already up-to-date)
+    console.log('🚀 [PlanetView] Starting with game mode:', gameMode);
+    
     onStart(
       universe,
       theme,
       launchScreenData.chapterIds,
-      mode,
+      gameMode, // Use the passed gameMode instead of the stale 'mode' variable
       launchScreenData.itemId,
       launchScreenData.levelFilter,
       launchScreenData.loadAllItems
@@ -871,7 +876,11 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
       <button className="settings-icon-button" onClick={() => setSettingsOpen(true)} title="Settings">
         ⚙️
       </button>
-      <Settings isOpen={settingsOpen} onClose={() => setSettingsOpen(false)} />
+      <Settings isOpen={settingsOpen} onClose={() => {
+        setSettingsOpen(false);
+        // Trigger reload in GameStartScreen
+        setSettingsClosedTrigger(prev => prev + 1);
+      }} />
       
       <div className="galaxy-planet-controls">
         <button onClick={onBack} className="back-button" title="Zurück zur Übersicht">
@@ -895,6 +904,7 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
       
       {showLaunchScreen && launchScreenData && (
         <GameStartScreen
+          key={settingsClosedTrigger} // Force reload when settings close
           name={launchScreenData.name}
           itemCount={launchScreenData.itemCount}
           freeTierItemCount={launchScreenData.freeTierItemCount}
@@ -902,6 +912,7 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
           colorAccent={launchScreenData.colorAccent}
           onConfirm={handleLaunchConfirm}
           onCancel={handleLaunchCancel}
+          onOpenSettings={() => setSettingsOpen(true)}
           icon={launchScreenData.icon}
         />
       )}

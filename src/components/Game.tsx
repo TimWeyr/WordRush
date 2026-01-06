@@ -11,8 +11,6 @@ import { jsonLoader } from '@/infra/utils/JSONLoader';
 import { Starfield } from '@/effects/Starfield';
 import { NebulaCloud } from '@/effects/NebulaCloud';
 import { ObjectTrail } from '@/effects/ObjectTrail';
-// Difficulty config now handled by gameplayPresets
-// import { getDifficultyConfig } from '@/config/difficulty';
 import { sortItems } from '@/utils/ItemSorter';
 import { ContextPauseOverlay } from './ContextPauseOverlay';
 import type { Universe, Theme, Item } from '@/types/content.types';

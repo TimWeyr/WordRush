@@ -371,18 +371,16 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
     setShowUniverseConfirmation(true);
   };
   
-  const handleUniverseConfirm = async () => {
+  const handleUniverseConfirm = async (gameMode: 'lernmodus' | 'shooter') => {
     if (!selectedUniverse || !onUniverseStart) {
       console.warn('⚠️ Cannot start universe mode: missing universe or callback');
       return;
     }
     
-    // Get mode from UISettings
-    const { localProgressProvider } = await import('@/infra/providers/LocalProgressProvider');
-    const settings = await localProgressProvider.getUISettings();
-    const mode: GameMode = settings.gameMode || 'shooter';
+    // Use the gameMode passed from GameStartScreen (already up-to-date)
+    const mode: GameMode = gameMode;
     
-    console.log('🚀 Starting Universe Chaotic Mode!');
+    console.log('🚀 Starting Universe Chaotic Mode with mode:', mode);
     setShowUniverseConfirmation(false);
     
     // Call the callback with all themes

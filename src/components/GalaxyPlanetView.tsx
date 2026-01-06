@@ -214,15 +214,19 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
     setShowLaunchScreen(true);
   };
   
-  const handleLaunchConfirm = () => {
+  const handleLaunchConfirm = (gameMode: 'lernmodus' | 'shooter') => {
     if (!launchScreenData || !camera) return;
     
     saveCameraStateHelper(universe.id, camera);
+    
+    // Use the gameMode passed from GameStartScreen (already up-to-date)
+    console.log('🚀 [PlanetView] Starting with game mode:', gameMode);
+    
     onStart(
       universe,
       theme,
       launchScreenData.chapterIds,
-      mode,
+      gameMode, // Use the passed gameMode instead of the stale 'mode' variable
       launchScreenData.itemId,
       launchScreenData.levelFilter,
       launchScreenData.loadAllItems

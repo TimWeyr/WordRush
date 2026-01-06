@@ -107,6 +107,17 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
       showContextMessages: gameplaySettings.showContextMessages,
       pauseOnContextMessages: gameplaySettings.pauseOnContextMessages
     });
+    
+    // Show toast notification for preset change
+    const presetMessages: Record<GameplayPreset, string> = {
+      zen: '⏳ Ruhe: nichts bewegt sich außer du',
+      easy: '🟢 Langsam, max 6 Objekte',
+      medium: '🟡 Normal, max 10 Objekte',
+      hard: '🔴 Schnell, max 16 Objekte',
+      custom: '⚙️ Benutzerdefinierte Einstellungen'
+    };
+    
+    showToast(presetMessages[preset], 'info');
   };
 
   // Handle slider change - sets preset to 'custom'
@@ -285,7 +296,17 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
                   <label>Spielmodus:</label>
                   <button
                     className={`mode-toggle-button ${gameMode === 'lernmodus' ? 'learn-mode' : 'shooter-mode'}`}
-                    onClick={() => setGameMode(gameMode === 'lernmodus' ? 'shooter' : 'lernmodus')}
+                    onClick={() => {
+                      const newMode = gameMode === 'lernmodus' ? 'shooter' : 'lernmodus';
+                      setGameMode(newMode);
+                      
+                      // Show toast notification
+                      if (newMode === 'lernmodus') {
+                        showToast('Lösungen sind nun grün markiert', 'success');
+                      } else {
+                        showToast('Zeig was du gelernt hast', 'success');
+                      }
+                    }}
                     type="button"
                   >
                     <span className="mode-icon">{gameMode === 'lernmodus' ? '🎓' : '🎯'}</span>

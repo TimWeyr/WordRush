@@ -21,6 +21,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/infra/auth/AuthContext';
 import { localProgressProvider } from '@/infra/providers/LocalProgressProvider';
+import { useToast } from './Toast/ToastContainer';
 import type { GameplayPreset } from '@/types/progress.types';
 import './GameStartScreen.css';
 
@@ -41,8 +42,8 @@ export interface GameStartScreenProps {
   /** Accent color for glow effects (optional, defaults to colorPrimary) */
   colorAccent?: string;
   
-  /** Callback when user confirms start */
-  onConfirm: () => void;
+  /** Callback when user confirms start (receives current game mode and settings) */
+  onConfirm: (gameMode: 'lernmodus' | 'shooter', itemOrder: 'default' | 'random' | 'worst-first-unplayed' | 'newest-first', preset: GameplayPreset) => void;
   
   /** Callback when user cancels */
   onCancel: () => void;
@@ -86,13 +87,14 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({
   const accentColor = colorAccent || colorPrimary;
   const navigate = useNavigate();
   const { user } = useAuth();
+  const { showToast } = useToast();
   
   // ============================================================================
   // QUICK SETTINGS STATE
   // ============================================================================
   
   const [gameMode, setGameMode] = useState<'lernmodus' | 'shooter'>('shooter');
-  const [preset, setPreset] = useState<GameplayPreset>('medium');
+  const [preset, setPreset] = useState<GameplayPreset>('easy');
   const [itemOrder, setItemOrder] = useState<'default' | 'random' | 'worst-first-unplayed' | 'newest-first'>('default');
   
   // Load current settings on mount and when settings might have changed
@@ -147,6 +149,37 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({
       };
       await localProgressProvider.saveUISettings(updatedSettings);
       console.log('✅ Settings saved:', updatedSettings);
+      
+      // Update local state immediately so UI reflects the change
+      if (newGameMode) {
+        setGameMode(newGameMode);
+        
+        // Show toast notification for game mode change
+        if (newGameMode === 'lernmodus') {
+          showToast('Lösungen sind nun grün markiert', 'success');
+        } else if (newGameMode === 'shooter') {
+          showToast('Zeig was du gelernt hast', 'success');
+        }
+      }
+      
+      if (newPreset) {
+        setPreset(newPreset);
+        
+        // Show toast notification for preset change
+        const presetMessages: Record<GameplayPreset, string> = {
+          zen: '⏳ Ruhe: nichts bewegt sich außer du',
+          easy: '🟢 Langsam, max 6 Objekte',
+          medium: '🟡 Normal, max 10 Objekte',
+          hard: '🔴 Schnell, max 16 Objekte',
+          custom: '⚙️ Benutzerdefinierte Einstellungen'
+        };
+        
+        showToast(presetMessages[newPreset], 'info');
+      }
+      
+      if (newItemOrder) {
+        setItemOrder(newItemOrder);
+      }
     } catch (error) {
       console.error('Failed to save settings:', error);
     }
@@ -345,7 +378,7 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({
           <button className="launch-button cancel" onClick={onCancel}>
             ✕
           </button>
-          <button className="launch-button primary" onClick={onConfirm}>
+          <button className="launch-button primary" onClick={() => onConfirm(gameMode, itemOrder, preset)}>
             {icon} Los geht's!
           </button>
         </div>

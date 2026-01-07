@@ -95,6 +95,7 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
   const mousePos = useRef<Vector2 | null>(null);
   const touchPos = useRef<Vector2 | null>(null);
   const touchOffset = useRef<Vector2 | null>(null); // Offset between finger and ship on touch
+  const primaryTouchId = useRef<number | null>(null); // Track primary touch ID to detect changes
   
   // Round transition
   const [roundTransition, setRoundTransition] = useState(false);
@@ -290,6 +291,11 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
 
   const loadRound = useCallback((eng: ShooterEngine, index: number) => {
     console.log('🔄 loadRound called with index:', index, '/', items.length);
+    
+    // IMPORTANT: Reset touch state on round start to prevent sticking issues
+    touchPos.current = null;
+    touchOffset.current = null;
+    primaryTouchId.current = null;
     
     if (index >= items.length) {
       // Chapter complete!
@@ -850,20 +856,44 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
     const rect = canvasRef.current?.getBoundingClientRect();
     if (!rect || !engine) return;
     
-    const touch = e.touches[0];
+    // Find the primary touch (by ID)
+    let touch = e.touches[0];
+    if (primaryTouchId.current !== null) {
+      // Try to find the touch with the primary ID
+      for (let i = 0; i < e.touches.length; i++) {
+        if (e.touches[i].identifier === primaryTouchId.current) {
+          touch = e.touches[i];
+          break;
+        }
+      }
+    }
+    
     const fingerPos = {
       x: touch.clientX - rect.left,
       y: touch.clientY - rect.top
     };
     
     // Apply offset to maintain relative position between finger and ship
-    if (touchOffset.current) {
+    if (touchOffset.current && primaryTouchId.current === touch.identifier) {
       touchPos.current = {
         x: fingerPos.x + touchOffset.current.x,
         y: fingerPos.y + touchOffset.current.y
       };
     } else {
-      touchPos.current = fingerPos;
+      // Offset missing or touch ID changed - recalculate offset!
+      const shipPos = engine.getShip().position;
+      touchOffset.current = {
+        x: shipPos.x - fingerPos.x,
+        y: shipPos.y - fingerPos.y
+      };
+      primaryTouchId.current = touch.identifier;
+      
+      touchPos.current = {
+        x: fingerPos.x + touchOffset.current.x,
+        y: fingerPos.y + touchOffset.current.y
+      };
+      
+      console.log('🔄 Touch ID changed or offset missing - recalculating offset:', touchOffset.current);
     }
   };
 
@@ -875,23 +905,38 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
     if (!rect || !engine) return;
     
     const touch = e.touches[0];
-    const fingerPos = {
-      x: touch.clientX - rect.left,
-      y: touch.clientY - rect.top
-    };
+    const touchId = touch.identifier;
     
-    // Calculate offset between finger and ship position
-    const shipPos = engine.getShip().position;
-    touchOffset.current = {
-      x: shipPos.x - fingerPos.x,
-      y: shipPos.y - fingerPos.y
-    };
+    // Check if this is a NEW primary touch (different from existing one)
+    const isNewTouch = primaryTouchId.current === null || primaryTouchId.current !== touchId;
     
-    // Set initial touch position with offset
-    touchPos.current = {
-      x: fingerPos.x + touchOffset.current.x,
-      y: fingerPos.y + touchOffset.current.y
-    };
+    if (isNewTouch) {
+      // New touch detected - reset and recalculate everything
+      console.log('✨ New touch detected - resetting offset (old ID:', primaryTouchId.current, '→ new ID:', touchId, ')');
+      
+      const fingerPos = {
+        x: touch.clientX - rect.left,
+        y: touch.clientY - rect.top
+      };
+      
+      // Calculate NEW offset between finger and ship position
+      const shipPos = engine.getShip().position;
+      touchOffset.current = {
+        x: shipPos.x - fingerPos.x,
+        y: shipPos.y - fingerPos.y
+      };
+      
+      // Store new primary touch ID
+      primaryTouchId.current = touchId;
+      
+      // Set initial touch position with offset
+      touchPos.current = {
+        x: fingerPos.x + touchOffset.current.x,
+        y: fingerPos.y + touchOffset.current.y
+      };
+      
+      console.log('   → Offset:', touchOffset.current, '| Ship:', shipPos, '| Finger:', fingerPos);
+    }
     
     // If second finger, shoot
     if (e.touches.length > 1 && engine) {
@@ -901,9 +946,32 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
 
   const handleTouchEnd = (e: React.TouchEvent<HTMLCanvasElement>) => {
     e.preventDefault();
+    
+    // Check if the primary touch ended
+    if (primaryTouchId.current !== null) {
+      let primaryTouchStillActive = false;
+      for (let i = 0; i < e.touches.length; i++) {
+        if (e.touches[i].identifier === primaryTouchId.current) {
+          primaryTouchStillActive = true;
+          break;
+        }
+      }
+      
+      if (!primaryTouchStillActive) {
+        // Primary touch ended - reset everything
+        console.log('👋 Primary touch ended (ID:', primaryTouchId.current, ') - resetting');
+        touchPos.current = null;
+        touchOffset.current = null;
+        primaryTouchId.current = null;
+      }
+    }
+    
+    // Fallback: If no touches left at all, force reset
     if (e.touches.length === 0) {
+      console.log('👋 All touches ended - force reset');
       touchPos.current = null;
-      touchOffset.current = null; // Reset offset when touch ends
+      touchOffset.current = null;
+      primaryTouchId.current = null;
     }
   };
 

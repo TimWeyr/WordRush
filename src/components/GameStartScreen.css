@@ -185,6 +185,7 @@
   background: rgba(0, 0, 0, 0.3);
   border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
+  /* No order property on desktop - natural flow */
 }
 
 .launch-quick-settings h3 {
@@ -215,6 +216,7 @@
 /* Mode Toggle (Lernmodus / Shooter) */
 .mode-toggle {
   display: flex;
+  flex-direction: row; /* Always side-by-side */
   gap: 10px;
 }
 
@@ -371,6 +373,7 @@
   grid-template-columns: auto 1fr;
   gap: 15px;
   margin-top: 20px;
+  /* No order property on desktop - natural flow (buttons at bottom) */
 }
 
 .launch-button {
@@ -430,8 +433,28 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     overflow-y: auto;
+  }
+  
+  /* Button order: Buttons ABOVE Quick Settings on touch devices */
+  .launch-title {
+    order: 1;
+  }
+  
+  .launch-stats {
+    order: 2;
+  }
+  
+  .launch-buttons {
+    order: 3; /* After stats, before quick settings */
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .launch-quick-settings {
+    order: 4; /* After buttons */
+    margin-top: 0;
   }
   
   .stats-grid {
@@ -466,9 +489,7 @@
     width: 100%;
   }
   
-  .mode-toggle {
-    flex-direction: column;
-  }
+  /* Mode toggle stays side-by-side on mobile (removed flex-direction: column) */
   
   /* Preset buttons mobile */
   .preset-buttons {

@@ -289,6 +289,7 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
                     <option value="random">Zufällig</option>
                     <option value="worst-first-unplayed">Schlechte Scores zuerst, dann ungespielte</option>
                     <option value="newest-first">Neueste zuerst</option>
+                    <option value="easiest-first">Leichteste zuerst</option>
                   </select>
                 </div>
 

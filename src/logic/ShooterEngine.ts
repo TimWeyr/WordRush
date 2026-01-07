@@ -683,16 +683,21 @@ export class ShooterEngine {
   }
 
   private handleDistractorHitShip(distractor: DistractorObject): void {
-    // Shield Logic
+    // Shield Logic - shield absorbs hit but distractor still explodes
     if (this.ship.isShielded) {
         this.ship.setShield(false);
         this.particles.push(createFloatingText(this.ship.position, "SHIELD BROKEN!", "#ffffff", 28));
-        createExplosion(this.ship.position, '#44ff44', 10); // Shield break effect
+        
+        // Spawn explosion at distractor position (same as when shot)
+        const explosionColor = this.gameMode === 'lernmodus' ? '#ff4400' : '#ff6600';
+        const explosion = createExplosion(distractor.position, explosionColor, 20, 'correct', Math.abs(distractor.points), 1);
+        this.particles.push(...explosion);
+        
         distractor.destroy(); // Destroy distractor on shield impact
         return;
     }
 
-    // Ship takes damage
+    // Ship takes damage (no shield)
     this.ship.takeDamage(distractor.damage);
     this.onHealthChange?.(this.ship.health);
     
@@ -700,10 +705,15 @@ export class ShooterEngine {
     const previousStreak = this.streak;
     this.streak = 0;
     
-    // Floating Text
-    this.particles.push(createFloatingText(this.ship.position, `-${distractor.points}`, '#ff0000', 30));
+    // Penalty (distractor.points is negative in DB, so negate to get penalty)
+    const penalty = -distractor.points;
+    this.addScore(penalty);
+    
+    // Floating Text - use absolute value to ensure correct display (DB value is negative)
+    const penaltyDisplay = Math.abs(distractor.points);
+    this.particles.push(createFloatingText(this.ship.position, `-${penaltyDisplay}`, '#ff0000', 30));
 
-    // Trigger distractor collision effects (flash + redirect text)
+    // Trigger distractor collision effects (flash)
     distractor.triggerCollisionEffect();
     
     // Trigger ship shake and sparks (if health < 6)
@@ -711,9 +721,13 @@ export class ShooterEngine {
       this.ship.triggerDamageEffects(this.ship.health);
     }
     
-    // Penalty
-    const penalty = -distractor.points;
-    this.addScore(penalty);
+    // Spawn explosion at distractor position (same as when shot)
+    const explosionColor = this.gameMode === 'lernmodus' ? '#ff4400' : '#ff6600';
+    const explosion = createExplosion(distractor.position, explosionColor, 20, 'correct', Math.abs(distractor.points), 1);
+    this.particles.push(...explosion);
+    
+    // Destroy distractor after explosion
+    distractor.destroy();
     
     // Log event
     this.logGameEvent('distractor_hit_ship', distractor, penalty);
@@ -733,8 +747,6 @@ export class ShooterEngine {
         this.onPauseRequest?.();
       }
     }
-    
-    // Distractor continues moving (doesn't destroy)
   }
 
   private handleDistractorHitBase(distractor: DistractorObject): void {

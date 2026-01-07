@@ -14,7 +14,7 @@ import { GameLoop } from '@/core/GameLoop';
 import { Renderer } from '@/core/Renderer';
 import { GalaxyCamera } from '@/logic/GalaxyCamera';
 import { calculateMoonPositionsAdaptive, calculateItemPositions, calculateLevelRings, type PlanetLayout, type MoonLayout, type ItemLayout, type LevelRingLayout } from '@/logic/GalaxyLayout';
-import { renderMoon, renderItemParticle, renderLevelRing, renderConnectionLines, renderTooltip, type RenderContext } from './GalaxyRenderer';
+import { renderMoon, renderMoonLabel, renderItemParticle, renderLevelRing, renderConnectionLines, renderTooltip, type RenderContext } from './GalaxyRenderer';
 import { MoonParticleEffect } from '@/effects/MoonParticleEffect';
 import { jsonLoader } from '@/infra/utils/JSONLoader';
 import { localProgressProvider } from '@/infra/providers/LocalProgressProvider';
@@ -32,10 +32,12 @@ import './GalaxyPlanetView.css';
 
 const ITEM_VISIBILITY_ZOOM_THRESHOLD = 1.8;
 const MOON_DIRECT_START_ZOOM_THRESHOLD = 1.8;
+const MOON_LABEL_ZOOM_THRESHOLD = 0.8; // Show moon labels when zoom > 1.2 (when zoomed in enough to see details)
 const ITEM_HITBOX_RADIUS = 10;
 const LEVEL_RING_HITBOX_WIDTH = 5;
 const MOON_HITBOX_MULTIPLIER = 2;
 const PARTICLE_DELTA_TIME = 0.016;
+const TOUCH_HOLD_HOVER_DELAY = 200; // milliseconds to wait before showing hover tooltip
 
 // ============================================================================
 // TYPES
@@ -152,6 +154,8 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
   const isDragging = useRef(false);
   const dragStart = useRef<{ x: number; y: number } | null>(null);
   const lastTouchDistance = useRef<number | null>(null);
+  const touchHoldTimer = useRef<number | null>(null);
+  const hasMovedDuringTouch = useRef(false);
   
   // ============================================================================
   // DATA LOADING
@@ -310,12 +314,12 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
     
-    // Planet at center
+    // Planet at center (increased radius from 50 to 80 to be more dominant)
     planetLayoutRef.current = {
       id: theme.id,
       x: centerX,
       y: centerY,
-      radius: 50,
+      radius: 80,
       theme
     };
     
@@ -365,8 +369,9 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
       }
     }
     
-    // Center camera on planet
-    camera.setPositionImmediate(centerX, centerY, 1.5);
+    // Center camera on planet with lower initial zoom to show all moons
+    // Zoom 0.7 = zoomed out view (shows entire planet system)
+    camera.setPositionImmediate(centerX, centerY, 0.7);
   }, [renderer, camera, theme, allItems, learningState]);
   
   useEffect(() => {
@@ -410,10 +415,32 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
       moonLayouts: new Map([[planet.id, moonLayoutsRef.current]])
     };
     
-    // Layer 1: Connection lines
+    // Layer 1: Connection lines (behind everything)
     renderConnectionLines(planet, moonLayoutsRef.current, renderContext);
     
-    // Layer 2: Planet (centered)
+    // Layer 2: Moons and level rings (behind planet)
+    for (const moon of moonLayoutsRef.current) {
+      // Render level rings first (furthest back)
+      const rings = levelRingsRef.current.get(moon.id) || [];
+      const chapterItems = allItems.filter(item => item.chapter === moon.chapterId);
+      for (const ring of rings) {
+        renderLevelRing(ring, moon, chapterItems, renderContext);
+      }
+      
+      // Then render moon (on top of rings)
+      renderMoon(moon, renderContext);
+      
+      // Update and render moon particle effect
+      const effect = moonParticleEffectsRef.current.get(moon.id);
+      if (effect) {
+        const moonScreenPos = camera.worldToScreen({ x: moon.x, y: moon.y });
+        effect.setPosition(moonScreenPos.x, moonScreenPos.y);
+        effect.update(PARTICLE_DELTA_TIME);
+        effect.render(renderer);
+      }
+    }
+    
+    // Layer 3: Planet (centered, on top of everything except items/tooltip)
     const ctx = renderer.getContext();
     const screenPos = camera.worldToScreen({ x: planet.x, y: planet.y });
     ctx.save();
@@ -428,28 +455,15 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
     ctx.fillText(theme.icon || '🌍', screenPos.x, screenPos.y);
     ctx.restore();
     
-    // Layer 3: Moons and level rings
-    for (const moon of moonLayoutsRef.current) {
-      renderMoon(moon, renderContext);
-      
-      // Render level rings
-      const rings = levelRingsRef.current.get(moon.id) || [];
-      const chapterItems = allItems.filter(item => item.chapter === moon.chapterId);
-      for (const ring of rings) {
-        renderLevelRing(ring, moon, chapterItems, renderContext);
-      }
-      
-      // Update and render moon particle effect
-      const effect = moonParticleEffectsRef.current.get(moon.id);
-      if (effect) {
-        const moonScreenPos = camera.worldToScreen({ x: moon.x, y: moon.y });
-        effect.setPosition(moonScreenPos.x, moonScreenPos.y);
-        effect.update(PARTICLE_DELTA_TIME);
-        effect.render(renderer);
+    // Layer 4: Moon labels (show when zoomed in)
+    // Show labels when zoom > MOON_LABEL_ZOOM_THRESHOLD (1.2)
+    if (camera.zoom > MOON_LABEL_ZOOM_THRESHOLD) {
+      for (const moon of moonLayoutsRef.current) {
+        renderMoonLabel(moon, renderContext);
       }
     }
     
-    // Layer 4: Items (only when deeply zoomed)
+    // Layer 5: Items (only when deeply zoomed)
     if (camera.zoom > ITEM_VISIBILITY_ZOOM_THRESHOLD) {
       for (const moon of moonLayoutsRef.current) {
         const items = itemLayoutsRef.current.get(moon.id) || [];
@@ -462,7 +476,7 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
       }
     }
     
-    // Layer 5: Tooltip
+    // Layer 6: Tooltip
     if (tooltipText && hoveredElement) {
       renderTooltip(tooltipText, { x: hoveredElement.x, y: hoveredElement.y }, renderContext);
     }
@@ -785,12 +799,32 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
   const handleTouchStart = (e: React.TouchEvent<HTMLCanvasElement>) => {
     if (e.touches.length === 1) {
       isDragging.current = true;
+      hasMovedDuringTouch.current = false;
       const touch = e.touches[0];
       const rect = canvasRef.current?.getBoundingClientRect();
       if (rect) {
         dragStart.current = { x: touch.clientX - rect.left, y: touch.clientY - rect.top };
+        
+        // Start touch-hold timer to show hover tooltip after delay
+        touchHoldTimer.current = window.setTimeout(() => {
+          if (!hasMovedDuringTouch.current && camera) {
+            // User is holding still -> show hover tooltip
+            const screenX = touch.clientX - rect.left;
+            const screenY = touch.clientY - rect.top;
+            const worldPos = camera.screenToWorld({ x: screenX, y: screenY });
+            checkHover(worldPos.x, worldPos.y, screenX, screenY);
+          }
+        }, TOUCH_HOLD_HOVER_DELAY);
       }
     } else if (e.touches.length === 2) {
+      // Cancel hover timer on multi-touch (zoom gesture)
+      if (touchHoldTimer.current) {
+        clearTimeout(touchHoldTimer.current);
+        touchHoldTimer.current = null;
+      }
+      setHoveredElement(null);
+      setTooltipText('');
+      
       isDragging.current = false;
       dragStart.current = null;
       
@@ -814,6 +848,23 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
         const screenY = touch.clientY - rect.top;
         const deltaX = screenX - dragStart.current.x;
         const deltaY = screenY - dragStart.current.y;
+        
+        // Detect movement (cancel hover timer if user is dragging)
+        const movementDistance = Math.hypot(deltaX, deltaY);
+        if (movementDistance > 5) {
+          hasMovedDuringTouch.current = true;
+          
+          // Cancel hover timer if still running
+          if (touchHoldTimer.current) {
+            clearTimeout(touchHoldTimer.current);
+            touchHoldTimer.current = null;
+          }
+          
+          // Clear any existing hover tooltip
+          setHoveredElement(null);
+          setTooltipText('');
+        }
+        
         camera.pan(-deltaX, -deltaY);
         dragStart.current = { x: screenX, y: screenY };
       }
@@ -839,10 +890,20 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
   };
   
   const handleTouchEnd = (e: React.TouchEvent<HTMLCanvasElement>) => {
+    // Cancel hover timer
+    if (touchHoldTimer.current) {
+      clearTimeout(touchHoldTimer.current);
+      touchHoldTimer.current = null;
+    }
+    
     if (e.touches.length === 0) {
-      const wasTap = isDragging.current && dragStart.current !== null;
+      const wasTap = isDragging.current && dragStart.current !== null && !hasMovedDuringTouch.current;
       
       if (wasTap) {
+        // Clear hover tooltip before handling click
+        setHoveredElement(null);
+        setTooltipText('');
+        
         const touch = e.changedTouches[0];
         const rect = canvasRef.current?.getBoundingClientRect();
         if (rect && camera) {
@@ -856,11 +917,13 @@ export const GalaxyPlanetView: React.FC<GalaxyPlanetViewProps> = ({
       isDragging.current = false;
       dragStart.current = null;
       lastTouchDistance.current = null;
+      hasMovedDuringTouch.current = false;
     } else if (e.touches.length === 1) {
       const touch = e.touches[0];
       const rect = canvasRef.current?.getBoundingClientRect();
       if (rect) {
         isDragging.current = true;
+        hasMovedDuringTouch.current = false;
         dragStart.current = { x: touch.clientX - rect.left, y: touch.clientY - rect.top };
       }
       lastTouchDistance.current = null;

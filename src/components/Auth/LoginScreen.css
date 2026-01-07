@@ -188,6 +188,23 @@
   text-decoration: underline;
 }
 
+.switch-tab-link {
+  background: none;
+  border: none;
+  color: #4a90e2;
+  font-size: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.switch-tab-link:hover {
+  color: #5fa3f0;
+  text-decoration: underline;
+}
+
 .login-submit {
   padding: 1rem;
   background: linear-gradient(135deg, #4a90e2, #357abd);

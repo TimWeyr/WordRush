@@ -8,7 +8,7 @@ import type { Theme, ChapterConfig, Item } from '@/types/content.types';
 // ============================================================================
 
 /** Enable detailed debug logging for layout calculations */
-const DEBUG_LAYOUT = false;
+const DEBUG_LAYOUT = false; // Disabled (set to true for debugging)
 
 /** Helper object for conditional debug logging */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -48,7 +48,7 @@ export interface MoonLayout {
   id: string;
   chapterId: string;
   angle: number;
-  radius: number;
+  radius: number; // Visual radius (adaptive based on moon size)
   x: number;
   y: number;
   chapter: ChapterConfig;
@@ -70,9 +70,11 @@ export interface LevelRingLayout {
   chapterId: string;
 }
 
-const PLANET_RADIUS = 50;
+const PLANET_RADIUS = 80; // Increased from 50 (planet should be more dominant)
 const MOON_ORBIT_RADIUS = 80;
-const MOON_RADIUS = 25;
+const MOON_RADIUS = 20; // Layout constant for ring calculations (reduced from 25)
+const MOON_BASE_VISUAL_RADIUS = 18; // Base visual radius for small moons
+const MOON_MAX_VISUAL_RADIUS = 30; // Max visual radius for large moons
 const BASE_ITEM_DISTANCE = 2; // Distance from moon center to first ring
 const MIN_LEVEL_SPACING = 8; // Minimum spacing (for MANY levels - prevents overlap)
 const MAX_LEVEL_SPACING = 30; // Maximum spacing (for very few levels - looks good)
@@ -82,8 +84,8 @@ const S_CURVE_AMPLITUDE_FACTOR = 0.3; // Amplitude of S-curve relative to screen
 const PLANET_SPACING_VARIATION = 0.05; // Variation in planet spacing (±5%)
 
 // Moon spacing constants - CLARIFIED NAMING
-const MOON_MIN_CLEARANCE = 80; // Minimum space between outermost rings of adjacent moons
-const PLANET_TO_MOON_BASE_DISTANCE = 100; // Base distance from planet center to moon center (very small moons)
+const MOON_MIN_CLEARANCE = 150; // Minimum space between outermost rings of adjacent moons (increased from 80)
+const PLANET_TO_MOON_BASE_DISTANCE = 220; // Base distance from planet center to moon center (very small moons, increased from 100)
 const MOON_EXTRA_DISTANCE_PER_RING_PX = 0.5; // Additional distance per pixel of ring extent (0.5 = 50% of ring size)
 
 // Ring spacing constants
@@ -212,7 +214,7 @@ export function calculateMoonPositions(
       id: `${chapterId}`,
       chapterId,
       angle: angleAroundPlanet,
-      radius: MOON_RADIUS,
+      radius: MOON_BASE_VISUAL_RADIUS, // Use base radius for simple layout
       x,
       y,
       chapter: chapters[chapterId]
@@ -354,8 +356,11 @@ export function calculateMoonPositionsAdaptive(
   const minRingExtent = Math.min(...sortedChapters.map(info => info.ringExtent));
   
   // Set distance range for small to large moons
-  const minMoonDistance = 100; // Small moons close to planet (130px)
-  const maxMoonDistance = 1.1*maxRingExtent + PLANET_RADIUS + MOON_MIN_CLEARANCE; // Large moons far enough to avoid overlap
+  // Strategy: Scale aggressively to prevent ring overlap
+  // - Small moons: PLANET_TO_MOON_BASE_DISTANCE (220px)
+  // - Large moons: Much further out (1.8x ring extent + planet radius + clearance + 20% safety margin)
+  const minMoonDistance = PLANET_TO_MOON_BASE_DISTANCE; // Small moons at base distance
+  const maxMoonDistance = 1.8 * maxRingExtent + PLANET_RADIUS + MOON_MIN_CLEARANCE * 1.2; // Large moons far away with 20% safety
   
   debugLog.log(`📏 Ring extents: ${minRingExtent.toFixed(1)}px (min) to ${maxRingExtent.toFixed(1)}px (max)`);
   debugLog.log(`📏 Distance range: ${minMoonDistance}px (small moons) to ${maxMoonDistance.toFixed(1)}px (large moons)`);
@@ -412,15 +417,15 @@ export function calculateMoonPositionsAdaptive(
     const cosAngle = (a * a + b * b - c * c) / (2 * a * b);
     let minAngle = Math.acos(Math.max(-1, Math.min(1, cosAngle)));
     
-    // Give moons with many levels extra angle space (up to 50% more)
+    // Give moons with many levels extra angle space (up to 100% more - doubled from 50%)
     const maxLevelCount = Math.max(...sortedChapters.map(info => info.levelCount));
     const currentLevelCount = sortedChapters[i].levelCount;
     const nextLevelCount = sortedChapters[nextIndex].levelCount;
     const avgLevelCount = (currentLevelCount + nextLevelCount) / 2;
     const levelFactor = maxLevelCount > 0 ? avgLevelCount / maxLevelCount : 1;
     
-    // Increase angle for moons with many levels
-    const angleBonus = minAngle * 0.5 * levelFactor;
+    // Increase angle for moons with many levels (doubled bonus factor)
+    const angleBonus = minAngle * 1.0 * levelFactor; // 100% bonus instead of 50%
     const minAngleWithBonus = minAngle + angleBonus;
     
     debugLog.log(`  🔀 ${sortedChapters[i].chapterId} ↔ ${sortedChapters[nextIndex].chapterId}:`);
@@ -486,7 +491,7 @@ export function calculateMoonPositionsAdaptive(
   }
   debugLog.groupEnd();
   
-  // Create layouts with calculated positions
+  // Create layouts with calculated positions and adaptive visual radii
   debugLog.group('🎯 Final Moon Positions');
   for (let i = 0; i < sortedChapters.length; i++) {
     const info = sortedChapters[i];
@@ -497,17 +502,21 @@ export function calculateMoonPositionsAdaptive(
     const x = planetX + Math.cos(angleAroundPlanet) * distanceFromPlanetCenter;
     const y = planetY + Math.sin(angleAroundPlanet) * distanceFromPlanetCenter;
     
+    // Calculate adaptive visual radius based on ring extent
+    const visualRadius = calculateMoonVisualRadius(info.ringExtent, minRingExtent, maxRingExtent);
+    
     debugLog.log(`  🌙 ${chapterId}:`);
     debugLog.log(`     Position: (${x.toFixed(1)}, ${y.toFixed(1)})`);
     debugLog.log(`     Distance from planet: ${distanceFromPlanetCenter.toFixed(1)}px at ${(angleAroundPlanet * 180 / Math.PI).toFixed(1)}°`);
     debugLog.log(`     Ring extent: ${info.ringExtent.toFixed(1)}px (outermost ring at ${(distanceFromPlanetCenter + info.ringExtent).toFixed(1)}px from planet)`);
+    debugLog.log(`     Visual radius: ${visualRadius.toFixed(1)}px (adaptive based on size)`);
     debugLog.log(`     Levels: ${info.levelCount}`);
     
     layouts.push({
       id: `${chapterId}`,
       chapterId,
       angle: angleAroundPlanet,
-      radius: MOON_RADIUS,
+      radius: visualRadius, // Use adaptive visual radius instead of constant
       x,
       y,
       chapter: chapters[chapterId]
@@ -584,6 +593,32 @@ export function calculateMoonRingExtent(items: Item[]): number {
  */
 export function calculateRequiredMoonRadius(items: Item[]): number {
   return calculateMoonRingExtent(items);
+}
+
+/**
+ * Calculate adaptive visual radius for a moon based on its ring extent
+ * Small moons (few levels) get smaller radius, large moons (many levels) get larger radius
+ * 
+ * @param ringExtent - Distance from moon center to outermost ring
+ * @param minRingExtent - Smallest ring extent among all moons in this theme
+ * @param maxRingExtent - Largest ring extent among all moons in this theme
+ * @returns Visual radius for rendering the moon
+ */
+function calculateMoonVisualRadius(
+  ringExtent: number,
+  minRingExtent: number,
+  maxRingExtent: number
+): number {
+  if (maxRingExtent === minRingExtent) {
+    // All moons same size - use base radius
+    return MOON_BASE_VISUAL_RADIUS;
+  }
+  
+  // Scale from MOON_BASE_VISUAL_RADIUS (small moons) to MOON_MAX_VISUAL_RADIUS (large moons)
+  const sizeRatio = (ringExtent - minRingExtent) / (maxRingExtent - minRingExtent);
+  const visualRadius = MOON_BASE_VISUAL_RADIUS + (MOON_MAX_VISUAL_RADIUS - MOON_BASE_VISUAL_RADIUS) * sizeRatio;
+  
+  return visualRadius;
 }
 
 /**

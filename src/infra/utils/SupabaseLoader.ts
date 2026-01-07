@@ -165,8 +165,8 @@ export class SupabaseLoader {
         .from('rounds')
         .insert({
           id: round.id,
-          // chapter_id: optional (nullable), we use chapter_uuid instead
-          chapter_uuid: chapter.uuid,
+          chapter_id: round.chapter_id, // Required - human-readable ID for URLs and display
+          chapter_uuid: chapter.uuid,   // Required - FK to chapters.uuid
           level: round.level,
           published: round.published ?? true,
           free_tier: round.free_tier ?? false,
@@ -206,6 +206,8 @@ export class SupabaseLoader {
     meta_tags: string[];
     meta_related: string[];
     meta_difficulty_scaling: any;
+    chapter_id: string;
+    chapter_uuid: string;
   }>): Promise<{ success: boolean; error?: string }> {
     console.log(`💾 [SupabaseLoader] Updating round: ${roundId}`);
     
@@ -250,6 +252,203 @@ export class SupabaseLoader {
       return { success: true };
     } catch (error) {
       console.error('❌ [SupabaseLoader] Exception deleting round:', error);
+      return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+    }
+  }
+
+  /**
+   * 🔀 Move a round to a different chapter
+   * Updates both chapter_id and chapter_uuid
+   */
+  async moveRoundToChapter(roundId: string, targetChapterId: string): Promise<{ success: boolean; error?: string }> {
+    console.log(`🔀 [SupabaseLoader] Moving round ${roundId} to chapter ${targetChapterId}`);
+    
+    try {
+      // Get target chapter UUID
+      const { data: chapter } = await supabase
+        .from('chapters')
+        .select('uuid')
+        .eq('id', targetChapterId)
+        .single();
+      
+      if (!chapter) {
+        return { success: false, error: `Target chapter ${targetChapterId} not found` };
+      }
+      
+      // Update round's chapter references
+      const { error } = await supabase
+        .from('rounds')
+        .update({
+          chapter_id: targetChapterId,
+          chapter_uuid: chapter.uuid
+        })
+        .eq('id', roundId);
+      
+      if (error) {
+        console.error('❌ [SupabaseLoader] Failed to move round:', error);
+        return { success: false, error: error.message };
+      }
+      
+      console.log(`✅ [SupabaseLoader] Round ${roundId} moved to chapter ${targetChapterId}`);
+      return { success: true };
+    } catch (error) {
+      console.error('❌ [SupabaseLoader] Exception moving round:', error);
+      return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+    }
+  }
+
+  /**
+   * 📋 Get next available round ID in a chapter
+   * Pattern: {chapterId}_{number} (e.g., "F32.0_001", "F32.0_002")
+   */
+  async getNextRoundIdInChapter(chapterId: string): Promise<{ success: boolean; nextId?: string; error?: string }> {
+    console.log(`🔢 [SupabaseLoader] Finding next round ID for chapter ${chapterId}`);
+    
+    try {
+      // Get all round IDs in the chapter
+      const { data: rounds, error } = await supabase
+        .from('rounds')
+        .select('id')
+        .eq('chapter_id', chapterId)
+        .order('id', { ascending: false });
+      
+      if (error) {
+        console.error('❌ [SupabaseLoader] Failed to query rounds:', error);
+        return { success: false, error: error.message };
+      }
+      
+      // Find highest number in existing IDs
+      let maxNumber = 0;
+      const pattern = new RegExp(`^${chapterId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}_\\d+$`);
+      
+      for (const round of rounds || []) {
+        if (pattern.test(round.id)) {
+          const numberPart = round.id.split('_').pop();
+          if (numberPart) {
+            const num = parseInt(numberPart, 10);
+            if (!isNaN(num) && num > maxNumber) {
+              maxNumber = num;
+            }
+          }
+        }
+      }
+      
+      // Generate next ID with zero-padding (3 digits)
+      const nextNumber = maxNumber + 1;
+      const nextId = `${chapterId}_${String(nextNumber).padStart(3, '0')}`;
+      
+      console.log(`✅ [SupabaseLoader] Next round ID: ${nextId}`);
+      return { success: true, nextId };
+    } catch (error) {
+      console.error('❌ [SupabaseLoader] Exception finding next round ID:', error);
+      return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+    }
+  }
+
+  /**
+   * 📋 Copy a round (with all items) to a different chapter
+   * Creates a new round with a new ID and copies all associated items
+   */
+  async copyRoundToChapter(
+    sourceRoundId: string, 
+    targetChapterId: string
+  ): Promise<{ success: boolean; newRoundId?: string; error?: string }> {
+    console.log(`📋 [SupabaseLoader] Copying round ${sourceRoundId} to chapter ${targetChapterId}`);
+    
+    try {
+      // Step 1: Get target chapter UUID
+      const { data: chapter } = await supabase
+        .from('chapters')
+        .select('uuid')
+        .eq('id', targetChapterId)
+        .single();
+      
+      if (!chapter) {
+        return { success: false, error: `Target chapter ${targetChapterId} not found` };
+      }
+      
+      // Step 2: Get next available round ID in target chapter
+      const nextIdResult = await this.getNextRoundIdInChapter(targetChapterId);
+      if (!nextIdResult.success || !nextIdResult.nextId) {
+        return { success: false, error: nextIdResult.error || 'Failed to generate new round ID' };
+      }
+      
+      const newRoundId = nextIdResult.nextId;
+      
+      // Step 3: Get source round data
+      const { data: sourceRound, error: fetchError } = await supabase
+        .from('rounds')
+        .select('*')
+        .eq('id', sourceRoundId)
+        .single();
+      
+      if (fetchError || !sourceRound) {
+        return { success: false, error: fetchError?.message || 'Source round not found' };
+      }
+      
+      // Step 4: Create new round with new ID and chapter references
+      const { data: newRound, error: createError } = await supabase
+        .from('rounds')
+        .insert({
+          id: newRoundId,
+          chapter_id: targetChapterId,
+          chapter_uuid: chapter.uuid,
+          level: sourceRound.level,
+          published: sourceRound.published,
+          free_tier: sourceRound.free_tier,
+          wave_duration: sourceRound.wave_duration,
+          intro_text: sourceRound.intro_text,
+          meta_source: sourceRound.meta_source,
+          detail: sourceRound.detail,
+          meta_tags: sourceRound.meta_tags,
+          meta_related: sourceRound.meta_related,
+          meta_difficulty_scaling: sourceRound.meta_difficulty_scaling
+        })
+        .select('uuid')
+        .single();
+      
+      if (createError || !newRound) {
+        return { success: false, error: createError?.message || 'Failed to create new round' };
+      }
+      
+      // Step 5: Copy all items from source round to new round
+      const { data: sourceItems, error: itemsError } = await supabase
+        .from('items')
+        .select('*')
+        .eq('round_uuid', sourceRound.uuid);
+      
+      if (itemsError) {
+        // Clean up created round
+        await supabase.from('rounds').delete().eq('id', newRoundId);
+        return { success: false, error: itemsError.message };
+      }
+      
+      if (sourceItems && sourceItems.length > 0) {
+        // Prepare items for insertion with new round references
+        const newItems = sourceItems.map(item => {
+          const { uuid, created_at, updated_at, ...itemData } = item;
+          return {
+            ...itemData,
+            round_id: newRoundId,
+            round_uuid: newRound.uuid
+          };
+        });
+        
+        const { error: insertItemsError } = await supabase
+          .from('items')
+          .insert(newItems);
+        
+        if (insertItemsError) {
+          // Clean up created round
+          await supabase.from('rounds').delete().eq('id', newRoundId);
+          return { success: false, error: insertItemsError.message };
+        }
+      }
+      
+      console.log(`✅ [SupabaseLoader] Round copied: ${sourceRoundId} → ${newRoundId}`);
+      return { success: true, newRoundId };
+    } catch (error) {
+      console.error('❌ [SupabaseLoader] Exception copying round:', error);
       return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
     }
   }

@@ -1,0 +1,64 @@
+Du bist Facharzt für Psychiatrie, Didaktiker und Content-Generator
+für das Lernspiel Wordrush.
+
+KONTEXT
+Ich habe ein Item bereits vorbereitet mit:
+- einer Base (b.)
+- mehreren Correct-Einträgen (c.)
+- mehreren Distractor-Einträgen (d.)
+
+Deine Aufgabe ist es NICHT, die Base, die c. oder die d. zu verändern,
+sondern sie didaktisch korrekt zu ergänzen.
+
+---
+
+### REGELN (sehr wichtig)
+
+1. **c.-Einträge**
+   - haben GENAU eine Pipe "|"
+   - Format:  
+     c. Begriff | Kontext
+   - Der Kontext:
+     - max. 6 Wörter
+     - KEINE Tautologie
+     - erklärt den Mechanismus oder das Merkmal
+     - darf die Base NICHT paraphrasieren
+
+2. **d.-Einträge**
+   - haben GENAU zwei Pipes "||"
+   - Format:  
+     d. Begriff | Redirect | Kontext
+   - Redirect:
+     - 1–3 Wörter
+     - benennt die korrekte Kategorie (z. B. Affekt, Wahrnehmung, Ich-Störung)
+   - Kontext:
+     - max. 6 Wörter
+     - erklärt WARUM der Begriff nicht zur Base gehört
+     - KEINE Belehrung, kein „weil falsch“
+
+3. **Zusätzliche Distraktoren**
+   - Ergänze GENAU **3 neue d.-Einträge**
+   - Diese müssen:
+     - verführerisch plausibel sein
+     - aber eindeutig FALSCH
+     - aus einem ANDEREN Bereich des psychopathologischen Befunds stammen
+   - Mindestens **einer** der neuen d.-Einträge darf subtil humorvoll sein
+     (fein oder leicht brachial, nicht albern)
+
+4. **Format**
+   - Halte das bestehende Item-Format exakt ein
+   - Gib NUR das Item aus
+   - KEINE Erklärtexte außerhalb des Formats
+
+---
+
+### INPUT
+[Hier folgt das bestehende Item mit b., c. und d. – ohne Kontexte]
+
+---
+
+### OUTPUT
+- Ergänze bei ALLEN bestehenden c. den Kontext
+- Ergänze bei ALLEN bestehenden d. Redirect + Kontext
+- Füge 3 neue d.-Einträge korrekt ein
+- Struktur und Reihenfolge beibehalten

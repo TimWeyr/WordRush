@@ -5,6 +5,7 @@ import { SpawnConfig } from './SpawnConfigCompact';
 import { randomConfigGenerator } from '@/utils/RandomConfigGenerator';
 import { jsonLoader } from '@/infra/utils/JSONLoader';
 import { jsonWriter } from '@/infra/utils/JSONWriter';
+import { supabaseLoader } from '@/infra/utils/SupabaseLoader';
 import { useToast } from '../Toast/ToastContainer';
 import { TextParserModal } from './TextParserModal';
 import { SearchableDropdown } from './SearchableDropdown';
@@ -40,6 +41,13 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
   const [availableThemes, setAvailableThemes] = useState<Theme[]>([]);
   const [availableChapters, setAvailableChapters] = useState<string[]>([]);
   const [selectedFilterThemeObj, setSelectedFilterThemeObj] = useState<Theme | null>(theme || null);
+
+  // Move/Copy states
+  const [moveTargetTheme, setMoveTargetTheme] = useState<string>(theme?.id || '');
+  const [moveTargetChapter, setMoveTargetChapter] = useState<string>(chapterId || '');
+  const [moveTargetThemeObj, setMoveTargetThemeObj] = useState<Theme | null>(theme || null);
+  const [moveAvailableChapters, setMoveAvailableChapters] = useState<string[]>([]);
+  const [moveInProgress, setMoveInProgress] = useState(false);
 
   // Update local item when prop changes
   if (item && localItem?.id !== item.id) {
@@ -234,6 +242,21 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
     }
   }, [selectedFilterThemeObj, selectedFilterChapter]);
 
+  // Update available chapters for move/copy when target theme changes
+  useEffect(() => {
+    if (moveTargetThemeObj) {
+      const chapters = Object.keys(moveTargetThemeObj.chapters);
+      setMoveAvailableChapters(chapters);
+      
+      // If current chapter is not in available chapters, clear it
+      if (moveTargetChapter && !chapters.includes(moveTargetChapter)) {
+        setMoveTargetChapter('');
+      }
+    } else {
+      setMoveAvailableChapters([]);
+    }
+  }, [moveTargetThemeObj, moveTargetChapter]);
+
   // Load items based on filter selection
   useEffect(() => {
     const loadFilteredItems = async () => {
@@ -348,6 +371,13 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
   const getChapterTitle = (chapterId: string): string => {
     if (!selectedFilterThemeObj) return chapterId;
     const chapterConfig = selectedFilterThemeObj.chapters[chapterId];
+    return chapterConfig?.title || chapterId;
+  };
+
+  // Get chapter title for move target (uses moveTargetThemeObj)
+  const getMoveChapterTitle = (chapterId: string): string => {
+    if (!moveTargetThemeObj) return chapterId;
+    const chapterConfig = moveTargetThemeObj.chapters[chapterId];
     return chapterConfig?.title || chapterId;
   };
 
@@ -484,6 +514,115 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
     }
   };
 
+  // Handle move target theme change
+  const handleMoveThemeChange = async (themeId: string) => {
+    if (!universeId) return;
+    
+    try {
+      const themeObj = await jsonLoader.loadTheme(universeId, themeId);
+      if (themeObj) {
+        setMoveTargetTheme(themeId);
+        setMoveTargetThemeObj(themeObj);
+        // Clear chapter selection when theme changes
+        setMoveTargetChapter('');
+      }
+    } catch (error) {
+      console.error('Failed to load theme:', error);
+      showToast('Failed to load theme', 'error');
+    }
+  };
+
+  // Handle move target chapter change
+  const handleMoveChapterChange = (chapterId: string) => {
+    setMoveTargetChapter(chapterId);
+  };
+
+  // Reset move/copy selections
+  const handleCancelMove = () => {
+    setMoveTargetTheme(theme?.id || '');
+    setMoveTargetChapter(chapterId || '');
+    setMoveTargetThemeObj(theme || null);
+  };
+
+  // Move item to different chapter
+  const handleMoveItem = async () => {
+    if (!localItem || !moveTargetChapter || !moveTargetThemeObj) {
+      showToast('❌ Please select a target chapter', 'error');
+      return;
+    }
+
+    // Check if already in target chapter
+    if (chapterId === moveTargetChapter && theme?.id === moveTargetTheme) {
+      showToast('⚠️ Item is already in this chapter', 'warning');
+      return;
+    }
+
+    const confirmed = window.confirm(
+      `Move item "${localItem.id}" to chapter "${getMoveChapterTitle(moveTargetChapter)}"?\n\n` +
+      `This will update the item's chapter assignment.`
+    );
+    
+    if (!confirmed) return;
+
+    setMoveInProgress(true);
+    try {
+      const result = await supabaseLoader.moveRoundToChapter(localItem.id, moveTargetChapter);
+      
+      if (result.success) {
+        const targetChapterTitle = getMoveChapterTitle(moveTargetChapter);
+        showToast(
+          `✅ Item moved successfully! You'll find it now in "${moveTargetThemeObj.name || moveTargetTheme}" → "${targetChapterTitle}"`,
+          'success'
+        );
+        // Close detail view and return to table
+        onBack();
+      } else {
+        showToast(`❌ Failed to move item: ${result.error || 'Unknown error'}`, 'error');
+      }
+    } catch (error) {
+      console.error('Error moving item:', error);
+      showToast(`❌ Error moving item: ${error instanceof Error ? error.message : 'Unknown error'}`, 'error');
+    } finally {
+      setMoveInProgress(false);
+    }
+  };
+
+  // Copy item to different chapter
+  const handleCopyItem = async () => {
+    if (!localItem || !moveTargetChapter || !moveTargetThemeObj) {
+      showToast('❌ Please select a target chapter', 'error');
+      return;
+    }
+
+    const confirmed = window.confirm(
+      `Copy item "${localItem.id}" to chapter "${getMoveChapterTitle(moveTargetChapter)}"?\n\n` +
+      `A new item with a new ID will be created in the target chapter.`
+    );
+    
+    if (!confirmed) return;
+
+    setMoveInProgress(true);
+    try {
+      const result = await supabaseLoader.copyRoundToChapter(localItem.id, moveTargetChapter);
+      
+      if (result.success && result.newRoundId) {
+        const targetChapterTitle = getMoveChapterTitle(moveTargetChapter);
+        showToast(
+          `✅ Item copied successfully! New item "${result.newRoundId}" created in "${moveTargetThemeObj.name || moveTargetTheme}" → "${targetChapterTitle}"`,
+          'success'
+        );
+        // Keep detail view open to continue editing original
+      } else {
+        showToast(`❌ Failed to copy item: ${result.error || 'Unknown error'}`, 'error');
+      }
+    } catch (error) {
+      console.error('Error copying item:', error);
+      showToast(`❌ Error copying item: ${error instanceof Error ? error.message : 'Unknown error'}`, 'error');
+    } finally {
+      setMoveInProgress(false);
+    }
+  };
+
   if (!localItem) {
     return (
       <div style={{ 
@@ -591,6 +730,102 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
             />
             <span style={{ fontSize: '0.9rem' }}>{localItem.published !== false ? '✅ Published' : '❌ Unpublished'}</span>
           </label>
+        </div>
+      </div>
+
+      {/* MOVE/COPY ITEM SECTION */}
+      <div className="editor-detail-section" style={{ padding: '1rem' }}>
+        <div className="editor-detail-section-title" style={{ fontSize: '1rem', marginBottom: '0.75rem' }}>
+          🔀 Move or Copy Item
+        </div>
+        <div style={{ 
+          padding: '1rem', 
+          background: 'rgba(255, 255, 255, 0.03)', 
+          borderRadius: '8px',
+          border: '1px solid rgba(255, 255, 255, 0.1)'
+        }}>
+          <p style={{ 
+            fontSize: '0.9rem', 
+            color: 'rgba(255, 255, 255, 0.7)', 
+            marginBottom: '1rem' 
+          }}>
+            Current location: <strong>{theme?.name || theme?.id || '?'}</strong> → <strong>{getChapterTitle(chapterId || '')}</strong>
+          </p>
+          
+          {universeId && (
+            <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+              <div style={{ flex: 1 }}>
+                <SearchableDropdown
+                  value={moveTargetTheme}
+                  options={availableThemes.map(t => ({ value: t.id, label: t.name || t.id }))}
+                  onChange={handleMoveThemeChange}
+                  placeholder="Select Target Theme..."
+                  searchPlaceholder="🔍 Search themes..."
+                  label="Target Theme"
+                />
+              </div>
+              {moveTargetThemeObj && (
+                <div style={{ flex: 1 }}>
+                  <SearchableDropdown
+                    value={moveTargetChapter}
+                    options={moveAvailableChapters.map(c => ({ 
+                      value: c, 
+                      label: getMoveChapterTitle(c)
+                    }))}
+                    onChange={handleMoveChapterChange}
+                    placeholder="Select Target Chapter..."
+                    searchPlaceholder="🔍 Search chapters..."
+                    label="Target Chapter"
+                  />
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Show action buttons only if target chapter is selected AND different from current */}
+          {moveTargetChapter && moveTargetThemeObj && (
+            (moveTargetTheme !== theme?.id || moveTargetChapter !== chapterId) ? (
+              <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem' }}>
+                <button
+                  className="editor-button"
+                  onClick={handleCancelMove}
+                  disabled={moveInProgress}
+                  style={{ flex: '0 0 auto' }}
+                >
+                  ❌ Cancel
+                </button>
+                <button
+                  className="editor-button primary"
+                  onClick={handleMoveItem}
+                  disabled={moveInProgress}
+                  style={{ flex: 1 }}
+                >
+                  {moveInProgress ? '⏳ Moving...' : '🔀 Move Item'}
+                </button>
+                <button
+                  className="editor-button"
+                  onClick={handleCopyItem}
+                  disabled={moveInProgress}
+                  style={{ 
+                    flex: 1,
+                    background: 'rgba(76, 175, 80, 0.2)',
+                    borderColor: 'rgba(76, 175, 80, 0.5)'
+                  }}
+                >
+                  {moveInProgress ? '⏳ Copying...' : '📋 Copy Item'}
+                </button>
+              </div>
+            ) : (
+              <p style={{ 
+                fontSize: '0.9rem', 
+                color: 'rgba(255, 165, 0, 0.8)', 
+                fontStyle: 'italic',
+                marginTop: '1rem' 
+              }}>
+                ⚠️ Please select a different chapter to move or copy
+              </p>
+            )
+          )}
         </div>
       </div>
 

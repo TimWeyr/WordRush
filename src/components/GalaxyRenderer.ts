@@ -221,6 +221,87 @@ export function renderMoon(
 }
 
 /**
+ * Render moon label (chapter name) below the moon
+ * Used on touch devices or at low zoom levels for better UX
+ */
+export function renderMoonLabel(
+  moon: MoonLayout,
+  context: RenderContext
+): void {
+  const { renderer, camera, universe } = context;
+  const ctx = renderer.getContext();
+  
+  const screenPos = camera.worldToScreen({ x: moon.x, y: moon.y });
+  
+  ctx.save();
+  
+  // Get moon name (chapter title or chapterId)
+  const moonName = moon.chapter?.title || moon.chapterId;
+  
+  // Find planet colors for text and shadow
+  let textColor = universe?.colorPrimary || '#4a90e2';
+  let shadowColor = universe?.colorAccent || '#7bb3f0';
+  
+  for (const planet of context.planetLayouts) {
+    const moons = context.moonLayouts.get(planet.id) || [];
+    if (moons.some(m => m.id === moon.id)) {
+      textColor = planet.theme.colorPrimary;
+      shadowColor = planet.theme.colorAccent;
+      break;
+    }
+  }
+  
+  // Responsive font size based on screen width (fixed size, not scaled by zoom)
+  const screenWidth = ctx.canvas.width;
+  const fontSize = screenWidth < 768 ? 13 : 15; // Slightly larger for better readability
+  
+  ctx.font = `700 ${fontSize}px Arial, sans-serif`; // Bold (700) for better contrast
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'top';
+  
+  // Position text below moon
+  const textX = screenPos.x;
+  const textY = screenPos.y + moon.radius + 8;
+  
+  // Wrap text if too long (max 20 characters per line)
+  const maxCharsPerLine = 20;
+  const lines: string[] = [];
+  
+  if (moonName.length > maxCharsPerLine) {
+    const words = moonName.split(' ');
+    let currentLine = '';
+    
+    for (const word of words) {
+      const testLine = currentLine ? `${currentLine} ${word}` : word;
+      if (testLine.length <= maxCharsPerLine) {
+        currentLine = testLine;
+      } else {
+        if (currentLine) lines.push(currentLine);
+        currentLine = word;
+      }
+    }
+    if (currentLine) lines.push(currentLine);
+  } else {
+    lines.push(moonName);
+  }
+  
+  // Render each line with accent color offset + main color
+  lines.forEach((line, index) => {
+    const lineY = textY + index * (fontSize + 2);
+    
+    // Background: Accent color slightly offset
+    ctx.fillStyle = shadowColor; // theme.colorAccent
+    ctx.fillText(line, textX + 1, lineY + 1);
+    
+    // Foreground: Main color
+    ctx.fillStyle = textColor; // theme.colorPrimary
+    ctx.fillText(line, textX, lineY);
+  });
+  
+  ctx.restore();
+}
+
+/**
  * Render an item particle with score-based visualization
  */
 export function renderItemParticle(

@@ -1,0 +1,27 @@
+# alle runden von heute
+
+SELECT
+r.id,
+  u.name AS universe_name,
+  t.name AS theme_name,
+  c.title AS chapter_name,
+  r.level AS round_level,
+  i.word AS word,
+  i.object_type AS type,
+  i.redirect,
+  i.collectionorder,
+  i.uuid AS item_uuid,
+  r.created_at
+FROM public.items i
+JOIN public.rounds   r ON i.round_uuid    = r.uuid
+JOIN public.chapters c ON r.chapter_uuid  = c.uuid
+JOIN public.themes   t ON c.themes_uuid  = t.uuid
+JOIN public.universes u ON t.universe_uuid = u.uuid
+WHERE DATE(r.created_at) = CURRENT_DATE
+ORDER BY r.created_at desc,
+  CASE i.object_type
+    WHEN 'base'    THEN 1
+    WHEN 'correct' THEN 2
+    ELSE 3
+  END,
+  i.collectionorder;

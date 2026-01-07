@@ -161,7 +161,6 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({
           showToast('Zeig was du gelernt hast', 'success');
         }
       }
-      
       if (newPreset) {
         setPreset(newPreset);
         
@@ -176,7 +175,6 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({
         
         showToast(presetMessages[newPreset], 'info');
       }
-      
       if (newItemOrder) {
         setItemOrder(newItemOrder);
       }
@@ -190,13 +188,12 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({
   // ============================================================================
   
   const showAuthHint = !user && freeTierItemCount !== undefined && freeTierItemCount < itemCount;
-  const lockedItemCount = showAuthHint ? itemCount - freeTierItemCount : 0;
+  const lockedItemCount = showAuthHint ? itemCount - (freeTierItemCount || 0) : 0;
   
   // ============================================================================
-  // STYLING
+  // RENDER
   // ============================================================================
   
-  // Dynamic styling based on provided colors
   const contentStyle: React.CSSProperties = {
     background: `rgba(${hexToRgb(colorPrimary)}, 0.1)`,
     borderColor: colorPrimary,
@@ -355,6 +352,7 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({
                 <option value="random">🎲 Zufällig</option>
                 <option value="worst-first-unplayed">📉 Schlechte zuerst</option>
                 <option value="newest-first">🆕 Neueste zuerst</option>
+                <option value="easiest-first">🎯 Leichteste zuerst</option>
               </select>
             </div>
           </div>
@@ -407,4 +405,3 @@ function hexToRgb(hex: string): string {
   
   return `${r}, ${g}, ${b}`;
 }
-

@@ -5,7 +5,7 @@ import type { Item } from '@/types/content.types';
 import type { LearningState } from '@/types/progress.types';
 import { calculateMaxPossibleScore } from './ScoreCalculator';
 
-export type ItemOrder = 'default' | 'random' | 'worst-first-unplayed' | 'newest-first';
+export type ItemOrder = 'default' | 'random' | 'worst-first-unplayed' | 'newest-first' | 'easiest-first';
 
 /**
  * Sorts items based on the specified order strategy
@@ -107,6 +107,32 @@ export function sortItems(
         
         // Fallback: lexicographic sort (descending)
         return b.id.localeCompare(a.id);
+      });
+
+    case 'easiest-first':
+      // Sort by level (ascending - easiest first), then by ID
+      return sortedItems.sort((a, b) => {
+        // First sort by level (ascending)
+        if (a.level !== b.level) {
+          return a.level - b.level;
+        }
+        
+        // If levels are equal, sort by ID (ascending)
+        const getNumericId = (id: string): number => {
+          const match = id.match(/\d+/);
+          return match ? parseInt(match[0], 10) : 0;
+        };
+        
+        const numA = getNumericId(a.id);
+        const numB = getNumericId(b.id);
+        
+        // If both have numeric IDs, sort by number
+        if (numA !== 0 && numB !== 0) {
+          return numA - numB;
+        }
+        
+        // Fallback: lexicographic sort
+        return a.id.localeCompare(b.id);
       });
 
     default:

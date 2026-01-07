@@ -193,7 +193,17 @@ export const LoginScreen = () => {
             </p>
           ) : (
             <p>
-              💡 Noch kein Account? Wechsle zu <strong>Registrieren</strong>
+              💡 Noch kein Account?{' '}
+              <button
+                type="button"
+                className="switch-tab-link"
+                onClick={() => {
+                  setActiveTab('register');
+                  setError(null);
+                }}
+              >
+                Jetzt registrieren
+              </button>
             </p>
           )}
         </div>

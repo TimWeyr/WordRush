@@ -4,7 +4,7 @@
 import type { GameplaySettings, GameplayPreset } from '@/types/progress.types';
 
 // Preset configurations (UI values 0-100)
-export const GAMEPLAY_PRESETS: Record<GameplayPreset, Omit<GameplaySettings, 'showContextMessages' | 'pauseOnContextMessages'>> = {
+export const GAMEPLAY_PRESETS: Record<GameplayPreset, Omit<GameplaySettings, 'showFeedback' | 'showCorrectShot' | 'showDistractorCollision' | 'showCorrectCollect' | 'showDistractorShot' | 'pauseOnContextMessages'>> = {
   zen: {
     preset: 'zen',
     objectSpeed: 0,        // No movement
@@ -50,8 +50,12 @@ export const GAMEPLAY_PRESETS: Record<GameplayPreset, Omit<GameplaySettings, 'sh
 // Default settings
 export const DEFAULT_GAMEPLAY_SETTINGS: GameplaySettings = {
   ...GAMEPLAY_PRESETS.medium,
-  showContextMessages: true,
-  pauseOnContextMessages: false
+  showFeedback: true,
+  showCorrectShot: true,
+  showDistractorCollision: true,
+  showCorrectCollect: false,
+  showDistractorShot: false,
+  pauseOnContextMessages: false  // Default: Nur per Klick schließen, nicht auto-dismiss
 };
 
 // Mapper functions: UI values (0-100) → Game values

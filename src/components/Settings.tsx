@@ -104,8 +104,12 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
     const presetConfig = GAMEPLAY_PRESETS[preset];
     setGameplaySettings({
       ...presetConfig,
-      showContextMessages: gameplaySettings.showContextMessages,
-      pauseOnContextMessages: gameplaySettings.pauseOnContextMessages
+      showFeedback: gameplaySettings.showFeedback ?? true,
+      showCorrectShot: gameplaySettings.showCorrectShot ?? true,
+      showDistractorCollision: gameplaySettings.showDistractorCollision ?? true,
+      showCorrectCollect: gameplaySettings.showCorrectCollect ?? false,
+      showDistractorShot: gameplaySettings.showDistractorShot ?? false,
+      pauseOnContextMessages: gameplaySettings.pauseOnContextMessages ?? false
     });
     
     // Show toast notification for preset change
@@ -129,13 +133,13 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
     }));
   };
 
-  // Handle checkbox change
-  const handleCheckboxChange = (key: 'showContextMessages' | 'pauseOnContextMessages', value: boolean) => {
-    setGameplaySettings(prev => ({
-      ...prev,
-      [key]: value
-    }));
-  };
+  // Handle checkbox change (currently unused - feedback settings in ContextPauseOverlay)
+  // const handleCheckboxChange = (key: 'showFeedback' | 'showCorrectShot' | 'showDistractorCollision' | 'showCorrectCollect' | 'showDistractorShot' | 'pauseOnContextMessages', value: boolean) => {
+  //   setGameplaySettings(prev => ({
+  //     ...prev,
+  //     [key]: value
+  //   }));
+  // };
 
   const handleLogout = async () => {
     try {
@@ -484,28 +488,11 @@ export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
               <small className="slider-hint">Steuert Hintergrund-Effekte (Starfield, Nebula, etc.)</small>
             </div>
 
-            {/* Context Messages */}
-            <div className="settings-group checkbox-group">
-              <label className="checkbox-label">
-                <input
-                  type="checkbox"
-                  checked={gameplaySettings.showContextMessages}
-                  onChange={(e) => handleCheckboxChange('showContextMessages', e.target.checked)}
-                />
-                <span>💬 Context-Nachrichten anzeigen</span>
-              </label>
-            </div>
-
-            <div className="settings-group checkbox-group">
-              <label className="checkbox-label">
-                <input
-                  type="checkbox"
-                  checked={gameplaySettings.pauseOnContextMessages}
-                  onChange={(e) => handleCheckboxChange('pauseOnContextMessages', e.target.checked)}
-                  disabled={!gameplaySettings.showContextMessages}
-                />
-                <span>⏸️ Spiel bei Context-Nachricht pausieren (Klick zum Fortfahren)</span>
-              </label>
+            {/* Context Messages - See ContextPauseOverlay for feedback settings */}
+            <div className="settings-group">
+              <p style={{color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px', textAlign: 'center'}}>
+                ℹ️ Feedback-Einstellungen können im Spiel angepasst werden
+              </p>
             </div>
 
             <div className="settings-actions">

@@ -136,7 +136,11 @@ export class ShooterEngine {
   private userId?: string; // User UUID from Supabase
   
   // Context message settings
-  private showContextMessages: boolean = true;
+  private showFeedback: boolean = true;
+  private showCorrectShot: boolean = true;           // ❌ Richtige abgeschossen (Fehler)
+  private showDistractorCollision: boolean = true;   // 💥 Falsche eingesammelt (Fehler)
+  private showCorrectCollect: boolean = false;       // ✅ Richtige eingesammelt (Erfolg)
+  private showDistractorShot: boolean = false;       // 💚 Falsche abgeschossen (Erfolg)
   private pauseOnContextMessages: boolean = false;
   
   // Event logging buffer for batch uploads
@@ -197,14 +201,25 @@ export class ShooterEngine {
     // Reset ship position ONLY if it flew away (out of bounds)
     const safeAreaBottom = 20;
     const defaultY = this.config.screenHeight - 100 - safeAreaBottom;
+    const defaultX = this.config.screenWidth / 2;
     
-    // If ship is way off screen (e.g. after level end flyout), reset it to bottom
-    if (this.ship.position.y < -50 || this.ship.position.y > this.config.screenHeight + 50) {
+    // Check if ship is off-screen (both X and Y axes)
+    // This handles: level-end fly-out, screen resize, or any edge cases
+    const isOffScreen = 
+      this.ship.position.x < -50 || 
+      this.ship.position.x > this.config.screenWidth + 50 ||
+      this.ship.position.y < -50 || 
+      this.ship.position.y > this.config.screenHeight + 50;
+    
+    if (isOffScreen) {
+      // Ship is off-screen - reset to safe default position
+      this.ship.position.x = defaultX;
       this.ship.position.y = defaultY;
+      console.log('🔄 Ship was off-screen, reset to default position:', { x: defaultX, y: defaultY });
     }
     
-    // Always set target to center-bottom for smooth re-centering
-    this.ship.setTarget({ x: this.config.screenWidth / 2, y: defaultY });
+    // Set target to CURRENT position (no automatic movement between rounds!)
+    this.ship.setTarget({ x: this.ship.position.x, y: this.ship.position.y });
     
     // Set base
     this.base.setContent(item.base);
@@ -612,6 +627,21 @@ export class ShooterEngine {
     const explosion = createExplosion(correct.position, explosionColor, 25, 'collection', correct.points, 1);
     this.particles.push(...explosion);
     
+    // Show feedback for correct collection if enabled
+    if (this.showFeedback && this.showCorrectCollect) {
+      this.onContextShow?.({
+        type: 'correct_collected' as any,
+        word: correct.word,
+        context: correct.context,
+        pointsChange: finalPoints,
+        position: { x: correct.position.x, y: correct.position.y },
+        streakBroken: false
+      });
+      if (this.pauseOnContextMessages) {
+        this.onPauseRequest?.();
+      }
+    }
+    
     correct.destroy();
   }
 
@@ -633,8 +663,8 @@ export class ShooterEngine {
     // Floating Text (Negative)
     this.particles.push(createFloatingText(correct.position, `${penalty}`, '#ff4444', 24));
     
-    // Show context (as learning feedback) - respect settings
-    if (this.showContextMessages) {
+    // Show context for correct shot (error) if enabled
+    if (this.showFeedback && this.showCorrectShot) {
       this.onContextShow?.({
         type: 'correct_shot',
         word: correct.word,
@@ -674,6 +704,21 @@ export class ShooterEngine {
       this.logGameEvent('distractor_shot', distractor, finalPoints);
       
       this.particles.push(createFloatingText(distractor.position, `+${finalPoints}`, '#00ff88', 24));
+      
+      // Show feedback for distractor shot (success) if enabled
+      if (this.showFeedback && this.showDistractorShot) {
+        this.onContextShow?.({
+          type: 'distractor_shot' as any,
+          word: distractor.word,
+          context: distractor.context,
+          pointsChange: finalPoints,
+          position: { x: distractor.position.x, y: distractor.position.y },
+          streakBroken: false
+        });
+        if (this.pauseOnContextMessages) {
+          this.onPauseRequest?.();
+        }
+      }
       
       // Spawn explosion with red-orange colors - bigger, more particles, smaller particles, longer lasting
       const explosionColor = this.gameMode === 'lernmodus' ? '#ff4400' : '#ff6600'; // Vibrant red-orange
@@ -732,8 +777,8 @@ export class ShooterEngine {
     // Log event
     this.logGameEvent('distractor_hit_ship', distractor, penalty);
     
-    // Show context - respect settings
-    if (this.showContextMessages) {
+    // Show context for distractor collision (error) if enabled
+    if (this.showFeedback && this.showDistractorCollision) {
       this.onContextShow?.({
         type: 'distractor_collision',
         word: distractor.word,
@@ -760,8 +805,8 @@ export class ShooterEngine {
     // Log event
     this.logGameEvent('distractor_hit_base', distractor, penalty);
     
-    // Show context - respect settings
-    if (this.showContextMessages) {
+    // Show context for distractor reaching base (error) if enabled
+    if (this.showFeedback && this.showDistractorCollision) {
       this.onContextShow?.({
         type: 'distractor_reached_base',
         word: distractor.word,
@@ -802,7 +847,7 @@ export class ShooterEngine {
       // Log event
       this.logGameEvent('distractor_reached_base', obj, penalty);
       this.base.triggerBlink();
-      if (this.showContextMessages) {
+      if (this.showFeedback && this.showDistractorCollision) {
         this.onContextShow?.({
           type: 'distractor_reached_base',
           word: obj.word,
@@ -1168,8 +1213,19 @@ export class ShooterEngine {
     this.onPauseRequest = callback;
   }
 
-  setContextMessageSettings(showMessages: boolean, pauseOnMessages: boolean): void {
-    this.showContextMessages = showMessages;
+  setContextMessageSettings(
+    showFeedback: boolean,
+    showCorrectShot: boolean,
+    showDistractorCollision: boolean,
+    showCorrectCollect: boolean,
+    showDistractorShot: boolean,
+    pauseOnMessages: boolean
+  ): void {
+    this.showFeedback = showFeedback;
+    this.showCorrectShot = showCorrectShot;
+    this.showDistractorCollision = showDistractorCollision;
+    this.showCorrectCollect = showCorrectCollect;
+    this.showDistractorShot = showDistractorShot;
     this.pauseOnContextMessages = pauseOnMessages;
   }
 }

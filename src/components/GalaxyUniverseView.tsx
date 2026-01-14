@@ -793,6 +793,7 @@ export const GalaxyUniverseView: React.FC<GalaxyUniverseViewProps> = ({
       
       if (distance < planet.radius * PLANET_HITBOX_MULTIPLIER) {
         // Planet clicked! selectedUniverse is already the full Universe object
+        // Note: URL will be updated by handlePlanetSelect in App.tsx
         onPlanetSelect(selectedUniverse, planet.theme);
         return;
       }

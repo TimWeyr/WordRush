@@ -143,7 +143,11 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({
           ...currentSettings.gameplaySettings, // Keep current settings
           ...presetDefaults, // Apply preset defaults
           preset: presetToUse, // Set preset
-          showContextMessages: currentSettings.gameplaySettings?.showContextMessages ?? true,
+          showFeedback: currentSettings.gameplaySettings?.showFeedback ?? true,
+          showCorrectShot: currentSettings.gameplaySettings?.showCorrectShot ?? true,
+          showDistractorCollision: currentSettings.gameplaySettings?.showDistractorCollision ?? true,
+          showCorrectCollect: currentSettings.gameplaySettings?.showCorrectCollect ?? false,
+          showDistractorShot: currentSettings.gameplaySettings?.showDistractorShot ?? false,
           pauseOnContextMessages: currentSettings.gameplaySettings?.pauseOnContextMessages ?? false
         }
       };

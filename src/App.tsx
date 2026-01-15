@@ -138,6 +138,9 @@ function AppContent() {
       console.warn('Failed to load game mode from settings:', error);
     }
     
+    // Update URL without page reload
+    window.history.replaceState({}, '', `/?universe=${universe.id}&theme=${theme.id}`);
+    
     setState({
       screen: 'planet',
       universe,
@@ -148,6 +151,10 @@ function AppContent() {
 
   const handleBackToUniverse = () => {
     // Keep lastFocusedPlanetId so GalaxyUniverseView can focus on it
+    // Clear theme from URL (keep universe only)
+    if (state.screen === 'planet') {
+      window.history.replaceState({}, '', `/?universe=${state.universe.id}`);
+    }
     setState({ screen: 'universe' });
   };
 
@@ -162,6 +169,10 @@ function AppContent() {
   ) => {
     setLastFocusedPlanetId(theme.id);
     const chapters = Array.isArray(chapterIds) ? chapterIds : [chapterIds];
+    
+    // Update URL for game start (keep theme in URL)
+    window.history.replaceState({}, '', `/?universe=${universe.id}&theme=${theme.id}`);
+    
     setState({
       screen: 'game',
       universe,
@@ -178,6 +189,7 @@ function AppContent() {
   const handleExitGame = () => {
     // Return to planet view (not universe view)
     if (state.screen === 'game') {
+      // URL already has universe + theme, no change needed
       setState({
         screen: 'planet',
         universe: state.universe,

@@ -224,69 +224,31 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
       contextTimerRef.current = null;
     }
     
-    // Load gameplay settings to check if pause is enabled
-    const settings = await localProgressProvider.getUISettings();
-    const pauseOnContext = settings.gameplaySettings?.pauseOnContextMessages ?? false;
-    
-    // Handle legacy string format (for intro text)
+    // Handle legacy string format (for intro text - yellow blinker)
     if (typeof data === 'string') {
       const text = data;
       setContextText(text);
       setContextVisible(true);
-      setContextEventData({
-        type: 'intro',
-        word: '',
-        context: text,
-        pointsChange: 0,
-        position: { x: window.innerWidth / 2, y: window.innerHeight / 2 } // Center for intro
-      });
       
-      if (pauseOnContext) {
-        setIsPausedByContext(true);
-        console.log('🛑 Context-Pause activated (intro)');
-      } else {
-        contextTimerRef.current = setTimeout(() => {
-          setContextVisible(false);
-          setContextEventData(null);
-          contextTimerRef.current = null;
-        }, 3000);
-      }
+      // Intro text uses old blink system (not ContextPauseOverlay)
+      setWarningText(text);
+      setWarningBlinks(6); // 3 blinks
+      
+      contextTimerRef.current = setTimeout(() => {
+        setContextVisible(false);
+        setWarningText('');
+        setWarningBlinks(0);
+        contextTimerRef.current = null;
+      }, 3000);
       return;
     }
     
-    // Handle ContextEventData format
+    // Handle ContextEventData format - ALWAYS show ContextPauseOverlay
     setContextEventData(data);
+    setIsPausedByContext(true); // Always pause and show overlay
+    console.log('🛑 Context-Pause activated for:', data.type);
     
-    // Format warning text based on event type
-    let warningPrefix = '';
-    if (data.type === 'correct_shot') {
-      warningPrefix = '⚠️';
-    } else if (data.type === 'distractor_collision') {
-      warningPrefix = '💥';
-    } else if (data.type === 'distractor_reached_base') {
-      warningPrefix = '⚠️';
-    }
-    
-    const displayText = `${warningPrefix} ${data.context}`;
-    setWarningText(displayText);
-    
-    if (pauseOnContext) {
-      // Pause game - message stays until clicked (NO BLINKING)
-      setWarningBlinks(0); // No blink animation during pause
-      setIsPausedByContext(true);
-      console.log('🛑 Context-Pause activated');
-      // Don't auto-clear - wait for user click
-    } else {
-      // Blink animation for non-pause mode
-      setWarningBlinks(6); // 3 blinks = 6 state changes
-      
-      contextTimerRef.current = setTimeout(() => {
-        setWarningText('');
-        setWarningBlinks(0);
-        setContextEventData(null);
-        contextTimerRef.current = null;
-      }, 1800);
-    }
+    // ContextPauseOverlay handles auto-dismiss internally based on user settings
   }, []);
 
   const loadRound = useCallback((eng: ShooterEngine, index: number) => {
@@ -636,8 +598,12 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
       const gameplaySettings = settings.gameplaySettings;
       if (gameplaySettings) {
         engine.setContextMessageSettings(
-          gameplaySettings.showContextMessages,
-          gameplaySettings.pauseOnContextMessages
+          gameplaySettings.showFeedback ?? true,
+          gameplaySettings.showCorrectShot ?? true,
+          gameplaySettings.showDistractorCollision ?? true,
+          gameplaySettings.showCorrectCollect ?? false,
+          gameplaySettings.showDistractorShot ?? false,
+          gameplaySettings.pauseOnContextMessages ?? false
         );
       }
     };

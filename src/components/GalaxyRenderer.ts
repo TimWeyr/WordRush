@@ -8,6 +8,7 @@ import type { Item, Universe } from '@/types/content.types';
 import type { LearningState } from '@/types/progress.types';
 import { getItemScore, getLevelScore } from '@/utils/ScoreCalculator';
 import { getItemColor, getItemSize, getItemEffects, getPlanetGlowIntensity, getRingColorWithSaturation } from '@/utils/ScoreVisualization';
+import { adjustColorForContrast, getBackgroundColorAtPosition } from '@/utils/ColorContrast';
 
 export interface RenderContext {
   renderer: Renderer;
@@ -238,18 +239,33 @@ export function renderMoonLabel(
   // Get moon name (chapter title or chapterId)
   const moonName = moon.chapter?.title || moon.chapterId;
   
-  // Find planet colors for text and shadow
+  // Find planet colors and gradient for text and shadow
   let textColor = universe?.colorPrimary || '#4a90e2';
   let shadowColor = universe?.colorAccent || '#7bb3f0';
+  let gradient = universe?.backgroundGradient || ['#1a3a5f', '#2d5a8a'];
   
   for (const planet of context.planetLayouts) {
     const moons = context.moonLayouts.get(planet.id) || [];
     if (moons.some(m => m.id === moon.id)) {
       textColor = planet.theme.colorPrimary;
       shadowColor = planet.theme.colorAccent;
+      // Use theme gradient if available, otherwise universe gradient
+      gradient = planet.theme.backgroundGradient || gradient;
       break;
     }
   }
+  
+  // Calculate background color at moon's Y position
+  const backgroundColor = getBackgroundColorAtPosition(
+    gradient,
+    screenPos.y,
+    ctx.canvas.height
+  );
+  
+  // Adjust colors for sufficient contrast with background
+  // Using lower thresholds to preserve original colors more often
+  textColor = adjustColorForContrast(textColor, backgroundColor, 1.5); // Relaxed threshold
+  shadowColor = adjustColorForContrast(shadowColor, backgroundColor, 2.0); // Even lower for shadow
   
   // Responsive font size based on screen width (fixed size, not scaled by zoom)
   const screenWidth = ctx.canvas.width;

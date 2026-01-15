@@ -13,33 +13,119 @@ Beim Spielen auf dem iPhone mit Touch-Steuerung tritt folgendes Phänomen auf:
 - Das Schiff springt immer wieder zu einem festen Punkt zurück
 - Der Spieler kann das Schiff wegziehen, aber es geht sofort wieder zurück
 
-**Ursache**: iOS Touch-Event Handling Bug
+**Root Cause**: Schiff-Position wird bei jedem Round-Start automatisch zur Bildschirm-Mitte bewegt
 
-### Technische Details
+---
 
-Das Problem wurde durch folgende Faktoren verursacht:
+## 🎯 Kurzzusammenfassung
 
-1. **Veralteter Touch-Offset**: Der `touchOffset` (Abstand zwischen Finger und Schiff) wurde nur zurückgesetzt, wenn `e.touches.length === 0` war. Bei schnellen Touch-Wechseln (Finger heben + sofort neuer Touch) blieb der alte Offset erhalten.
+**Vorher:**
+- Bei jedem Round-Start wurde `ship.setTarget()` auf Bildschirm-Mitte gesetzt
+- Schiff bewegte sich langsam zur Mitte (smooth follow)
+- Touch-Offset wurde basierend auf **beweglicher** Ship-Position berechnet
+- **Resultat**: Inkonsistente Offsets → Schiff "springt zurück"
+
+**Fix:**
+- Schiff bleibt wo es ist (keine automatische Bewegung zur Mitte)
+- Target wird auf **aktuelle** Ship-Position gesetzt: `ship.setTarget({ x: ship.position.x, y: ship.position.y })`
+- Nur bei Off-Screen (z.B. nach Fly-Out) wird Position zurückgesetzt
+- Beide Achsen (X und Y) werden geprüft für maximale Robustheit
+
+**Resultat:**
+- ✅ Konsistente Touch-Offsets über alle Runden
+- ✅ Keine unerwarteten Ship-Bewegungen
+- ✅ Präzise Touch-Steuerung auf iOS
+
+---
+
+## Technische Analyse
+
+### Das eigentliche Problem
+
+**Vorher (Buggy Code):**
+```typescript
+// In ShooterEngine.loadRound() - Zeile 207
+this.ship.setTarget({ x: this.config.screenWidth / 2, y: defaultY });
+```
+
+**Was passierte:**
+1. Runde endet, neue Runde startet
+2. `loadRound()` setzt Ship-Target auf **Bildschirm-Mitte** (z.B. `x: 480`)
+3. Ship bewegt sich langsam zur Mitte (smooth follow mit `smoothFactor: 0.15`)
+4. Spieler tippt auf Screen (z.B. bei `x: 100`)
+5. Touch-Offset wird berechnet: `offset.x = ship.position.x - finger.x`
+   - Wenn Ship bei `x: 480` ist: `offset.x = 480 - 100 = 380`
+   - Wenn Ship bei `x: 450` ist: `offset.x = 450 - 100 = 350`
+6. **Offset ist inkonsistent** je nachdem wann der Spieler tippt!
+7. Ship "zieht" zur alten Offset-Position zurück
+
+**Warum es "manchmal" funktionierte:**
+- Wenn Spieler sofort nach Round-Start tippt: Offset basiert auf Mitte-Position
+- Wenn Spieler 1-2 Sekunden wartet: Ship ist schon fast in der Mitte, anderer Offset
+- Bei schnellen Runden: Ship hat keine Zeit die Mitte zu erreichen, Offset ändert sich ständig
+
+### Zusätzliche Probleme (ursprünglich vermutet)
+
+Diese Probleme existierten auch, waren aber **nicht** die Hauptursache:
+
+1. **Veralteter Touch-Offset**: Der `touchOffset` wurde nur zurückgesetzt, wenn `e.touches.length === 0` war. Bei schnellen Touch-Wechseln blieb der alte Offset erhalten.
 
 2. **Fehlende Touch-ID Tracking**: iOS kann Touch-Identifier zwischen Events ändern. Ohne ID-Tracking wurde nicht erkannt, wenn ein neuer Touch begonnen hatte.
 
-3. **Keine Offset-Neuberechnung**: Wenn sich die Touch-ID änderte (neuer Finger), wurde der Offset nicht neu berechnet, sondern es wurde weiter mit den alten Koordinaten gearbeitet.
-
-4. **Kein State-Cleanup zwischen Runden**: Touch-States blieben über Runden hinweg erhalten, was zu akkumulierten Fehlern führte.
+3. **Kein State-Cleanup zwischen Runden**: Touch-States blieben über Runden hinweg erhalten.
 
 ---
 
 ## Lösung
 
-### 1. Touch-ID Tracking hinzugefügt
+### Hauptfix: Schiff bleibt wo es ist (keine automatische Bewegung)
+
+**Jetzt (Fixed Code):**
+```typescript
+// In ShooterEngine.loadRound()
+
+// Check if ship is off-screen (both X and Y axes)
+const isOffScreen = 
+  this.ship.position.x < -50 || 
+  this.ship.position.x > this.config.screenWidth + 50 ||
+  this.ship.position.y < -50 || 
+  this.ship.position.y > this.config.screenHeight + 50;
+
+if (isOffScreen) {
+  // Ship is off-screen - reset to safe default position
+  this.ship.position.x = defaultX;
+  this.ship.position.y = defaultY;
+}
+
+// Set target to CURRENT position (no automatic movement!)
+this.ship.setTarget({ x: this.ship.position.x, y: this.ship.position.y });
+```
+
+**Was sich ändert:**
+- ✅ **Schiff bleibt wo der Spieler es gelassen hat** (99% der Fälle)
+- ✅ Nur bei Off-Screen (z.B. nach Level-End Fly-Out) wird es zurückgesetzt
+- ✅ Kein "Ziehen" zur Mitte zwischen Runden
+- ✅ Touch-Offset bleibt konsistent über alle Runden
+- ✅ Beide Achsen (X und Y) werden geprüft für maximale Robustheit
+
+**Warum das funktioniert:**
+- Ship-Position ändert sich nicht mehr automatisch
+- Touch-Offset wird immer relativ zur **aktuellen** Ship-Position berechnet
+- Keine unerwarteten Bewegungen = keine inkonsistenten Offsets
+
+---
+
+### Zusätzliche Verbesserungen
+
+#### 1. Touch-ID Tracking hinzugefügt
 
 ```typescript
 const primaryTouchId = useRef<number | null>(null);
 ```
 
-Jetzt wird die ID des primären Touch gespeichert und bei jedem Event überprüft.
+Jetzt wird die ID des primären Touch gespeichert und bei jedem Event überprüft. (Zusätzliche Absicherung gegen Touch-ID-Wechsel)
 
-### 2. Intelligente Offset-Neuberechnung in `handleTouchMove`
+#### 2. Intelligente Offset-Neuberechnung in `handleTouchMove`
 
 ```typescript
 // Check if touch ID changed
@@ -55,9 +141,9 @@ if (touchOffset.current && primaryTouchId.current === touch.identifier) {
 }
 ```
 
-**Vorteil**: Wenn sich die Touch-ID ändert (neuer Finger) oder der Offset fehlt, wird automatisch neu berechnet.
+**Vorteil**: Wenn sich die Touch-ID ändert (neuer Finger) oder der Offset fehlt, wird automatisch neu berechnet. (Zusätzliche Absicherung)
 
-### 3. Robustes Touch-Start Handling
+#### 3. Robustes Touch-Start Handling
 
 ```typescript
 const handleTouchStart = (e: React.TouchEvent<HTMLCanvasElement>) => {
@@ -75,9 +161,9 @@ const handleTouchStart = (e: React.TouchEvent<HTMLCanvasElement>) => {
 };
 ```
 
-**Vorteil**: Explizite Erkennung von neuen Touches mit vollständigem Reset.
+**Vorteil**: Explizite Erkennung von neuen Touches mit vollständigem Reset. (Zusätzliche Absicherung)
 
-### 4. Präzises Touch-End Handling
+#### 4. Präzises Touch-End Handling
 
 ```typescript
 const handleTouchEnd = (e: React.TouchEvent<HTMLCanvasElement>) => {
@@ -106,9 +192,9 @@ const handleTouchEnd = (e: React.TouchEvent<HTMLCanvasElement>) => {
 };
 ```
 
-**Vorteil**: Nur der primäre Touch (erster Finger) wird für Steuerung verwendet. Zweite Finger (zum Schießen) beeinflussen die Steuerung nicht.
+**Vorteil**: Nur der primäre Touch (erster Finger) wird für Steuerung verwendet. Zweite Finger (zum Schießen) beeinflussen die Steuerung nicht. (Zusätzliche Absicherung)
 
-### 5. State-Cleanup zwischen Runden
+#### 5. State-Cleanup zwischen Runden
 
 ```typescript
 const loadRound = useCallback((eng: ShooterEngine, index: number) => {
@@ -121,11 +207,42 @@ const loadRound = useCallback((eng: ShooterEngine, index: number) => {
 }, [...]);
 ```
 
-**Vorteil**: Jede neue Runde startet mit einem sauberen Touch-State. Verhindert, dass Fehler sich über Runden hinweg akkumulieren.
+**Vorteil**: Jede neue Runde startet mit einem sauberen Touch-State. Verhindert, dass Fehler sich über Runden hinweg akkumulieren. (Zusätzliche Absicherung)
 
 ---
 
 ## Änderungen im Code
+
+### Hauptänderung
+
+**Datei**: `src/logic/ShooterEngine.ts` - Methode `loadRound()`
+
+**Vorher:**
+```typescript
+// Always set target to center-bottom for smooth re-centering
+this.ship.setTarget({ x: this.config.screenWidth / 2, y: defaultY });
+```
+
+**Nachher:**
+```typescript
+// Check if ship is off-screen (both X and Y axes)
+const isOffScreen = 
+  this.ship.position.x < -50 || 
+  this.ship.position.x > this.config.screenWidth + 50 ||
+  this.ship.position.y < -50 || 
+  this.ship.position.y > this.config.screenHeight + 50;
+
+if (isOffScreen) {
+  // Ship is off-screen - reset to safe default position
+  this.ship.position.x = defaultX;
+  this.ship.position.y = defaultY;
+}
+
+// Set target to CURRENT position (no automatic movement!)
+this.ship.setTarget({ x: this.ship.position.x, y: this.ship.position.y });
+```
+
+### Zusätzliche Änderungen
 
 **Datei**: `src/components/Game.tsx`
 
@@ -135,7 +252,7 @@ const loadRound = useCallback((eng: ShooterEngine, index: number) => {
 const primaryTouchId = useRef<number | null>(null); // Track primary touch ID
 ```
 
-### Geänderte Funktionen
+### Geänderte Funktionen (zusätzliche Absicherungen)
 
 1. **`handleTouchMove`**: 
    - Touch-ID Tracking
@@ -152,7 +269,7 @@ const primaryTouchId = useRef<number | null>(null); // Track primary touch ID
    - Fallback für vollständigen Reset
    - Touch-ID Cleanup
 
-4. **`loadRound`**:
+4. **`loadRound`** (Game.tsx):
    - Touch-State Cleanup zu Beginn jeder Runde
 
 ---

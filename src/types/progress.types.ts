@@ -77,8 +77,12 @@ export interface GameplaySettings {
   maxDistractors: number;     // 1-10
   animationIntensity: number; // 0-10
   
-  // Context message settings
-  showContextMessages: boolean;
-  pauseOnContextMessages: boolean;
+  // Context message settings (Master + Sub-toggles)
+  showFeedback: boolean;                     // Master toggle
+  showCorrectShot: boolean;                  // ❌ Richtige Wörter abgeschossen (Fehler)
+  showDistractorCollision: boolean;          // 💥 Falsche Wörter eingesammelt (Fehler)
+  showCorrectCollect: boolean;               // ✅ Richtige Wörter eingesammelt (Erfolg)
+  showDistractorShot: boolean;               // 💚 Falsche Wörter abgeschossen (Erfolg)
+  pauseOnContextMessages: boolean;           // Kurz aufblinken vs. Pause
 }
 

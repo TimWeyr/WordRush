@@ -39,8 +39,29 @@ export const ContextPauseOverlay: React.FC<ContextPauseOverlayProps> = ({
   screenHeight = window.innerHeight
 }) => {
   const { showToast } = useToast();
-  const [showContextMessages, setShowContextMessages] = useState(true);
+  
+  // Master toggle
+  const [showFeedback, setShowFeedback] = useState(true);
+  
+  // Sub-toggles (what to show)
+  const [showCorrectShot, setShowCorrectShot] = useState(true);           // ❌ Default
+  const [showDistractorCollision, setShowDistractorCollision] = useState(true); // 💥 Default
+  const [showCorrectCollect, setShowCorrectCollect] = useState(false);     // ✅
+  const [showDistractorShot, setShowDistractorShot] = useState(false);     // 💚
+  
+  // Auto-dismiss after 2 seconds (Default: false = nur per Klick schließen)
   const [pauseOnContextMessages, setPauseOnContextMessages] = useState(false);
+  
+  // Auto-dismiss timer when "Auto weiter" is enabled
+  useEffect(() => {
+    if (pauseOnContextMessages) {
+      const timer = setTimeout(() => {
+        onDismiss();
+      }, 2000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [pauseOnContextMessages, onDismiss]);
   
   // ============================================================================
   // SMART POSITIONING
@@ -94,8 +115,21 @@ export const ContextPauseOverlay: React.FC<ContextPauseOverlayProps> = ({
     const loadSettings = async () => {
       try {
         const settings = await localProgressProvider.getUISettings();
-        setShowContextMessages(settings.gameplaySettings?.showContextMessages ?? true);
-        setPauseOnContextMessages(settings.gameplaySettings?.pauseOnContextMessages ?? false);
+        const gps = settings.gameplaySettings;
+        
+        // Master toggle
+        setShowFeedback(gps?.showFeedback ?? true);
+        
+        // FEHLER: Immer AN bei Spielstart (Reset auf true)
+        setShowCorrectShot(true);  // ❌ Immer AN
+        setShowDistractorCollision(true);  // 💥 Immer AN
+        
+        // ERFOLGE: User-Wahl wird erinnert (persistiert)
+        setShowCorrectCollect(gps?.showCorrectCollect ?? false);  // ✅ Gespeichert
+        setShowDistractorShot(gps?.showDistractorShot ?? false);  // 💚 Gespeichert
+        
+        // Default: Nur per Klick schließen (false), nicht auto-dismiss
+        setPauseOnContextMessages(gps?.pauseOnContextMessages ?? false);
       } catch (error) {
         console.error('Failed to load settings:', error);
       }
@@ -105,8 +139,15 @@ export const ContextPauseOverlay: React.FC<ContextPauseOverlayProps> = ({
   
   // Save settings when changed
   const handleSettingsChange = async (
-    newShowContext?: boolean,
-    newPauseOnContext?: boolean
+    updates: {
+      showFeedback?: boolean;
+      showCorrectShot?: boolean;
+      showDistractorCollision?: boolean;
+      showCorrectCollect?: boolean;
+      showDistractorShot?: boolean;
+      pauseOnContextMessages?: boolean;
+    },
+    toastMessage?: string
   ) => {
     try {
       const settings = await localProgressProvider.getUISettings();
@@ -114,15 +155,19 @@ export const ContextPauseOverlay: React.FC<ContextPauseOverlayProps> = ({
         ...settings,
         gameplaySettings: {
           ...settings.gameplaySettings!,
-          showContextMessages: newShowContext ?? showContextMessages,
-          pauseOnContextMessages: newPauseOnContext ?? pauseOnContextMessages
+          showFeedback: updates.showFeedback ?? showFeedback,
+          showCorrectShot: updates.showCorrectShot ?? showCorrectShot,
+          showDistractorCollision: updates.showDistractorCollision ?? showDistractorCollision,
+          showCorrectCollect: updates.showCorrectCollect ?? showCorrectCollect,
+          showDistractorShot: updates.showDistractorShot ?? showDistractorShot,
+          pauseOnContextMessages: updates.pauseOnContextMessages ?? pauseOnContextMessages
         }
       };
       await localProgressProvider.saveUISettings(updatedSettings);
       
-      // Show toast for "show context" deactivation
-      if (newShowContext === false) {
-        showToast('💡 Context-Meldungen deaktiviert. In Settings wieder anschalten!', 'info', 4000);
+      // Show toast if provided
+      if (toastMessage) {
+        showToast(toastMessage, 'info', 3000);
       }
     } catch (error) {
       console.error('Failed to save settings:', error);
@@ -217,40 +262,147 @@ export const ContextPauseOverlay: React.FC<ContextPauseOverlayProps> = ({
           </div>
         )}
         
-        {/* Context */}
-        <div className="context-text">
-          📖 {highlightWordInContext(data.context, data.word)}
-        </div>
+        {/* Context (only show if not empty) */}
+        {data.context && data.context.trim() !== '' && (
+          <div className="context-text">
+            📖 {highlightWordInContext(data.context, data.word)}
+          </div>
+        )}
         
         {/* Quick Settings */}
         <div className="context-quick-settings">
-          <div className="setting-toggle">
+          {/* Master Toggle */}
+          <div className="setting-toggle master-toggle">
             <label>
               <input
                 type="checkbox"
-                checked={showContextMessages}
+                checked={showFeedback}
                 onChange={(e) => {
                   const newValue = e.target.checked;
-                  setShowContextMessages(newValue);
-                  handleSettingsChange(newValue, undefined);
+                  setShowFeedback(newValue);
+                  
+                  if (newValue) {
+                    // Activate master: Enable top 2 (errors)
+                    setShowCorrectShot(true);
+                    setShowDistractorCollision(true);
+                    handleSettingsChange({ 
+                      showFeedback: true, 
+                      showCorrectShot: true, 
+                      showDistractorCollision: true 
+                    });
+                  } else {
+                    // Deactivate master: Disable all sub-toggles
+                    setShowCorrectShot(false);
+                    setShowDistractorCollision(false);
+                    setShowCorrectCollect(false);
+                    setShowDistractorShot(false);
+                    handleSettingsChange({ 
+                      showFeedback: false, 
+                      showCorrectShot: false, 
+                      showDistractorCollision: false,
+                      showCorrectCollect: false,
+                      showDistractorShot: false
+                    }, 'Alle Meldungen ausgeschaltet');
+                  }
                 }}
               />
-              <span>Meldung ausschalten</span>
+              <span>Feedback anzeigen</span>
             </label>
           </div>
           
+          {/* Sub-Toggles (only visible if master is active) */}
+          {showFeedback && (
+            <div className="sub-toggles">
+              <div className="setting-toggle sub-toggle">
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={showCorrectShot}
+                    onChange={(e) => {
+                      const newValue = e.target.checked;
+                      setShowCorrectShot(newValue);
+                      handleSettingsChange(
+                        { showCorrectShot: newValue },
+                        newValue ? '❌ Zeige wenn Lösungen abgeschossen werden' : undefined
+                      );
+                    }}
+                  />
+                  <span>Richtige Wörter abgeschossen ❌</span>
+                </label>
+              </div>
+              
+              <div className="setting-toggle sub-toggle">
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={showDistractorCollision}
+                    onChange={(e) => {
+                      const newValue = e.target.checked;
+                      setShowDistractorCollision(newValue);
+                      handleSettingsChange(
+                        { showDistractorCollision: newValue },
+                        newValue ? '💥 Zeige wenn Ablenker kollidieren' : undefined
+                      );
+                    }}
+                  />
+                  <span>Falsche Wörter eingesammelt 💥</span>
+                </label>
+              </div>
+              
+              <div className="setting-toggle sub-toggle">
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={showCorrectCollect}
+                    onChange={(e) => {
+                      const newValue = e.target.checked;
+                      setShowCorrectCollect(newValue);
+                      handleSettingsChange(
+                        { showCorrectCollect: newValue },
+                        newValue ? '✅ Zeige wenn Lösungen gesammelt werden' : undefined
+                      );
+                    }}
+                  />
+                  <span>Richtige Wörter eingesammelt ✅</span>
+                </label>
+              </div>
+              
+              <div className="setting-toggle sub-toggle">
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={showDistractorShot}
+                    onChange={(e) => {
+                      const newValue = e.target.checked;
+                      setShowDistractorShot(newValue);
+                      handleSettingsChange(
+                        { showDistractorShot: newValue },
+                        newValue ? '💚 Zeige wenn Ablenker eliminiert werden' : undefined
+                      );
+                    }}
+                  />
+                  <span>Falsche Wörter abgeschossen 💚</span>
+                </label>
+              </div>
+            </div>
+          )}
+          
+          {/* How to show */}
           <div className="setting-toggle">
             <label>
               <input
                 type="checkbox"
-                checked={!pauseOnContextMessages}
+                checked={pauseOnContextMessages}
                 onChange={(e) => {
-                  const newValue = !e.target.checked;
+                  const newValue = e.target.checked;
                   setPauseOnContextMessages(newValue);
-                  handleSettingsChange(undefined, newValue);
+                  handleSettingsChange(
+                    { pauseOnContextMessages: newValue },
+                    newValue ? 'Nach 2 Sekunden automatisch weiter' : 'Nur per Klick schließen'
+                  );
                 }}
               />
-              <span>Meldung blinkt nur kurz</span>
+              <span>⏱️ Nach 2 Sek. automatisch weiter</span>
             </label>
           </div>
         </div>

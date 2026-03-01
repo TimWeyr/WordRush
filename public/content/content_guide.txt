@@ -111,7 +111,7 @@ Use PIPE (|) to separate fields
  - warum der distractor falsch ist bzw. was richtig wäre
  - wie sich der correct zur base verhält bzw warum er richtig ist.
  - was der context der base ist, ordnet die base in das Feld ein
-- **Maximal 6 Wörter**
+- **Maximal 2-4 Sätze**
 - Symbolsprache oder Emojis erwünscht
 - Keine Nebensätze
 

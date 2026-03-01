@@ -1,0 +1,229 @@
+# Onboarding-Items für WordRush
+
+b. Hier steht immer was
+c. Mich kann man einsammeln
+c. Flieg mit dem Schiff zu mir
+l.1
+
+b. Hier steht immer was
+c. einsammeln
+b. Du kannst Schießen
+b. Maustaste oder Feuertaste
+b. Feuertaste rechts unten
+l.2
+
+b. Hier steht immer was
+c. Sammel mich
+b. Maustaste oder Feuertaste
+b. Feuertaste rechts unten
+b. Schieß mich ab
+l.3
+
+b. 
+
+
+
+b. Hier steht immer was
+c. Sammel mich ein
+d. Schieß mich ab
+
+# Item: Was ist die Base?
+b. Was ist das Wort unten am Bildschirm? | Erklärung der Base
+c. Base | Das Konzept, das du gerade lernst - es steht unten am Bildschirm und zeigt dir, worum es geht
+c. Base Konzept | Das Wort unten ist die "Base" - das ist das Hauptthema, zu dem du passende Begriffe sammeln musst
+d. Correct | Objekttyp | Base ist das Hauptthema unten, Correct sind die Objekte, die du sammeln musst
+d. Distractor | Objekttyp | Base ist das Hauptthema unten, Distractor sind die Objekte, die du abschießen musst
+s. WordRush Spielanleitung | Base-Erklärung
+t. onboarding | spielmechanik | base
+l. 1
+
+# Item: Was sind Correct-Objekte?
+b. Welche Objekte muss ich einsammeln? | Erklärung der Correct-Objekte
+c. Correct | Objekte, die zur Base passen - du musst sie mit deinem Schiff einsammeln
+c. Correct sammeln | Fliege mit deinem Schiff in die grünen Objekte (Lernmodus) oder farbigen Objekte (Shooter Mode) hinein, um sie zu sammeln
+d. Distractor | Objekttyp | Correct = sammeln, Distractor = abschießen. Correct passen zur Base, Distractor nicht
+d. Base | Konzept | Base ist das Thema unten, Correct sind die passenden Objekte, die du sammeln musst
+s. WordRush Spielanleitung | Correct-Objekte
+t. onboarding | spielmechanik | correct
+l. 1
+
+# Item: Was sind Distractor-Objekte?
+b. Welche Objekte muss ich abschießen? | Erklärung der Distractor-Objekte
+c. Distractor | Objekte, die NICHT zur Base passen - du musst sie mit dem Laser abschießen, bevor sie dich treffen
+c. Distractor abschießen | Klicke auf die roten Objekte (Lernmodus) oder farbigen Objekte (Shooter Mode), um sie mit dem Laser zu zerstören
+d. Correct | Objekttyp | Distractor = abschießen, Correct = sammeln. Distractor passen nicht zur Base, Correct schon
+d. Base | Konzept | Base ist das Thema unten, Distractor sind die falschen Objekte, die du abschießen musst
+s. WordRush Spielanleitung | Distractor-Objekte
+t. onboarding | spielmechanik | distractor
+l. 1
+
+# Item: Wie bewege ich das Schiff?
+b. Wie steuere ich mein Schiff? | Erklärung der Steuerung
+c. Mausbewegung | Bewege die Maus - dein Schiff folgt der Mausposition automatisch
+c. Touch-Bewegung | Auf Tablet/Smartphone: Berühre den Bildschirm mit einem Finger - das Schiff bewegt sich zur Berührungsstelle
+d. Schießen | Aktion | Bewegung = Schiff steuern, Schießen = Laser abfeuern. Bewegung mit Maus/Touch, Schießen mit Klick/Touch
+d. Pause | Spielzustand | Bewegung = Schiff steuern, Pause = Spiel anhalten. Bewegung ist aktive Steuerung, Pause ist Spielzustand
+s. WordRush Spielanleitung | Steuerung
+t. onboarding | steuerung | bewegung
+l. 1
+
+# Item: Wie schieße ich?
+b. Wie feuere ich den Laser ab? | Erklärung des Schießens
+c. Linksklick | Klicke mit der linken Maustaste - der Laser schießt in Richtung Mauszeiger
+c. Touch-Schießen | Auf Tablet/Smartphone: Berühre den Bildschirm mit einem zweiten Finger - der Laser schießt zur zweiten Berührungsstelle
+d. Bewegung | Aktion | Schießen = Laser abfeuern, Bewegung = Schiff steuern. Schießen mit Klick/Touch, Bewegung mit Maus/Touch
+d. Sammeln | Aktion | Schießen = Laser abfeuern, Sammeln = Schiff kollidiert mit Objekt. Schießen zerstört Distractors, Sammeln sammelt Corrects
+s. WordRush Spielanleitung | Schießen
+t. onboarding | steuerung | schießen
+l. 1
+
+# Item: Was ist der Lernmodus?
+b. Was bedeutet der Lernmodus? | Erklärung des Lernmodus
+c. Lernmodus | Einfacher Modus: Grüne Objekte = Correct (sammeln), Rote Objekte = Distractor (abschießen)
+c. Lernmodus Punkte | Im Lernmodus bekommst du nur 10% der Punkte - hier lernst du erst mal, welche Objekte richtig sind
+d. Shooter Mode | Spielmodus | Lernmodus = grün/rot (einfach), Shooter Mode = Theme-Farben (schwerer). Lernmodus ist zum Lernen, Shooter Mode ist die Herausforderung
+d. Base | Konzept | Lernmodus ist ein Spielmodus, Base ist das Thema unten. Lernmodus hilft dir zu lernen, Base zeigt dir das Thema
+s. WordRush Spielanleitung | Lernmodus
+t. onboarding | spielmodus | lernmodus
+l. 1
+
+# Item: Was ist der Shooter Mode?
+b. Was bedeutet der Shooter Mode? | Erklärung des Shooter Mode
+c. Shooter Mode | Schwerer Modus: Alle Objekte haben Theme-Farben - du musst selbst erkennen, was zur Base passt
+c. Shooter Mode Punkte | Im Shooter Mode bekommst du 100% der Punkte - hier musst du die Objekte anhand ihrer Bedeutung erkennen
+d. Lernmodus | Spielmodus | Shooter Mode = Theme-Farben (schwerer), Lernmodus = grün/rot (einfach). Shooter Mode ist die Herausforderung, Lernmodus ist zum Lernen
+d. Base | Konzept | Shooter Mode ist ein Spielmodus, Base ist das Thema unten. Shooter Mode ist die Herausforderung, Base zeigt dir das Thema
+s. WordRush Spielanleitung | Shooter Mode
+t. onboarding | spielmodus | shooter_mode
+l. 1
+
+# Item: Was passiert wenn ich ein Correct abschieße?
+b. Was passiert, wenn ich versehentlich ein Correct-Objekt abschieße? | Erklärung des Fehlers
+c. Punkteverlust | Du verlierst Punkte, wenn du ein Correct-Objekt abschießt - es sollte gesammelt werden, nicht zerstört
+c. Context-Anzeige | Es erscheint eine kurze Erklärung (Context), warum das Objekt eigentlich richtig war und gesammelt werden sollte
+d. Distractor treffen | Objekttyp | Correct abschießen = Fehler (Punkteverlust), Distractor abschießen = richtig (Punktegewinn). Correct sollen gesammelt werden, Distractors sollen abgeschossen werden
+d. Correct sammeln | Aktion | Correct abschießen = Fehler, Correct sammeln = richtig. Correct sollen mit dem Schiff gesammelt werden, nicht mit dem Laser zerstört
+s. WordRush Spielanleitung | Fehler beim Schießen
+t. onboarding | spielmechanik | fehler
+l. 1
+
+# Item: Was passiert wenn ein Distractor mich trifft?
+b. Was passiert, wenn ein Distractor-Objekt mein Schiff trifft? | Erklärung des Schadens
+c. Gesundheitsschaden | Du verlierst Gesundheit (HP) - wenn deine Gesundheit auf 0 fällt, ist das Spiel vorbei
+c. Punkteverlust | Du verlierst auch Punkte, wenn ein Distractor dich trifft - du solltest sie abschießen, bevor sie dich erreichen
+d. Correct treffen | Objekttyp | Distractor treffen = Schaden, Correct treffen = sammeln. Distractors schaden dir, Corrects geben dir Punkte
+d. Distractor abschießen | Aktion | Distractor treffen = Schaden, Distractor abschießen = Punkte. Distractors müssen abgeschossen werden, bevor sie dich treffen
+s. WordRush Spielanleitung | Gesundheitsschaden
+t. onboarding | spielmechanik | schaden
+l. 1
+
+# Item: Was ist der Collection Order?
+b. Was bedeuten die Zahlen auf den Correct-Objekten? | Erklärung der Collection Order
+c. Collection Order | Die Zahlen (1., 2., 3.) zeigen dir die richtige Reihenfolge, in der du die Correct-Objekte sammeln solltest
+c. Bonus | Wenn du die Correct-Objekte in der richtigen Reihenfolge sammelst, bekommst du doppelte Punkte als Bonus
+d. Punkte | Scoring | Collection Order = Reihenfolge, Punkte = Belohnung. Collection Order zeigt die Reihenfolge, richtige Reihenfolge gibt Bonus-Punkte
+d. Correct | Objekttyp | Collection Order = Reihenfolge auf Correct-Objekten, Correct = Objekttyp. Collection Order ist eine Eigenschaft von Correct-Objekten
+s. WordRush Spielanleitung | Collection Order
+t. onboarding | spielmechanik | collection_order
+l. 1
+
+# Item: Was ist ein Streak?
+b. Was ist ein Streak? | Erklärung des Streak-Systems
+c. Streak | Wenn du mehrere Correct-Objekte hintereinander richtig sammelst, ohne Fehler, baust du einen Streak auf
+c. Streak Bonus | Bei 5 Streaks in Folge aktivierst du automatisch einen Schild, der einen Treffer absorbiert
+d. Punkte | Scoring | Streak = Serie, Punkte = Belohnung. Streak ist eine Serie von Erfolgen, Punkte sind die Belohnung
+d. Schild | Power-up | Streak = Serie, Schild = Schutz. Streak aktiviert den Schild, Schild schützt vor einem Treffer
+s. WordRush Spielanleitung | Streak-System
+t. onboarding | spielmechanik | streak
+l. 1
+
+# Item: Was ist der Context?
+b. Was ist der Text, der kurz erscheint, wenn ich ein Objekt berühre? | Erklärung des Context
+c. Context | Eine kurze Erklärung, die erscheint, wenn du ein Objekt sammelst oder abschießt - sie erklärt, warum es richtig oder falsch war
+c. Context Lernen | Der Context hilft dir zu verstehen, warum ein Objekt zur Base passt oder nicht - so lernst du die Zusammenhänge
+d. Base | Konzept | Context = Erklärung, Base = Thema. Context erklärt die Objekte, Base ist das Hauptthema
+d. Redirect | Hinweis | Context = Erklärung bei Fehler, Redirect = Hinweis wohin es gehört. Context erklärt den Fehler, Redirect zeigt die richtige Kategorie
+s. WordRush Spielanleitung | Context
+t. onboarding | spielmechanik | context
+l. 1
+
+# Item: Was ist der Redirect?
+b. Was bedeutet "Redirect" bei Distractor-Objekten? | Erklärung des Redirect
+c. Redirect | Ein Hinweis, der erscheint, wenn du einen Distractor abschießt - er zeigt dir, zu welcher Kategorie das Objekt eigentlich gehört
+c. Redirect Lernen | Der Redirect hilft dir zu verstehen, dass das Objekt zwar falsch für diese Base ist, aber zu einer anderen Kategorie gehört
+d. Context | Erklärung | Redirect = Hinweis wohin es gehört, Context = Erklärung warum es falsch war. Redirect zeigt die richtige Kategorie, Context erklärt den Fehler
+d. Distractor | Objekttyp | Redirect = Hinweis auf Distractors, Distractor = Objekttyp. Redirect erscheint nur bei Distractors, nicht bei Corrects
+s. WordRush Spielanleitung | Redirect
+t. onboarding | spielmechanik | redirect
+l. 1
+
+# Item: Wie wechsle ich zwischen Universen?
+b. Wie wähle ich ein anderes Thema aus? | Erklärung der Navigation
+c. Galaxy Map | Auf der Galaxy Map siehst du alle verfügbaren Universen - klicke auf ein Universum, um seine Themen zu sehen
+c. Navigation | Klicke auf Universum → Theme → Chapter, um ein neues Thema zu wählen und zu spielen
+d. Spiel | Zustand | Navigation = Auswahl, Spiel = Aktivität. Navigation ist die Auswahl, Spiel ist das eigentliche Spielen
+d. Base | Konzept | Navigation = Auswahl des Themas, Base = Thema im Spiel. Navigation wählt das Thema, Base zeigt es im Spiel
+s. WordRush Spielanleitung | Navigation
+t. onboarding | navigation | universum
+l. 1
+
+# Item: Was passiert am Ende einer Runde?
+b. Was passiert, wenn ich alle Objekte gesammelt oder abgeschossen habe? | Erklärung des Rundenendes
+c. Nächste Runde | Eine neue Runde beginnt mit einem neuen Base-Wort - die Objekte passen jetzt zu diesem neuen Base
+c. Fortschritt | Dein Fortschritt wird gespeichert - du kannst später an dieser Stelle weitermachen
+d. Game Over | Spielzustand | Rundenende = nächste Runde, Game Over = Spiel vorbei. Rundenende ist normal, Game Over ist bei Health = 0
+d. Base | Konzept | Rundenende = Übergang, Base = Thema. Rundenende führt zum nächsten Base, Base ist das Thema jeder Runde
+s. WordRush Spielanleitung | Rundenende
+t. onboarding | spielmechanik | rundenende
+l. 1
+
+# Item: Was passiert bei Game Over?
+b. Was passiert, wenn meine Gesundheit auf 0 fällt? | Erklärung des Game Over
+c. Game Over | Das Spiel endet - du wirst zurück zur Galaxy Map gebracht, aber dein bisheriger Fortschritt bleibt gespeichert
+c. Fortschritt gespeichert | Alle Objekte, die du bereits gesammelt hast, bleiben erhalten - du kannst später an dieser Stelle weitermachen
+d. Rundenende | Spielzustand | Game Over = Spiel vorbei, Rundenende = nächste Runde. Game Over ist bei Health = 0, Rundenende ist normal
+d. Gesundheit | Mechanik | Game Over = bei Health 0, Gesundheit = Lebenspunkte. Game Over tritt ein, wenn die Gesundheit auf 0 fällt
+s. WordRush Spielanleitung | Game Over
+t. onboarding | spielmechanik | game_over
+l. 1
+
+# Item: Wie pausiere ich das Spiel?
+b. Wie kann ich das Spiel pausieren? | Erklärung der Pause
+c. Automatische Pause | Das Spiel pausiert automatisch, wenn du das Fenster verlässt oder den Tab wechselst
+c. Manuelle Pause | Klicke auf den Pause-Button oder drücke ESC, um das Spiel zu pausieren und später fortzusetzen
+d. Game Over | Spielzustand | Pause = anhalten, Game Over = Spiel vorbei. Pause ist temporär, Game Over ist endgültig
+d. Beenden | Aktion | Pause = anhalten, Beenden = verlassen. Pause ist temporär, Beenden führt zurück zur Galaxy Map
+s. WordRush Spielanleitung | Pause
+t. onboarding | spielmechanik | pause
+l. 1
+
+# Item: Was sind Punkte?
+b. Wofür bekomme ich Punkte? | Erklärung des Scoring
+c. Punkte sammeln | Du bekommst Punkte, wenn du Correct-Objekte sammelst oder Distractor-Objekte abschießt
+c. Punkte verlieren | Du verlierst Punkte, wenn du Correct-Objekte abschießt oder Distractor-Objekte dich treffen
+d. Gesundheit | Mechanik | Punkte = Belohnung, Gesundheit = Lebenspunkte. Punkte sind die Belohnung, Gesundheit ist dein Überleben
+d. Streak | Mechanik | Punkte = Belohnung, Streak = Serie. Punkte sind die Belohnung, Streak ist eine Serie von Erfolgen
+s. WordRush Spielanleitung | Scoring
+t. onboarding | spielmechanik | punkte
+l. 1
+
+# Item: Was ist der Schild?
+b. Was ist der Schild, der manchmal um mein Schiff erscheint? | Erklärung des Schilds
+c. Schild | Ein Schutz, der bei 5 Streaks in Folge aktiviert wird - er absorbiert einen Treffer, ohne dass du Gesundheit verlierst
+c. Schild Aktivierung | Sammle 5 Correct-Objekte hintereinander richtig, ohne Fehler - dann wird der Schild automatisch aktiviert
+d. Streak | Mechanik | Schild = Schutz, Streak = Serie. Schild wird durch Streak aktiviert, Streak ist die Serie von Erfolgen
+d. Gesundheit | Mechanik | Schild = Schutz, Gesundheit = Lebenspunkte. Schild schützt vor einem Treffer, Gesundheit ist dein Überleben
+s. WordRush Spielanleitung | Schild
+t. onboarding | spielmechanik | schild
+l. 1
+
+# Item: Wie funktioniert der automatische Modus-Wechsel?
+b. Warum wechselt das Spiel automatisch vom Lernmodus zum Shooter Mode? | Erklärung des automatischen Wechsels
+c. Automatischer Wechsel | Wenn du eine Runde im Lernmodus erfolgreich abschließt, wechselt das Spiel automatisch zum Shooter Mode
+c. Lernerfolg | Der automatische Wechsel zeigt, dass du gelernt hast - jetzt kannst du die Herausforderung im Shooter Mode meistern
+d. Manueller Wechsel | Spielmodus | Automatischer Wechsel = durch Lernerfolg, Manueller Wechsel = durch Auswahl. Automatischer Wechsel ist durch Erfolg, manueller Wechsel ist durch Auswahl
+d. Lernmodus | Spielmodus | Automatischer Wechsel = zum Shooter Mode, Lernmodus = Startmodus. Automatischer Wechsel erfolgt nach Erfolg im Lernmodus
+s. WordRush Spielanleitung | Automatischer Modus-Wechsel
+t. onboarding | spielmodus | automatischer_wechsel
+l. 1
+

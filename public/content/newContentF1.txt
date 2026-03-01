@@ -1,0 +1,125 @@
+Welche Aussage zum Alkoholdelir trifft zu?
+
+ A) Ein Delirium tremens kann auch während fortgesetzten Trinkens auftreten
+ B) Ein Vorbote des Delirium tremens ist vermehrter Schlaf
+
+Meist treten Schlafstörungen auf. (Wechsel des Tag-Nacht-Rhythmus)
+
+ C) Ein Alkoholentzugsdelir tritt frühestens 5 Tage nach Beginn des Entzugs auf
+
+Es kann auch schneller auftreten.
+
+ D) Typisch ist die Symptomtrias: Bewusstseinsklarheit, ungestörte Orientierung und akustische Halluzinationen
+
+Diese Symptome passen zu einer organischen Halluzinose. Beim Delir ist das Bewusstsein getrübt, die Orientierung gestört und die Halluzinationen sind optisch.
+
+ E) Bei einem Delir treten folgende vegetativen Störungen auf: Hypotonie, Bradykardie, Frösteln
+
+Es zeigt sich Tachykardie, Zittern und Schwitzen.
+
+
+Welche der folgenden Aussagen sind im Kontext einer Abhängigkeit von Benzodiazepinen richtig?
+
+Wählen Sie zwei Antworten!
+
+2 richtige Antworten
+ A) Beim Absetzen von Benzodiazepinen kann es zu körperlichen und psychischen Entzugssymptomen kommen
+ B) Ein Delir tritt ausschließlich bei vollständigem Absetzen von Benzodiazepinen auf
+
+Ein Delir kann auch bei teilweisem Absetzen von Benzodiazepinen oder bei fortgesetzter Einnahme entstehen - außerdem natürlich auch durch Alkoholentzug, Alkoholmissbrauch und bei organischen Ursachen.
+
+ C) Beim Absetzen von Benzodiazepinen kommt es ausschließlich zu körperlichen Entzugssymptomen
+
+Natürlich zeigen sich auch psychische Entzugssymptome wie zum Beispiel Angst, depressive Verstimmungen und Suizidalität.
+
+ D) Das Entzugsdelir und epileptische Anfälle sind potentiell lebensbedrohliche Komplikationen beim Benzodiazepinentzug
+ E) Eine ambulante Entzugsbehandlung ist bei Benzodiazepinen nicht möglich
+
+Benzodiazepine können auch ambulant abgesetzt werden.
+
+
+
+# Item: Alkoholdelir - Auftreten
+b. Alkoholdelir - Auftreten | Wann kann ein Delirium tremens auftreten?
+c. Während fortgesetzten Trinkens | Ein Delirium tremens kann auch während fortgesetzten Trinkens auftreten, nicht nur im Entzug | 1 | 1
+c. Zeitpunkt variabel | Alkoholentzugsdelir kann zu unterschiedlichen Zeitpunkten auftreten, nicht erst nach 5 Tagen | 2 | 1
+d. Vermehrter Schlaf als Vorbote | Schlafstörungen | Ein Vorbote des Delirium tremens ist vermehrter Schlaf. Zur Abgrenzung: Meist treten Schlafstörungen auf (Wechsel des Tag-Nacht-Rhythmus), nicht vermehrter Schlaf. Schlafstörungen sind typisch, vermehrter Schlaf ist untypisch.
+d. Frühestens 5 Tage nach Entzug | Zeitpunkt | Ein Alkoholentzugsdelir tritt frühestens 5 Tage nach Beginn des Entzugs auf. Zur Abgrenzung: Es kann auch schneller auftreten, nicht erst nach 5 Tagen. Der Zeitpunkt ist variabel, kann früher auftreten.
+s. ICD-10-GM 2025 | F10.4 Entzugsdelir
+t. f10 | alkohol | delir | entzug
+l. 2
+
+# Item: Alkoholdelir - Symptome
+b. Alkoholdelir - Symptome | Welche Symptome sind typisch für ein Alkoholdelir?
+c. Bewusstseinstrübung | Beim Delir ist das Bewusstsein getrübt, nicht klar | 1 | 1
+c. Gestörte Orientierung | Beim Delir ist die Orientierung gestört, nicht ungestört | 2 | 1
+c. Optische Halluzinationen | Beim Delir sind die Halluzinationen optisch, nicht akustisch | 3 | 1
+c. Tachykardie | Bei einem Delir treten Tachykardie, Zittern und Schwitzen auf | 4 | 1
+c. Schlafstörungen | Meist treten Schlafstörungen auf (Wechsel des Tag-Nacht-Rhythmus) | 5 | 1
+d. Bewusstseinsklarheit | Bewusstsein | Typisch ist Bewusstseinsklarheit beim Delir. Zur Abgrenzung: Diese Symptome passen zu einer organischen Halluzinose. Beim Delir ist das Bewusstsein getrübt, nicht klar. Bewusstseinsklarheit ist untypisch für Delir, typisch für organische Halluzinose.
+d. Ungestörte Orientierung | Orientierung | Typisch ist ungestörte Orientierung beim Delir. Zur Abgrenzung: Beim Delir ist die Orientierung gestört, nicht ungestört. Ungestörte Orientierung ist untypisch für Delir.
+d. Akustische Halluzinationen | Halluzinationen | Typisch sind akustische Halluzinationen beim Delir. Zur Abgrenzung: Diese Symptome passen zu einer organischen Halluzinose. Beim Delir sind die Halluzinationen optisch, nicht akustisch. Akustische Halluzinationen sind untypisch für Delir, typisch für organische Halluzinose.
+d. Hypotonie | Vegetative Störungen | Bei einem Delir treten Hypotonie, Bradykardie, Frösteln auf. Zur Abgrenzung: Es zeigt sich Tachykardie, Zittern und Schwitzen, nicht Hypotonie/Bradykardie/Frösteln. Hypotonie/Bradykardie sind untypisch, Tachykardie ist typisch.
+d. Bradykardie | Herzfrequenz | Bei einem Delir tritt Bradykardie auf. Zur Abgrenzung: Es zeigt sich Tachykardie, nicht Bradykardie. Bradykardie ist untypisch für Delir, Tachykardie ist typisch.
+s. ICD-10-GM 2025 | F10.4 Entzugsdelir
+t. f10 | alkohol | delir | symptome
+l. 2
+
+# Item: Benzodiazepin-Abhängigkeit - Entzug
+b. Benzodiazepin-Abhängigkeit - Entzug | Welche Aussagen zum Benzodiazepin-Entzug sind richtig?
+c. Körperliche und psychische Entzugssymptome | Beim Absetzen von Benzodiazepinen kann es zu körperlichen und psychischen Entzugssymptomen kommen | 1 | 1
+c. Lebensbedrohliche Komplikationen | Das Entzugsdelir und epileptische Anfälle sind potentiell lebensbedrohliche Komplikationen beim Benzodiazepinentzug | 2 | 1
+c. Psychische Entzugssymptome | Beim Absetzen zeigen sich psychische Entzugssymptome wie Angst, depressive Verstimmungen und Suizidalität | 3 | 1
+d. Delir nur bei vollständigem Absetzen | Delir | Ein Delir tritt ausschließlich bei vollständigem Absetzen von Benzodiazepinen auf. Zur Abgrenzung: Ein Delir kann auch bei teilweisem Absetzen von Benzodiazepinen oder bei fortgesetzter Einnahme entstehen - außerdem natürlich auch durch Alkoholentzug, Alkoholmissbrauch und bei organischen Ursachen. Delir kann auch bei teilweisem Absetzen oder fortgesetzter Einnahme auftreten.
+d. Ausschließlich körperliche Symptome | Entzugssymptome | Beim Absetzen von Benzodiazepinen kommt es ausschließlich zu körperlichen Entzugssymptomen. Zur Abgrenzung: Natürlich zeigen sich auch psychische Entzugssymptome wie zum Beispiel Angst, depressive Verstimmungen und Suizidalität. Es treten sowohl körperliche als auch psychische Entzugssymptome auf.
+d. Ambulante Behandlung nicht möglich | Behandlung | Eine ambulante Entzugsbehandlung ist bei Benzodiazepinen nicht möglich. Zur Abgrenzung: Benzodiazepine können auch ambulant abgesetzt werden. Ambulante Entzugsbehandlung ist möglich, nicht ausgeschlossen.
+s. ICD-10-GM 2025 | F13 Psychische und Verhaltensstörungen durch Sedativa oder Hypnotika
+t. f13 | benzodiazepine | entzug | abhängigkeit
+l. 2
+
+
+b. pathologscher Rausch
+c. Aprupt
+c. psychotisch
+c. geringe Menge
+c. Dämmerzustand
+c. Angst
+c. Unruhe
+c. Verhaltensstörungen
+c. Aggresion
+c. Orientierungsstörung
+c. Bewusstseinsstörung
+c. Gedächtnisstörung
+c. Illusionen
+c. Halluzination
+c. Terminalschlaf
+c. Amnesie
+
+
+
+b. F1x.0 akuter Rausch
+c. Störung des Bewusstseins
+c. Kognition↓
+c. Veränderung des Affekt 
+c. Änderung des Verhaltens
+ 
+
+b. Diagnostische Kriterien für aktuen Rausch (F1x.0)
+c. Kürzlicher Konsum|Es muss ein deutlicher Nachweis des kürzlich erfolgen Konsums in ausreichender Menge vorhanden sein.
+c. Intoxikationsanzeichen|Die Anzeichen der Intoxikation müssen  zur Substanz passen und ausreichend start sein um klinisch relevante Veränderungen hervorzurufen. 
+c. Körperliche Krankheit|es ist zu prüfen ob die Anzeichen des akuten Rausches auch durch eine körperliche Krankheit ausgelöst worden sein können.
+
+b.F1: was ist an der fünften Stelle?
+c. ohne Komplikation|F1x.00 
+c. Verletzungen |F1x.01 Verletzungen oder andere körperliche Schäden
+c. Komplikationen|F1x.02 mit anderen Komplikationen wie z.b. die Aspiration von Kotze
+c. Delir|F1x.03 saugefährlich, TOdesrate ergänzen
+c.  Wahrnehmungsstörungen |F1x.04
+c. Koma|F1x.05
+c. Krämpfe|F1x.06
+c. path.Rausch|F1x.07 (nur bei Alkohol)
+d. Genusskonsum|nicht im icd10|
+d. Steckis|Miosis|Kann auftreten wenn der Parasympathikus aktiviert wird und kommt bei aktuer Opiadintoxikation (F11.0) vor, wird dann aber Miosis genannt und taucht nicht in der 5. Stelle auf.
+d. Gangunsicherheit|nicht da kodiert|Gangunsicherheit ist eine Anzeichen z.b. für Alkoholintoxikation F10.0 aber nicht an der 5. Stelle im ICD 10 kodiert 
+D. Mundtrockenheit|Pappmaul| Pappmaul, auch Xerostomie genannt, diagnostisches Kriterium einer 12.0, weil Tetrahydrocannabinol (THC) an Cannabinoid.Rezeptoren bindet, was die Speichelproduktion reduziert.
+d. Tachykardie|nicht da kodiert|Tachykardie kommt bei Stimulanzien und Halluzinogenen auf  durch erhöhte  Aktivität des sympathischen Nervensystems  

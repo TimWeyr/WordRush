@@ -456,8 +456,13 @@ class JSONLoader {
       if (filterPublished) {
         items = allItems.filter(item => item.published !== false); // Default to true if not specified
       }
+
+      // Filter by game: only include rounds that belong to WordRush ('w' or 'sw')
+      const beforeGameFilter = items.length;
+      items = items.filter(item => !item.game || item.game.includes('w'));
+      const gameFiltered = beforeGameFilter - items.length;
       
-      console.log(`✅ Loaded ${items.length} total items from chapter ${chapterId} (${allItems.length - items.length} unpublished filtered out)`);
+      console.log(`✅ Loaded ${items.length} total items from chapter ${chapterId} (${allItems.length - items.length} unpublished filtered out${gameFiltered > 0 ? `, ${gameFiltered} non-WordRush filtered out` : ''})`);
       
       this.cache.set(cacheKey, items);
       return items;
@@ -506,6 +511,14 @@ class JSONLoader {
         if (filteredCount > 0) {
           console.log(`   Filtered out ${filteredCount} unpublished items`);
         }
+      }
+
+      // 5. Filter by game: only include rounds that belong to WordRush ('w' or 'sw')
+      const beforeGameFilter = transformedItems.length;
+      transformedItems = transformedItems.filter(item => !item.game || item.game.includes('w'));
+      const gameFiltered = beforeGameFilter - transformedItems.length;
+      if (gameFiltered > 0) {
+        console.log(`   Filtered out ${gameFiltered} non-WordRush items (game='s')`);
       }
       
       console.log(`✅ [JSONLoader] Loaded ${transformedItems.length} items from Supabase for chapter ${chapterId}`);

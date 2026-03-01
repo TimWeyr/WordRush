@@ -25,6 +25,24 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
   const [selectedItems, setSelectedItems] = useState<Set<string>>(new Set());
   const [savingItems, setSavingItems] = useState<Set<string>>(new Set());
   const [deletingItems, setDeletingItems] = useState<Set<string>>(new Set());
+  
+  // View mode: 'compact' (all entries in one row) or 'expanded' (one entry per row)
+  const [viewMode, setViewMode] = useState<'compact' | 'expanded'>(() => {
+    const saved = localStorage.getItem('tableViewMode');
+    console.log('🔍 [TableView] Loading viewMode from localStorage:', saved);
+    return (saved === 'expanded' || saved === 'compact') ? saved : 'compact';
+  });
+
+  // Save view mode to localStorage when it changes
+  const handleViewModeToggle = () => {
+    const newMode = viewMode === 'compact' ? 'expanded' : 'compact';
+    console.log('🔄 [TableView] Switching viewMode:', viewMode, '→', newMode);
+    setViewMode(newMode);
+    localStorage.setItem('tableViewMode', newMode);
+  };
+
+  // Debug log on render
+  console.log('🎨 [TableView] Current viewMode:', viewMode);
 
   // Helper function to get chapter color and info
   const getChapterInfo = (item: Item): { color: string; name: string; id: string } => {
@@ -97,6 +115,7 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
     
     return sorted;
   }, [items, searchQuery, sortBy]);
+
 
   const handleCellChange = (itemId: string, path: string, value: any) => {
     const updatedItems = items.map(item => {
@@ -502,7 +521,7 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
               spawnPosition: randomSpawn(),
               spawnSpread: 0.05 + Math.random() * 0.05,
               speed: 1.1 + Math.random() * 0.3,
-              points: -10,
+              points: 10,
               damage: 1,
               redirect: d.redirect,
               context: d.context,
@@ -520,6 +539,7 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
           ...existingItem,
           chapter: targetChapterId, // Allow cross-chapter updates
           level: parsedData.level,
+          game: parsedData.game ?? existingItem.game, // g. missing = keep existing
           base: {
             ...existingItem.base,
             context: parsedData.baseContext // Only context can change, not word
@@ -569,7 +589,7 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
           spawnPosition: distractorDist[idx]?.position ?? randomSpawn(),
           spawnSpread: distractorDist[idx]?.spread ?? 0.05,
           speed: 1.1 + Math.random() * 0.3,
-          points: -10,
+          points: 10,
           damage: 1,
           redirect: d.redirect,
           context: d.context,
@@ -587,6 +607,7 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
           chapter: targetChapterId,
           level: parsedData.level,
           published: true,
+          game: parsedData.game, // undefined = default 'sw' (both games)
           base: {
             word: parsedData.base,
             type: 'word',
@@ -756,7 +777,7 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
         spawnPosition: 0.5,
         spawnSpread: 0.05,
         speed: 1.2,
-        points: -10,
+        points: 10,
         damage: 1,
         redirect: '',
         context: '',
@@ -790,6 +811,8 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
           className={`editor-table-input ${isWarning ? 'warning' : ''}`}
           value={value}
           onChange={(e) => handleCellChange(item.id, path, e.target.value)}
+          size={1}
+          style={{ width: '100%' }}
         />
         {value.length > 0 && (
           <span className={`editor-char-counter ${isWarning ? 'warning' : ''}`}>
@@ -801,7 +824,19 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
   };
 
   return (
-    <div className="editor-table-container">
+    <div 
+      ref={(el) => {
+        if (el) {
+          console.log(`🎁 tableViewModeWidth [${viewMode}] OUTER CONTAINER:`, {
+            outerWidth: el.offsetWidth,
+            outerParentWidth: el.parentElement?.offsetWidth,
+            outerComputedWidth: window.getComputedStyle(el).width,
+            outerMaxWidth: window.getComputedStyle(el).maxWidth,
+            parentClassName: el.parentElement?.className
+          });
+        }
+      }}
+      className="editor-table-container">
       <div className="editor-table-header">
         <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
           <input
@@ -830,6 +865,39 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
             <option value="level">Sort by Level</option>
             <option value="word">Sort by Word</option>
           </select>
+
+          {/* View Mode Toggle - NEW VERSION v2.0 */}
+          <label
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              cursor: 'pointer',
+              padding: '8px 12px',
+              borderRadius: '4px',
+              border: '1px solid var(--border-color)',
+              backgroundColor: 'var(--bg-secondary)',
+              fontSize: '14px',
+              userSelect: 'none',
+            }}
+            title={viewMode === 'compact' ? 'Switch to expanded view (one entry per row)' : 'Switch to compact view (all entries in one row)'}
+          >
+            <span style={{ opacity: 0.7 }}>{viewMode === 'compact' ? '📋' : '📑'}</span>
+            <input
+              type="checkbox"
+              checked={viewMode === 'expanded'}
+              onChange={handleViewModeToggle}
+              style={{
+                width: '40px',
+                height: '20px',
+                cursor: 'pointer',
+                accentColor: 'var(--accent-color, #2196F3)',
+              }}
+            />
+            <span style={{ fontSize: '12px', opacity: 0.8 }}>
+              {viewMode === 'compact' ? 'Compact' : 'Expanded'} v2
+            </span>
+          </label>
         </div>
 
         <div className="editor-table-actions">
@@ -883,68 +951,106 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
       )}
 
       <div style={{ overflowX: 'auto', width: '100%' }}>
-        <table className="editor-table editor-table-3line" style={{ width: '100%', tableLayout: 'auto' }}>
+        <table 
+          className={`editor-table ${viewMode === 'compact' ? 'editor-table-3line' : 'editor-table-expanded'}`} 
+          style={{ 
+            width: '100%', 
+            tableLayout: viewMode === 'expanded' ? 'fixed' : 'auto'
+          }}>
           <thead>
-            <tr>
-              {/* Actions first! */}
-              <th rowSpan={3} style={{ width: '90px', borderRight: '2px solid rgba(255, 255, 255, 0.2)' }}>Actions</th>
-              
-              {/* Checkbox */}
-              <th rowSpan={3} style={{ 
-                width: '30px', 
-                padding: '0.5rem 0.3rem',
-                background: 'rgba(33, 150, 243, 0.08)',
-                borderRight: '1px solid rgba(255, 255, 255, 0.1)',
-                verticalAlign: 'top'
-              }}>
-                <input
-                  type="checkbox"
-                  checked={selectedItems.size === filteredItems.length && filteredItems.length > 0}
-                  onChange={handleSelectAll}
-                  style={{ 
-                    width: '18px', 
-                    height: '18px',
-                    cursor: 'pointer'
-                  }}
-                  title="Select all"
-                />
-              </th>
-              
-              {/* Combined ID / Level / Published */}
-              <th rowSpan={3} style={{ 
-                width: '110px', 
-                fontSize: '0.7rem',
-                fontFamily: 'monospace',
-                background: 'rgba(33, 150, 243, 0.05)',
-                borderRight: '2px solid rgba(255, 255, 255, 0.15)',
-                verticalAlign: 'top',
-                padding: '0.5rem 0.3rem'
-              }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', alignItems: 'center' }}>
-                  <div>🏷️ ID</div>
-                  <div>📊 Level</div>
-                  <div>✓ Pub</div>
-                </div>
-              </th>
-              
-              <th colSpan={6} style={{ background: 'rgba(100, 100, 255, 0.12)', borderBottom: '2px solid rgba(255, 255, 255, 0.2)' }}>
-                🎯 Base
-              </th>
-            </tr>
-            <tr>
-              <th style={{ width: '35px' }} title="Color">🎨</th>
-              <th style={{ minWidth: '120px', maxWidth: '200px' }}>Word</th>
-              <th style={{ minWidth: '150px', maxWidth: '250px' }}>Context</th>
-              <th style={{ width: '30px' }} title="Variant">✦</th>
-              <th style={{ width: '30px' }} title="Font Size">A</th>
-              <th style={{ width: '30px' }} title="Glow">✨</th>
-              <th style={{ width: '30px' }} title="Pulsate">💓</th>
-            </tr>
-            <tr>
-              <th colSpan={6} style={{ background: 'rgba(76, 175, 80, 0.15)', padding: '0.3rem', fontSize: '0.8rem' }}>
-                ✅ Correct Entries
-              </th>
-            </tr>
+            {viewMode === 'compact' ? (
+              <>
+                <tr>
+                  {/* Actions first! */}
+                  <th rowSpan={3} style={{ 
+                    width: '90px', 
+                    borderRight: '2px solid rgba(255, 255, 255, 0.2)' 
+                  }}>Actions</th>
+                  
+                  {/* Checkbox */}
+                  <th rowSpan={3} style={{ 
+                    width: '30px', 
+                    padding: '0.5rem 0.3rem',
+                    background: 'rgba(33, 150, 243, 0.08)',
+                    borderRight: '1px solid rgba(255, 255, 255, 0.1)',
+                    verticalAlign: 'top'
+                  }}>
+                    <input
+                      type="checkbox"
+                      checked={selectedItems.size === filteredItems.length && filteredItems.length > 0}
+                      onChange={handleSelectAll}
+                      style={{ 
+                        width: '18px', 
+                        height: '18px',
+                        cursor: 'pointer'
+                      }}
+                      title="Select all"
+                    />
+                  </th>
+                  
+                  {/* Combined ID / Level / Published */}
+                  <th rowSpan={3} style={{ 
+                    width: '110px', 
+                    fontSize: '0.7rem',
+                    fontFamily: 'monospace',
+                    background: 'rgba(33, 150, 243, 0.05)',
+                    borderRight: '2px solid rgba(255, 255, 255, 0.15)',
+                    verticalAlign: 'top',
+                    padding: '0.5rem 0.3rem'
+                  }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', alignItems: 'center' }}>
+                      <div>🏷️ ID</div>
+                      <div>📊 Level</div>
+                      <div>✓ Pub</div>
+                    </div>
+                  </th>
+                  
+                  <th colSpan={7} style={{ background: 'rgba(100, 100, 255, 0.12)', borderBottom: '2px solid rgba(255, 255, 255, 0.2)' }}>
+                    🎯 Base
+                  </th>
+                </tr>
+                <tr>
+                  <th style={{ width: '35px' }} title="Color">🎨</th>
+                  <th style={{ minWidth: '120px', maxWidth: '200px' }}>Word</th>
+                  <th style={{ minWidth: '150px', maxWidth: '250px' }}>Context</th>
+                  <th style={{ width: '30px' }} title="Variant">✦</th>
+                  <th style={{ width: '30px' }} title="Font Size">A</th>
+                  <th style={{ width: '30px' }} title="Glow">✨</th>
+                  <th style={{ width: '30px' }} title="Pulsate">💓</th>
+                </tr>
+                <tr>
+                  <th colSpan={7} style={{ background: 'rgba(76, 175, 80, 0.15)', padding: '0.3rem', fontSize: '0.8rem' }}>
+                    ✅ Correct Entries
+                  </th>
+                </tr>
+              </>
+            ) : (
+              <>
+                <tr>
+                  <th style={{ width: '100px', borderRight: '2px solid rgba(255, 255, 255, 0.2)' }}>Actions</th>
+                  <th style={{ width: '40px', padding: '0.5rem 0.3rem', background: 'rgba(33, 150, 243, 0.08)', borderRight: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                    <input
+                      type="checkbox"
+                      checked={selectedItems.size === filteredItems.length && filteredItems.length > 0}
+                      onChange={handleSelectAll}
+                      style={{ width: '18px', height: '18px', cursor: 'pointer' }}
+                      title="Select all"
+                    />
+                  </th>
+                  <th style={{ width: '120px', fontSize: '0.7rem', fontFamily: 'monospace', background: 'rgba(33, 150, 243, 0.05)', borderRight: '2px solid rgba(255, 255, 255, 0.15)', padding: '0.5rem 0.3rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', alignItems: 'center' }}>
+                      <div>🏷️ ID</div>
+                      <div>📊 Level</div>
+                      <div>✓ Pub</div>
+                    </div>
+                  </th>
+                  <th style={{ width: '50px', background: 'rgba(100, 100, 255, 0.12)' }} title="Color">🎨</th>
+                  <th style={{ width: '100px', background: 'rgba(100, 100, 255, 0.12)' }}>Type</th>
+                  <th style={{ width: '250px', background: 'rgba(100, 100, 255, 0.12)' }}>Word</th>
+                  <th style={{ width: '800px', background: 'rgba(100, 100, 255, 0.12)' }}>Context / Redirect</th>
+                </tr>
+              </>
+            )}
           </thead>
           <tbody>
             {filteredItems.map((item, itemIndex) => (
@@ -956,256 +1062,577 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
                   </tr>
                 )}
                 
-                {/* Line 1: Base Entry Row */}
-                <tr key={`${item.id}-base`} className="editor-table-3line-row" data-item-id={item.id}>
-                  {/* Actions Column - FIRST! */}
-                  <td rowSpan={3} style={{ verticalAlign: 'middle', borderRight: '2px solid rgba(255,255,255,0.2)', padding: '0.3rem' }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                      <button
-                        className="editor-button small"
-                        onClick={() => handleSaveItem(item)}
-                        disabled={savingItems.has(item.id)}
-                        style={{ 
-                          padding: '0.3rem 0.4rem', 
-                          fontSize: '0.7rem',
-                          width: '100%',
-                          background: savingItems.has(item.id) ? 'rgba(100, 100, 100, 0.5)' : 'rgba(33, 150, 243, 0.3)',
-                          cursor: savingItems.has(item.id) ? 'not-allowed' : 'pointer'
-                        }}
-                        title="Save this item to database"
-                      >
-                        {savingItems.has(item.id) ? '⏳' : '💾'}
-                      </button>
-                      <button
-                        className="editor-button small danger"
-                        onClick={() => handleDeleteItem(item)}
-                        disabled={deletingItems.has(item.id)}
-                        style={{ 
-                          padding: '0.3rem 0.4rem', 
-                          fontSize: '0.7rem',
-                          width: '100%',
-                          cursor: deletingItems.has(item.id) ? 'not-allowed' : 'pointer'
-                        }}
-                        title="Delete this item from database"
-                      >
-                        {deletingItems.has(item.id) ? '⏳' : '🗑️'}
-                      </button>
-                      <button
-                        className="editor-button small primary"
-                        onClick={() => onItemSelect(item.id)}
-                        style={{ padding: '0.3rem 0.4rem', fontSize: '0.7rem', width: '100%' }}
-                        title="Edit item in detail view"
-                      >
-                        ✏️
-                      </button>
-                      <button
-                        className="editor-button small"
-                        onClick={() => {
-                          setEditingItem(item);
-                          setShowTextParserModal(true);
-                        }}
-                        style={{ padding: '0.3rem 0.4rem', fontSize: '0.7rem', width: '100%' }}
-                        title="Edit in text parser"
-                      >
-                        📝
-                      </button>
-                      <button
-                        className="editor-button small"
-                        onClick={() => handleQuickClone(item)}
-                        style={{ padding: '0.3rem 0.4rem', fontSize: '0.7rem', width: '100%' }}
-                        title="Clone with random spawn"
-                      >
-                        📋
-                      </button>
-                    </div>
-                  </td>
-                  
-                  {/* Checkbox */}
-                  <td rowSpan={3} style={{ 
-                    verticalAlign: 'middle', 
-                    borderRight: '1px solid rgba(255,255,255,0.1)', 
-                    padding: '0.5rem 0.3rem',
-                    background: getChapterInfo(item).color,
-                    textAlign: 'center'
-                  }}>
-                    <input
-                      type="checkbox"
-                      checked={selectedItems.has(item.id)}
-                      onChange={() => handleToggleSelect(item.id)}
-                      style={{ 
-                        width: '18px', 
-                        height: '18px',
-                        cursor: 'pointer'
-                      }}
-                      title={`Chapter: ${getChapterInfo(item).name}\nID: ${getChapterInfo(item).id}\n\nSelect ${item.id}`}
-                    />
-                  </td>
-                  
-                  {/* Combined ID / Level / Published */}
-                  <td rowSpan={3} style={{ 
-                    fontFamily: 'monospace', 
-                    fontSize: '0.7rem', 
-                    verticalAlign: 'middle', 
-                    borderRight: '2px solid rgba(255,255,255,0.15)', 
-                    padding: '0.4rem 0.3rem',
-                    background: 'rgba(33, 150, 243, 0.02)',
-                    color: 'rgba(255, 255, 255, 0.9)'
-                  }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem', alignItems: 'center' }}>
-                      <div style={{ fontWeight: 500, fontSize: '0.75rem' }}>{item.id}</div>
-                      <select
-                        className="editor-table-input"
-                        value={item.level}
-                        onChange={(e) => handleCellChange(item.id, 'level', parseInt(e.target.value))}
-                        style={{ 
-                          padding: '0.2rem', 
-                          width: '50px', 
-                          fontSize: '0.7rem',
-                          textAlign: 'center',
-                          fontWeight: 600
-                        }}
-                      >
-                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(level => (
-                          <option key={level} value={level}> {level}</option>
-                        ))}
-                      </select>
-                      <input
-                        type="checkbox"
-                        checked={item.published !== false}
-                        onChange={(e) => handleCellChange(item.id, 'published', e.target.checked)}
-                        style={{ 
-                          width: '16px', 
-                          height: '16px',
-                          cursor: 'pointer'
-                        }}
-                        title={item.published !== false ? 'Published' : 'Unpublished'}
-                      />
-                    </div>
-                  </td>
-                  <td style={{ background: 'rgba(100, 100, 255, 0.08)', textAlign: 'center', padding: '0.3rem' }}>
-                    <input
-                      type="color"
-                      value={item.base.visual.color}
-                      onChange={(e) => handleCellChange(item.id, 'base.visual.color', e.target.value)}
-                      style={{ 
-                        width: '28px', 
-                        height: '28px', 
-                        border: '2px solid rgba(255,255,255,0.3)', 
-                        borderRadius: '6px',
-                        cursor: 'pointer',
-                        padding: 0
-                      }}
-                      title={item.base.visual.color}
-                    />
-                  </td>
-                  <td style={{ background: 'rgba(100, 100, 255, 0.08)', maxWidth: '180px' }}>
-                    {renderTextInput(item, 'base.word', item.base.word || '', 25)}
-                  </td>
-                  <td style={{ background: 'rgba(100, 100, 255, 0.08)', maxWidth: '200px' }}>
-                    {renderTextInput(item, 'base.context', item.base.context || '', 30)}
-                  </td>
-                  <td style={{ background: 'rgba(100, 100, 255, 0.08)', textAlign: 'center', fontSize: '0.85rem', padding: '0.3rem' }}>
-                    {item.base.visual.variant === 'hexagon' && '⬡'}
-                    {item.base.visual.variant === 'star' && '★'}
-                    {item.base.visual.variant === 'bubble' && '○'}
-                    {item.base.visual.variant === 'spike' && '✦'}
-                    {item.base.visual.variant === 'square' && '■'}
-                    {item.base.visual.variant === 'diamond' && '◆'}
-                  </td>
-                  <td style={{ background: 'rgba(100, 100, 255, 0.08)', textAlign: 'center', fontSize: '0.7rem', padding: '0.3rem' }}>
-                    {(item.base.visual.fontSize || 1.0).toFixed(1)}
-                  </td>
-                  <td style={{ background: 'rgba(100, 100, 255, 0.08)', textAlign: 'center', padding: '0.3rem' }}>
-                    {(item.base.visual as any).glow ? '✨' : ''}
-                  </td>
-                  <td style={{ background: 'rgba(100, 100, 255, 0.08)', textAlign: 'center', padding: '0.3rem' }}>
-                    {item.base.visual.pulsate ? '💓' : ''}
-                  </td>
-                </tr>
+                {(() => {
+                  console.log(`🎨 Rendering item ${item.id} in viewMode: ${viewMode}`);
+                  return viewMode === 'compact';
+                })() ? (
+                  // COMPACT VIEW: 3-line layout (original)
+                  <>
+                    {/* Line 1: Base Entry Row */}
+                    <tr key={`${item.id}-base`} className="editor-table-3line-row" data-item-id={item.id}>
+                      {/* Actions Column - FIRST! */}
+                      <td rowSpan={3} style={{ verticalAlign: 'middle', borderRight: '2px solid rgba(255,255,255,0.2)', padding: '0.3rem' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                          <button
+                            className="editor-button small"
+                            onClick={() => handleSaveItem(item)}
+                            disabled={savingItems.has(item.id)}
+                            style={{ 
+                              padding: '0.3rem 0.4rem', 
+                              fontSize: '0.7rem',
+                              width: '100%',
+                              background: savingItems.has(item.id) ? 'rgba(100, 100, 100, 0.5)' : 'rgba(33, 150, 243, 0.3)',
+                              cursor: savingItems.has(item.id) ? 'not-allowed' : 'pointer'
+                            }}
+                            title="Save this item to database"
+                          >
+                            {savingItems.has(item.id) ? '⏳' : '💾'}
+                          </button>
+                          <button
+                            className="editor-button small danger"
+                            onClick={() => handleDeleteItem(item)}
+                            disabled={deletingItems.has(item.id)}
+                            style={{ 
+                              padding: '0.3rem 0.4rem', 
+                              fontSize: '0.7rem',
+                              width: '100%',
+                              cursor: deletingItems.has(item.id) ? 'not-allowed' : 'pointer'
+                            }}
+                            title="Delete this item from database"
+                          >
+                            {deletingItems.has(item.id) ? '⏳' : '🗑️'}
+                          </button>
+                          <button
+                            className="editor-button small primary"
+                            onClick={() => onItemSelect(item.id)}
+                            style={{ padding: '0.3rem 0.4rem', fontSize: '0.7rem', width: '100%' }}
+                            title="Edit item in detail view"
+                          >
+                            ✏️
+                          </button>
+                          <button
+                            className="editor-button small"
+                            onClick={() => {
+                              setEditingItem(item);
+                              setShowTextParserModal(true);
+                            }}
+                            style={{ padding: '0.3rem 0.4rem', fontSize: '0.7rem', width: '100%' }}
+                            title="Edit in text parser"
+                          >
+                            📝
+                          </button>
+                          <button
+                            className="editor-button small"
+                            onClick={() => handleQuickClone(item)}
+                            style={{ padding: '0.3rem 0.4rem', fontSize: '0.7rem', width: '100%' }}
+                            title="Clone with random spawn"
+                          >
+                            📋
+                          </button>
+                        </div>
+                      </td>
+                      
+                      {/* Checkbox */}
+                      <td rowSpan={3} style={{ 
+                        verticalAlign: 'middle', 
+                        borderRight: '1px solid rgba(255,255,255,0.1)', 
+                        padding: '0.5rem 0.3rem',
+                        background: getChapterInfo(item).color,
+                        textAlign: 'center'
+                      }}>
+                        <input
+                          type="checkbox"
+                          checked={selectedItems.has(item.id)}
+                          onChange={() => handleToggleSelect(item.id)}
+                          style={{ 
+                            width: '18px', 
+                            height: '18px',
+                            cursor: 'pointer'
+                          }}
+                          title={`Chapter: ${getChapterInfo(item).name}\nID: ${getChapterInfo(item).id}\n\nSelect ${item.id}`}
+                        />
+                      </td>
+                      
+                      {/* Combined ID / Level / Published / Game */}
+                      <td rowSpan={3} style={{ 
+                        fontFamily: 'monospace', 
+                        fontSize: '0.7rem', 
+                        verticalAlign: 'middle', 
+                        borderRight: '2px solid rgba(255,255,255,0.15)', 
+                        padding: '0.4rem 0.3rem',
+                        background: 'rgba(33, 150, 243, 0.02)',
+                        color: 'rgba(255, 255, 255, 0.9)'
+                      }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem', alignItems: 'center' }}>
+                          <div style={{ fontWeight: 500, fontSize: '0.75rem' }}>{item.id}</div>
+                          <select
+                            className="editor-table-input"
+                            value={item.level}
+                            onChange={(e) => handleCellChange(item.id, 'level', parseInt(e.target.value))}
+                            style={{ 
+                              padding: '0.2rem', 
+                              width: '50px', 
+                              fontSize: '0.7rem',
+                              textAlign: 'center',
+                              fontWeight: 600
+                            }}
+                          >
+                            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(level => (
+                              <option key={level} value={level}> {level}</option>
+                            ))}
+                          </select>
+                          <input
+                            type="checkbox"
+                            checked={item.published !== false}
+                            onChange={(e) => handleCellChange(item.id, 'published', e.target.checked)}
+                            style={{ 
+                              width: '16px', 
+                              height: '16px',
+                              cursor: 'pointer'
+                            }}
+                            title={item.published !== false ? 'Published' : 'Unpublished'}
+                          />
+                          {/* Game toggle: sw=both, s=StreetSmarts, w=WordRush */}
+                          <div style={{ display: 'flex', gap: '1px', borderRadius: '4px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.15)' }} title="Game: sw=both, s=StreetSmarts only, w=WordRush only">
+                            {(['sw', 's', 'w'] as const).map((val) => {
+                              const current = item.game ?? 'sw';
+                              const active = current === val;
+                              const colors: Record<string, string> = { sw: '#9c27b0', s: '#ff9800', w: '#4caf50' };
+                              const labels: Record<string, string> = { sw: 'S+W', s: 'S', w: 'W' };
+                              return (
+                                <button
+                                  key={val}
+                                  onClick={() => handleCellChange(item.id, 'game', val)}
+                                  style={{
+                                    padding: '1px 3px',
+                                    fontSize: '0.6rem',
+                                    fontWeight: 700,
+                                    cursor: 'pointer',
+                                    border: 'none',
+                                    background: active ? colors[val] : 'rgba(255,255,255,0.06)',
+                                    color: active ? '#fff' : 'rgba(255,255,255,0.4)',
+                                    transition: 'all 0.15s',
+                                    lineHeight: 1.4,
+                                  }}
+                                  title={val === 'sw' ? 'Both games' : val === 's' ? 'StreetSmarts only' : 'WordRush only'}
+                                >
+                                  {labels[val]}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </td>
+                      <td style={{ background: 'rgba(100, 100, 255, 0.08)', textAlign: 'center', padding: '0.3rem' }}>
+                        <input
+                          type="color"
+                          value={item.base.visual.color}
+                          onChange={(e) => handleCellChange(item.id, 'base.visual.color', e.target.value)}
+                          style={{ 
+                            width: '28px', 
+                            height: '28px', 
+                            border: '2px solid rgba(255,255,255,0.3)', 
+                            borderRadius: '6px',
+                            cursor: 'pointer',
+                            padding: 0
+                          }}
+                          title={item.base.visual.color}
+                        />
+                      </td>
+                      <td style={{ background: 'rgba(100, 100, 255, 0.08)', maxWidth: '180px' }}>
+                        {renderTextInput(item, 'base.word', item.base.word || '', 25)}
+                      </td>
+                      <td style={{ background: 'rgba(100, 100, 255, 0.08)', maxWidth: '200px' }}>
+                        {renderTextInput(item, 'base.context', item.base.context || '', 30)}
+                      </td>
+                      <td style={{ background: 'rgba(100, 100, 255, 0.08)', textAlign: 'center', fontSize: '0.85rem', padding: '0.3rem' }}>
+                        {item.base.visual.variant === 'hexagon' && '⬡'}
+                        {item.base.visual.variant === 'star' && '★'}
+                        {item.base.visual.variant === 'bubble' && '○'}
+                        {item.base.visual.variant === 'spike' && '✦'}
+                        {item.base.visual.variant === 'square' && '■'}
+                        {item.base.visual.variant === 'diamond' && '◆'}
+                      </td>
+                      <td style={{ background: 'rgba(100, 100, 255, 0.08)', textAlign: 'center', fontSize: '0.7rem', padding: '0.3rem' }}>
+                        {(item.base.visual.fontSize || 1.0).toFixed(1)}
+                      </td>
+                      <td style={{ background: 'rgba(100, 100, 255, 0.08)', textAlign: 'center', padding: '0.3rem' }}>
+                        {(item.base.visual as any).glow ? '✨' : ''}
+                      </td>
+                      <td style={{ background: 'rgba(100, 100, 255, 0.08)', textAlign: 'center', padding: '0.3rem' }}>
+                        {item.base.visual.pulsate ? '💓' : ''}
+                      </td>
+                    </tr>
 
-                {/* Line 2: Correct Entries Row */}
-                <tr key={`${item.id}-correct`} className="editor-table-3line-row" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                  <td colSpan={9} style={{ background: 'rgba(76, 175, 80, 0.15)', padding: '0.5rem' }}>
-                    <div className="editor-entry-container">
-                      {item.correct.map((correct, index) => (
-                        <div key={index} className="editor-entry-item">
+                    {/* Line 2: Correct Entries Row */}
+                    <tr key={`${item.id}-correct`} className="editor-table-3line-row" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
+                      <td colSpan={9} style={{ background: 'rgba(76, 175, 80, 0.15)', padding: '0.5rem' }}>
+                        <div className="editor-entry-container">
+                          {item.correct.map((correct, index) => (
+                            <div key={index} className="editor-entry-item">
+                              <input
+                                type="color"
+                                value={correct.visual.color}
+                                onChange={(e) => handleCellChange(item.id, `correct[${index}].visual.color`, e.target.value)}
+                                style={{ 
+                                  width: '24px', 
+                                  height: '24px', 
+                                  border: '2px solid rgba(76, 175, 80, 0.5)', 
+                                  borderRadius: '4px',
+                                  cursor: 'pointer',
+                                  padding: 0,
+                                  flexShrink: 0
+                                }}
+                                title={correct.visual.color}
+                              />
+                              <span style={{ fontSize: '0.75rem', fontWeight: 600, opacity: 0.7, flexShrink: 0 }}>
+                                #{index + 1}
+                              </span>
+                              {renderTextInput(item, `correct[${index}].entry.word`, correct.entry.word || '', 20)}
+                              <span style={{ fontSize: '0.7rem', opacity: 0.5, flexShrink: 0 }}>→</span>
+                              {renderTextInput(item, `correct[${index}].context`, correct.context || '', 35)}
+                            </div>
+                          ))}
+                          <button
+                            className="editor-button small"
+                            onClick={() => handleAddCorrectEntry(item.id)}
+                            style={{ padding: '0.3rem 0.6rem', fontSize: '0.75rem', flexShrink: 0 }}
+                            title="Add correct entry"
+                          >
+                            + ✅
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+
+                    {/* Line 3: Distractor Entries Row */}
+                    <tr key={`${item.id}-distractor`} className="editor-table-3line-row" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)', borderBottom: '2px solid rgba(255, 255, 255, 0.15)' }}>
+                      <td colSpan={9} style={{ background: 'rgba(244, 67, 54, 0.12)', padding: '0.5rem' }}>
+                        <div className="editor-entry-container">
+                          {item.distractors.map((distractor, index) => (
+                            <div key={index} className="editor-entry-item">
+                              <input
+                                type="color"
+                                value={distractor.visual.color}
+                                onChange={(e) => handleCellChange(item.id, `distractors[${index}].visual.color`, e.target.value)}
+                                style={{ 
+                                  width: '24px', 
+                                  height: '24px', 
+                                  border: '2px solid rgba(244, 67, 54, 0.5)', 
+                                  borderRadius: '4px',
+                                  cursor: 'pointer',
+                                  padding: 0,
+                                  flexShrink: 0
+                                }}
+                                title={distractor.visual.color}
+                              />
+                              <span style={{ fontSize: '0.75rem', fontWeight: 600, opacity: 0.7, flexShrink: 0 }}>
+                                #{index + 1}
+                              </span>
+                              {renderTextInput(item, `distractors[${index}].entry.word`, distractor.entry.word || '', 20)}
+                              <span style={{ fontSize: '0.7rem', opacity: 0.5, flexShrink: 0 }}>↪</span>
+                              {renderTextInput(item, `distractors[${index}].redirect`, distractor.redirect || '', 18)}
+                              <span style={{ fontSize: '0.7rem', opacity: 0.5, flexShrink: 0 }}>→</span>
+                              {renderTextInput(item, `distractors[${index}].context`, distractor.context || '', 35)}
+                            </div>
+                          ))}
+                          <button
+                            className="editor-button small"
+                            onClick={() => handleAddDistractorEntry(item.id)}
+                            style={{ padding: '0.3rem 0.6rem', fontSize: '0.75rem', flexShrink: 0 }}
+                            title="Add distractor entry"
+                          >
+                            + ❌
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </>
+                ) : (
+                  // EXPANDED VIEW: One row per correct/distractor entry
+                  <>
+                    {/* Base row (always first) */}
+                    <tr key={`${item.id}-base`} className="editor-table-3line-row" data-item-id={item.id}>
+                      <td rowSpan={3 + item.correct.length + item.distractors.length} style={{ verticalAlign: 'top', borderRight: '2px solid rgba(255,255,255,0.2)', padding: '0.3rem' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                          <button
+                            className="editor-button small"
+                            onClick={() => handleSaveItem(item)}
+                            disabled={savingItems.has(item.id)}
+                            style={{ 
+                              padding: '0.3rem 0.4rem', 
+                              fontSize: '0.7rem',
+                              width: '100%',
+                              background: savingItems.has(item.id) ? 'rgba(100, 100, 100, 0.5)' : 'rgba(33, 150, 243, 0.3)',
+                              cursor: savingItems.has(item.id) ? 'not-allowed' : 'pointer'
+                            }}
+                            title="Save this item to database"
+                          >
+                            {savingItems.has(item.id) ? '⏳' : '💾'}
+                          </button>
+                          <button
+                            className="editor-button small danger"
+                            onClick={() => handleDeleteItem(item)}
+                            disabled={deletingItems.has(item.id)}
+                            style={{ 
+                              padding: '0.3rem 0.4rem', 
+                              fontSize: '0.7rem',
+                              width: '100%',
+                              cursor: deletingItems.has(item.id) ? 'not-allowed' : 'pointer'
+                            }}
+                            title="Delete this item from database"
+                          >
+                            {deletingItems.has(item.id) ? '⏳' : '🗑️'}
+                          </button>
+                          <button
+                            className="editor-button small primary"
+                            onClick={() => onItemSelect(item.id)}
+                            style={{ padding: '0.3rem 0.4rem', fontSize: '0.7rem', width: '100%' }}
+                            title="Edit item in detail view"
+                          >
+                            ✏️
+                          </button>
+                          <button
+                            className="editor-button small"
+                            onClick={() => {
+                              setEditingItem(item);
+                              setShowTextParserModal(true);
+                            }}
+                            style={{ padding: '0.3rem 0.4rem', fontSize: '0.7rem', width: '100%' }}
+                            title="Edit in text parser"
+                          >
+                            📝
+                          </button>
+                          <button
+                            className="editor-button small"
+                            onClick={() => handleQuickClone(item)}
+                            style={{ padding: '0.3rem 0.4rem', fontSize: '0.7rem', width: '100%' }}
+                            title="Clone with random spawn"
+                          >
+                            📋
+                          </button>
+                        </div>
+                      </td>
+                      <td rowSpan={3 + item.correct.length + item.distractors.length} style={{ 
+                        verticalAlign: 'top', 
+                        borderRight: '1px solid rgba(255,255,255,0.1)', 
+                        padding: '0.5rem 0.3rem',
+                        background: getChapterInfo(item).color,
+                        textAlign: 'center'
+                      }}>
+                        <input
+                          type="checkbox"
+                          checked={selectedItems.has(item.id)}
+                          onChange={() => handleToggleSelect(item.id)}
+                          style={{ 
+                            width: '18px', 
+                            height: '18px',
+                            cursor: 'pointer'
+                          }}
+                          title={`Chapter: ${getChapterInfo(item).name}\nID: ${getChapterInfo(item).id}\n\nSelect ${item.id}`}
+                        />
+                      </td>
+                      <td rowSpan={3 + item.correct.length + item.distractors.length} style={{ 
+                        fontFamily: 'monospace', 
+                        fontSize: '0.7rem', 
+                        verticalAlign: 'top', 
+                        borderRight: '2px solid rgba(255,255,255,0.15)', 
+                        padding: '0.4rem 0.3rem',
+                        background: 'rgba(33, 150, 243, 0.02)',
+                        color: 'rgba(255, 255, 255, 0.9)'
+                      }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem', alignItems: 'center' }}>
+                          <div style={{ fontWeight: 500, fontSize: '0.75rem' }}>{item.id}</div>
+                          <select
+                            className="editor-table-input"
+                            value={item.level}
+                            onChange={(e) => handleCellChange(item.id, 'level', parseInt(e.target.value))}
+                            style={{ 
+                              padding: '0.2rem', 
+                              width: '50px', 
+                              fontSize: '0.7rem',
+                              textAlign: 'center',
+                              fontWeight: 600
+                            }}
+                          >
+                            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(level => (
+                              <option key={level} value={level}> {level}</option>
+                            ))}
+                          </select>
+                          <input
+                            type="checkbox"
+                            checked={item.published !== false}
+                            onChange={(e) => handleCellChange(item.id, 'published', e.target.checked)}
+                            style={{ 
+                              width: '16px', 
+                              height: '16px',
+                              cursor: 'pointer'
+                            }}
+                            title={item.published !== false ? 'Published' : 'Unpublished'}
+                          />
+                          {/* Game toggle: sw=both, s=StreetSmarts, w=WordRush */}
+                          <div style={{ display: 'flex', gap: '1px', borderRadius: '4px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.15)' }} title="Game: sw=both, s=StreetSmarts only, w=WordRush only">
+                            {(['sw', 's', 'w'] as const).map((val) => {
+                              const current = item.game ?? 'sw';
+                              const active = current === val;
+                              const colors: Record<string, string> = { sw: '#9c27b0', s: '#ff9800', w: '#4caf50' };
+                              const labels: Record<string, string> = { sw: 'S+W', s: 'S', w: 'W' };
+                              return (
+                                <button
+                                  key={val}
+                                  onClick={() => handleCellChange(item.id, 'game', val)}
+                                  style={{
+                                    padding: '1px 3px',
+                                    fontSize: '0.6rem',
+                                    fontWeight: 700,
+                                    cursor: 'pointer',
+                                    border: 'none',
+                                    background: active ? colors[val] : 'rgba(255,255,255,0.06)',
+                                    color: active ? '#fff' : 'rgba(255,255,255,0.4)',
+                                    transition: 'all 0.15s',
+                                    lineHeight: 1.4,
+                                  }}
+                                  title={val === 'sw' ? 'Both games' : val === 's' ? 'StreetSmarts only' : 'WordRush only'}
+                                >
+                                  {labels[val]}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </td>
+                      {/* Base entry cells */}
+                      <td style={{ background: 'rgba(100, 100, 255, 0.08)', textAlign: 'center', padding: '0.5rem' }}>
+                        <input
+                          type="color"
+                          value={item.base.visual.color}
+                          onChange={(e) => handleCellChange(item.id, 'base.visual.color', e.target.value)}
+                          style={{ 
+                            width: '32px', 
+                            height: '32px', 
+                            border: '2px solid rgba(255,255,255,0.3)', 
+                            borderRadius: '6px',
+                            cursor: 'pointer',
+                            padding: 0
+                          }}
+                          title={item.base.visual.color}
+                        />
+                      </td>
+                      <td style={{ background: 'rgba(100, 100, 255, 0.08)', fontWeight: 600, padding: '0.5rem', fontSize: '0.9rem' }}>
+                        🎯 Base
+                      </td>
+                      <td style={{ background: 'rgba(100, 100, 255, 0.08)', padding: '0.5rem' }}>
+                        {renderTextInput(item, 'base.word', item.base.word || '', 50)}
+                      </td>
+                      <td style={{ background: 'rgba(100, 100, 255, 0.08)', padding: '0.5rem' }}>
+                        {renderTextInput(item, 'base.context', item.base.context || '', 120)}
+                      </td>
+                    </tr>
+                    
+                    {/* Correct entries (one row each) */}
+                    {item.correct.map((correct, index) => (
+                      <tr key={`${item.id}-correct-${index}`} style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
+                        <td style={{ background: 'rgba(76, 175, 80, 0.15)', textAlign: 'center', padding: '0.5rem' }}>
                           <input
                             type="color"
                             value={correct.visual.color}
                             onChange={(e) => handleCellChange(item.id, `correct[${index}].visual.color`, e.target.value)}
                             style={{ 
-                              width: '24px', 
-                              height: '24px', 
+                              width: '32px', 
+                              height: '32px', 
                               border: '2px solid rgba(76, 175, 80, 0.5)', 
                               borderRadius: '4px',
                               cursor: 'pointer',
-                              padding: 0,
-                              flexShrink: 0
+                              padding: 0
                             }}
                             title={correct.visual.color}
                           />
-                          <span style={{ fontSize: '0.75rem', fontWeight: 600, opacity: 0.7, flexShrink: 0 }}>
-                            #{index + 1}
-                          </span>
-                          {renderTextInput(item, `correct[${index}].entry.word`, correct.entry.word || '', 20)}
-                          <span style={{ fontSize: '0.7rem', opacity: 0.5, flexShrink: 0 }}>→</span>
-                          {renderTextInput(item, `correct[${index}].context`, correct.context || '', 35)}
-                        </div>
-                      ))}
-                      <button
-                        className="editor-button small"
-                        onClick={() => handleAddCorrectEntry(item.id)}
-                        style={{ padding: '0.3rem 0.6rem', fontSize: '0.75rem', flexShrink: 0 }}
-                        title="Add correct entry"
-                      >
-                        + ✅
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-
-                {/* Line 3: Distractor Entries Row */}
-                <tr key={`${item.id}-distractor`} className="editor-table-3line-row" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)', borderBottom: '2px solid rgba(255, 255, 255, 0.15)' }}>
-                  <td colSpan={9} style={{ background: 'rgba(244, 67, 54, 0.12)', padding: '0.5rem' }}>
-                    <div className="editor-entry-container">
-                      {item.distractors.map((distractor, index) => (
-                        <div key={index} className="editor-entry-item">
+                        </td>
+                        <td style={{ background: 'rgba(76, 175, 80, 0.15)', fontWeight: 600, fontSize: '0.9rem', padding: '0.5rem' }}>
+                          ✅ C{index + 1}
+                        </td>
+                        <td style={{ background: 'rgba(76, 175, 80, 0.15)', padding: '0.5rem' }}>
+                          {renderTextInput(item, `correct[${index}].entry.word`, correct.entry.word || '', 50)}
+                        </td>
+                        <td style={{ background: 'rgba(76, 175, 80, 0.15)', padding: '0.5rem' }}>
+                          {renderTextInput(item, `correct[${index}].context`, correct.context || '', 120)}
+                        </td>
+                      </tr>
+                    ))}
+                    
+                    {/* Add correct button row */}
+                    <tr style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
+                      <td colSpan={4} style={{ background: 'rgba(76, 175, 80, 0.08)', padding: '0.3rem', textAlign: 'center' }}>
+                        <button
+                          className="editor-button small"
+                          onClick={() => handleAddCorrectEntry(item.id)}
+                          style={{ padding: '0.3rem 0.8rem', fontSize: '0.8rem' }}
+                          title="Add correct entry"
+                        >
+                          + ✅ Add Correct
+                        </button>
+                      </td>
+                    </tr>
+                    
+                    {/* Distractor entries (one row each) */}
+                    {item.distractors.map((distractor, index) => (
+                      <tr key={`${item.id}-distractor-${index}`} style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
+                        <td style={{ background: 'rgba(244, 67, 54, 0.12)', textAlign: 'center', padding: '0.5rem' }}>
                           <input
                             type="color"
                             value={distractor.visual.color}
                             onChange={(e) => handleCellChange(item.id, `distractors[${index}].visual.color`, e.target.value)}
                             style={{ 
-                              width: '24px', 
-                              height: '24px', 
+                              width: '32px', 
+                              height: '32px', 
                               border: '2px solid rgba(244, 67, 54, 0.5)', 
                               borderRadius: '4px',
                               cursor: 'pointer',
-                              padding: 0,
-                              flexShrink: 0
+                              padding: 0
                             }}
                             title={distractor.visual.color}
                           />
-                          <span style={{ fontSize: '0.75rem', fontWeight: 600, opacity: 0.7, flexShrink: 0 }}>
-                            #{index + 1}
-                          </span>
-                          {renderTextInput(item, `distractors[${index}].entry.word`, distractor.entry.word || '', 20)}
-                          <span style={{ fontSize: '0.7rem', opacity: 0.5, flexShrink: 0 }}>↪</span>
-                          {renderTextInput(item, `distractors[${index}].redirect`, distractor.redirect || '', 18)}
-                          <span style={{ fontSize: '0.7rem', opacity: 0.5, flexShrink: 0 }}>→</span>
-                          {renderTextInput(item, `distractors[${index}].context`, distractor.context || '', 35)}
-                        </div>
-                      ))}
-                      <button
-                        className="editor-button small"
-                        onClick={() => handleAddDistractorEntry(item.id)}
-                        style={{ padding: '0.3rem 0.6rem', fontSize: '0.75rem', flexShrink: 0 }}
-                        title="Add distractor entry"
-                      >
-                        + ❌
-                      </button>
-                    </div>
-                  </td>
-                </tr>
+                        </td>
+                        <td style={{ background: 'rgba(244, 67, 54, 0.12)', fontWeight: 600, fontSize: '0.9rem', padding: '0.5rem' }}>
+                          ❌ D{index + 1}
+                        </td>
+                        <td style={{ background: 'rgba(244, 67, 54, 0.12)', padding: '0.5rem' }}>
+                          {renderTextInput(item, `distractors[${index}].entry.word`, distractor.entry.word || '', 50)}
+                        </td>
+                        <td style={{ background: 'rgba(244, 67, 54, 0.12)', padding: '0.5rem' }}>
+                          <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'stretch', width: '100%' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', width: '180px', flexShrink: 0 }}>
+                              <span style={{ fontSize: '0.8rem', opacity: 0.7, flexShrink: 0 }}>↪</span>
+                              <div style={{ flex: '1 1 0%', minWidth: 0 }}>
+                                {renderTextInput(item, `distractors[${index}].redirect`, distractor.redirect || '', 40)}
+                              </div>
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', flex: '1 1 0%', minWidth: 0 }}>
+                              <span style={{ fontSize: '0.8rem', opacity: 0.7, flexShrink: 0 }}>→</span>
+                              <div style={{ flex: '1 1 0%', minWidth: 0 }}>
+                                {renderTextInput(item, `distractors[${index}].context`, distractor.context || '', 120)}
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                    
+                    {/* Add distractor button row */}
+                    <tr style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)', borderBottom: '2px solid rgba(255, 255, 255, 0.15)' }}>
+                      <td colSpan={4} style={{ background: 'rgba(244, 67, 54, 0.08)', padding: '0.3rem', textAlign: 'center' }}>
+                        <button
+                          className="editor-button small"
+                          onClick={() => handleAddDistractorEntry(item.id)}
+                          style={{ padding: '0.3rem 0.8rem', fontSize: '0.8rem' }}
+                          title="Add distractor entry"
+                        >
+                          + ❌ Add Distractor
+                        </button>
+                      </td>
+                    </tr>
+                  </>
+                )}
               </React.Fragment>
             ))}
           </tbody>

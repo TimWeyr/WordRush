@@ -254,10 +254,15 @@
 
 .editor-table-cell {
   position: relative;
+  display: block;
+  width: 100%;
+  min-width: 0;
 }
 
 .editor-table-input {
   width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid transparent;
   color: white;
@@ -303,6 +308,16 @@
   border-spacing: 0;
   table-layout: auto;
   width: 100%;
+}
+
+/* Expanded Table Layout (one row per entry) */
+.editor-table-expanded {
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed !important; /* Force fixed layout to use full width */
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 100% !important;
 }
 
 .editor-table-3line tbody {

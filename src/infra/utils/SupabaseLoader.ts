@@ -138,6 +138,7 @@ export class SupabaseLoader {
     chapter_id: string;
     level: number;
     published?: boolean;
+    game?: 'sw' | 's' | 'w';
     free_tier?: boolean;
     wave_duration?: number;
     intro_text?: string;
@@ -169,6 +170,7 @@ export class SupabaseLoader {
           chapter_uuid: chapter.uuid,   // Required - FK to chapters.uuid
           level: round.level,
           published: round.published ?? true,
+          game: round.game ?? 'sw',
           free_tier: round.free_tier ?? false,
           wave_duration: round.wave_duration,
           intro_text: round.intro_text,
@@ -198,6 +200,7 @@ export class SupabaseLoader {
   async updateRound(roundId: string, updates: Partial<{
     level: number;
     published: boolean;
+    game: 'sw' | 's' | 'w';
     free_tier: boolean;
     wave_duration: number;
     intro_text: string;
@@ -395,6 +398,7 @@ export class SupabaseLoader {
           chapter_uuid: chapter.uuid,
           level: sourceRound.level,
           published: sourceRound.published,
+          game: sourceRound.game,
           free_tier: sourceRound.free_tier,
           wave_duration: sourceRound.wave_duration,
           intro_text: sourceRound.intro_text,
@@ -622,6 +626,7 @@ export class SupabaseLoader {
         const updateResult = await this.updateRound(item.id, {
           level: item.level,
           published: item.published,
+          game: item.game,
           free_tier: item.freeTier,
           wave_duration: item.waveDuration,
           intro_text: item.introText,
@@ -651,6 +656,7 @@ export class SupabaseLoader {
           chapter_id: chapterId,
           level: item.level,
           published: item.published,
+          game: item.game,
           free_tier: item.freeTier,
           wave_duration: item.waveDuration,
           intro_text: item.introText,

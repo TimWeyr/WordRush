@@ -19,6 +19,7 @@ export interface ParsedItemData {
   corrects: Array<{ word: string; context: string; order: number; level?: number }>;
   distractors: Array<{ word: string; redirect: string; context: string; level?: number }>;
   level: number; // Round-level difficulty (1-10)
+  game?: 'sw' | 's' | 'w'; // Which game(s) use this round (from g. line)
   source?: string; // Optional source (from s. line)
   detail?: string; // Optional detail (from s. line)
   tags?: string[]; // Optional tags (from t. line, pipe-separated)
@@ -38,6 +39,11 @@ interface CursorInfo {
   actualPipeCount: number;
 }
 
+/** Encode newlines in context fields for the text parser format */
+const encodeNl = (text: string): string => text.replace(/\n/g, '/n');
+/** Decode /n escape sequences back to real newlines */
+const decodeNl = (text: string): string => text.replace(/\/n/g, '\n');
+
 /**
  * Convert Item to text format (reverse transformation)
  * For editing existing items in text parser
@@ -54,7 +60,7 @@ export function itemToText(item: Item, chapterId?: string): string {
   
   // Base word with optional context
   if (item.base.context) {
-    lines.push(`b. ${item.base.word} | ${item.base.context}`);
+    lines.push(`b. ${item.base.word} | ${encodeNl(item.base.context)}`);
   } else {
     lines.push(`b. ${item.base.word}`);
   }
@@ -62,7 +68,7 @@ export function itemToText(item: Item, chapterId?: string): string {
   // Correct entries with level
   item.correct.forEach(correct => {
     const word = correct.entry.word || '';
-    const context = correct.context || '';
+    const context = encodeNl(correct.context || '');
     const order = correct.collectionOrder ?? 0;
     const level = correct.level ?? 1;
     lines.push(`c. ${word} | ${context} | ${order} | ${level}`);
@@ -72,7 +78,7 @@ export function itemToText(item: Item, chapterId?: string): string {
   item.distractors.forEach(distractor => {
     const word = distractor.entry.word || '';
     const redirect = distractor.redirect || '';
-    const context = distractor.context || '';
+    const context = encodeNl(distractor.context || '');
     const level = distractor.level ?? 1;
     lines.push(`d. ${word} | ${redirect} | ${context} | ${level}`);
   });
@@ -80,7 +86,7 @@ export function itemToText(item: Item, chapterId?: string): string {
   // Source and detail (optional)
   if (item.meta.source || item.meta.detail) {
     const source = item.meta.source || '';
-    const detail = item.meta.detail || '';
+    const detail = encodeNl(item.meta.detail || '');
     if (detail) {
       lines.push(`s. ${source} | ${detail}`);
     } else if (source) {
@@ -93,6 +99,11 @@ export function itemToText(item: Item, chapterId?: string): string {
     lines.push(`t. ${item.meta.tags.join(' | ')}`);
   }
   
+  // Game (optional, only if not default 'sw')
+  if (item.game && item.game !== 'sw') {
+    lines.push(`g. ${item.game}`);
+  }
+
   // Level
   lines.push(`l. ${item.level}`);
   
@@ -181,6 +192,10 @@ export function TextParserModal({ isOpen, onClose, onSave, chapterId, initialIte
       lineType = 'tags';
       format = 't. tag | tag | tag | ...';
       fieldNames = ['tag']; // Special handling for tags
+    } else if (trimmedLine.startsWith('g.')) {
+      lineType = 'game';
+      format = 'g. sw|s|w';
+      fieldNames = ['game'];
     } else if (trimmedLine.startsWith('l.')) {
       lineType = 'level';
       format = 'l. level';
@@ -245,7 +260,6 @@ export function TextParserModal({ isOpen, onClose, onSave, chapterId, initialIte
     if (!item) return false;
     if (typeof item.base !== 'string') return false;
     if (!Array.isArray(item.corrects)) return false;
-    if (item.corrects.length === 0) return false;
     return true;
   };
   
@@ -259,6 +273,7 @@ export function TextParserModal({ isOpen, onClose, onSave, chapterId, initialIte
       corrects: item.corrects!,
       distractors: item.distractors || [],
       level: item.level || defaultLevel,
+      game: item.game, // Optional game filter
       source: item.source, // Optional source
       detail: item.detail, // Optional detail
       tags: item.tags || [], // Optional tags
@@ -315,7 +330,7 @@ export function TextParserModal({ isOpen, onClose, onSave, chapterId, initialIte
         const content = line.substring(2).trim();
         const parts = content.split('|').map(p => p.trim());
         const baseWord = parts[0] || '';
-        const baseContext = parts[1] || undefined; // Optional context
+        const baseContext = parts[1] ? decodeNl(parts[1]) : undefined; // Optional context
         
         if (baseWord.length === 0) {
           parseErrors.push({ line: lineNum, message: 'Base word cannot be empty' });
@@ -350,7 +365,7 @@ export function TextParserModal({ isOpen, onClose, onSave, chapterId, initialIte
           parseErrors.push({ line: lineNum, message: 'Correct entry must have at least a word' });
         } else {
           const word = parts[0] || '';
-          const context = parts[1] || '';
+          const context = decodeNl(parts[1] || '');
           const orderStr = parts[2] || '0';
           const levelStr = parts[3] || '1'; // 4th parameter: level (default 1)
           const order = parseInt(orderStr, 10);
@@ -382,7 +397,7 @@ export function TextParserModal({ isOpen, onClose, onSave, chapterId, initialIte
         } else {
           const word = parts[0] || '';
           const redirect = parts[1] || '';
-          const context = parts[2] || '';
+          const context = decodeNl(parts[2] || '');
           const levelStr = parts[3] || '1'; // 4th parameter: level (default 1)
           const level = parseInt(levelStr, 10);
           
@@ -409,7 +424,7 @@ export function TextParserModal({ isOpen, onClose, onSave, chapterId, initialIte
           parseErrors.push({ line: lineNum, message: 'Source entry must have at least a source' });
         } else {
           const source = parts[0] || '';
-          const detail = parts[1] || '';
+          const detail = decodeNl(parts[1] || '');
           
           if (source.length === 0) {
             parseErrors.push({ line: lineNum, message: 'Source cannot be empty' });
@@ -437,6 +452,21 @@ export function TextParserModal({ isOpen, onClose, onSave, chapterId, initialIte
           } else {
             currentItem.tags = tags;
           }
+        }
+      }
+      // Game - OPTIONAL, determines which game(s) use this round
+      else if (lowerLine.startsWith('g.')) {
+        if (!currentItem) {
+          parseErrors.push({ line: lineNum, message: 'Game entry (g.) must come after a base word (b.)' });
+          return;
+        }
+        const content = line.substring(2).trim().toLowerCase();
+        const validValues = ['sw', 'ws', 's', 'w'];
+        if (!validValues.includes(content)) {
+          parseErrors.push({ line: lineNum, message: `Invalid game value: "${content}" (must be sw, s, or w)` });
+        } else {
+          // Normalize 'ws' → 'sw'
+          currentItem.game = (content === 'ws' ? 'sw' : content) as 'sw' | 's' | 'w';
         }
       }
       // Level - SETZT LEVEL FÜR ALLE FOLGENDEN ITEMS
@@ -471,24 +501,18 @@ export function TextParserModal({ isOpen, onClose, onSave, chapterId, initialIte
         const hasBase = typeof partialItem.base === 'string';
         const hasCorrects = Array.isArray(partialItem.corrects) && partialItem.corrects.length > 0;
         
-        if (hasBase && !hasCorrects) {
-          parseErrors.push({ line: 0, message: 'At least one correct entry (c. line) is required for the item' });
-        }
       }
     }
     
     // Validation rules für alle Items
     if (items.length === 0 && parseErrors.length === 0) {
-      parseErrors.push({ line: 0, message: 'At least one complete item (b. line + c. line) is required' });
+      parseErrors.push({ line: 0, message: 'At least one item (b. line) is required' });
     }
     
     // Validiere jedes Item
     items.forEach((item, itemIndex) => {
       if (!item.base) {
         parseErrors.push({ line: 0, message: `Item ${itemIndex + 1}: Base word is required` });
-      }
-      if (item.corrects.length === 0) {
-        parseErrors.push({ line: 0, message: `Item ${itemIndex + 1}: At least one correct entry (c. line) is required` });
       }
     });
 
@@ -574,9 +598,13 @@ export function TextParserModal({ isOpen, onClose, onSave, chapterId, initialIte
           <span style={{ color: 'rgba(255, 255, 255, 0.4)', margin: '0 0.5rem' }}>|</span>
           <span style={{ color: 'rgba(255, 255, 255, 0.6)' }}>t.</span> tags
           <span style={{ color: 'rgba(255, 255, 255, 0.4)', margin: '0 0.5rem' }}>|</span>
+          <span style={{ color: 'rgba(255, 255, 255, 0.6)' }}>g.</span> game
+          <span style={{ color: 'rgba(255, 255, 255, 0.4)', margin: '0 0.5rem' }}>|</span>
           <span style={{ color: 'rgba(255, 255, 255, 0.6)' }}>l.</span> level
           <span style={{ color: 'rgba(255, 255, 255, 0.4)', margin: '0 0.5rem' }}>|</span>
           <span style={{ color: 'rgba(255, 255, 255, 0.6)' }}>#</span> comment
+          <span style={{ color: 'rgba(255, 255, 255, 0.4)', margin: '0 0.5rem' }}>|</span>
+          <span style={{ color: 'rgba(255, 255, 255, 0.4)' }}>/n</span> <span style={{ color: 'rgba(255, 255, 255, 0.35)', fontSize: '0.75rem' }}>Zeilenumbruch in context</span>
         </div>
       );
     }

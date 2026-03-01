@@ -740,7 +740,7 @@ export class ShooterEngine {
         
         distractor.destroy(); // Destroy distractor on shield impact
         return;
-    }
+    }   
 
     // Ship takes damage (no shield)
     this.ship.takeDamage(distractor.damage);

@@ -17,6 +17,17 @@ import { localProgressProvider } from '@/infra/providers/LocalProgressProvider';
 import type { ContextEventData } from '@/types/game.types';
 import './ContextPauseOverlay.css';
 
+// Icon paths
+const correctShotIcon = '/assets/ui/correct-shot.svg';
+const distractorCollisionIcon = '/assets/ui/distractor-collision.svg';
+const distractorHitShipIcon = '/assets/ui/distractor-collision.svg'; // Same as collision
+const distractorHitBaseIcon = '/assets/ui/distractor-hit-base.svg';
+const correctCollectIcon = '/assets/ui/correct-collect.svg';
+const distractorShotIcon = '/assets/ui/distractor-shot.svg';
+const correctReachedBaseIcon = '/assets/ui/correct-reached-base.svg';
+const distractorReachedBaseIcon = '/assets/ui/distractor-hit-base.svg'; // Can reuse or create separate
+const contextIcon = '/assets/ui/correct-collect.svg'; // Default context icon
+
 // ============================================================================
 // TYPES
 // ============================================================================
@@ -179,25 +190,63 @@ export const ContextPauseOverlay: React.FC<ContextPauseOverlayProps> = ({
   // RENDER HELPERS
   // ============================================================================
   
-  const getEventIcon = () => {
+  const getEventIcon = (): React.ReactNode => {
+    let iconPath: string;
+    
     switch (data.type) {
+      case 'correct_collected':
+        iconPath = correctCollectIcon;
+        break;
       case 'correct_shot':
-        return '😳';
-      case 'distractor_collision':
-        return '💥';
+        iconPath = correctShotIcon;
+        break;
+      case 'distractor_shot':
+        iconPath = distractorShotIcon;
+        break;
+      case 'distractor_hit_ship':
+      case 'distractor_collision': // Legacy support
+        iconPath = distractorHitShipIcon;
+        break;
+      case 'distractor_hit_base':
+        iconPath = distractorHitBaseIcon;
+        break;
+      case 'correct_reached_base':
+        iconPath = correctReachedBaseIcon;
+        break;
       case 'distractor_reached_base':
-        return '⚠️';
+        iconPath = distractorReachedBaseIcon;
+        break;
+      case 'intro':
+      case 'generic':
       default:
-        return '📖';
+        iconPath = contextIcon;
+        break;
     }
+    
+    return (
+      <img 
+        src={iconPath} 
+        alt={data.type} 
+        className="event-icon"
+      />
+    );
   };
   
   const getEventAction = () => {
     switch (data.type) {
+      case 'correct_collected':
+        return 'gesammelt';
       case 'correct_shot':
-        return 'abgeschossen⚠️';
-      case 'distractor_collision':
+        return 'abgeschossen';
+      case 'distractor_shot':
+        return 'abgeschossen';
+      case 'distractor_hit_ship':
+      case 'distractor_collision': // Legacy support
         return 'kollidiert';
+      case 'distractor_hit_base':
+        return 'hat Basis getroffen';
+      case 'correct_reached_base':
+        return 'hat Basis erreicht';
       case 'distractor_reached_base':
         return 'durchgekommen';
       default:
@@ -248,7 +297,7 @@ export const ContextPauseOverlay: React.FC<ContextPauseOverlayProps> = ({
         {/* What Happened - Compact */}
         <div className="context-event-summary">
           {getEventIcon()} 
-          {data.type === 'distractor_collision' ? (
+          {(data.type === 'distractor_collision' || data.type === 'distractor_hit_ship') ? (
             <>Mit "{data.word}" {getEventAction()} <span className="points-negative">{data.pointsChange}</span></>
           ) : (
             <>"{data.word}" {getEventAction()} <span className={data.pointsChange >= 0 ? 'points-positive' : 'points-negative'}>{data.pointsChange >= 0 ? '+' : ''}{data.pointsChange}</span></>
@@ -265,7 +314,7 @@ export const ContextPauseOverlay: React.FC<ContextPauseOverlayProps> = ({
         {/* Context (only show if not empty) */}
         {data.context && data.context.trim() !== '' && (
           <div className="context-text">
-            📖 {highlightWordInContext(data.context, data.word)}
+             {highlightWordInContext(data.context, data.word)}
           </div>
         )}
         
@@ -323,11 +372,14 @@ export const ContextPauseOverlay: React.FC<ContextPauseOverlayProps> = ({
                       setShowCorrectShot(newValue);
                       handleSettingsChange(
                         { showCorrectShot: newValue },
-                        newValue ? '❌ Zeige wenn Lösungen abgeschossen werden' : undefined
+                        newValue ? 'Zeige wenn Lösungen abgeschossen werden' : undefined
                       );
                     }}
                   />
-                  <span>Richtige Wörter abgeschossen ❌</span>
+                  <span>
+                    
+                    Richtige Wörter abgeschossen<img src={correctShotIcon} alt="Richtige Wörter abgeschossen" className="feedback-icon" />
+                  </span>
                 </label>
               </div>
               
@@ -341,11 +393,13 @@ export const ContextPauseOverlay: React.FC<ContextPauseOverlayProps> = ({
                       setShowDistractorCollision(newValue);
                       handleSettingsChange(
                         { showDistractorCollision: newValue },
-                        newValue ? '💥 Zeige wenn Ablenker kollidieren' : undefined
+                        newValue ? 'Zeige wenn Ablenker kollidieren' : undefined
                       );
                     }}
                   />
-                  <span>Falsche Wörter eingesammelt 💥</span>
+                  <span>
+                    Falsche Wörter eingesammelt<img src={distractorCollisionIcon} alt="Falsche Wörter eingesammelt" className="feedback-icon" />
+                  </span>
                 </label>
               </div>
               
@@ -359,11 +413,13 @@ export const ContextPauseOverlay: React.FC<ContextPauseOverlayProps> = ({
                       setShowCorrectCollect(newValue);
                       handleSettingsChange(
                         { showCorrectCollect: newValue },
-                        newValue ? '✅ Zeige wenn Lösungen gesammelt werden' : undefined
+                        newValue ? 'Zeige wenn Lösungen gesammelt werden' : undefined
                       );
                     }}
                   />
-                  <span>Richtige Wörter eingesammelt ✅</span>
+                  <span>
+                    Richtige Wörter eingesammelt<img src={correctCollectIcon} alt="Richtige Wörter eingesammelt" className="feedback-icon" />
+                  </span>
                 </label>
               </div>
               
@@ -377,11 +433,13 @@ export const ContextPauseOverlay: React.FC<ContextPauseOverlayProps> = ({
                       setShowDistractorShot(newValue);
                       handleSettingsChange(
                         { showDistractorShot: newValue },
-                        newValue ? '💚 Zeige wenn Ablenker eliminiert werden' : undefined
+                        newValue ? 'Zeige wenn Ablenker eliminiert werden' : undefined
                       );
                     }}
                   />
-                  <span>Falsche Wörter abgeschossen 💚</span>
+                  <span>
+                    Falsche Wörter abgeschossen<img src={distractorShotIcon} alt="Falsche Wörter abgeschossen" className="feedback-icon" />
+                  </span>
                 </label>
               </div>
             </div>

@@ -67,6 +67,7 @@ export interface Item {
   chapter: string;
   level: number;
   published?: boolean; // Whether item is published and visible to end users (default: true)
+  game?: 'sw' | 's' | 'w'; // Which game(s) use this round: 'sw'=both (default), 's'=StreetSmarts only, 'w'=WordRush only
   freeTier?: boolean; // Whether item is available for free (guest users without login) - default: false (Opt-in for security)
   waveDuration?: number;
   introText?: string;

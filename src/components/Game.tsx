@@ -234,12 +234,12 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
       setWarningText(text);
       setWarningBlinks(6); // 3 blinks
       
-      contextTimerRef.current = setTimeout(() => {
+        contextTimerRef.current = setTimeout(() => {
         setContextVisible(false);
-        setWarningText('');
-        setWarningBlinks(0);
-        contextTimerRef.current = null;
-      }, 3000);
+          setWarningText('');
+          setWarningBlinks(0);
+          contextTimerRef.current = null;
+        }, 3000);
       return;
     }
     
@@ -880,26 +880,26 @@ export const Game: React.FC<GameProps> = ({ universe, theme, chapterId, chapterI
       // New touch detected - reset and recalculate everything
       console.log('✨ New touch detected - resetting offset (old ID:', primaryTouchId.current, '→ new ID:', touchId, ')');
       
-      const fingerPos = {
-        x: touch.clientX - rect.left,
-        y: touch.clientY - rect.top
-      };
-      
+    const fingerPos = {
+      x: touch.clientX - rect.left,
+      y: touch.clientY - rect.top
+    };
+    
       // Calculate NEW offset between finger and ship position
-      const shipPos = engine.getShip().position;
-      touchOffset.current = {
-        x: shipPos.x - fingerPos.x,
-        y: shipPos.y - fingerPos.y
-      };
+    const shipPos = engine.getShip().position;
+    touchOffset.current = {
+      x: shipPos.x - fingerPos.x,
+      y: shipPos.y - fingerPos.y
+    };
       
       // Store new primary touch ID
       primaryTouchId.current = touchId;
-      
-      // Set initial touch position with offset
-      touchPos.current = {
-        x: fingerPos.x + touchOffset.current.x,
-        y: fingerPos.y + touchOffset.current.y
-      };
+    
+    // Set initial touch position with offset
+    touchPos.current = {
+      x: fingerPos.x + touchOffset.current.x,
+      y: fingerPos.y + touchOffset.current.y
+    };
       
       console.log('   → Offset:', touchOffset.current, '| Ship:', shipPos, '| Finger:', fingerPos);
     }

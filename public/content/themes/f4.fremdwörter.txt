@@ -1,0 +1,51 @@
+evidenzbasiert: „auf guter Studienlage beruhend; wirksamkeitsgeprüft“
+Intrusion: „aufdringlicher, ungewollter Gedanke/Bild/Impuls“
+Agoraphobie: „Angst vor Situationen ohne Flucht/Hilfe (Mengen, ÖPNV, Plätze)“
+Hyperthyreose: „Schilddrüsenüberfunktion mit Herzrasen, Tremor, Unruhe“
+GABA: „inhibitorischer Neurotransmitter im ZNS; dämpft Erregung“
+Amygdala: „Gefahren‑/Emotionszentrum; triggert Alarmreaktionen“
+limbisches System: „Netzwerk zur Emotions‑ und Stressverarbeitung“
+Hypervigilanz: „übermäßige Wachsamkeit für mögliche Bedrohungen“
+Derealisation: „Umwelt wirkt fremd/unecht, wie im Traum“
+Depersonalisation: „Selbst/Körper wirkt entfremdet oder wie „neben mir““
+Hyperarousal: „dauerhafte Übererregung: Schlaf, Reizbarkeit, Schreckhaftigkeit“
+Exposition: „gezielte Konfrontation ohne Flucht/Sicherheitsverhalten“
+Reaktionsverhinderung (ERP): „Trigger zulassen, Rituale/Neutralisieren nicht ausführen“
+Sicherheitsverhalten: „vermeintliche Schutztricks, die Lernen verhindern“
+Vermeidungsverhalten: „Angstquelle nicht aufsuchen → kurzfristig gut, langfristig schlecht“
+Habituation: „Gewöhnung: Angst sinkt von selbst bei Wiederholung“
+kognitive Umstrukturierung: „Katastrophengedanken prüfen und realistischer bewerten“
+Psychoedukation: „Störungswissen vermitteln, Mechanismen erklären“
+Komorbidität: „gleichzeitiges Auftreten weiterer Störungen“
+Prävalenz: „Häufigkeit in einer Population/Zeitraum“
+vasovagale Synkope: „Ohnmacht durch Blutdruck‑/Pulsabfall (BII‑Phobie)“
+„diphasic response“: „erst Puls hoch, dann stark runter → Ohnmachtneigung“
+Applied Tension: „gezielte Muskelanspannung gegen Ohnmacht“
+Thought‑Action‑Fusion: „Gedanke fühlt sich wie Tat/Wahrscheinlichkeits‑Booster an“
+ich‑dyston: „nicht zum eigenen Wollen passend; als fremd/quälend erlebt“
+ich‑synton: „stimmig mit dem Selbstbild; wird nicht als Problem erlebt“
+magisches Denken: „Gedanken/Rituale werden als real wirksam überschätzt“
+Neutralisieren: „Gegenhandlung/mentales Ritual zum „Entschärfen“ eines Gedankens“
+ACT: „Umgang mit Gedanken: akzeptieren, defundieren, werteorientiert handeln“
+Defusion: „Abstand zum Gedanken: „Ich habe den Gedanken, dass …““
+Committed Action: „wertegeleitet handeln – trotz Angst/Unsicherheit“
+SORKC: „Stimulus–Organismus–Reaktion–Kontingenz–Konsequenz‑Analyse“
+kortikostriatale Schleifen: „Frontallappen–Basalganglien–Thalamus‑Kontrollkreise“
+orbitofrontaler Kortex: „Fehler/„Relevanz“‑Bewertung; bei OCD oft überaktiv“
+Parästhesien: „Kribbeln/Missempfindungen ohne klare Nervenbahn“
+Dissoziation: „gestörte Integration von Erinnerung, Identität, Wahrnehmung“
+Stupor (dissoziativ): „starke Bewegungslosigkeit bei erhaltenem Bewusstsein“
+Fugue: „zielgerichtetes Weggehen + Amnesie für die Episode“
+Konversion: „neurologisch erscheinender Funktionsverlust ohne Befund“
+anankastische PS: „zwanghafte Persönlichkeit: perfektionistisch, ich‑synton“
+interozeptiv: „auf Körpersensationen bezogen (z. B. Herzschlag, Übelkeit)“
+protrahiert: „verlängert, sich hinziehend“
+Remission: „Rückgang/Abklingen der Symptome“
+antizipatorische Erwartungsangst: „Angst vor der nächsten Attacke/Situation“
+Rückversicherung: „Beruhigung von außen einholen (kurz hilft, langfristig schadet)“
+Incompleteness/„just‑right“: „quälendes „nicht richtig“-Gefühl → Wiederholen“
+Symmetriedimension: „OCD‑Cluster: Ordnung/Ausrichten/Zählen bis „genau richtig““
+Emetophobie: „spezifische Phobie: Angst vor Erbrechen/Übelkeit“
+vasovagal: „Über den Vagus ausgelöster Kreislaufabfall (Ohnmacht)“
+
+Hyperthyreose,Prävalenz,Amygdala,Synkope,SORKC,CBT, KVT, PANSS,Emetophobie Parästhesien

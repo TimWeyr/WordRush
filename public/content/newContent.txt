@@ -1,0 +1,1376 @@
+# Base-Wörter für Thema: Diagnose (Psychopathologie)
+
+## Bewusstseinsstörungen
+b. Quantitative Bewusstseinsstörung | Verminderung der Wachheit
+c. Benommenheit | Verlangsamung ↓ Informationsaufnahme
+c. Somnolenz | Müdigkeit → Apathie, erweckbar
+c. Sopor | Betäubung, starke Weckreize nötig
+c. Koma | Bewusstlosigkeit, nicht erweckbar
+
+b. Qualitative Bewusstseinsstörung | Veränderung der Bewusstseinslage
+c. Bewusstseinstrübung | Verwirrtheit → Erlebniszusammenhang verloren
+c. Bewusstseinseinengung | Traumhaft → Aufmerksamkeit nach innen
+c. Bewusstseinsverschiebung | Helligkeit ↑ Bewusstseinsraum
+
+b. Benommenheit | Verlangsamt, schwer besinnlich
+c. Verlangsamung | Reaktionszeit ↑ Informationsverarbeitung
+c. Informationsaufnahme eingeschränkt | Wahrnehmung ↓ Verarbeitung
+
+b. Somnolenz | Müde, schläfrig, leicht erweckbar
+c. Müdigkeit | Wachheit ↓ Schlafneigung ↑
+c. Apathie | Teilnahmslosigkeit, Initiative ↓
+c. Erweckbarkeit | Leichte Weckreize ausreichend
+
+b. Sopor | Schlaf, nur starke Weckreize
+c. Betäubung | Bewusstsein stark reduziert
+c. Weckreize | Nur starke Stimuli wirksam
+
+b. Koma | Bewusstlos, nicht weckbar
+c. Bewusstlosigkeit | Keine Reaktion auf Reize
+c. Nicht erweckbar | Auch starke Reize unwirksam
+
+b. Bewusstseinstrübung | Verwirrtheit, Erlebniszusammenhang verloren
+c. Verwirrtheit | Denken ↔ Handeln gestört
+c. Erlebniszusammenhang verloren | Zusammenhänge nicht erfassbar
+c. Delir | Häufigste Ursache Bewusstseinstrübung
+
+b. Bewusstseinseinengung | Traumhafte Veränderung, Amnesie
+c. Traumhaft | Bewusstsein eingeengt, nach innen
+c. Aufmerksamkeit nach innen | Außenreize ↓ Ansprechbarkeit
+c. Amnesie | Erinnerungslücke für Einengungszeit
+
+b. Bewusstseinsverschiebung | Abnorme Helligkeit, Intensitätssteigerung
+c. Helligkeit | Bewusstsein abnorm hell
+c. Intensitätssteigerung | Wahrnehmung intensiviert
+c. Bewusstseinsraum vergrößert | Raumgefühl erweitert
+
+## Orientierung
+b. Orientierungsstörung | Unzureichende Fähigkeit ZSOP
+b. Zeitliche Desorientierung | Kein Wissen über Datum, Jahr
+b. Situative Desorientierung | Kein Wissen über Situation
+b. Örtliche Desorientierung | Mangelndes Wissen über Ort
+b. Desorientiertheit zur Person | Mangelndes Wissen über Identität
+
+## Aufmerksamkeit und Gedächtnis
+b. Aufmerksamkeitsstörung | Beeinträchtigte Konzentration
+b. Auffassungsstörung | Wahrnehmungen nicht erfassbar
+b. Gedächtnisstörung | Verminderte Wiedergabefähigkeit
+b. Merkfähigkeitsstörung | Frische Eindrücke nicht speicherbar
+b. Altgedächtnisstörung | Gespeicherte Inhalte nicht erinnerbar
+b. Retrograde Amnesie | Zeitraum VOR schädigendem Ereignis
+b. Anterograde Amnesie | Zeitraum NACH schädigendem Ereignis
+b. Kongrade Amnesie | Zeitraum WÄHREND schädigendem Ereignis
+b. Transitorisch globale Amnesie | Vorübergehend 3-5 Stunden
+b. Konfabulation | Erinnerungslücken mit Fantasie ausgefüllt
+b. Paramnesie | Umändern der Erinnerung im Sinne Wahns
+b. De-ja-vu | Ereignis kommt bekannt vor
+b. Ekmnesie | Vergangenheit als Gegenwart erlebt
+b. Hypermnesie | Gesteigerte Erinnerungsfähigkeit
+b. Zeitgitterstörung | Mangelnde biografische Zuordnung
+
+## Intelligenz
+b. Angeborene Intelligenzminderung | Von Geburt an vorhanden
+b. Erworbene Intelligenzminderung | Im Laufe des Lebens erworben
+b. Oligophrenie | Angeborene Intelligenzminderung F7
+b. Leichte Intelligenzminderung | IQ 50-69, F70
+b. Mittelgradige Intelligenzminderung | IQ 35-49, F71
+b. Schwere Intelligenzminderung | IQ 20-34, F72
+b. Schwerste Intelligenzminderung | IQ unter 20, F73
+
+## Wahrnehmung
+b. Wahrnehmungsveränderung | Veränderte Sinneswahrnehmung
+b. Wahrnehmungsstörung | Pathologische Sinneswahrnehmung
+b. Illusion | Verzerrte Wahrnehmung realer Objekte
+b. Halluzination | Wahrnehmung ohne Reizquelle
+b. Akustische Halluzination | Hören ohne akustischen Reiz
+b. Optische Halluzination | Sehen ohne optischen Reiz
+b. Leibeshalluzination | Körperliche Wahrnehmungsstörung
+b. Zoenästhesie | Leibeshalluzination, von außen gemacht
+
+## Denken
+b. Formale Denkstörung | Störung des Denkablaufs
+b. Inhaltliche Denkstörung | Störung des Denkinhalts
+b. Ideenflucht | Beschleunigter Gedankenablauf
+b. Verlangsamtes Denken | Gedankenablauf verlangsamt
+b. Perseveration | Haftenbleiben an Gedanken
+b. Gedankenabreißen | Gedankenfluss unterbrochen
+b. Wahn | Unkorrigierbare Fehlüberzeugung
+b. Wahngedanke | Einzelner wahnhafter Gedanke
+b. Beziehungswahn | Bedeutung auf sich bezogen
+b. Verfolgungswahn | Verfolgungsüberzeugung
+b. Größenwahn | Übertriebene Selbstüberschätzung
+b. Eifersuchtswahn | Wahnhaftes Misstrauen Partner
+
+## Affektivität
+b. Affektive Störung | Störung der Gefühlslage
+b. Affektlabilität | Schneller Affektwechsel
+b. Affektinkontinenz | Unkontrollierter Affektausbruch
+b. Affektstarre | Starre, unveränderliche Affektlage
+b. Affektarmut | Verminderte Affektivität
+b. Depressivität | Herabgestimmte, freudlose Befindlichkeit
+b. Läppischer Affekt | Einfältige, alberne Heiterkeit
+b. Dysphorie | Gereizte, missmutige Stimmungslage
+b. Euphorie | Übersteigertes Wohlbefinden
+b. Angst | Gefühlszustand der Bedrohung
+b. Parathymie | Gefühlsausdruck ≠ Erlebnisinhalt
+b. Störung der Vitalgefühle | Fehlende körperlich-seelische Frische
+b. Ambivalenz | Gegensätzliche Gefühle nebeneinander
+b. Insuffizienzgefühle | Gefühl der Unfähigkeit
+b. Gesteigertes Selbstwertgefühl | Übertriebene Selbstwahrnehmung
+
+## Antrieb und Psychomotorik
+b. Antriebsstörung | Gestörte zielgerichtete Bewegungsabläufe
+b. Antriebsschwäche | Ungenügendes Aufrechterhalten Antriebs
+b. Antriebshemmung | Gebremster Wille zum Tun
+b. Stupor | Starker Mangel Bewegungsfähigkeit
+b. Akinese | Völlige motorische Bewegungslosigkeit
+b. Antriebssteigerung | Erhöhte Aktivität, Betriebsamkeit
+b. Antriebsenthemmung | Ungehemmte Aktivität
+b. Motorische Unruhe | Ziellose Steigerung Aktivität
+b. Hyperkinese | Bewegungssturm bis Tobsucht
+b. Raptus | Plötzlicher aggressiver Erregungszustand
+b. Mutismus | Wortkargheit bis Nichtsprechen
+b. Logorrhoe | Übermäßiger Rededrang
+b. Negativismus | Automatisch Gegenteil machen
+b. Befehlsautomatie | Automatenhaft Befehle befolgen
+b. Echolalie | Gehörtes nachsprechen
+b. Echopraxie | Gesehenes nachmachen
+b. Stereotypie | Monotone wiederkehrende Äußerungen
+b. Ambitendenz | Entgegengesetzte Willensimpulse
+b. Manierismus | Sonderbares, gekünsteltes Verhalten
+b. Tic | Gleichförmig wiederkehrende Muskelzuckung
+
+## Ich-Erleben
+b. Ich-Störung | Veränderung Ich-Umwelt-Grenze
+b. Entfremdungserlebnis | Ich oder Umwelt als fremd
+b. Depersonalisation | Eigenes Ich als fremd erlebt
+b. Derealisation | Umwelt als unwirklich erlebt
+b. Gedankenausbreiten | Gedanken gehören nicht allein mir
+b. Gedankenentzug | Gedanken von außen weggenommen
+b. Gedankeneingebung | Gedanken von außen eingegeben
+b. Gedankenlautwerden | Gedanken werden hörbar
+b. Fremdbeeinflussungserlebnis | Wollen von außen gesteuert
+b. Leibliche Beeinflussungserlebnisse | Zoenästhesien von außen gemacht
+b. Autismus | Abkapselung von der Außenwelt
+
+
+
+verschiedene Fälle in der Erhebung des psychopathologischen befundes:
+Patient versteht sich als Dozent:
+situation wird verkannt (orientierung)
+
+daraus könnte man ein item machen:
+ b. Patient versteht sich als Dozent
+c. Orientierung zur Situation|Er versteht nicht, dass er Untersucht wird, er nimmt an, er wäre ein Dozent, der jemanden aufklärt.
+d. Orientierung zur Person|Situation| Patient versteht nicht, dass er untersucht wird sondern sieht sich als Dozent. Es mag sein, dass er bzgl. der persönlichen Lebensgeschichte, Geburtstag und Ort, Alter, Name, Wohnsitz voll orientiert ist.
+
+weitere idee:
+# Item: Orientierungsfrage im psychopathologischen Befund
+b. Welches Datum haben wir heute? | Frage zur zeitlichen Orientierung
+c. Zeitliche Orientierung | Prüfung Datum, Jahr, Tag
+c. Befunderhebung | Systematische Orientierungsabfrage
+d. Merkfähigkeitsstörung | Gedächtnisstörung | Gedächtnis verwechselbar, aber Orientierung = aktuelles Wissen, Merkfähigkeit = Speicherung
+d. Inhaltliche Denkstörung | Denken | Kognition , aber Orientierung = Situationswissen, Denkstörung = Fehlüberzeugung
+d. Aufmerksamkeitsstörung | Aufmerksamkeit | Informationsaufnahme , aber Orientierung = Wissen, Aufmerksamkeit = Fokussierung
+d. Wahrnehmungsstörung | Wahrnehmung | Informationsverarbeitung , aber Orientierung = Situationswissen, Wahrnehmung = Sinnesverarbeitung
+s. Psychopathologischer Befund | Orientierungsprüfung ZSOP
+t. orientierung | befunderhebung | psychopathologie
+l. 2
+
+# Item: Orientierungsfrage Jahreszeit im psychopathologischen Befund
+b. Welche Jahreszeit ist grade? | Frage zur zeitlichen Orientierung
+c. Zeitliche Orientierung | Prüfung Jahreszeit, Monat, Saison
+d. Merkfähigkeitsstörung | Gedächtnisstörung | Gedächtnis verwechselbar, aber Orientierung = aktuelles Wissen, Merkfähigkeit = Speicherung
+d. Inhaltliche Denkstörung | Denken | Kognition , aber Orientierung = Situationswissen, Denkstörung = Fehlüberzeugung
+d. Aufmerksamkeitsstörung | Aufmerksamkeit | Informationsaufnahme , aber Orientierung = Wissen, Aufmerksamkeit = Fokussierung
+d. Wahrnehmungsstörung | Wahrnehmung | Informationsverarbeitung , aber Orientierung = Situationswissen, Wahrnehmung = Sinnesverarbeitung
+s. Psychopathologischer Befund | Orientierungsprüfung ZSOP
+t. orientierung | befunderhebung | psychopathologie
+l. 2
+
+# Item: Orientierungsfrage situative Orientierung
+b. Wann sind Sie in die Klinik gekommen? | Frage zur situativen Orientierung
+c. Situative Orientierung | Prüfung Wissen über aktuelle Situation  
+d. Örtliche Orientierung | Orientierung | Orientierung , aber örtlich = Ort, nicht situativ = Situation
+d. Merkfähigkeitsstörung | Gedächtnisstörung | Gedächtnis verwechselbar, aber Orientierung = aktuelles Situationswissen, Merkfähigkeit = Speicherung
+d. Aufmerksamkeitsstörung | Aufmerksamkeit | Informationsaufnahme , aber Orientierung = Situationswissen, Aufmerksamkeit = Fokussierung
+s. Psychopathologischer Befund | Orientierungsprüfung ZSOP
+t. orientierung | befunderhebung | psychopathologie
+l. 2
+
+# Item: Orientierungsfrage örtliche Orientierung
+b. In welcher Stadt sind wir? | Frage zur örtlichen Orientierung
+c. Örtliche Orientierung | Prüfung Wissen über aktuellen Ort
+d. Situative Orientierung | Orientierung | Orientierung , aber situativ = Situation, nicht örtlich = Ort
+d. Räumliche Wahrnehmungsstörung | Wahrnehmung | Wahrnehmung , aber örtliche Orientierung = Wissen über Ort, nicht Wahrnehmungsstörung
+d. Gedächtnisstörung | Gedächtnisstörung | Gedächtnis verwechselbar, aber örtliche Orientierung = aktuelles Ortswissen, Gedächtnisstörung = Speicherung
+s. Psychopathologischer Befund | Orientierungsprüfung ZSOP
+t. orientierung | befunderhebung | psychopathologie
+l. 2
+
+
+# Item: Orientierungsfrage Alter zur Person
+b. Wie alt sind Sie? | Frage zur Orientierung zur Person
+c. Orientierung zur Person | Prüfung Wissen über eigene Person
+d. Zeitliche Orientierung | Orientierung | Orientierung , aber zeitlich = Datum/Zeit, nicht zur Person = Identität
+d. Identitätsstörung | Ich-Störung | Identität , aber Orientierung zur Person = Wissen, Identitätsstörung = Ich-Störung
+d. Gedächtnisstörung | Gedächtnisstörung | Gedächtnis verwechselbar, aber Orientierung zur Person = Wissen über Identität, Gedächtnisstörung = Speicherung
+s. Psychopathologischer Befund | Orientierungsprüfung ZSOP
+t. orientierung | befunderhebung | psychopathologie
+l. 2 
+ 
+
+Kannst du das in dem sinne noch mal neu machen? d. Gedächtnisstörung | Gedächtnisfunktion | Es kann sein, dass das die Frage nach dem Alter wg. der Orientierung zur Person oder auch wegen der Störung des Gedächtnis nicht beantwortet werden kann. Mit der Frage... könnte man rausfinden ob es sich um eine Gedächtnisstörung handelt und mit der frage.... könnte man herausfinden ob die Orientierung zur Person nicht gut vorhanden ist.
+
+
+
+# Item: Orientierungsfrage Alter zur Person
+b. Wie alt sind Sie? | Frage zur Orientierung zur Person
+c. Orientierung zur Person | Prüfung Wissen über eigene Person
+d. Zeitliche Orientierung | anderer Orientierungsbereich | Wenn das Alter nicht benannt werden kann, sollte zur Abgrenzung nach Datum, Wochentag oder Tageszeit gefragt werden. So lässt sich prüfen, ob eine zeitliche Desorientierung vorliegt und nicht primär eine Störung der Personenorientierung.
+d. Identitätsstörung | Ich-Störung | Das Erleben der eigenen Identität ist qualitativ verändert, nicht der Wissensabruf. Betroffene kennen meist objektive Daten wie Name oder Alter, erleben sich jedoch als fremd, verändert oder nicht zu sich gehörig. Zur Abgrenzung eignet sich eine Ich-bezogene Erlebnisfrage (z. B. „Fühlen Sie sich im Moment wie Sie selbst?“ oder „Kommt es Ihnen manchmal so vor, als wären Sie nicht wirklich Sie?“).
+d. Gedächtnisstörung | Gedächtnisfunktion | Das Alter kann sowohl wegen fehlender Orientierung zur Person als auch aufgrund einer Störung von Speicherung oder Abruf nicht benannt werden. Zur Abgrenzung eignet sich eine Gedächtnisprüfung (z. B. Merken und Wiedergeben neuer Informationen). Zur Prüfung der Personenorientierung dagegen eine weitere Identitätsfrage (z. B. „Wie heißen Sie?“ oder „Wo sind Sie geboren?“).
+s. Psychopathologischer Befund | Orientierungsprüfung ZSOP
+t. orientierung | befunderhebung | psychopathologie
+l. 2
+
+
+
+# Item: Orientierungsfrage Geburtsdatum zur Person
+b. Wann wurden Sie geboren? | Frage zur Orientierung zur Person
+c. Orientierung zur Person | Prüfung Wissen über eigene Person
+d. Zeitliche Orientierung | anderer Orientierungsbereich | Wenn das Geburtsdatum nicht benannt werden kann, sollte zur Abgrenzung nach aktuellem Datum, Wochentag oder Tageszeit gefragt werden. So lässt sich prüfen, ob eine zeitliche Desorientierung vorliegt und nicht primär eine Störung der Personenorientierung.
+d. Altgedächtnisstörung | Gedächtnisfunktion | Das Geburtsdatum kann sowohl wegen fehlender Orientierung zur Person als auch aufgrund einer Störung des Altgedächtnisses nicht benannt werden. Zur Abgrenzung eignet sich eine Gedächtnisprüfung biografischer Ereignisse (z. B. "Wann haben Sie geheiratet?" oder "In welchem Jahr haben Sie die Schule abgeschlossen?"). Zur Prüfung der Personenorientierung dagegen eine weitere Identitätsfrage (z. B. "Wie heißen Sie?" oder "Wie alt sind Sie?").
+d. Identitätsstörung | Ich-Störung | Das Erleben der eigenen Identität ist qualitativ verändert, nicht der Wissensabruf. Betroffene kennen meist objektive Daten wie Geburtsdatum oder Alter, erleben sich jedoch als fremd, verändert oder nicht zu sich gehörig. Zur Abgrenzung eignet sich eine Ich-bezogene Erlebnisfrage (z. B. "Fühlen Sie sich im Moment wie Sie selbst?" oder "Kommt es Ihnen manchmal so vor, als wären Sie nicht wirklich Sie?").
+s. Psychopathologischer Befund | Orientierungsprüfung ZSOP
+t. orientierung | befunderhebung | psychopathologie
+l. 2
+
+
+
+# Item: Orientierungsfrage Familienstand zur Person
+b. Sind Sie verheiratet? | Frage zur Orientierung zur Person
+c. Orientierung zur Person | Prüfung Wissen über eigene Person
+d. Situative Orientierung | anderer Orientierungsbereich | Orientierung , aber situativ = Situation, nicht zur Person = Identität. Wenn der Familienstand nicht benannt werden kann, sollte zur Abgrenzung nach der aktuellen Situation gefragt werden (z. B. "Wo sind wir gerade?" oder "Was passiert hier?"). So lässt sich prüfen, ob eine situative Desorientierung vorliegt und nicht primär eine Störung der Personenorientierung.
+d. Beziehungswahn | inhaltliche Denkstörung | Beziehung , aber Orientierung zur Person = Wissen, Beziehungswahn = Wahn. Der Familienstand kann sowohl wegen fehlender Orientierung zur Person als auch aufgrund eines Beziehungswahns nicht korrekt benannt werden. Zur Abgrenzung eignet sich eine Wahnprüfung (z. B. "Glauben Sie, dass Ihr Partner Sie betrügt?" oder "Haben Sie das Gefühl, dass andere Sie beobachten?"). Zur Prüfung der Personenorientierung dagegen eine weitere Identitätsfrage (z. B. "Wie heißen Sie?" oder "Wie alt sind Sie?"). Beim Beziehungswahn ist das Wissen über den Familienstand meist vorhanden, aber durch wahnhafte Überzeugungen verzerrt.
+d. Gedächtnisstörung | Gedächtnisfunktion | Gedächtnis verwechselbar, aber Orientierung zur Person = Wissen über Identität, Gedächtnisstörung = Speicherung. Der Familienstand kann sowohl wegen fehlender Orientierung zur Person als auch aufgrund einer Störung von Speicherung oder Abruf nicht benannt werden. Zur Abgrenzung eignet sich eine Gedächtnisprüfung (z. B. Merken und Wiedergeben neuer Informationen oder Abruf biografischer Ereignisse). Zur Prüfung der Personenorientierung dagegen eine weitere Identitätsfrage (z. B. "Wie heißen Sie?" oder "Wann wurden Sie geboren?").
+s. Psychopathologischer Befund | Orientierungsprüfung ZSOP
+t. orientierung | befunderhebung | psychopathologie
+l. 2
+
+
+# Item: Gedächtnisprüfung siebenstellige Zahlen
+b. Vorsprechen von siebenstelligen Zahlen (z.B. Telefonnummern) | Prüfung der Merkfähigkeit
+c. Merkfähigkeit  | Unfähigkeit, siebenstellige Zahlen nach Vorsprechen zu behalten und wiederzugeben, deutet auf Merkfähigkeitsstörung hin
+d. Langzeitgedächtnis | Gedächtnisfunktion | Wenn siebenstellige Zahlen nicht behalten werden können, prüft dies Merkfähigkeit (ca. 10 Minuten), nicht Langzeitgedächtnis. Zur Abgrenzung eignet sich eine Prüfung biografischer Ereignisse (z. B. "Wann haben Sie geheiratet?"). Bei Merkfähigkeitsstörung sind frische Eindrücke betroffen, bei Langzeitgedächtnisstörung länger zurückliegende Ereignisse.
+d. Aufmerksamkeitsstörung | Aufmerksamkeit | Aufmerksamkeit , aber Aufmerksamkeitsstörung = Fokussierung, nicht Merkfähigkeit = Speicherung
+d. Aufmerksamkeitsstörung | Aufmerksamkeit | Wenn siebenstellige Zahlen nicht behalten werden können, kann dies sowohl auf Merkfähigkeitsstörung als auch auf Aufmerksamkeitsstörung hinweisen. Zur Abgrenzung eignet sich eine Prüfung der Konzentration (z. B. "Können sie von 85 immer 4 abziehen?").    
+s. Psychopathologischer Befund | Gedächtnisprüfung
+t. gedächtnis | befunderhebung | psychopathologie
+l. 2
+
+# Item: Gedächtnisprüfung drei Gegenstände
+b. Namen von drei Gegenständen, sofortiges und zeitversetztes Wiederholen (z.B. Hut, Topf, Zeitung) | Prüfung der Merkfähigkeit
+c. Merkfähigkeit | Unfähigkeit, drei Gegenstände sofort oder nach ca. 10 Minuten wiederzugeben, deutet auf Merkfähigkeitsstörung hin
+d. Langzeitgedächtnis  | Gedächtnisfunktion | Wenn drei Gegenstände nicht behalten werden können, prüft dies Merkfähigkeit (ca. 10 Minuten), nicht Langzeitgedächtnis. Zur Abgrenzung eignet sich eine Prüfung biografischer Ereignisse (z. B. "Wann wurden Sie geboren?"). Bei Merkfähigkeitsstörung sind frische Eindrücke betroffen, bei Langzeitgedächtnisstörung länger zurückliegende Ereignisse.
+d. Konfabulation | Gedächtnisfunktion | Wenn drei Gegenstände nicht korrekt wiedergegeben werden, kann dies sowohl auf Merkfähigkeitsstörung als auch auf Konfabulation hinweisen. Zur Abgrenzung: Bei Merkfähigkeitsstörung fehlt die Information, bei Konfabulation werden Erinnerungslücken mit spontan wechselnden Einfällen gefüllt, die der Patient für Erinnerung hält. Konfabulation kann nicht wiederholt werden, Merkfähigkeitsstörung zeigt konsistentes Versagen.
+s. Psychopathologischer Befund | Gedächtnisprüfung
+t. gedächtnis | befunderhebung | psychopathologie
+l. 2
+
+# Item: Gedächtnisprüfung biografische Ereignisse
+b. Abfragen von lebensgeschichtlich relevanten Ereignissen | Prüfung des Langzeitgedächtnisses
+c. Langzeitgedächtnis | Prüfung Fähigkeit, länger zurückliegende Ereignisse zu behalten
+c. Langzeitgedächtnis Altgedächtnis | Unfähigkeit, lebensgeschichtlich relevante Ereignisse zu erinnern, deutet auf Störung des Langzeitgedächtnisses oder Altgedächtnisses hin
+d. Merkfähigkeit | Gedächtnisfunktion | Wenn biografische Ereignisse nicht erinnert werden können, prüft dies Langzeitgedächtnis, nicht Merkfähigkeit. Zur Abgrenzung eignet sich eine Prüfung der Merkfähigkeit (z. B. "Vorsprechen von drei Gegenständen"). Bei Merkfähigkeitsstörung sind frische Eindrücke betroffen, bei Langzeitgedächtnisstörung länger zurückliegende Ereignisse.
+d. Paramnesie | Gedächtnisfunktion | Wenn biografische Ereignisse nicht korrekt erinnert werden, kann dies entweder auf eine Langzeitgedächtnisstörung (fehlender Abruf) oder auf eine Paramnesie (verfälschte Erinnerung) hinweisen.
+s. Psychopathologischer Befund | Gedächtnisprüfung
+t. gedächtnis | befunderhebung | psychopathologie
+l. 2
+
+ 
+# Item: Alltagsgedächtnis Prüfung
+b. Vermissen Sie zur Zeit vermehrt Dinge? | Prüfung des Alltagsgedächtnisses
+c. Alltagsgedächtnis | Frage nach vermehrtem Vermissen von Dingen prüft praktische Gedächtnisleistung im Alltag und zeigt mögliche Auswirkungen auf den Alltag
+d. Merkfähigkeitsstörung | Gedächtnisstörung | Gedächtnis , aber Alltagsgedächtnis = praktische Anwendung, nicht nur Merkfähigkeit = Test
+d. Merkfähigkeitsstörung | Gedächtnisfunktion| Wenn vermehrt Dinge vermisst werden, kann dies sowohl auf Alltagsgedächtnisstörung als auch auf Merkfähigkeitsstörung hinweisen. Zur Abgrenzung eignet sich eine objektive Merkfähigkeitsprüfung (z. B. "Vorsprechen von drei Gegenständen"). Alltagsgedächtnis zeigt praktische Auswirkungen, Merkfähigkeitsstörung zeigt sich auch in Tests. Beide können zusammenhängen, aber Alltagsgedächtnis umfasst mehr als nur Merkfähigkeit.
+d. Aufmerksamkeitsstörung | Aufmerksamkeit |  Zur Abgrenzung eignet sich eine Prüfung der Konzentration (z. B. "Nacherzählen einer Fabel"). Bei Aufmerksamkeitsstörung ist die Informationsaufnahme gestört (Dinge werden nicht bemerkt), bei Gedächtnisstörung die Speicherung (Dinge werden vergessen, wo sie sind).
+s. Psychopathologischer Befund | Gedächtnisprüfung
+t. gedächtnis | befunderhebung | psychopathologie
+l. 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Item: Einstiegsfrage Veränderung des Denkens
+b. Haben Sie das Gefühl, dass sich an Ihrem Denken etwas verändert hat? | Screening-Frage zu formalen Denkstörungen
+c. Verlangsamtes Denken | Gedankengänge erscheinen dem Beobachter langsam und schleppend. Zur Abgrenzung: "Kommt Ihnen das Denken schwerfällig oder schleppend vor?"
+c. Gedankendrängen | Patient fühlt sich dem Druck vieler verschiedener Einfälle oder Gedanken ausgeliefert. Zur Abgrenzung: "Sind die Gedanken nicht mehr zu ordnen oder zu beherrschen?"
+c. Gedankenabreißen | Plötzlicher Abbruch eines sonst flüssigen Gedankenganges ohne erkennbaren Grund. Zur Abgrenzung: "Reißt der Gedankengang plötzlich ab, ohne dass Sie wissen warum?"
+d. Inhaltliche Denkstörung | Inhaltlich | formale Denkstörung = Ablauf/Form, nicht inhaltliche Denkstörung = Inhalt/Wahn. Zur Abgrenzung: "Haben Sie ungewöhnliche Überzeugungen?" Formale Denkstörung zeigt sich in Ablauf/Form (Geschwindigkeit, Kohärenz), inhaltliche Denkstörung in Inhalt.
+d. Konzentrationsstörung | Aufmerksamkeit | Denkstörung , aber formale Denkstörung = Ablauf, nicht Konzentration = Fokussierung. Zur Abgrenzung: "Passiert das vor allem bei Müdigkeit oder Stress?" Formale Denkstörung zeigt sich unabhängig von Müdigkeit/Stress, Konzentrationsstörung zeigt sich verstärkt bei Müdigkeit/Stress.
+s. Psychopathologischer Befund | Formale Denkstörungen
+t. denken | befunderhebung | psychopathologie
+l. 2
+
+# Item: Einstiegsfrage Denken schwerer/leichter
+b. Fällt Ihnen das Denken schwerer/leichter als sonst? | Screening-Frage zu Veränderungen der Denkgeschwindigkeit
+c. Gehemmtes Denken | Subjektiv erlebtes gehemmtes, gebremstes, verlangsamtes, blockiertes oder stockendes Denken. Zur Abgrenzung: "Kommt Ihnen das Denken wie gegen einen inneren Widerstand vor?"
+c. Verlangsamtes Denken | Gedankengänge erscheinen dem Beobachter langsam und schleppend. Zur Abgrenzung: "Erscheinen Ihre Gedankengänge Ihnen langsam und schleppend?"
+c. Gedankendrängen | Patient fühlt sich dem Druck vieler verschiedener Einfälle oder Gedanken ausgeliefert. Zur Abgrenzung: "Fühlen Sie sich dem Druck vieler Gedanken ausgeliefert?"
+c. Ideenflüchtiges Denken | Denkinhalte werden assoziativ aufgelockert vorgetragen, Vermehrung von Einfällen. Zur Abgrenzung: "Springen Ihre Gedanken von einem zum anderen?"
+d. Umständliches Denken | formale Denkstörung | Denkstörung , aber umständlich = Weitschweifigkeit, nicht schwerer/leichter = Geschwindigkeit. Zur Abgrenzung: "Verlieren Sie sich in Details?" Umständliches Denken zeigt sich in der Struktur (Nebensächliches wird nicht von Wesentlichem unterschieden), nicht primär in der Geschwindigkeit.
+d. Eingeengtes Denken | formale Denkstörung | Denkstörung , aber eingeengt = Einschränkung auf wenige Inhalte, nicht schwerer/leichter = Geschwindigkeit. Zur Abgrenzung: "Haben Sie Mühe, auf ein anderes Thema überzugehen?" Eingeengtes Denken zeigt sich in der Breite (Fixierung auf wenige Themen), nicht primär in der Geschwindigkeit.
+d. Konzentrationsstörung | Aufmerksamkeit | Denkstörung , aber Konzentration = Fokussierung, nicht Denkgeschwindigkeit. Zur Abgrenzung: "Passiert das vor allem bei Müdigkeit oder Stress?" Konzentrationsstörung zeigt sich verstärkt bei Müdigkeit/Stress, Denkgeschwindigkeitsstörung unabhängig davon.
+s. Psychopathologischer Befund | Formale Denkstörungen
+t. denken | befunderhebung | psychopathologie
+l. 2
+
+# Item: Einstiegsfrage zu viele Gedanken
+b. Haben Sie das Gefühl, zu viele Gedanken gleichzeitig im Kopf zu haben? | Screening-Frage zu Gedankendrängen
+c. Gedankendrängen | Patient fühlt sich dem Druck vieler verschiedener Einfälle oder Gedanken ausgeliefert. Zur Abgrenzung: "Sind die Gedanken nicht mehr zu ordnen oder zu beherrschen?"
+c. Ideenflüchtiges Denken | Denkinhalte werden assoziativ aufgelockert vorgetragen, Vermehrung von Einfällen. Zur Abgrenzung: "Springen Ihre Gedanken von einem zum anderen?"
+c. Grübeln | Grübeln = Wiederholung unangenehmer Gedanken, nicht Gedankendrängen = Fülle verschiedener Gedanken. Zur Abgrenzung: "Sind es immer wieder die gleichen Gedanken?" Gedankendrängen zeigt Fülle verschiedener, nicht zu ordnender Gedanken, Grübeln zeigt Wiederholung gleicher unangenehmer Inhalte.
+
+d. Konzentrationsstörung | Aufmerksamkeit | Denkstörung , aber Konzentration = Fokussierung, nicht Gedankendrängen = Fülle. Zur Abgrenzung: "Passiert das vor allem bei Müdigkeit oder Stress?" Konzentrationsstörung zeigt sich verstärkt bei Müdigkeit/Stress, Gedankendrängen unabhängig davon.
+d. Arbeitsgedächtnisstörung | Gedächtnisstörung | Gedächtnis , aber Arbeitsgedächtnis = kurzfristige Speicherung, nicht Gedankendrängen = Druck. Zur Abgrenzung: "Können Sie sich kurz Gesagtes behalten?" Arbeitsgedächtnisstörung zeigt sich in Problemen der kurzfristigen Speicherung, Gedankendrängen zeigt subjektiven Druck vieler Gedanken.
+s. Psychopathologischer Befund | Formale Denkstörungen
+t. denken | befunderhebung | psychopathologie
+l. 2
+
+# Item: Einstiegsfrage Gedanke abhanden gekommen
+b. Haben Sie erlebt, dass Ihnen ein Gedanke öfter einfach abhanden gekommen oder abgerissen ist? | Screening-Frage zu Gedankenabreißen
+c. Gedankenabreißen | Plötzlicher Abbruch eines sonst flüssigen Gedankenganges ohne erkennbaren Grund. Zur Abgrenzung: "Reißt der Gedankengang plötzlich ab, ohne dass Sie wissen warum?"
+c. Gesperrtes Denken | Gesperrtes Denken als subjektives Erleben des Gedankenabrisses. Zur Abgrenzung: "Fühlt sich das Denken wie blockiert oder gesperrt an?"
+d. Gedankenhemmung | formale Denkstörung | Denkstörung , aber Gedankenhemmung = langsam langsamer und stockend, nicht Gedankenabreißen = plötzlicher Abbruch. Zur Abgrenzung: "Oder wurde er langsam langsamer und stockte?" Gedankenabreißen zeigt plötzlichen Abbruch, Gedankenhemmung zeigt allmähliche Verlangsamung und Stocken.
+d. Inkohärentes Denken | formale Denkstörung | Denkstörung , aber inkohärent = verlorener Zusammenhang, nicht Gedankenabreißen = plötzlicher Abbruch. Zur Abgrenzung: "Verlieren Denken und Sprechen den Zusammenhang?" Gedankenabreißen zeigt plötzlichen Abbruch eines sonst flüssigen Gedankenganges, inkohärentes Denken zeigt verlorenen verständlichen Zusammenhang (im Extremfall dissoziiertes Denken, Sprachzerfall).
+d. Dissoziation | Ich-Störung | Störung , aber Dissoziation = Entfremdungserlebnis, nicht Gedankenabreißen = Abbruch. Zur Abgrenzung: "Fühlen Sie sich dabei kurz wie weg oder nicht ganz da?" Gedankenabreißen zeigt Abbruch des Gedankenganges, Dissoziation zeigt Entfremdungserlebnis (Ich oder Umwelt als fremd).
+d. Arbeitsgedächtnisstörung | Gedächtnisstörung | Gedächtnis , aber Arbeitsgedächtnis = kurzfristige Speicherung, nicht Gedankenabreißen = Abbruch. Zur Abgrenzung: "Können Sie sich kurz Gesagtes behalten?" Arbeitsgedächtnisstörung zeigt sich in Problemen der kurzfristigen Speicherung, Gedankenabreißen zeigt plötzlichen Abbruch des Gedankenganges.
+s. Psychopathologischer Befund | Formale Denkstörungen
+t. denken | befunderhebung | psychopathologie
+l. 2
+
+
+
+
+· Formale Denkstörungen zeigen sich in sprachlichen Äußerungen.
+· Es kann sich dabei um Veränderungen in der Geschwindigkeit, Kohärenz und
+Stringenz des Gedankenablaufes handeln.
+· Als wesentliches Kriterium für den Schweregrad von Denkstörungen kann die
+Erschwerung des Interviews angesehen werden, die jedoch auch nicht durchgängig
+vorhanden sein muss.
+· Formale Denkstörungen können bei emotionaler Belastung im Gespräch oder
+längerer Gesprächsdauer besonders deutlich werden.
+
+
+
+Symptom
+
+Gehemmtes Denken (S)
+
+Verlangsamtes Denken (F)
+
+Umständliches Denken (F)
+
+Eingeengtes Denken (SF)
+
+Perseverierendes Denken (F)
+
+Grübeln (S)
+
+Definition und Erläuterung
+· Vom Patienten subjektiv erlebtes gehemmtes, gebremstes
+verlangsamtes, blockiertes oder stockendes Denken.
+· Denken „wie gegen inneren Widerstand“.
+
+· Gedankengänge erscheinen dem Beobachter langsam und schleppend.
+· Nebensächliches wird nicht von Wesentlichem unterschieden.
+· „Sich verlieren“ und „hängenbleiben“ an unwichtigen Einzelheiten, ohne
+vom Ziel ganzlich abzukommen.
+· Weitschweifigkeit
+· Einschränkung des Denkens auf wenige Inhalte bzw. Hängenbleiben,
+Fixierung oder Haften an einem oder wenigen Themen.
+· Patient hat Mühe, auf ein anderes Thema überzugehen oder er kommt
+immer auf das alte Thema zurück.
+
+· Denkinhalte werden wiederholend vorgetragen, sodass sie im aktuellen
+Zusammenhang unsinnvoll erscheinen.
+· Sinnentleerte Fixierung an Worten und Angaben (Wortwiederholungen,
+Verbigerationen).
+· Unablässige, aber nicht zwanghafter Wiederholung unangenehmer
+Gedankeninhalte/Gedankenkreisen (aktuelle Probleme oder auch
+zurückliegende ungewollte Ereignisse)
+· kein Fremderleben.
+
+Symptom
+
+Gedankendrängen (S)
+
+Ideenflüchtiges Denken (F)
+
+Vorbeireden (F)
+
+Gedankenabreißen
+(gesperrtes Denken) (SF)
+
+Inkohärentes (zerfahrenes)
+Denken (F)
+
+Neologistisches Denken (F)
+
+Definition
+
+· Patient fühlt sich dem Druck vieler verschiedener Einfälle oder
+Gedanken ausgeliefert.
+· Die Fülle der sich andrängenden, immer wieder neuen Einfälle
+oder Gedanken sind nicht mehr zu ordnen oder zu beherrschen.
+· Dem Beobachter muss das Denken nicht zwangsweise als
+beschleunigt auffallen.
+· Denkinhalte werden nicht straff oder zielführend sondern assoziativ
+aufgelockert vorgetragen.
+· Vermehrung von Einfällen.
+
+· Der Patient verfehlt mit seiner Antwort das Thema der Frage,
+obwohl der die Frage verstanden hat.
+
+· Plötzlicher Abbruch eines sonst flüssigen Gedankenganges ohne
+erkennbaren Grund.
+· Denken und Sprechen des Patienten verlieren den verständlichen
+Zusammenhang.
+· Im Extremfall sind Denkinhalte bis in einzelne, zufällig
+durcheinandergewürfelte Sätze oder Gedankenbruchstücke
+zerrissen (dissoziiertes Denken, Sprachzerfall).
+· Wortneubildungen, die nicht unmittelbar verständlich sind.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hilfreiche Einstiegsfragen zu abnormen Befürchtungen und Zwängen:
+# Item: Einstiegsfrage vermehrte Ängstlichkeit
+b. Ängstigen Sie sich in den letzten Tagen mehr als üblich? | Screening-Frage zu abnormen Befürchtungen
+c. Abnorme Befürchtungen | Psychopathologische Symptome, bei denen Vorstellungen ängstlich (nicht wahnhaft!) verändert sind
+c. Abnorme Befürchtungen Screening | Allgemeine Screening-Frage, die verschiedene abnorme Befürchtungen erfassen kann (Phobie, Hypochondrie, Misstrauen)
+d. Wahn | inhaltliche Denkstörung | Angst , aber abnorme Befürchtungen = ängstlich verändert (nicht wahnhaft!), nicht Wahn = wahnhafte Überzeugung
+d. Wahn Abgrenzung | inhaltliche Denkstörung | Wenn Patient vermehrte Ängstlichkeit angibt, kann dies sowohl auf abnorme Befürchtungen als auch auf Wahn hinweisen. Zur Abgrenzung: Abnorme Befürchtungen = ängstlich veränderte Vorstellungen (nicht wahnhaft!), Wahn = unkorrigierbare wahnhafte Überzeugung. Bei abnormen Befürchtungen ist Einsicht möglich, bei Wahn nicht. Abnorme Befürchtungen zeigen ängstliche Vorstellungen, Wahn zeigt wahnhafte Überzeugungen.
+d. Depressive Verstimmung | Affektivitätsstörung | Angst , aber depressive Verstimmung = gedrückte Stimmung, nicht abnorme Befürchtungen = ängstliche Vorstellungen
+d. Depressive Verstimmung Abgrenzung | Affektivitätsstörung | Wenn Patient vermehrte Ängstlichkeit angibt, kann dies sowohl auf abnorme Befürchtungen als auch auf depressive Verstimmung hinweisen. Zur Abgrenzung eignet sich eine Prüfung der Stimmung (z. B. "Wie ist Ihre Stimmung?"). Abnorme Befürchtungen zeigen ängstliche Vorstellungen, depressive Verstimmung zeigt gedrückte Stimmung. Beide können zusammen auftreten, sind aber unterschiedliche Symptombereiche.
+s. Psychopathologischer Befund | Abnorme Befürchtungen
+t. angst | befunderhebung | psychopathologie
+l. 2
+
+# Item: Einstiegsfrage übermäßige Furcht vor bestimmten Dingen
+b. Haben Sie übermäßige Furcht vor bestimmten Dingen? | Screening-Frage zu Phobie
+c. Phobie | Angst vor bestimmten Situationen oder Objekten, die meist Vermeidungsreaktionen zur Folge haben
+c. Phobie Vermeidung | Übermäßige Furcht vor bestimmten Situationen oder Objekten führt zu Vermeidungsreaktionen
+d. Hypochondrie | abnorme Befürchtung | Befürchtung , aber Phobie = Angst vor bestimmten Situationen/Objekten, nicht Hypochondrie = Befürchtung krank zu sein
+d. Hypochondrie Abgrenzung | abnorme Befürchtung | Wenn Patient übermäßige Furcht vor bestimmten Dingen hat, kann dies sowohl auf Phobie als auch auf Hypochondrie hinweisen. Zur Abgrenzung: Phobie = Angst vor bestimmten Situationen oder Objekten (z. B. Spinnen, Höhe), Hypochondrie = Befürchtung krank zu sein oder zu werden. Phobie zeigt sich in Vermeidung bestimmter Situationen, Hypochondrie in ängstlich-sorgenvoller Beobachtung körperlicher Symptome.
+d. Misstrauen | abnorme Befürchtung | Befürchtung , aber Phobie = Angst vor Situationen/Objekten, nicht Misstrauen = Verhalten anderer auf eigene Person bezogen
+d. Misstrauen Abgrenzung | abnorme Befürchtung | Wenn Patient übermäßige Furcht hat, kann dies sowohl auf Phobie als auch auf Misstrauen hinweisen. Zur Abgrenzung: Phobie = Angst vor bestimmten Situationen oder Objekten mit Vermeidungsreaktionen, Misstrauen = Verhalten anderer Menschen wird ängstlich, unsicher oder feindselig auf die eigene Person bezogen. Phobie zeigt sich in Vermeidung, Misstrauen in Beziehungsängsten.
+s. Psychopathologischer Befund | Abnorme Befürchtungen
+t. angst | phobie | befunderhebung | psychopathologie
+l. 2
+
+# Item: Einstiegsfrage Befürchtung ernsthaft krank zu sein
+b. Befürchten Sie, ernsthaft krank zu sein? | Screening-Frage zu Hypochondrie
+c. Hypochondrie | Befürchtung, krank zu sein oder zu werden, obwohl man objektiv gesund ist
+c. Hypochondrie Überwertung | Körperlichen Symptomen wird viel Aufmerksamkeit beigemessen, sie werden ängstlich-sorgenvoll beobachtet oder überwertet
+d. Phobie | abnorme Befürchtung | Befürchtung , aber Hypochondrie = Befürchtung krank zu sein, nicht Phobie = Angst vor bestimmten Situationen/Objekten
+d. Phobie Abgrenzung | abnorme Befürchtung | Wenn Patient befürchtet, ernsthaft krank zu sein, kann dies sowohl auf Hypochondrie als auch auf Phobie hinweisen. Zur Abgrenzung: Hypochondrie = Befürchtung krank zu sein oder zu werden trotz objektiver Gesundheit, Phobie = Angst vor bestimmten Situationen oder Objekten. Hypochondrie zeigt sich in ängstlich-sorgenvoller Beobachtung körperlicher Symptome, Phobie in Vermeidungsreaktionen.
+d. Wahn | inhaltliche Denkstörung | Befürchtung , aber Hypochondrie = ängstlich veränderte Vorstellung (nicht wahnhaft!), nicht Wahn = wahnhafte Überzeugung
+d. Wahn Abgrenzung | inhaltliche Denkstörung | Wenn Patient befürchtet, ernsthaft krank zu sein, kann dies sowohl auf Hypochondrie als auch auf Wahn hinweisen. Zur Abgrenzung: Hypochondrie = ängstlich veränderte Befürchtung (nicht wahnhaft!), Wahn = unkorrigierbare wahnhafte Überzeugung. Bei Hypochondrie ist Einsicht möglich, bei Wahn nicht. Hypochondrie zeigt ängstliche Befürchtung, Wahn zeigt wahnhafte Überzeugung.
+s. Psychopathologischer Befund | Abnorme Befürchtungen
+t. angst | hypochondrie | befunderhebung | psychopathologie
+l. 2
+
+# Item: Einstiegsfrage Gedanken immer wieder denken
+b. Müssen Sie bestimmte Gedanken immer wieder denken, obwohl Sie Ihnen unsinnig vorkommen? | Screening-Frage zu Zwangsdenken
+c. Zwangsdenken | Immer wieder sich aufdrängende Gedanken oder Vorstellungen, die als unsinnig oder übertrieben erlebt werden und willentlich nicht abstellbar sind
+c. Zwangsdenken aufdrängend | Wiederkehrende Gedanken, die nicht abgestellt werden können und als unsinnig erlebt werden
+d. Zwangsimpulse | Zwang | Zwang , aber Zwangsdenken = aufdrängende Gedanken, nicht Zwangsimpulse = aufdrängende Impulse zu Handlungen
+d. Zwangsimpulse Abgrenzung | Zwang | Wenn Patient Gedanken immer wieder denken muss, kann dies sowohl auf Zwangsdenken als auch auf Zwangsimpulse hinweisen. Zur Abgrenzung: Zwangsdenken = immer wieder sich aufdrängende Gedanken oder Vorstellungen, Zwangsimpulse = immer wieder sich aufdrängende Impulse, bestimmte Handlungen auszuführen. Zwangsdenken zeigt sich in Gedanken, Zwangsimpulse in Impulsen zu Handlungen.
+d. Zwangshandlungen | Zwang | Zwang , aber Zwangsdenken = Gedanken, nicht Zwangshandlungen = Handlungen
+d. Zwangshandlungen Abgrenzung | Zwang | Wenn Patient Gedanken immer wieder denken muss, kann dies sowohl auf Zwangsdenken als auch auf Zwangshandlungen hinweisen. Zur Abgrenzung: Zwangsdenken = immer wieder sich aufdrängende Gedanken oder Vorstellungen, Zwangshandlungen = immer wieder ausgeführte Handlungen (z. B. Kontrollzwänge, Waschzwänge). Zwangsdenken zeigt sich in Gedanken, Zwangshandlungen in Handlungen.
+d. Grübeln | formale Denkstörung | Wiederholung , aber Zwangsdenken = aufdrängende Gedanken als unsinnig erlebt, nicht Grübeln = Wiederholung unangenehmer Gedanken
+d. Grübeln Abgrenzung | formale Denkstörung | Wenn Patient Gedanken immer wieder denken muss, kann dies sowohl auf Zwangsdenken als auch auf Grübeln hinweisen. Zur Abgrenzung: Zwangsdenken = immer wieder sich aufdrängende Gedanken, die als unsinnig oder übertrieben erlebt werden, Grübeln = unablässige Wiederholung unangenehmer Gedankeninhalte/Gedankenkreisen. Zwangsdenken zeigt aufdrängende unsinnige Gedanken, Grübeln zeigt Wiederholung unangenehmer Inhalte.
+s. Psychopathologischer Befund | Zwänge
+t. zwang | befunderhebung | psychopathologie
+l. 2
+
+# Item: Einstiegsfrage Dinge immer wieder tun
+b. Müssen Sie bestimmte Dinge immer wieder tun, obwohl Sie Ihnen unsinnig vorkommen? | Screening-Frage zu Zwangshandlungen
+c. Zwangshandlungen | Immer wieder ausgeführte Handlungen, die meist als unsinnig oder übertrieben wahrgenommen werden
+c. Zwangshandlungen Beispiele | Z. B. Kontrollzwänge, Waschzwänge - wiederkehrende Handlungen, die nicht abgestellt werden können
+d. Zwangsdenken | Zwang | Zwang , aber Zwangshandlungen = Handlungen, nicht Zwangsdenken = Gedanken
+d. Zwangsdenken Abgrenzung | Zwang | Wenn Patient Dinge immer wieder tun muss, kann dies sowohl auf Zwangshandlungen als auch auf Zwangsdenken hinweisen. Zur Abgrenzung: Zwangshandlungen = immer wieder ausgeführte Handlungen (z. B. Kontrollzwänge, Waschzwänge), Zwangsdenken = immer wieder sich aufdrängende Gedanken oder Vorstellungen. Zwangshandlungen zeigen sich in Handlungen, Zwangsdenken in Gedanken.
+d. Zwangsimpulse | Zwang | Zwang , aber Zwangshandlungen = ausgeführte Handlungen, nicht Zwangsimpulse = aufdrängende Impulse
+d. Zwangsimpulse Abgrenzung | Zwang | Wenn Patient Dinge immer wieder tun muss, kann dies sowohl auf Zwangshandlungen als auch auf Zwangsimpulse hinweisen. Zur Abgrenzung: Zwangshandlungen = immer wieder ausgeführte Handlungen, Zwangsimpulse = immer wieder sich aufdrängende Impulse, bestimmte Handlungen auszuführen. Zwangshandlungen zeigen ausgeführte Handlungen, Zwangsimpulse zeigen aufdrängende Impulse (müssen nicht ausgeführt werden).
+d. Perseverierendes Denken | formale Denkstörung | Wiederholung , aber Zwangshandlungen = Handlungen als unsinnig erlebt, nicht Perseverierendes Denken = wiederholende Denkinhalte
+d. Perseverierendes Denken Abgrenzung | formale Denkstörung | Wenn Patient Dinge immer wieder tun muss, kann dies sowohl auf Zwangshandlungen als auch auf Perseverierendes Denken hinweisen. Zur Abgrenzung: Zwangshandlungen = immer wieder ausgeführte Handlungen, die als unsinnig erlebt werden, Perseverierendes Denken = Denkinhalte werden wiederholend vorgetragen, sodass sie im aktuellen Zusammenhang unsinnig erscheinen. Zwangshandlungen zeigen sich in Handlungen, Perseverierendes Denken in Denkinhalten.
+s. Psychopathologischer Befund | Zwänge
+t. zwang | befunderhebung | psychopathologie
+l. 2
+
+Abnorme Befürchtungen sind psychopathologische Symptome, bei denen die
+Vorstellungen ängstlich (nicht wahnhaft!) verändert sind und das Verhalten mit
+bestimmen.
+
+Misstrauen (SF)
+Das Verhalten anderer Menschen
+wird ängstlich, unsicher oder
+feindselig auf die eigene Person
+bezogen.
+
+Hypochondrie (S)
+Befürchtung, krank zu sein
+oder zu werden, obwohl man
+objektiv gesund ist.
+Körperlichen Symptomen wird
+viel Aufmerksamkeit
+beigemessen, sie werden
+ängstlich-sorgenvoll
+beobachtet oder überwertet.
+
+Phobie (S)
+Angst vor bestimmten
+Situationen oder Objekten,
+die meist
+Vermeidungsreaktionen zur
+Folge haben.
+
+
+Zwänge sind psychopathologische Symptome, bei denen Gedanken, Impulse und
+Handlungen wiederkehrend auftreten, nicht abgestellt werden können und als unsinnig
+erlebt werden.
+
+Zwangsdenken (S)
+Immer wieder sich
+aufdrängende Gedanken
+oder Vorstellungen, die als
+unsinnig oder übertrieben
+erlebt werden und die
+willentlich nicht abstellbar
+sind.
+
+Zwangsimpulse (S)
+Immer wieder sich
+aufdrängende Impulse,
+bestimmte Handlungen
+auszuführen, die als unsinnig
+oder übertrieben erlebt
+werden.
+
+Zwangshandlungen (S)
+Immer wieder ausgeführte
+Handlungen, die meist als unsinnig
+oder übertrieben wahrgenommen
+werden. Z.B. Kontrollzwänge,
+Waschzwänge etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Als Behandlung im Sinne der Sätze 1 und 2 gilt auch der direkte und Nachweis eines Krankheitserregers für die Feststellung einer Infektion oder übertragbaren Krankheit; § 46 gilt entsprechend.
+
+Arzneimittelgesetz
+Nach dem Arzneimittelgesetz darf der Heilpraktiker keine rezeptpflichtigen
+ Arzneimittel verschreiben und auch keine Arzneimittel herstellen.
+ 
+
+Betäubungsmittel ( Anlagen I - III des Betäubungsmittelgesetzes ) dürfen durch Heilpraktiker weder verschrieben noch abgegeben werden.
+
+Zahnheilkunde
+Die Zahnheilkunde ist dem Heilpraktiker nach dem Gesetz über die Ausübung der Zahnheilkunde verboten. Die Ausübung der Zahnheilkunde ist nach § 1 Abs. 3 dieses Gesetzes definiert. „ Die Ausübung der Zahnheilkunde ist die berufsmäßige, auf zahnärztlich wissenschaftliche Erkenntnisse gegründete Feststellung und Behandlung von Zahn-, Mund- und Kieferkrankheiten. “
+
+Der Begriff der zahnärztlich-wissenschaftlichen Erkenntnisse ermöglicht dem Heilpraktiker durchaus die Behandlung einer Glossitis oder Stomatitis, wenn diese nicht als Folge z.B. einer Prothese oder einer Zahnfehlstellung zustande kommen.
+
+Geburtshilfe
+Die Geburtshilfe darf nach dem Gesetz für Hebammen und Geburtshelfer nur von Ärzten, Hebammen und Entbindungspflegern geleistet werden. Die Geburtshilfe beginnt dabei mit den geburtsauslösenden Wehen und endet mit dem Ende des Puerperiums ( Wochenbett ). Dies bedeutet, dass eine schwangere Frau durchaus behandelt werden darf und auch die Leistung von erster Hilfe ist nicht verboten. Im Wesen der ersten Hilfe liegt es allerdings begründet, dass man die Geburtshilfe nicht vorausgeplant hat und sich bemüht, einen Arzt oder eine Hebamme zu verständigen.
+
+Untersuchungen bei Straftaten
+Nach § 81 der Strafprozeßordnung sind Untersuchungen und Blutproben bei dem Verdacht von Straftaten nur vor Gericht verwendbar, wenn diese von einem Arzt vorgenommen werden. Daher darf ein Heilpraktiker keine Untersuchungen dieser Art vornehmen.
+
+Feststellung des Todes
+Die Durchführung der Leichenschau und das Ausstellen von Totenscheinen sind nach der 3. Durchführungsverordnung zum Gesetz über die Vereinheitlichung des Gesundheitswesens ebenfalls dem Arzt vorbehalten und dürfen nicht durch den Heilpraktiker durchgeführt werden.
+
+Die sichere Todesfeststellung ist gesetzlich dem Arzt vorbehalten. Bei absolut sicheren Todeshinweisen muss allerdings keine erste Hilfe in Form der Reanimation mehr geleistet werden.
+
+Röntgen
+Das Röntgen wird in § 23 der Röntgenverordnung geregelt. Um zu röntgen bedarf es eines besonderen Strahlenschutzsachkundenachweises. Mit diesem Sachkundenachweis, der von den zuständigen Behörden ausgestellt wird, ist auch sonstigen Personen, die zur Ausübung der Heilkunde berechtigt sind, also auch dem Heilpraktiker, gestattet zu röntgen.
+
+Heilpraktiker, die ihre Erlaubnis nach dem 1.1.1988 erhalten haben, haben diese Möglichkeit aber grundsätzlich nicht mehr.
+
+Behandlungspflichten
+Der Heilpraktiker unterliegt keiner Behandlungspflicht, kann also grundsätzlich selbst entscheiden, ob er jemanden behandeln will. Eine Ausnahme stellt lediglich die Hilfeleistung bei Unglücksfällen oder gemeiner Gefahr dar. Hier muss der Heilpraktiker im Rahmen seiner Möglichkeiten Hilfe leisten, da er sich sonst nach § 323 c des Strafgesetzbuch ( StGB ) strafbar macht. Bei der ersten Hilfe wird im übrigen an den Heilpraktiker der gleiche Maßstab an die persönlichen Fähigkeiten gestellt wie an den praktischen Arzt.
+
+Gesetzliche Krankenversicherung & Rentenversicherung
+Nach der Reichsversicherungsordnung ( RVO ) bzw. nach dem fünften Sozialgesetzbuch ( SGB V ) sind die Leistungen eines Heilpraktikers für Behandlungen nach der gesetzlichen Krankenversicherung, Rentenversicherung ( Kurbehandlungen ) und Unfallversicherung nicht erstattungsfähig. Ein Heilpraktiker muss vor der Behandlung seine Patienten darauf hinweisen, damit er nicht Anschein erweckt, dass dies so wäre. Lediglich Privatkrankenkassen können, je nach Versicherungsvertrag Heilpraktikerleistungen erstatten.
+
+Titel und Orden
+Titel, Orden und akademische Grade dürfen von einem Heilpraktiker nur dann geführt werden, wenn sie rechtskräftig verliehen worden sind. Bei akademischen Graden ist stets die vollständige Bezeichnung zu führen ( z.B. Dr. phil. oder Dr. rer.oek. ) um die Assoziation mit einem medizinischen akademischen Grad zu vermeiden.
+
+Ausländische akademische Grade dürfen nur geführt werden, wenn diese von der zuständigen Behörde ( Innen- oder Bildunsgverwaltung ) genehmigt sind.
+
+Schweigepflicht
+Heilpraktiker unterliegen der zivilrechtlichen Schweigepflicht aufgrund des Behandlungsvertrages nach dem Bürgerlichen Gesetzbuch ( BGB ) und nach der Berufsordnung für Heilpraktiker. Eine strafrechtliche Schweigepflicht gibt es nicht, da für den Beruf des Heilpraktikers keine geregelte Ausbildung Voraussetzung ist. Trotzdem gebietet der hohe ethische Anspruch unseres Berufsstandes ein peinlich genaues Beachten der Schweigepflicht.
+
+Auch in Fachartikeln ist die Geschichte eines Patienten, falls dieser nicht vorher um Erlaubnis gefragt wurde, zu anonymisieren. Wenn Patientendaten in einer Kartei oder per EDV gespeichert werden, müssen allerdings die Schutzbestimmungen des Bundesdatenschutzgesetzes beachtet werden. Im Gegensatz zum Arzt hat der Heilpraktiker kein Zeugnisverweigerungsrecht über beruflich anvertraute Tatsachen vor Gericht ( § 53 Strafprozeßordnung ). Eine vollkommene Schweigepflicht hat lediglich ein Pfarrer oder Priester aufgrund des Beichtgeheimnisses. 
+ 
+ 
+
+
+# Item: Affektlabilität
+b. Wechseln Ihre Gefühle manchmal sehr schnell, auch ohne klaren Anlass? | Screening-Frage zu Affektlabilität
+c. Affektlabilität| häufige, abrupt eintretende Gefühlswechsel, z. B. von Traurigkeit zu Reizbarkeit, ohne dass äußerer Anlass klar erkennbar ist
+d. Affektstarre | Affektdynamik |Affektstarre = unveränderlich,  Affektlabilität = schneller Wechsel. Zur Abgrenzung: "Bleibt Ihre Stimmung über längere Zeit gleich, egal was passiert?"
+d. Affektinkontinenz | Affektsteuerung | Affektinkontinenz = unkontrollierbare Ausbrüche, nicht Affektlabilität = Wechsel. Zur Abgrenzung: "Brechen Gefühle explosionsartig heraus oder wechseln sie nur schnell?" 
+s. https://befund.net/inhaltsverzeichnis/ | Affektlabilität
+t. affektivität | affektlabilität | befunderhebung | psychopathologie
+l. 2
+
+# Item: Affektinkontinenz
+b. Brechen ihre Gefühle plötzlich und unkontrolliert aus, z. B. Weinen oder Lachen? | Screening-Frage zu Affektinkontinenz
+c. Affektinkontinenz | unangemessene oder übermäßige Emotionen bei kleinen Auslösern, z. B. bei kleiner Kritik plötzlich laut werden oder weinen, ohne bewältigen zu können
+d. Affektlabilität | Affektverlauf | Affektlabilität = Wechsel, Affektinkontinenz = unkontrollierbare Ausbrüche. Zur Abgrenzung: "Können Sie die Gefühle noch stoppen oder wechseln sie nur schnell?" 
+d. Affektstarre | Affektdynamik | Affektstarre = unveränderlich, nicht Affektinkontinenz = Ausbrüche. Zur Abgrenzung: "Fühlen Sie überhaupt starke Gefühle oder bleiben sie gleich?" 
+s. https://befund.net/inhaltsverzeichnis/ | Affektinkontinenz
+t. affektivität | affektinkontinenz | befunderhebung | psychopathologie
+l. 2
+
+# Item: Affektstarre
+b. Haben Sie das Gefühl, innerlich wie eingefroren zu sein, egal was passiert? | Screening-Frage zu Affektstarre
+c. Affektstarre Modulation | stark eingeschränkte oder fehlende emotionale Reaktion, Patient reagiert kaum auf freudige, traurige oder schmerzhafte Ereignisse
+d. Affektarmut | Affektquantität | Affektarmut = wenig Gefühl, Affektstarre = unbeweglich. Zur Abgrenzung: "Sind Gefühle selten oder nur unbeweglich?" Affektarmut zeigt verminderte Gefühlsintensität, Affektstarre zeigt unveränderliche Affektlage.
+d. Depression | Grundstimmung | Stimmung , aber Depression = gedrückte Grundstimmung, Affektstarre = unveränderlich. Zur Abgrenzung: "Überwiegt Traurigkeit oder eher Leere?" D
+s. https://befund.net/inhaltsverzeichnis/ | Affektstarre
+t. affektivität | affektstarre | befunderhebung | psychopathologie
+l. 2
+
+# Item: Affektarmut
+b. Haben Sie das Gefühl, emotional deutlich weniger zu empfinden als früher? | Screening-Frage zu Affektarmut
+c. Affektarmut Verflachung | reduzierte Mimik, Gestik und emotionale Ausdrucksformen, geringe Vielfalt und Intensität von Affekten
+d. Affektstarre | Affektdynamik | Affektstarre = unbeweglich, Affektarmut = wenig Gefühl. Zur Abgrenzung: "Sind Gefühle flach oder festgefahren?"
+d. Depression | Stimmung | Stimmung , aber Depression = traurig, Affektarmut = Leere. Zur Abgrenzung: "Ist es eher Leere oder Niedergeschlagenheit?" 
+s. https://befund.net/inhaltsverzeichnis/ | Affektarmut
+t. affektivität | affektarmut | befunderhebung | psychopathologie
+l. 2
+
+# Item: Depressivität
+b. Fühlen Sie sich seit längerer Zeit niedergeschlagen oder freudlos? | Screening-Frage zu Depressivität
+
+c. Depressivität Episode | Interessenverlust, Antriebsminderung, Betroffene berichten über Überdruss, Hoffnungslosigkeit, eventuell Schuldgefühle
+d. Dysphorie | Reizaffekt | Stimmung , aber Dysphorie = gereizt, Depressivität = traurig. Zur Abgrenzung: "Sind Sie eher traurig oder schnell ärgerlich?"
+d. Affektarmut | Affektquantität | Affektarmut = Leere, Depressivität = gedrückte Grundstimmung. Zur Abgrenzung: "Fühlen Sie Schmerz oder eher nichts?" 
+s. https://befund.net/inhaltsverzeichnis/ | Depressivität
+t. affektivität | depressivität | befunderhebung | psychopathologie
+l. 2
+
+# Item: Läppischer Affekt
+b. Wirken Sie selbst in ernsten Situationen auffallend albern oder kindlich? | Screening-Frage zu Läppischem Affekt
+
+c. Läppischer Affekt Qualität | unpassend heitere, kindlich wirkende Affektivität, die nicht zur Situation passt
+d. Euphorie | Stimmungslage | Stimmung , aber Euphorie = gehoben, Läppischer Affekt = albern. Zur Abgrenzung: "Fühlen Sie sich großartig oder wirken Sie eher kindisch?" 
+d. Parathymie | Affektpassung | Parathymie = unpassend zum Inhalt, Läppischer Affekt = kindlich-albern. Zur Abgrenzung: "Passt Ihr Gefühl zum Gesagten oder wirken Sie nur kindlich?" 
+s. https://befund.net/inhaltsverzeichnis/ | Läppischer Affekt
+t. affektivität | läppischer_affekt | befunderhebung | psychopathologie
+l. 2
+
+# Item: Dysphorie
+b. Sind Sie häufig gereizt, missmutig oder innerlich angespannt? | Screening-Frage zu Dysphorie
+c. Dysphorie Reizbarkeit | häufige Reizbarkeit, Gefühl von Anspannung, geringere Frustrationstoleranz, Konflikte im sozialen Umfeld
+d. Angst | Bedrohungsaffekt | Angst = Furcht, Dysphorie = Ärger. Zur Abgrenzung: "Überwiegt Angst oder Ärger?" Dysphorie zeigt gereizt-missmutige Stimmung, Angst zeigt Bedrohungsgefühl.
+d. Depression | Stimmung | Stimmung , aber Depression = traurig, Dysphorie = gereizt. Zur Abgrenzung: "Sind Sie eher niedergeschlagen oder schnell wütend?" 
+s. https://befund.net/inhaltsverzeichnis/ | Dysphorie
+t. affektivität | dysphorie | befunderhebung | psychopathologie
+l. 2
+
+# Item: Euphorie
+b. Fühlen Sie sich ungewöhnlich gut, energiegeladen oder übermäßig optimistisch? | Screening-Frage zu Euphorie
+c. Euphorie Manie | gehobene Stimmung, gesteigerte Energie, teils ohne Schlafmangel als Ursache, möglicherweise weniger Schlaf nötig
+d. Gesteigertes Selbstwertgefühl | Selbstkonzept | Selbstwert , aber Gesteigertes Selbstwertgefühl = Grandiosität, Euphorie = Stimmung. Zur Abgrenzung: "Geht es um Stimmung oder Selbstüberschätzung?"
+d. Läppischer Affekt | Affektqualität | Läppischer Affekt = albern, Euphorie = gehoben. Zur Abgrenzung: "Sind Sie kindisch oder übermäßig glücklich?" 
+s. https://befund.net/inhaltsverzeichnis/ | Euphorie
+t. affektivität | euphorie | befunderhebung | psychopathologie
+l. 2
+
+# Item: Angst
+b. Haben Sie häufig ein Gefühl von Bedrohung oder innerer Anspannung? | Screening-Frage zu Angst
+c. Angst Störung | häufiges Gefühl von Bedrohung oder innerer Anspannung, möglicherweise mit körperlichen Symptomen wie Herzklopfen, Schweißausbrüche, Atemnot
+d. Dysphorie | Reizaffekt | Dysphorie = Ärger, Angst = Furcht. Zur Abgrenzung: "Haben Sie eher Angst oder sind Sie gereizt?" 
+d. Panik | Intensität | Angst , aber Panik = attackenartig, Angst = anhaltend. Zur Abgrenzung: "Kommt es plötzlich mit körperlichen Symptomen?" 
+s. https://befund.net/inhaltsverzeichnis/ | Angst
+t. affektivität | angst | befunderhebung | psychopathologie
+l. 2
+
+# Item: Parathymie
+b. Passen Ihre Gefühle manchmal nicht zu dem, was Sie sagen oder erleben? | Screening-Frage zu Parathymie
+c. Parathymie Inkongruenz | Diskrepanz zwischen innerem Erleben und äußerem Ausdruck, z. B. Lachen bei traurigen Themen oder emotionsloser Gesichtsausdruck bei erwartbarer Erregung
+d. Läppischer Affekt | Affektqualität | Läppischer Affekt = kindlich-heiter, Parathymie = unpassend zum Inhalt. Zur Abgrenzung: "Ist es unpassend oder nur albern?"
+d. Affektlabilität | Affektverlauf | Affektlabilität = wechselnd, Parathymie = unpassend. Zur Abgrenzung: "Wechselt es oder passt es nicht?" 
+s. https://befund.net/inhaltsverzeichnis/ | Parathymie
+t. affektivität | parathymie | befunderhebung | psychopathologie
+l. 2
+
+# Item: Störung der Vitalgefühle
+b. Fühlen Sie sich innerlich leer, kraftlos oder nicht richtig lebendig? | Screening-Frage zu Störung der Vitalgefühle
+c. Störung der Vitalgefühle Vitalität | subjektives Gefühl innerer Leere, Kraftlosigkeit oder nicht richtig lebendig zu sein, Verlust des Gefühls innerer Lebendigkeit
+d. Depression | Stimmung | Stimmung , aber Depression = Traurigkeit, Störung der Vitalgefühle = Leere. Zur Abgrenzung: "Ist es eher Traurigkeit oder Leere?" Störung der Vitalgefühle zeigt Verlust innerer Lebendigkeit, Depression zeigt gedrückte Grundstimmung mit Traurigkeit.
+d. Somatische Erschöpfung | Körperlich | Erschöpfung , aber Somatische Erschöpfung = körperlich, Störung der Vitalgefühle = innerlich. Zur Abgrenzung: "Bessert es sich durch Ruhe?" Störung der Vitalgefühle zeigt Verlust innerer Lebendigkeit, Somatische Erschöpfung zeigt körperlich erklärbare Erschöpfung.
+s. https://befund.net/inhaltsverzeichnis/ | Störung der Vitalgefühle
+t. affektivität | vitalgefühle | befunderhebung | psychopathologie
+l. 2
+
+# Item: Ambivalenz
+b. Haben Sie gleichzeitig gegensätzliche Gefühle gegenüber derselben Sache? | Screening-Frage zu Ambivalenz
+c. Ambivalenz Widerspruch | gleichzeitiges Erleben gegensätzlicher Gefühle gegenüber derselben Sache, z. B. Freude und Traurigkeit, Hoffnung und Verzweiflung
+d. Affektlabilität | Affektverlauf | Affektlabilität = Wechsel, Ambivalenz = Gleichzeitigkeit. Zur Abgrenzung: "Gleichzeitig oder nacheinander?" Ambivalenz zeigt gleichzeitige Gegensätzlichkeit, Affektlabilität zeigt schnelle Wechsel.
+d. Entscheidungsunsicherheit | Kognition | Unsicherheit , aber Entscheidungsunsicherheit = Zweifel, Ambivalenz = Gefühl. Zur Abgrenzung: "Fühlen oder denken Sie widersprüchlich?" Ambivalenz zeigt gleichzeitige Gegensätzlichkeit der Gefühle, Entscheidungsunsicherheit zeigt kognitive Zweifel.
+s. https://befund.net/inhaltsverzeichnis/ | Ambivalenz
+t. affektivität | ambivalenz | befunderhebung | psychopathologie
+l. 2
+
+# Item: Insuffizienzgefühle
+b. Haben Sie häufig das Gefühl, nicht zu genügen oder unfähig zu sein? | Screening-Frage zu Insuffizienzgefühlen
+c. Insuffizienzgefühle Unzulänglichkeit | häufiges Gefühl der Unfähigkeit oder nicht zu genügen, subjektive Wahrnehmung eigener Unzulänglichkeit
+d. Depression | Stimmung | Stimmung , aber Depression = global gedrückt, Insuffizienzgefühle = Selbstwert. Zur Abgrenzung: "Geht es um Selbstwert oder Stimmung?" Insuffizienzgefühle zeigen subjektive Unzulänglichkeit, Depression zeigt gedrückte Grundstimmung.
+d. Sozialangst | Situation | Angst , aber Sozialangst = situationsgebunden, Insuffizienzgefühle = allgemein. Zur Abgrenzung: "Nur im Kontakt mit anderen?" Insuffizienzgefühle zeigen allgemeines Gefühl der Unzulänglichkeit, Sozialangst zeigt situationsgebundene Angst im Kontakt mit anderen.
+s. https://befund.net/inhaltsverzeichnis/ | Insuffizienzgefühle
+t. affektivität | insuffizienzgefühle | befunderhebung | psychopathologie
+l. 2
+
+# Item: Gesteigertes Selbstwertgefühl
+b. Haben Sie das Gefühl, anderen überlegen oder besonders bedeutend zu sein? | Screening-Frage zu Gesteigertem Selbstwertgefühl
+c. Gesteigertes Selbstwertgefühl Grandiosität | überhöhte Selbstwahrnehmung, Gefühl der Überlegenheit oder besonderen Bedeutsamkeit, möglicherweise mit Selbstüberschätzung
+d. Euphorie | Stimmung | Stimmung , aber Euphorie = gut fühlen, Gesteigertes Selbstwertgefühl = Grandiosität. Zur Abgrenzung: "Fühlen Sie sich gut oder überlegen?" Euphorie zeigt übersteigertes Wohlbefinden, Gesteigertes Selbstwertgefühl zeigt überhöhte Selbstwahrnehmung.
+d. Wahn | Realitätsbezug | Überzeugung , aber Wahn = unverrückbar, Gesteigertes Selbstwertgefühl = überhöht. Zur Abgrenzung: "Sind Zweifel möglich?" Gesteigertes Selbstwertgefühl zeigt überhöhte Selbstwahrnehmung, Wahn zeigt unverrückbare wahnhafte Überzeugung.
+s. https://befund.net/inhaltsverzeichnis/ | Gesteigertes Selbstwertgefühl
+t. affektivität | selbstwertgefühl | befunderhebung | psychopathologie
+l. 2
+
+
+
+Zu welchen Qualitäten kann man nicht desorientiert sein?
+:-)  Zum Raum
+  ?    Zum Ort
+  ?    Zur Person
+  ?    Zur Situation
+  ?    Zur Zeit
+
+
+# Quelle: Welche Gesetze und Verordnungen regulieren die Berufsausübung der Heilpraktiker*innen?
+# Kategorie: Berufsrecht / Gesetze und Verordnungen
+# URL: https://www.gesamtkonferenz-heilpraktiker.de/fragen-und-antworten/#gesetze-verordnungen1
+# Titel: Fragen und Antworten - Gesamtkonferenz Deutscher Heilpraktikerverbände und Fachgesellschaften
+# Abschnitt: Pflichten und Grenzen des Heilpraktikerberufs → Welche Gesetze und Verordnungen regulieren die Berufsausübung der Heilpraktiker*innen?
+
+# Quelle: Allgemeine Vorgaben zur Durchführung der Heilpraktiker-Überprüfung
+# Kategorie: Überprüfung / Prüfungsordnung
+# URL: https://www.gesamtkonferenz-heilpraktiker.de/leitlinien-zur-ueberpruefung-von-heilpraktikeranwaerterinnen-und-anwaertern/#1587060137398-e771b452-9c44
+# Titel: Leitlinien zur Überprüfung von Heilpraktikeranwärterinnen und -anwärtern - Gesamtkonferenz Deutscher Heilpraktikerverbände und Fachgesellschaften
+# Abschnitt: 2. Allgemeine Vorgaben zur Durchführung der Heilpraktiker-Überprüfung (Zuständigkeiten, Form, Bewertung, Ordnungsverstöße, Niederschrift, Mitteilung)
+
+# Quelle: Infektionsschutzgesetz (IfSG)
+# Kategorie: Infektionsschutz / Hygiene
+# URL: https://www.gesetze-im-internet.de/ifsg/index.html#BJNR104510000BJNE002306116
+# Titel: Gesetz zur Verhütung und Bekämpfung von Infektionskrankheiten beim Menschen (IfSG) - nichtamtliches Inhaltsverzeichnis
+# Relevanz für HPP: Regelt Hygieneanforderungen, Meldepflichten, Praxismeldung, Begehbarkeit (§ 24 IfSG schränkt Heilpraktiker in Behandlung übertragbarer Erkrankungen ein)
+
+https://www.gesetze-im-internet.de/bgb/BJNR001950896.html#BJNR001950896BJNG026900377
+
+https://www.gesetze-im-internet.de/heilmwerbg/BJNR006049965.html
+
+https://www.gesetze-im-internet.de/sgb_5/BJNR024820988.html
+
+https://www.gesetze-im-internet.de/stgb/BJNR001270871.html
+
+https://www.gesetze-im-internet.de/amg_1976/BJNR024480976.html
+
+https://www.gesetze-im-internet.de/btmg_1981/BJNR106810981.html
+
+https://www.landesrecht-hamburg.de/bsha/document/jlr-PsychKGHAV2P12
+
+https://befundomat.de/psychopathologischer-befund.html
+
+https://befund.net/inhaltsverzeichnis/
+
+https://www.heilpraktiker.org/der-rechtliche-status-des-heilpraktikers
+
+
+https://www.oberbergkliniken.de/krankheitsbilder/dysthymie
+
+
+https://www.gesundheits-lexikon.com/Gehirn-Nerven-Psyche/Werkzeugstoerungen/Einleitung
+
+CHRONISCHE
+UND
+THERAPIERESISTENTE
+DEPRESSIONEN
+
+https://fis.uni-bamberg.de/server/api/core/bitstreams/ce86bf79-a009-4b38-ae07-4a1a7a4579da/content
+
+Test
+https://www.amdp.de/material/online-test/
+
+# ICD-10 F06 - Organische psychische Störungen
+
+
+
+https://next.amboss.com/de/article/pM0Lpg?q=psychopathologischer+befund&sv=%5B%7B%22anchor%22%3A%22Zab1072bbf747dc5795f9350fdd14bfba%22%2C%22type%22%3A%22article%22%2C%22id%22%3A%22OP0IUT%22%7D%5D&svi=0
+
+
+
+
+
+# Item: F06.0 Organische Halluzinose
+b. F06.0 Organische Halluzinose | Halluzinationen bei klarer Lage
+c. Halluzinationen | Wiederkehrende oder persistierende Halluzinationen, vorwiegend visuell oder akustisch
+c. Klare Bewusstseinslage | Bewusstsein ist nicht gestört, keine Bewusstseinstrübung
+c. Krankheitseinsicht | Halluzinationen werden erkannt
+d. kognitiven Beeinträchtigungen |Denken ok| Kognitive Funktionen bleiben erhalten
+d.  Stimmungsveränderungen |Affekt ok| Keine signifikanten affektiven Veränderungen
+c. Alle Sinnesbereiche | Halluzinationen können visuell, akustisch, taktil, olfaktorisch sein
+d. Alkoholhalluzinose | F10.5 | Halluzinationen ähnlich, aber Alkoholhalluzinose (F10.5) ist spezifisch alkoholbedingt, F06.0 hat andere organische Ursache. Zur Abgrenzung: Frage nach Alkoholkonsum und Entzug. 
+d. Schizophrenie | F20 | Halluzinationen ähnlich, aber Schizophrenie (F20) zeigt komplexeres psychotisches Syndrom, F06.0 zeigt isolierte Halluzinationen bei klarer Bewusstseinslage. Zur Abgrenzung: Bei F06.0 sind Halluzinationen isoliert mit Krankheitseinsicht, bei F20 sind Denkstörungen, Wahn oder Ich-Störungen typisch. F06.0 hat klare Bewusstseinslage und Krankheitseinsicht, F20 zeigt typischerweise formale Denkstörungen und fehlende Krankheitseinsicht.
+s. https://www.thieme-connect.de/products/ebooks/lookinside/10.1055/b-0034-93906 | Organische Halluzinose
+t. icd10 | f06_0 | halluzinationen | organisch
+l. 2
+
+# Item: F06.1 Organische katatone Störung
+b. F06.1 Organische katatone Störung | Stupor oder Erregung
+c. Stupor | Verminderte Psychomotorik, Bewegungsarmut
+c. Erregung | Gesteigerte Psychomotorik, erhöhte motorische Aktivität
+c. Haltungsstereotypien | Katatone Symptome wie Haltungsstereotypien
+c. Flexibilitas cerea | Wächserne Biegsamkeit als katatones Symptom
+c. Zwecklose Aktivität | Erhöhte motorische Aktivität oft zwecklos und nicht von äußeren Reizen beeinflusst
+d. Katatone Schizophrenie | F20.2 | Katatonie bei F20.2
+d. Dissoziativer Stupor | F44.2 | Dissoziativer Stupor ist F44.2
+
+s. ICD-10 F06.1 | Organische katatone Störung
+t. https://www.thieme-connect.de/products/ebooks/lookinside/10.1055/b-0034-93906 | f06_1 | katatonie | organisch
+l. 2
+
+# Item: F06.2 Organische wahnhafte Störung
+b. F06.2 Organische wahnhafte Störung | Wahn dominiert
+c. Anhaltender Wahn | Persistierender oder rezidivierender Wahn charakterisiert die Störung
+c. Wahninhalte | Verfolgungswahn, körperliche Veränderung, Eifersucht, Krankheit, Armut möglich
+c. Halluzinationen  | Begleitend möglich, dominieren aber nicht das klinische Bild
+c. Schizophreniform | Formale Denkstörungen oder einzelne katatone Phänomene möglich
+c. Bewusstsein erhalten | Bewusstsein und kognitive Funktionen sind nicht gestört
+c. Persönlichkeitsbezug | Bei älteren Patienten scheinen Wahninhalte mit primärer Persönlichkeit übereinzustimmen
+d. Akute psychotische Störung | F23 | Akute Psychose ist F23
+d. Anhaltende wahnhafte Störung | F22 | F22 ist nicht organisch
+d. Schizophrenie | F20 | Schizophrenie ist F20
+d. Bewusstsein|Bewusstsein ok|Bewusstsein und kognitive Funktionen sind nicht beeinträchtig.
+s. https://www.thieme-connect.de/products/ebooks/lookinside/10.1055/b-0034-93906 | Organische wahnhafte Störung
+t. icd10 | f06_2 | wahn | organisch
+l. 2
+
+
+
+# Item: F06.3 Organische affektive Störungen
+b. F06.3 Organische affektive Störungen | Stimmung organisch
+c. Depressive Symptome | Depressive Stimmungslage, Schlafstörungen, Appetitverlust, Müdigkeit möglich
+c. Manische Symptome | Gehobene Stimmung möglich, Aktivitätssteigerung
+c. Aktivitätsänderung | Stimmungsänderung meist mit Aktivitätsänderung verbunden
+c. Endokrine Ursachen | Z. B. Cushing-Syndrom mit erhöhten Cortisolwerten
+c. Neurologische Ursachen | Z. B. Tumore, Enzephalitis, Epilepsie
+d. Affektive Störung | F30-F39 | Nichtorganisch in F30-F39
+d. Bipolare Störung | F31 | F31 ist nicht organisch
+s. https://www.thieme-connect.de/products/ebooks/lookinside/10.1055/b-0034-93906 | Organische affektive Störungen
+t. icd10 | f06_3 | affektiv | organisch
+l. 2
+
+# Item: F06.4 Organische Angststörung
+b. F06.4 Organische Angststörung | Angst organisch
+c. Generalisierte Angst | Dauerhafte Angst, Kriterien für generalisierte Angststörung können erfüllt sein
+c. Panikattacken | Anfallsartige Angst, Panikstörungssyndrom ist häufigste Erscheinungsform
+c. Organische Ursache | Folge körperlicher Störung, zeitlich mit Ursache zusammenhängend 
+c. Phobie selten | Phobie durch organische Erkrankung ist seltenste Form
+c. Häufige Ursachen | Kardiomyopathie, Parkinson, COPD, Hyperthyreose, Sjögren-Syndrom
+d. Angststörung | F41 | F41 ist nicht organisch
+d. Phobische Störung | F40 | Phobien sind F40
+s. https://www.thieme-connect.de/products/ebooks/lookinside/10.1055/b-0034-93906 | Organische Angststörung
+t. icd10 | f06_4 | angst | organisch
+l. 2
+
+# Item: F06.4 Organische Angststörung (Panik)
+b. F06.4 Organische Angststörung (Panik) | Paniksymptome bei organischen Erkrankungen
+c. Kardiomyopathie | Paniksymptome treten sehr häufig bei Patienten mit Kardiomyopathie auf, die auf eine Transplantation warten (ca. 80%)
+c. Parkinson-Krankheit | Patienten mit Parkinson-Krankheit erleben häufig Symptome der Panikstörung als organische Angststörung
+c. Chronisch obstruktive Lungenerkrankung | COPD-Patienten erleben häufig Paniksymptome als Folge der organischen Lungenerkrankung
+c. Chronische Schmerzsyndrome | Chronische Schmerzsyndrome sind mit dem Auftreten von Paniksymptomen assoziiert
+c. Primaer biliaere Zirrhose | Primär biliäre Zirrhose ist eine Erkrankung, die mit Paniksymptomen assoziiert ist
+c. Epilepsie parahippocampalis | Besondere Epilepsieformen mit Fokus im Gyrus parahippocampalis dexter sind mit Paniksymptomen assoziiert
+d. Generalisierte Angststörung | F41.1 | Generalisierte Angststörung ist nicht organisch bedingt, F06.4 erfordert organische Ursache. 
+d. Panikstörung | F41.0 | Primäre Panikstörung F41.0 ist nicht organisch, F06.4 ist organisch bedingt. 
+d. Phobische Störung | F40 | Phobien sind F40, nicht F06.4. 
+d. Hyperthyreose | E03 | Hyperthyreose kann Angst verursachen, gehört aber zu E03 (endokrine Störung), F06.4 kodiert die psychische Störung bei organischer Erkrankung.
+s. https://www.thieme-connect.de/products/ebooks/lookinside/10.1055/b-0034-93906 | Organische Angststörung Panik
+t. icd10 | f06_4 | panik | angst | organisch
+l. 3
+
+# Item: F06.5 Organische dissoziative Störung
+b. F06.5 Organische dissoziative Störung | Dissoziation organisch
+c. Integrationsverlust | Erinnerung oder Identität, Verlust der Integration psychischer Funktionen
+c. Identitätsbewusstsein | Gestört durch organische Ursache
+c. Körperbewegungskontrolle | Teilweise verloren, Kontrolle über Körperbewegungen gestört
+c. ICD-10 Kriterien | Erfüllt die ICD-10 Diagnosekriterien für dissoziative Störung
+c. Konversionsstörung | Konversionsstörung als mögliche Erscheinungsform 
+d. Dissoziative Störung | F44 | F44 ist nicht organisch
+d. Konversionsstörung | F44 | F44 gehoert zu Dissoziation
+s. https://www.thieme-connect.de/products/ebooks/lookinside/10.1055/b-0034-93906| Organische dissoziative Störung
+t. icd10 | f06_5 | dissoziation | organisch
+l. 2
+
+# Item: F06.6 Organische emotional labile Störung
+b. F06.6 Organische emotional labile Störung | Affekt labil
+c. Affektlabilität | Deutliche und persistierende affektive Labilität, schwankende Gefühle
+c. Ermüdbarkeit | Schnelle Erschöpfung, erhöhte Ermüdbarkeit
+c. Körperliche Missempfindungen | Schwindel oder Schmerz, verschiedene unangenehme körperliche Empfindungen
+c. Subj. Kognitive Beeinträchtigungen | Subjektiv wahrgenommene kognitive Probleme, objektiv aber nicht verifizierbar
+ 
+d. Somatoforme Störung | F45 | Somatoform ist F45
+d. Depression | F32 | Depressive Episode ist F32
+s. https://www.thieme-connect.de/products/ebooks/lookinside/10.1055/b-0034-93906 | Organische emotional labile Störung
+t. icd10 | f06_6 | affektlabilitaet | organisch
+l. 2
+
+
+# Item: F06.7 Leichte kognitive Störung
+b. F06.7 Leichte kognitive Störung | Leichter Abbau
+c. Gedächtnisstörung | Gedächtnisverlust, Vergesslichkeit, Gedankengang verlangsamt
+c. Lernschwierigkeiten | Neue Inhalte schwer zu lernen, subjektiv als schwierig empfunden
+c. Konzentrationsminderung | Reduzierte Fähigkeit, sich über längere Zeit zu konzentrieren, langes Fokussieren schwer
+c. Subjektive Beschwerden | Beschwerden über leicht ausgeprägte kognitive Beeinträchtigungen, subjektiv wahrgenommen
+c. Objektive Tests normal | Objektive Tests können normale Ergebnisse zeigen trotz subjektiver Beschwerden
+c. Leicht ausgeprägt | Leicht ausgeprägte kognitive Beeinträchtigungen, nicht schwerwiegend wie bei Demenz
+d. Demenz | F00-F03 | Kognitive Störung ähnlich, aber Demenz (F00-F03) ist schwerwiegender, F06.7 ist leicht ausgeprägt. 
+d. Delir | F05 | Kognitive Störung ähnlich, aber Delir (F05) zeigt Bewusstseinstrübung und akuten Verlauf, F06.7 zeigt keine Bewusstseinstrübung. Zur Abgrenzung: Delir zeigt akute Verwirrtheit mit Bewusstseinstrübung, Delir ist akut und reversibel.
+d. Postenzephalitisch | F07.1 | Kognitive Störung ähnlich, aber F07.1 ist spezifisch nach Enzephalitis, F06.7 ist unspezifisch. Zur Abgrenzung: F07.1 erfordert spezifische Ursache (Enzephalitis), F06.7 ist allgemeine leichte kognitive Störung. F07.1 ist naher bezeichnet, F06.7 kann verschiedene Ursachen haben.
+d. Postkontusionell | F07.2 | Kognitive Störung ähnlich, aber F07.2 ist spezifisch nach Schädel-Hirn-Trauma, F06.7 ist unspezifisch. Zur Abgrenzung: F07.2 erfordert spezifische Ursache (Kontusion), F06.7 ist allgemeine leichte kognitive Störung. F07.2 ist naher bezeichnet, F06.7 kann verschiedene Ursachen haben.
+s. https://www.thieme-connect.de/products/ebooks/lookinside/10.1055/b-0034-93906| Leichte kognitive Störung
+t. icd10 | f06_7 | kognitiv | organisch
+l. 2
+
+# Item: F06.8 Sonstige naeher bezeichnete Störung
+b. F06.8 Sonstige naeher bezeichnete Störung | Spezifisch organisch
+c. Sonstige Störung | Naeher bezeichnet
+c. Epileptische Psychose | Kann hier kodiert
+d. Nicht naeher bezeichnet | F06.9 | F06.9 ist ungenau
+s. https://www.thieme-connect.de/products/ebooks/lookinside/10.1055/b-0034-93906 | Sonstige organische Störung
+t. icd10 | f06_8 | organisch | sonstige
+l. 2
+
+# Item: F06.9 Nicht naeher bezeichnete Störung
+b. F06.9 Nicht naeher bezeichnete Störung | Organisch unspezifisch
+c. Hirnorganisches Syndrom | Ohne genaue Spezifikation
+c. Nicht naeher bezeichnet | Unspezifische Diagnose
+d. Naeher bezeichnet | F06.8 | F06.8 ist spezifiziert
+s.https://www.thieme-connect.de/products/ebooks/lookinside/10.1055/b-0034-93906 | Nicht naeher bezeichnete Störung
+t. icd10 | f06_9 | organisch | unspezifisch
+l. 2
+
+# Item: F06.7 Risikofaktoren
+
+b. Risikofaktoren einer leichten kognitiven Störung (F06.7) | Organische Faktoren, die kognitive Beeinträchtigungen begünstigen
+c. Bluthochdruck | Erhöht vaskuläres Risiko, kann zu zerebrovaskulären Schäden führen, die kognitive Funktionen beeinträchtigen
+c. Diabetes mellitus | Stoffwechselstörung erhöht Risiko für vaskuläre und metabolische Schäden, die Kognition beeinflussen
+c. Hyperlipidaemie | Erhöht vaskuläres Risiko, kann zu Arteriosklerose und zerebrovaskulären Schäden führen
+c. Chronische Niereninsuffizienz | Systemische Belastung durch Urämie, kann neurotoxische Effekte haben und kognitive Funktionen beeinträchtigen
+c. B12-Mangel | Neurokognitive Beeinträchtigung durch Mangel an essentiellen B-Vitaminen, kann zu kognitiven Störungen führen
+c. D-Mangel | Mangelzustand kann neuroprotektive Funktionen beeinträchtigen und Risiko für kognitive Beeinträchtigungen erhöhen
+c. Testosteronmangel | Hormonelles Defizit kann kognitive Funktionen beeinflussen, besonders bei älteren Männern
+c. Schilddruesendysfunktion | Endokrine Störung (Hypo- oder Hyperthyreose) kann Stoffwechsel und kognitive Funktionen beeinträchtigen
+
+d. Alkoholkonsum | F10 | Alkohol kann kognitive Störungen verursachen, gehört aber zu F10 (Substanzstörungen), nicht zu F06.7 Risikofaktoren
+d. Schädel-Hirn-Trauma | S06 | Direkte Hirnschädigung verursacht kognitive Störungen, gehört zu S06 (Verletzungen), nicht zu F06.7 Risikofaktoren
+d. Depression | F32 | Depression kann kognitive Symptome zeigen, gehört aber zu F32 (affektive Störungen), nicht zu F06.7 organische Risikofaktoren
+d. Demenz | F00-F03 | Demenz ist schwerwiegender als F06.7, F06.7 ist leichte kognitive Störung, Demenz ist schwerere Beeinträchtigung
+s. https://www.betterhelp.com/de/artikel/psychische-st%C3%B6rungen/psychische-st%C3%B6rungen-organisch-affektive-st%C3%B6rung-erkl%C3%A4rt/|ICD-10 F06.7 Risikofaktoren leichte kognitive Störung
+t. icd10 | f06_7 | risikofaktoren | kognitiv | organisch
+l. 3
+
+# Item: F06.3 Ursachen
+b. Ursachen einer F06.3 Organischen affektiven Störung | Organische Erkrankungen, die affektive Störungen verursachen
+c. SHT |Schädel-Hirn-Trauma: Verletzungen des Gehirns durch Unfälle, Stürze oder Gewalteinwirkung führen zu strukturellen Veränderungen in Hirngebieten wie präfrontalem Kortex oder limbischem System, die für Emotionsregulation verantwortlich sind
+c. Infektionen ZNS | Entzündungen oder Schäden in neuronalen Strukturen durch Infektionen des zentralen Nervensystems können zu anhaltenden Depressionen, Reizbarkeit und psychotischen Symptomen führen, schwere Infektionen bewirken langfristige Veränderungen in der Neurotransmitterregulation
+c. Metabolische Störung | Erkrankungen wie Diabetes oder Schilddrüsenfunktionsstörungen wirken sich direkt auf emotionale Gesundheit aus: Unterzuckerung kann akute Angstzustände auslösen, Schilddrüsenüberfunktion führt zu innerer Unruhe, Unterfunktion zu depressiver Symptomatik
+c. Herz-Kreislauf-Erkrankungen | Herzinfarkte und andere kardiovaskuläre Ereignisse beeinträchtigen psychische Gesundheit, nach Herzinfarkt treten vermehrt depressive Episoden auf durch biologische Faktoren (Entzündungsprozesse) und psychische Belastung
+c. Epilepsie | Epileptische Anfälle, insbesondere solche die das limbische System betreffen, haben erhebliche Auswirkungen auf emotionale Regulation, Betroffene können depressive oder manische Episoden entwickeln
+d. Primäre Depression | F32 | Primäre Depression ist nicht organisch bedingt, F06.3 erfordert organische Ursache. Zur Abgrenzung: Bei F06.3 muss organische Erkrankung nachweisbar sein, bei F32 nicht.
+d. Bipolare Störung | F31 | Bipolare Störung ist primär psychisch, F06.3 ist organisch bedingt. Zur Abgrenzung: F31 zeigt keine organische Ursache, F06.3 erfordert organische Grunderkrankung.
+d. Substanzinduziertes | F10-F19 | Substanzstörungen gehören zu F10-F19, nicht zu F06.3. Zur Abgrenzung: F06.3 hat organische Ursache (z.B. Trauma, Infektion), F10-F19 sind substanzbedingt.
+d. Psychogene Reaktion | F43 | Psychogene Reaktionen sind reaktiv, F06.3 ist organisch. Zur Abgrenzung: F43 ist reaktiv auf psychosoziale Belastung, F06.3 hat organische Grunderkrankung.
+s. https://www.betterhelp.com/de/artikel/psychische-st%C3%B6rungen/psychische-st%C3%B6rungen-organisch-affektive-st%C3%B6rung-erkl%C3%A4rt/ | ICD-10 F06.3 Ursachen organische affektive Störung
+t. icd10 | f06_3 | ursachen | affektiv | organisch
+l. 3
+
+ 
+
+
+ 
+
+b.Wahrnehmungstäuschung mit realem Reiz | Wie nennt man eine Fehlwahrnehmung bei vorhandenem äußeren Reiz?
+
+c. Illusion | Fehlwahrnehmung eines real vorhandenen Reizes, korrigierbar
+c. Äußerer Reiz vorhanden | Illusion setzt einen realen äußeren Stimulus voraus, der fehlinterpretiert wird
+
+d. Halluzination | Kein äußerer Reiz | Halluzinationen entstehen ohne äußeren Stimulus und gehören nicht zu den Illusionen. Zur Abgrenzung: Bei Illusion ist ein Reiz vorhanden, bei Halluzination fehlt der Reiz komplett.
+d. Wahn | Denkstörung | Wahn ist eine inhaltliche Denkstörung keine Wahrnehmungstäuschung. Zur Abgrenzung: Illusion = Wahrnehmungsfehler, Wahn = Denkfehler. Illusion betrifft die Wahrnehmung, Wahn betrifft das Denken.
+d. Pseudohalluzination | Als unwirklich erkannt | Trotz Realitätsurteil kein Reiz vorhanden daher keine Illusion. Zur Abgrenzung: Illusion = Reiz vorhanden, Pseudohalluzination = kein Reiz, aber als unwirklich erkannt.
+
+s. Psychopathologischer Befund | Wahrnehmungsstörungen
+l. 1
+t. wahrnehmung | illusion | psychopathologie | grundlagen
+
+##---
+
+b.Fehlwahrnehmung mit Bedeutungszuschreibung | Wie heißt eine Illusion mit affektiver Bedeutungsaufladung?
+
+c. Illusionäre Verkennung | Wahrnehmungsstörung mit Bedeutungsüberhöhung
+c. Affektive Bedeutungsaufladung | Wahrnehmung wird durch affektive Besetzung mit besonderer Bedeutung aufgeladen
+
+d. Überwertige Idee | Denkebene | Überwertige Ideen sind Überzeugungen keine Wahrnehmungsfehler. Zur Abgrenzung: Illusionäre Verkennung = Wahrnehmung mit Bedeutungszuschreibung, Überwertige Idee = Überzeugung ohne Wahrnehmungsfehler.
+d. Wahneinfall | Denkstörung | Wahneinfall betrifft Denken nicht primär Wahrnehmung. Zur Abgrenzung: Illusionäre Verkennung = Wahrnehmung mit Bedeutung, Wahneinfall = Denkebene ohne primäre Wahrnehmungsstörung.
+d. Halluzination | Reizlos | Kein äußerer Reiz vorhanden. Zur Abgrenzung: Illusionäre Verkennung = Reiz vorhanden mit Bedeutungszuschreibung, Halluzination = kein Reiz vorhanden.
+
+s. Psychopathologischer Befund | Illusionäre Verkennung
+l. 2
+t. illusion | verkennung | affekt | grenzbereich
+
+##---
+
+b.Plötzliche wahnnahe Deutung | Wie nennt man eine noch nicht fixierte wahnnahe Idee?
+
+c. Wahneinfall | Beginnende wahnnahe Bedeutungsbildung
+c. Noch nicht fixiert | Wahneinfall ist noch nicht zu einem fixierten Wahn geworden, noch korrigierbar
+
+d. Wahn | Bereits fixiert | Beim Wahn fehlt die Korrigierbarkeit. Zur Abgrenzung: Wahneinfall = noch nicht fixiert, theoretisch korrigierbar, Wahn = fixiert, unkorrigierbar.
+d. Überwertige Idee | Langsam entwickelt | Überwertige Ideen sind stabil emotional besetzt aber nicht plötzlich. Zur Abgrenzung: Wahneinfall = plötzlich auftretend, Überwertige Idee = langsam entwickelt, stabil.
+d. Illusion | Wahrnehmungsstörung | Wahneinfall gehört zur Denkebene. Zur Abgrenzung: Wahneinfall = Denkebene, Illusion = Wahrnehmungsebene.
+
+s. Psychopathologischer Befund | Wahneinfall
+l. 2
+t. wahn | wahneinfall | denken | prodromal
+
+##---
+
+b.Stark affektiv besetzte Überzeugung | Welche Überzeugung ist prinzipiell korrigierbar?
+
+c. Überwertige Idee | Emotional dominant aber nicht unkorrigierbar
+c. Theoretisch korrigierbar | Überwertige Idee lässt theoretisch Zweifel zu, ist prinzipiell korrigierbar trotz starker affektiver Besetzung
+
+d. Wahn | Unkorrigierbar | Zentrale Abgrenzung ist fehlende Korrigierbarkeit. Zur Abgrenzung: Überwertige Idee = theoretisch korrigierbar, Wahn = prinzipiell unkorrigierbar, fehlende Einsichtsfähigkeit.
+d. Wahneinfall | Instabil | Noch keine stabile Überzeugung. Zur Abgrenzung: Überwertige Idee = stabile, emotional besetzte Überzeugung, Wahneinfall = instabil, noch nicht fixiert.
+d. Illusion | Wahrnehmung | Keine Überzeugung sondern Fehlwahrnehmung. Zur Abgrenzung: Überwertige Idee = Überzeugung auf Denkebene, Illusion = Fehlwahrnehmung auf Wahrnehmungsebene.
+
+s. Psychopathologischer Befund | Überwertige Idee
+l. 2
+t. ueberwertige_idee | wahnabgrenzung | affekt
+
+##---
+
+b.Unkorrigierbare falsche Überzeugung | Wie wird dies psychopathologisch bezeichnet?
+
+c. Wahn | Inhaltliche Denkstörung mit subjektiver Gewissheit
+c. Unkorrigierbar | Wahn ist prinzipiell unkorrigierbar, fehlende Einsichtsfähigkeit, subjektive absolute Gewissheit
+
+d. Überwertige Idee | Korrigierbar | Überwertige Ideen lassen theoretisch Zweifel zu. Zur Abgrenzung: Wahn = unkorrigierbar, Überwertige Idee = theoretisch korrigierbar trotz starker affektiver Besetzung.
+d. Illusion | Wahrnehmung | Kein Denkfehler. Zur Abgrenzung: Wahn = Denkstörung, Illusion = Wahrnehmungsstörung. Wahn betrifft Denkinhalte, Illusion betrifft Wahrnehmung.
+d. Halluzination | Wahrnehmung ohne Reiz | Keine Überzeugung. Zur Abgrenzung: Wahn = Überzeugung auf Denkebene, Halluzination = Wahrnehmung ohne Reiz.
+
+s. Psychopathologischer Befund | Wahn
+l. 1
+t. wahn | denkstoerung | psychopathologie
+
+##---
+
+b.Wahrnehmung ohne äußeren Reiz | Wie nennt man dieses Phänomen?
+
+c. Halluzination | Wahrnehmung ohne realen Stimulus
+c. Kein äußerer Reiz | Halluzination entsteht ohne äußeren Stimulus, Wahrnehmung ohne reale Grundlage
+
+d. Illusion | Reiz vorhanden | Illusion setzt einen äußeren Reiz voraus. Zur Abgrenzung: Halluzination = kein Reiz vorhanden, Illusion = Reiz vorhanden aber fehlinterpretiert.
+d. Pseudohalluzination | Realitätsurteil erhalten | Sonderform mit Distanzierung. Zur Abgrenzung: Halluzination = als real erlebt, Pseudohalluzination = als unwirklich erkannt. Beide haben keinen Reiz, aber unterschiedliches Realitätsurteil.
+d. Wahn | Denkebene | Keine Wahrnehmung. Zur Abgrenzung: Halluzination = Wahrnehmung ohne Reiz, Wahn = Denkstörung ohne Wahrnehmungsphänomen.
+
+s. Psychopathologischer Befund | Halluzination
+l. 1
+t. halluzination | wahrnehmung | grundlagen
+
+##---
+
+b.Wahrnehmung als unwirklich erkannt | Welche Bezeichnung trifft zu?
+
+c. Pseudohalluzination | Wahrnehmung ohne Reiz bei erhaltener Distanz
+c. Realitätsurteil erhalten | Pseudohalluzination wird als unwirklich erkannt, Distanz zum Erlebnis bleibt erhalten
+
+d. Halluzination | Keine Distanz | Halluzinationen werden als real erlebt. Zur Abgrenzung: Pseudohalluzination = als unwirklich erkannt mit Distanz, Halluzination = als real erlebt ohne Distanz.
+d. Illusion | Reiz vorhanden | Hier fehlt der äußere Reiz. Zur Abgrenzung: Pseudohalluzination = kein Reiz, als unwirklich erkannt, Illusion = Reiz vorhanden, fehlinterpretiert.
+d. Wahn | Überzeugung | Kein Wahrnehmungsphänomen. Zur Abgrenzung: Pseudohalluzination = Wahrnehmung ohne Reiz, Wahn = Denkstörung ohne Wahrnehmung.
+
+s. Psychopathologischer Befund | Pseudohalluzination
+l. 2
+t. pseudohalluzination | realitaetsurteil | abgrenzung
+
+##---
+
+b.Fehlinterpretation ohne Denkstörung | Welches Phänomen ist korrekt?
+
+c. Illusion | Wahrnehmungsfehler ohne Denkpathologie
+c. Wahrnehmungsebene | Illusion ist reine Wahrnehmungsstörung, Denken bleibt ungestört
+
+d. Wahn | Denkstörung | Wahn betrifft Inhalte des Denkens. Zur Abgrenzung: Illusion = Wahrnehmungsfehler, Denken ungestört, Wahn = Denkstörung, Wahrnehmung kann ungestört sein.
+d. Überwertige Idee | Überzeugung | Keine Wahrnehmungstäuschung. Zur Abgrenzung: Illusion = Wahrnehmungsfehler, Überwertige Idee = Überzeugung auf Denkebene ohne Wahrnehmungsstörung.
+d. Wahneinfall | Bedeutungsbildung | Bereits Denkebene. Zur Abgrenzung: Illusion = Wahrnehmungsebene, Wahneinfall = Denkebene mit Bedeutungsbildung.
+
+s. Psychopathologischer Befund | Illusion
+l. 1
+t. illusion | wahrnehmung | differenzialdiagnose
+
+#---
+
+b.Grenzbereich zwischen Wahrnehmung und Denken | Welches Phänomen passt am besten?
+
+c. Illusionäre Verkennung | Wahrnehmung mit Bedeutungszuschreibung
+c. Wahrnehmung und Denken | Illusionäre Verkennung verbindet Wahrnehmungsfehler mit affektiver Bedeutungszuschreibung auf Denkebene
+
+d. Wahneinfall | Denken | Kein Wahrnehmungsfehler. Zur Abgrenzung: Illusionäre Verkennung = Wahrnehmung mit Bedeutung, Wahneinfall = reine Denkebene ohne primäre Wahrnehmungsstörung.
+d. Überwertige Idee | Denken | Keine Wahrnehmung beteiligt. Zur Abgrenzung: Illusionäre Verkennung = Wahrnehmung + Bedeutung, Überwertige Idee = reine Denkebene ohne Wahrnehmungsstörung.
+d. Halluzination | Reizlos | Kein äußerer Stimulus. Zur Abgrenzung: Illusionäre Verkennung = Reiz vorhanden mit Bedeutungszuschreibung, Halluzination = kein Reiz vorhanden.
+
+s. Psychopathologischer Befund | Illusionäre Verkennung
+l. 3
+t. grenzbereich | illusion | wahnnaehe
+
+#---
+
+b.Prodromales psychotisches Erleben | Welches Phänomen ist typisch?
+
+c. Wahneinfall | Beginnende wahnnahe Bedeutungsbildung
+c. Prodromal | Wahneinfall ist typisches prodromales Zeichen vor voller Wahnentwicklung, noch nicht fixiert
+
+d. Wahn | Voll ausgeprägt | Nicht prodromal. Zur Abgrenzung: Wahneinfall = prodromal, noch nicht fixiert, Wahn = voll ausgeprägt, fixiert, nicht mehr prodromal.
+d. Illusion | Wahrnehmung | Kein typisches Prodromzeichen. Zur Abgrenzung: Wahneinfall = typisches Prodromzeichen für Psychose, Illusion = Wahrnehmungsstörung, kein spezifisches Prodromzeichen.
+d. Überwertige Idee | Langfristig | Nicht akut prodromal. Zur Abgrenzung: Wahneinfall = akut prodromal, plötzlich auftretend, Überwertige Idee = langfristig entwickelt, nicht prodromal.
+
+s. Psychopathologischer Befund | Wahneinfall prodromal
+l. 3
+t. f20 | prodromal | wahnentwicklung
+
+#---
+
+# Item: Substanzkonsum F10-F19
+b. Substanzkonsum F10-F19 | Konsum psychotroper Substanzen, die zu psychischen und Verhaltensstörungen führen können
+c. Alkohol | F10: Psychische und Verhaltensstörungen durch Alkohol, häufigste substanzbedingte Störung
+c. Opioide | F11: Psychische und Verhaltensstörungen durch Opioide (z. B. Heroin, Morphin, Methadon)
+c. Cannabinoide | F12: Psychische und Verhaltensstörungen durch Cannabinoide (z. B. Cannabis, Haschisch, Marihuana)
+c. Sedativa | F13: Psychische und Verhaltensstörungen durch Sedativa oder Hypnotika (z. B. Benzodiazepine, Barbiturate)
+c. Kokain | F14: Psychische und Verhaltensstörungen durch Kokain, Stimulans mit hohem Abhängigkeitspotenzial
+c. Stimulanzien | F15: Psychische und Verhaltensstörungen durch andere Stimulanzien (z. B. Amphetamine, Methamphetamin)
+c. Halluzinogene | F16: Psychische und Verhaltensstörungen durch Halluzinogene (z. B. LSD, Psilocybin, Meskalin)
+c. Tabak | F17: Psychische und Verhaltensstörungen durch Tabak, Nikotinabhängigkeit
+c. Lösungsmittel | F18: Psychische und Verhaltensstörungen durch flüchtige Lösungsmittel (z. B. Klebstoffe, Lacke)
+ d. Medikamentenmissbrauch | F55 | Medikamentenmissbrauch ohne Abhängigkeitspotenzial gehört zu F55, nicht zu F10-F19. Zur Abgrenzung: F10-F19 = psychotrope Substanzen mit Abhängigkeitspotenzial, F55 = nichtabhängigkeitserzeugende Substanzen.
+d. Organische Störung | F06 | Organische psychische Störungen haben andere Ursache, nicht substanzbedingt. Zur Abgrenzung: F10-F19 = substanzbedingt, F06 = organische Ursache (z. B. Trauma, Infektion).
+d. Primäre Psychose | F20 | Primäre Schizophrenie ist nicht substanzbedingt. Zur Abgrenzung: F10-F19 = substanzinduziert, F20 = primär psychotisch ohne Substanzkonsum als Ursache.
+d. Intoxikation | F1x.0 | Intoxikation ist ein klinisches Bild (4. Stelle), nicht die Substanz selbst. Zur Abgrenzung: Substanzkonsum = Einnahme der Substanz, Intoxikation = akute Vergiftungssymptome.
+s. ICD-10-GM 2025 | F10-F19 Psychische und Verhaltensstörungen durch psychotrope Substanzen
+t. f10_f19 | substanzkonsum | psychotrope_substanzen | abhaengigkeit | icd10
+l. 2
+
+#---
+
+Wenn du willst, mache ich dir:
+
+* **Level 4: fiese Prüfungsfallen**,
+* oder **eine gemischte Runde** (Kontinuum + Substanz + Schlaf + Delir).
+
+
+# Item: GABA-System bei Alkohol (F10)
+b. GABA-System bei Alkohol (F10) | Wirkung von Alkohol auf das GABAerge System
+c. Akut sedierend | Alkohol verstärkt GABA: akut sedierend, anxiolytisch, muskelrelaxierend durch Verstärkung der GABA-Wirkung | 1 | 1
+c. GABA-Rezeptoren | Alkohol bindet an GABA-A-Rezeptoren und verstärkt die inhibitorische Wirkung von GABA, führt zu Sedierung und Entspannung | 2 | 1
+c. Anxiolytische Wirkung | Alkohol wirkt angstlösend durch Verstärkung der GABAergen Hemmung, besonders bei akutem Konsum | 3 | 1
+c. Entzug Hyperexzitabilität | Im Entzug: GABA-System unteraktiv, Glutamat-System überaktiv, führt zu Entzugssymptomen wie Tremor, Krampfanfälle, Unruhe | 4 | 1
+c. Toleranzentwicklung | Chronischer Alkoholkonsum führt zu Downregulation der GABA-Rezeptoren, höhere Dosen nötig für gleiche Wirkung | 5 | 1
+c. Muskelrelaxation | Alkohol verstärkt GABA-vermittelte Muskelrelaxation, kann zu Atemdepression bei hohen Dosen führen | 6 | 1
+d. Dopamin aktivierend | Dopamin | Alkohol erhöht Dopamin im mesolimbischen System → Euphorie, Aktivierung, nicht Sedierung. Zur Abgrenzung: GABA = inhibitorisch, sedierend, Dopamin = exzitatorisch, aktivierend, euphorisierend. Alkohol wirkt auf beide: GABA → Sedierung, Dopamin → Euphorie/Aktivierung. Die Sedierung erfolgt über GABA, nicht über Dopamin.
+d. Serotonin anxiolytisch | Serotonin | Alkohol erhöht Serotonin → kann anxiolytisch wirken über 5-HT-Rezeptoren, nicht primär über GABA. Zur Abgrenzung: Alkohol wirkt sowohl auf GABA (primär anxiolytisch) als auch auf Serotonin (sekundär anxiolytisch). Die anxiolytische Wirkung erfolgt primär über GABA-Verstärkung, Serotonin-Erhöhung trägt sekundär bei, ist aber nicht der primäre Mechanismus.
+d. Glutamat Entzug überaktiv | Glutamat | Im Entzug: Glutamat (NMDA) überaktiv → Hyperexzitabilität durch Exzitation, nicht durch GABA-Defizit allein. Zur Abgrenzung: Entzug = GABA unteraktiv + Glutamat überaktiv → Hyperexzitabilität. Glutamat-Überaktivität verursacht Hyperexzitabilität durch exzitatorische Wirkung, nicht primär durch GABA-Unteraktivität. Beide tragen bei, aber Glutamat-Überaktivität ist exzitatorisch bedingt.
+d. Dopamin Toleranz | Dopamin | Bei chronischem Alkoholkonsum kann Dopamin-System adaptieren, aber Toleranz für Sedierung erfolgt über GABA. Zur Abgrenzung: Alkohol-Toleranz = primär Downregulation der GABA-A-Rezeptoren (höhere Dosen für Sedierung), Dopamin-Adaptation = sekundär (Reward-Effekt kann abnehmen), aber nicht primär für Sedierungs-Toleranz verantwortlich.
+d. Serotonin Stimmung | Serotonin | Alkohol erhöht Serotonin → Stimmungsverbesserung, aber nicht primär für Sedierung/Muskelrelaxation. Zur Abgrenzung: GABA = primär für Sedierung, Anxiolyse, Muskelrelaxation, Serotonin = primär für Stimmungsverbesserung. Alkohol wirkt auf beide, aber Sedierung/Muskelrelaxation erfolgen über GABA, Stimmungsverbesserung über Serotonin.
+s. ICD-10-GM 2025 | F10 Psychische und Verhaltensstörungen durch Alkohol - Neurobiologie
+t. f10 | alkohol | gaba | neurobiologie | pharmakologie
+l. 2
+
+
+
+„Görke“: Klingt lustig – kann töten
+Im Labor hergestellt und getarnt als vermeintlich legales Cannabis-Präparat: So kommen synthetische Cannabinoide mit Namen wie „Görke“, „Spice“ und „Baller-Liquid“ daher. Warum ihr jeden Kunden und Patienten vor dem Konsum warnen solltet.
+
+
+In Apotheken gibt es immer häufiger Fragen zu synthetischen Cannabinoiden – denn diese Substanzen sind zunehmend in Vapes und E-Liquids erhältlich. Oft sind es besorgte Eltern, die so etwas bei ihren Kindern finden und sich mit Beratungsbedarf melden. Was also steckt dahinter und welche Risiken bestehen tatsächlich für Konsumenten?
+
+
+Was sind synthetische Cannabinoide?
+Synthetische Cannabinoide (SC) sind künstlich erzeugte chemische Verbindungen, die ähnlich wie Δ9-Tetrahydrocannabinol (THC), der psychoaktive Hauptwirkstoff des Cannabis, auf die Cannabinoid-Rezeptoren (CBR) wirken. Im Unterschied zu THC, einem partiellen Agonisten, fungieren viele synthetische Cannabinoide jedoch als Vollagonisten und besitzen zudem eine deutlich höhere Affinität zu diesen Rezeptoren. Dies führt dazu, dass ihre Wirkung oft stärker, intensiver und gefährlicher ist.
+
+
+Bekannte Szenenamen solcher Produkte sind „Spice“, „K2“, „Black Mamba“ oder neuerdings auch „Görke“ und „Baller-Liquid“. Anfangs wurden SC überwiegend in Kräutermischungen verkauft, mittlerweile finden sie sich aber zunehmend in Vapes und E-Liquids, was insbesondere bei jungen Konsumenten den Eindruck einer harmlosen, legalen Alternative zu Cannabis erzeugen kann.
+
+Warum sind synthetische Cannabinoide so riskant?
+Die größte Gefahr der SC liegt in ihrer unvorhersehbaren Zusammensetzung und Potenz. Produkte wie „Görke“ oder „Baller-Liquid“ enthalten häufig völlig unbekannte Mischungen verschiedener SC, deren Konzentrationen stark schwanken und kaum überprüfbar sind. Dies erhöht das Risiko für akute Überdosierungen erheblich.
+
+Zu den häufigsten akuten gesundheitlichen Folgen zählen 
+
+Herzrasen, 
+Bluthochdruck, 
+Brustschmerzen, 
+Übelkeit, 
+Panikattacken, 
+Krampfanfälle und 
+psychotische Zustände. 
+Schwerwiegendere Komplikationen umfassen aber auch Schlaganfälle, Herzinfarkte, akutes Nierenversagen und Atemdepressionen. Auch Todesfälle durch SC-Konsum sind gut dokumentiert: Eine retrospektive Untersuchung in München registrierte zwischen 2014 und 2020 mindestens 98 Todesfälle, bei denen SC involviert waren. In über der Hälfte dieser Fälle waren synthetische Cannabinoide die Hauptursache des Todes.
+
+Chronischer SC-Konsum führt zudem zu langfristigen Schäden wie kognitiven Beeinträchtigungen, psychischen Erkrankungen und schweren Abhängigkeitssymptomen. Entzugssymptome können heftig ausfallen und beinhalten unter anderem Unruhe, Kopfschmerzen, Übelkeit und Albträume.
+
+Wechselwirkungen mit Medikamenten
+SC werden hauptsächlich über Cytochrom-P450-Enzyme (CYP3A4, CYP2C9, CYP2C19) in der Leber abgebaut – dieselben Enzyme, die auch zahlreiche gängige Medikamente verstoffwechseln. Durch Hemmung oder Aktivierung dieser Enzyme können SC zu erhöhten oder verminderten Wirkstoffspiegeln anderer Medikamente führen. Besonders betroffen sind Arzneimittel mit engem therapeutischem Fenster wie Antikoagulanzien (z. B. Warfarin), Immunsuppressiva (z. B. Tacrolimus, Sirolimus) und Antiepileptika (z. B. Valproat).
+
+Die gleichzeitige Einnahme von SC und zentral dämpfenden Medikamenten wie Benzodiazepinen oder Opioiden kann zu verstärkter Sedierung, Atemdepression und sogar Koma führen. Zudem sind Wechselwirkungen mit Medikamenten, die das Herz-Kreislauf-System beeinflussen (z. B. Sympathomimetika, Anticholinergika), gefährlich, da sie Tachykardien, Bluthochdruck und Herzrhythmusstörungen hervorrufen können. Patienten mit psychiatrischen Erkrankungen oder Substanzgebrauchsstörungen sind hierbei besonders gefährdet. Daher ist eine offene Kommunikation zwischen Patienten und medizinischem Fachpersonal über den Konsum von synthetischen Cannabinoiden essenziell.
+
+Schwierigkeiten für Apotheken und Gesundheitswesen
+Für Ärzte und Apotheker liegt die Schwierigkeit im Umgang mit SC darin, dass weder das medizinische Personal noch die Patienten selbst oft genau wissen, welche Substanzen konsumiert wurden. SC werden meist unter der Deklaration „nicht für den menschlichen Verzehr bestimmt“ verkauft, um gesetzliche Regelungen zu umgehen. Gerade im Notfall erschwert diese fehlende Information eine adäquate Behandlung erheblich. 
+
+Gesetzliche Regulierung – eine endlose Spirale?
+In Deutschland versucht man seit 2016, dem Aufkommen neuer synthetischer Substanzen entgegenzuwirken. Das Neue-psychoaktive-Stoffe-Gesetz (NpSG) reguliert definierte Kernstrukturen und Seitenketten von SC. Trotz regelmäßiger Aktualisierungen des NpSG gelingt es Chemikern in illegalen Labors, ständig neue Substanzen zu synthetisieren, die nicht unmittelbar verboten sind. Experten kritisieren daher zunehmend, dass das Gesetz sein Ziel verfehlt habe, die Verbreitung neuer psychoaktiver Substanzen effektiv einzudämmen.
+
+Aktuelle Beispiele für SC, die häufig in toxikologischen Untersuchungen auftauchen, tragen komplizierte Namen wie 4F-ABUTINACA, ADB-HEXINACA oder 5F-MDMB-PICA. Diese Substanzen zeigen, dass die chemische Vielfalt enorm ist – bisher wurden auf dem europäischen Markt bereits über 200 unterschiedliche SC identifiziert.
+
+Prävention und Aufklärung
+Ein zentraler Aspekt für Ärzte und Apotheker ist neben der Notfallbehandlung vor allem die Prävention. Patienten, insbesondere Jugendliche, sollten über die erheblichen Risiken aufgeklärt werden, die mit SC verbunden sind. Dazu gehört die Information, dass es keine sicheren SC-Produkte gibt, sondern dass jedes einzelne potenziell lebensbedrohliche Wirkungen entfalten kann. Apotheken können dabei eine entscheidende Rolle einnehmen, indem sie sachlich und wissenschaftlich fundierte Informationen zur Verfügung stellen und so einen Beitrag zur Risikominderung leisten. Die Zusammenarbeit mit Schulen, Behörden und Präventionsstellen ist hierbei ebenso sinnvoll wie wichtig. 
+
+
+kanalhinweis_apo_180x180.png	
+Folge dem Kanal Mörserzeichen für weitere Apotheken-Themen.
+
+
+
+SC sind hochgefährliche Substanzen, deren Missbrauch schwerwiegende gesundheitliche Folgen bis hin zum Tod haben kann. Ihre ständig wechselnde chemische Struktur macht eine rechtliche Kontrolle schwierig. Apotheker und Ärzte stehen daher in der Pflicht, Patienten intensiv aufzuklären und bei Vergiftungsfällen fachgerecht zu reagieren. Die Risiken, die von SC ausgehen, müssen klar kommuniziert werden, um präventiv wirken zu können – Patienten und Kunden sollten ausdrücklich vor dem Konsum gewarnt werden.
+
+# Item: Synthetische Cannabinoide - Definition und Wirkmechanismus (F19)
+b.  Was sind synthetische Cannabinoide und wie wirken sie?
+c. Vollagonisten an CBR | Synthetische Cannabinoide fungieren als Vollagonisten an Cannabinoid-Rezeptoren, im Unterschied zu THC (partieller Agonist) | 1 | 1
+c. Affinität↑ | Synthetische Cannabinoide besitzen eine deutlich höhere Affinität zu Cannabinoid-Rezeptoren als THC | 2 | 1
+c.  Wirkung↑ | Die Wirkung synthetischer Cannabinoide ist oft stärker, intensiver und gefährlicher als bei THC | 3 | 1 
+c. Szenenamen | Bekannte Szenenamen sind "Spice", "K2", "Black Mamba", "Görke" und "Baller-Liquid" | 5 | 1
+c. Spice|Bekannte Szenenamen sind "Spice", "K2", "Black Mamba", "Görke" und "Baller-Liquid" | 5 | 1
+c. Görke|Bekannte Szenenamen sind "Spice", "K2", "Black Mamba", "Görke" und "Baller-Liquid" | 5 | 1
+d. Partielle Agonisten | das wäre THC | Synthetische Cannabinoide sind partielle Agonisten wie THC. Zur Abgrenzung: Im Unterschied zu THC, einem partiellen Agonisten, fungieren viele synthetische Cannabinoide jedoch als Vollagonisten. Synthetische Cannabinoide sind Vollagonisten, THC ist partieller Agonist.
+d.  Affinität↓ | THC | Synthetische Cannabinoide haben eine niedrigere Affinität zu Cannabinoid-Rezeptoren als THC. Zur Abgrenzung: Synthetische Cannabinoide besitzen eine deutlich höhere Affinität zu diesen Rezeptoren als THC. Die Affinität ist höher, nicht niedriger.
+d.  Wirkung ↓ | Wirkung | Synthetische Cannabinoide haben eine schwächere Wirkung als THC. Zur Abgrenzung: Die Wirkung synthetischer Cannabinoide ist oft stärker, intensiver und gefährlicher als bei THC. Die Wirkung ist stärker, nicht schwächer.
+d. Jane | Marihuana | "Jane" ist ein Szenename für Marihuana, nicht für synthetische Cannabinoide.Szenenamen synthetischer Cannabinoide wie "Spice", "K2", "Görke" entstehen durch Marketingstrategien, rechtliche Tarnung und mystische Attraktivität. "Jane" ist ein älterer Slangname für natürliches Cannabis, der sich vermutlich aus Abkürzungen oder Codewörtern entwickelte. Synthetische Cannabinoide verwenden andere Namenskonventionen, die Legalität suggerieren sollen.
+d. junk | Herointinktur | "Junk" ist ein Szenename für Heroin, nicht für synthetische Cannabinoide. "Junk" für Heroin leitet sich vermutlich von der "Junkie"-Kultur ab oder bezeichnet den Stoff als "wertlos". 
+d. jam | Kokain | "Jam" ist ein Szenename für Kokain, nicht für synthetische Cannabinoide.
+s.https://www.doccheck.com/de/detail/articles/51106-goerke-klingt-lustig-kann-toeten  |Synthetische Cannabinoide (SC) sind künstlich erzeugte chemische Verbindungen, die ähnlich wie Δ9-Tetrahydrocannabinol (THC), der psychoaktive Hauptwirkstoff des Cannabis, auf die Cannabinoid-Rezeptoren (CBR) wirken. Im Unterschied zu THC, einem partiellen Agonisten, fungieren viele synthetische Cannabinoide jedoch als Vollagonisten und besitzen zudem eine deutlich höhere Affinität zu diesen Rezeptoren. Dies führt dazu, dass ihre Wirkung oft stärker, intensiver und gefährlicher ist.
+
+
+t. f19 | synthetische cannabinoide | neue psychoaktive substanzen | pharmakologie
+l. 2
+
+# Item: Synthetische Cannabinoide - Akute Risiken (F19)
+b. Synthetische Cannabinoide - Akute Risiken (F19) | Welche akuten gesundheitlichen Folgen können bei Konsum synthetischer Cannabinoide auftreten?
+c. Unvorhersehbare Zusammensetzung | Die größte Gefahr liegt in der unvorhersehbaren Zusammensetzung und Potenz, Konzentrationen schwanken stark | 1 | 1
+c. Herzrasen | Zu den häufigsten akuten Folgen zählen Herzrasen, Bluthochdruck und Brustschmerzen | 2 | 1
+c. Panikattacken | Panikattacken, Krampfanfälle und psychotische Zustände sind häufige akute Folgen | 3 | 1
+c. Tod | Todesfälle durch SC-Konsum sind gut dokumentiert, SC können Hauptursache des Todes sein | 4 | 1
+c. Psychosen | Psychotische Zustände sind häufige akute Folgen von SC-Konsum, können Halluzinationen, Wahn und Realitätsverlust umfassen | 4 | 1
+c. Schlaganfälle | Schwerwiegere Komplikationen umfassen Schlaganfälle, Herzinfarkte, akutes Nierenversagen und Atemdepressionen | 5 | 1
+c. Überdosierung | Das Risiko für akute Überdosierungen ist erheblich erhöht durch unbekannte Mischungen und schwankende Konzentrationen | 6 | 1
+d. Vermeidungsverhalten | Angststörungen | Vermeidungsverhalten ist charakteristisch für Phobien und soziale Angststörungen, nicht für SC-Intoxikation. SC führen zu körperlichen Symptomen (Herzrasen, Panikattacken, Psychosen), nicht zu langfristigem Vermeidungsverhalten.
+
+
+d. Zwangsgedanken | Angststörungen |Charakteristisch für Zwangsstörungen (OCD), nicht für SC-Intoxikation. SC-Intoxikation führt zu akuten Symptomen wie Psychosen, Panikattacken, Herzrasen. 
+
+d. Generalisierte Angst | Angststörungen | Anhaltende Sorgen und Grübeln sind charakteristisch für generalisierte Angststörung, nicht für SC-Intoxikation.
+d. Affektstarre | Affektivität | Affektstarre (unveränderliche Affektlage) ist charakteristisch für Schizophrenie oder organische Störungen, nicht für SC-Intoxikation. Zur Abgrenzung: SC-Intoxikation führt zu akuten Symptomen wie Panikattacken, Psychosen, Herzrasen. Affektstarre zeigt unveränderliche Affektlage, nicht typisch für SC-Wirkung.
+d. Affektarmut | Affektivität | Affektarmut (reduzierte emotionale Ausdrucksformen) ist charakteristisch für Schizophrenie oder Depression, nicht für SC-Intoxikation. Zur Abgrenzung: SC-Intoxikation führt zu akuten Symptomen wie Panikattacken, Psychosen. Affektarmut zeigt verminderte Gefühlsintensität, nicht typisch für akute SC-Wirkung.
+d. Parathymie | Affektivität | Parathymie (Diskrepanz zwischen Erleben und Ausdruck) ist charakteristisch für Schizophrenie, nicht für SC-Intoxikation. Zur Abgrenzung: SC-Intoxikation führt zu akuten Symptomen wie Psychosen, Panikattacken. Parathymie zeigt unpassende Affektpassung, nicht typisch für SC-Wirkung.
+d. Gehemmtes Denken | Formale Denkstörung | Gehemmtes Denken (subjektiv erlebtes gebremstes Denken) ist charakteristisch für Depression, nicht für SC-Intoxikation. Zur Abgrenzung: SC-Intoxikation führt zu akuten Symptomen wie Psychosen, Panikattacken. Gehemmtes Denken zeigt subjektiv erlebtes gebremstes Denken, nicht typisch für SC-Wirkung.
+d. Umständliches Denken | Formale Denkstörung | Umständliches Denken (Weitschweifigkeit, Hängenbleiben an Details) ist charakteristisch für organische Störungen oder Epilepsie, nicht für SC-Intoxikation. Zur Abgrenzung: SC-Intoxikation führt zu akuten Symptomen wie Psychosen, Panikattacken. Umständliches Denken zeigt Weitschweifigkeit, nicht typisch für SC-Wirkung.
+d. Perseverierendes Denken | Formale Denkstörung | Perseverierendes Denken (Haften an Themen) ist charakteristisch für organische Störungen oder Zwangsstörungen, nicht für SC-Intoxikation. Zur Abgrenzung: SC-Intoxikation führt zu akuten Symptomen wie Psychosen, Panikattacken. Perseverierendes Denken zeigt Haften an Themen, nicht typisch für SC-Wirkung.
+d. Illusion | Wahrnehmungsstörung | Illusion (Fehlwahrnehmung bei vorhandenem Reiz) ist nicht typisch für SC-Intoxikation. Zur Abgrenzung: SC-Intoxikation führt zu Halluzinationen (Wahrnehmung ohne Reiz), nicht zu Illusionen (Fehlwahrnehmung bei vorhandenem Reiz). Illusionen sind nicht charakteristisch für SC-Wirkung.
+d. Überwertige Idee | Inhaltliche Denkstörung | Überwertige Idee (theoretisch korrigierbare Überzeugung) ist charakteristisch für Zwangsstörungen oder Persönlichkeitsstörungen, nicht für SC-Intoxikation. Zur Abgrenzung: SC-Intoxikation führt zu Wahn (unkorrigierbare Überzeugung), nicht zu überwertigen Ideen (theoretisch korrigierbar). Überwertige Ideen sind nicht typisch für SC-Wirkung.
+
+s. ICD-10-GM 2025 | F19 Psychische und Verhaltensstörungen durch multiplen Substanzgebrauch und andere psychotrope Substanzen - Akute Intoxikation
+t. f19 | synthetische cannabinoide | akute risiken | intoxikation | notfallmedizin
+l. 3
+
+# Item: Synthetische Cannabinoide - Chronische Folgen und Wechselwirkungen (F19)
+b. Synthetische Cannabinoide - Chronische Folgen und Wechselwirkungen (F19) | Welche chronischen Folgen und Wechselwirkungen haben synthetische Cannabinoide?
+c. Kognitive Beeinträchtigungen | Chronischer SC-Konsum führt zu langfristigen Schäden wie kognitiven Beeinträchtigungen | 1 | 1
+c. Schwere Abhängigkeit | Chronischer Konsum führt zu schweren Abhängigkeitssymptomen, Entzugssymptome können heftig ausfallen | 2 | 1
+c. CYP-Enzyme | SC werden über Cytochrom-P450-Enzyme (CYP3A4, CYP2C9, CYP2C19) abgebaut, können Wechselwirkungen verursachen | 3 | 1
+c. Entzugssymptome | Entzugssymptome beinhalten Unruhe, Kopfschmerzen, Übelkeit und Albträume | 4 | 1
+c. Verstärkte Sedierung | Gleichzeitige Einnahme mit Benzodiazepinen oder Opioiden kann zu verstärkter Sedierung, Atemdepression und Koma führen | 5 | 1
+c. Arzneimittel-Wechselwirkungen | Besonders betroffen sind Arzneimittel mit engem therapeutischem Fenster wie Antikoagulanzien, Immunsuppressiva und Antiepileptika | 6 | 1
+d. Keine kognitiven Folgen | Kognition | Chronischer SC-Konsum führt nicht zu kognitiven Beeinträchtigungen. Zur Abgrenzung: Chronischer SC-Konsum führt zu langfristigen Schäden wie kognitiven Beeinträchtigungen. Kognitive Beeinträchtigungen sind dokumentierte Folge.
+d. Keine Abhängigkeit | Abhängigkeit | Synthetische Cannabinoide führen nicht zu Abhängigkeit. Zur Abgrenzung: Chronischer SC-Konsum führt zu schweren Abhängigkeitssymptomen. Abhängigkeit ist dokumentierte Folge.
+d. Keine Enzym-Wechselwirkungen | Metabolismus | SC werden nicht über CYP-Enzyme abgebaut, daher keine Wechselwirkungen. Zur Abgrenzung: SC werden hauptsächlich über Cytochrom-P450-Enzyme (CYP3A4, CYP2C9, CYP2C19) in der Leber abgebaut – dieselben Enzyme, die auch zahlreiche gängige Medikamente verstoffwechseln. Wechselwirkungen sind möglich.
+d. Keine Entzugssymptome | Entzug | Beim Absetzen treten keine Entzugssymptome auf. Zur Abgrenzung: Entzugssymptome können heftig ausfallen und beinhalten unter anderem Unruhe, Kopfschmerzen, Übelkeit und Albträume. Entzugssymptome sind dokumentiert.
+d. Keine Wechselwirkungen mit Sedativa | Wechselwirkungen | Gleichzeitige Einnahme mit Benzodiazepinen oder Opioiden ist ungefährlich. Zur Abgrenzung: Die gleichzeitige Einnahme von SC und zentral dämpfenden Medikamenten wie Benzodiazepinen oder Opioiden kann zu verstärkter Sedierung, Atemdepression und sogar Koma führen. Wechselwirkungen sind gefährlich.
+d. Affektlabilität | Affektivität | Affektlabilität (häufige abrupte Gefühlswechsel) ist charakteristisch für Borderline-Persönlichkeitsstörung oder organische Störungen, nicht primär für chronischen SC-Konsum. Zur Abgrenzung: Chronischer SC-Konsum führt zu kognitiven Beeinträchtigungen und Abhängigkeit, nicht primär zu Affektlabilität. Affektlabilität ist nicht charakteristisch für SC-Folgen.
+d. Affektstarre | Affektivität | Affektstarre (unveränderliche Affektlage) ist charakteristisch für Schizophrenie, nicht für chronischen SC-Konsum. Zur Abgrenzung: Chronischer SC-Konsum führt zu kognitiven Beeinträchtigungen und Abhängigkeit. Affektstarre zeigt unveränderliche Affektlage, nicht typisch für SC-Folgen.
+d. Formale Denkstörungen | Denken | Formale Denkstörungen wie Gehemmtes Denken oder Umständliches Denken sind charakteristisch für Schizophrenie oder organische Störungen, nicht für chronischen SC-Konsum. Zur Abgrenzung: Chronischer SC-Konsum führt zu kognitiven Beeinträchtigungen (Gedächtnis, Aufmerksamkeit), nicht zu formalen Denkstörungen. Formale Denkstörungen sind nicht charakteristisch für SC-Folgen.
+d. Orientierungsstörungen | Kognition | Orientierungsstörungen sind charakteristisch für Delir oder Demenz, nicht für chronischen SC-Konsum. Zur Abgrenzung: Chronischer SC-Konsum führt zu kognitiven Beeinträchtigungen, nicht zu Orientierungsstörungen. Orientierungsstörungen treten bei SC nur bei schwerer akuter Intoxikation auf, nicht chronisch.
+d. Wahneinfall | Inhaltliche Denkstörung | Wahneinfall (instabile wahnhafte Idee) ist charakteristisch für Prodromalstadium der Schizophrenie, nicht für chronischen SC-Konsum. Zur Abgrenzung: Chronischer SC-Konsum führt zu kognitiven Beeinträchtigungen und Abhängigkeit. Wahneinfall zeigt instabile wahnhafte Idee, nicht typisch für SC-Folgen.
+d. Pseudohalluzination | Wahrnehmungsstörung | Pseudohalluzination (als unwirklich erkannte Halluzination) ist charakteristisch für Schizophrenie, nicht für chronischen SC-Konsum. Zur Abgrenzung: Chronischer SC-Konsum führt zu kognitiven Beeinträchtigungen. Pseudohalluzinationen sind nicht charakteristisch für SC-Folgen.
+s. ICD-10-GM 2025 | F19 Psychische und Verhaltensstörungen durch multiplen Substanzgebrauch und andere psychotrope Substanzen - Abhängigkeitssyndrom
+t. f19 | synthetische cannabinoide | chronische folgen | abhängigkeit | wechselwirkungen | pharmakologie
+l. 3

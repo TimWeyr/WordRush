@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { Universe, Theme } from '@/types/content.types';
 import { GradientPicker } from './GradientPicker';
 
@@ -25,6 +25,11 @@ export function MetadataEditor({
   const [localUniverse, setLocalUniverse] = useState<Universe | null>(universe);
   const [localTheme, setLocalTheme] = useState<Theme | null>(theme);
   const [localChapterConfig, setLocalChapterConfig] = useState<any>(chapterConfig);
+
+  // Sync local state when props change (e.g. different chapter/theme selected)
+  useEffect(() => { setLocalUniverse(universe); }, [universe]);
+  useEffect(() => { setLocalTheme(theme); }, [theme]);
+  useEffect(() => { setLocalChapterConfig(chapterConfig); }, [chapterConfig]);
 
   if (!universe && !theme && !chapter) {
     return null;
@@ -331,6 +336,43 @@ export function MetadataEditor({
             </div>
 
             <div className="editor-form-row">
+              <div className="editor-form-group">
+                <label className="editor-form-label">Chapter ID</label>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                  <div style={{
+                    fontFamily: 'monospace',
+                    fontSize: '0.85rem',
+                    padding: '0.4rem 0.6rem',
+                    background: 'rgba(255,255,255,0.04)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    borderRadius: '4px',
+                    color: 'rgba(255,255,255,0.5)',
+                    userSelect: 'text',
+                    flex: 1,
+                  }}>
+                    {chapter}
+                  </div>
+                  <button
+                    onClick={() => navigator.clipboard.writeText(`cid. ${chapter}`)}
+                    title={`Kopiere "cid. ${chapter}"`}
+                    style={{
+                      background: 'rgba(255,255,255,0.06)',
+                      border: '1px solid rgba(255,255,255,0.12)',
+                      borderRadius: '4px',
+                      padding: '0.35rem 0.5rem',
+                      cursor: 'pointer',
+                      color: 'rgba(255,255,255,0.45)',
+                      fontSize: '0.8rem',
+                      lineHeight: 1,
+                      flexShrink: 0,
+                    }}
+                    onMouseEnter={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.9)')}
+                    onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}
+                  >
+                    📋
+                  </button>
+                </div>
+              </div>
               <div className="editor-form-group">
                 <label className="editor-form-label">Spawn Rate</label>
                 <input

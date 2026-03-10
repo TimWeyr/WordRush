@@ -1,0 +1,1543 @@
+TAGS_CORE:
+- angst, phobie, zwang, belastung, dissoziation, somatoform, neurose
+- agoraphobie, soziale_phobie, spezifische_phobie, panik, gas, ptbs, anpassung, konversion, somatisierung, hypochondrie
+- ätiologie, symptome, neurobiologie, diagnose, differentialdiagnose, therapie, kvt, medikament, psychoedukation, risiko, komorbidität, prävalenz, prognose, test
+- mechanismus, teufelskreis, vermeidung, exposition
+
+TAG_RULES:
+- Jedes EntrySet hat genau einen Störungs- oder Subtyp-Tag (z.B. angst, phobie, zwang, belastung, somatoform).
+- Pro EntrySet mindestens ein Inhalts-Tag (z.B. symptome, ätiologie, therapie, diagnose, differentialdiagnose).
+- Prozess-Tags (teufelskreis, vermeidung, exposition, mechanismus) nur bei Modellen und Mechanismen verwenden.
+- Gleiche Themen erhalten konsistent die gleichen Tags (z.B. alle KVT-Einträge: therapie;kvt).
+- Maximal 6 Tags pro EntrySet; keine überflüssigen oder redundant synonymen Tags.
+
+ 
+
+
+ 
+
+
+
+
+
+#id: icd10f43_001
+cid. icd10f43
+b.  Akute Belastungsreaktion Symptome | **F43.0** ist die unmittelbare Reaktion auf eine schwere **Belastung**; Beginn innerhalb von 1 Stunde nach dem Ereignis, Abklingen innerhalb von Stunden bis 48 h.\n\nSymptomgruppe 1 (aus Angststörungen):.\n* **Vegetative Symptome** (Herzjagen, Schweiß, Zittern).\n* **Thorax/Abdomen**: Beklemmung, Unruhe im Magen.\n* **Psychische Symptome**: Unsicherheit, Schwindel, Derealisation [Umwelt wirkt fremd/unecht, wie im Traum], Angst vor Kontrollverlust.\n* Allgemeine Symptome: Hitzewallungen, Kälteschauer.\n.\n**Symptomgruppe 2**:.\n* **Rückzug** von sozialen Interaktionen, Einengung der **Aufmerksamkeit**\n* **Desorientierung**, **Betäubung** (Bewusstseinseinengung)\n* **Ärger**, verbale Aggression; **Verzweiflung**, Hoffnungslosigkeit\n* Unangemessene **Überaktivität**; unkontrollierbare **Trauer**
+c. Vegetative Symptome | Herzjagen, Schweiß, Zittern (Symptomgruppe 1).
+c. Betäubung | Bewusstseinseinengung, typisch für Symptomgruppe 2.
+c. Desorientierung | Einengung/Verlust der Orientierung nach Belastung.
+d. PTBS | F43.1 verzögert | PTBS beginnt verzögert (Wochen bis Monate) und dauert an; F43.0 klingt innerhalb von **48 h ab**. 
+d. Hyperthyreose | organisch | Herzjagen, Schweiß, Unruhe können ähnlich sein; Hyperthyreose hat nachweisbaren **Schilddrüsenbefund** und anderen Verlauf. DD: endokrin/somatisch.
+d. Hypoglykämie | organisch | Vegetative Zeichen ähneln sich; Hypoglykämie ist **Stoffwechselgeschehen** mit **Blutzuckerbefund**. DD: somatisch.
+d. Panikattacke | F40/F41 | Symptomgruppe 1 überlappt mit Paniksymptomatik; F43.0 erfordert auslösendes **Belastungsereignis** und zeigt beide Symptomgruppen mit zeitlich begrenztem Verlauf. DD: Angststörung.
+l. 3
+t. belastung;symptome;diagnose;angst
+g. ws
+s. MASTER F 4 Teil 1.pdf#p22–p23 | F43.0 Kriterien, Beginn 1 h nach Belastung, zwei Symptomgruppen.
+
+#id: icd10f43_002
+cid. icd10f43
+b.  PTBS Kernsymptome | Beginn innerhalb weniger Wochen bis 6 Monate nach einem Ereignis von **außergewöhnlicher Bedrohung** oder katastrophenartigem Ausmaß.\n\n**Kernsymptome:**\n* **Anhaltende Erinnerungen** oder **Wiedererleben** (**Intrusionen**, **Flashbacks**, **Albträume**)\n* **Innere Bedrängnis** in ähnlichen Situationen + **Vermeidungsverhalten** [Angstquelle nicht aufsuchen → kurzfristig gut, langfristig schlecht], **sozialer Rückzug**\n* **Übererregtheit** (Hyperarousal [dauerhafte Übererregung: Schlaf, Reizbarkeit, Schreckhaftigkeit]): **Schlafprobleme**, **Reizbarkeit**, **Konzentrationsprobleme**, **Hypervigilanz** [übermäßige Wachsamkeit für mögliche Bedrohungen], **Schreckhaftigkeit**\n* **Angst** und depressive Verstimmungen; **Suizidgefahr** beachten
+c. Wiedererleben | Intrusionen, Flashbacks, Albträume als Kerne der Traumasymptomatik.
+c. Vermeidungsverhalten | Vermeidung traumanaher Reize und Situationen; Teil der PTBS-Trias.
+c. Übererregtheit | Hyperarousal mit Schlafproblemen, Reizbarkeit, Hypervigilanz, Schreckhaftigkeit.
+d. Panikattacke | kein Kernsymptom | Kann bei PTBS vorkommen; die drei Kernsymptome sind aber Wiedererleben, Vermeidung, Übererregtheit – Panikattacke ist kein definierendes Kriterium. Einordnung: Begleitsymptom/F41.
+d. Dissoziation | kein Kernsymptom | Bei Trauma möglich; in ICD-10 F43.1 zählen nur Wiedererleben, Vermeidung und Übererregtheit als Kernsymptome. Dissoziation: F44/Beziehungssymptom.
+d. Suizidgedanken | Risiko, kein Kernsymptom | Suizidgefahr ist zu beachten, aber kein Kriterium der PTBS-Trias. Einordnung: Risiko/Komorbidität.
+d. Generalisierte Angst | kein Kernsymptom | Angst kann begleitend sein; Kernsymptome sind traumabezogen (Wiedererleben, Vermeidung, Übererregtheit). Einordnung: F41/komorbid.
+d. Emotionale Taubheit | kein Kernsymptom | Wird oft mit PTBS verbunden; ICD-10 F43.1 definiert die Trias aus Wiedererleben, Vermeidung, Übererregtheit – Taubheit ist kein eigenes Kriterium. Einordnung: Phänomen/Überlappung.
+l. 4
+t. belastung;ptbs;symptome;diagnose
+g. ws
+s. MASTER F 4 Teil 1.pdf#p23–p24 | F43.1 Symptome: Wiedererleben, Vermeidung, Hyperarousal.
+
+#id: icd10f43_003
+cid. icd10f43
+b.  F43 Überblick Belastungsstörungen | Primärer Kausalfaktor ist die **Belastung**.\n\nF43.0 Akute Belastungsreaktion: direkt nach Ereignis, kurz (Stunden bis 3 Tage).\nF43.1 PTBS: **verzögert/protrahiert** [verlängert, sich hinziehend], typ. Merkmale **Wiedererleben**, **Vermeidung**, **Übererregung**.\n**F43.2 Anpassungsstörung**: psychosoziale Belastung (nicht katastrophal), **Anpassungsschwierigkeit**, Dauer bis 6 Monate (depressive Reaktion bis 2 Jahre).\n\n**Beispiele Belastung**: Unfälle, Todesfälle, Verlust, Krieg, **Vergewaltigung**, **Körperverletzung**.
+c. Belastung | Primärer Kausalfaktor für F43; alle drei Unterformen sind belastungsbedingt.
+c. Akute Belastungsreaktion | F43.0: unmittelbar nach Ereignis, Verlauf Stunden bis 3 Tage.
+c. PTBS | F43.1: verzögert/protrahiert, Kernsymptome Wiedererleben, Vermeidung, Übererregung.
+c. Anpassungsstörung | F43.2: Anpassungsschwierigkeit bei nicht katastrophaler Belastung, Dauer bis 6 Monate.
+d. Burnout | kein F43 | Burnout ist keine eigene ICD-10-Diagnose unter F43; F43 verlangt kriteriengeleitete Störungsbilder (F43.0/1/2). Einordnung: Z-Diagnose/Überlappung.
+d. Generalisierte Angststörung | F41 | Gehört zu den Angststörungen; F43 hat Belastung als Kausalfaktor und andere Verläufe (F43.0/1/2). 
+d. Somatoforme Störung | F45 | Körperliche Beschwerden ohne Organbefund; F43 = Reaktion auf Belastung mit anderer Kernsymptomatik.
+d. Dissoziative Störung | F44 | Andere Mechanismen (Dissoziation); F43 definiert Belastung als Auslöser und Wiedererleben/Vermeidung/Übererregung (F43.1) bzw. Anpassung (F43.2). 
+d. Normale Trauerreaktion | kein Störungsbild | Trauer ist keine Störung; F43 erfordert kriteriengeleitete Störungsbilder und klinische Bedeutsamkeit. 
+l. 3
+t. belastung;anpassung;ptbs;diagnose
+g. ws
+s. Übersicht F4.pdf#p1–p2; MASTER F 4 Teil 1.pdf#p21–p22 | F43 Einteilung und typische Auslöser.
+
+#id: icd10f43_004
+cid. icd10f43
+b.  PTBS Therapie 3-Phasenmodell | **Stabilisierung**, **Traumabearbeitung** und **psychosoziale Reintegration** bilden ein dreistufiges Modell der Behandlung von Traumafolgestörungen.\n\n**Stabilisierung** (vor Traumabearbeitung):\n* **Arbeitsbündnis**, Selbstregulation, **Kontrolle** über Erleben stärken\n* **Selbstfürsorge**, **Sicherheit** (inner/äußer), Ressourcen, **Notfallkoffer**\n* Techniken zur **Distanzierung** (z. B. sicherer Ort)\n\n**Wichtig:** Traumabearbeitung nur nach ausreichender **Stabilisierung** – sonst Retraumatisierung.
+c. Stabilisierung | Erste Phase: Arbeitsbündnis, Kontrolle, Selbstfürsorge, Notfallkoffer vor Traumabearbeitung.
+c. Traumabearbeitung | Zweite Phase; nur nach ausreichender Stabilisierung, sonst Retraumatisierungsrisiko.
+c. psychosoziale Reintegration | Dritte Phase des 3-Phasenmodells.
+d. Exposition in Phase 1 | Phase 2 | Konfrontation mit Trauma-Inhalten ist Phase Traumabearbeitung; in Phase 1 geht es um Kontrolle, Notfallkoffer, Distanzierung.
+d. Psychopharmaka als Phase | Begleitung | Die drei Phasen heißen Stabilisierung, Traumabearbeitung, Reintegration; Medikation kann alle Phasen begleiten, ist aber keine eigene Stufe.
+d. Rehabilitationsmaßnahmen | Phase 3 | Reintegration meint psychosoziale Wiedereingliederung im Modell; „Reha“ im Alltagssprachgebrauch kann damit einhergehen, ist aber nicht dasselbe Konzept.
+l. 5
+t. ptbs;therapie;belastung;stabilisierung
+g. ws
+s. MASTER F 4 Teil 1.pdf#p24–p26 | 3-Phasenmodell: Stabilisierung vor Traumabearbeitung.
+
+#id: icd10f43_005
+cid. icd10f43
+b.  PTBS Risikofaktoren Verarbeitung | Länge, Ausmaß und Wiederholung des Ereignisses\n* Grad der **Überforderung** der Verarbeitungsmöglichkeit während des Ereignisses\n* Ausmaß von **Stress** und **Freeze-Reaktion**\n* erlebte **Hilflosigkeit** und **Überwältigung**\n* **unterstützendes oder fehlendes soziales Umfeld**\n* **eigene (Trauma-)Vorgeschichte** und psychische Stabilität
+c. Überforderung | Grad der Überforderung der Verarbeitungsmöglichkeit während des Ereignisses.
+c. Hilflosigkeit und Überwältigung | Erlebte Ohnmacht während des Traumas als Risikofaktor.
+c. soziales Umfeld | Unterstützendes oder fehlendes Umfeld beeinflusst traumatische Verarbeitung.
+d. Resilienz | Gegenpol | Beeinflusst Verarbeitung positiv; die genannten Risikofaktoren beziehen sich auf Ereignis, Überforderung, Umfeld, Vorgeschichte – Resilienz ist Schutzfaktor.
+d. Körperliche Verletzungsschwere | Teilaspekt | Kann zu „Ausmaß“ gehören; die Liste nennt explizit Länge, Ausmaß, Wiederholung, Überforderung, Freeze, Hilflosigkeit, Umfeld, Vorgeschichte.
+d. Genetische Vulnerabilität | anderer Kontext | Wird in Ätiologie diskutiert; hier sind situative und soziale Faktoren (Ereignis, Überforderung, Umfeld, Vorgeschichte) leitend.
+l. 4
+t. ptbs;ätiologie;risiko;belastung
+g. ws
+s. MASTER F 4 Teil 1.pdf#p24 | Merke für Praxis: Risikofaktoren traumatische Verarbeitung.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+####################################################          BIS HEuTE 8.3. geschafft  ################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#id: icd10f44_001
+cid. icd10f44
+b.  Dissoziative Störungen F44 | Teilweiser oder völliger Verlust der normalen Integration von **Erinnerung**, **Identitätsbewusstsein**, **Wahrnehmung**, **Kontrolle von Körperbewegungen**.\n\nLeitmerkmale:\n* Symptome entsprechen oft dem **Konzept** der Person von körperlicher Krankheit\n* Kein somatischer/ neurologischer Befund; **Funktionsverlust** = Ausdruck emotionaler Konflikte\n* Häufig in Beziehung zu **psychischer Belastung**, oft plötzlicher Beginn\n\nUnterformen: F44.0 Amnesie, F44.1 Fugue [zielgerichtetes Weggehen + Amnesie für die Episode], F44.2 Stupor, F44.4 Bewegungsstörung, F44.5 Krampfanfälle, F44.6 Sensibilitätsstörungen, F44.81 DIS, F44.80 Ganser.
+c. Funktionsverlust | Kein organischer Befund; Verlust gilt als Ausdruck emotionaler Konflikte.
+c. Erinnerung, Identität, Wahrnehmung | Bereiche, in denen Integration verloren gehen kann.
+c. plötzlicher Beginn | Häufig in Beziehung zu psychischer Belastung.
+d. Somatoforme Störung | F45 | Körperliche Beschwerden ohne Organbefund; F44 = Verlust der Integration (Erinnerung, Identität, Wahrnehmung, Bewegung). Einordnung: F45.
+d. Epilepsie | organisch | Dissoziative Krampfanfälle (F44.5) ähneln sich; Epilepsie hat nachweisbaren neurologischen Befund. Einordnung: neurologisch.
+d. Schizophrenie | F2 | Realitätsprüfung und formale Denkstörungen; F44 = Dissoziation ohne Psychose. Einordnung: F2.
+l. 4
+t. dissoziation;diagnose;symptome;belastung
+g. ws
+s. F4 Ängste, Zwänge, dissoziative Störungen.pdf#p8–p11 | F44 Definition und Unterformen.
+
+
+
+
+
+
+
+#id: icd10f44_005
+cid. icd10f44
+b.  Dissoziative Bewegungsstörung F44.4 | Es kommt zu einem vollständigen oder teilweisen Verlust der Bewegungsfähigkeit, der **neurologischen** Lähmungen oder Koordinationsstörungen ähneln kann, ohne dass sich ein passender organischer Befund nachweisen lässt.\nTypisch sind Lähmungsbilder, Gangstörungen, Ataxie oder Apraxie mit klinisch auffälligem **Funktionsverlust**.\nWichtig ist die Einordnung als Konversionssymptom [neurologisch erscheinender Funktionsverlust ohne Befund]: Das Erscheinungsbild wirkt neurologisch, passt aber nicht konsistent zu einer nachweisbaren Läsion des Nervensystems.
+c. Motorik aufgehoben | Vollständig oder teilweise aufgehobene Bewegung oder Koordination.
+c. Funktionsverlust | Klinisch relevante Bewegungseinschränkung ohne stimmigen somatischen Befund.
+d. Schlaganfall | organisch | Akute Lähmung kann ähnlich wirken; beim Schlaganfall finden sich fokalneurologische Zeichen und meist ein korrelierender vaskulärer Befund. Einordnung: neurologisch.
+d. Parkinsonsyndrom | organisch | Bewegungsverarmung und Rigor sind neurologisch erklärbar; F44.4 zeigt keinen passenden degenerativen Befund. Einordnung: neurologisch.
+d. Somatisierungsstörung | F45 | Auch hier fehlen organische Befunde; F45 betont körperliche Beschwerden und Krankheitsfokussierung, F44.4 den motorischen Integrationsverlust. Einordnung: F45.
+l. 4
+t. dissoziation;konversion;bewegung;symptome;differentialdiagnose
+g. ws
+s. https://www.therapie.de/psyche/info/index/diagnose/dissoziative-stoerungen/dissoziative-identitaetsstoerung-amnesie-krampfanfaelle-fugue/ | Teilweiser oder vollständiger Verlust der Bewegungsfähigkeit; z.B. Gangstörungen, Tremor, Verkrampfungen oder parkinsonähnliche Symptome; keine organische Ursache nachweisbar.
+
+#id: icd10f44_006
+cid. icd10f44
+b.  Dissoziativer Krampfanfall F44.5 | Ähnelt **epileptischen Anfällen**, ohne dass sich der typische neurologische Nachweis einer Epilepsie ergibt.\nFür die Abgrenzung wichtig ist, dass **Zungenbiss**, schwere Verletzungen und **Urininkontinenz** seltener sind als bei epileptischen Anfällen.\nHäufig findet sich eher ein **stupor- oder tranceähnlicher Zustand** als eine echte Bewusstlosigkeit; der Ablauf wirkt oft wechselhafter und weniger stereotyp als bei Epilepsie.
+c. Zungenbiss selten | Im Gegensatz zu epileptischen Anfällen selteneres Merkmal.
+c. Urininkontinenz selten | Spricht eher gegen einen typischen generalisierten epileptischen Anfall.
+c. tranceähnlicher Zustand | Häufiger als vollständige Bewusstlosigkeit.
+d. Epilepsie | neurologisch | Die wichtigste DD; Epilepsie zeigt eher stereotype Anfälle, typische EEG-Konstellationen und häufiger Zungenbiss oder Inkontinenz. Einordnung: neurologisch.
+d. Synkope | Kreislauf | Auch hier kann ein plötzlicher Zusammenbruch auftreten; Synkopen sind meist kreislaufbedingt und nicht durch dissoziative Mechanismen erklärt. Einordnung: internistisch.
+d. Panikattacke | F41 | Starkes Erleben und Kontrollverlust können ähnlich wirken; der Vordergrund liegt dort aber auf vegetativer Angst und nicht auf anfallsartigem Krampfgeschehen. Einordnung: Angststörung.
+l. 4
+t. dissoziation;konversion;krampf;symptome;differentialdiagnose
+g. ws
+s. https://www.therapie.de/psyche/info/index/diagnose/dissoziative-stoerungen/dissoziative-identitaetsstoerung-amnesie-krampfanfaelle-fugue/ | Krampfanfälle mit plötzlichen krampfartigen Bewegungen, ähnlich epileptischen Anfällen; statt Bewusstlosigkeit oft stupor- oder tranceähnlicher Zustand; Zungenbiss, Urinverlust und Sturzverletzungen selten.
+
+#id: icd10f44_007
+cid. icd10f44
+b.  Dissoziative Sensibilitätsstörung F44.6 | Es treten sensorische Ausfälle oder veränderte Körperempfindungen auf, ohne dass sich eine passende neurologische oder internistische Ursache nachweisen lässt.\nTypisch sind Taubheitsgefühle, Missempfindungen und **Parästhesien** [Kribbeln/Missempfindungen ohne klare Nervenbahn] in unterschiedlichen Körperarealen.\nDie Verteilung der Beschwerden folgt oft keiner plausiblen neuroanatomischen Bahn; gerade diese Inkonsistenz spricht für eine dissoziative Einordnung statt für eine organische Sensibilitätsstörung.
+c. Parästhesien | Kribbeln oder Missempfindungen in wechselnden Körperarealen.
+c. keine Neuroanatomie | Beschwerdeverteilung passt oft nicht zu Dermatom oder Nervenverlauf.
+d. Polyneuropathie | organisch | Sensibilitätsstörungen können ähnlich erscheinen; hier finden sich aber meist typisches Verteilungsmuster und neurologische Befunde. Einordnung: neurologisch.
+d. Multiple Sklerose | organisch | Kann sensible Ausfälle verursachen; F44.6 zeigt keinen korrelierenden entzündlich-demyelinisierenden Befund. Einordnung: neurologisch.
+d. Hypochondrie | F45.2 | Körperfokussierung kann ähnlich wirken; F45.2 betont Krankheitsüberzeugung, F44.6 den dissoziativen Empfindungsausfall. Einordnung: F45.
+l. 4
+t. dissoziation;konversion;sensibilität;symptome;differentialdiagnose
+g. ws
+s. https://www.asklepios.com/konzern/diagnosen/gehirn-nerven/nerven/funktionelle-neurologische-stoerungen | Sensorische Ausfälle mit Taubheitsgefühlen, Kribbeln oder anderen Empfindungsstörungen, die sich nicht durch eine neurologische Erkrankung erklären lassen.
+
+
+
+
+
+
+#id: icd10f44_004
+cid. icd10f44
+b.  Dissoziative Stupor F44.2 | **Willkürliche Bewegungen** und Reaktionen auf äußere Reize wie Licht, Geräusche oder Berührung sind stark reduziert oder fehlen ganz.\nDer Bewusstseinszustand wirkt wie Erstarrung bei wachem oder nur wenig verändertem Bewusstsein; oft besteht ein zeitlicher Bezug zu **Stress** oder innerer Überforderung.\nNeurologische, toxische oder andere organische Ursachen müssen ausgeschlossen werden.
+c. Reaktion stark reduziert | Antwort auf Umweltreize ist deutlich vermindert.
+c. willkürliche Bewegung fehlt | Eigeninitiierte Motorik ist kaum noch vorhanden.
+c. Stressbezug | Häufig geht dem Zustand ein belastendes Ereignis voraus.
+d. Katatonie | psychotisch | Katatoner Stupor entsteht meist in anderem psychopathologischem Kontext. Einordnung: Katatonie.
+d. Intoxikation | organisch | Toxische Ursachen können ähnliche Unansprechbarkeit verursachen und müssen ausgeschlossen werden. Einordnung: organisch.
+l. 4
+t. dissoziation;symptome;diagnose
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC8169974/ | Der Fallbericht mit Review definiert dissoziativen Stupor als Reduktion oder Fehlen willkürlicher Bewegungen und der Reaktion auf äußere Reize, häufig stressinduziert; für die ICD-10-Diagnose werden das Fehlen einer körperlichen oder anderen psychiatrischen Erklärung sowie ein Bezug zu aktuellen Belastungen hervorgehoben.
+
+
+
+#id: icd10f44_003
+cid. icd10f44
+b.  Dissoziative Fugue F44.1 | Gekennzeichnet durch eine zielgerichtete **Ortsveränderung** über die Alltagsmobilität hinaus, etwa plötzliches Weggehen oder Reisen.\nMeist besteht begleitend eine **Amnesie** für die Zeit der Fugue [zielgerichtetes Weggehen + Amnesie für die Episode] oder für Teile der persönlichen Vergangenheit.\nDie Person kann für Außenstehende **unauffällig** wirken, ist sich der Situation aber innerlich nicht vollständig bewusst.
+c. zielgerichtetes Weggehen | Die Ortsveränderung wirkt geplant oder zweckgerichtet.
+c. Amnesie begleitend | Erinnerungslücken gehören typischerweise zum Fugue-Bild.
+c. äußerlich unauffällig | Das Verhalten muss nicht bizarr oder verwirrt erscheinen.
+d. manische Episode | F30 | Auch hier kann vermehrte Aktivität und Reisen vorkommen, aber ohne typisches fugueartiges Amnesiesyndrom. Einordnung: affektiv.
+d. epileptischer Automatismus | neurologisch | Ortsveränderung kann automatisiert wirken, ist hier aber neurologisch bedingt. Einordnung: Neurologie.
+l. 4
+t. dissoziation;symptome;diagnose
+g. ws
+s. https://pubmed.ncbi.nlm.nih.gov/23394228/ | Die Übersicht zu DSM-5 betont, dass Fugue heute als Subtyp der dissoziativen Amnesie verstanden wird: Fugue ist selten, setzt Amnesie voraus, kann aber ohne ausgeprägten Identitätsverlust verlaufen; im Vordergrund stehen amnestische Prozesse mit Verlassen des gewohnten Umfelds.
+
+
+
+
+
+
+
+#id: icd10f44_002
+cid. icd10f44
+b.  Dissoziative Amnesie F44.0 | Übliche Vergesslichkeit reicht nicht als Erklärung.\nHäufig liegen **traumatische** Auslöser vor wie Unfälle, Trauer oder andere belastende Erlebnisse; die Amnesie bezieht sich meist auf einen begrenzten Zeitraum.\nDie Störung ist in vielen Fällen **reversibel**, organische, intoxikationsbedingte oder postiktale Ursachen müssen aber ausgeschlossen werden.
+c. Erinnerungslücke | Wichtige autobiografische Inhalte sind nicht zugänglich.
+c. selektive Amnesie | Meist ist nur ein begrenzter belastender Zeitraum betroffen.
+c. reversibel | Die Erinnerung kann teilweise oder ganz zurückkehren.
+d. Demenz | organisch | Dort zeigt sich eher ein globaler, progredienter Gedächtnisabbau. Einordnung: organisch.
+d. postiktale Amnesie | neurologisch | Nach epileptischen Anfällen kann Erinnerung fehlen, hier aber mit neurologischem Kontext. Einordnung: Neurologie.
+l. 4
+t. dissoziation;symptome;diagnose;dissoziation;symptome;diagnose;differentialdiagnose
+g. ws
+s. https://pubmed.ncbi.nlm.nih.gov/19821177/ | Der Review beschreibt dissoziative Amnesie als seltenes, oft belastungsbezogenes Syndrom mit teils massiver autobiografischer Erinnerungslücke; betont wird, dass die starre Gegenüberstellung von „funktionell“ versus „organisch“ zu kurz greift und dass bewusste Täuschung von unwillkürlichen dissoziativen Prozessen unterschieden werden muss.
+
+
+ 
+#id: icd10f44_003
+cid. icd10f44
+b.  Dissoziative Fugue F44.1 | Gekennzeichnet durch eine zielgerichtete **Ortsveränderung** über die Alltagsmobilität hinaus, etwa plötzliches Weggehen oder Reisen.\nZusätzlich bestehen die Merkmale einer dissoziativen **Amnesie**; für die Zeit der Fugue [zielgerichtetes Weggehen + Amnesie für die Episode] oder Teile der persönlichen Vergangenheit kann eine Erinnerungslücke bestehen.\nFür Außenstehende wirkt das Verhalten oft **unauffällig**, obwohl die Person die Situation innerlich nicht voll überblickt.
+c. Ortsveränderung | Zielgerichtetes Weggehen oder Reisen über das Übliche hinaus.
+c. Verhalten unauffällig | Nach außen kann die Person während der Fugue normal wirken.
+d. manische Episode | F30 | Auch hier kann vermehrte Aktivität und Weggehen vorkommen; bei F44.1 steht aber die Amnesie im Zentrum. Einordnung: affektiv.
+d. epileptische Fugue | neurologisch | Nach epileptischen Ereignissen kann ebenfalls verändertes Verhalten auftreten; dann spricht der neurologische Zusammenhang gegen F44.1. Einordnung: neurologisch.
+l. 4
+t. dissoziation;symptome;diagnose;differentialdiagnose
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f44-dissoziative-stoerungen-konversionsstoerungen/ | Zielgerichtete Ortsveränderung über die gewöhnliche Alltagsmobilität hinaus; dazu die Kennzeichen einer dissoziativen Amnesie; Verhalten kann nach außen normal wirken.
+
+#id: icd10f44_004
+cid. icd10f44
+b.  Dissoziative Stupor F44.2 | **Willkürliche Bewegungen** und normale **Reaktionen auf äußere Reize** wie Licht, Geräusche oder Berührung sind stark vermindert oder fehlen ganz.\nDer Zustand wirkt wie Erstarrung bei erhaltenem oder nur wenig veränderten Bewusstsein; oft gehen **belastende Ereignisse** kurz voraus.\nNeurologische, toxische oder andere organische Ursachen müssen ausgeschlossen werden.
+c. Reaktion fast null | Reaktionen auf Licht, Geräusche oder Berührung sind stark vermindert.
+c. willkürliche Bewegung fehlt | Eigeninitiiertes Bewegen ist stark reduziert oder aufgehoben.
+d. katatoner Stupor | psychotisch | Bei Katatonie stehen meist schizophrene oder organische Kontexte im Vordergrund, nicht eine psychogene Dissoziation. Einordnung: F20 oder F06.
+d. Intoxikation | organisch | Toxische Zustände können wie Erstarrung wirken; sie müssen vor der Diagnose F44.2 ausgeschlossen werden. Einordnung: organisch.
+l. 4
+t. dissoziation;symptome;diagnose;differentialdiagnose
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f44-dissoziative-stoerungen-konversionsstoerungen/ | Beträchtliche Verringerung oder Fehlen willkürlicher Bewegungen und normaler Reaktionen auf äußere Reize; keine körperliche Ursache erkennbar.
+
+
+
+
+
+
+#id: icd10f44_008
+cid. icd10f44
+b.  Dissoziative Sonderformen F44 | Zu den selteneren Sonderformen gehören die **dissoziative Identitätsstörung** und das **Ganser-Syndrom**.\nBei der Identitätsstörung übernehmen verschiedene **Persönlichkeitszustände** abwechselnd die Kontrolle; typisch sind **Erinnerungslücken** und Identitätsdiskontinuität.\nBeim Ganser-Syndrom fällt besonders das **Vorbeiantworten** auf: Antworten sind klar falsch, aber sinnnah.
+c. Persönlichkeitszustände wechseln | Unterschiedliche Zustände übernehmen zeitweise die Kontrolle.
+c. Vorbeiantworten | Auffällig falsche, aber thematisch passende Antworten.
+d. Schizophrenie | F20 | Auch hier können Identitäts- oder Wirklichkeitsstörungen imponieren; das typische Vorbeiantworten oder dissoziative Zustandswechsel sprechen aber eher für F44. Einordnung: Psychose.
+d. Simulation | bewusst | Bewusste Vortäuschung muss differenziert werden; F44 meint keine absichtliche Produktion von Symptomen. Einordnung: Z76.
+l. 5
+t. dissoziation;diagnose;symptome;differentialdiagnose
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f44-dissoziative-stoerungen-konversionsstoerungen/ | Unter F44.8 werden unter anderem Ganser-Syndrom und multiple Persönlichkeit aufgeführt.
+
+#id: icd10f44_009
+cid. icd10f44
+b.  F44 Prognose und Differenzialdiagnose | Dissoziative Störungen neigen oft zur **Remission** [Rückgang/Abklingen der Symptome], besonders wenn der Beginn mit einem **traumatisierenden Ereignis** zusammenhängt.\nFür die Diagnose spricht, dass Untersuchung und Befragung **keinen Hinweis auf eine somatische oder neurologische Krankheit** ergeben.\n**Schmerz** und vegetative Empfindungen sprechen eher für **F45**, während Intoxikationen, Hirnerkrankungen und andere organische Ursachen ausgeschlossen werden müssen.
+c. Remission häufig | Viele dissoziative Störungen bilden sich nach Wochen oder Monaten zurück.
+c. kein somatischer Befund | Untersuchung ergibt keine passende organische Erklärung.
+c. Schmerz eher F45 | Schmerz und vegetative Beschwerden gehören eher zu somatoformen Störungen.
+d. progressive Läsion | organisch | Eine fortschreitende neurologische Krankheit spricht gegen F44 und für eine organische Erklärung. Einordnung: Neurologie.
+d. Intoxikation | organisch | Substanzen können ähnliche Ausfälle verursachen und müssen zuerst ausgeschlossen werden. Einordnung: organisch.
+l. 4
+t. dissoziation;diagnose;prognose;differentialdiagnose
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f44-dissoziative-stoerungen-konversionsstoerungen/ | Viele dissoziative Störungen remittieren; körperliche Untersuchung ergibt keinen Hinweis auf bekannte somatische oder neurologische Krankheit; Schmerz gehört eher zu F45.
+
+
+
+
+
+
+#id: icd10f44_010
+cid. icd10f44
+b.  F44.82 Transitorische dissoziative Störungen Kindheit Jugend | **Transitorische dissoziative Störungen** in Kindheit und Jugend sind vorübergehende Konversions [neurologisch erscheinender Funktionsverlust ohne Befund]- oder Dissoziation [gestörte Integration von Erinnerung, Identität, Wahrnehmung]ssymptome, etwa Erinnerungslücken, Lähmungsbilder, Bewegungsstörungen, Anfälle oder veränderte Körperwahrnehmung, ohne passende organische Erklärung.\n* Die Symptomatik ist meist zeitlich begrenzt und steht oft im Zusammenhang mit Belastung, Konflikten oder Entwicklungsstress.\n* Bei Kindern und Jugendlichen sind Familienklima, Schulstress, Trennungserfahrungen und komorbide Angst/Depression klinisch besonders relevant.\n* Wichtig ist die klare Abgrenzung zu neurologischen Erkrankungen, Epilepsie, Intoxikationen oder bewusster Simulation.\n* Die Prognose ist bei früher Diagnose und guter Kooperation oft günstig; in pädiatrischen Arbeiten zeigen viele Kinder deutliche Besserung unter früher psychosozialer und psychotherapeutischer Intervention.
+c. vorübergehend | Die Symptome treten transitorisch auf und bleiben nicht zwingend dauerhaft bestehen.
+c. Stressbezug | Belastungen und Konflikte gehen dem Beginn oft voraus.
+c. keine Organik | Es findet sich keine ausreichende neurologische oder internistische Ursache.
+d. Epilepsie | neurologie | Epileptische Anfälle beruhen auf neurologischer Pathophysiologie und erfordern entsprechende Diagnostik.
+d. Simulation | bewusst | Bei transitorischen dissoziativen Störungen stehen unwillkürliche Symptome im Vordergrund, nicht absichtliche Täuschung.
+d. Multiple Sklerose | neurologie | Eine entzündlich-demyelinisierende Erkrankung erklärt Ausfälle organisch.
+l. 4
+t. dissoziation;kindheit;jugend;diagnose;differentialdiagnose
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC7802240/ | Die retrospektive pädiatrische Studie beschreibt dissoziative bzw. Konversionsstörungen im Kindes- und Jugendalter als biopsychosoziales Störungsbild mit häufigen Stressoren, familiären Belastungen und psychiatrischen Komorbiditäten. Die Autoren betonen die Bedeutung früher Erkennung und rechtzeitiger Behandlung für günstige Verläufe.
+
+
+
+#id: icd10f44_011
+cid. icd10f44
+b.  Trance und Besessenheitszustände F44.3 | Zeitweiliger Verlust der persönlichen Identität und der vollständigen Wahrnehmung der Umgebung.\n* Die Zustände sind **unfreiwillig** und treten außerhalb kulturell oder religiös akzeptierter Praktiken auf.\n* Typisch sind verändertes Bewusstsein, fremd wirkende Steuerung von Verhalten, eingeschränkte Erinnerung und deutliche psychosoziale Belastung.\n* Diagnostisch ist die Abgrenzung zu **Epilepsie**, psychotischen Störungen, Intoxikationen und kulturell eingebetteten Trancephänomenen zentral.\n* Klinisch bedeutsam ist die kultursensible Haltung: Nicht jede Trance ist pathologisch, pathologisch wird sie vor allem dann, wenn sie ungewollt, wiederkehrend und funktionell beeinträchtigend ist.
+c. Identitätsverlust | Das gewohnte Selbsterleben ist vorübergehend verändert oder aufgehoben.
+c. ungewollte Trance | Die Episode ist nicht freiwillig und nicht kulturell regulär eingebettet.
+c. Kultursensibilität | Die Diagnose verlangt Abgrenzung zu religiös oder kulturell akzeptierten Praktiken.
+d. religiöses Ritual | kultur | Kulturell akzeptierte und freiwillige Tranceformen gelten nicht als F44.3.
+d. Psychose | psychose | Psychotische Symptome sind anders eingebettet und nicht primär als dissoziativer Trancezustand zu verstehen.
+d. Epilepsie | neurologie | Epileptische Bewusstseinsveränderungen haben eine neurologische Grundlage.
+l. 5
+t. dissoziation;trance;kultur;diagnose;differentialdiagnose
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC9034997/ | Der Review zu Trance- und Possession-Phänomenen betont, dass pathologische Zustände durch Involuntarität, Leidensdruck, Funktionsbeeinträchtigung und fehlende kulturelle Einbettung gekennzeichnet sind. Gerade die Abgrenzung zu akzeptierten religiösen Praktiken und zu anderen psychiatrischen oder neurologischen Zuständen wird als zentral beschrieben.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#id: icd10f41_001
+cid. icd10f41
+b.  Differenzialdiagnosen Panikstörung | Wiederholte **Panikattacken** mit Herzrasen, Brustschmerz und Luftnot können ebenso gut auf **Herz-Kreislauf-Erkrankungen**, **endokrine Störungen**, Stoffwechselprobleme oder **Substanzeffekte** hinweisen.\nErst nach Ausschluss somatischer Ursachen wird zwischen **Panikstörung**, phobischen Störungen, somatoformen Störungen und Angst im Rahmen anderer F-Diagnosen differenziert.\nWichtig ist also die Reihenfolge: zuerst organisch und toxisch ausschließen, dann psychopathologisch einordnen.
+c. endokrine Störung | Vor allem Schilddrüsenüberfunktion kann Panik imitieren.
+c. Substanzeffekt | Stimulanzien oder Medikamente können ähnliche Symptome auslösen.
+c. organisch zuerst | Vor psychiatrischer Einordnung müssen körperliche Ursachen geprüft werden.
+d. Zwangsgedanke | F42 | Ein Zwangsgedanke erklärt keine plötzlichen vegetativen Panikattacken als Primärbild. Einordnung: Zwang.
+d. Demenz | organisch | Kann Angst begünstigen, ist aber nicht die typische erste DD der akuten Panikattacke. Einordnung: organisch.
+l. 4
+t. panik;differentialdiagnose;angst
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f41-andere-angststoerungen/ | Panikstörung zeigt wiederkehrende schwere Angstattacken mit Herzklopfen, Brustschmerz, Erstickungsgefühl, Schwindel und Entfremdung; andere Ursachen müssen abgegrenzt werden.
+
+
+
+
+#id: icd10f41_001
+cid. icd10f41
+b.  Panikstörung F41.0 | Wiederholte, unerwartete Panikattacken, die situations**un**spezifisch und scheinbar „aus heiterem Himmel“ auftreten können.\nTypisch ist ein plötzlicher Beginn mit starker **vegetativer** Erregung wie Herzrasen, Schwitzen, Zittern, Brustenge, Luftnot, Schwindel, Derealisation [Umwelt wirkt fremd/unecht, wie im Traum] oder Depersonalisation [Selbst/Körper wirkt entfremdet oder wie „neben mir“] sowie Angst zu **sterben**, verrückt zu werden oder die Kontrolle zu verlieren.\nZwischen den Attacken entsteht oft **Erwartungsangst**; viele Betroffene beginnen, Orte, Belastungen oder Körpersensationen zu vermeiden, wodurch sich die Störung verfestigt. Bei F32 sind die Panikattacken wahrscheinlich eine sekundäre Folge der F32.
+c. unerwartete Attacken | Panikanfälle treten nicht nur in klar gebundenen Situationen auf.
+c. Erwartungsangst | Zwischen den Attacken dominiert die Sorge vor der nächsten Attacke.
+c. Angst zu sterben | Körperliche Symptome werden oft als lebensbedrohlich interpretiert.
+d. Hyperthyreose | organisch | Schilddrüsenüberfunktion kann Herzrasen, Tremor und Unruhe auslösen und muss ausgeschlossen werden. 
+d. Herzinfarkt | organisch | Brustschmerz und Luftnot können ähnlich imponieren, beruhen hier aber auf einer akuten somatischen Ursache. 
+d. Depression|F32 first|Die Panikstörung soll nicht als Hauptdiagnose verwendet werden, wenn der Betroffene bei Beginn der Panikattacken an einer depressiven Störung leidet. Unter diesen Umständen sind die Panikattacken wahrscheinlich sekundäre Folge der Depression.
+l. 4
+t. angst;panik;symptome;diagnose
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC9051703/ | Der narrative Review beschreibt Panikstörung als Erkrankung mit unvorhersehbaren, wiederkehrenden Episoden intensiver Angst; zentral sind antizipatorische Sorge vor weiteren Attacken, Vermeidung und häufige Symptome wie Brustschmerz, Atemnot, Schwindel, Depersonalisation und Kontrollverlustangst.
+
+#id: icd10f41_002
+cid. icd10f41
+b.  Generalisierte Angststörung F41.1 | Anhaltende, frei flottierende **Sorgenneigung**, die sich auf viele Lebensbereiche richtet und nicht auf einzelne Situationen oder Objekte beschränkt ist.\nTypisch sind ständige Befürchtungen, innere **Anspannung**, Nervosität, Konzentrationsstörungen, Reizbarkeit, Schlafstörungen sowie körperliche Beschwerden wie Muskelspannung, Schwitzen, Herzklopfen oder Magen-Darm-Beschwerden.\nDie Angst wird als schwer kontrollierbar erlebt, verläuft oft **chronisch** und führt zu deutlicher Belastung im Alltag.
+c. frei flottierende Sorge | Die Sorge ist breit gestreut und nicht an einen Auslöser gebunden.
+c. Muskelspannung | Körperliche Dauerspannung ist ein typisches Begleitsymptom.
+c. chronisch | Die Beschwerden halten oft lange an und schwanken eher als dass sie abrupt enden.
+d. Panikattacke | F41.0 | Bei der Panikstörung stehen plötzliche Attacken im Vordergrund, nicht die anhaltende Daueranspannung. 
+d. spezifische Phobie | F40.2 | Dort ist die Angst an ein eng umrissenes Objekt oder eine Situation gebunden. 
+l. 4
+t. angst;gas;symptome;diagnose
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC10612137/ | Die Übersichtsarbeit beschreibt GAD als Störung anhaltender, schwer kontrollierbarer Sorge mit deutlicher Beeinträchtigung; häufig sind Aufmerksamkeitsprobleme, Reizbarkeit, Schlafstörung, innere Spannung und somatische Beschwerden, während die Angst nicht auf ein einzelnes Objekt begrenzt bleibt.
+
+#id: icd10f41_003
+cid. icd10f41
+b.  Gemischte Angst und Depression F41.2 | Keine der beiden Symptomgruppen erfüllt die Schwelle einer eigenständigen Angststörung oder depressiven Episode.\nTypisch sind Sorgen, Anspannung, vegetative Beschwerden, gedrückte Stimmung, Erschöpfung, Schlafstörungen, verminderter Antrieb und Grübeln.\nDas Störungsbild ist klinisch relevant, weil die Betroffenen deutlich leiden, die Symptomatik aber **subsyndromal** oder gemischt bleibt und deshalb leicht übersehen werden kann.
+c. subsyndromal gemischt | Beide Symptomgruppen sind vorhanden, aber keine dominiert voll ausgeprägt.
+c. keine klare Dominanz | Weder Angst noch Depression erfüllt für sich sicher eine Vollstörung.
+c. vegetative Zusatzsymptome | ICD-10 betont zusätzlich autonome Beschwerden im gemischten Bild.
+d. depressive Episode | F32 | Dort steht ein voll ausgeprägtes depressives Syndrom im Vordergrund. 
+d. Generalisierte Angst | F41.1 | Dort dominiert eine primäre, chronische Sorgenstörung ohne gleichwertiges depressives Mischbild. 
+l. 3
+t. angst;diagnose;symptome;komorbidität
+g. ws
+s. https://pubmed.ncbi.nlm.nih.gov/27002521/ | Der Review fasst F41.2 als ICD-10-Kategorie für gleichzeitig auftretende, subsyndromale Angst- und Depressionssymptome zusammen, die diagnostisch relevant sind, ohne dass eine Komponente klar überwiegt; hervorgehoben werden Häufigkeit im klinischen Alltag, funktionelle Beeinträchtigung und diagnostische Unschärfen.
+
+
+
+
+
+
+
+
+
+
+#id: icd10f42_003
+cid. icd10f42
+b.  Zwangsstörung F42 Überblick | Kennzeichnend sind **Zwangsgedanken**, **Zwangshandlungen** oder beides zusammen; die Inhalte drängen sich wiederholt auf, werden als eigene, aber **ich-dystone** Gedanken oder Impulse erlebt und verursachen deutlichen **Leidensdruck**.\nFür die Diagnose müssen die Symptome an den meisten Tagen über mindestens **2 Wochen** bestehen.\nTypisch ist, dass Betroffene inneren **Widerstand** leisten, die Symptome aber nicht wirksam stoppen können; die Handlungen sind nicht lustvoll, sondern dienen der Spannungsreduktion oder Schadensverhütung.
+c. ich dyston | Die Inhalte werden als nicht passend zum eigenen Wollen erlebt.
+c. Zwangsgedanken | Intrusive, wiederkehrende Gedanken, Bilder oder Impulse stehen im Vordergrund.
+c. Zwangshandlungen | Rituale oder mentale Akte dienen der Spannungsreduktion.
+d. Wahnidee | Psychose | Beim Wahn fehlt meist die selbstkritische Distanz deutlich stärker. Einordnung: Psychose.
+d. Impulskontrollstörung | F63 | Dort wird der Impuls eher ausgelebt; bei OCD wird gegen die Intrusion angekämpft. Einordnung: Impulskontrolle.
+l. 4
+t. zwang;diagnose;symptome;kognition
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC7370844/ | Die Review beschreibt OCD als Störung mit Obsessionen und/oder Kompulsionen: intrusive, unerwünschte Gedanken, Bilder, Impulse oder Urges sind typischerweise angstbesetzt; Kompulsionen sind wiederholte Verhaltensweisen oder mentale Akte nach rigiden Regeln, oft zur Schadensabwehr oder zum Erreichen von Vollständigkeit.
+
+#id: icd10f42_004
+cid. icd10f42
+b.  Therapie Zwangsstörung | Ziel ist, den Kreislauf aus Angst, Zwangsimpuls und kurzfristiger Entlastung zu **unterbrechen**.\nErste Wahl ist **Exposition [gezielte Konfrontation ohne Flucht/Sicherheitsverhalten] mit Reaktionsverhinderung**: Betroffene setzen sich dem auslösenden Reiz aus und unterlassen das Ritual, bis die Anspannung nachlässt.\nErgänzend wichtig sind **Psychoedukation** [Störungswissen vermitteln, Mechanismen erklären], Bearbeitung von Verantwortungs- und Gefahrenüberschätzung, Rückfallprophylaxe und bei stärkerer Ausprägung **SSRI** als medikamentöse Standardoption; oft ist eine Kombination aus Psychotherapie und Pharmakotherapie sinnvoll.
+c. Reaktionsverhinderung | Das Ritual wird trotz Anstieg der Anspannung unterlassen.
+c. Exposition | Der gefürchtete Auslöser wird gezielt aufgesucht statt vermieden.
+c. SSRI | Bei stärkerer Symptomatik sind SSRIs Standardmedikation.
+d. Ritual ausführen | Verstärkung | Das Ritual senkt Spannung kurzfristig, stabilisiert aber den Zwang langfristig. Einordnung: Aufrechterhaltung.
+d. Benzodiazepin allein | unzureichend | Das ist keine Standard-Langzeitbehandlung der OCD. Einordnung: Pharmakotherapie.
+l. 5
+t. zwang;therapie;kvt;medikament;exposition
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC5310107/ | Die Leitlinie nennt SSRIs und CBT als First-line-Behandlung der OCD; CBT mit ERP ist konsistent wirksam, kann bei leichter bis moderater Symptomatik allein eingesetzt werden und wird bei schwerer OCD häufig mit einem SSRI kombiniert. Bei partieller SSRI-Wirkung gilt CBT als wichtige Augmentationsstrategie.
+
+#id: icd10f42_005
+cid. icd10f42
+b.  DD Zwangsstörung | Zentral ist die Abgrenzung von **Zwangsgedanken** gegenüber **Wahn**: Zwangsgedanken werden als eigene, unsinnige oder übertriebene Inhalte erkannt und meist bekämpft; beim Wahn fehlt diese kritische Distanz.\n**Zwangshandlungen** unterscheiden sich von der **zwanghaften Persönlichkeit** dadurch, dass sie als quälend und ich-dyston erlebt werden; bei anankastischen Persönlichkeitszügen werden Ordnung, Kontrolle und Perfektion eher als passend zum eigenen Selbstbild erlebt.\nVon depressivem **Grübeln** unterscheiden sich Zwänge durch ihre stereotyp wiederkehrende, intrusive Qualität und die häufige Verbindung mit Ritualen oder Neutralisierungsversuchen.
+c. kritische Distanz | Obsessionen werden eher als übertrieben oder unsinnig erkannt.
+c. Ritualbezug | Die intrusive Idee ist oft mit Neutralisieren oder Kontrollieren verknüpft.
+c. F32| 70% der Menschen die an Zwängen leiden erkranken irgendwann an einer Depression. Depression und Zwänge können sich auch gegenseitig bedingen. Menschen reagieren oft auf die durch die Zwangserkrankung verursachte Scham und Behinderung im Alltag mit Niedergeschlagenheit. Isolation, Verlust des Arbeitsplatzes und Spannungen in zwischenmenschlichen Beziehungen treten häufig in diesem Zusammenhang auf und lassen bei dem Betroffenen ein Gefühl von Hilflosigkeit entstehen. Umgekehrt wird von Betroffenen auch über eine Zunahme der Zwänge in Situationen besonderer Belastung, Hilflosigkeit, Überforderung und Niedergeschlagenheit berichtet. Das heißt, es kommt ein Teufelskreis in Gang: Die Depressionen wirken verstärkend auf die Zwänge und häufig auch umgekehrt.
+c. Grübeln anders | Depressives Grübeln ist meist stimmungskongruent und weniger ritualgebunden.
+d. Wahn | Psychose | Delusionale Überzeugungen sind fester, weniger korrigierbar und nicht typisch ich-dyston. Einordnung: Psychose.
+d. anankastische Persönlichkeit | F60.5 | Perfektionismus ist hier eher ego-synton und nicht als quälender Zwang organisiert. Einordnung: Persönlichkeit.
+l. 5
+t. zwang;differentialdiagnose;diagnose;kognition
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC3832861/ | Die Arbeit zeigt, dass die phänomenologische Gegenüberstellung von Obsessionen versus Delusionen sowie von Kompulsionen versus delusional geprägten repetitiven Handlungen diagnostisch besonders hilfreich ist; entscheidend sind Grad der Einsicht, Widerstand, Ich-Dystonie und die Funktion der Handlung.
+
+
+
+
+
+
+
+#id: icd10f42_001
+cid. icd10f42
+b.  F42.1 Zwangshandlungen | **Zwangshandlungen** äußern sich in immer gleichen **Ritualen** wie Händewaschen, Kontrollieren oder Ordnungsakten, die als unsinnig erlebt werden und dennoch kaum unterlassen werden können.\nWird das Ritual verhindert, steigt die **Angst** oft deutlich an.\nDie kurzfristige **Erleichterung** nach Ausführung stabilisiert das Verhalten und hält den Zwang aufrecht.
+c. Rituale | Wiederkehrende stereotype Handlungen zur Spannungsreduktion.
+c. Angst steigt | Beim Unterlassen der Handlung nimmt die Angst zu.
+c. kurzfristige Erleichterung | Nach dem Ritual sinkt die Spannung vorübergehend.
+d. Tic | F95 | Tics sind meist kürzer, weniger zielgerichtet und nicht als ritualisierte Schadensabwehr organisiert. 
+d. Gewohnheit | normal | Gewohnheiten sind meist flexibel und nicht stark angstgebunden. E
+l. 4
+t. zwang;symptome;diagnose
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f42-zwangsstoerung/ | Zwangshandlungen sind ständig wiederholte Stereotypien; werden sie unterdrückt, verstärkt sich die Angst deutlich.
+
+#id: icd10f42_002
+cid. icd10f42
+b.  F42.0 Zwangsgedanken | **Aufdringliche Ideen, Bilder oder Impulse** kehren immer wieder, werden als quälend erlebt und lassen sich nicht einfach abstellen.\nTypisch sind aggressive, sexuelle oder religiöse Inhalte sowie **Grübelzwang**; Betroffene erleben die Gedanken als **ich-dyston** und leisten oft Widerstand.\nDie Gedanken fühlen sich wie zur eigenen Person gehörig an, obwohl sie unwillkürlich und abstoßend erlebt werden.
+c. ich dyston | Die Gedanken werden als nicht passend zum eigenen Wollen erlebt.
+c. aufdringliche Impulse | Inhalte drängen sich gegen den Willen auf.
+c. Grübelzwang | Endlose gedankliche Schleifen um Alternativen oder Entscheidungen.
+d. Wahnidee | Psychose | Beim Wahn fehlt meist die kritische Distanz; Zwangsgedanken werden als unsinnig und quälend erkannt. 
+d. Sorgekette | GAS | Bei GAS geht es eher um realitätsnahe Zukunftssorgen als um intrusive ich-dystone Inhalte. 
+l. 4
+t. zwang;symptome;kognition
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f42-zwangsstoerung/ | Zwangsgedanken sind wiederkehrende Ideen, Vorstellungen oder Impulse; sie sind quälend, stereotyp und werden als zur eigenen Person gehörig erlebt.
+
+
+ 
+ 
+#id: icd10f42_007
+cid. icd10f42
+b.  Impulsangst Messer | Aufdringlicher Gedanke/Impuls, man könnte jemandem (z. B. Kind, Partner) plötzlich etwas antun, obwohl keinerlei Wunsch dazu besteht.\n\nZentral ist die **Intrusion**: Der Inhalt kommt „gegen den Willen“, wirkt fremd und löst massiven Alarm aus.\nTypisch ist **Ich-Dystonie**: Betroffene erschrecken gerade deshalb, weil es ihren Werten widerspricht.\nEin häufiger Denkfehler ist **Thought-Action-Fusion**: Der Gedanke wird so bewertet, als mache er die Tat wahrscheinlicher oder sei moralisch fast schon eine Tat.\nDaraus folgen Vermeidung (Messer weg, Abstand halten), inneres Prüfen („Bin ich gefährlich?“) und **Neutralisieren** [Gegenhandlung/mentales Ritual zum „Entschärfen“ eines Gedankens] (mentale Rituale, Rückversicherung [Beruhigung von außen einholen (kurz hilft, langfristig schadet)]).\n\nDaran kann man zeigen, wie OCD „moralische Alarmanlage“ spielt: Die Angst beweist nicht Gefahr, sondern eine fehlbewertete Intrusion – und genau das grenzt es von Psychose oder echter Gewaltabsicht ab.
+c. Intrusion | Ungewollter, sich aufdrängender Gedanke/Impuls, der Angst und Ekel oder Schuld auslöst.
+c. Thought-Action-Fusion | Kognitive Verzerrung: Gedanken werden wie Handlungen bewertet (Wahrscheinlichkeit oder Moral).
+c. Ich-Dystonie | Der Gedanke passt nicht zum Selbstbild; Betroffene leisten Widerstand statt Zustimmung.
+d. Imperativer Befehl | Psychose | Stimmen/Befehle von außen erlebt.\n OCD-Gedanken werden als „aus mir kommend“ erlebt, nicht als extern eingegeben.\n siehe: Schizophrenie-Spektrum, psychotische Episoden.
+d. Impulskontrollstörung | F63 | Drang wird eher ausgelebt, oft mit Lust/Erleichterung.\n Hier steht Angst, Schuld und Vermeidung im Vordergrund.\n siehe: F63, Sucht/Impulsregulation.
+l. 5
+t. zwang;kognition;symptome;mechanismus;differentialdiagnose
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC8560337/ | Three facets of TAF were exclusively associated with two symptom domains, namely, responsibility for harm and unacceptable thoughts.
+
+#id: icd10f42_008
+cid. icd10f42
+b.  Kontaminationsgedanke Keime | Wiederkehrende Angst, durch Türklinken, Toiletten, Geld, Körperkontakt oder „unsichtbare Keime“ gefährlich kontaminiert zu sein.\n\nIm OCD-Kontext ist Kontamination oft nicht nur Angst, sondern stark **Ekel**-getrieben: „Es fühlt sich falsch/eklig an“, auch wenn das Risiko objektiv gering ist.\nTypisch ist **Bedrohungsüberschätzung** („hohes Infektionsrisiko“) plus selektive Aufmerksamkeit: Alles wird zum Kontaminationshinweis.\nEs entsteht **Kontaminationsangst** mit Wasch- und Reinigungsdruck oder konsequenter Vermeidung – bis hin zu sozialem Rückzug.\nWichtig ist die Abgrenzung zu sinnvoller Hygiene: Hier wird das Sicherheitsverhalten [vermeintliche Schutztricks, die Lernen verhindern] selbst zum Problem, weil es das Lernen verhindert.\n\nAn dieser Symptomform sieht man besonders gut, dass bei manchen OCD-Varianten Ekel und „Gefühl von Unreinheit“ die Dynamik stärker treiben können als klassische Angst.
+c. Ekel | Starkes Vermeidungs- und Abwehrgefühl, das Kontamination subjektiv „real“ macht.
+c. Bedrohungsüberschätzung | Überschätzung von Wahrscheinlichkeit/Schwere eines Schadens (z. B. Infektion).
+c. Kontaminationsangst | Angst/Alarmreaktion auf vermeintliche Verunreinigung – häufig mit Wasch- oder Vermeidungsdrang.
+d. Hygiene | normal | Angemessenes Reinigen nach realen Schmutz-/Infektionssituationen.\n OCD ist unverhältnismäßig, rigide, zeitaufwendig und leidvoll.\n siehe: Gesundheitsverhalten, Prävention.
+d. Hypochondrie | F45.2 | Krankheitsüberzeugung/Angst vor schwerer Krankheit.\n Hier steht „Kontamination/Unreinheit“ und Neutralisierung im Vordergrund, nicht primär Krankheitsdiagnosen.\n siehe: Somatoforme Störungen.
+l. 4
+t. zwang;symptome;kognition;mechanismus;differentialdiagnose
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC5573572/ | Exaggerated and inappropriate disgust reactions may drive some of the symptoms of OCD, and in some cases, may even eclipse feelings of anxiety.
+
+#id: icd10f42_009
+cid. icd10f42
+b.  Blasphemischer Zwangsgedanke | Intrusive, beschämende Gedanken wie Gotteslästerung, „falsches“ Beten, moralische Tabubrüche oder Angst, durch einen Gedanken „sündig“ zu sein.\n\nKern ist nicht fehlender Glaube, sondern **Ich-Dystonie**: Die Inhalte widersprechen den eigenen Werten maximal und erzeugen massive Anspannung.\nHäufig steht **Schuldangst** im Vordergrund („Ich bin schlecht“), oft verstärkt durch rigide moralische Standards.\nBetroffene versuchen, die Gedanken zu kontrollieren (Beten, Beichten, Grübeln, inneres Korrigieren) – dadurch steigt die Bedeutung der Gedanken paradoxerweise.\nDies kann die Stimmung deutlich belasten; depressive Symptome entstehen nicht selten sekundär über Scham, Rückzug und Hoffnungslosigkeit.\n\nBesonders an dieser Form ist, dass man sehr gut zeigen kann: OCD nutzt häufig gerade das Wichtigste im Leben (Werte, Moral, Religion) als „Angriffspunkt“ – und macht daraus ein Zwangsthema.
+c. Ich-Dystonie | Die Gedanken passen nicht zum Selbstbild und werden als fremd/unerwünscht bekämpft.
+c. Schuldangst | Angst, moralisch schuldig zu sein, obwohl objektiv keine Handlung vorliegt.
+c. magisches Denken | Überbewertung innerer Vorgänge: Gedanken werden als moralisch/real wirksam erlebt.
+d. Religiöse Praxis | normal | Rituale aus Überzeugung, flexibel und nicht primär angstgetrieben.\n Zwang ist rigide, leidvoll, zur Angstreduktion/ Neutralisierung eingesetzt.\n 
+d. Wahn | Psychose | Unkorrigierbare Überzeugung ohne Einsicht.\n Bei Zwangsgedanken ist Einsicht meist vorhanden, und es gibt Widerstand.
+l. 5
+t. zwang;kognition;symptome;komorbidität;differentialdiagnose
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC8374933/ | Religiosity and guilt are commonly featured in obsessive-compulsive disorders (OCD).
+
+#id: icd10f42_010
+cid. icd10f42
+b.  Unvollständigkeitsgedanke | Quälendes Gefühl, etwas sei „nicht richtig“, „nicht fertig“ oder nicht exakt genug – auch ohne konkrete Katastrophenfantasie.\n\nDieses **Incompleteness**-Erleben ist ein eigener Motor in OCD: Man stoppt nicht, weil Gefahr weg ist, sondern erst wenn es sich „stimmig“ anfühlt.\nTypisch sind Just-right-Erlebnisse: Ausrichten, Wiederholen oder Neuanfangen bis zum exakten inneren Sollzustand.\nOft treten **sensorische Phänomene** auf (unangenehme innere Spannung, Körpergefühl von „falsch“), was die Abgrenzung zu rein kognitiver Angst erleichtert.\nIn der Klinik führt das zu massiver Zeitbindung, Gereiztheit und nicht selten depressiver Erschöpfung.\n\nDaran kann man sehen, dass OCD nicht nur „Angst vor Schaden“ ist, sondern auch eine Störung von Stoppsignalen, Vollständigkeit und innerer Passung.
+c. Incompleteness | Gefühl, dass Handlungen/Erleben nicht „vollendet“ oder korrekt abgeschlossen sind.
+c. Just-right | „Es muss sich genau richtig anfühlen“; sonst wird wiederholt.
+c. sensorische Phänomene | Körperlich spürbare innere Spannung/Unstimmigkeit als Startsignal für Rituale.
+d. Perfektionismus | Persönlichkeit | Hoher Anspruch kann ego-synton sein und auch Vorteile bringen.\n OCD ist leidvoll, rigide, mit Zwangsdruck und Neutralisierung.\n siehe auch: OCPD. F60.5 als „Anankastische [zwanghafte] Persönlichkeitsstörung“
+d. Tic | F95 | Plötzliche, kurze motorische/vokale Impulse.\n Zwangsrituale sind regelgeleitet und spannungsreduzierend, nicht tickartig.
+l. 5
+t. zwang;kognition;symptome;mechanismus;komorbidität
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC3914013/ | Contemporary investigators define INC as the sense that one’s actions, intentions, or experiences have not been properly achieved.
+
+#id: icd10f42_011
+cid. icd10f42
+b.  Hit-and-Run OCD | Nach dem Autofahren intrusive Zweifel: „Habe ich jemanden angefahren, ohne es zu merken?“ – gefolgt von starkem Kontroll- und Rückfahrdrang.\n\nKennzeichnend ist Hit-and-Run OCD als Sonderform von Schadens- und Verantwortungsobsessionen: Das Gehirn fordert Beweise für etwas, das nie passiert ist.\nTypisch sind **Verantwortungsgefühl** und Angst vor moralischer Schuld: „Wenn ich es nicht 100% kläre, bin ich ein schlechter Mensch.“\nBetroffene fahren Strecken mehrfach ab, scannen Nachrichten, prüfen das Auto, suchen Bestätigung – und verstärken damit die Unsicherheit.\n Interessant ist hier der Realitätscheck: Die Angst ist nicht proportional zum tatsächlichen Risiko; Komorbiditäten[gleichzeitiges Auftreten weiterer Störungen] (Angst, Depression) beeinflussen die Gesamtlage stark.\n\nAn diesem Beispiel kann man sehr gut zeigen, wie OCD „faktenresistent“ wird: Nicht weil Betroffene irrational sind, sondern weil das Sicherheitslernen die Zweifel stabilisiert.
+c. Verantwortungsgefühl | Überhöhte moralische Verantwortung als Treiber für Kontrolle und Rückversicherung.
+c. Angst vor Schuld | Befürchtung, moralisch schuldig zu sein, obwohl keine Tat vorliegt.
+d. PTBS | F43.1 | Trauma mit Wiedererleben, Vermeidung, Hyperarousal.\n Hier fehlt ein tatsächliches traumatisches Unfallereignis als Auslöser.
+d. Fahrerflucht|Straftat|„unerlaubtes Entfernen vom Unfallort“ (§ 142 StGB), ist eine Straftat in Deutschland. Sie liegt vor, wenn Unfallbeteiligte den Ort verlassen, ohne ihre Personalien anzugeben oder angemessen auf den Geschädigten zu warten, auch bei Parkremplern
+l. 5
+t. zwang;symptome;kognition;differentialdiagnose;komorbidität
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC9375758/ | The risks of serious transport accidents and driving-related criminal convictions in OCD are negligible and heavily influenced by psychiatric comorbidity.
+
+
+#id: icd10f42_012
+cid. icd10f42
+b.  Waschzwang | Wiederholtes Händewaschen, Duschen oder Desinfizieren nach starren Regeln (Dauer, Reihenfolge, „richtiges Gefühl“), weit über Hygiene hinaus.\n\nDas Ritual wird durch **Kontaminationsdruck** oder Ekel ausgelöst und endet oft erst nach subjektiver Entlastung.\nDie Aufrechterhaltung läuft über **negative Verstärkung**: Waschen senkt Angst/Ekel kurzfristig – und macht das Verhalten dadurch langfristig wahrscheinlicher.\nHäufige Folge sind **Hautschäden** (Rötung, Fissuren, Ekzeme), die paradoxerweise wiederum Aufmerksamkeit und Waschdrang verstärken können.\nWenn Dermatologie und Psychiatrie getrennt arbeiten, wird der Zwang leicht übersehen („nur Ekzem“).\n\nDaran sieht man gut, wie sichtbar OCD werden kann: Der Körper trägt die Lerngeschichte der Rituale oft buchstäblich auf der Haut.
+c. negative Verstärkung | Kurzfristige Erleichterung nach Waschen stabilisiert das Ritual langfristig.
+c. Hautschäden | Ekzem, Risse, Schmerz als körperliche Zwangsfolge – häufig bei massivem Waschen.
+c. Ritualisierung | Stark regelgebundene Ausführung (Reihenfolge, Wiederholungen, „bis es passt“).
+d. Kontaktallergie | Dermatologie | Immunologisch vermittelte Reaktion auf Irritanzien/Allergene.\n Allergie erklärt nicht die ritualisierte Zwangsdynamik.
+d. Hygieneberatung | Prävention | Normale Empfehlung zu Händewaschen in Risikosituationen.\n Zwang ist exzessiv, leidvoll, zeitaufwendig und regelstarr.
+l. 4
+t. zwang;symptome;mechanismus;komorbidität;somatoform
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC9759964/ | a bidirectional pathway might exist, as OCD symptoms could be consequence of or a reason for repetitive hand washing
+
+
+
+
+#id: icd10f42_013
+cid. icd10f42
+b.  Kontrollzwang | Wiederholtes Prüfen (Herd, Tür, Licht, E-Mails, Formulare) trotz bereits erfolgter Kontrolle; „einmal reicht nicht“.\n\nTypisch ist ein Sicherheitsritual, das kurzfristig beruhigt, aber die Störung füttert.\nAuslöser sind häufig Angst, **Verantwortungsüberschätzung** und Zweifel; die Handlung wird zu **Sicherheitsverhalten** [vermeintliche Schutztricks, die Lernen verhindern].\nParadox: Durch Wiederholen kann das **Gedächtnisvertrauen** sinken („Jetzt bin ich mir noch unsicherer“), wodurch noch mehr kontrolliert wird.\nSinnvolle Therapieprinzipien sind Exposition [gezielte Konfrontation ohne Flucht/Sicherheitsverhalten] (z. B. „einmal prüfen“) und Reaktionsverhinderung, damit neue Fehler-Toleranz gelernt wird.\n\nDaran kann man super sehen, wie OCD die Wahrnehmung von Sicherheit manipuliert: Mehr Kontrolle fühlt sich logisch an, macht aber das System unsicherer.
+
+c. Gedächtnisvertrauen | Vertrauen in eigene Erinnerung/Genauigkeit; kann durch Checking weiter sinken.
+c. Sicherheitsverhalten | Handlung zur Angstreduktion, die Lernen verhindert und Symptome stabilisiert.
+c. Verantwortungsüberschätzung | Gefühl, katastrophale Folgen persönlich verhindern zu müssen.
+c. pathologischer Zweifel | OCD-Zweifel bleibt bestehen, auch nach objektiv ausreichender Kontrolle, weil „Gewissheit“ nicht erreicht wird.
+c. Verantwortungsüberschätzung | Überhöhtes Schuld- und Verantwortungsgefühl („Wenn ich es nicht perfekt prüfe, passiert etwas“).
+c. Unsicherheitsintoleranz | Normale Restunsicherheit wird als unerträglich erlebt; daraus entsteht Kontroll- und Prüfdrang.
+
+d. Wahnidee | Psychose | Unkorrigierbare Überzeugung mit Realitätsverlust.\n Bei OCD besteht meist Einsicht (Ich-Dystonie); beim Wahn fehlt sie oft.\n siehe: Psychotische Störungen.
+d. Grübeln | Depression | Stimmungsgebundenes, thematisch breites Nachdenken.\n Kontrollgedanken sind intrusive Zweifel mit Neutralisierungsdruck.\n siehe: Depressive Störungen, GAS.
+d. Vorsorgecheck | normal | Einmaliges, vernünftiges Prüfen (z. B. Tür abschließen).\n OCD ist wiederholt, zeitaufwendig, ritualisiert.
+d. Demenz | organisch | Progrediente Gedächtnisstörung.\n OCD-Zweifel ist angst- und ritualgetrieben, nicht primär neurodegenerativ.
+l. 5
+t. zwang;symptome;mechanismus;kognition;therapie
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC12126976/ | anxiety, uncertainty and inflated responsibility elicit checking, which in turn negatively impact memory confidence
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+#id: icd10f42_014
+cid. icd10f42bsp
+b.  Ordnungszwang | Zwanghaftes Ausrichten, Symmetrisieren, Sortieren oder „Richtigstellen“ von Gegenständen, bis sie perfekt oder „genau passend“ wirken.\n\nIm Zentrum steht **Symmetriedimension** [OCD‑Cluster: Ordnung/Ausrichten/Zählen bis „genau richtig“]: Ordnung wird nicht als nützlich, sondern als innerlich zwingend erlebt.\nViele Betroffene berichten eine starke körperliche Unruhe (inneres „es stimmt nicht“) – das Ritual beendet diese Spannung nur kurzfristig.\nForschung zu Symmetrie-Symptomen beschreibt Zusammenhänge mit **früher Beginn**, **tic-Nähe** und teilweise höherer depressiver Belastung; klinisch sieht man häufig Reizbarkeit und Erschöpfung durch Zeitverlust.\nAbzugrenzen ist das von ego-syntonem Perfektionismus: Beim Zwang ist es quälend, rigide und schwer zu stoppen.\n\nBesonders an dieser Form ist, dass sie OCD als „Körpergefühl-Störung“ sichtbar macht: Nicht Gefahr ist der Motor, sondern das quälende Gefühl von Unstimmigkeit.
+c. Symmetriedimension | OCD-Symptomcluster mit Symmetriebedürfnis und zugehörigen Ordnungs-/Wiederholritualen.
+c. tic-Nähe | Häufigere Überschneidung mit ticartigen Mustern oder ticbezogenen Profilen.
+c. früher Beginn | Symmetrie-/Ordnungszwänge beginnen oft früh und können lange persistieren.
+d. Zwanghafte Persönlichkeit | F60.5 | Perfektionismus und Kontrolle oft ego-synton und stabiler Stil.\n Zwangsstörung ist ich-dyston, ritualisiert und hoch belastend.
+d. Autismus | F84 | Routinen/Stereotypien dienen der Sicherheit, Stabilität und Vorhersehbarkeit. Das Ordnen wird oft als beruhigend, positiv oder befriedigend empfunden. Bei Zwang dient das Verhalten dazu, Ängste zu reduzieren oder befürchtete negative Konsequenzen abzuwenden, es wird als quälend, aufdringlich und oft als unsinnig erlebt aber die Handlung muss strikt ausgeführt werden, um extremen Leidensdruck zu vermeiden.
+l. 5
+t. zwang;symptome;komorbidität;mechanismus;diagnose
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC7828517/ | the symmetry dimension has been associated with male sex, early onset of obsessive–compulsive symptoms, longer duration of symptoms
+
+#id: icd10f42_015
+cid. icd10f42bsp
+b.  Zählzwang | Zwanghaftes Zählen (Schritte, Kacheln, Atemzüge, Buchstaben), oft nach starren Regeln („nur gerade Zahlen“, „bis es sicher ist“).\n\nDas Zählritual dient meist der **Neutralisierung**: Angst oder Unbehagen sollen „weggezählt“ werden.\nDie Handlung ist häufig hoch **regelgebunden** und kann mental ablaufen (für Außenstehende unsichtbar).\nBei vielen Betroffenen steckt **magisches Denken** [Gedanken/Rituale werden als real wirksam überschätzt] dahinter („Wenn ich nicht richtig zähle, passiert etwas“), auch wenn die Person die Logik gleichzeitig unsinnig findet.\n\nAn diesem Beispiel kann man gut zeigen, dass OCD nicht nur sichtbare Handlungen meint: Mentale Rituale sind echte Zwänge und gehören in Diagnostik und ERP genauso in die Reaktionsverhinderung.
+c. Zählritual | Wiederholtes Zählen nach Regeln, um Anspannung zu senken oder Gefahr zu neutralisieren.
+c. Regelbindung | Zwangsrituale folgen starren Regeln (Zahl, Reihenfolge, Wiederholung).
+c. magisches Denken | Überbewertung der Wirkung innerer/ritualer Handlungen auf äußere Ereignisse.
+d. Dyskalkulie | Lernen | Rechen-/Zahlverarbeitungsschwäche.\n Zwang ist angst- und regelgetrieben, nicht Fähigkeitsdefizit.
+d. Tic | F95 | Kurze, unwillkürliche Bewegungen/Laute.\n Zählen ist zielgerichtet, regelgeleitet und spannungsreduzierend.
+l. 4
+t. zwang;symptome;kognition;mechanismus;diagnose
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC4676205/ | obsessions and compulsions are divided into seven different symptom dimensions: Contamination/cleaning, symmetry/ordering/arranging/counting, sexual/religious, aggression, somatic
+
+#id: icd10f42_016
+cid. icd10f42bsp
+b.  Neutralisierungsritual | Mentale oder verdeckte Handlung, die einen Zwangsgedanken „aufheben“ soll: Beten, inneres Wiederholen, Gegenbilder denken, „gute“ Gedanken erzeugen.\n\nWichtig ist: Auch wenn außen nichts sichtbar ist, sind **mentale Rituale** echte Zwangshandlungen.\nDas Ziel heißt meist **Neutralisieren** [Gegenhandlung/mentales Ritual zum „Entschärfen“ eines Gedankens]: Angst, Schuld oder Ekel sollen kurzfristig sinken.\nEin Kernproblem ist **Gedankenunterdrückung**: Je stärker man einen Gedanken wegdrückt, desto häufiger kommt er zurück – und wirkt dadurch „wichtiger“.\nIn der Therapie müssen daher nicht nur sichtbare Rituale, sondern auch verdeckte Strategien in die Reaktionsverhinderung hinein.\n\nDaran erkennt man sehr gut, warum „Pure O“ klinisch trügerisch ist: Oft sind nicht die Zwänge weg – sie sind nur nach innen verlagert.
+c. mentale Rituale | Beten, inneres Zählen, Gegenbilder: Zwänge können vollständig im Kopf stattfinden.
+c. Neutralisieren | Gegenhandlung, um bedrohliche Gedanken/Emotionen kurzfristig zu entschärfen.
+c. Gedankenunterdrückung | Kontrollversuch, der Intrusionen oft verstärkt statt reduziert.
+d. Meditation | Achtsamkeit | Offenes Beobachten ohne Bewertungs- oder Kontrollzwang.\n Neutralisieren ist angstgetriebenes Wegmachen, nicht Akzeptanz.
+d. Grübeln | Depression | Langes, stimmungsgebundenes Nachdenken.\n Neutralisierung ist ritualisiert und an Intrusionen gekoppelt.
+l. 5
+t. zwang;symptome;mechanismus;kognition;therapie
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC3992249/ | these rituals tend to be primarily mental in nature (e.g., praying, mental counting, etc.) or more covert (e.g., reassurance-seeking)
+
+#id: icd10f42_017
+cid. icd10f42bsp
+b.  Rückversicherungszwang | Zwanghaftes Einholen von Bestätigung: „Ist das sicher?“, „Bin ich gefährlich?“, „War das okay?“ – bei Partnern, Familie, Ärzten, Online-Checks.\n\nDas Verhalten wirkt sozial „normal“, ist aber durch **Rückversicherung** [Beruhigung von außen einholen (kurz hilft, langfristig schadet)]-Druck und Wiederholung gekennzeichnet: Die Beruhigung hält nur kurz.\n Im System entsteht Anpassung: Umfeld passt sich an, beantwortet Fragen, kontrolliert mit, vermeidet Trigger – aus Fürsorge.\nLangfristig führt das zu **Symptomverstärkung**: Die Botschaft lautet ungewollt „Du brauchst Sicherheit von außen“, und die Toleranz für Unsicherheit sinkt.\nEs ist außerdem ein großer Beziehungstreiber: Konflikte, Genervtheit, Schuldgefühle, Rückzug.\n\nDaran kann man gut erklären, dass OCD oft ein „Beziehungsphänomen“ wird: Nicht nur die Person leidet, sondern das ganze Interaktionssystem wird Teil des Zwanges.
+c. Rückversicherung | Wiederholte Nachfrage/Kontrolle durch andere zur kurzfristigen Angstreduktion.
+c. Familienanpassung | Umfeld übernimmt Zwangslogik (Antworten, Mitritualisieren, Trigger vermeiden).
+c. Symptomverstärkung | Beruhigung wirkt kurzfristig, hält den Zwang aber langfristig aufrecht.
+d. Psychoedukation | Therapie | Erklärt Modelle/Mechanismen und stärkt Selbstwirksamkeit.\n Psychoedukation ist gezielte Intervention, nicht zwanghafte Nachfrage.
+d. Krisenhilfe | Notfall | Akute Stabilisierung bei realer Gefahr.\n Rückversicherung bei OCD ist chronisch, wiederholt und nicht an reale Notfälle gebunden.
+l. 5
+t. zwang;mechanismus;komorbidität;therapie;psychoedukation
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC4895189/ | providing excessive reassurance and/or removing knives to reduce or alleviate the distress
+
+
+
+
+
+
+
+
+
+#id: icd10f42_018
+cid. icd10f42
+b. Zwangsgedanken Neurobiologie |Störung in **kortikostriatalen** Schaltkreisen [essenzielle neuronale Verbindungen im Gehirn, die vom Cortex cerebri (Hirnrinde) zum Striatum (Teil der Basalganglien) ziehen. Sie spielen eine zentrale Rolle bei der Steuerung von Motorik, Kognition, Motivation und Belohnung.], die für Fehlerüberwachung, Impulskontrolle und das Abstoppen unerwünschter Gedanken wichtig sind.\n* **Kortikostriatale Schleifen** - Verbindungen zwischen Frontalhirn, Striatum, Thalamus und erneutem Kortex-Input zeigen bei OCD häufig veränderte Aktivität; dadurch werden Zweifel, Fehlersignale und innere Warnprozesse überstark weitergeleitet.\n* **Orbitofrontaler Kortex** - Diese Region ist bei OCD oft hyperaktiv; sie bewertet Reize als potenziell relevant oder fehlerhaft und kann dadurch das Gefühl verstärken, dass etwas „nicht sicher“ oder „nicht abgeschlossen“ ist.\n* **Serotonin-System** - Die Wirksamkeit von SSRI spricht für eine relevante serotonerge Beteiligung, aber nicht für einen simplen „Serotoninmangel“; das System beeinflusst vielmehr Erregbarkeit, Impulskontrolle und die Modulation von Angst-/Zwangsnetzwerken.\n* **Glutamat und GABA** - Neuere Modelle betonen ein Ungleichgewicht zwischen erregenden und hemmenden Signalen; besonders glutamaterge Übererregung und unzureichende inhibitorische Kontrolle können intrusive Gedanken und repetitive Schleifen begünstigen.\n* **Genetische Veranlagung** - OCD ist teilweise erblich; Studien sprechen meist für eine Heritabilität im Bereich von etwa 40–50 %, und Verwandte ersten Grades haben ungefähr ein 4- bis 5-fach erhöhtes Risiko.\nBesonders gut sieht man hier: Zwangsgedanken sind keine bloße „falsche Einstellung“, sondern auch ein Problem der neuronalen Signalfilterung, der Fehlerüberwachung und der unzureichenden inneren Bremse.
+c. kortikostriatale Schleifen | Netzwerke zwischen Frontalhirn, Striatum und Thalamus, die bei OCD an Kontrolle, Fehlerüberwachung und Wiederholung beteiligt sind.
+c. Orbitofrontaler Kortex | Hirnregion für Bewertung, Fehleralarm und Relevanzzuweisung; bei OCD oft überaktiv.
+c. Serotonin-System | Serotonerge Modulation beeinflusst Impulskontrolle und Zwangsnetzwerke, ohne OCD auf einen simplen Mangel zu reduzieren.
+c. Glutamat GABA | Erregende und hemmende Botenstoffe, deren Ungleichgewicht repetitive Gedanken- und Handlungsschleifen fördern kann.
+c. genetische Veranlagung | Familiäre und Zwillingsdaten sprechen für eine relevante, aber nicht allein ausreichende erbliche Komponente.
+d. reiner Serotoninmangel | mythos | Vereinfachte Idee, OCD sei nur ein Mangel eines einzelnen Botenstoffs.\n Die Daten sprechen für komplexe Netzwerk- und Neurotransmitterprozesse, nicht für ein Ein-Faktor-Modell.
+d. Charakterschwäche | mythos | Moralische oder willensbezogene Fehldeutung von Zwang.\n Neurobiologische und genetische Befunde widersprechen einer bloßen „Willensschwäche“.
+d. Halluzination | psychose | Wahrnehmung ohne äußeren Reiz.\n Halluzinationen sind kein neurobiologischer Kernmechanismus der OCD-Ätiologie.
+l. 5
+t. zwang;ätiologie;neurobiologie;genetik;kognition
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC12246748/ | Die Review beschreibt OCD als multifaktorielle Störung, bei der genetische Vulnerabilität, Umweltfaktoren und Neurotransmittersysteme zusammenwirken. Besonders hervorgehoben werden CSTC-Schaltkreise, orbitofrontale Hyperaktivität sowie Beteiligungen von Serotonin, Glutamat und GABA. Zusätzlich berichten Familien- und Zwillingsstudien über eine deutliche Heritabilität und ein klar erhöhtes Risiko bei Verwandten ersten Grades.
+
+#id: icd10f42_019
+cid. icd10f42
+b.  Zwangsgedanken Psychologie | Psychologisch werden Zwangsgedanken nicht dadurch pathologisch, dass jemand überhaupt aufdringliche Gedanken hat, sondern dadurch, wie diese **bewertet** und verarbeitet werden.\n* **Überbewertung von Gedanken** - Ein normaler aufdringlicher Gedanke wird als bedeutsam, gefährlich oder moralisch entlarvend interpretiert: „Wenn ich so etwas denke, sagt das etwas Schlimmes über mich aus.“\n* **Thought-Action-Fusion** - Betroffene erleben Gedanken, als seien sie moralisch fast so schlimm wie Taten oder als würden sie die Wahrscheinlichkeit eines Ereignisses erhöhen.\n* **Überverantwortlichkeit** - Die Person fühlt sich übermäßig zuständig, Schaden zu verhindern; dadurch entsteht enormer Druck, Gedanken zu kontrollieren oder zu neutralisieren.\n* **Intoleranz gegenüber Unsicherheit** - Normale Restunsicherheit wird nicht ausgehalten; Zwangsgedanken wachsen dann besonders dort, wo es keine 100%ige Gewissheit geben kann.\n* **Perfektionismus** - Fehler, Unsauberkeit, moralische Unklarheit oder Unvollständigkeit werden als kaum tolerierbar erlebt; das verstärkt Gedankenkontrolle und Neutralisierung.\n* **Emotionsregulationsdefizite** - Intrusionen werden nicht nur gedacht, sondern körperlich und emotional schlecht reguliert; dadurch werden Anspannung, Schuld, Ekel oder Angst selbst zum Verstärker.\nAn diesem Set kann man besonders gut zeigen, dass Zwangsgedanken oft aus einer Fehlbewertung normaler Intrusionen entstehen: Nicht der Gedanke allein ist das Problem, sondern die Bedeutung, die ihm zugeschrieben wird.
+c. Überbewertung von Gedanken | Normale Intrusionen werden als hoch bedeutsam, gefährlich oder moralisch entlarvend interpretiert.
+c. Thought-Action-Fusion | Glaube, dass Gedanken Taten moralisch nahekommen oder Ereignisse wahrscheinlicher machen.
+c. Überverantwortlichkeit | Überhöhtes Gefühl, negative Ereignisse unbedingt verhindern zu müssen.
+c. Intoleranz gegenüber Unsicherheit | Fehlende Bereitschaft, Ungewissheit auszuhalten; Kontrolle und Rituale sollen Sicherheit herstellen.
+c. Perfektionismus | Überhöhte Standards und geringe Fehlertoleranz verstärken Zwangsdruck.
+c. Emotionsregulationsdefizite | Schwierigkeiten, Angst, Ekel, Schuld und Anspannung angemessen zu regulieren.
+d. depressive Grübelei | depression |  Wiederholtes, stimmungskongruentes Nachdenken über Verlust, Schuld oder Wertlosigkeit.\n OCD-Intrusionen sind eher aufdringlich, ich-dyston und oft mit Neutralisierungsdruck verknüpft.
+d. Wahnüberzeugung | psychose | Feste Überzeugung mit deutlich verminderter Korrigierbarkeit.\n Bei OCD besteht meist zumindest teilweise Einsicht in die Übertriebenheit.
+l. 5
+t. zwang;ätiologie;kognition;metakognition;mechanismus
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC9144038/ | Die Arbeit fasst den kognitiv-behavioralen Kern von OCD so zusammen, dass klinische Obsessionen aus maladaptiven Überzeugungen hervorgehen: übersteigerte Verantwortung, Bedrohungsüberschätzung, Perfektionismus, Intoleranz von Unsicherheit sowie die Überbedeutung und Kontrollnotwendigkeit von Gedanken. Dadurch werden normale Intrusionen falsch interpretiert, Angst erzeugt und neutralisierende Verhaltensweisen aufrechterhalten.
+
+#id: icd10f42_020
+cid. icd10f42
+b.  Zwangsgedanken Auslöser | Auch bei vorhandener Vulnerabilität brauchen Zwangsgedanken oft einen Auslöser, der das System überfordert, sensibilisiert oder in eine neue Lebensphase kippen lässt.\n* **Stress und Belastung** - Prüfungen, Jobwechsel, Beziehungsprobleme, Überforderung oder anhaltender Druck können die Schwelle für aufdringliche Gedanken deutlich senken.\n* **Lebensübergänge** - Heirat, Geburt eines Kindes, Trennung, Umzug oder neue Verantwortung aktivieren oft Themen wie Kontrolle, Schuld, Sicherheit und Verlust von Gewissheit.\n* **Traumatische Erlebnisse** - Verlust, Missbrauch, Unfall oder subjektiv als traumatisch erlebte Belastung können bei einem Teil der Betroffenen dem OCD-Beginn vorausgehen; in Studien berichten etwa 61 % belastende Lebensereignisse vor Beginn, und ein großer Teil davon erlebt diese im unmittelbaren zeitlichen Vorfeld.\n* **Hormonelle Veränderungen** - Pubertät, Schwangerschaft und Wochenbett sind sensible Phasen; besonders postpartum steigt das Risiko für intrusive harm- und Kontrollgedanken, oft zusammen mit Angst- oder Depressionssymptomen.\n* **Pandemien und Krisen** - COVID-19 hat bei vielen Betroffenen Zwangssymptome verstärkt, besonders bei Kontamination, Waschen, Verantwortung für Schaden und intolerierter Unsicherheit.\n* **Komorbidität** [gleichzeitiges Auftreten weiterer Störungen] - Depressive Symptomatik, hohe Angstempfindlichkeit oder Neurotizismus können die Schwelle weiter senken und die Chronifizierung fördern.\nBesonders gut lässt sich hier zeigen, dass Auslöser nicht „die eine Ursache“ sind: Sie treffen auf eine vorhandene Verwundbarkeit und geben dem Zwang oft nur sein Thema, sein Timing oder seine Eskalationsrichtung.
+c. Stress und Belastung | Chronischer oder akuter Stress erhöht Anspannung und erleichtert das Aufspringen obsessiver Schleifen.
+c. Lebensübergänge | Neue Rollen und Verantwortung aktivieren Zweifel, Sicherheitsbedürfnis und Kontrollthemen.
+c. traumatische Erlebnisse | Belastende oder traumatische Erfahrungen können dem Beginn von OCD zeitlich vorausgehen.
+c. hormonelle Veränderungen | Pubertät, Schwangerschaft und Wochenbett sind sensible biologische und psychosoziale Fenster.
+c. Pandemien und Krisen | Große Unsicherheit und Hygiene-/Gefahrensalienz können Symptome verstärken oder reaktivieren.
+c. depressive Komorbidität | Depression kann Zwangsgedanken verstärken, verlängern und das Coping verschlechtern.
+l. 4
+t. zwang;ätiologie;stress;trauma;komorbidität
+g. s
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC7744562/ | Die Studie zeigt, dass belastende Lebensereignisse und traumatische Erfahrungen dem OCD-Beginn häufig vorausgehen. Ergänzend weisen neuere Reviews darauf hin, dass peripartale Phasen, Depression/Angstsensitivität und großflächige Krisen wie COVID-19 als Trigger oder Verstärker wirken können, besonders bei bereits bestehender Vulnerabilität und hoher Unsicherheitsintoleranz.
+
+
+
+
+
+
+#id: icd10f42_021
+cid. icd10f42
+b.  ERP bei Zwangsgedanken | **Exposition [gezielte Konfrontation ohne Flucht/Sicherheitsverhalten] mit Reaktionsverhinderung**  gilt als empfohlene **Erstlinienbehandlung** der Zwangsstörung und ist auch bei vorwiegend **Zwangsgedanken** zentral.\n* **Mentale Rituale erkennen** - Gemeinsam werden nicht nur sichtbare Zwangshandlungen, sondern auch unsichtbare Prozesse wie Analysieren, Kontrollieren, inneres Beruhigen, Beten oder Neutralisieren [Gegenhandlung/mentales Ritual zum „Entschärfen“ eines Gedankens] identifiziert.\n* **Psychoedukation** [Störungswissen vermitteln, Mechanismen erklären] - Betroffene lernen, dass nicht der Gedanke selbst das Problem ist, sondern die wiederholte Reaktion darauf; Unterdrückung und Rückversicherung [Beruhigung von außen einholen (kurz hilft, langfristig schadet)] verstärken den Zwang meist.\n* **Exposition** [gezielte Konfrontation ohne Flucht/Sicherheitsverhalten] - Der belastende Gedanke wird absichtlich aufgesucht, etwa durch lautes Aussprechen, Aufschreiben, Anhören oder imaginative Konfrontation.\n* **Reaktionsverhinderung** - Die zentrale therapeutische Aufgabe besteht darin, die gewohnten mentalen Rituale nicht auszuführen: nicht analysieren, nicht prüfen, nicht beruhigen, nicht neutralisieren.\n* **Habituation [Gewöhnung: Angst sinkt von selbst bei Wiederholung] und Neubewertung** - Mit wiederholter Übung sinkt die Angst oft von selbst, und das Gehirn lernt, dass ein Gedanke weder gefährlich noch handlungsrelevant sein muss.\nGerade an Zwangsgedanken kann man gut sehen, dass ERP nicht einfach „Aushalten“ meint, sondern ein gezieltes Umlernen: weg von innerer Kontrolle, hin zu neuer Erfahrung mit Unsicherheit.
+c. mentale Rituale erkennen | Auch unsichtbare Zwangshandlungen wie Analysieren, Checken oder Neutralisieren müssen als Rituale erkannt werden.
+c. Exposition | Der angstauslösende Gedanke wird gezielt aktiviert statt vermieden.
+c. Reaktionsverhinderung | Auf mentale oder äußere Rituale wird bewusst verzichtet.
+c. Habituation und Neubewertung | Angst nimmt mit der Zeit ab, und der Gedanke verliert seine scheinbare Bedeutung.
+d. Gedanken unterdrücken | coping |  Unterdrückung gehört gerade zu den Prozessen, die Zwangsgedanken oft verstärken, statt sie zu lösen.
+d. Rückversicherung suchen | ritual |  Rückversicherung senkt Angst kurzfristig, hält aber Zweifel und Zwang langfristig aufrecht.
+d. Analysezwang | ritual |  Ständiges Prüfen, ob der Gedanke etwas „bedeutet“, ist selbst Teil des Problems und nicht Teil von ERP.
+l. 5
+t. zwang;therapie;erp;kvt;zwangsgedanken
+g. ws
+s. https://ocdandme.com/wissen/zwangsgedanken/ | Die Seite beschreibt ERP als Goldstandard bei Zwangsgedanken und gliedert die Behandlung in die Identifikation mentaler Rituale, Psychoedukation, gezielte Exposition gegenüber dem Gedanken, konsequente Reaktionsverhinderung und anschließende Habituation bzw. Neubewertung. Besonders betont wird, dass gerade bei „Pure O“ die unsichtbaren Rituale zuerst sichtbar gemacht werden müssen und dass die Angst nachlässt, wenn nicht mehr analysiert, gecheckt oder neutralisiert wird. 
+
+#id: icd10f42_022
+cid. icd10f42
+b.  ACT bei Zwangsgedanken | **Akzeptanz- und Commitment-Therapie (ACT [Umgang mit Gedanken: akzeptieren, defundieren, werteorientiert handeln])** ist eine evidenzbasierte [auf guter Studienlage beruhend; wirksamkeitsgeprüft] Methode, die bei **Zwangsgedanken** besonders hilfreich sein kann, wenn Betroffene stark gegen ihre Gedanken kämpfen oder ihnen übermäßig Bedeutung geben.\n* **Akzeptanz** - Aufdringliche Gedanken werden nicht bekämpft, sondern als vorübergehende innere Ereignisse zugelassen.\n* **Defusion** [Abstand zum Gedanken: „Ich habe den Gedanken, dass …“] - Statt mit dem Gedanken zu verschmelzen, lernt die Person Abstand: nicht „Ich bin gefährlich“, sondern „Ich habe den Gedanken, dass ich gefährlich sein könnte“.\n* **Werteorientierung** - Der Fokus verschiebt sich vom Zwang auf die Frage, wie man trotz Angst und Unsicherheit leben möchte: als liebevoller Partner, verantwortlicher Vater, aufrichtiger Mensch, nicht als Sklave des Rituals.\n* **Committed Action** [wertegeleitet handeln – trotz Angst/Unsicherheit] - Handeln richtet sich an Werten aus, auch wenn Angst, Zweifel oder Ekel anwesend bleiben.\n* **Beziehung zum Gedanken verändern** - Ziel ist nicht die vollständige Beseitigung jeder Intrusion, sondern ein anderer Umgang mit ihr: weniger Verstrickung, weniger Kontrolle, mehr psychische Beweglichkeit.\nBesonders gut zeigt ACT [Umgang mit Gedanken: akzeptieren, defundieren, werteorientiert handeln], dass therapeutischer Fortschritt nicht immer heißt, weniger Gedanken zu haben, sondern ihnen weniger Macht über Verhalten, Identität und Lebensführung zu geben.
+c. Akzeptanz | Gedanken dürfen auftauchen, ohne dass sofort gegen sie angekämpft werden muss.
+c. Defusion | Abstand zum Gedanken entsteht durch eine veränderte Beziehung zu ihm.
+c. Werteorientierung | Entscheidungen orientieren sich an persönlichen Werten statt an Zwangsforderungen.
+c. Committed Action | Wertgeleitetes Handeln wird auch bei fortbestehender Angst umgesetzt.
+d. Gedanke beseitigen | kontrollversuch |  ACT zielt nicht primär auf Gedankenelimination, sondern auf einen veränderten Umgang mit ihnen.
+d. Gedanken bewerten | analyse |  Ständiges Bewerten hält die Verstrickung oft aufrecht, statt psychische Flexibilität zu fördern.
+d. absolute Sicherheit | illusion |  ACT arbeitet gerade mit der Bereitschaft, Unsicherheit mitzunehmen, statt sie vollständig abzuschaffen.
+l. 4
+t. zwang;therapie;act;zwangsgedanken;akzeptanz
+g. ws
+s. https://ocdandme.com/wissen/zwangsgedanken/ | Die Darstellung zu ACT betont, dass aufdringliche Gedanken nicht bekämpft, sondern akzeptiert werden sollen, ohne auf sie mit Ritualen oder Kontrollversuchen zu reagieren. Genannt werden Akzeptanz, kognitive Defusion, Werteorientierung und committed action als Kernprozesse. Zugleich wird hervorgehoben, dass ERP die Erstlinientherapie bleibt, ACT [Acceptence Commotment Therapy]aber eine wertvolle Ergänzung sein kann, besonders wenn Betroffene stark mit ihren Gedanken ringen. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#id: icd10f43_006
+cid. icd10f43
+b.  Anpassungsstörung F43.2 | Es handelt sich um eine Reaktion auf eine belastende **Lebensveränderung** oder ein psychosoziales Stressereignis, das nicht das Ausmaß eines katastrophalen Traumas haben muss.\nTypisch sind **depressive Stimmung**, Sorge, Angst, Gefühl der Überforderung, eingeschränkte Alltagsbewältigung und mitunter sozialer Rückzug; bei Jugendlichen können auch Verhaltensauffälligkeiten im Vordergrund stehen.\nDer Beginn liegt meist innerhalb von **1 Monat** nach dem belastenden Ereignis; die Störung klingt in der Regel innerhalb von **6 Monaten** nach Wegfall der Belastung ab, eine längere depressive Reaktion kann aber länger anhalten.
+c. identifizierbarer Stressor | Das Syndrom ist zeitlich klar an ein Belastungsereignis gebunden.
+c. Fehlanpassung | Die Reaktion ist übermäßig oder alltagsrelevant beeinträchtigend.
+c. Überforderung | Betroffene erleben die Bewältigung des Ereignisses als misslingend.
+d. PTBS | F43.1 | Dort steht ein extremes Trauma mit typischen Intrusionen, Vermeidung und Übererregung im Vordergrund. Einordnung: Trauma.
+d. depressive Episode | F32 | Melancholische Vollbilder sprechen eher für eine depressive Episode als für F43.2. Einordnung: Depression.
+l. 4
+t. belastung;anpassung;symptome;diagnose
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC6678970/ | Der Review beschreibt Anpassungsstörung als maladaptive emotionale oder Verhaltensreaktion auf einen identifizierbaren psychosozialen Stressor; die Reaktion ist stärker als sozial oder kulturell zu erwarten und führt zu deutlichem Distress oder Funktionsbeeinträchtigung im Alltag.
+
+
+
+#id: icd10f48_002
+cid. icd10f48
+b.  Depersonalisationssyndrom F48.1 | Betroffene erleben sich selbst, ihren Körper oder ihre Umgebung als **unwirklich**, fremd oder wie durch eine Glasscheibe wahrgenommen.\nBei **Depersonalisation** [Selbst/Körper wirkt entfremdet oder wie „neben mir“] stehen Entfremdung vom eigenen Erleben, Körper oder Handeln im Vordergrund; bei **Derealisation** [Umwelt wirkt fremd/unecht, wie im Traum] wirkt die Umwelt seltsam, flach, leblos oder traumartig.\nWichtig für die Abgrenzung ist, dass die **Realitätsprüfung** erhalten bleibt: Die Betroffenen wissen, dass es sich um ein subjektives Erleben handelt und nicht um eine tatsächliche Veränderung der Welt.
+c. Entfremdung vom Selbst | Der eigene Körper oder das eigene Erleben wirkt nicht mehr richtig zugehörig.
+c. Umwelt unwirklich | Die Umgebung erscheint traumartig, fern oder künstlich.
+c. Realitätsprüfung intakt | Betroffene wissen, dass die Veränderung subjektiv erlebt wird.
+d. Psychose | F2 | Bei Psychosen ist die Realitätsprüfung oft deutlicher aufgehoben. Einordnung: Psychose.
+d. Intoxikation | organisch | Substanzen können ähnliche Erlebnisse auslösen und müssen differenziert werden. Einordnung: organisch.
+l. 4
+t. dissoziation;symptome;diagnose;differentialdiagnose
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC9772393/ | Die Arbeit beschreibt Depersonalisation als persistierende und belastende Veränderung der subjektiven Selbsterfahrung, oft mit emotionaler Taubheit und Distanz zum eigenen Körper; Derealisation kann hinzukommen, also eine veränderte Wahrnehmung der Umgebung als fremd, flach oder unwirklich.
+
+
+
+
+
+
+#id: icd10f48_001
+cid. icd10f48
+b.  Neurasthenie F48.0 | Typisch sind **geistige und körperliche Erschöpfung** schon nach geringer Anstrengung, dazu Konzentrationsprobleme, Reizbarkeit und Schlafstörungen.\nBetroffene erleben **Leistungsminderung**, schnelle Ermüdbarkeit und oft Muskelschmerzen oder Kopfdruck.\nEine ausreichende körperliche Erklärung fehlt; klinisch wichtig ist die Abgrenzung zu Depression, Angst und somatischen Ursachen.
+c. Erschöpfung nach wenig | Schon geringe Belastung führt zu Müdigkeit oder Schwäche.
+c. Leistungsminderung | Alltägliche geistige oder körperliche Anforderungen fallen schwer.
+c. Reizbarkeit | Erschöpfung geht oft mit gereizter Grundspannung einher.
+d. Hyperthyreose | organisch | Kann Unruhe und Leistungsprobleme machen, ist aber somatisch erklärbar. Einordnung: internistisch.
+d. Major Depression | F32 | Dort stehen eher depressive Kernsymptome wie Anhedonie und gedrückte Stimmung zentral im Vordergrund.
+l. 4
+t. belastung;symptome;diagnose;differentialdiagnose
+g. ws
+s. https://gesund.bund.de/icd-code-suche/f48-0 | Nach geringer Anstrengung treten Müdigkeit oder Erschöpfung auf; zusätzlich können Reizbarkeit, Kopfschmerzen und Schwierigkeiten beim Entspannen vorkommen.
+
+
+
+
+
+
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+
+
+#id: icd10f40_001
+cid. icd10f40
+b.  Risikofaktoren Angststörungen | Biologische Faktoren umfassen **Erbanlagen**, angeborene **Ängstlichkeit**, limbische Vulnerabilität und **Verhaltenshemmung**, die die Anfälligkeit erhöhen.\nPsychische Faktoren sind **negative Lernerfahrungen**, verzerrte Bewertungen, **Katastrophendenken**, unsichere Bindungs- und Bewältigungsmuster sowie Modelllernen.\nSoziale Faktoren betreffen Überforderung, Verluste, familiäre Konflikte, mangelnde Unterstützung und belastende **Schlüsselerlebnisse**.\nAufrechterhaltend wirken vor allem **Vermeidung** und Sicherheitsverhalten [vermeintliche Schutztricks, die Lernen verhindern], weil sie korrigierende Erfahrungen verhindern.
+c. Verhaltenshemmung | Gehemmtes, zurückweichendes Temperament erhöht das Risiko.
+c. Familienanamnese | Angst oder Depression in der Familie erhöhen die Vulnerabilität.
+c. Vermeidung stabilisiert | Kurzfristige Entlastung verhindert langfristige Korrektur.
+d. Euphorie | Manie | Gehobene Stimmung ist kein typischer Risikofaktor von Angststörungen. Einordnung: affektiv.
+d. Halluzinationen | Psychose | Halluzinationen sind kein klassischer Vulnerabilitätsmarker für F40/F41. Einordnung: Psychose.
+l. 4
+t. angst;risiko;ätiologie;komorbidität
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC11009418/ | Die Review nennt als allgemeine Risikofaktoren weibliches Geschlecht, Familienanamnese für Angst oder Depression, frühe Adversität, gehemmtes Temperament, überinvolvierte oder negative Elterninteraktionen, eingeschränkte Peerbeziehungen und spätere Belastungen wie Krankheit, finanzielle Not oder Trennung; Vermeidung gilt als zentrales Merkmal der Störungsentwicklung.
+
+
+
+
+#id: icd10f40_002
+cid. icd10f40
+b.  KVT bei Angst | Aus dem **Angstkreislauf** leiten sich therapeutische Prinzipien ab: Katastrophisierende Bewertungen, körperliche Alarmreaktion und Vermeidung verstärken sich gegenseitig und sollen gezielt durchbrochen werden.\nKognitive Techniken hinterfragen **automatische Gedanken** und **Katastrophisierungsgedanken**; körperbezogen kommen Atem-, Entspannungs- oder Aufmerksamkeitsübungen hinzu.\nZentral ist die **Exposition** [gezielte Konfrontation ohne Flucht/Sicherheitsverhalten] mit Abbau von Sicherheitsverhalten [vermeintliche Schutztricks, die Lernen verhindern]; je nach Störung werden auch Verhaltensexperimente, **kognitive Umstrukturierung** [Katastrophengedanken prüfen und realistischer bewerten] und interozeptive [auf Körpersensationen bezogen (z. B. Herzschlag, Übelkeit)] Übungen eingesetzt.
+c. Angstkreislauf | Gedanke, Körper und Verhalten schaukeln sich gegenseitig hoch.
+c. kognitive Umstrukturierung | Übertriebene Gefahrenannahmen werden überprüft und korrigiert.
+c. Exposition | Angst auslösende Reize werden systematisch aufgesucht statt vermieden.
+d. Schonung | Vermeidung | Dauerhafte Schonung erhält die Störung meist aufrecht. Einordnung: Vermeidung.
+d. Ablenkung allein | Coping | Reine Ablenkung ersetzt keine systematische Bearbeitung des Angstlernens. Einordnung: Coping.
+l. 4
+t. angst;therapie;kvt;mechanismus
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC4610618/ | Die Übersichtsarbeit stellt Exposition und kognitive Therapie als die beiden Kernverfahren der CBT bei Angststörungen dar; CBT ist insgesamt wirksam und effektiv, wobei besonders Exposition, die Bearbeitung dysfunktionaler Bewertungen und der Abbau von Vermeidungs- und Sicherheitsverhalten als zentrale Bestandteile hervorgehoben werden.
+
+#id: icd10f40_003
+cid. icd10f40
+b.  Therapien Angststörungen | Erste Wahl ist meist **Verhaltenstherapie**, vor allem **KVT** mit Psychoedukation [Störungswissen vermitteln, Mechanismen erklären], Störungsmodell, Exposition [gezielte Konfrontation ohne Flucht/Sicherheitsverhalten] und Arbeit an Sicherheitsverhalten [vermeintliche Schutztricks, die Lernen verhindern].\nWichtige Bausteine sind **kognitive Umstrukturierung** [Katastrophengedanken prüfen und realistischer bewerten], **Exposition** [gezielte Konfrontation ohne Flucht/Sicherheitsverhalten], Rückfallprophylaxe und je nach Störung ergänzende Verfahren wie Sorgenmanagement, Entspannung oder interozeptive [auf Körpersensationen bezogen (z. B. Herzschlag, Übelkeit)] Übungen.\n**Pharmakotherapie** ist ergänzend oft sinnvoll; **SSRI** oder **SNRI** gelten als Standard, während Benzodiazepine nicht als erste Wahl für die Dauerbehandlung gelten.
+c. SSRI oder SNRI | Antidepressiva sind Standardmedikation bei vielen Angststörungen.
+c. Psychotherapie first line | KVT ist eine der zentralen evidenzbasierten Behandlungsformen.
+c. Benzodiazepine nicht first line | Wegen Nebenwirkungen und Abhängigkeitsrisiko nur zurückhaltend einsetzen.
+d. Benzodiazepin dauerhaft | Pharmakotherapie | Langfristige Monotherapie mit Benzodiazepinen ist nicht Standard. Einordnung: Medikament.
+d. Vermeidung trainieren | Therapiefehler | Das verstärkt die Störung statt sie zu reduzieren. Einordnung: Verhalten.
+l. 4
+t. angst;therapie;kvt;medikament
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC5573565/ | Der Review beschreibt Angststörungen als hochprävalent und stark komorbid; empfohlen werden Psychotherapie und Pharmakotherapie, wobei SSRIs und SNRIs als First-line-Medikamente gelten. Benzodiazepine werden wegen Nebenwirkungen und Abhängigkeitsproblemen nicht als Mittel erster Wahl empfohlen.
+
+
+
+
+#id: icd10f40_004
+cid. icd10f40
+b.  Neurobiologie der Angst | **Limbisches System** und vor allem die **Amygdala** [Gefahren‑/Emotionszentrum; triggert Alarmreaktionen] reagieren bei Angststörungen oft empfindlicher auf Bedrohungsreize.\nStörungen der **Angstregulation** betreffen mehrere Ebenen: neuroanatomische Netzwerke, Stresshormonsysteme und **Neurotransmitter** wie Serotonin, Noradrenalin und GABA [inhibitorischer Neurotransmitter im ZNS; dämpft Erregung].\nBiologische Vulnerabilität erklärt die Störung nicht allein, erhöht aber zusammen mit Lernen und Erfahrung die Anfälligkeit.
+c. Amygdala überaktiv | Bedrohungsreize werden schneller und intensiver verarbeitet.
+c. GABA Hemmung | Verminderte inhibitorische Regulation kann Angst begünstigen.
+c. limbische Dysbalance | Emotionale Netzwerke überwiegen gegenüber kognitiver Kontrolle.
+d. Kleinhirn primär | Neuroanatomie | Das Kleinhirn ist nicht der Leitbegriff dieses Modells. Einordnung: Neuroanatomie.
+d. Dopaminüberschuss | Psychose | Das ist eher ein Kernbegriff anderer Störungsmodelle. Einordnung: Psychose.
+l. 3
+t. angst;neurobiologie;ätiologie
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC3684250/ | Die neurobiologische Review beschreibt Angststörungen als Zusammenspiel neuroendokriner, neurotransmitterbezogener und neuroanatomischer Dysregulationen; besonders betont werden limbische Netzwerke, Hirnstamm- und Kortexverbindungen sowie eine Störung des Gleichgewichts zwischen emotionalen Zentren und höherer kognitiver Kontrolle.
+ 
+########################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+########################################################
+
+#id: icd10f40_006
+cid. icd10f40
+b.  Epidemiologie/Prävalenz F40/41 | Angststörungen (F40/F41) gehören zu den **häufigsten psychischen Erkrankungen**; in vielen Übersichten liegen grobe **Lebenszeitprävalenzen** im zweistelligen Prozentbereich, und phobische Störungen zählen zu den häufigsten Subtypen.\nBeginn ist oft schon in Jugend oder frühem Erwachsenenalter, unbehandelte Verläufe neigen zur **Chronifizierung**, und in vielen Studien sind **Frauen deutlich häufiger** betroffen als Männer.
+c. häufige Störung | Angststörungen gehören epidemiologisch zu den häufigsten Diagnosen unter psychischen Erkrankungen.
+c. Lebenszeitprävalenz zweistellig | In vielen Übersichten werden grobe Lebenszeitprävalenzen im zweistelligen Prozentbereich berichtet.
+c. Phobien besonders häufig | Phobische Störungen sind epidemiologisch die häufigsten Subtypen der Angststörungen.
+c. Frauen häufiger betroffen | Viele Studien finden deutlich höhere Raten bei Frauen als bei Männern.
+d. seltene Erkrankung | Epidemiologie | Das Gegenteil ist der Fall. Einordnung: Epidemiologie.
+d. später Altersgipfel | falsch | Viele Angststörungen beginnen früh im Lebenslauf. Einordnung: Verlauf.
+l. 2
+t. angst;prävalenz;risiko;prognose
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC11009418/ | Die Review beschreibt Angststörungen als größte Gruppe psychischer Störungen in westlichen Gesellschaften; etwa jede vierte Person erlebt im Lebensverlauf eine Angststörung, die 12-Monats-Prävalenz liegt global ungefähr im zweistelligen Bereich, Phobien sind besonders häufig und Frauen sind insgesamt deutlich öfter betroffen.
+
+#id: icd10f40_007
+cid. icd10f40
+b.  Komorbidität Angststörungen | Angststörungen treten häufig zusammen mit **Depressionen**, **Substanzgebrauchsstörungen** und anderen Angststörungen auf.\nAuch somatische Erkrankungen können Angst imitieren oder verstärken; klinisch wichtig sind z. B. **Hyperthyreose** [Schilddrüsenüberfunktion mit Herzrasen, Tremor, Unruhe] oder andere körperliche Ursachen vegetativer Symptome.\nKomorbidität [gleichzeitiges Auftreten weiterer Störungen] bedeutet oft schwerere Verläufe, höhere Beeinträchtigung und komplexere Behandlung; bei Traumaerinnerungen muss auch an **PTBS** gedacht werden.
+c. Depression häufig | Angst und Depression treten oft gemeinsam oder nacheinander auf.
+c. Substanzgebrauch | Alkohol oder Beruhigungsmittel können als Selbstmedikation eingesetzt werden.
+c. andere Angststörungen | Mehr als eine Angstdiagnose ist häufig.
+d. isolierte Demenz | organisch | Sie ist keine typische Leitkomorbidität dieses Überblicks. Einordnung: organisch.
+d. Ticstörung | F95 | Kann vorkommen, ist aber keine Kernkomorbidität von F40/F41. Einordnung: andere Störung.
+l. 4
+t. angst;komorbidität;depression;risiko
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC5573565/ | Der Review hebt hervor, dass Angststörungen stark mit depressiven Störungen und untereinander komorbide sind; genau diese Komorbidität erschwert Diagnostik und Behandlung. Die aktuelle Literatur betont außerdem die Verbindung zu somatischen Belastungen und die klinische Relevanz einer sorgfältigen Differenzialdiagnostik.
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+########################################################################################################################
+################################################################################################################################################################################
+################################################################################################################################################################################
+########################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+#id: icd10f40_009
+cid. icd10f40
+b.  F41 übrige Angststörungen | F41 umfasst Angstbilder mit **ungerichteter Angst**, bei denen Manifestationen der **Angst** das Hauptsymptom sind, ohne klare Bindung an eine bestimmte Situation.\nTypisch sind vegetative Symptome wie Herzklopfen, Schwitzen, thorakale oder abdominelle Beschwerden sowie psychische Symptome wie Unsicherheit, **Derealisation** [Umwelt wirkt fremd/unecht, wie im Traum] oder Kontrollverlustangst.\nPhobische Symptome, depressive Symptome oder Zwänge können **sekundär** mitauftreten, dürfen aber nicht das eigentliche Hauptbild erklären.
+c. ungerichtete Angst | Die Angst ist nicht an ein klar definiertes Objekt gebunden.
+c. Derealisation | Entfremdungsgefühl kann im Angstanfall mit auftreten.
+c. sekundäre Symptome | Phobische oder zwanghafte Elemente können begleitend vorkommen.
+d. Situationsbindung | Phobie | Eindeutig an Situationen gebundene Angst spricht eher für F40 als für F41. Einordnung: Phobie.
+d. Zwangsritual | F42 | Wiederholte Rituale sind Kern von Zwangsstörungen und nicht von F41. Einordnung: Zwang.
+l. 4
+t. angst;gas;panik;diagnose
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f41-andere-angststoerungen/ | Hauptsymptome sind Manifestationen der Angst ohne Bindung an eine bestimmte Umgebungssituation; depressive und zwanghafte Symptome können sekundär vorhanden sein.
+
+#id: icd10f40_010
+cid. icd10f40
+b.  Differenzialdiagnosen Panikattacke | Eine **Panikattacke** mit Herzrasen, Brustschmerz und Dyspnoe muss immer von **somatischen Ursachen** und **Substanzeffekten** abgegrenzt werden.\nZu prüfen sind vor allem **Herzerkrankungen**, **Hyperthyreose** [Schilddrüsenüberfunktion mit Herzrasen, Tremor, Unruhe], Hypoglykämie, Asthma sowie stimulierende Drogen oder Medikamente.\nErst danach wird zwischen **Panikstörung**, phobischer Störung, somatoformer Störung und anderen psychischen Ursachen differenziert.
+c. Herzerkrankung prüfen | Kardiale Ursachen müssen zuerst mitgedacht werden.
+c. Hyperthyreose | Schilddrüsenüberfunktion kann Angstähnliches erzeugen.
+c. Substanzeffekt | Amphetamine oder ähnliche Stoffe können Paniksymptome auslösen.
+d. Migräneaura | neurologisch | Kann subjektiv bedrohlich wirken, ist aber nicht die klassische Leit-DD dieses Panik-Items. Einordnung: Neurologie.
+d. Appendizitis | somatisch | Körperliche Beschwerden entstehen hier anders und erklären nicht das typische panikartige Muster. Einordnung: Chirurgie.
+l. 4
+t. angst;differentialdiagnose;somatoform
+g. ws
+s. https://www.gesundheitsinformation.de/generalisierte-angststoerung.html | Körperliche Angstsymptome können auch bei Erkrankungen wie Schilddrüsenüberfunktion oder durch Arzneien und Drogen auftreten.
+ 
+#id: icd10f40_012
+cid. icd10f40
+b.  Therapie spezifische Phobie | Methode der ersten Wahl ist **Exposition [gezielte Konfrontation ohne Flucht/Sicherheitsverhalten] in vivo**: Der Patient konfrontiert sich gezielt mit dem gefürchteten Reiz, ohne zu fliehen oder Sicherheitsverhalten [vermeintliche Schutztricks, die Lernen verhindern] zu nutzen.\n**Systematische Desensibilisierung** kombiniert Entspannung mit einer **Angsthierarchie**; graduierte Exposition [gezielte Konfrontation ohne Flucht/Sicherheitsverhalten] oder Flooding führen zu neuer Lernerfahrung.\nZiel ist die **Korrektur von Katastrophenerwartungen** und die Gewöhnung an die körperliche Angstsymptomatik.
+c. Exposition in vivo | Direkte Konfrontation mit dem phobischen Reiz.
+c. Angsthierarchie | Reize werden vom leichteren zum schwereren Schritt geordnet.
+c. Katastrophenerwartung korrigieren | Die befürchtete Katastrophe bleibt typischerweise aus.
+d. Schonung dauerhaft | kontraproduktiv | Dauerhafte Vermeidung hält die Phobie aufrecht statt sie zu lösen. Einordnung: Vermeidung.
+d. reines Gespräch | unvollständig | Einsicht allein reicht meist nicht; Verhaltensexposition ist zentral. Einordnung: Therapiefehler.
+l. 4
+t. phobie;therapie;kvt;exposition
+g. ws
+s. https://www.msdmanuals.com/de/heim/psychische-gesundheitsst%C3%B6rungen/angstst%C3%B6rungen-und-belastungsst%C3%B6rungen/spezifische-phobien | Die Behandlung spezifischer Phobien besteht in der Regel aus Konfrontationstherapie.
+
+#id: icd10f40_013
+cid. icd10f40
+b.  Spezifische Phobien F40.2 | **Spezifische Phobien** sind intensive Ängste vor eng umschriebenen Situationen oder Objekten, etwa Höhen, Tieren, Blut, Spritzen oder engen Räumen.\nDie Betroffenen **vermeiden** den Auslöser oder ertragen ihn nur unter starker Angst; oft besteht gute **Krankheitseinsicht**.\nDie Angst ist situativ gebunden und deutlich stärker als die tatsächliche Gefahr.
+c. Auslöser eng | Die Angst bezieht sich auf ein klar umschriebenes Objekt oder Setting.
+c. Krankheitseinsicht | Betroffene wissen meist, dass die Angst übertrieben ist.
+c. Vermeidung | Der Auslöser wird nach Möglichkeit gemieden.
+d. Wahnstörung | F22 | Dort fehlt typischerweise die kritische Distanz; bei Phobien ist Einsicht oft vorhanden. Einordnung: Psychose.
+d. Hypochondrie | F45.2 | Hier dominiert Krankheitsüberzeugung statt Angst vor einem eng begrenzten äußeren Auslöser. Einordnung: somatoform.
+l. 3
+t. phobie;symptome;diagnose;angst
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f40-phobische-stoerungen/ | Spezifische Phobien sind auf eng umschriebene Situationen beschränkt; sie werden vermieden oder nur mit starker Furcht ertragen.
+
+#id: icd10f40_014
+cid. icd10f40
+b.  Psychische Symptome F40 | Häufig sind **Unsicherheit**, **Schwindelgefühl**, **Derealisation** [Umwelt wirkt fremd/unecht, wie im Traum], **Depersonalisation** [Selbst/Körper wirkt entfremdet oder wie „neben mir“] sowie die Angst, die Kontrolle zu verlieren oder zu sterben.\nDiese psychischen Symptome treten zusammen mit körperlicher Alarmreaktion auf und verstärken die subjektive Bedrohung.\nBesonders in Paniknähe werden Wahrnehmung und Selbstgefühl oft als verändert erlebt.
+c. Derealisation | Die Umgebung wirkt fremd, unwirklich oder seltsam.
+c. Kontrollverlustangst | Es entsteht die Furcht, verrückt zu werden oder die Kontrolle zu verlieren.
+d. Aphasie | neurologisch | Sprachstörung gehört nicht zu den typischen psychischen Leitsymptomen von F40. Einordnung: Neurologie.
+d. Euphorie | Manie | Übersteigerte gehobene Stimmung ist kein klassisches F40-Leitsymptom. Einordnung: affektiv.
+l. 3
+t. angst;symptome;diagnose
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f40-phobische-stoerungen/ | Häufig bestehen sekundäre Ängste vor Sterben, Kontrollverlust oder dem Gefühl, wahnsinnig zu werden.
+
+#id: icd10f40_015
+cid. icd10f40
+b.  Motorische Symptome F40 | Typische motorische Zeichen sind **Zittern**, innere und äußere **Unruhe**, muskuläre Anspannung und gesteigerter Bewegungsdrang.\nSie spiegeln die Vorbereitung auf Kampf oder Flucht wider und verstärken das Erleben von Alarm.\nMotorische Symptome treten oft zusammen mit vegetativen Beschwerden auf.
+c. Zittern | Sichtbares oder spürbares Tremor-ähnliches Angstsymptom.
+c. Bewegungsdrang | Unruhe und ständiges inneres Getriebensein.
+d. Bradykinesie | neurologisch | Verlangsamung ist eher bei extrapyramidalen oder depressiven Störungen typisch als bei akuter Angst. Einordnung: Neurologie.
+d. Akinese | neurologisch | Aufgehobene Bewegung passt eher zu neurologischen oder katatonen Bildern als zu F40. Einordnung: Neurologie.
+l. 3
+t. angst;symptome;soma
+g. ws
+s. https://www.gesundheitsinformation.de/generalisierte-angststoerung.html | Häufige körperliche und motorische Angstsymptome sind Zittern, Nervosität und Muskelverspannungen.
+
+#id: icd10f40_016
+cid. icd10f40
+b.  Kognitive Symptome F40 | Typisch sind **Grübeln**, **Katastrophisieren** und ein enger **Aufmerksamkeitsfokus** auf mögliche Gefahren oder Körpersensationen.\nBetroffene überschätzen Risiken und unterschätzen eigene Bewältigungsmöglichkeiten.\nDiese kognitiven Muster fördern **Vermeidungsverhalten** [Angstquelle nicht aufsuchen → kurzfristig gut, langfristig schlecht] und Chronifizierung.
+c. Katastrophisieren | Harmloses wird als große Gefahr interpretiert.
+c. Bedrohungsfokus | Aufmerksamkeit sucht ständig nach Gefahrensignalen.
+c. Grübeln | Gedankliche Kreise halten die Angst gedanklich aktiv.
+d. Ideenflucht | Manie | Beschleunigter Gedankenfluss gehört eher zur Manie als zur Angst. Einordnung: affektiv.
+d. Denkzerfahrenheit | Psychose | Formale Denkstörung ist nicht der typische kognitive Kern von F40. Einordnung: Psychose.
+l. 3
+t. angst;symptome;kognition
+g. ws
+s. https://www.gesundheitsinformation.de/kognitive-verhaltenstherapie.html | Kognitive Therapie setzt an ungünstigen Denkmustern an und ersetzt sie durch realistischere Bewertungen.
+
+#id: icd10f40_017
+cid. icd10f40
+b.  Körperliche Symptome F40 | Typische **körperliche Symptome** sind **Herzklopfen**, **Schwitzen**, Brustenge, **Atemnot**, Schwindel und Bauchbeschwerden.\nDiese vegetativen Reaktionen dienen biologisch der Alarmbereitschaft, werden aber oft bedrohlich fehlinterpretiert.\nGenau diese Fehlinterpretation kann eine neue Angstwelle auslösen.
+c. Herzklopfen | Beschleunigter oder bewusst wahrgenommener Herzschlag.
+c. Atemnot | Gefühl, nicht genug Luft zu bekommen.
+c. Schwitzen | Ausdruck vegetativer Aktivierung im Angsterleben.
+d. Ikterus | somatisch | Gelbsucht ist kein typisches vegetatives Leitsymptom einer Angststörung. Einordnung: internistisch.
+d. Hämatemesis | somatisch | Blutiges Erbrechen gehört nicht zum klassischen Angstmuster. Einordnung: internistisch.
+l. 3
+t. angst;symptome;soma
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f41-andere-angststoerungen/ | Zu den wesentlichen Angstsymptomen zählen Herzklopfen, Brustschmerz, Erstickungsgefühle, Schwindel und weitere vegetative Beschwerden.
+
+
+
+
+#id: icd10f40_018
+cid. icd10f40
+b.  Soziale Phobie F40.1 | Kennzeichnend ist die Furcht vor **prüfender Betrachtung** durch andere und davor, sich peinlich oder erniedrigend zu verhalten.\nTypisch sind **Erröten**, Zittern, Übelkeit, Miktionsdrang [physiologischer Reiz, die Harnblase zu entleeren] oder Angst zu erbrechen.\n soziale Situationen werden **vermieden** oder nur mit starker Angst ertragen.\nDie Störung beginnt oft in Jugend oder frühem Erwachsenenalter und kann bis zu Panikattacken eskalieren.
+c. prüfende Betrachtung | Angst, von anderen kritisch bewertet zu werden.
+c. Erröten | Typisches sekundäres Angstsymptom sozialer Situationen.
+c. soziale Vermeidung | Soziale oder leistungsbezogene Situationen werden gemieden.
+d. Beziehungswahn |F20|Menschen mit sozialer Phobie haben Angst davor angestarrt zu werden. Bei ihnen liegt eine überinterpretation von Signalen vor, die sie als sozial deuten jedoch ist die Realitätsprüfung erhalten. Es liegt daher kein Wahn vor: "Die Leute im Bus schauen mich an, weil ich rot werde oder dumm aussehe." versus: "Die Leute im Bus schauen mich an, weil sie Teil einer Verschwörung sind." 
+d. Menschenmenge | Agoraphobie | Bei Agoraphobie steht eher Flucht- oder Hilflosigkeit in öffentlichen Situationen im Zentrum. Einordnung: F40.0.
+d. Beobachtungswahn | Psychose | Hier fehlt meist die kritische Distanz; soziale Phobie bleibt als Angst vor Bewertung erkennbar. Einordnung: Psychose.
+l. 4
+t. phobie;soziale_phobie;symptome;therapie
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f40-phobische-stoerungen/ | Furcht vor prüfender Betrachtung führt zu Vermeidung sozialer Situationen; Beschwerden wie Erröten, Zittern, Übelkeit oder Drang zum Wasserlassen sind typisch.
+
+#id: icd10f40_020
+cid. icd10f40
+b.  Agoraphobie F40.0 | Furcht vor öffentlichen Plätzen, Menschenmengen, Reisen allein oder dem Verlassen des Hauses.\nBetroffene fürchten oft, in solchen Situationen nicht fliehen zu können oder keine Hilfe zu bekommen; häufig werden **Panikattacken** mit erlebt (F40.01) oder gefürchtet.\nTypisch sind **Vermeidungsverhalten** [Angstquelle nicht aufsuchen → kurzfristig gut, langfristig schlecht], die Notwendigkeit von Begleitpersonen und die Orientierung an sicheren Orten. \nDepressive und zwanghafte Symptome sowie soziale Phobien sind als zusätzliche Merkmale gleichfalls häufig vorhanden. 
+c. Angst vor Mengen | Offene oder schwer verlassbare Situationen lösen starke Angst aus.
+c. Vermeidung |Einige Agoraphobiker erleben nur wenig Angst, da sie die phobischen Situationen meiden können.
+d. Generalisiert|F41|Anhaltende, frei flottierende **Sorgenneigung**, die sich auf viele Lebensbereiche richtet und nicht auf einzelne Situationen wie Menschenmengen oder Marktplätze gerichtet ist.
+d. Realitätsprüfung defekt|Schizophrenie| Schizophrene und Agoraphobiker meiden oft Menschenmengen. Die Agoraphobiker wissen, dass diese Angst übertrieben ist (dyston), während die Schizophrenen u.U. davon überzeugt sind, dass sie nicht eine klassische Angst haben sondern sie haben allen Grund zr Vorsicht, da die Gefahr für sie real ist (synton).
+d. paroxysmal|Panikstörung| Die Agoraphobie kann mit Panikattacken einhergehen allerdings bedeutet paroxysmal unerwarteter, plötzlicher Beginn. Die Agoraphobie hat einen klaren Situativen Auslöser und oft auch eine Erwartungsangst und **Vermeidungsstrategien**.
+d. Spinnenangst | spezifische Phobie | Die Angst richtet sich dort auf ein umschriebenes Objekt, nicht auf öffentliche Situationen. Einordnung: F40.2.
+d. Leistungsangst | soziale Phobie | Angst vor Bewertung ist etwas anderes als Angst vor dem Gefangensein ohne Hilfe. Einordnung: F40.1.
+l. 4
+t. phobie;agoraphobie;symptome;therapie
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f40-phobische-stoerungen/ | Furcht vor dem Verlassen des Hauses, Menschenmengen oder Reisen allein; Vermeidung der phobischen Situation steht oft im Vordergrund.
+
+
+
+#id: therapie_kvt_001
+cid. icd10f40
+b.  SORKC Modell | Das **SORKC [Stimulus–Organismus–Reaktion–Kontingenz–Konsequenz‑Analyse]-Modell** zerlegt Verhalten in **Stimulus**, **Organismusfaktoren**, **Reaktion**, **Kontingenz** und **Konsequenzen** und macht so Lernbedingungen sichtbar.\nBeispiel soziale Phobie: Vortragssituation als Stimulus, hohe Ängstlichkeit als Organismusfaktor, Vermeidung als Reaktion, kurzfristige Entlastung als Konsequenz und wiederholte Verstärkung über Kontingenz.\nDaraus lassen sich gezielte Expositions [gezielte Konfrontation ohne Flucht/Sicherheitsverhalten]- und **Umstrukturierungsansätze** ableiten.
+c. Organismusfaktoren | Individuelle Voraussetzungen wie Lerngeschichte oder Ängstlichkeit.
+c. Konsequenzen | Folgen eines Verhaltens, die es verstärken oder abschwächen.
+c. Kontingenz | Wie regelmäßig eine Konsequenz auf ein Verhalten folgt.
+d. Diagnosekriterien | Klassifikation | Das SORKC-Modell beschreibt Lernbedingungen, keine ICD-Kriterien. 
+d. freies Assoziieren | Psychoanalyse | Gehört zur psychoanalytischen Methode, nicht zum behavioralen SORKC-Schema. 
+l. 5
+t. angst;therapie;kvt;mechanismus
+g. ws
+s. https://www.gesundheitsinformation.de/kognitive-verhaltenstherapie.html | Verhaltenstherapie analysiert Gedanken, Gefühle und Verhalten, um ungünstige Muster zu verändern; daraus lassen sich gezielte Übungen und neue Reaktionen ableiten.
+
+
+
+
+
+
+
+
+
+#id: icd10f45_001
+cid. icd10f45
+b.  Somatoforme Störungen F45 | Typisch sind wiederkehrende **körperliche Beschwerden** trotz wiederholt unauffälliger Befunde oder unzureichender organischer Erklärung.\nLeitend sind hohe innere **Krankheitsbezogenheit**, wiederholte medizinische Inanspruchnahme und die Suche nach einer körperlichen Ursache.\nDie Beschwerden sind real erlebt; entscheidend ist die **fehlende passende organische Erklärung** und das ausgeprägte Krankheitsverhalten.
+c. körperliche Beschwerden | Schmerzen, Herzklopfen oder Magenbeschwerden stehen im Vordergrund.
+c. negative Befunde | Untersuchungen erklären Art und Ausmaß der Beschwerden nicht ausreichend.
+c. Krankheitsverhalten | Häufige Konsultationen und Beschäftigung mit Krankheit.
+d. neurologische Läsion | organisch | Ein nachweisbarer struktureller Befund spricht gegen F45 als Primärdiagnose. 
+d. F44 Funktionsverlust | dissoziation | Willkürmotorik und Sensibilitätsausfälle ohne Befund werden eher unter F44 klassifiziert. Einordnung: F44.
+l. 3
+t. somatoform;symptome;diagnose
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f45-somatoforme-stoerungen/ | Wiederholte körperliche Symptome führen zu Untersuchungen trotz negativer Ergebnisse; die Symptome werden weiter als körperlich begründet erlebt.
+
+#id: icd10f45_002
+cid. icd10f45
+b.  Somatisierungsstörung F45.0 | Im Vordergrund stehen **vielfältige**, über Jahre **wechselnde körperliche Symptome**, die wiederholt zu Arztbesuchen führen.\nDie Beschwerden betreffen oft mehrere Organsysteme und bleiben trotz Diagnostik ohne ausreichenden **organischen Befund**.\nTypisch ist eine lange **Patientenkarriere** mit vielen Untersuchungen und hoher psychosozialer Belastung.\nDie Erkrankungen beginnen meist im **jungen Erwachsenenalter**.
+c. wechselnde Symptome | Die Beschwerden verändern Form, Ort und Organsystem.
+c. Patientenkarriere | Viele Arztkontakte und Untersuchungen über lange Zeit.
+c. kein Befund | Medizinische Ergebnisse erklären das Ausmaß nicht.
+d. Hypochondrie | F45.2 | Dort steht eher die Angst vor Krankheit im Vordergrund, nicht das breite wechselnde Symptomensemble. 
+d. Multiple Sklerose | organisch | Neurologische Ausfälle mit objektivierbaren Befunden sprechen gegen F45.0. 
+t. somatoform;somatisierung;diagnose;symptome
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f45-somatoforme-stoerungen/ | Multiple, häufig wechselnde körperliche Symptome über mindestens zwei Jahre; viele negative Untersuchungen und chronisch-fluktuierender Verlauf.
+
+#id: icd10f45_003
+cid. icd10f45
+b.  Hypochondrische Störung F45.2 | Geprägt von der festen Überzeugung, an einer schweren körperlichen Krankheit zu leiden, trotz wiederholt **beruhigender Befunde** und ärztlicher Versicherung.\nDie Aufmerksamkeit ist dauerhaft auf Körperwahrnehmungen gerichtet; normale oder harmlose Empfindungen werden als Krankheitszeichen gedeutet.\nOft zeigt sich ausgeprägtes **krankheitsängstliches Verhalten** mit Selbstbeobachtung, wiederholten Kontrollen und erneuten Konsultationen.
+c. Selbstbeobachtung | Normale Körperempfindungen werden intensiv überwacht.
+c. krankheitsängstliches Verhalten | Wiederholte Nachfrage, Kontrolle und Arztkontakte.
+d. Somatisierungsstörung | F45.0 | Dort dominieren wechselnde körperliche Symptome, hier die Krankheitsüberzeugung. 
+d. Wahnstörung | F22 | Beim Wahn fehlt meist die Korrigierbarkeit viel deutlicher; hier bleibt eher die hypochondrische Beschäftigung leitend. 
+l. 4
+t. somatoform;hypochondrie;diagnose;symptome
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f45-somatoforme-stoerungen/ | Beharrliche Beschäftigung mit der Möglichkeit schwerer körperlicher Krankheiten; körperliche Phänomene werden als Hinweis auf ernste Erkrankung verstanden.
+
+#id: icd10f45_004
+cid. icd10f45
+b.  F45 DD zu F44 Schmerz vegetativ | **Schmerzen**, Missempfindungen oder vegetative Symptome wie Herzklopfen, Schwitzen oder Magenbeschwerden sprechen eher für eine **somatoforme Störung**.\nNur Störungen der willkürlich steuerbaren Bewegungen oder der Sinneswahrnehmung ohne organischen Befund werden unter **F44** klassifiziert.\nDie Art der Symptomgruppe ist also entscheidend für die diagnostische Trennung.
+c. vegetative Symptome | Herz, Magen oder Schwitzen sprechen eher für F45.
+c. Schmerz eher F45 | Schmerz zählt nicht zu den klassischen F44-Konversionsausfällen.
+c. willkürliche Funktion F44 | Motorik und Sinnesausfall ohne Befund sprechen für F44.
+d. Aphonie | F44 | Psychogene Stimmstörung gehört zu den dissoziativen Konversionsformen.
+d. Lähmung | F44 | Ausfall willkürlicher Bewegung wird eher unter F44 geführt als unter F45.
+l. 4
+t. somatoform;differentialdiagnose;diagnose
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f44-dissoziative-stoerungen-konversionsstoerungen/ | Schmerz und komplexe vegetative Empfindungen werden eher unter Somatisierungsstörungen klassifiziert; F44 umfasst Störungen willkürlicher Funktionen und Sinneswahrnehmung.
+
+#id: icd10f45_005
+cid. icd10f45
+b.  Somatoforme autonome Funktionsstörung F45.3 | Die Beschwerden richten sich vor allem auf **ein Organ** oder System wie **Herz**, **Magen** oder **Atmung**.\nBetroffene spüren Herzstolpern, Luftnot, Magenbeschwerden oder Schwitzen und fürchten eine ernste organische Erkrankung, obwohl keine ausreichenden Befunde vorliegen.\nLeitend sind **vegetative Symptome** und ein starker Organfokus.
+c. Organfokus | Die Aufmerksamkeit richtet sich auf ein bestimmtes Organsystem.
+c. vegetative Symptome | Herzklopfen, Schwitzen oder Luftnot dominieren das Bild.
+c. Herz oder Magen | Besonders häufig stehen kardiovaskuläre oder gastrointestinale Beschwerden im Vordergrund.
+d. Herzinfarkt | organisch | Bei realem Infarkt gibt es eine organische Ursache; F45.3 setzt fehlende ausreichende Befunde voraus. 
+d. Panikstörung | F41 | Dort steht die Angstattacke im Vordergrund, nicht der dauerhafte Organfokus. 
+l. 4
+t. somatoform;symptome;diagnose
+g. ws
+s. https://www.therapie.de/psyche/info/index/icd-10-diagnose/f4-neurotische-stoerungen/f45-somatoforme-stoerungen/ | Körperliche Symptome werden einem Organ zugeschrieben, obwohl keine ausreichende organische Erklärung gefunden wird.
+
+
+
+
+
+
+
+
+
+#id: icd10f45_006
+cid. icd10f45
+b.  Psychopharmaka bei somatoformen Störungen | Psychopharmaka sind bei somatoformen Störungen in der Regel nicht die alleinige Erstlinienbehandlung, können aber bei ausgewählten Verläufen sinnvoll ergänzen.\n* **Antidepressiva** - Am besten untersucht sind neuere Antidepressiva, vor allem wenn zusätzlich **Depression**, **Angst** oder ausgeprägte Schmerzsymptomatik bestehen.\n* **Evidenzlage** - Die Studienlage ist insgesamt begrenzt; positive Effekte zeigen sich eher moderat und nicht für alle Unterformen gleich überzeugend.\n* **Indikation** - Medikamente sind besonders dann erwägenswert, wenn komorbide affektive oder Angststörungen vorliegen oder wenn die Symptomlast hoch und chronisch ist.\n* **Grenzen** - Psychopharmaka ersetzen keine **Psychoedukation** [Störungswissen vermitteln, Mechanismen erklären], keine koordinierte ärztliche Führung und keine psychotherapeutische Bearbeitung von Vermeidung, Krankheitsüberzeugungen und Schonverhalten.\n* **Vorsicht** - Benzodiazepine, Opioide oder ständig wechselnde Medikationsversuche können Abhängigkeit, Fixierung und Chronifizierung fördern.
+c. Antidepressiva | Medikamente können hilfreich sein, sind aber meist nicht die alleinige Kernbehandlung.
+c. Evidenz begrenzt | Die Studienlage ist vorhanden, aber insgesamt schwächer als bei klassischen Angst- oder Depressionsstörungen.
+d. Benzos | Abhängigkeit↑ | Eine Dauerbehandlung mit Benzodiazepinen fördert eher Abhängigkeit und löst die somatoforme Dynamik nicht.
+d. Opioide  | Schmerztherapie | Eine rein analgetische Eskalation greift bei somatoformen Mechanismen meist zu kurz und kann problematische Verläufe fördern.
+l. 5
+t. somatoform;therapie;medikament;depression;komorbidität
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC11023023/ | Die systematische Übersichtsarbeit kommt zu dem Ergebnis, dass pharmakologische Behandlung bei somatoformen Störungen nur auf begrenzter und oft niedrig- bis sehr niedrigqualitativer Evidenz beruht. Am ehesten wurden Antidepressiva untersucht; sie können körperliche Beschwerden sowie komorbide Angst- und Depressionssymptome verbessern, sollten aber in ein breiteres Behandlungskonzept eingebettet werden.
+
+#id: icd10f45_007
+cid. icd10f45
+b.  Da Costa Syndrom  |**Herzneurose** Beschreibt ein Beschwerdebild mit Herzklopfen, Brustschmerz, Luftnot, Schwäche, Schwindel und schneller Erschöpfbarkeit, ohne dass eine ausreichende **organische** Herzerkrankung nachweisbar ist.\n* Es lässt sich heute gut als **somatoforme autonome Funktionsstörung** mit kardiovaskulärem Organfokus verstehen.\n* Typisch ist eine starke Selbstbeobachtung des Herzens mit Katastrophisierung normaler oder funktioneller Körperempfindungen.\n* Häufig bestehen **Angst**, **Depression** oder ausgeprägte Krankheitsüberzeugungen; in neueren Studien zeigten etwa **46 %** Angst- und **50 %** Depressionssymptome.\n* Klinisch wichtig ist die Balance: zunächst sorgfältig kardiologisch abklären, dann aber eine endlose Wiederholung somatischer Diagnostik vermeiden.\nBesonders gut kann man hier sehen, wie ein Organfokus, vegetative Symptome und Gesundheitsangst ein chronisches Beschwerdesystem bilden.
+c. Herzfokus | Die Aufmerksamkeit richtet sich übermäßig auf Herz und Kreislauf.
+c. ohne Herzbefund | Die Symptomatik wirkt kardial, ist aber nicht ausreichend organisch erklärbar.
+c. Angst und Depression | Komorbide affektive Symptome sind häufig.
+d. Herzinfarkt | kardiologie | Beim Infarkt liegt eine akute organische Ischämie vor; bei Herzneurose fehlt der entsprechende Befund.
+d. Arrhythmie | kardiologie | Echte Rhythmusstörungen sind apparativ oder klinisch objektivierbar.
+d. Herzhypochonder | Subtyp/Beschreibung | Patienten mit Sorgen und Befürchtungen um das Herz; begrifflich von Herztodhypochonder (quälende Gewissheit, am Herztod zu sterben) unterschieden. 
+d. Herztodhypochonder | Subtyp/Beschreibung | Erleiden keine Angstausbrüche, werden aber von der Gewissheit gequält, am Herztod zu sterben; Unterscheidung zu Herzhypochonder (Sorgen und Befürchtungen). 
+d. Panikstörung | angst | Panik kann ähnlich aussehen, aber die Herzneurose ist stärker auf das Organ Herz und seine vermeintliche Erkrankung fixiert.
+l. 4
+t. somatoform;herzneurose;autonom;differentialdiagnose;angst
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC6833396/ | Die Studie beschreibt cardiac neurosis als psychisch mitgeprägtes Beschwerdebild mit prominenten kardiovaskulären Symptomen und hoher emotionaler Komorbidität. Besonders hervorgehoben werden die Assoziationen mit Angst, Depression, Somatisierung und erhöhter Inanspruchnahme medizinischer Versorgung.
+
+#id: icd10f45_008
+cid. icd10f45
+b.  Anhaltende somatoforme Schmerzstörung F45.4 | Überdauernde, belastende Schmerzen stehen im Vordergrund, die nicht hinreichend durch einen körperlichen Befund erklärt werden können und eng mit **emotionalen Konflikten** oder psychosozialen Belastungen verbunden sind.\n* Der Schmerz ist **real erlebt** und nicht eingebildet; entscheidend ist die unzureichende organische Erklärung und die enge Verknüpfung mit psychischen und sozialen Faktoren.\n* Häufig kommt es zu Schonverhalten, Aktivitätsverlust, **Arztwechseln**, depressiver Verstimmung und sozialer Chronifizierung.\n* Komorbide **Depression** und **Angst** sind häufig und verstärken Leidensdruck, Hilflosigkeit und Funktionsverlust.\n* Therapeutisch wichtig sind Validierung des Schmerzes, psychoedukatives Krankheitsmodell, Aktivierung, psychotherapeutische Schmerzbewältigung und vorsichtige Pharmakotherapie bei Komorbidität [gleichzeitiges Auftreten weiterer Störungen].
+c. Schmerz real | Der Schmerz ist subjektiv echt, auch wenn kein ausreichender Organbefund vorliegt.
+c. psychosozial verknüpft | Konflikte, Belastungen und Chronifizierungsfaktoren sind klinisch bedeutsam.
+c. Schonverhalten | Rückzug und Inaktivität stabilisieren die Symptomatik langfristig.
+d. Radikulopathie | neurologie | Hier liegt eine strukturell-neurologische Ursache für Schmerzen vor.
+d. Tumorschmerz | onkologie | Organisch erklärbarer Tumorschmerz fällt nicht unter F45.4.
+d. Simulation | bewusst | Die Schmerzstörung beschreibt kein absichtliches Vortäuschen.
+l. 5
+t. somatoform;schmerz;chronifizierung;komorbidität;therapie
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC3521192/ | Die Übersichtsarbeit zu funktionellen und somatoformen Körperbeschwerden beschreibt chronische Schmerzsyndrome als Teil eines biopsychosozialen Geschehens mit enger Verflechtung von Symptomaufmerksamkeit, Schonverhalten, emotionaler Belastung und medizinischer Chronifizierung. Empfohlen wird ein abgestuftes, koordiniertes und multimodales Behandlungsvorgehen.
+
+#id: icd10f45_009
+cid. icd10f45
+b. Körperdysmorphe Störung F45.21 | Übermäßige Beschäftigung mit einem oder mehreren vermeintlichen **körperlichen Makeln** gekennzeichnet, die für andere nicht sichtbar oder nur gering ausgeprägt erscheinen.\n* Typisch sind **verzerrte Selbstwahrnehmung**, starkes Scham- und Minderwertigkeitserleben, hoher Leidensdruck und deutliche Beeinträchtigungen in Beziehung, Arbeit und Alltag.\n* Häufige Begleitphänomene sind Spiegelkontrollen, Tarnen, Vergleichen, Hautmanipulation, Rückversicherung [Beruhigung von außen einholen (hilft kurzfristig, schadet langfristig)] und soziale Vermeidung.\n* Therapeutisch steht **kognitive Verhaltenstherapie** mit Exposition [gezielte Konfrontation ohne Flucht/Sicherheitsverhalten], kognitiver Umstrukturierung und Ritualprävention im Vordergrund.\n* **SSRI/SRI** sind bei mittelgradigen bis schweren Verläufen evidenzbasiert [auf guter Studienlage beruhend; wirksamkeitsgeprüft]; eine ausreichende medikamentöse Behandlung sollte meist mindestens 12–16 Wochen dauern.\n* Kosmetische Eingriffe sind in der Regel kontraindiziert bzw. nicht empfohlen, weil sie die Störung meist nicht nachhaltig bessern und Unzufriedenheit oft fortbesteht oder sich verlagert.
+c. Makel Beschäftigung | Ein vermeintlicher Defekt wird überwertig zum Zentrum des Erlebens.
+c. Spiegelkontrolle | Kontroll- und Tarnrituale halten die Störung aufrecht.
+c. SSRI 12 Wochen | Medikamentöse Behandlung braucht meist eine ausreichende Dauer und Dosierung.
+d. kosmetische Operation | kontraindikation | Kosmetische Eingriffe bessern BDD meist nicht zuverlässig und können das Problem verstärken.
+l. 5
+t. somatoform;bdd;therapie;ssri;differentialdiagnose
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC12032537/ | Der aktuelle Review beschreibt BDD als oft chronische, stark beeinträchtigende Störung mit überwertiger Beschäftigung mit minimalen oder imaginierten Makeln. Empfohlen werden CBT und SSRIs als evidenzbasierte Behandlung. Zugleich wird betont, dass kosmetische Maßnahmen meist unvorhersehbar oder schlecht wirken und daher klinisch nicht empfohlen sind.
+
+
+
+
+
+
+#id: icd10f45_010
+cid. icd10f45
+b.  Therapie somatoforme Störungen |  Behandlung muss **Koordiniert**, **validierend** und **schrittweise** erfolgen.\n* **Psychoedukation** [Störungswissen vermitteln, Mechanismen erklären] - Beschwerden werden ernst genommen und in einem biopsychosozialen Modell erklärt, ohne sie als „eingebildet“ abzuwerten.\n* **Hausärztlich koordinierte Betreuung** - Ein fester primärer Behandler mit planbaren Terminen reduziert Arztwechsel, Notfallkonsultationen und unnötige Diagnostik.\n* **Behutsame Aktivierung** - Vermeidungs- und Schonverhalten werden schrittweise abgebaut; Ziel ist bessere Funktionsfähigkeit statt sofortige Symptomfreiheit.\n* **Psychotherapie** - Besonders hilfreich sind verhaltenstherapeutische Ansätze zu Aufmerksamkeitslenkung, Krankheitsüberzeugungen, Stress und Aktivitätsaufbau.\n* **Antidepressiva** - Eher ergänzend bei Komorbidität [gleichzeitiges Auftreten weiterer Störungen] oder chronischem Verlauf, nicht als alleinige Standardlösung.\nGerade hier sieht man gut, dass Behandlung oft weniger in spektakulären Einzelmaßnahmen besteht als in **konsistenter Beziehung**, **klarer Struktur** und **gradueller Verhaltensänderung**.
+c. Psychoedukation | Das Beschwerdebild wird validierend und biopsychosozial erklärt.
+c. koordinierte Betreuung | Ein Hauptbehandler strukturiert Termine und Diagnostik.
+c. Aktivierung | Schonung und Vermeidung werden vorsichtig reduziert.
+d. Arztshopping | dysfunktional | Ständiger Behandlerwechsel stabilisiert Unsicherheit und Somatisierung häufig.
+d. endlose Diagnostik | iatrogen | Wiederholte Abklärung ohne neuen Hinweis kann Fixierung und Chronifizierung verstärken.
+d. Konfrontation hart | therapiefehler | Aktivierung soll behutsam und abgestuft erfolgen, nicht überfordernd.l. 5
+t. somatoform;therapie;psychoedukation;hausarzt;aktivierung
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC3521192/ | Die Übersichtsarbeit empfiehlt ein abgestuftes, kollaboratives und koordiniertes Versorgungsmodell. Weniger schwere Verläufe sollen möglichst durch den Primärbehandler geführt werden; schwerere oder chronische Verläufe profitieren von früher psychotherapeutischer Mitbehandlung und multimodalen Konzepten.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#id: icd10f43_007
+cid. icd10f43
+b.  PTBS traumafokussierte Therapie | Bei PTBS gelten **traumafokussierte** Psychotherapien als besonders wirksam und werden in Leitlinien klar bevorzugt:\n* **Prolonged Exposure (PE)** - wiederholte konfrontative Bearbeitung des Traumas in sensu und in vivo, um Vermeidung abzubauen und neue emotionale Verarbeitung zu ermöglichen.\n* **Cognitive Processing Therapy (CPT)** - fokussiert auf dysfunktionale Überzeugungen, etwa Schuld, Gefahr oder Vertrauensverlust, und hilft, traumabezogene Bewertungen zu verändern.\n* **EMDR** - verbindet strukturierte Traumabearbeitung mit bilateraler Stimulation; auch hier steht die Verarbeitung belastender Erinnerungen im Zentrum.\n* Gemeinsamer Kern ist die **aktive Bearbeitung der traumatischen Erinnerung**, nicht bloß allgemeine Unterstützung.\n* Traumafokussierte Verfahren werden meist klar vor rein supportive-only Ansätzen oder primär medikamentösen Strategien priorisiert.
+c. Prolonged Exposure | Traumakonfrontation in sensu und in vivo mit Abbau der Vermeidung.
+c. CPT | Veränderung traumabezogener dysfunktionaler Überzeugungen.
+c. EMDR | Strukturierte Traumaverarbeitung mit bilateraler Stimulation.
+d. nur Stabilisierung | unzureichend | Reine Unterstützung ohne traumafokussierte Bearbeitung reicht bei vielen PTBS-Verläufen nicht aus.
+d. Benzodiazepin | medikament | Medikamente ersetzen die evidenzbasierte traumafokussierte Psychotherapie nicht.
+d. Debriefing Routine | intervention | Einmalige standardisierte Nachbesprechung ist nicht gleichzusetzen mit evidenzbasierter PTBS-Therapie.
+l. 5
+t. ptbs;therapie;emdr;exposition;cpt
+g. ws
+s. https://www.ptsd.va.gov/professional/treat/txessentials/overview_therapy.asp | Das VA/DoD-nahe Übersichtsportal fasst den Leitlinienkonsens zusammen, dass drei individuelle traumafokussierte Psychotherapien am stärksten empfohlen werden: Prolonged Exposure, Cognitive Processing Therapy und EMDR. Alle drei fokussieren direkt auf die traumatische Erinnerung und ihre Bedeutung.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+#id: icd10f40_021
+cid. icd10f40bsp
+b.  Klaustrophobie F40.2 | Intensive Angst vor engen Räumen (Aufzug, Tunnel, Keller, MRT), häufig mit Paniksymptomen wie Herzrasen, Schwindel oder Luftnot.\n\nZentral sind **Eingeschlossenheitsangst** („Ich komme nicht raus“) und **Erstickungsangst** („Ich bekomme keine Luft“).\nDadurch erscheint die Situation plötzlich lebensgefährlich, obwohl objektiv Sicherheit besteht.\nViele Betroffene vermeiden konsequent (Treppen statt Aufzug, kein MRT), was kurzfristig entlastet, aber die Angst langfristig stabilisiert.\nAls **situationale Phobie** ist sie didaktisch dankbar, weil man die Brücke zur Panik sehr gut erklären kann: Körperempfindungen werden katastrophisch interpretiert.\nTherapie der Wahl ist **Exposition** [gezielte Konfrontation ohne Flucht/Sicherheitsverhalten] (graduiert, mit Abbau von Sicherheitsverhalten [vermeintliche Schutztricks, die Lernen verhindern]); bei MRT-Problemen können Vorbereitung, offene Scanner oder kurzfristige Sedierung relevant sein.\n\nSpannend ist auch der Statistikpunkt: In Bevölkerungsangaben ist die Angst relativ häufig und wird deutlich häufiger bei Frauen berichtet – das hilft, „Häufigkeit ≠ Harmlosigkeit“ zu verstehen.
+c. Eingeschlossenheitsangst | Kernbefürchtung: nicht entkommen zu können; „gefangen sein“.
+c. Erstickungsangst | Katastrophische Deutung von Enge/Atemgefühl („Ich ersticke“).
+c. Exposition | Gezielte Konfrontation mit engen Räumen ohne Flucht- und Sicherheitsverhalten.
+d. Agoraphobie | F40.0 | Angst vor öffentlichen Situationen wegen Hilflosigkeit/keine Hilfe.\n Klaustrophobie ist „enge Räume“, nicht primär Öffentlichkeit.
+d. Panikstörung | F41.0 | Unerwartete Attacken ohne Situationsbindung.\n Klaustrophobie ist klar situationsgebunden (Enge/Trapped).
+l. 4
+t. phobie;spezifische_phobie;symptome;mechanismus;therapie;prävalenz
+g. ws
+s. https://www.ncbi.nlm.nih.gov/books/NBK542327/ | Claustrophobia is the fear of enclosed spaces. About 12.5% of the population have this fear, with the majority of them being women.
+
+#id: icd10f40_022
+cid. icd10f40bsp
+b.  Blut/Spritzen-Phobie F40.2 | Ausgeprägte Angst vor Blut, Verletzungen, Nadeln, Spritzen oder medizinischen Eingriffen, oft schon beim Gedanken oder Anblick.\n\nDas Besondere ist die Physiologie: Häufig kommt es zu **diphasic response** [erst Puls hoch, dann stark runter → Ohnmachtneigung] – erst Sympathikusaktivierung (Puls/Anspannung), dann Blutdruck-/Pulsabfall.\nDaraus kann eine vasovagale Synkope [Über den Vagus ausgelöste Ohnmacht durch Blutdruck‑/Pulsabfall] entstehen: Schwindel, Schwarzwerden vor Augen, Ohnmacht.\nDas führt zu Vermeidung von Arztbesuchen, Impfungen oder Blutabnahmen – klinisch relevant, weil dadurch Gesundheitsversorgung aus Angst ausfällt.\nTherapeutisch zentral sind Exposition [gezielte Konfrontation ohne Flucht/Sicherheitsverhalten] und das Management der Ohnmachtneigung, z. B. **Applied tension** (Muskelanspannung, um Blutdruckabfall entgegenzuwirken) plus Atem-/Körperfokus.\n\nAn dieser Phobie kann man hervorragend zeigen, dass Angst nicht immer „nur Sympathikus“ ist: Hier ist die Ohnmachtneigung ein eigener Mechanismus, der die Behandlung mitprägt.
+c. vasovagale Synkope | Ohnmachtsnahe Reaktion durch Blutdruck-/Pulsabfall bei Triggerkontakt.
+c. diphasic response | Zweiphasige autonome Reaktion: erst Anstieg, dann Abfall von Kreislaufparametern.
+c. Applied tension | Muskelanspannungstechnik zur Stabilisierung des Kreislaufs (v. a. bei Ohnmachtneigung).
+d. Epilepsie | neurologisch | Anfälle durch neuronale Entladungen.\n BII-Ohnmacht ist vasovagal und triggergebunden, nicht epileptisch.
+d. Panikattacke | F41 | Sympathikusdominierte Angstattacke.\n Bei BII ist Ohnmachtneigung/Blutdruckabfall typisch.
+l. 5
+t. phobie;spezifische_phobie;symptome;neurobiologie;therapie
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC6688615/ | Blood-Injection-Injury (BII) phobia is an anxiety disorder that may be accompanied by vasovagal fainting during confrontation with the feared stimuli.
+
+#id: icd10f40_023
+cid. icd10f40bsp
+b.  Pferdephobie F40.2 | Starke, situations- und objektgebundene Angst vor Pferden (Anblick, Nähe, Kutschen, Geräusche), oft mit Vermeidung und deutlicher körperlicher Alarmreaktion.\n\nAus ICD-10-Sicht gehört das zu **Tierphobie** innerhalb der spezifischen Phobien.\nLerntheoretisch lässt sich die Entwicklung gut über **Konditionierung** (Schreckereignis, Sturz, Biss) und **Vermeidungslernen** erklären: Vermeidung verhindert Korrekturlernen.\nPsychodynamisch ist das Thema berühmt durch den Fall „Kleiner Hans“: S. Freud deutete die Pferdeangst als **Symbolverschiebung** innerer Konflikte (Bedeutungsübertragung auf ein konkretes Objekt).\nBeide Perspektiven können etwas erklären: Trigger + Lernen auf der einen Seite, Bedeutungs- und Beziehungskontext auf der anderen.\nTherapie bleibt praktisch meist **Exposition** [gezielte Konfrontation ohne Flucht/Sicherheitsverhalten] (graduierte Annäherung, Sicherheitsverhalten [vermeintliche Schutztricks, die Lernen verhindern] abbauen), bei Kindern oft mit Elternarbeit.\n\nAn dieser Phobie kann man besonders gut zeigen, wie unterschiedlich Schulen dasselbe Symptom interpretieren – und warum gute Psychoedukation [Störungswissen vermitteln, Mechanismen erklären] beide Ebenen (Lernen + Bedeutung) verbinden kann.
+c. Tierphobie | Spezifische Phobie mit klar objektgebundenem Tier-Auslöser.
+c. Konditionierung | Angstreaktion wird durch Kopplung von Reiz und Schreck/Schmerz gelernt.
+c. Symbolverschiebung | Deutung: Konflikt/Angst wird auf ein äußerlich „passendes“ Objekt verlagert.
+d. Allergie | somatisch | Immunreaktion auf Tierhaare/Allergene.\n Phobie ist Angstlernen/Vermeidung, nicht immunologisch.\n siehe: Allergologie.
+d. Wahn | Psychose | Unkorrigierbare Überzeugungen mit Realitätsverlust.\n Spezifische Phobie bleibt objektgebunden mit Einsicht in Übertreibung möglich.\n siehe: Psychotische Störungen.
+l. 4
+t. phobie;spezifische_phobie;symptome;ätiologie;therapie
+g. ws
+s. https://ia902907.us.archive.org/17/items/SigmundFreud/Sigmund%20Freud%20%5B1909%5D%20Analysis%20Of%20A%20Phobia%20In%20A%20Five-year-old%20Boy%20%28The%20Little%20Hans%20Case%20History%29%28James%20Strachey%20Translation%201955%29.pdf | It was on this walk that he first expressed a fear that a horse would bite him.
+ 
+
+
+#id: icd10f40_021
+cid. icd10f40bsp
+b. Akrophobie F40.2 |Spezifische Phobie mit intensiver Angst vor **Höhen**, z. B. auf Türmen, Leitern, Brücken, Balkonen oder beim Blick in die Tiefe.\n* Typisch sind **Schwindel**, Unsicherheit, weiche Knie, Herzrasen, Zittern und die Befürchtung, die Kontrolle zu verlieren, zu stürzen oder „hinuntergezogen“ zu werden.\n* Besonders ist an dieser Phobie die enge Verbindung von **Angst** und **Gleichgewichtskontrolle**: Höhenangst ist nicht nur ein Gedanke, sondern verändert Blicksteuerung, Haltung, Muskelspannung und Gangbild.\n* Vermeidung ist häufig und kann sich stark ausweiten, etwa auf Treppenhäuser, Aussichtsplattformen, Wanderwege oder Glasaufzüge.\n* Epidemiologisch liegt die Lebenszeitprävalenz von Akrophobie grob bei **3,1–6,4 %**; in einer repräsentativen Studie lag sie bei **8,6 % bei Frauen** und **4,1 % bei Männern**.\nAn dieser Angst kann man besonders gut zeigen, dass manche Phobien an einer Schnittstelle von **sensorischer Wahrnehmung**, **körperlicher Alarmreaktion** und **katastrophischer Bewertung** entstehen.
+c. Höhenangst | Die Angst wird durch Höhe, Tiefe oder Absturznähe ausgelöst.
+c. Gleichgewicht Bedrohung | Angst und Störung der posturalen Kontrolle verstärken sich gegenseitig.
+d. Panikstörung | F41.0 |  Bei der Panikstörung stehen unerwartete Attacken ohne klare Situationsbindung im Vordergrund; bei Akrophobie ist der Auslöser objektgebunden.
+d. Agoraphobie | F40.0 |  Agoraphobie kreist um Flucht- und Hilflosigkeit in öffentlichen Situationen; Akrophobie ist auf Höhe und Absturzkontext fokussiert.
+d. vestibuläre Störung | organisch |  Bei organischen Gleichgewichtsstörungen stehen vestibuläre oder neurologische Befunde im Vordergrund; bei Akrophobie dominiert die phobische Reaktion auf Höhe.
+l. 4
+t. phobie;akrophobie;höhenangst;symptome;differentialdiagnose
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC7718183/ | Die Review beschreibt Akrophobie als den schwersten Pol eines Spektrums von Höhenreaktionen. Hervorgehoben werden die häufige Vermeidung, vegetative Symptome, Unsicherheit von Stand und Gang sowie eine enge Kopplung zwischen Angst und motorischer Schutzreaktion. Behandelt wird die Störung vor allem verhaltenstherapeutisch, häufig mit realen oder virtuellen Höhenexpositionen.
+
+
+
+#id: icd10f40_022
+cid. icd10f40bsp
+b.  Arachnophobie F40.2 | **Tierphobie** mit intensiver Angst vor Spinnen oder spinnenähnlichen Reizen; oft reicht schon ein Bild, ein Netz, eine Bewegung im Augenwinkel oder der bloße Gedanke an eine Spinne.\n* Typisch sind starke **Ekelreaktionen**, vegetative Erregung, Rückzug, Flucht, erstarrtes Beobachten oder die Unfähigkeit, sich der Spinne zu nähern.\n* Klinisch interessant ist, dass Spinnenangst zu den **häufigsten Tierphobien** gehört und sich sehr gut eignet, um **vorbereitetes Lernen**, Aufmerksamkeitsbias und Vermeidung zu erklären.\n* In epidemiologischen Arbeiten sind **Tierphobien** bei Frauen deutlich häufiger; in einer Bevölkerungsstudie lagen sie bei **12,1 %** der Frauen und **3,3 %** der Männer. In einer klinischen Studie war das weiblich:männlich-Verhältnis für den Tier-Subtyp im Erwachsenenalter **8,2 : 1**.\n* Bei Erwachsenen in klinischer Behandlung waren **Spinnen** die häufigste einzelne Tierphobie.\nAn dieser Phobie kann man besonders gut zeigen, dass Angst nicht nur aus einem einmaligen Trauma entstehen muss, sondern auch aus **evolutionärer Bereitschaft**, **Modelllernen**, **Ekelneigung** und stabiler Vermeidung.
+c. Ekel und Angst | Bei Spinnen stehen oft Angst und Ekel gemeinsam im Vordergrund.
+c. Tierphobie häufig | Arachnophobie gehört zu den häufigsten Tierphobien.
+c. Vermeidungslernen | Rückzug und Nicht-Nähern stabilisieren die Angst langfristig.
+d. Wahnhafte Tierbedrohung | Psychose |  Bei Arachnophobie bleibt die Realität grundsätzlich erhalten; die Reaktion ist übersteigert, aber nicht wahnhaft fixiert.
+d. Zwangsgedanke Kontamination | F42 |  Bei Zwang kreisen Gedanken um innere Bedrohung und Neutralisierung; bei Arachnophobie ist der äußere Reiz klar objektgebunden.
+d. Echte Tiergefahr | normal |  Vorsicht vor real gefährlichen Tieren ist nicht automatisch phobisch; entscheidend sind Übermaß, Leidensdruck und Vermeidung.
+l. 4
+t. phobie;arachnophobie;tierphobie;ekel;vermeidung
+g. ws
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC12344425/ | Die klinische Studie zu spezifischen Phobien zeigt, dass der Tier-Subtyp besonders häufig und stark weiblich geprägt ist. Unter den Tierphobien waren Spinnen bei Erwachsenen die häufigste Einzelangst. Die Arbeit diskutiert zudem, dass sich klinische Häufigkeiten und Geschlechterverhältnisse teils deutlich von Bevölkerungsstichproben unterscheiden, was für Diagnostik und Versorgung relevant ist.
+
+
+#id: icd10f40_023
+cid. icd10f40bsp
+b.  Emetophobie F40.2 |  Angst vor dem **Erbrechen**, vor Übelkeit, Kontrollverlust, Ansteckung oder dem Erleben, dass andere erbrechen.\n* Die Angst kann sich auf das eigene Erbrechen und oder auf das Erbrechen anderer richten.\n* Typisch sind ausgeprägte **Vermeidung** von bestimmten Lebensmitteln, Restaurants, Reisen, Alkohol, Menschen mit Infekten, Schwangerschaft, medizinischen Situationen oder Körperempfindungen wie Übelkeit und Völlegefühl.\n* Besonders ist an dieser Phobie die enge Verbindung zu **Ekel**, **interozeptiver [auf Körpersensationen bezogen (z. B. Herzschlag, Übelkeit)] Wachsamkeit**, Sicherheitsverhalten [vermeintliche Schutztricks, die Lernen verhindern] und oft massiver Einschränkung von Ernährung, Sozialleben und Familienplanung.\n* Die Störung beginnt oft früh; eine aktuelle Meta-Analyse fand ein mittleres Erkrankungsalter von etwa 10 Jahren, einen Frauenanteil von **91 %** und eine gepoolte Punktprävalenz von etwa **5 %**. Häufige Komorbiditäten [gleichzeitiges Auftreten weiterer Störungen] sind **soziale Angst**, **Depression** und **generalisierte Angststörung**.\nHier kann man besonders gut zeigen, wie stark eine spezifische Phobie über **Körperempfindungen**, **Ekelverarbeitung** und **Sicherheitsverhalten** [vermeintliche Schutztricks, die Lernen verhindern] aufrechterhalten werden kann.
+c. Angst vor Erbrechen | Die zentrale Furcht richtet sich auf das eigene oder fremde Erbrechen.
+c. Übelkeit überwachen | Körperempfindungen werden übergenau beobachtet und als Gefahr gedeutet.
+c. Sicherheitsverhalten | Essen meiden, Fluchtwege prüfen oder Medikamente bereithalten stabilisiert die Phobie.
+d. Panikstörung | F41.0 |  Bei Panik stehen unerwartete Attacken im Vordergrund; bei Emetophobie ist die Angst thematisch an Erbrechen und Übelkeit gebunden.
+d. Anorexia nervosa | F50.0 |  Bei Anorexie steht meist Gewichts- und Figurangst im Zentrum; bei Emetophobie die Furcht vor Erbrechen.
+d. Purging|Esstörung| Verhalten, das bei Essstörungen auftreten kann, indem – als ungeeignete Maßnahmen zur Kompensation von (vermeintlich oder tatsächlich) übermäßiger Nahrungsaufnahme – Erbrechen induziert wird und/oder Laxanzien oder Diuretika missbraucht werden.
+d. Hypochondrische Störung | F45.2 |  Dort dominiert die Krankheitsüberzeugung; bei Emetophobie die spezifische phobische Angst vor Übelkeit und Erbrechen.
+l. 5
+t. phobie;emetophobie;übelkeit;ekel;komorbidität
+g. ws
+s. https://pubmed.ncbi.nlm.nih.gov/40700922/ | Die Meta-Analyse beschreibt Emetophobie als früh beginnende, weiblich dominierte und klinisch oft unterschätzte Phobie. Im Vordergrund stehen die Angst vor dem eigenen Erbrechen, hohe Ekelneigung, starke Vermeidung und relevante Komorbiditäten mit Angst- und affektiven Störungen. Die Autoren betonen, dass repräsentative Bevölkerungsdaten weiterhin begrenzt sind, klinisch aber erhebliche Beeinträchtigungen sichtbar werden.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#id: icd10f40_024
+cid. icd10f40
+b.  Screening Instrumente F4 | Für Angst-, Depressions-, Trauma- und Zwangssymptome gibt es kurze und klinisch etablierte Screening- bzw. Schweregradinstrumente.\n* **GAD-7** - 7-Item-Fragebogen zur Erfassung generalisierter Angstsymptome; ein Cut-off von 10 zeigte in der Originalarbeit gute Kennwerte mit etwa 89 % Sensitivität und 82 % Spezifität.\n* **PHQ-9** - 9-Item-Instrument für depressive Symptomatik; ein Wert ab **10** erreichte in der Originalvalidierung etwa 88 % Sensitivität und 88 % Spezifität für Major Depression.\n* **PCL-5** - Selbstbeurteilungsinstrument zur PTSD-Symptomatik nach DSM-5; es ist breit eingesetzt und psychometrisch gut validiert, ersetzt aber nicht das klinische Interview.\n* **Y-BOCS** - klinikergeleitete Skala zur Schweregradmessung von Zwangsgedanken und Zwangshandlungen; 10 Items, Gesamtscore 0–40, unabhängig vom inhaltlichen Thema der Zwänge.\n\n* Instrumente helfen bei **Screening**, **Schweregradbeurteilung** und **Verlaufsdokumentation**, ersetzen aber keine vollständige Diagnostik.
+c. GAD 7 | Kurzscreening für generalisierte Angstsymptome.
+c. PHQ 9 | Kurzscreening und Schweregradmaß für Depression.
+c. PCL 5 | PTSD-Selbstbeurteilung für DSM-5-Symptome.
+c. Y BOCS | Goldstandardnahe OCD-Schweregradskala mit Obsessionen- und Kompulsionsanteil.
+d. MMSE | neurokognition | Der MMSE dient dem kognitiven Screening, nicht dem F4-Screening.
+d. PANSS | psychose | Die PANSS ist für psychotische Symptome gedacht.
+d. Becks Depressionsinventar | Depression | Das **Beck Depression Inventory (BDI bzw. BDI-II)** ist ein etabliertes Selbstbeurteilungsinstrument zur Erfassung depressiver Symptomatik (21 Items, Schweregrad 0–63). Es wird international häufig in Klinik und Forschung eingesetzt und ist psychometrisch gut validiert. 
+l. 4
+t. diagnostik;screening;gad7;phq9;ybocs
+g. ws
+s. https://pubmed.ncbi.nlm.nih.gov/16717171/ | Die Originalarbeit zum GAD-7 beschreibt ein kurzes, valides Instrument zur Angstschwere mit gutem Cut-off bei 10 Punkten. Zusammen mit PHQ-9, PCL-5 und Y-BOCS repräsentiert es die klinisch besonders nützliche Gruppe kurzer, standardisierter Erhebungsinstrumente für Screening und Verlauf.
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+ 

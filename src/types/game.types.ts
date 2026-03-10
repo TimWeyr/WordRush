@@ -35,7 +35,10 @@ export interface GameConfig {
 export type GameMode = 'lernmodus' | 'shooter';
 
 export interface ContextEventData {
-  type: 'correct_shot' | 'distractor_collision' | 'distractor_reached_base' | 'intro' | 'generic';
+  type: 'correct_collected' | 'correct_shot' | 'distractor_shot' | 
+        'distractor_hit_ship' | 'distractor_hit_base' | 
+        'correct_reached_base' | 'distractor_reached_base' | 
+        'distractor_collision' | 'intro' | 'generic';
   word: string; // The word that was shot/collided
   context: string; // The context message
   pointsChange: number; // Positive for gain, negative for loss

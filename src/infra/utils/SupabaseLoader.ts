@@ -138,6 +138,7 @@ export class SupabaseLoader {
     chapter_id: string;
     level: number;
     published?: boolean;
+    game?: 'sw' | 's' | 'w';
     free_tier?: boolean;
     wave_duration?: number;
     intro_text?: string;
@@ -169,6 +170,7 @@ export class SupabaseLoader {
           chapter_uuid: chapter.uuid,   // Required - FK to chapters.uuid
           level: round.level,
           published: round.published ?? true,
+          game: round.game ?? 'sw',
           free_tier: round.free_tier ?? false,
           wave_duration: round.wave_duration,
           intro_text: round.intro_text,
@@ -198,6 +200,7 @@ export class SupabaseLoader {
   async updateRound(roundId: string, updates: Partial<{
     level: number;
     published: boolean;
+    game: 'sw' | 's' | 'w';
     free_tier: boolean;
     wave_duration: number;
     intro_text: string;
@@ -232,12 +235,33 @@ export class SupabaseLoader {
 
   /**
    * 💾 Delete a round and all its items
+   * Deletes items first (FK constraint), then the round
    */
   async deleteRound(roundId: string): Promise<{ success: boolean; error?: string }> {
     console.log(`🗑️ [SupabaseLoader] Deleting round: ${roundId}`);
     
     try {
-      // Items will be cascade-deleted by database constraint
+      // 1. Get round UUID (items reference round_uuid, not id)
+      const { data: round, error: fetchError } = await supabase
+        .from('rounds')
+        .select('uuid')
+        .eq('id', roundId)
+        .single();
+      
+      if (fetchError || !round) {
+        const msg = fetchError?.message ?? `Round ${roundId} not found`;
+        console.error('❌ [SupabaseLoader] Failed to fetch round:', msg);
+        return { success: false, error: msg };
+      }
+      
+      // 2. Delete all items for this round first (avoids FK violation)
+      const deleteItemsResult = await this.deleteItemsByRound(round.uuid);
+      if (!deleteItemsResult.success) {
+        console.error('❌ [SupabaseLoader] Failed to delete items before round:', deleteItemsResult.error);
+        return deleteItemsResult;
+      }
+      
+      // 3. Delete the round
       const { error } = await supabase
         .from('rounds')
         .delete()
@@ -395,6 +419,7 @@ export class SupabaseLoader {
           chapter_uuid: chapter.uuid,
           level: sourceRound.level,
           published: sourceRound.published,
+          game: sourceRound.game,
           free_tier: sourceRound.free_tier,
           wave_duration: sourceRound.wave_duration,
           intro_text: sourceRound.intro_text,
@@ -622,6 +647,7 @@ export class SupabaseLoader {
         const updateResult = await this.updateRound(item.id, {
           level: item.level,
           published: item.published,
+          game: item.game,
           free_tier: item.freeTier,
           wave_duration: item.waveDuration,
           intro_text: item.introText,
@@ -651,6 +677,7 @@ export class SupabaseLoader {
           chapter_id: chapterId,
           level: item.level,
           published: item.published,
+          game: item.game,
           free_tier: item.freeTier,
           wave_duration: item.waveDuration,
           intro_text: item.introText,

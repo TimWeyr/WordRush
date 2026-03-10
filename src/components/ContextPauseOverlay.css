@@ -78,6 +78,14 @@
   overflow-wrap: break-word; /* Modern alternative */
 }
 
+.event-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 6px;
+}
+
 .points-positive {
   color: #4caf50;
 }
@@ -172,6 +180,12 @@
   transition: color 0.2s ease;
 }
 
+.setting-toggle label span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .setting-toggle label:hover {
   color: rgba(255, 255, 255, 0.7);
 }
@@ -181,6 +195,15 @@
   height: 12px;
   cursor: pointer;
   accent-color: #00ff88;
+}
+
+.feedback-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 6px;
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 

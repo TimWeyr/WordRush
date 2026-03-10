@@ -196,15 +196,53 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
   const handleBulkDelete = () => {
     if (selectedItems.size === 0) return;
 
-    const confirmed = window.confirm(
-      `Are you sure you want to delete ${selectedItems.size} item(s)?`
+    const itemsToDelete = items.filter(item => selectedItems.has(item.id));
+    const roundCount = itemsToDelete.length;
+    const entryCount = itemsToDelete.reduce(
+      (sum, item) => sum + 1 + item.correct.length + item.distractors.length,
+      0
     );
 
-    if (confirmed) {
-      const updatedItems = items.filter(item => !selectedItems.has(item.id));
-      onItemsChange(updatedItems);
-      setSelectedItems(new Set());
-    }
+    showConfirm(
+      `Delete ${roundCount} round(s)?\n\nThis will permanently delete:\n• ${roundCount} round(s)\n• ${entryCount} item entries in total\n\nContinue?`,
+      async () => {
+        const idsToDelete = [...selectedItems];
+        setDeletingItems(new Set(idsToDelete));
+
+        let successCount = 0;
+        let failId: string | null = null;
+        let failError: string | null = null;
+
+        for (const id of idsToDelete) {
+          const result = await jsonWriter.deleteItem(id);
+          if (result.success) {
+            successCount++;
+          } else {
+            failId = id;
+            failError = result.error ?? 'Unknown error';
+            break;
+          }
+        }
+
+        setDeletingItems(new Set());
+
+        if (failId) {
+          showToast(`❌ Failed to delete ${failId}: ${failError}`, 'error');
+          if (successCount > 0) {
+            const updatedItems = items.filter(item => !idsToDelete.slice(0, successCount).includes(item.id));
+            onItemsChange(updatedItems);
+            setSelectedItems(new Set(idsToDelete.slice(successCount)));
+          }
+        } else {
+          const updatedItems = items.filter(item => !selectedItems.has(item.id));
+          onItemsChange(updatedItems);
+          setSelectedItems(new Set());
+          showToast(`🗑️ ${roundCount} round(s) deleted`, 'success', 2000);
+        }
+      },
+      'Delete',
+      'Cancel'
+    );
   };
 
   const handleRedistributeSpawns = () => {
@@ -278,8 +316,9 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
 
   // 🗑️ Delete single item
   const handleDeleteItem = async (item: Item) => {
+    const entryCount = 1 + item.correct.length + item.distractors.length;
     showConfirm(
-      `Delete item ${item.id}?\n\nThis will permanently delete:\n• Base: ${item.base.word || '(no word)'}\n• ${item.correct.length} correct entries\n• ${item.distractors.length} distractors`,
+      `Delete round "${item.id}"?\n\nThis will permanently delete:\n• 1 round\n• ${entryCount} item entries (base + correct + distractors)\n\nBase: ${item.base.word || '(no word)'}\nContinue?`,
       async () => {
         setDeletingItems(prev => new Set(prev).add(item.id));
         

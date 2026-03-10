@@ -1,0 +1,1702 @@
+
+
+
+    cid. icdf66
+    #id: f66_001
+    b. F66 Überblick | Historische Kategorien zu psychischen Problemen im Kontext sexueller Entwicklung und Orientierung.\nWichtiger Grundsatz:\n* **Sexuelle Orientierung an sich ist keine Störung**.\n\n  F66 ist klinisch/ethisch problematisch; die **WHO** hat diese Gruppe in **ICD-11** nicht übernommen.\n* Belastung entsteht häufig aus **Stigma** und **Diskriminierung**, nicht aus der Orientierung selbst.\n* Klinischer Fokus: **Leidensdruck**, **Komorbidität** (z. B. Depression, Angst, Zwang), Differenzialdiagnostik, und Schutz vor schädlichen „Umpolungs“-Ansätzen.
+    c. Stigma | Belastung entsteht oft aus sozialer Abwertung.
+    c. Orientierung keine Störung | Orientierung selbst ist nicht pathologisch.
+    d. Konversionstherapie | Unethisch | „Umpolung“ ist kein therapeutisches Ziel; Schadenrisiko hoch; Fokus auf Schutz und Komorbidität.
+    d. Egodystone Orientierung | ICD-10 | ICD-10 führte Kategorien wie egodystone Orientierung; ICD-11 streicht F66 wegen fehlender Nutzbarkeit und möglicher Schäden.
+    t. f66;definition;diagnostik;ethik;zusatzinfo
+    l. 6
+    g. sw
+    s. https://pmc.ncbi.nlm.nih.gov/articles/PMC4208576/
+
+    cid. icdf66
+    #id: f66_010
+    b. F66 Kodierlogik | Wenn F66 überhaupt erwogen wird, dann nur nach strenger DD.\nMinimalstandard:\n* zuerst Episoden/Komorbidität klären: **Depression**, **Angst**, **Zwang**, Substanzen.\n* Leidensdruck beschreiben: wodurch entsteht er (innerer Konflikt vs äußerer Druck/Stigma)?\n* keine Pathologisierung von Orientierung/Identität.\n\nHäufig ist die richtige Kodierung: Affekt-/Angst-/Anpassungsdiagnose + psychosoziale Belastungsfaktoren, statt F66.
+    c. Differenzialdiagnostik | Zuerst andere Störungen sauber prüfen.
+    c. Diskriminierung | Externer Stressor als Haupttreiber möglich.
+    d. Schnell etikettieren | Diagnostikfehler | Frühlabeln erzeugt Stigma und verzerrt Therapie.\nBesser: DD + Kontextanalyse + Ressourcen.
+    d. Orientierung therapieren | Unethisch | Ziel ist nicht Orientierung zu ändern.\nZiel ist Leidensdruck reduzieren und Komorbidität behandeln.
+    t. f66;diagnostik;differenzialdiagnose;ethik
+    l. 6
+    g. sw
+    s. https://pmc.ncbi.nlm.nih.gov/articles/PMC4208576/
+
+
+
+ 
+
+ 
+
+
+
+
+cid. icdf60
+#id: f60_003
+b. Persönlichkeitsstörungen | Tief verwurzelte, überdauernde Muster des Erlebens und Verhaltens.\nKennzeichen:\n* Beginn meist in Kindheit oder Adoleszenz\n* **situationsübergreifend** und **unflexibel**\n* führt zu **Leidensdruck** und/oder deutlicher Beeinträchtigung\n* keine bessere Erklärung durch Episode, Substanzen oder **Organik**
+c. Situationsübergreifend | Das Muster zeigt sich in vielen Lebensbereichen.
+c. Unflexibilität | Geringe Anpassung an wechselnde Anforderungen.
+c. Leidensdruck | Subjektives Leiden oder deutliche Belastung.
+d. Lebenskrise | Anpassung | Akute Krisen können wie „Persönlichkeit“ wirken, sind aber zeitlich begrenzt und kontextgebunden; sie gehören primär in Belastungs-/Anpassungsdiagnostik.
+d. Manische Episode | Affektiv | Manie ist ein Zustandswechsel mit Tempo↑ und Schlafbedarf↓; sie ist episodisch, nicht ein dauerhafter Stil.
+t. f60;definition;kriterium;diagnostik
+l. 4
+g. sw
+
+
+cid. icdf60
+#id: f60_004
+b. F60 Grundkriterien | Deutliche Abweichung vom kulturell Erwartbaren in mehreren Bereichen\n* **unflexibel** und über viele Situationen stabil\n* verursacht **Leidensdruck** und/oder Funktionsverlust\n* **stabil** über längere Zeit\n* **Differenzialdiagnose**: nicht besser erklärt durch andere psychische Störung\n* **Organik** und Substanzen ausschließen\n\nPraxisregel:\n* Erst Episoden/Organik prüfen, dann Persönlichkeitsdiagnostik.
+c. Stabilität | Dauerhaftigkeit über Zeit statt akute Schwankung.
+c. Organik ausschließen | Kein neurologischer oder substanzbedingter Primärtreiber.
+c. Differenzialdiagnose | Systematische Abgrenzung zu Episoden und anderen Störungen.
+d. Charakterfehler | Stigma | Moralbegriffe ersetzen keine Diagnostik und verschleiern DD; klinisch zählt Muster, Zeitverlauf und Ausschluss von Organik/Episoden.
+d. Trauma allein | Verkürzung | Trauma kann Vulnerabilität prägen, ist aber nicht automatisch eine Persönlichkeitsstörung; entscheidend sind Stil, Zeitverlauf und Funktionsniveau.
+t. f60;kriterium;diagnostik;grundlagen
+l. 5
+g. sw
+s. https://icd.who.int/browse10/2010/en
+
+cid. icdf60
+#id: f60_005
+b. Inneres Erlebensmuster PS| Persönlichkeitsstörungen betreffen typischerweise mehrere Funktionsbereiche:\n* **Kognition**: typische Deutungen/Grundannahmen\n* **Affektivität**: Intensität, Labilität, Zugänglichkeit von Gefühlen\n* **Impulskontrolle**: Frustrationstoleranz, Handlungssteuerung\n* **Beziehungen**: Nähe/Distanz, Bindung, Konfliktstil\n\nMerke:\n* Diagnostik sucht ein Muster über Zeit und Kontexte, nicht einzelne Symptome.
+c. Kognition | Typische Denk- und Deutungsmuster.
+c. Impulskontrolle | Steuerung von Impulsen und Affekten.
+c. Beziehungen | Wiederkehrende Beziehungsgestaltung als Stilmerkmal.
+d. Stimmung | Affektiv | Stimmungsschwankungen allein können episodisch sein; ohne stabilen Stil und Bereichsübergriff gehört es eher in affektive Diagnostik.
+d. Introversion | Normalvariante | Zurückhaltung kann Temperament sein; Störung erst bei Unflexibilität, Leidensdruck oder deutlicher Beeinträchtigung.
+t. f60;kriterium;symptom;grundlagen
+l. 4
+g. sw
+
+cid. icdf60
+#id: f60_010
+b. Paranoide Persönlichkeitsstörung | F60.0 Kern: anhaltendes **Misstrauen** und eine Tendenz, Absichten anderer als feindselig oder abwertend zu deuten.\nTypische Merkmale:\n* hohe **Kränkbarkeit**, Überempfindlichkeit gegenüber Zurückweisung\n* Nachtragen, Groll\n* rigide Verdachtsinterpretationen ohne ausreichende Belege\n\nKlinisch:\n* Realitätsprüfung meist erhalten, aber Interpretation ist starr.
+c. Misstrauen | Grundhaltung: andere sind potenziell schädigend.
+c. Kränkbarkeit | Schnelle Verletzbarkeit mit Gegenreaktion.
+d. Wahn | Psychose | Wahn ist unkorrigierbar und realitätsprüfungsnah beeinträchtigt; bei paranoid liegt eher starrer Stil mit oft erhaltener Korrekturfähigkeit vor.
+d. Vorsicht | Normalvariante | Vorsicht kann angemessen sein; Störung erst bei übergreifender Starrheit und erheblichen Beziehungsfolgen.
+t. f60;f60.0;symptom;dd
+l. 4
+g. sw
+s. https://gesund.bund.de/en/icd-code-suche/f60
+
+cid. icdf60
+#id: f60_011
+b. Paranoide PS DD | Abgrenzung zielt auf Realitätsprüfung, Zeitverlauf und Korrekturfähigkeit.\nLeitachsen:\n* episodisch vs stabiler Stil (z. B. neue Psychose vs lebenslanges Muster)\n* Grad der **Korrigierbarkeit** im Gespräch\n* Substanzen/Organik als mögliche Treiber\n\nMerke:\n* Erst Psychose/Substanz/Organik ausschließen, dann Persönlichkeitsdiagnostik.
+c. Korrigierbarkeit | Fähigkeit, Deutungen anhand von Gegenbelegen zu prüfen.
+c. Episodisch | Zustandswechsel spricht gegen reinen Persönlichkeitsstil.
+d. Wahnhafte Störung | Psychose | Unkorrigierbare Überzeugungen mit eingeschränkter Realitätsprüfung gehören primär in psychotische Diagnostik, nicht in einen Persönlichkeitsstil.
+d. Intoxikation | Substanzen | Substanzbedingte Paranoia ist zeitlich gekoppelt und schwankt mit Konsum/Entzug; zuerst substanzbezogen klären.
+t. f60;f60.0;differenzialdiagnose;diagnostik
+l. 6
+g. sw
+
+
+cid. icdf60
+#id: f60_020
+b. Schizoide Persönlichkeitsstörung | F60.1 Kern: distanzierter Stil mit geringer Bedürftigkeit nach Nähe und begrenztem Affektausdruck.\nTypische Merkmale:\n* emotional **kühl**, wenig Ausdruck von Freude/Wut\n* Präferenz für Einzelaktivitäten\n* begrenztes Interesse an engen Beziehungen\n\nKlinisch:\n* Rückzug ist eher gewollt als gefürchtet.
+c. Emotional kühl | Begrenzter Affektausdruck und geringe Resonanz.
+c. Distanz | Nähe wird selten gesucht, oft als unnötig erlebt.
+d. Depression | Affektiv | Depressiver Rückzug ist häufig leidvoll, mit Stimmungseinbruch/Anhedonie; schizoider Stil ist stabil und eher nicht als Problem erlebt.
+d. Autismus | Entwicklung | Autismus zeigt frühe Entwicklungsmarker und kommunikative Besonderheiten; bei schizoider PS steht Stil ohne typische Autismusmarker im Vordergrund.
+t. f60;f60.1;symptom;komorbidität
+l. 5
+g. sw
+
+
+cid. icdf60
+#id: f60_021
+b. Schizoide PS DD | Abgrenzung erfordert Entwicklungsanamnese und Verlauf.\nLeitachsen:\n* früh entwicklungsbedingt vs später Funktionsknick\n* Rückzug als Wunsch vs Rückzug als Leid\n* zusätzliche Marker: psychotische Symptome, kognitive/kommunikative Besonderheiten\n\nMerke:\n* Ohne Längsschnitt droht Verwechslung mit Depression oder Negativsymptomatik.
+c. Entwicklungsanamnese | Frühe Marker helfen bei DD (z. B. Autismus).
+d. Negativsymptomatik | Psychose | Negativsymptome entstehen im Rahmen schizophrener Störungen und gehen oft mit Funktionsknick/psychotischen Episoden einher.
+d. Soziale Phobie | Angst | Bei sozialer Phobie ist Rückzug meist angstgetrieben und leidvoll; bei schizoider PS ist Distanz eher stimmig zum Selbstbild.
+t. f60;f60.1;differenzialdiagnose;diagnostik
+l. 6
+g. sw
+s. 
+
+cid. icdf60
+#id: f60_030
+b. Dissoziale Persönlichkeitsstörung |F60.2 Kern: anhaltende Missachtung sozialer Normen und Rechte anderer mit eingeschränkter **Empathie**.\nTypische Merkmale:\n* geringe Verantwortungsübernahme\n* niedrige Frustrationstoleranz, Aggressionsbereitschaft\n* Rationalisieren, externalisieren\n\nKlinisch:\n* Entwicklungs- und Delinquenzanamnese ist zentral.
+c. Empathie | Eingeschränkte Fähigkeit, Gefühle anderer zu berücksichtigen.
+c. Verantwortungslosigkeit | Wiederkehrendes Muster ohne tragfähige Selbstbindung.
+d. Borderline | Persönlichkeitsstil | Borderline ist oft affektgetrieben mit instabiler Bindung und häufiger Reue; dissozial ist stärker normmissachtend und kalt-eigensinnig.
+d. Manie | Affektiv | Manie kann normbrechendes Verhalten auslösen, ist aber episodisch und mit klaren Zustandsmarkern gekoppelt.
+t. f60;f60.2;symptom;komorbidität
+l. 5
+g. sw
+s. https://gesund.bund.de/en/icd-code-suche/f60
+
+cid. icdf60
+#id: f60_032
+b. Dissoziale PS DD | Abgrenzung fragt nach Zeitverlauf, Motivlage und Zustandsabhängigkeit.\nLeitachsen:\n* stabiler Stil seit Jugend vs episodischer Zustand\n* kalkulierte Normverletzung vs affektive Entgleisung\n* Substanzen/Organik als Enthemmungsfaktoren\n\nMerke:\n* Normbruch allein ist kein Kriterium; entscheidend sind überdauernder Stil und Funktionsmuster.
+c. Zustandsabhängigkeit | Episodisch spricht gegen reinen Persönlichkeitsstil.
+c. Motivlage | Nutzen/Profit vs Spannungsentladung vs Affektdurchbruch.
+d. Substanzintoxikation | Substanzen | Enthemmung unter Alkohol/Stimulanzien kann dissozial wirken, ist aber zeitlich mit Konsum/Entzug verknüpft.
+d. Störung Sozialverhalten | Entwicklung | Bei Beginn im Jugendalter kann eine Verhaltensstörung vorliegen; Persistenz und Stil müssen getrennt geprüft werden.
+t. f60;f60.2;differenzialdiagnose;diagnostik
+l. 6
+g. sw
+s. 4
+
+cid. icdf60
+#id: f60_040
+b. Emotional instabil PS Impulsiver Typ |F60.30 Kern: ausgeprägte Impulsivität und Affektsteuerungsprobleme ohne das volle Borderline-Muster.\nTypische Merkmale:\n* Handeln ohne ausreichende Folgenabwägung\n* schnelle Eskalation bei Frustration\n* Schwierigkeiten, Ziele durchzuhalten, wenn Belohnung ausbleibt\n\nKlinisch:\n* oft sind Normbewusstsein und Reue vorhanden.
+c. Folgenabwägung | Handeln passiert, bevor Konsequenzen integriert werden.
+c. Affektsteuerung | Affekte kippen schnell in Handlung.
+d. ADHS | Neuroentwicklung | ADHS kann Impulsivität erklären; Abgrenzung über Entwicklungsverlauf, Aufmerksamkeitsmuster und Kontextstabilität.
+d. Dissozial | Persönlichkeitsstil | Dissozial ist stärker empathiearm und normmissachtend; impulsiv instabil ist affektgetrieben und häufig reuefähig.
+t. f60;f60.3;symptom;impuls
+l. 5
+g. sw
+s. 4-p5
+
+cid. icdf60
+#id: f60_041
+b. Borderline Typ |F60.31 Kern: Instabilität in **Beziehungen**, Selbstbild und Affekten plus Impulsivität.\nTypische Merkmale:\n* starke Nähe-Distanz-Schwankungen\n* **Affektlabilität**, intensive Wut\n* chronisches Leeregefühl\n* Selbstschädigung/Suizidalität kann vorkommen\n\nKlinisch:\n* Risiko- und Krisenplanung früh integrieren.
+c. Affektlabilität | Schnelle, starke Gefühlswechsel mit hoher Intensität.
+c. Leeregefühl | Chronisches Gefühl innerer Leere oder Sinnlosigkeit.
+c. Krisenplanung | Frühzeitige Struktur zur Risikoreduktion.
+d. Bipolar | Affektiv | Bipolare Störungen sind episodisch mit Schlaf-/Tempo-Marker; Borderline ist ein stabiler Beziehung-/Affektstil mit häufig situativer Triggerung.
+d. Dissozial | Persönlichkeitsstil | Dissozial ist eher kalt-normmissachtend; Borderline ist bindungs- und affektinstabil mit häufig hoher innerer Not.
+t. f60;f60.3;symptom;beziehung
+l. 6
+g. sw 
+
+cid. icdf60
+#id: f60_042
+b. Borderline Komorbidität | Komorbidität ist häufig und steuert Risiko und Behandlungspriorität.\nTypische Bereiche:\n* **Depression** und Suizidalität\n* **Angst** und Traumafolgen\n* **Substanzkonsum**\n* Essstörungen\n\nKlinisch:\n* Diagnosen in Krisenlagen kritisch prüfen und Verlauf abwarten.\n* Priorisieren nach Lebensgefahr, Therapiegefährdung, Lebensqualität.
+c. Komorbidität | Begleiterkrankungen sind häufig und klinisch relevant.
+c. Therapiepriorität | Reihenfolge nach Risiko und Stabilität festlegen.
+d. Polypharmazie | Risiko | Viele Medikamente ersetzen keine strukturierte Psychotherapie; bei Komorbidität ist Priorisierung und Koordination entscheidend.
+d. Krisendiagnose | Diagnostikfehler | Akute Krisen können Diagnosen verzerren; Verlauf und Stabilität müssen geprüft werden, bevor endgültig etikettiert wird.
+t. f60;f60.3;komorbidität;diagnostik;risiko
+l. 6
+g. sw
+s. https://www.nice.org.uk/guidance/cg78/chapter/1-guidance
+
+
+cid. icdf60
+#id: f60_060
+b. Anankastische Persönlichkeitsstörung |F60.5 Kern: rigider Perfektionismus und Kontrollbedürfnis mit Einengung von Flexibilität.\nTypische Merkmale:\n* übermäßige Gewissenhaftigkeit, Skrupel\n* **Perfektionismus**, der Abschluss verhindert\n* Starrheit und Eigensinn\n* Überfokus auf Regeln/Details\n\nKlinisch:\n* Funktion oft: Unsicherheit reduzieren, Fehler vermeiden.
+c. Perfektionismus | Anspruchsniveau verhindert Abschluss und Flexibilität.
+c. Starrheit | Unnachgiebigkeit gegenüber Alternativen und Prioritäten.
+d. Ordnungsliebe | Normalvariante | Ordnung kann funktional sein; Störung erst bei Starrheit, Leidensdruck oder Funktionsverlust.
+d. Zwangsstörung | Zwangsstörung | Zwang ist meist ich-dyston und neutralisierend; anankastischer Stil ist oft ich-synton und wertebasiert.
+t. f60;f60.5;symptom;diagnostik
+l. 5
+g. sw
+
+
+cid. icdf60
+#id: f60_061
+b. Anankastisch Abgrenzung Zwang | Leitunterscheidung:\n* anankastischer Stil ist häufig **ich-synton** (passt zum Selbstbild)\n* Zwangsstörung ist typischerweise **ich-dyston** (als fremd/unsinnig erlebt)\n\nLeitfragen:\n* Wird Ordnung/Perfektion als „richtig“ erlebt oder als quälender Zwang?\n* Gibt es neutralisierende Rituale zur Angstreduktion?\n\nTherapieableitung:\n* Stil: Flexibilisierung, Prioritäten, Werte\n* Zwang: Exposition und Reaktionsmanagement
+c. Ich-synton | Merkmale werden als passend/richtig erlebt.
+c. Ich-dyston | Erleben als fremd, unsinnig, quälend.
+d. Grübelzwang | Zwangsstörung | Grübelzwang ist ein Zwangsphänomen mit Neutralisierungsfunktion; er gehört primär in Zwangsdiagnostik, nicht in Persönlichkeitsstil.
+d. Perfektionsideal | Werte | Perfektion kann wertorientiert sein; diagnostisch relevant wird es erst, wenn Starrheit und Funktionsverlust entstehen.
+t. f60;f60.5;differenzialdiagnose;diagnostik;zwang
+l. 6
+g. sw
+s. https://register.awmf.org/de/leitlinien/aktuelle-leitlinien/fachgesellschaft/038
+
+cid. icdf60
+#id: f60_070
+b. Ängstliche (vermeidende) PS |F60.6 Gefühle von Anspannung und Besorgtheit, Unsicherheit und Minderwertigkeit. Kern: sozial gehemmter Stil mit starker Angst vor Kritik und Zurückweisung.\nTypische Merkmale:\n* ausgeprägte Furcht vor **Zurückweisung**\n* Vermeidung sozialer Kontakte trotz Bindungswunsch\n* Überempfindlichkeit gegenüber Kritik\n\nKlinisch:\n* häufige Komorbidität mit Angst und Depression; Verlauf und Stil trennen.
+c. Furcht vor Zurückweisung | Erwartung von Ablehnung steuert Verhalten.
+c. Vermeidung | Rückzug reduziert kurzfristig Angst, stabilisiert aber das Muster.
+d. Soziale Phobie | Angst | Soziale Phobie ist stärker situationsgebunden; Ängstliche (vermeidender)  Stil ist übergreifend und identitätsnah.
+d. Schizoider Stil | Persönlichkeitsstil | Schizoid ist Distanz als Wunsch; Ängstliche PS vermeidet aus Angst vor Bewertung trotz Zugehörigkeitswunsch.
+t. f60;f60.6;symptom;komorbidität
+l. 5
+g. sw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cid. icdf60
+#id: f60_071
+b. 	Ängstliche (vermeidende) PS Abgrenzung Sozialphobie | Ängstliche (vermeidended) Stil ist breit und identitätsnah; soziale Phobie ist oft stärker situationsgebunden.\nLeitachsen:\n* **Längsschnitt**: seit Jugend stabil vs später Beginn\n* Breite: fast alle sozialen Kontexte vs spezifische Leistungs-/Beobachtungssituationen\n* Grundannahmen: „ich bin unzulänglich“ als dauerhafte Selbstsicht\n\nMerke:\n* Komorbidität ist häufig; Abgrenzung entscheidet über Schwerpunkt der Therapie.
+c. Längsschnitt | Zeitlicher Verlauf klärt Stil vs Zustand.
+c. Grundannahme | Stabiler Selbstwert-/Bewertungsrahmen steuert Vermeidung.
+t. f60;f60.6;differenzialdiagnose;diagnostik;angst
+l. 6
+g. s
+
+
+cid. icdf60
+#id: f60_080
+b. Abhängige Persönlichkeitsstörung |F60.7 Kern: starkes Bedürfnis nach Versorgung mit ausgeprägter **Trennungsangst** und Delegation von Verantwortung.\nTypische Merkmale:\n* Entscheidungen werden anderen überlassen\n* Schwierigkeiten, eigene Bedürfnisse zu vertreten\n* Angst vor Alleinsein und Verlassenwerden\n* schnelles Suchen neuer Bindung bei Verlust\n\nKlinisch:\n* Risiko für **ausbeuterische** Beziehungen; Autonomieaufbau ist zentral.
+c. Trennungsangst | Angst vor Verlust steuert Bindungsverhalten.
+c. Entscheidungsdelegation | Verantwortung wird an andere abgegeben.
+t. f60;f60.7;symptom;beziehung
+l. 5
+g. s
+s. https://icd.who.int/browse10/2019/en
+
+cid. icdf60
+#id: f60_081
+b. Abhängig Abgrenzung Ängstliche  | Ängstlich: Versorgung, Entscheidungserleichterung, Angst vor Alleinsein\n* Selbstunsicher: Angst vor Kritik/Blamage trotz Zugehörigkeitswunsch\n\nLeitfragen:\n* „Geht es mehr um Alleinsein (abhängig) oder um Bewertung (selbstunsicher)?“\n* Wird Nähe gesucht oder aus Angst vermieden?\n\nMerke:\n* Beide Muster können zusammen auftreten; dann Priorität nach Funktionsverlust.
+t. f60;f60.7;differenzialdiagnose;diagnostik;beziehung
+l. 6
+g. s
+s. 8
+
+cid. icdf60
+#id: f60_090
+b. Narzisstische PS |F60.9 (sonstige) Kern: grandioses Selbstbild, Anspruch und fragiler Selbstwert mit eingeschränkter **Empathie**.\nTypische Merkmale:\n* starkes Bedürfnis nach Bewunderung\n* **Anspruchshaltung**, Ausnutzen anderer\n* Kränkbarkeit bei Kritik\n\nKlinisch:\n* Krisen häufig bei Status-/Beziehungsbedrohung; Scham kann zentral sein.
+c. Anspruchshaltung | Erwartung besonderer Behandlung als Selbstschutz.
+c. Kränkbarkeit | Reaktion auf Kritik/Zurückweisung mit Wut/Abwertung.
+d. Selbstbewusstsein | Normalvariante | Selbstvertrauen ist kein Kriterium; Störung bei Anspruch, Empathieeinschränkung und interpersonellen Schäden.
+d. Manie | Affektiv | Manie ist episodisch mit Schlaf↓ und Tempo↑; narzisstischer Stil ist dauerhaft und situationsübergreifend.
+t. f60;f60.8;symptom;dd
+l. 5
+g. sw
+s. https://icd.who.int/browse10/2019/en
+
+cid. icdf60
+#id: f60_091
+b. Narzisstisch Abgrenzung Manie | Abgrenzung über Zeitverlauf und Zustandsmarker.\nLeitachsen:\n* narzisstisch: stabiler Stil, Kränkbarkeit, Anspruch\n* manisch: Zustandswechsel, Schlafbedarf↓, Aktivität/Tempo↑, oft Ideenflucht\n\nLeitfragen:\n* „War das schon immer so oder neu seit Tagen/Wochen?“\n* „Gibt es Schlafreduktion ohne Müdigkeit?“\n\nMerke:\n* Manie kann narzisstisch wirken, bleibt aber phasisch.
+c. Manie: Phasisch | Episodischer Verlauf unterscheidet Zustand von Stil.
+t. f60;f60.8;differenzialdiagnose;diagnostik;affekt
+l. 6
+g. S
+
+
+cid. icdf60
+#id: f60_095
+b. Passiv aggressiv PS |F60.9 (sonstige)  Kern: indirekte Aggression über Verzögerung, Ausweichen und scheinbare Kooperation.\nTypische Formen:\n* Aufgaben werden „vergessen“ oder verschleppt\n* Widerstand zeigt sich als **Sabotage** im Verhalten\n* Ärger wird selten offen kommuniziert\n\nKlinisch:\n* Konfliktfelder: Verantwortung, Verlässlichkeit, Autonomie.\n* Ziel: direkte Kommunikation und klare Vereinbarungen.
+c. Indirekte Aggression | Ärger wird über Verhalten statt offen ausgedrückt.
+c. Sabotage | Passiver Widerstand durch Verschleppen/Unterlaufen.
+d. Faulheit | Stigma | Abwertung erklärt keine Funktion; diagnostisch zählt der wiederkehrende Konfliktstil und seine Funktion (Autonomie, Kränkung, Scham).
+d. Offene Aggression | Impuls | Offene Aggression ist direkt; passiv-aggressiv ist indirekt und häufig rationalisiert.
+t. f60;f60.8;symptom;beziehung;kommunikation
+l. 4
+g. sw
+
+cid. icdf60
+#id: f60_100
+b. Ätiologie Überblick | Persönlichkeitsstörungen entstehen typischerweise aus dem Zusammenspiel von Vulnerabilität und Entwicklung.\nEinflussbereiche:\n* **Genetik** und Temperament (Vulnerabilität)\n* frühe **Bindung** und Beziehungserfahrungen\n* traumatische/chronische Belastung\n* **Verstärkungslernen** und Modelllernen\n* soziale Normen, Kultur, Milieu\n\nMerke:\n* Kein Faktor „verursacht“ allein.\n* Diagnostisch zählt trotzdem der Stil im Längsschnitt, nicht die Biografie-Erklärung.
+c. Vulnerabilität | Disposition, die unter Belastung wirksam wird.
+c. Bindung | Frühe Beziehungserfahrung prägt Selbst-/Weltmodelle.
+c. Verstärkungslernen | Kurzfristige Entlastung stabilisiert Muster.
+d. Schuld der Eltern | Stigma | Schuldzuweisung blockiert Kooperation; klinisch hilfreicher ist Funktionsverständnis und Veränderungsfokus.
+d. Nur Gene | Verkürzung | Genetik erhöht Risiko, erklärt aber nicht Muster ohne Entwicklungs- und Lernprozesse.
+t. f60;aetiologie;trauma;genetik;grundlagen
+l. 5
+g. sw
+s. https://www.nice.org.uk/guidance/cg78/chapter/1-guidance
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cid. icdf60
+#id: f60_050
+b. Histrionische Persönlichkeitsstörung |F60.4 Auffällig ist ein Stil, der stark über soziale Resonanz reguliert wird.\nTypische Merkmale:\n* ausgeprägte **Aufmerksamkeitssuche**\n* rasch wechselnde, oft oberflächliche **Affekte**\n* dramatisierendes/theatralisches Auftreten\n* hohe Suggestibilität\n\nKlinische Dynamik:\n* Nähe wird häufig über Inszenierung hergestellt.\n* Kränkung kann schnell zu Eskalation oder Rückzug führen.
+c. Aufmerksamkeitssuche | Starkes Bedürfnis, im Zentrum zu stehen.
+c. Affekte | Schnell wechselnde Gefühlslage, oft wenig vertieft.
+d. Extraversion | Normalvariante | Extraversion ist Temperament; Störung erst bei Unflexibilität, deutlichen Beziehungsfolgen und Leidensdruck/Funktionsverlust.
+d. Manisch | Affektiv | Manie ist phasisch mit Schlafbedarf↓ und Tempo↑; histrionischer Stil ist überdauernd und situationsübergreifend.
+t. f60;f60.4;symptom;beziehung;differenzialdiagnose
+l. 5
+g. sw
+s. https://icd.who.int/browse10/2016/en
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cid. icdf60t
+#id: f60_130
+b. Umgang Checkliste | Wirksam ist ein Rahmen, der Stabilität schafft und Eskalation reduziert.\nGrundprinzipien:\n* klare **Rahmenbedingungen** (Rollen, Zuständigkeiten, Zeiten)\n* konsequente **Teamkonsistenz** (kein „Neu-Verhandeln“)\n* Verhalten funktional verstehen (Motive/Emotionen) statt moralisieren\n* Grenzen und Selbstschutz aktiv halten\n\nMerke:\n* Der Rahmen ist Teil der Intervention, nicht nur Organisation.
+c. Rahmenbedingungen | Klare Regeln schaffen Vorhersehbarkeit.
+c. Teamkonsistenz | Einheitliches Vorgehen verhindert Spaltung.
+d. Strenge | Verkürzung | Strenge ohne Beziehung, Transparenz und Funktionsverständnis erhöht oft Eskalation; hilfreich ist konsistente Struktur plus Deeskalation.
+d. Retten | Gegenmuster | Retterdynamik untergräbt Autonomie und Regeln; zielführend sind klare Rollen und planbare Unterstützung.
+t. f60;therapie;setting;grenzen;kommunikation
+l. 5
+g. sw
+s. 11
+
+cid. icdf60t
+#id: f60_221
+b. Regelmäßige Termine | Vorhersehbare Kontakte wirken regulierend.\nLeitideen:\n* feste, verlässliche **Regelmäßigkeit** statt „nur bei Krise“\n* klare Start-/Endzeiten und Zuständigkeiten\n* keine Sonderregeln, die Instabilität verstärken\n\nKlinischer Nutzen:\n* Stabilität erhöht Lernfähigkeit und reduziert Krisenverstärkung.
+c. Regelmäßigkeit | Fester Rhythmus statt krisengetriebener Kontakte.
+c. Vorhersehbarkeit | Planbarkeit senkt Stress und Eskalationsdruck.
+d. Spontane Verfügbarkeit | Setting | Permanente Erreichbarkeit verstärkt Krisenlernen; hilfreicher sind klar definierte Zeiten und Alternativen im Krisenplan.
+d. Kontaktabbruch | Risiko | Abbruch verschärft oft Instabilität; sinnvoller ist strukturierte Begrenzung mit transparentem Rahmen.
+t. f60;therapie;setting;grenzen
+l. 4
+g. sw
+cid. icdf60t
+#id: f60_223
+b. Teamabsprachen Konsistenz | In multiprofessionellen Kontexten ist ein einheitliches Vorgehen zentral.\nKernelemente:\n* klare **Absprachen** (Regeln, Konsequenzen, Zuständigkeiten)\n* konsequente Dokumentation/Übergaben\n* Spaltungsdynamiken früh erkennen und neutralisieren\n\nMerke:\n* Inkonsistenz erhöht Konflikt und Eskalation.
+c. Absprachen | Einheitliche Regeln verhindern ständiges Neuverhandeln.
+c. Spaltung | Konfliktmuster, das Teams gegeneinander ausspielen kann.
+d. Einzelkämpfer | Risiko | Alleingänge erzeugen Inkonsistenz und fördern Spaltung; besser sind abgestimmte, dokumentierte Standards.
+d. Improvisation | Prozess | Situationsflexibilität ist wichtig, aber auf Basis gemeinsamer Regeln; reine Improvisation destabilisiert.
+t. f60;therapie;setting;kommunikation
+l. 5
+g. sw
+
+cid. icdf60t
+#id: f60_222
+b. Gefühle Motive benennen | Deeskalation gelingt häufig, wenn hinter Verhalten liegende Zustände benannt werden.\nLeitidee:\n* Verhalten ist oft Ausdruck von **Scham**, Angst oder Hilflosigkeit.\n* Benennen schafft gemeinsame Problemdefinition und reduziert Eskalation.\n\nGrenze:\n* Validierung bedeutet nicht grenzenloses Nachgeben; Rahmen bleibt bestehen.
+c. Scham | Häufig verdeckter Affekt hinter Angriff oder Rückzug.
+c. Validierung | Benennen/Ankennen von innerem Zustand ohne Zustimmung zu Verhalten.
+d. Diagnostizieren im Konflikt | Fehler | Etiketten im Streit eskalieren; hilfreicher ist affekt- und funktionsorientierte Sprache.
+d. Nachgeben | Missverständnis | Validierung ist nicht „alles erlauben“; Grenzen und Konsequenzen bleiben Teil des Rahmens.
+t. f60;therapie;beziehung;kommunikation
+l. 4
+g. sw
+
+cid. icdf60t
+#id: f60_232
+b. Selbstschutz Supervision | In der Arbeit mit Persönlichkeitsmustern entstehen starke Gegenreaktionen.\nKernelemente:\n* eigene Affekte als Information nutzen, nicht als Handlungsimpuls\n* klare Grenzen und Rollen halten\n* **Supervision**/Intervision zur Reflexion und Stabilisierung\n\nMerke:\n* Selbstschutz erhöht Beziehungsqualität und Behandlungssicherheit.
+c. Supervision | Strukturierte Reflexion zur Prozesssicherung.
+c. Rollenklärung | Klare Rolle reduziert Retter-/Gegenangriffsdynamik.
+d. Härte | Gegenreaktion | Härte als Abwehr verschlechtert Beziehung und Compliance; professioneller ist reflektierte Grenze mit Konsistenz.
+d. Verschmelzung | Risiko | Zu viel Nähe ohne Rahmen verstärkt Abhängigkeit/Drama; hilfreicher ist klare, planbare Beziehungsgestaltung.
+t. f60;therapie;beziehung;selbstschutz
+l. 5
+g. sw
+
+cid. icdf60t
+#id: f60_224
+b. Indexstörung Fokus | Therapie wird arbeitsfähig, wenn der Auftrag konkret wird.\nKernelement:\n* Start bei der **Indexstörung**: dem, was subjektiv als Problem erlebt wird.\n* Ziele operationalisieren (Alltag, Beziehungen, Risiko, Funktion).\n\nMerke:\n* Nicht „die Persönlichkeit“ behandeln, sondern veränderbare Zielbereiche.
+c. Indexstörung | Subjektiv belastendes Hauptproblem als Startpunkt.
+c. Zieloperationalisierung | Ziele so definieren, dass Fortschritt prüfbar wird.
+d. Alles gleichzeitig | Prozess | Zu viele Ziele überfordern; wirksam ist Priorisierung (Risiko → Therapiegefährdung → Lebensqualität).
+d. Diagnosefokus | Verkürzung | Diagnosen helfen bei Einordnung, ersetzen aber keine Ziel- und Prozessarbeit.
+t. f60;therapie;planung;diagnostik
+l. 5
+g. sw
+cid. icdf60t
+#id: f60_225
+b. Interaktionelle Motive | Muster werden im Kontakt sichtbar und beeinflussen den Prozess.\nKernelemente:\n* wiederkehrende **Beziehungsdynamiken** (Nähe/Distanz, Kontrolle, Kränkung)\n* Motive nicht „wegdiskutieren“, sondern als Arbeitsmaterial nutzen\n\nMerke:\n* Akzeptanz der Dynamik ist Voraussetzung für Veränderung, nicht deren Ende.
+c. Beziehungsdynamiken | Wiederkehrende Muster im Kontakt, die Therapie steuern.
+c. Arbeitsmaterial | Dynamik wird genutzt, statt moralisch bewertet.
+d. Machtkampf | Prozessfalle | Machtkampf verschärft Eskalation; hilfreich ist transparentes Rahmenhalten plus Funktionsverständnis.
+d. Harmoniesucht | Prozessfalle | Übermäßige Konfliktvermeidung verhindert Klärung; hilfreicher ist strukturierte, respektvolle Konfrontation.
+t. f60;therapie;beziehung;planung
+l. 5
+g. sw
+
+cid. icdf60t
+#id: f60_226
+b.  Triade des Wissens | Gutes Vorgehen basiert auf drei Wissensarten.\n* **Störungswissen**: Wie funktioniert das Muster (Auslöser, Konsequenzen, Funktionen)?\n* **Interventionswissen**: Welche Schritte/Skills helfen konkret?\n* **Interaktionswissen**: Welche Dynamiken entstehen im Kontakt und wie halte ich den Rahmen?\n\nMerke:\n* Fehlendes Interaktionswissen ist häufiger Abbruchtreiber als fehlende Technik.
+c. Störungswissen | Verstehen der Funktion und Aufrechterhaltung.
+c. Interaktionswissen | Wissen über Beziehungsmuster im Prozess.
+d. Intuition | Verkürzung | Intuition kann helfen, ersetzt aber keine systematische Fallkonzeption und Rahmenarbeit.
+d. Technikfixierung | Fehler | Methoden ohne Interaktions- und Störungsverständnis wirken oft kurz oder eskalieren.
+t. f60;therapie;psychoedukation;grundlagen
+l. 5
+g. sw
+
+cid. icdf60t
+#id: f60_165b
+b. Genetik Neuro Stress kompakt | Biologische Vulnerabilität kann die Grundreaktivität beeinflussen, erklärt aber nicht allein den Verlauf.\nKernideen:\n* **Vulnerabilität** (Temperament/Genetik) erhöht Anfälligkeit.\n* Entwicklungsstress kann Stress- und Emotionssysteme prägen.\n* **Gen-Umwelt-Interaktion** macht verständlich, warum ähnliche Belastungen unterschiedliche Folgen haben.\n\nKlinische Konsequenz:\n* Behandlungsplanung bleibt biopsychosozial: Skills, Beziehung, Struktur und Umfeld.
+c. Vulnerabilität | Disposition, die unter Belastung wirksam wird.
+c. Gen-Umwelt-Interaktion | Zusammenspiel von Anlage und Erfahrung.
+d. Determinismus | Irrtum | Genetik ist Risiko, nicht Schicksal; Verlauf hängt stark von Lernen, Beziehung und Kontext ab.
+d. Hirnschaden | Organik | Organische Persönlichkeitsänderung setzt Hirnkrankheit/-schädigung voraus; hier geht es um nicht-organische Vulnerabilität.
+t. f60;aetiologie;genetik;neuro;trauma
+l. 5
+g. sw
+s. https://icd.who.int/browse10/2016/en
+
+cid. icdf60t
+#id: f60_110
+b. Drittelregel Verlauf | Typische Verlaufsbahnen.\n* deutliche **Besserung**\n* **Residual**: Teilbesserung, Kernmuster bleiben\n* **ungünstig**: anhaltend hohe Beeinträchtigung\n\nMerke:\n* Verlauf ist nicht „fix“, aber häufig langsam und kontextabhängig.
+c. Besserung | Funktion steigt, Muster werden flexibler.
+c. Residual | Kernmuster bleiben, aber Belastung sinkt teilweise.
+d. Heilung in Wochen | Unrealistisch | Persönlichkeitsmuster ändern sich meist langsam; schnelle Effekte sind eher Zustands- oder Kontextänderungen.
+d. Unveränderlich | Pessimismus | Veränderung ist möglich; entscheidend sind Struktur, Skills, Beziehung und Zeit.
+t. f60;verlauf;prognose;grundlagen
+l. 4
+g. sw
+
+
+cid. icdf60t
+#id: f60_111
+b. Epidemiologie Persönlichkeitsstörungen | In der Bevölkerung nicht selten; in Behandlungskontexten treten sie deutlich häufiger auf.\nDidaktische Konsequenzen:\n* hohe Basisrate → sorgfältige **Differenzialdiagnose**\n* hohe **Komorbidität** → Priorisierung und Koordination der Behandlung\n\nMerke:\n* Epidemiologie orientiert, ersetzt aber keine Diagnose.
+c. Differenzialdiagnose | Abgrenzung zu Episoden, Substanzen, Organik.
+c. Komorbidität | Begleiterkrankungen steuern Risiko und Therapieplanung.
+d. Diagnose per Häufigkeit | Fehler | Häufigkeit sagt nichts über den Einzelfall; entscheidend sind Kriterien, Verlauf und Funktionsniveau.
+d. Seltenheit | Fehleinschätzung | Unterschätzung erhöht Risiko der Nicht-Erkennung im klinischen Alltag.
+t. f60;epidemiologie;diagnostik;komorbidität
+l. 4
+g. sw
+s. https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2024/block-f60-f69.htm
+
+cid. icdf60t
+#id: f60_218
+b. Prognose Heilbarkeit | Veränderung ist möglich, häufig als Zuwachs an Flexibilität und Funktion.\nLeitideen:\n* **Leidensdruck** und Funktionsniveau können deutlich sinken.\n* Muster können als Stil erkennbar bleiben, aber weniger zerstörerisch wirken.\n* Wirksame Faktoren: Beziehung, Struktur, Skills, Rückfallmanagement.\n\nMerke:\n* Ziel ist nicht „neue Person“, sondern mehr Selbststeuerung und stabilere Beziehungen.
+c. Leidensdruck | Subjektives Leiden kann deutlich abnehmen.
+c. Funktionsniveau | Alltag, Arbeit, Beziehungen werden stabiler.
+d. Perfekte Symptomfreiheit | Unrealistisch | Ziel ist oft Funktionsverbesserung und Flexibilität; vollständige „Stilfreiheit“ ist kein notwendiger Maßstab.
+d. Medikamentenlösung | Verkürzung | Medikamente können Komorbidität behandeln, sind aber keine Primärbehandlung der Persönlichkeitsstörung.
+t. f60;prognose;therapie;grundlagen
+l. 5
+g. sw
+s. https://www.nice.org.uk/guidance/cg78https://register.awmf.org/de/leitlinien/detail/038-015
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+cid. icdf60t
+#id: f60_150
+b. KVT Prinzipien | KVT arbeitet strukturiert, problem- und funktionsorientiert.\nKernelemente:\n* **Verhaltensanalyse** (Auslöser–Bewertung–Gefühl–Impuls–Konsequenz)\n* Training von **Skills** (Emotionsregulation, Impulskontrolle, Kommunikation)\n* Arbeit an **Grundannahmen** und Bewertungsmustern\n* geplante Übungen zwischen Sitzungen (Transfer)\n\nMerke:\n* Kleine Schritte und hohe Struktur sind oft entscheidend.
+c. Verhaltensanalyse | Situationen werden als Kettenmodell sichtbar gemacht.
+c. Grundannahmen | Tiefe Bewertungen steuern Wahrnehmung und Verhalten.
+c. Skills | Konkrete Alternativen werden trainiert und übertragen.
+d. Nur Einsicht | Verkürzung | Einsicht ohne Übung verändert selten Verhalten; KVT braucht Experimente, Skills und Transfer.
+d. Konfrontation sofort | Prozessfehler | Zu frühe Konfrontation ohne Stabilisierung erhöht Abbruch; zuerst Struktur und Skills, dann anspruchsvollere Schritte.
+t. f60;therapie;kvt;prozess
+l. 5
+g. sw
+
+cid. icdf60t
+#id: f60_190
+b. Psychotherapie Überblick | Psychotherapie zielt auf mehr **Flexibilität**, stabilere Beziehungen und höheres Funktionsniveau.\nTypische Bausteine:\n* **Psychoedukation** und gemeinsames Störungsmodell\n* Bearbeitung von Beziehungsmustern im Hier-und-Jetzt\n* Aufbau von Selbststeuerung (Emotions- und Impulsregulation)\n* **Krisenplan** und Rückfallmanagement\n\nMerke:\n* Passung zu Schweregrad, Motivation und Kontext ist wichtiger als „die eine Methode“.
+c. Störungsmodell | Gemeinsames Verständnis steuert Interventionen.
+c. Krisenplan | Struktur für Hochrisikophasen verhindert Eskalation.
+d. Medikamentenlösung | Verkürzung | Medikamente behandeln ggf. Komorbidität, sind aber keine Primärbehandlung der Persönlichkeitsstörung.
+d. Kurzintervention | Unrealistisch | Tief verankerte Muster ändern sich meist schrittweise; kurze Maßnahmen reichen selten ohne Anschlusskonzept.
+t. f60;therapie;grundlagen;psychoedukation
+l. 4
+g. sw
+
+cid. icdf60t
+#id: f60_191
+b. Psychodynamische Therapie | Psychodynamische Arbeit fokussiert auf innere Konflikte, Strukturniveau und wiederkehrende Beziehungsskripte.\nKernelemente:\n* Arbeit mit **Übertragung** und Gegenübertragung\n* Förderung von **Mentalisieren** und Affektdifferenzierung\n* mehr Ambivalenztoleranz und realistischere Selbst-/Fremdbilder\n\nMerke:\n* Beziehung ist Arbeitsinstrument, nicht Privatbeziehung.
+c. Übertragung | Beziehungsmuster werden im Kontakt reaktiviert.
+c. Mentalisieren | Eigene und fremde innere Zustände besser verstehen.
+d. Nur Vergangenheit | Verkürzung | Es geht nicht nur um Vergangenheit, sondern um Muster im aktuellen Beziehungsgeschehen.
+d. Deuten ohne Rahmen | Prozessfehler | Deutungen ohne stabile Allianz und Struktur können destabilisieren; zuerst Sicherheit und Arbeitsbündnis.
+t. f60;therapie;psychodynamik;beziehung
+l. 5
+g. sw
+
+
+cid. icdf60t
+#id: f60_192
+b. KVT bei Persönlichkeitsstörungen | Fokus ist Veränderung konkreter Muster in Alltag und Beziehungen.\nTypisch:\n* gemeinsame Zielhierarchie (Risiko → Prozess → Lebensqualität)\n* **Kettenanalyse** kritischer Situationen\n* Aufbau neuer Verstärker und Alternativverhalten\n* Rückfallprophylaxe als Lernschleife\n\nMerke:\n* Veränderung ist oft kontextabhängig; Umfeld- und Strukturarbeit zählt.
+c. Kettenanalyse | Detaillierte Sequenz bis zur Eskalation wird sichtbar.
+c. Zielhierarchie | Priorisierung steuert Behandlungssicherheit.
+d. Diagnosen diskutieren | Verkürzung | Diagnosen ordnen ein, verändern aber kein Verhalten; entscheidend sind Ziele, Übungen und Kontext.
+d. Rückfallverbot | Irrtum | Rückfälle sind Lernmaterial; wirksam ist Analyse + Plananpassung statt Moral.
+t. f60;therapie;kvt;rueckfallprophylaxe
+l. 5
+g. sw
+
+
+
+
+cid. icdf60t
+#id: f60_227
+b. DBT Dialektik | Dialektik bedeutet: Akzeptanz und Veränderung werden gleichzeitig gehalten.\nKernelemente:\n* **Validierung** (Akzeptanz) reduziert Eskalation und Scham.\n* **Veränderung** wird über Skills, Ziele und klare Struktur möglich.\n* Rahmen ist konsequent und transparent.\n\nMerke:\n* Dialektik wirkt gegen Schwarz-Weiß-Dynamiken und Krisenlernen.
+c. Validierung | Anerkennen innerer Zustände ohne Nachgeben bei Regeln.
+c. Veränderung | Konkrete Schritte/Skills statt Moralappelle.
+d. Nachgeben | Missverständnis | Validierung ist nicht alles erlauben; Grenzen bleiben stabil, Verhalten wird trotzdem verändert.
+d. Konfrontation hart | Prozessfehler | Härte ohne Validierung erhöht Abbruch; DBT kombiniert Struktur mit Akzeptanz.
+t. f60;therapie;dbt;borderline
+l. 6
+g. sw
+
+cid. icdf60t
+#id: f60_142
+b. DBT Module | Skilltraining besteht aus modularen Fertigkeiten.\nModule:\n* **Achtsamkeit** (Wahrnehmen ohne sofort zu handeln)\n* **Stresstoleranz** (Krise überstehen ohne Selbstschädigung)\n* **Emotionsregulation** (Gefühle beeinflussen)\n* **Interpersonelle Fertigkeiten** (Grenzen, Bitten, Nein)\n\nMerke:\n* Wirkung entsteht durch Training und Transfer in reale Situationen.
+c. Stresstoleranz | Krisen werden ohne impulsive Handlungen überstanden.
+c. Emotionsregulation | Gefühle werden differenziert und steuerbarer.
+c. Interpersonelle Fertigkeiten | Beziehungshandeln wird gezielt trainiert.
+d. Entspannung | Verkürzung | Entspannung kann helfen, ersetzt aber kein Skillrepertoire für Krise, Emotion und Beziehung.
+d. Einsicht | Verkürzung | Verstehen allein genügt nicht; Skills brauchen Übung und Anwendung im Alltag.
+t. f60;therapie;dbt;skills
+l. 6
+g. sw
+
+cid. icdf60t
+#id: f60_219
+b. Prävalenz Spannbreite | Häufigkeitsangaben variieren je nach Instrument, Stichprobe und Definition.\nDidaktische Konsequenzen:\n* Basisrate ist relevant hoch → DD sorgfältig.\n* **Komorbidität** ist häufig → Priorisierung und Koordination.\n\nMerke:\n* Für Diagnostik zählt der Einzelfall mit Kriterien und Verlauf, nicht die Prävalenzzahl.
+c. Komorbidität | Begleiterkrankungen sind häufig und steuernd.
+c. Stichprobe | Klinische Stichproben liefern andere Raten als Bevölkerung.
+d. Diagnose per Statistik | Fehler | Statistik ersetzt keine klinische Kriterienprüfung im Längsschnitt.
+d. Seltenheit | Fehleinschätzung | Unterschätzung erhöht Risiko, Persönlichkeitsstörungen zu übersehen.
+t. f60;epidemiologie;diagnostik;komorbidität
+l. 4
+g. sw
+
+
+
+cid. icdf60t
+#id: f60_231
+b. KVT Compliance Prozess | Veränderung scheitert oft nicht an Einsicht, sondern am Prozess.\nWichtige Prozessfaktoren:\n* klare Struktur, kleine Schritte, überprüfbare Aufgaben\n* Rückfälle als Lernmaterial statt moralisches Scheitern\n* Stabiler Rahmen und realistische Ziele\n\nMerke:\n* Prozesssteuerung ist ein Teil der Intervention.
+c. Struktur | Vorhersehbarkeit erhöht Umsetzung und Sicherheit.
+c. Rückfallmanagement | Lernen aus Rückfällen statt Abbruchspirale.
+d. Druck | Prozessfehler | Druck erhöht Scham und Abwehr; wirksamer sind Struktur, Validierung und realistische Schritte.
+d. Belohnungssystem | Verkürzung | Neuroerklärungen helfen, ersetzen aber keine Prozessarbeit im Alltag.
+t. f60;therapie;kvt;prozess
+l. 5
+g. sw
+
+cid. icdf60
+#id: f60_160
+b. Modelle der Entstehung | Mehrere Modelle erklären unterschiedliche Teile des Bildes.\nKernelemente:\n* biologische Vulnerabilität und Stressreaktivität\n* Bindungs- und Beziehungserfahrungen als Prägung von Selbst-/Weltmodellen\n* **Verstärkungslernen** als Aufrechterhaltungsschleife\n* psychodynamische Struktur-/Konfliktperspektive\n* kulturelle Normen als Rahmen für Abweichung und Stigma\n\nMerke:\n* Modelle sind Landkarten; klinisch zählt das individuelle Störungsmodell.
+c. Verstärkungslernen | Kurzfristige Entlastung stabilisiert Muster.
+c. Bindung | Beziehung prägt Erwartungen und Affektregulation.
+d. 1 Faktor | Verkürzung | Ein Faktor erklärt selten das Muster; sinnvoll ist ein mehrdimensionales Modell.
+d. Schuld | Stigma | Schuldrahmen verhindert Veränderungsfokus; hilfreich ist Funktions- und Kontextdenken.
+t. f60;aetiologie;modelle;grundlagen
+l. 4
+g. sw
+
+
+
+
+
+cid. icdf60
+#id: f60_120
+b. Diagnostik Überblick | Persönlichkeitsdiagnostik ist **Längsschnittdiagnostik**: Muster über Zeit, Situationen und Beziehungen.\nPraktisches Vorgehen:\n* **Anamnese**: Entwicklung, Beziehungsgeschichte, Krisen, Funktionsniveau\n* **Differenzialdiagnose**: Episoden (Depression/Manie), Psychosen, Angst, Sucht\n* **Organik** und Substanzen ausschließen\n* Musterbeschreibung in den Bereichen Kognition, Affektivität, Impulskontrolle, Beziehungen\n\nMerke:\n* Akute Krisen verzerren Diagnosen; Verlauf und Stabilität prüfen.
+c. Längsschnittdiagnostik | Muster werden über Zeit und Kontexte beurteilt.
+c. Differenzialdiagnose | Episoden, Psychosen, Sucht und Organik werden abgegrenzt.
+c. Funktionsniveau | Alltag, Arbeit und Beziehungen werden systematisch erfasst.
+d. Schnelllabeln | Diagnostikfehler | Früh etikettieren in der Krise führt oft zu Fehlzuordnung; sinnvoll ist erst Stabilisierung plus Längsschnitt und DD.
+d. Symptomliste | Verkürzung | Einzelne Symptome ersetzen keine Musterdiagnostik; nötig sind Bereichsübergriff und Verlauf.
+t. f60;diagnostik;anamnese;differenzialdiagnose
+l. 5
+g. sw
+ 
+
+
+ 
+cid. icdf60
+#id: f60_193
+b. Schweregrad und Typ | Der Typ einer Persönlichkeitsstörung beschreibt Stilmerkmale, nicht automatisch die Beeinträchtigung.\nDeshalb getrennt erfassen:\n* **Funktionsniveau** (Arbeit, Beziehungen, Selbstfürsorge)\n* Risiko (Selbst-/Fremdgefährdung)\n* Ressourcen und Motivation\n\nMerke:\n* Therapieplanung orientiert sich primär an Schweregrad, Risiko und Ressourcen.
+c. Funktionsniveau | Zentrale Achse für Schweregrad und Planung.
+c. Ressourcen | Schutzfaktoren entscheiden über Tempo und Setting.
+d. Typ = Schwere | Fehler | Stilmerkmale ersetzen keine Schweregradeinschätzung; Planung muss Risiko und Funktion berücksichtigen.
+d. Nur Symptome | Verkürzung | Schweregrad ist nicht nur Symptomanzahl, sondern Funktionsverlust und Risiko.
+t. f60;diagnostik;prognose;grundlagen
+l. 4
+g. sw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+cid. icdf61
+#id: f61_020
+b. Kombinierte und andere PS| Merkmale mehrerer Persönlichkeitsstörungen aus F60.- liegen vor, aber **ohne dominantes Symptombild**, das eine spezifische Zuordnung erlauben würde.\nDiagnostische Konsequenz:\n* Musterprofil über die Bereiche Kognition, Affektivität, Impulskontrolle, Beziehungen.\n* Priorisieren: Risiko, Funktionsniveau, Behandlungsauftrag.
+c. Merkmale mehrerer Störungen | Mehrere F60.-Merkmalsgruppen sind erkennbar.
+c. Zweitdiagnose | Persönlichkeitsveränderung als Zusatz zu Affekt- oder Angststörung.
+c. kein dominantes Symptombild | Keine einzelne F60.-Kategorie erklärt das Bild ausreichend.
+d. Sonstige spezifische Störung | F60.8 | Wenn das Muster zwar nicht in F60.0–F60.7 passt, aber als spezifische Form beschreibbar ist, ist F60.8 oft geeigneter.
+d. Persönlichkeitsstörung unspezifisch | F60.9 | Wenn klar Persönlichkeitsstörung, aber Spezifikation nicht möglich, kann F60.9 (statt Mischbild) naheliegen.
+d. Akzentuierte Züge | Z73 | Akzentuierungen können auffällig sein, erfüllen aber nicht die Kriterien einer Persönlichkeitsstörung.
+t. f61;f61.0;definition;diagnostik
+l. 5
+g. sw
+s. https://cdn.who.int/media/docs/default-source/classification/other-classifications/9241544228_eng.pdf
+
+ 
+
+cid. icdf61
+#id: f61_010
+b. Kombinierte PS erkennen | Bei Mischbildern hilft ein strukturierter Blick auf **Bereiche** und **Funktion**.\nPraktisches Vorgehen:\n* Profil erfassen: Kognition, Affektivität, Impulskontrolle, Beziehungen.\n* **Funktionsniveau** und Risiko bestimmen.\n* **Indexproblem** definieren (was soll sich im Alltag ändern?).\n* Priorisieren (Risiko → Therapiegefährdung → Lebensqualität).\n\nMerke:\n* Ein gutes Profil ist wichtiger als ein perfektes Label.
+c. Funktionsniveau | Schweregrad zeigt sich in Arbeit, Beziehungen, Selbstfürsorge.
+c. Indexproblem | Ein fokussierter Auftrag macht Therapie steuerbar.
+d. Symptomcheckliste | Diagnostikfehler | Reine Symptomauflistung ohne Längsschnitt/Profil führt bei Mischbildern schnell zu Fehlzuordnung.
+d. Alles gleichzeitig | Prozessfehler | Ohne Priorisierung werden Ziele diffus und die Umsetzung bricht häufig ab.
+t. f61;diagnostik;planung;prozess
+l. 5
+g. sw
+s. https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2024/block-f60-f69.htm
+
+cid. icdf68
+#id: f68_010
+b. Artifizielle Störung |F68.1 Wiederholtes **Vortäuschen** oder **Erzeugen** körperlicher oder psychischer Symptome, teils bis zur **Selbstbeschädigung**, ohne einleuchtenden äußeren Grund.\nKernidee:\n* Motivation ist unklar; häufig wird die **Krankenrolle** angestrebt.\n* Häufig kombiniert mit Persönlichkeits- und Beziehungsstörungen.\n\nAbgrenzung:\n* Bei offensichtlicher äußerer Motivation (z.B. Geld, Entlastung) ist es eher Simulation.
+c. Krankenrolle | Ziel ist häufig, als krank wahrgenommen und behandelt zu werden.
+c. Selbstbeschädigung | Symptome können aktiv hervorgerufen werden.
+c. Münchhausen | Bezeichnung für das Muster artifizieller Störung.
+c. Motivation unklar | Kein plausibler äußerer Gewinn als Haupttreiber.
+d. Simulation | äußerer Gewinn | Bei Simulation steht eine klare äußere Motivation im Vordergrund; artifiziell zielt eher auf die Krankenrolle.
+d. Dermatitis factitia | Dermatologie | Spezifische dermatologische Entität; nicht als allgemeine artifizielle Störung kodieren.
+d. Somatoform | F45 | Somatoforme Störungen sind nicht absichtlich produziert; Mechanismus ist anders.
+t. f68;f68.1;definition;diagnostik;differenzialdiagnose
+l. 6
+g. sw
+s. https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2024/block-f60-f69.htm https://gesund.bund.de/en/icd-code-suche/f68-1
+
+
+cid. icdf68
+#id: f68_000
+b. F68.0 Bewusste Simulation | 'Entwicklung körperlicher Symptome aus psychischen Gründen': bedeutet absichtliches Vortäuschen oder Übertreiben von Symptomen mit **klarer äußerer Motivation**.\nTypische Motivlagen:\n* finanzielle/soziale Vorteile (Leistungen, Entschädigung)\n* Vermeidung von Arbeit, Verantwortung oder Strafe\n* Zugang zu Medikamenten oder Unterbringung/Schonung\n\nDiagnostische Leitpunkte:\n* Konsistenz der Symptomdarstellung über Zeit und Kontexte\n* Plausibilität der Symptome im Verhältnis zu Befunden\n* Dokumentation von Widersprüchen (sachlich, nicht anklagend)\n* Differenzialdiagnose: Substanzen, Psychose, Somatik\n\nAbgrenzung:\n* **Artifizielle Störung (F68.1)**: Motivation ist nicht klar äußerlich; häufig steht die **Krankenrolle** im Vordergrund.\n* **Somatoforme Störungen (F45.-)**: Beschwerden sind nicht absichtlich erzeugt; Mechanismus ist Fehlwahrnehmung/Fehlinterpretation.\n\nMerke:\n* Ziel ist saubere Einordnung und Rahmenklarheit, nicht „Entlarvung“ als Machtakt.
+c. äußere Motivation | Klarer Zweck außerhalb der Krankenrolle.
+c. Vortäuschen | Absichtliche Darstellung von Symptomen ohne passenden Befund.
+c. Widersprüche | Inkonsistenzen zwischen Bericht, Verhalten und Befunden.
+d. Krankenrolle | F68.1 | Bei artifiziell steht häufig die Krankenrolle im Vordergrund, ohne klaren äußeren Vorteil; bei Simulation ist der Vorteil/Zweck erkennbar.
+d. Somatoform | F45 | Somatoforme Störungen sind nicht absichtlich produziert; der Patient erlebt die Beschwerden als real und erklärt sie falsch, statt sie zu simulieren.
+d. Psychose | Differenzialdiagnose | Psychotische Symptome werden nicht absichtlich erzeugt; Realitätsprüfung ist gestört. Simulation setzt Absicht und Zweck voraus.
+t. f68;f68.0;definition;diagnostik;differenzialdiagnose;recht
+l. 6
+g. sw
+s. https://icd.who.int/browse10/2019/en#/F68.0 | ICD-10: bewusste Simulation (conscious simulation) als absichtliches Vortäuschen/Übertreiben mit äußerer Motivation.
+
+
+cid. icdf68
+#id: f68_011
+b. Artifiziell Abgrenzung | Differenzialdiagnostik trennt nach **Motivlage** und **Krankheitsmechanismus**.\nLeitachsen:\n* artifiziell: Motivation unklar, **Krankenrolle** zentral.\n* Simulation: **äußere Motivation** klar erkennbar.\n* somatische Erkrankung: konsistenter Befundverlauf ohne absichtliche Produktion.\n\nKlinische Konsequenz:\n* Ziel ist Schadensbegrenzung und koordiniertes Vorgehen, nicht „Entlarven“.
+c. äußere Motivation | Hauptkriterium für Simulation vs artifiziell.
+c. Schadensbegrenzung | Iatrogene Risiken minimieren (Diagnostik/Therapie).
+d. Somatische Erkrankung | Somatik | Somatik wird nicht „wegdiagnostiziert“; artifiziell erfordert positive Hinweise auf absichtliche Symptomproduktion plus DD.
+d. Wahn | Psychose | Psychotische Überzeugungen sind nicht absichtlich erzeugt; Mechanismus und Behandlungslogik sind grundverschieden.
+t. f68;f68.1;differenzialdiagnose;diagnostik
+l. 6
+g. sw
+s. https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2024/block-f60-f69.htm
+
+cid. icdf68
+#id: f68_030
+b. Simulation abgrenzen | Simulation bedeutet absichtliches Vortäuschen/Übertreiben von Symptomen mit **klarer äußerer Motivation**.\nTypische Motive:\n* finanzielle/soziale Vorteile\n* Vermeidung von Arbeit, Verantwortung oder Strafe\n* Zugang zu Medikamenten/Leistungen\n\nMerke:\n* Bei artifiziell ist die Motivation unklar und die Krankenrolle steht im Vordergrund.
+c. äußerer Gewinn | Kern: klarer Vorteil als Hauptmotiv.
+c. sekundärer Gewinn | Nutzen außerhalb der medizinischen Versorgung.
+d. Artifizielle Störung | Krankenrolle | Artifiziell zielt auf die Krankenrolle ohne klaren äußeren Gewinn; Simulation hat erkennbare Zweckmotivation.
+d. Somatoforme Störung | F45 | Somatoforme Symptome sind nicht absichtlich produziert; Fokus liegt auf Körperwahrnehmung, Angst und Fehlinterpretation.
+t. f68;differenzialdiagnose;diagnostik
+l. 6
+g. sw
+s. https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2024/block-f60-f69.htmhttps://www.ncbi.nlm.nih.gov/books/NBK507837/
+
+cid. icdf68
+#id: f68_020
+b. Münchhausen by proxy | Symptome werden bei einer abhängigen Person (häufig Kind) **erfunden** oder **induziert**, um medizinische Aufmerksamkeit zu erzeugen.\nKlinische Priorität:\n* **Kinderschutz**/Schutz der betroffenen Person hat Vorrang.\n* Interdisziplinäres Vorgehen (Medizin, Psychiatrie, Jugendhilfe/Behörden je nach Kontext).\n\nMerke:\n* Es geht nicht um „Lügen“, sondern um ein gefährliches Krankheitsverhalten mit hohem Schadenspotenzial.
+c. Kinderschutz | Schutzauftrag hat Vorrang vor Therapiezielen.
+c. Fremdinduktion | Symptome werden bei einer anderen Person erzeugt.
+d. Artifizielle Störung | Selbst | Bei klassisch artifiziell werden Symptome am eigenen Körper erzeugt/vorgetäuscht; hier wird eine andere Person betroffen gemacht.
+d. Misshandlung | Schutzauftrag | Unabhängig von Diagnosen müssen Schutzmaßnahmen und Dokumentation konsequent sein.
+t. f68;zusatzinfo;risiko;recht;diagnostik
+l. 7
+g. sw
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC5875173/
+
+cid. icdf68
+#id: f68_031
+b. Artifiziell Umgang Prinzip | Ziel ist ein Vorgehen, das Schaden minimiert und die Versorgung arbeitsfähig hält.\nPrinzipien:\n* **Teamkonsistenz** und klare Dokumentation (kein „Neu-Verhandeln“).\n* Unnötige invasive Diagnostik vermeiden (iatrogene Schäden).\n* Gesprächsführung eher unterstützend/strukturierend als anklagend.\n* Früh psychiatrische Mitbehandlung/liaison einbinden.\n\nMerke:\n* Direkte Konfrontation führt häufig zu Abbruch und „Hospital hopping“.
+c. Teamkonsistenz | Einheitliches Vorgehen verhindert Eskalation und Spaltung.
+c. iatrogene Schäden | Überdiagnostik/Übertherapie kann erheblich schaden.
+d. Direkte Anklage | Prozessfehler | Harte Konfrontation triggert oft Abbruch, Wechsel der Klinik und Eskalation; besser ist ein strukturierter, empathischer Zugang.
+d. Diagnostikspirale | Risiko | Immer neue invasive Abklärungen verstärken Schaden; zielführend sind klare Regeln und minimale notwendige Diagnostik.
+t. f68;therapie;setting;kommunikation;risiko
+l. 7
+g. sw
+s. https://www.ncbi.nlm.nih.gov/books/NBK518999/https://pmc.ncbi.nlm.nih.gov/articles/PMC7505250/
+
+cid. icdf69
+#id: f69_001
+b. Persönlichkeitsstörung unspezifisch | F69 wird genutzt, wenn eine klinisch relevante Störung des Erlebens/Verhaltens im Bereich Persönlichkeit/Verhalten vorliegt, aber keine präzisere Zuordnung möglich ist.\nTypische Gründe:\n* unzureichender **Längsschnitt**\n* akute Krisenlage überlagert stabile Muster\n* diagnostische Informationen fehlen (Fremdanamnese, Verlauf)\n\nMerke:\n* F69 sollte immer mit einem Klärungsplan gekoppelt sein.\nPlanbausteine:\n* Zeitraum für Verlaufsbeobachtung festlegen\n* Fremdanamnese/Unterlagen einholen\n*
+c. Längsschnitt fehlt | Ohne Verlauf ist Spezifikation oft nicht seriös möglich.
+c. Arbeitsdiagnose | Vorläufige Einordnung mit Plan zur Klärung.
+c. Klärungsplan | Konkreter Plan für Verlauf, DD und Spezifikation.
+c. Fremdanamnese | Externe Daten erhöhen Diagnosesicherheit.
+d. Gemischte Persönlichkeitsstörung | F61 | F61 setzt Mischmerkmale (mehrere F60.-) voraus; F69 ist unspezifischer, wenn die Musterlage noch nicht belastbar ist.
+d. Dauerlabel | Fehler | F69 darf nicht zur Ablage werden; ohne Klärungsplan steigt Fehlversorgung.
+d. Persönlichkeitsstörung unspezifisch | F60.9 | Wenn sicher Persönlichkeitsstörung, aber nicht spezifizierbar, kann F60.9 näher liegen; F69 bleibt für unscharfe Gesamtbilder.
+t. f69;definition;diagnostik;study
+l. 4
+g. sw
+s. https://gesund.bund.de/en/icd-code-suche/f69
+
+
+
+
+
+cid. icdf64
+#id: f64_010
+b. Transsexualismus | Kern ist der Wunsch, als Angehörige*r des anderen Geschlechts zu leben und anerkannt zu werden.\nTypische Aspekte:\n* **Unbehagen** oder Gefühl der Nichtzugehörigkeit zum eigenen anatomischen Geschlecht\n* Wunsch nach **hormoneller** und **chirurgischer** Angleichung des Körpers\n\nMerke:\n* Für Diagnostik zählen Dauer, Konsistenz und Differenzialdiagnostik (Episoden/Psychose/Organik).
+c. Unbehagen | Belastung durch Nichtzugehörigkeitsgefühl zum Körpergeschlecht.
+c. Anerkannt werden | Wunsch nach sozialer Anerkennung im Zielgeschlecht.
+c. Körperangleichung | Wunsch nach hormoneller/chirurgischer Angleichung.
+c. Zwei Jahre | Zeitkriterium der Stabilität.
+d. Dualrole Transvestitismus | Identität | Zeitweises Tragen gegengeschlechtlicher Kleidung ohne Wunsch nach dauerhafter Angleichung; Mechanismus und Ziel unterscheiden sich.
+d. Fetischistischer Transvestitismus | Sexualpräferenz | Beim fetischistischen Transvestitismus steht sexuelle Erregung im Vordergrund; das passt nicht zum Identitätsfokus hier.
+t. f64;f64.0;definition;diagnostik
+l. 5
+g. sw
+s. https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2024/block-f60-f69.htmhttps://gesund.bund.de/icd-code-suche/f64-0
+
+
+
+cid. icdf64
+#id: f64_020
+b. Dualrole Transvestitismus | Gegengeschlechtliche Kleidung wird getragen, um eine zeitweilige Erfahrung der Zugehörigkeit zum anderen Geschlecht zu erleben.\nKennzeichen:\n* kein Wunsch nach dauerhafter Genitalorganumwandlung/chirurgischer Korrektur\n* Kleiderwechsel ist **nicht** von sexueller Erregung begleitet\n\nMerke:\n* Abgrenzung zu fetischistischem Transvestitismus ist zentral.
+c. zeitweilige Zugehörigkeit | Erfahrung ist vorübergehend, nicht dauerhaftes Lebensziel.
+c. keine sexuelle Erregung | Kein primärer Sexualerregungszusammenhang.
+c. keine Genitalumwandlung | Kein Wunsch nach dauerhafter körperlicher Angleichung.
+d. Fetischistischer Transvestitismus | F65.1 | Dort ist das Tragen der Kleidung deutlich an sexuelle Erregung gekoppelt; hier steht Identitätserleben ohne Erregung im Vordergrund.
+d. Transsexualismus | F64.0 | Dort besteht typischerweise Wunsch nach dauerhafter Angleichung und Leben als anderes Geschlecht; hier nicht.
+t. f64;f64.1;definition;differenzialdiagnose
+l. 5
+g. sw
+s. https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2024/block-f60-f69.htmhttps://gesund.bund.de/en/icd-code-suche/f64-1
+
+cid. icdf64
+#id: f64_030
+b. Diagnostik Abklärung | Diagnostik erfasst Verlauf, Belastung und Abgrenzungen.\nKernschritte:\n* Dauer/Konsistenz der Identitätsthematik\n* Ausmaß von **Leidensdruck** und Funktionsbeeinträchtigung\n* DD: psychotische Fehlüberzeugungen, affektive Episoden, Substanzen, Organik\n* Komorbidität (Depression/Angst/Traumafolgen) strukturiert erfassen.
+c. Leidensdruck | Relevantes Leiden oder Funktionsverlust erfassen.
+c. Konsistenz | Stabilität über Zeit und Situationen prüfen.
+d. Momentaufnahme | Diagnostikfehler | Akute Krisen oder einzelne Aussagen reichen nicht; nötig sind Verlauf und Kontext.
+d. Psychose | Differenzialdiagnose | Bei Wahn/Ich-Störung ist Mechanismus anders; zuerst psychotische Diagnostik und Zustandsverlauf klären.
+t. f64;diagnostik;differenzialdiagnose;komorbidität
+l. 6
+g. sw
+s. https://md-bund.de/fileadmin/dokumente/Publikationen/GKV/Begutachtungsgrundlagen_GKV/BGA_Transsexualismus_201113.pdf
+
+
+
+
+
+cid. icdf64
+#id: f64_031
+b. Therapie Begleitung | Begleitung zielt auf Stabilität, Selbstklärung und Komorbidität.\nEbenen:\n* psychosoziale Stabilisierung (Stress, Stigma, Beziehung, Alltag)\n* Entscheidungs- und Prozessbegleitung bei medizinischen Schritten\n* Behandlung von **Komorbidität** (Depression, Angst, Traumafolgen)\n\nMerke:\n* Therapie ist nicht Normierung, sondern Unterstützung von Gesundheit und Funktion.
+c. Stabilisierung | Belastungen werden reduziert, Alltag wird tragfähiger.
+c. Komorbidität | Begleiterkrankungen bestimmen Risiko und Versorgung.
+d. Umpolung | Unethisch | Identität/Orientierung „ändern“ ist kein Therapieziel; Fokus ist Leidensdruck, Sicherheit, Funktion.
+d.  Medizin | Verkürzung | Medizinische Schritte ohne psychosoziale Stabilisierung erhöhen Krisen- und Abbruchrisiko.
+t. f64;therapie;psychoedukation;komorbidität
+l. 5
+g. sw
+s. https://md-bund.de/fileadmin/dokumente/Publikationen/GKV/Begutachtungsgrundlagen_GKV/BGA_Transsexualismus_201113.pdf
+
+cid. icdf64
+#id: f64_040
+b. F64.2 Geschlechtsidentität Kindesalter | Zeigt sich in der frühen Kindheit, immer lange vor der Pubertät.\nKern: Anhaltendes und starkes Unbehagen über das **zugefallene Geschlecht**, zusammen mit dem Wunsch, zum anderen Geschlecht zu gehören.\nWeitere Kennzeichen:\n* Andauernde Beschäftigung mit Kleidung oder Aktivitäten des anderen Geschlechts\n* Ablehnung des eigenen Geschlechts\n**Diagnose:** Erfordert eine tiefgreifende Störung der normalen Geschlechtsidentität; bloße Knabenhaftigkeit bei Mädchen und mädchenhaftes Verhalten bei Jungen sind nicht ausreichend.
+t. f64;f64.2;geschlechtsidentität;kindesalter;diagnostik
+l. 5
+g. s
+s. ICD-10-GM F64.2; 2 | Störung der Geschlechtsidentität des Kindesalters.
+
+
+cid. icdf65
+#id: f65_001
+b. Paraphilien Definition | Paraphile Interessen werden diagnostisch relevant, wenn sie zu **Leidensdruck**, **Kontrollverlust** oder **Schädigungsrisiko** führen.\nDidaktische Kernidee:\n* Variation ≠ Störung.\n* Risiko und Konsens sind zentrale Achsen.\n\nAnamneseanker:\n* Dauer/Intensität, Kontrolle, Verhalten, Konsens, Folgen, Komorbidität.
+c. Leidensdruck | Betroffene leiden relevant unter Impulsen/Verhalten.
+c. Schädigungsrisiko | Gefahr/Schädigung anderer oder fehlender Konsens.
+d. Ungewöhnliche Fantasie | Normalvariante | Fantasie allein ist kein Kriterium.\nKrankheitswert entsteht erst über Leidensdruck/Kontrolle/Risiko.
+d. Moralische Abweichung | Stigma | Moral ist kein Diagnostikkriterium.\nDiagnostik orientiert sich an Risiko, Kontrolle und Folgen.
+t. f65;definition;diagnostik;risiko;sexualitaet
+l. 5
+g. sw
+
+
+
+
+
+cid. icdf65
+#id: f65_050
+b. Paraphilien drei Gruppen | Für die Struktur der Anamnese sind drei Ordnungsbereiche hilfreich:\n* Präferenz der **Sexualpraxis**\n* Präferenz des **Sexualobjekts**\n* **Polymorphe** Konstellationen (mehrere Präferenzen parallel)\n\n Ordnung dient der Erhebung (Trigger, Kontrolle, Konsens, Folgen).
+c. Sexualpraxis | Praxisbezogene Präferenz (z.B. voyeuristisch/exhibitionistisch).
+c. Sexualobjekt | Objektbezogene Präferenz (z.B. Fetisch).
+c. Polymorph | Mehrere Präferenzmuster können parallel bestehen.\nKlinische Konsequenzen:\n* Anamnese breit führen (nicht nur „Hauptpräferenz“).\n* Risiko, Kontrolle, Leidensdruck und Konsens je Muster prüfen.
+d. Sexuelle Variation | Normalvariante | Ungewöhnliche Präferenz ist nicht automatisch Störung; Krankheitswert entsteht über Leidensdruck, Kontrollverlust oder Risiko/fehlenden Konsens.
+d. Orientierungsfrage | F66 | Orientierung ist ein anderes Konstrukt als Präferenzstörung; nicht vermischen.
+t. f65;definition;diagnostik;sexualität
+l. 4
+g. sw
+s. https://gesund.bund.de/icd-code-suche/f65
+
+
+
+
+cid. icdf65
+#id: f65_060
+b. Paraphilie Ätiologie Dreiklang | Drei Erklärrahmen lassen sich gut bündeln:\n\n* **biologische Parameter** (eher überdauernd): **Androgene** sind für sexuelles Interesse grundsätzlich bedeutsam; entsprechende Rezeptoren liegen u.a. im **limbischen System** und im (anterioren) **Hypothalamus**. Bei Paraphilien sind jedoch keine durchgängig auffälligen Hormonbefunde bekannt. Gelegentlich werden **EEG-Auffälligkeiten** (v.a. temporal) beschrieben; die pathogenetische Bedeutung bleibt unklar. Paraphile Impulse können unter **dopaminerger Medikation** auftreten (Hinweis, nicht Überbewertung). Auch im Verlauf **demenzieller Erkrankungen** können sexuelle Devianzen entstehen.\n\n* **psychologische Prägung** (überdauernd):\n  * **Lerntheorie**: Kopplung von Reizen und Erregung (klassische Konditionierung), Stabilisierung durch **Verstärkung** (Entlastung/Kick), Generalisierung auf ähnliche Reize, Aufrechterhaltung durch Vermeidung/Scham.\n  * **Psychoanalyse**: Konflikte, Abwehr, Scham/Schuld, frühe Beziehungserfahrungen; paraphile Fantasien/Handlungen können als wiederkehrende Lösung für innere Spannungen und Selbstwertregulation fungieren.\n\n* **Umweltbedingungen / Lebensereignisse** (teils zeitlich befristet): Belastungsphasen, Beziehungskrisen, Verfügbarkeit von Auslösern, soziale Lernerfahrungen oder traumatische Ereignisse können paraphile Impulse verstärken oder phasenhaft triggern.\n\nMerke:\n* Kein Einzelmodell erklärt alles; klinisch hilft ein individuelles Störungsmodell (Trigger → Bedeutung → Affekt → Verhalten → Konsequenzen).
+c. psychologische Prägung | Überdauernde Lern- und Beziehungseinflüsse formen stabile Muster.
+c. Verstärkung | Kurzfristige Entlastung/Kick stabilisiert das Verhalten langfristig.
+c. Androgenrezeptoren | Sexuelles Interesse ist hormonell mit limbischen/ hypothalamischen Systemen gekoppelt.
+c. dopaminerge Medikation | Dopaminerge Therapie kann paraphile Impulse begünstigen (Hinweis, kein Beweis).
+d. Testosteron ↑ | Endokrinologie | Es sind keine konsistent pathologischen Hormonbefunde bei Paraphilien beschrieben; einzelne Laborwerte erklären das Muster nicht. Falls hormonelle Fragen im Raum stehen: endokrinologisch abklären, aber nicht als Primärerklärung setzen.
+d. EEG beweist Ursache | Überinterpretation | EEG-Auffälligkeiten werden gelegentlich beschrieben, die pathogenetische Bedeutung ist jedoch unklar. EEG ist damit kein „Beweis“ für Ursache, sondern maximal ein unspezifischer Hinweis, der klinisch zurückhaltend einzuordnen ist.
+d. Traumaursache | Verkürzung | Lebensereignisse/Belastungen können triggern, erklären aber nicht automatisch eine überdauernde paraphile Prägung. Sinnvoll ist der Dreiklang aus biologischen Parametern, psychologischer Prägung und Umwelteinflüssen.
+t. f65;aetiologie;modelle;lerntheorie;psychoanalyse;komorbidität
+l. 6
+g. sw
+
+
+cid. icdf65
+#id: f65_010
+b. Sexualpraxis Präferenzstörungen |Wiederkehrende Impulse/Fantasien/Handlungen, die auf bestimmte sexuelle Praktiken gerichtet sind.\nBeispiele:\n* **Exhibitionismus**\n* **Voyeurismus**\n* **Sadomasochismus**\n* **Frotteurismus**\n\nDidaktik:\n* Diagnostisch zählen Kontrolle, Leidensdruck, Konsens und Folgen.
+c. Exhibitionismus | Entblößen als sexuelle Praxispräferenz.
+c. Voyeurismus | Beobachten anderer als sexuelle Praxispräferenz.
+c. Frotteurismus| F65.8 der wunsch sich an anderen Menschen (ohne Konsens) zu reiben fällt unter die Sonstigen Störungen der Sexualpräferenz
+c. Sadomasochismus | Schmerz/Dominanz als zentrale Praxispräferenz.
+d. Fetischismus | Sexualobjekt | Fetischismus ist objektbezogen; gehört in F65.0 statt Praxisgruppe.
+d. Transsexualismus | F64 | Identitätsthema, keine Praxispräferenzstörung.
+t. f65;symptom;diagnostik;sexualität
+l. 4
+g. sw
+
+cid. icdf65
+#id: f65_020
+b. Sexualobjekt Präferenzstörungen | F65 Bestimmte Objekte/Personengruppen als hauptsächlichen Erregungsfokus.\nBeispiele:\n* **Fetischismus**\n* **Fetischistischer Transvestitismus**\n* **Pädophilie**\n* **Nekrophilie**\n\nDidaktik:\n* Schutz- und Risikofragen haben Vorrang, wenn Konsens/Schädigungsrisiko betroffen ist.
+c. Fetischismus | Nicht-lebendes Objekt als Hauptreiz.
+c. Fetischistischer Transvestitismus | Kleidung als Fetischreiz (Erregung gekoppelt).
+c. Pädophilie | Präferenz auf Kinder (hohes Schutz-/Risikothema).
+d. Voyeurismus | Sexualpraxis | Voyeurismus ist praxisbezogen (F65.3), nicht objektbezogen.
+d. Dualrole Transvestitismus | F64 | Dualrole ist Identitätserleben ohne Erregungskopplung; nicht F65.
+t. f65;symptom;diagnostik;sexualität;risiko
+l. 6
+g. sw
+
+ 
+ 
+
+
+
+cid. icdf65
+#id: f65_041
+b. F65 DD Zwang und Impuls | Zentrale Unterscheidung: Angstneutralisierung vs erwartungs-/belohnungsnahe Entlastung.\n* Zwang: Verhalten dient der **Angstneutralisierung** (negative Verstärkung), oft ich-dyston.\n* Impuls-/Belohnungsmuster: Drang mit erwarteter Entlastung/Belohnung.\n\n
+c. Angstneutralisierung | Handlung reduziert Angst kurzfristig.
+c. Negative Verstärkung | Entlastung durch Wegnahme von Angst/Anspannung.
+d. Craving | Belohnung | Craving ist erwartungsgetriebener Suchtdruck; Mechanismus unterscheidet sich von Neutralisierung.
+d. Tick | Neuroentwicklung | Tics sind motorische Entladungen, nicht primär Angstneutralisierung oder Belohnungsstreben.
+t. f65;differenzialdiagnose;diagnostik;zwang;sexualität
+l. 6
+g. sw
+s. https://icd.who.int/browse10/2015/en
+
+cid. icdf65
+#id: f65_042
+b. F65 Therapie Grundsätze | Behandlung richtet sich nach Risiko, Kontrolle und Komorbidität.\nGrundsätze:\n* Schutz- und **Risikomanagement** (bei fehlendem Konsens/Schädigungsgefahr)\n* Arbeit an Auslösern, Impulskontrolle, Rückfallplänen\n* Behandlung von Komorbidität (Sucht, Affekt, Trauma)\n* klare Zielklärung (Reduktion von Risiko/Folgen, Stabilität)\n\nMerke:\n* Therapie ist nicht moralische Normierung, sondern Schadensreduktion und Funktionsverbesserung.
+c. Risikomanagement | Schutz und Risikoreduktion als Priorität.
+c. Zielklärung | Ziele müssen explizit und realistisch sein.
+d. Konversion | Unethisch | „Umpolung“ ist kein Therapieziel; Behandlung fokussiert auf Risiko, Kontrolle, Leidensdruck und Komorbidität.
+d. Nur Strafe | Fehler | Straflogik ersetzt keine Therapie; klinisch wirksam sind Struktur, Skills, Komorbiditätsbehandlung.
+t. f65;therapie;risiko;komorbidität;sexualität
+l. 6
+g. sw
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC5032510/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cid. icdf60
+#id: f60_165
+b. Biopsychosoziales Modell | Persönlichkeitsmuster entstehen und stabilisieren sich meist über das Zusammenspiel mehrerer Ebenen.\n* **Biologie**: Temperament, Stressreaktivität, Vulnerabilität.\n* **Psychologie**: **Grundannahmen**, Affektregulation, Impulskontrolle.\n* **Soziales**: Bindung, Beziehungserfahrungen, Milieu, Normen.\n\nKlinische Konsequenz:\n* Therapie greift auf mehreren Ebenen: Skills, Beziehung, Struktur, Umfeld.\n* Ein „Ein-Faktor“-Erklärmodell erhöht Fehlplanung und Stigma.
+c. Grundannahmen | Tiefe Bewertungen steuern Wahrnehmung und Verhalten.
+c. Bindung | Beziehungserfahrungen prägen Selbst- und Weltmodelle.
+c. Vulnerabilität | Disposition wird unter Belastung wirksam.
+d. Ein Faktor | Verkürzung | Einzelursachen erklären selten stabile Muster; klinisch hilfreich ist ein Mehr-Ebenen-Modell mit konkreten Ansatzpunkten.
+d. Schuld | Stigma | Schuldzuweisung ersetzt keine Fallkonzeption und verschlechtert Kooperation; sinnvoll ist Funktions- und Kontextdenken.
+t. f60;aetiologie;biopsychosozial;grundlagen
+l. 5
+g. sw
+
+
+ 
+cid. icdf60
+b. F60 Cluster  | Dienen nur als grobe Landkarte für typische Stilfamilien.\n* Cluster A: „sonderbar-exzentrisch“ (Distanz/Misstrauen).\n* Cluster B: „emotional-instabil/impulsiv“ (Affektintensität/Impulsnähe).\n* Cluster C: „ängstlich-vermeidend“ (Angst/Kontrolle/Vermeidung).\n\nDidaktik:\n* Orientierung ja, Kodierung nein: ICD-10 bleibt maßgeblich.
+c. Landkarte | Grobe Orientierung, keine Diagnose.
+c. Stilfamilie | Ähnliche Muster werden gruppiert.
+d. Kodierung | Diagnostikfehler | Cluster ersetzen keine ICD-10-Kriterien; Diagnostik braucht Längsschnitt und Differenzialdiagnose.
+d. Schublade | Stigma | Cluster sind kein Werturteil; sie sollen nur Muster schneller beschreibbar machen.
+t. f60;diagnostik;zusatzinfo;grundlagen
+l. 3
+g. sw
+
+
+cid. icdf60
+#id: f60_171
+b. F60 Cluster A Kernidee | Gemeinsam ist häufig ein Stil von **Distanz** oder **Misstrauen**, mit eingeschränkter sozialer Resonanz.\nDidaktische Marker:\n* Rückzug als Schutz oder als Präferenz.\n* Interpretationen anderer werden eher als bedrohlich erlebt.\n\nMerke:\n* Immer Differenzialdiagnose zu Psychose/Autismus/Depression aktivieren.
+c. Distanz | Nähe wird vermieden oder als unnötig erlebt.
+c. Misstrauen | Andere werden als potenziell schädigend gedeutet.
+d. Psychose | Differenzialdiagnose | Psychose ist episodisch mit Realitätsprüfungsstörung; Cluster A beschreibt eher stabile Stile mit meist erhaltener Realitätsprüfung.
+d. Autismus | Entwicklung | Autismus zeigt frühe Entwicklungsmarker; bei Cluster-A-Stilen fehlt häufig die typische Entwicklungsanamnese.
+t. f60;diagnostik;zusatzinfo;differenzialdiagnose
+l. 5
+g. sw
+
+
+cid. icdf60
+#id: f60_172
+b. F60 Cluster B Kernidee | Typisch sind **Affektintensität**, **Impulsnähe** und instabile Beziehungsgestaltung.\nDidaktische Marker:\n* schnelle Eskalation unter Kränkung/Stress\n* Nähe-Distanz-Wechsel\n* hohes Risiko für Krisenlernen (Selbstschädigung, Substanz, Konflikte)\n\nMerke:\n* Struktur, Krisenplan und Beziehungsklarheit sind zentrale Prozessfaktoren.
+c. Affektintensität | Gefühle sind stark und handlungsleitend.
+c. Impulsnähe | Impulse kippen schnell in Verhalten.
+d. Manie | Affektiv | Manie ist phasisch mit Schlafbedarf↓/Tempo↑; Cluster-B-Stile sind überdauernde Muster, oft situativ getriggert.
+d. Substanz | Substanzen | Intoxikation kann Cluster-B-ähnlich wirken; zeitliche Kopplung prüfen, bevor Persönlichkeitsstil angenommen wird.
+t. f60;diagnostik;zusatzinfo;impuls;beziehung
+l. 5
+g. sw
+
+
+cid. icdf60
+#id: f60_173
+b. F60 Cluster C Kernidee | Häufig dominieren **Angst**, **Kontrolle** und **Vermeidung**.\nDidaktische Marker:\n* Vermeidung reduziert kurzfristig Angst, verstärkt aber langfristig Muster.\n* Kontrollstrategien dienen oft der Fehler- und Kränkungsvermeidung.\n\nMerke:\n* Therapie braucht Exposition/Annäherung plus Stabilisierung und Selbstwertarbeit.
+c. Vermeidung | Kurzfristige Entlastung stabilisiert langfristig Angst.
+c. Kontrolle | Regeln/Perfektion als Schutz vor Unsicherheit.
+d. Schüchternheit | Normalvariante | Schüchternheit ist Temperament; Störung erst bei Starrheit, Leidensdruck oder Funktionsverlust.
+d. Depression | Affektiv | Depressiver Rückzug ist zustandsgebunden; Cluster-C-Stile sind identitätsnah und stabiler.
+t. f60;diagnostik;zusatzinfo;angst;vermeidung
+l. 5
+g. sw
+
+
+cid. icd11unterschied
+#id: f60_180
+b. ICD-11 Konzeptwechsel | Die Diagnostik wird stärker dimensional gedacht.\nKernideen:\n* Schweregrad und Funktionsniveau stehen stärker im Vordergrund.\n* Mischbilder werden besser als Profile abbildbar.\n* Fokus verschiebt sich von „Schubladen“ zu **Trait-Profilen**.\n\nDidaktik:\n* Das erklärt klinische Mischbilder gut.\n* Für ICD-10-Lernen bleibt die Kodierung getrennt.
+c. Schweregrad | Beeinträchtigung und Risiko steuern Planung.
+c. Profil | Traits bilden ein individuelles Muster ab.
+d. neue Kodierung | Missverständnis | ICD-11-Logik erklärt Profile; sie ersetzt nicht automatisch ICD-10-Kodierlernen im Prüfmodus.
+d. Schubladen | Stigma | Dimensionalität reduziert Etikettierung und hilft, Muster präziser zu beschreiben.
+t. f60;zusatzinfo;icd11;diagnostik
+l. 4
+g. sw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cid. icdicd11
+#id: icdicd11_001
+b. Computerspielstörung ICD-11 |  **Verhaltenssucht** durch zwanghafte Nutzung von Computer- und Videospielen; sie engt die **Freiheitsgrade** ein./N**Klassifikation:** Die WHO hat die Störung in **ICD-11** aufgenommen; die **APA** erkennt sie nicht als Störung an, hat aber **Internet Gaming Disorder** im **DSM-5** als „Zustand, der weitere Untersuchungen erfordert“ (Forschungsdiagnose) aufgenommen./N**ICD-10:** Bisher keine eigenständige Diagnose; Zuordnung u. a. zu **F63.8** (abnorme Gewohnheiten/Impulskontrolle) oder **F63.0** (Glücksspielstörung)./NDSM-5 Kriterien (5 von 9 über 12 Monate): Gedankliche Eingenommenheit**, **Entzugssymptome**, **Toleranzentwicklung**, **Fehlende Kontrolle**, Interessenverlust, Weitere Nutzung trotz Probleme, Vertuschen, Flucht, Schwerwiegende Folgen./NKlinik: Besonders beachtet sind MMORPGs; Symptomatik ähnlich anderen Abhängigkeiten (Craving nicht bei allen).
+c. Verhaltenssucht | Zwanghafte Nutzung von Computerspielen mit Einengung und Freiheitsverlust.
+c. ICD-11 | WHO hat Computerspielstörung in ICD-11 aufgenommen.
+c. DSM-5 Forschungsdiagnose | Internet Gaming Disorder: 5 von 9 Kriterien über 12 Monate.
+c. F63.8 / F63.0 | ICD-10: Zuordnung zu abnormen Gewohnheiten oder Glücksspielstörung möglich.
+d. Glücksspielstörung F63.0 | F63.0 | Glücksspiel ist eigenes Störungsbild; Computerspielstörung ist in ICD-11 eigenständig, in ICD-10 wurde sie F63.8/F63.0 zugeordnet. Einordnung: F63.
+d.  Freizeitverhalten | Norm | Störung erfordert Kontrollverlust, Einengung und klinische Bedeutsamkeit; nicht jede intensive Nutzung ist krankhaft. Einordnung: Diagnosekriterien.
+t. icdicd11;f63;computerspiel;icd11;diagnostik
+l. 5
+g. sw
+s. https://www.who.int/standards/classification/icd | ICD-11; WHO. DSM-5 Internet Gaming Disorder (APA).
+
+cid. icdf60
+#id: f60_810
+b. Haltlose PS | F60.8 (sonstige) | Gemeint ist ein Muster von ausgeprägter **Willensschwäche** und geringer Selbststeuerung.\nTypisch:\n* hohe Suggestibilität und Mitlaufen mit äußeren Impulsen\n* geringe **Frustrationstoleranz**, schnelle Bedürfnisbefriedigung\n* geringe Verlässlichkeit in Zielen/Plänen, häufige Regelbrüche ohne stabile Wertebindung\n\nKlinisch:\n* wirkt oft „enthemmt“, aber eher durch fehlende Selbststeuerung als durch kalte Normmissachtung.\n* DD zu Dissozialität (Empathiearmut) und Emotional-instabil (Affektstürme) aktiv prüfen.
+c. Willensschwäche | Selbststeuerung ist deutlich vermindert.
+c. Suggestibilität | Leicht beeinflussbar, „mitziehend“.
+c. Frustrationstoleranz | Unfähigkeit, Spannung auszuhalten.
+d. Dissozialität | F60.2 | Dissozialität ist stärker durch Empathiemangel, Ausnutzung und stabile Normmissachtung geprägt; haltlos ist eher steuerungsschwach und mitlaufend.
+d. Manie | Affektiv | Manie ist phasisch mit Schlaf↓/Tempo↑; haltlose PS ist ein überdauernder Stil ohne episodischen Zustandswechsel.
+t. f60;f60.8;diagnostik;differenzialdiagnose;impuls
+l. 5
+g. sw
+s. https://icd.who.int/browse10/2019/en#/F60.8 | ICD-10: F60.8 „sonstige spezifische Persönlichkeitsstörungen“ (Beispiele inkl. haltlos).
+
+cid. icdf60
+#id: f60_811
+b. Psychoneurotische PS | F60.8 (sonstige) | Gemeint ist ein chronisches Muster von ausgeprägter **Ängstlichkeit**/Unsicherheit mit neurotischer Symptomnähe.\nTypisch:\n* starke Selbstzweifel, Spannungszustände, innere Inhibition\n* wechselnde vegetative Beschwerden/Stressreaktionen möglich\n* Vermeidung und Sicherheitsverhalten stabilisieren das Muster (negative Verstärkung)\n\nKlinisch:\n* häufig hohe Komorbidität mit Angst-/somatoformen Syndromen.\n* Entscheidend ist der stabile Stil über Jahre, nicht nur eine Episode.
+c. Ängstlichkeit | Dauerhafte ängstliche Grundspannung als Stil.
+c. Sicherheitsverhalten | Vermeidung/Absicherung reduziert Angst kurzfristig.
+c. Inhibition | Gehemmtheit und starke Selbstkontrolle aus Angst.
+d. Angststörung | F40-F41 | Angststörungen sind häufig episodischer/situationsgebundener; hier steht ein überdauernder Persönlichkeitsstil im Vordergrund.
+d. Somatoform | F45 | Somatoforme Störungen sind symptomzentriert; psychoneurotische PS meint einen breiteren Stil von Angst/Unsicherheit über Lebensbereiche.
+t. f60;f60.8;differenzialdiagnose;angst;komorbidität
+l. 5
+g. sw
+s. https://icd.who.int/browse10/2019/en#/F60.8 | ICD-10: F60.8 Beispiele (u.a. psychoneurotisch) als „sonstige spezifische Persönlichkeitsstörungen“.
+
+cid. icdf60
+#id: f60_812
+b. Unreife PS | F60.8 (sonstige) | Gemeint ist ein Muster von geringer **Affektreife** und unzureichender Selbstregulation.\nTypisch:\n* geringe **Frustrationstoleranz** und schnelle affektive Reaktionen\n* abhängige, kindlich wirkende Konfliktlösung (z.B. Rückzug, Trotz, Forderung)\n* instabile Zielbindung und wechselnde Verantwortungsübernahme\n\nKlinisch:\n* wichtig ist die Abgrenzung zu entwicklungsbezogener Unreife ohne Störungswert und zu abhängiger PS.\n* Schwerpunkt: Funktionsniveau und Stabilität der Muster im Längsschnitt.
+c. Affektreife | Gefühle steuern Verhalten rasch und undifferenziert.
+c. Trotzreaktion | Kindlich wirkender Widerstand statt Lösung.
+c. Verantwortungsübernahme | Instabil oder delegiert, je nach Kontext.
+d. Abhängige PS | F60.7 | Abhängige PS ist versorgungsorientiert mit Trennungsangst; unreif ist breiter in Affekt- und Konfliktregulation instabil.
+d. Borderline | F60.31 | Borderline zeigt stärker Identitätsinstabilität, Selbstschädigung und intensive Bindungsdynamik; unreif ist unspezifischer als Reife-/Regulationsmuster.
+t. f60;f60.8;differenzialdiagnose;entwicklung;beziehung
+l. 5
+g. sw
+s. https://icd.who.int/browse10/2019/en#/F60.8 | ICD-10: F60.8 Beispiele (u.a. unreif) als „sonstige spezifische Persönlichkeitsstörungen“.
+
+
+
+
+
+cid. icdf6
+#id: f60_001
+b. Persönlichkeit Definition | Persönlichkeit meint relativ stabile **Muster** in **Denken**, **Fühlen** und **Handeln**.\nDidaktischer Kern:\n* Muster zeigen sich **situationsübergreifend**.\n* Sie sind mehr als Rollenverhalten: Rollen wechseln, Muster bleiben.\n* Persönlichkeit ist nicht „Symptom“, sondern der typische Organisationsstil von Selbststeuerung und Beziehung.\n\nMerke:\n* Für Diagnostik ist der **Längsschnitt** entscheidend: Wie konstant ist das Muster über Jahre?
+c. Muster | Wiederkehrende, typische Organisation des Erlebens/Verhaltens.
+c. Längsschnitt | Beurteilung über Zeit statt Momentaufnahme.
+c. Situationsübergreifend | Muster zeigt sich in vielen Kontexten.
+d. Rolle | Kontext | Rollen sind kontextabhängig und wechselhaft; Persönlichkeit meint den stabileren Musteranteil hinter Rollenverhalten.
+d. Temperament | Entwicklung | Temperament ist Disposition; Persönlichkeit umfasst zusätzlich Lernen, Beziehung und Kontext über die Entwicklung.
+t. f60;definition;grundlagen;diagnostik
+l. 3
+g. sw
+
+
+cid. icdf6
+#id: f60_002
+b. Persönlichkeitsentwicklung | Entwicklung entsteht aus dem Zusammenspiel von **Temperament**, **Bindung**, **Lernen** und **Kultur**.\nDidaktischer Kern:\n* Frühe Beziehungserfahrungen prägen Selbst- und Weltmodelle.\n* Verstärkung und Modelllernen stabilisieren Strategien (z.B. Vermeidung, Kontrolle).\n* Entwicklung bleibt teilweise **plastisch**: Veränderung ist möglich, aber oft langsam.\n\nMerke:\n* Biografie erklärt Vulnerabilität, ersetzt aber keine Kriterienprüfung einer Störung.
+c. Bindung | Frühe Beziehung prägt Erwartungen und Affektregulation.
+c. Lernen | Verstärkung/Modelle stabilisieren Verhaltensstrategien.
+c. Plastisch | Veränderbarkeit ist möglich, aber schrittweise.
+d. Pubertät | Entwicklung | Pubertät ist eine Phase; Persönlichkeitsentwicklung ist lebenslang und nicht auf eine Entwicklungsstufe reduzierbar.
+d. Determinismus | Irrtum | Weder Gene noch Kindheit legen den Verlauf zwangsläufig fest; Kontext und Lernen bleiben veränderungsrelevant.
+t. f60;definition;entwicklung;grundlagen
+l. 4
+g. sw
+
+
+
+cid. icdf60
+#id: f60_101
+b. Lerntheorie Sichtweise | Muster werden durch **Verstärkung** und **Modelllernen** stabil.\nTypische Schleifen:\n* Vermeidung senkt Angst → Verhalten wird negativ verstärkt.\n* Druck/Drohung erzeugt kurzfristig Kontrolle → Muster wird verstärkt.\n* Beziehungserfahrungen formen **Grundannahmen** („anderen kann man nicht trauen“).\n\nTherapieableitung:\n* **Verhaltensanalyse** + alternative Verstärker + geplante Übungen im Alltag.
+c. Verstärkung | Kurzfristige Entlastung stabilisiert Verhalten.
+c. Modelllernen | Beobachtete Strategien werden übernommen und verfestigt.
+c. Grundannahmen | Tiefe Bewertungen steuern Wahrnehmung und Reaktion.
+d. Einsicht | Verkürzung | Verstehen allein ändert selten Muster; entscheidend sind Übungen, neue Verstärker und Transfer in den Alltag.
+d. Moralappell | Stigma | Appelle ersetzen keine Funktionsanalyse; sie erhöhen eher Scham/Abwehr statt Veränderungsfähigkeit.
+t. f60;aetiologie;lernen;kvt;therapie
+l. 5
+g. sw
+
+
+cid. icdf60
+#id: f60_102
+b. Psychodynamik Sichtweise | Muster werden als Ergebnis von Entwicklung, Beziehung und innerer Organisation verstanden.\nKernelemente:\n* **Abwehr** schützt vor Affektüberflutung, kann aber Starrheit erzeugen.\n* **Strukturniveau** (Selbststeuerung, Affekttoleranz, Selbstbild) beeinflusst Beziehung und Konflikt.\n* Wiederkehrende Beziehungsskripte entstehen aus frühen Objektbeziehungen.\n\nTherapieableitung:\n* Beziehung als Arbeitsfeld: Muster erkennen, **Mentalisieren**, Affekte differenzieren.
+c. Abwehr | Schutzmechanismus, der Muster stabilisieren kann.
+c. Strukturniveau | Niveau innerer Selbst- und Affektorganisation.
+c. Mentalisieren | Innere Zustände bei sich/anderen differenziert verstehen.
+d. Nur Vergangenheit | Verkürzung | Fokus liegt auch auf Mustern im aktuellen Beziehungsgeschehen, nicht nur auf historischen Ereignissen.
+d. Technikfixierung | Prozessfehler | Deuten/Techniken ohne tragfähige Allianz und Rahmen kann destabilisieren; zuerst Sicherheit und Arbeitsbündnis.
+t. f60;aetiologie;psychodynamik;beziehung;therapie
+l. 6
+g. sw
+
+
+cid. icdf62
+#id: f62_001
+b. Andauernde Persönlichkeitsänderungen |F62 "nicht Folge einer Schädigung oder Krankheit des Gehirns".\nKernkriterien:\n* deutliche Veränderung von Erleben/Verhalten im **vorher–nachher**-Vergleich\n* **länger als 2 Jahre** anhaltend\n* Auslöser: Extrembelastung oder traumatisch erlebte schwere psychische Erkrankung\n\nMerke:\n* Ohne Längsschnitt und Ausschluss von Organik/Substanzen ist die Diagnose nicht belastbar.
+c. Andauernde Veränderung | Stabiler Stilwechsel, nicht nur Symptome.
+c. Nicht organisch | Keine Hirnschädigung/-krankheit als Primärursache.
+c. Vorher–nachher-Änderung | Diagnostik braucht Vergleichsfolie.
+d. Organische Persönlichkeitsstörung | F07 | Persönlichkeitsänderung durch Hirnkrankheit/-schädigung; widerspricht dem nicht-organischen Kern von F62.
+d. Akute Belastungsreaktion | Kurzreaktion | Akute Reaktionen sind zeitlich kurz und kontextgebunden; F62 verlangt Langzeitstiländerung.
+t. f62;definition;kriterium;diagnostik
+l. 5
+g. sw
+
+
+cid. icdf62
+#id: f62_010
+b. F62 Nach Extrembelastung | Min **2 Jahre** bestehende **Persönlichkeitsänderung** nach einer **Belastung katastrophalen Ausmaßes**.\nDie Belastung muss so extrem sein, dass die **Vulnerabilität** der Person als Erklärung für die tiefgreifende Auswirkung nicht in Erwägung gezogen werden muss.\n\n**Kennzeichen:**\n* **Feindliche oder misstrauische Haltung** gegenüber der Welt\n* **Sozialer Rückzug**\n* Gefühle der **Leere** oder **Hoffnungslosigkeit**\n* **Chronisches Gefühl der Anspannung** wie bei ständigem Bedrohtsein\n* **Entfremdungsgefühl**\n\n**Vorlauf:** Eine **posttraumatische Belastungsstörung (F43.1)** kann dieser Form der Persönlichkeitsänderung vorausgegangen sein.\n\nMerke: Im Vordergrund steht nicht die PTBS-Symptomatik, sondern der **dauerhafte Stilwechsel** (Grundhaltung, Beziehungsgestaltung).
+c. Belastung katastrophalen Ausmaßes | Extremes Ereignis als Auslöser; so extrem, dass Vulnerabilität nicht als Erklärung nötig ist.
+c. mindestens 2 Jahre | Zeitkriterium für andauernde Persönlichkeitsänderung.
+c. PTBS davor  | F43.1 kann der Persönlichkeitsänderung vorausgegangen sein; F62.0 = darüber hinaus dauerhafter Stil.
+d. Anpassungsstörung | F43.2 | Reaktion auf Belastung meist zeitlich begrenzt; F62.0 = extreme Belastung + mind. 2 Jahre Stiländerung.
+t. f62;f62.0;trauma;differenzialdiagnose
+l. 6
+g. sw
+
+
+
+cid. icdf62
+#id: f62_011
+b. Andauernde PS Symptomcluster |F62.0: Typisch sind Veränderungen in Grundhaltung und Beziehung, z.B.:\n* anhaltendes **Misstrauen** oder Feindseligkeit\n* sozialer Rückzug\n* Gefühle von **Leere** und Hoffnungslosigkeit\n* geringe **Flexibilität** im Erleben/Handeln\n\nMerke:\n* Entscheidend ist die Dauerhaftigkeit nach Extrembelastung (vorher–nachher) und die Zeitbedingung.
+c. Misstrauen | Dauerhafte skeptische/feindselige Grundhaltung.
+c. Entfremdungserleben | Gefühl von Distanz zu Selbst/Welt.
+c. Flexibilität | Fähigkeit zur Anpassung ist deutlich eingeschränkt.
+c. Leere | Anhaltendes inneres Leere- und Sinnverlustgefühl.
+d. Depressive Episode | F32 | Depression ist meist episodisch; hier steht ein dauerhafter Stil nach Extrembelastung im Vordergrund.
+d. Paranoide PS | F60.0 | Paranoider Stil besteht typischerweise seit Jugend; F62.0 erfordert einen nachweisbaren Stilwechsel nach Extrembelastung.
+t. f62;f62.0;symptom;beziehung
+l. 6
+g. sw
+
+
+
+cid. icdf62
+#id: f62_020
+b. F62 Nach psych Krankheit | Auf der traumatischen Erfahrung einer schweren psychiatrischen Krankheit beruhende, **mindestens 2 Jahre** bestehende **Persönlichkeitsänderung**.\nDie Änderung kann nicht durch eine **vorbestehende Persönlichkeitsstörung** erklärt werden und ist abzugrenzen vom **Residualzustand** einer Schizophrenie und anderen Zustandsbildern **unvollständiger Rückbildung** einer vorausgegangenen psychischen Störung.\n\n**Kennzeichen:**\n* **Abhängigkeit**, **Anspruchs- und Erwartungshaltung** gegenüber anderen\n* **Überzeugung**, durch die Krankheit verändert oder **stigmatisiert** worden zu sein\n* **Unfähigkeit**, enge und vertrauensvolle persönliche **Beziehungen** aufzunehmen und beizubehalten, **soziale Isolation**\n* **Passivität**, verminderte **Interessen**, Vernachlässigung von Freizeitbeschäftigungen\n* Ständige **Beschwerden über das Kranksein**, oft **hypochondrische Klagen**, **kränkelndes Verhalten**\n* **Dysphorische oder labile Stimmung** \n* Länger bestehende **Probleme in sozialer und beruflicher Funktionsfähigkeit**
+c. traumatische Erfahrung | Schwere psychische Erkrankung wird als prägendes, traumatisches Ereignis erlebt.
+c. mindestens 2 Jahre | Zeitkriterium für andauernde Persönlichkeitsänderung.
+c. Abgrenzung Residualzustand | Nicht mit Restsymptomen/unvollständiger Rückbildung verwechseln.
+c. Stigmaüberzeugung, soziale Isolation | Überzeugung verändert/stigmatisiert; Unfähigkeit zu engen Beziehungen.
+c. Passivität, Funktionsfähigkeit | Verminderte Interessen; länger bestehende soziale und berufliche Probleme.
+d. Residualzustand Schizophrenie | F20.5 | Restsymptome bzw. unvollständige Rückbildung sind von der Persönlichkeitsänderung nach Krankheitserleben zu unterscheiden. Einordnung: F20.5.
+d. Organische Persönlichkeitsänderung | F07 | F62 beruht auf traumatischem Erleben der Erkrankung; F07 auf Hirnpathologie. Einordnung: F07.
+d. Vorbestehende Persönlichkeitsstörung | Erklärung ausgeschlossen | Die Änderung darf nicht durch eine bereits vor der Erkrankung bestehende PS erklärbar sein. Einordnung: Ausschlusskriterium.
+t. f62;f62.1;verlauf;differenzialdiagnose
+l. 6
+g. sw
+
+
+ 
+
+ 
+ 
+
+cid. icdf62
+#id: f62_031
+b. F62.0 KPTBS Brücke | Als Einordnungshilfe: F62.0 kann klinisch wie eine chronifizierte Traumafolge wirken.\n \n* Dauerhafter Stilwechsel nach Extremstress,\n* ersetzt nicht die ICD-10-Kodierlogik\n\nMerke:\n* Nutzen: bessere Psychoedukation, klarere DD (Syndrom vs Stiländerung).
+c. Chronifizierung | Traumafolge wird dauerhaft und stilprägend.
+c. Einordnungshilfe | Brücke erklärt, ersetzt aber keine Kodierung.
+d. PTBS | F43.1 | PTBS ist ein Symptombündel; F62.0 zielt auf anhaltende Persönlichkeitsveränderung nach Extrembelastung.
+d. Dysthymie | F34.1 | Chronische Depression ist affektiv; sie erklärt nicht automatisch einen traumabezogenen Stilwechsel.
+t. f62;zusatzinfo;trauma;differenzialdiagnose
+l. 4
+g. sw
+
+
+
+
+
+
+cid. icdf63
+#id: f63_111
+b. F63 Dopamin und Belohnung | Die **Erwartungs-Reaktion**: Dopamin fungiert im **Belohnungssystem** weniger als „Glückshormon“ für Genuss, sondern primär als Signal für **Belohnungserwartung**. Bei Impulskontrollstörungen (F63) kann das zu starkem **Suchtdruck** führen.\n\nDie **Überstimmung**: Auf Triggerreize (z.B. Glücksspiel) reagiert das System mit starker dopaminerger Aktivierung; dadurch wird die top-down **Kontrollregulation** im **präfrontalen Kortex** funktional „überstimmt“.\n\nDie **Toleranzentwicklung**: Chronische Überreizung senkt die **Rezeptorsensitivität** (Dopamin-Rezeptoren). Dadurch werden stärkere Reize nötig, um überhaupt noch Befriedigung/Entlastung zu erreichen oder ein emotionales Defizit zu kompensieren.\n\nKlinische Konsequenz:\n* Impulsverhalten wird durch **Verstärkungslernen** stabilisiert.\n* **Craving** ist erwartungsgetrieben und triggerabhängig.
+c. Belohnungserwartung | Dopamin signalisiert vor allem die Erwartung einer Belohnung.
+c. Suchtdruck | Drang, den Reiz erneut aufzusuchen, trotz negativer Folgen.
+c. Toleranzentwicklung | Sinkende Sensitivität führt zu Bedarf nach stärkeren Reizen.
+d. Glückshormon | Psychoedukation | Dopamin wird oft fälschlich als reines „Glückshormon“ verstanden.\nDas passt nicht, weil hier die Erwartungs- und Lernsignalfunktion im Vordergrund steht.\nHilfreich ist Psychoedukation: Erwartungssignale, Trigger und Verstärkungslernen erklären.
+d. Angstneutralisierung | Zwangsstörung | Während bei Dopamin und Belohnung der Fokus auf dem positiv besetzten „Antrieb“ und dem Streben nach einem Kick liegt, dient das Verhalten bei Zwangsstörungen primär der negativen Verstärkung, um durch die Handlung eine unerträgliche Angst oder Anspannung kurzfristig zu neutralisieren.
+t. f63;aetiologie;neuro;suchtverhalten
+l. 5
+g. sw
+
+
+cid. icdf63
+#id: f63_105
+b. F63 DD Substanz und Organik | Impulsdurchbrüche müssen erst als Zustandsphänomen ausgeschlossen werden, bevor F63 sinnvoll ist.\nDD-Kernachsen:\n* **Intoxikation/Entzug**: zeitlicher Zusammenhang, wechselnde Vigilanz, situativ wechselnde Enthemmung.\n* **Affektive Episode**: klarer Zustandswechsel mit **Schlafbedarf↓**, Tempo↑, Ideenfluss↑.\n* **Psychotische Störung**: Handeln aus Wahn/Ich-Störung, Realitätsprüfung eingeschränkt.\n* **Organische Enthemmung**: frontale Symptomatik, neurokognitive Hinweise.\n\nKlinische Konsequenz:\n* Ohne DD droht Fehlkodierung und falsche Therapiepriorität.
+c. Intoxikation | Substanzeffekt als Treiber des Impulsverhaltens.
+c. Zustandswechsel | Episodisch vs stabiler Impulsstil.
+c. Organische Enthemmung | Impulskontrolle durch Hirnprozesse beeinträchtigt.
+d. Charakterfehler | Psychoedukation | Personalisierung erklärt keine Mechanismen und verhindert DD.\nStattdessen: DD-Prüfung (Substanzen, Episoden, Organik) und funktionale Analyse.
+d. Manische Episode | Affektive Störung | Manie ist episodisch mit Schlaf↓ und breitem Risikoverhalten.\nBei F63 steht ein wiederkehrendes Spannungs-Entlastungs-Muster ohne typischen Maniezustand im Vordergrund.
+t. f63;differenzialdiagnose;diagnostik;pharmakotherapie;neuro
+l. 6
+g. sw 
+ 
+
+ 
+b. F63 Problematische Internetnutzung | Klinisch relevant wird Internetnutzung, wenn **Kontrollverlust** vorliegt und die Nutzung eine klare **Funktionsbeeinträchtigung** (Arbeit/Leistung, Beziehungen, Schlaf, psychische Stabilität) erzeugt.\nMarker:\n* **Priorität** der Nutzung gegenüber Pflichten/Beziehungen.\n* Fortsetzung trotz negativer Folgen.\n\nDidaktik:\n* ICD-10 bildet das Phänomen nur indirekt ab; \n* Komorbidität ist häufig (Affekt, Angst, Sucht, Persönlichkeitsmuster) 
+c. Kontrollverlust | Nutzung lässt sich nicht ausreichend steuern.
+c. Funktionsbeeinträchtigung | Schule/Arbeit/Beziehungen leiden messbar.
+c. Priorität | Nutzung verdrängt andere Lebensbereiche.
+d. Faulheit | Stigma | Moralbegriffe erklären nichts und verschleiern Komorbidität.\nArbeitsfähig wird es über Funktionsanalyse, Kontext und Therapiebausteine.
+d. Hohe Bildschirmzeit | Normalvariante | Viel Zeit allein ist kein Kriterium.\nEntscheidend sind Kontrollverlust und Funktionsbeeinträchtigung.
+d. Gaming Disorder | ICD-11 | Bei Gaming steht das Spielen im Vordergrund mit ICD-11-Definition.\nBei allgemeiner Internetnutzung muss die Nutzungsform und DD/Komorbidität sauber getrennt werden.
+t. f63;internet;diagnostik;zusatzinfo;suchtverhalten
+l. 5
+g. sw
+s. https://register.awmf.org/de/leitlinien/detail/076-011
+
+
+
+cid. icdf63
+#id: f63_122
+b. F63 Internetnutzung Kinder Jugend | Bei Kindern/Jugendlichen ist die Schwelle zur Störung erreicht, wenn **Entwicklungsaufgaben** (Schule, Schlaf, Peers, Autonomie) durch **Kontrollverlust** und **Funktionsbeeinträchtigung** dauerhaft überlagert werden.\nLeitfragen:\n* Welche Funktion erfüllt die Nutzung (Flucht, Regulation, Zugehörigkeit)?\n* Welche Systeme sind betroffen (Familie, Schule, Peers)?\n* Komorbidität: ADHS, Angst, Depression
+c. Entwicklungsaufgaben | Nutzung behindert zentrale Entwicklungsschritte.
+c. Systemkontext | Familie/Schule/Peers bestimmen Verlauf und Intervention.
+d. Pubertätskonflikt | Entwicklung | Konflikte allein sind nicht Störung.\nDiagnostisch zählen Kontrollverlust und Funktionsbeeinträchtigung.
+d. Reine Verbote | Intervention | Verbote ohne Funktionsanalyse/Skills erhöhen oft Reaktanz.\nBesser: Regeln + Alternativen + Familienarbeit.
+t. f63;internet;diagnostik;entwicklung;komorbidität
+l. 5
+g. sw
+s. https://register.awmf.org/assets/guidelines/076-011l_S1_Diagnostik-Therapie-Internetnutzungstoerungen_2025-06.pdf
+
+ 
+
+cid. icdf63
+#id: f63_125
+b. F63 Medien­sozialisation Risiko | Risiko entsteht, wenn Nutzung früh und unstrukturiert als Hauptmittel der **Stressregulation** etabliert wird.\nRisikokontexte:\n* inkonsistente Regeln, fehlende Alternativen.\n* Konflikt-/Belastungsdynamik in Familie.\n* soziale Isolation.\n\nDidaktik:\n* Kontextdiagnostik ist Teil der Diagnostik; Intervention ist oft systemisch (Regeln, Alternativen, Beziehung).
+c. Stressregulation | Nutzung ersetzt andere Regulationswege.
+c. Kontextdiagnostik | Familie/Umfeld müssen mit geprüft werden.
+d.  Elternverantwortung | Stigma | Schuldzuweisung verhindert Kooperation.\nBesser: Funktionsverständnis + konkrete, umsetzbare Strukturänderungen.
+d.  Medienexzess | Episode | Kurzzeitige Phasen sind nicht automatisch Störung.\nEntscheidend sind Dauer, Kontrollverlust und Funktionsbeeinträchtigung.
+t. f63;internet;aetiologie;familie;entwicklung
+l. 4
+g. sw
+s. https://register.awmf.org/de/leitlinien/detail/076-011
+
+cid. icdf63
+#id: f63_080
+b. F63 Therapie Internetnutzung | Therapie ist kvt- und suchtnah: erst **Analyse**, dann **Skills** und **Struktur**, dann Rückfallarbeit.\nBausteine:\n* funktionale Analyse (Makro/Mikro)\n* Arbeit an Kognitionen („nur kurz“, Rechtfertigungen)\n* Skills: Affekt- und Spannungsregulation\n* Aufbau alternativer Aktivitäten/Beziehungen\n* klare Regeln/Umfeldintervention, ggf. Familienarbeit\nc. Funktionale Analyse | Auslöser–Kette–Konsequenzen werden sichtbar.
+c. Skills | Konkrete Alternativen zur Spannungsregulation.
+d. Nur Willenskraft | Verkürzung | Appelle ohne Skills/Struktur brechen meist.\nWirksam wird es über Analyse, Skills und Umfeldanpassung.
+d. Reine Abstinenz | Zielklärung | Abstinenz kann sinnvoll sein, ist aber Zielvereinbarung.\nOhne Analyse/Alternativen steigt Rückfallwahrscheinlichkeit.
+t. f63;internet;therapie;kvt;rueckfallprophylaxe
+l. 6
+g. sw
+s. https://register.awmf.org/assets/guidelines/076-011l_S1_Diagnostik-Therapie-Internetnutzungstoerungen_2025-06.pdf
+
+
+cid. icdf63
+#id: f63_001
+b. F63 Überblick | Kennzeichnend ist ein wiederkehrendes Spannungs-Entlastungs-Muster.\nTypischer Ablauf:\n* **Spannung** steigt vor der Handlung an\n* während/nach der Handlung: Lust/Entlastung\n* langfristige Folgen sind negativ, dennoch Wiederholung\n\nDiagnostik:\n* **Funktionsanalyse** (Auslöser–Kette–Konsequenzen)\n* DD: Substanzen, Episoden, Organik
+c. Spannung | Anstieg vor der Handlung ist typisch.
+c. Schleife | Abfolge Spannung–Handlung–Entlastung.
+c. Belohnung | Kurzfristige Entlastung verstärkt Verhalten.
+c. Funktionsanalyse | Kettenmodell macht Auslöser und Konsequenzen sichtbar.
+c. Entlastung | Kurzfristige Belohnung stabilisiert Verhalten.
+d. Willensschwäche | Stigma | Der Begriff moralisiert und verschleiert Mechanismen; hilfreich ist Funktionsdenken statt Bewertung.
+d. Zwangsstörung | F42 | Zwang dient primär der Angstneutralisierung; F63 ist erwartungs-/belohnungsnah mit Spannungs-Entlastungs-Bogen.
+d. Manische Episode | F30 | Manie ist phasisch mit Zustandsmarkern (Schlaf↓, Tempo↑); F63 ist ein wiederkehrendes Handlungsmuster ohne Maniezustand als Kern.
+t. f63;definition;impuls;diagnostik
+l. 5
+g. sw
+
+ 
+
+cid. icdf63
+#id: f63_010
+b. Pathologisches Spiel |F63.0 Spielen wird zum dominanten Organisationsprinzip.\nMarker:\n* **Kontrollverlust** (Stoppen gelingt nicht)\n* zunehmende Priorität gegenüber Arbeit/Beziehungen\n* Folgekaskade: **Schulden**, Lügen, sozialer Abstieg\n\nMerke:\n* Diagnostik prüft Funktion, Auslöser, Komorbidität und Schadensbegrenzung.
+c. Kontrollverlust | Verhalten lässt sich nicht ausreichend begrenzen.
+c. Schulden | Typische Folge mit hoher klinischer Relevanz.
+c. Priorität | Spiel verdrängt zentrale Lebensbereiche.
+d. Freizeitspiel | Normalvariante | Häufiges Spielen ohne Kontrollverlust/Folgen ist keine Störung.
+d. Manie | Affektiv | Manie kann Spiel-/Risikoverhalten treiben, ist aber phasisch; hier steht ein anhaltendes Spielmuster im Vordergrund.
+t. f63;f63.0;symptom;suchtverhalten
+l. 5
+g. sw
+
+
+
+
+
+
+
+
+cid. icdf63
+#id: f63_101
+b. Pyromanie | F63.1 Wiederholte tatsächliche oder versuchte Brandstiftung an Gebäuden oder anderem Eigentum **ohne verständliches Motiv**, verbunden mit anhaltender Beschäftigung mit Feuer/Brand.\nTypischer Ablauf:\n* wachsende **innere Spannung** vor der Handlung\n* starke **Erregung** während und sofort nach der Tat\n\nMerke:\n* Motivfreiheit + Spannungs-Erregungs-Bogen sind zentral.
+c. verständliches Motiv fehlt | Kein primärer äußerer Zweck (Gewinn/Rache) als Hauptantrieb.
+c. innere Spannung | Spannung steigt vor der Tat an.
+c. starke Erregung | Erregung/Entladung direkt nach der Tat.
+d. Intoxikation | F10-F19.0 | Brandstiftung unter Alkohol/psychotropen Substanzen ist substanzbedingt; erst zeitliche Kopplung und Intoxikation klären.
+d. Organik | F00-F09 | Brandstiftung durch organische psychische Störungen ist organisch getrieben; F63.1 setzt nicht-organische Impulsstörung voraus.
+d. Dissoziale PS | F60.2 | Bei dissozialer PS ist Brandstiftung oft normmissachtend/kalkuliert; bei Pyromanie steht motivfreie Faszination plus Spannungs-Erregungs-Bogen im Vordergrund.
+t. f63;f63.1;definition;differenzialdiagnose;impuls
+l. 6
+g. sw
+s. https://icd.who.int/browse10/2019/en#/F63.1 | ICD-10: Pyromanie (Info + Exklusionsliste).
+
+cid. icdf63
+#id: f63_102
+b. Kleptomanie | F63.2 Wiederholtes Versagen, Impulsen zu widerstehen, Dinge zu stehlen, die nicht dem persönlichen Gebrauch oder der Bereicherung dienen.\nTypischer Ablauf:\n* wachsende **innere Spannung** vor der Handlung\n* **Befriedigung** während und sofort nach der Tat\n* Gegenstände werden oft weggeworfen, weggegeben oder gehortet\n\nMerke:\n* Kein Nutzen/Profit + Spannungs-Befriedigungs-Bogen sind zentral.
+c. keine Bereicherung | Stehlen nicht für Nutzen/Profit.
+c. Befriedigung | Befriedigung/Entlastung während oder sofort nachher.
+c. wegwerfen oder horten | Beute wird oft nicht gebraucht, sondern entsorgt/gesammelt.
+d. Beobachtung | Z03.2 | Wenn Verdacht auf psychische Störung ausgeschlossen wird, ist es eine Beobachtungs-/Ausschlusskodierung, nicht F63.2.
+d. Organik | F00-F09 | Organische psychische Störungen können Diebstahl/Enthemmung verursachen; erst organisch abklären.
+d. Depression | F31-F33 | Stehlen im Rahmen depressiver Störung (z.B. Zustandsveränderung) gehört primär zur affektiven Diagnose; F63.2 ist ein eigenständiges Impulsmuster.
+t. f63;f63.2;definition;differenzialdiagnose;impuls
+l. 6
+g. sw
+s. https://icd.who.int/browse10/2019/en#/F63.2 | ICD-10: Kleptomanie (Info + Exklusionsliste).
+
+cid. icdf63
+#id: f63_103
+b. Trichotillomanie | F63.3 Wiederholte, misslungene Versuche, Impulsen zum Ausreißen der Haare zu widerstehen, mit beachtlichem Haarverlust.\nTypischer Ablauf:\n* wachsende **Spannung** vor dem Ausreißen\n* **Erleichterung** und Befriedigung danach\n\nAusschluss:\n* keine Diagnose, wenn vorab eine Hautentzündung bestand\n* nicht, wenn Haareausreißen Reaktion auf **Wahn** oder **Halluzination** ist.
+c. Haarverlust | Sichtbarer Verlust durch wiederholtes Ausreißen.
+c. Erleichterung | Erleichterung/Befriedigung nach dem Verhalten.
+c. Spannung | Anstieg von Spannung vor dem Ausreißen.
+d. Hautentzündung | Dermatologie | Wenn das Ausreißen auf vorbestehende Hautentzündung reagiert, ist F63.3 nicht passend; somatisch klären.
+d. Wahn | Psychose | Wenn das Verhalten wahn-/halluzinationsgetrieben ist, gehört es in psychotische Diagnostik, nicht F63.3.
+d. Alopecia | Somatik | Nicht-verhaltensbedingter Haarverlust (z.B. Alopecia areata) ist somatisch; F63.3 setzt verhaltensbedingten Verlust voraus.
+t. f63;f63.3;definition;differenzialdiagnose;impuls
+l. 6
+g. sw
+s. https://icd.who.int/browse10/2019/en#/F63.3 | ICD-10: Trichotillomanie (Info + Exklusionshinweise).
+
+
+
+
+
+
+
+
+
+
+
+
+
+cid. icdf63
+#id: f63_070
+b. Komorbidität F63 | * affektive Störungen\n* Angststörungen\n* Alkoholmissbrauch/-abhängigkeit\n* Essstörungen\n* ADHS\n* Persönlichkeitsstörungen\n\nMerke:\n* Komorbidität steuert Risiko und Therapiepriorität.
+c. Komorbidität | Begleiterkrankungen sind häufig und relevant.
+c. Therapiepriorität | Reihenfolge nach Risiko und Stabilität.
+d. Reine Impulsstörung | Irrtum | „Nur F63“ ohne Komorbidität ist selten; Nichtbeachtung erhöht Rückfallrisiko.
+d. Organik | Differenzialdiagnose | Organische Enthemmung ist DD, nicht Komorbidität; zuerst ausschließen.
+t. f63;komorbidität;diagnostik
+l. 5
+g. sw
+s. 27
+
+cid. icdf63
+#id: f63_071
+b. Epidemiologie F63 | Orientierung:\n* außer Glücksspiel eher selten\n* Geschlechterrelation variiert:\n  * Glücksspiel, Pyromanie eher Männer\n  * Kleptomanie, Trichotillomanie eher Frauen\n* < 10% der erwachsenen Glücksspieler*innen entwickeln ein Problem\n* < 25% der Abhängigen suchen Hilfe
+c. Geschlechterrelation | Je Störung unterschiedlich verteilt.
+c. Hilfequote niedrig | Viele suchen keine professionelle Hilfe.
+t. f63;epidemiologie;diagnostik
+l. 4
+g. s
+
+
+cid. icdf63
+#id: f63_090
+b. Biologische Variablen | Biologie erklärt Vulnerabilität und Lernstärke, nicht Moral.\nKernideen:\n* serotoninerge Variabilität kann **Impulskontrolle** schwächen\n* dopaminerge Variabilität ist für **Belohnung** und Impulsivität relevant\n* Familienhäufungen von Impulskontrollstörungen sind beschrieben\n\nMerke:\n* Klinisch bleibt Funktionsanalyse + Kontextarbeit zentral.
+c. Impulskontrolle | Hemmung/Steuerung kann vulnerabel sein.
+c. Familienhäufung | Risikoindikator, kein Kriterium.
+d. Charakterfehler | Stigma | Moralbegriffe erklären keine Mechanismen; hilfreich ist Vulnerabilität + Lernen + Kontext.
+t. f63;aetiologie;genetik;neuro
+l. 5
+g. sw
+
+
+cid. icdf63
+#id: f63_201
+b. F63 Psychotherapie  | Therapie kombiniert Exploration, Lernen und Rückfallmanagement.\nIm Handout:\n* psychodynamisch und lerntheoretisch orientierte Gesprächsführung\n* Kompetenztraining, Stressbewältigung, Emotionsdiskrimination\n* Exposition/Craving-Skills\n* individuelles Störungsmodell + Rückfallprophylaxe\n\nMerke:\n* Ziel ist neue Regulation statt alte Entlastungsschleife.
+c. Störungsmodell | Kette aus Auslöser–Handlung–Folgen sichtbar machen.
+c. Rückfallprophylaxe | Trigger, Frühwarnzeichen, Wenn-Dann-Pläne.
+d. Willenskraft | Verkürzung | Vorsätze brechen unter Trigger; wirksam sind Skills, Struktur und Rückfallplan.
+d. Trigger ignorieren | Risiko | Ohne Triggerarbeit bleibt Rückfallprophylaxe wirkungslos.
+t. f63;therapie;kvt;skills;rueckfallprophylaxe
+l. 6
+g. sw
+
+
+
+
+
+
+cid. icdf63
+#id: f63_140
+b. Skin-Picking-Störung | Kratzen, Drücken, Zupfen führt zu sichtbaren **Hautläsionen**.\nKernmerkmale:\n* **Kontrollverlust**: wiederholtes Picking trotz Vorsatz, aufzuhören.\n* **Spannungs-Entlastung**: häufig Anstieg von innerer Anspannung/Drang vorab und kurzfristige Entlastung danach.\n* klinisch relevant durch **Leidensdruck** und/oder Funktionsbeeinträchtigung (Scham, Rückzug, Zeitverlust).\n\nMedizinische Folgen:\n* Wunden, Narben, Infektionen, Hautschäden.\n\nDifferenzialdiagnostik:\n* somatische Ursachen (z.B. Parasiten/Pruritus, Dermatologie)\n* Zwangsspektrum (Neutralisierung statt Kick)\n* körperbezogene repetitive Muster (z.B. Trichotillomanie)\n\nTherapieprinzipien:\n* Störungsmodell + Triggeranalyse\n* Verhaltensverfahren (z.B. **Habit-Reversal**) und Stimulus-Kontrolle\n* Komorbidität (Angst/Depression, OCD, Substanzen) behandeln
+c. Kontrollverlust | Das Verhalten lässt sich nicht zuverlässig stoppen.
+c. Hautläsionen | Picking verursacht wiederkehrende Wunden/ Narben.
+c. Spannungs-Entlastung | Drang/Spannung vorab, Entlastung danach stabilisiert das Muster.
+c. Habit-Reversal | Training alternativer Reaktionen statt Picking.
+d. Krätze | Dermatologie | Hautläsionen können durch eine dermatologische/infektiöse Ursache entstehen.\nBei Skin-Picking steht das wiederholte, schwer kontrollierbare Verhalten im Vordergrund; somatische Ursachen müssen ausgeschlossen werden.
+d. Zwangshandlung | Zwangsstörung | Bei Zwang steht meist **Angstneutralisierung** (negative Verstärkung) und Ich-Dystonie im Zentrum.\nBeim Skin-Picking ist das Muster häufig drang-/entlastungsnah und verhaltenskettenartig (Trigger → Drang → Picking → Entlastung).
+d. Haareausreißen | BFRB | Trichotillomanie betrifft primär Haare; Skin-Picking betrifft primär Haut.\nBeide teilen das Spannungs-Entlastungs-Muster, aber das Zielverhalten und die medizinischen Folgen unterscheiden sich.
+t. f63;zusatzinfo;haut;impuls;diagnostik;komorbidität
+l. 6
+g. sw
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC5522672/ | Systematic Review: Skin picking ist durch wiederholtes Picking mit Läsionen + Distress/Impairment gekennzeichnet.
+
+
+
+cid. icdf63
+#id: f63_141
+b. Zwanghaftes Kaufen | Kernmerkmale:\n* ausgeprägte gedankliche Vereinnahmung (Preoccupation) und Drang zu kaufen.\n* Kaufen dient oft der **Stimmungsregulation** (kurzfristige Entlastung/Kick).\n* Fortsetzung trotz negativer Konsequenzen (z.B. **Verschuldung**, Konflikte, Funktionsverlust).\n* nach dem Kaufen häufig Schuld/Scham; im Verlauf oft Eskalation (Toleranz/Steigerung des Reizes).\n\nDifferenzialdiagnostik:\n* Manie/Hypomanie (phasischer Zustandswechsel, Schlaf↓, Tempo↑)\n* Zwang (Neutralisierung statt Belohnungs-/Entlastungsfokus)\n* „normaler“ Impulskauf ohne persistente Folgen\n\nTherapieprinzipien:\n* KVT (Trigger/Urge-Management, kognitive Verzerrungen, Alternativen)\n* finanzielle Schadensbegrenzung (Budget, Sperren, Drittverwaltung)\n* Komorbidität (Depression/Angst, Sucht, ADHS) mitbehandeln
+c. Kaufdrang | Wiederkehrender, aufdringlicher Drang zu kaufen.
+c. Stimmungsregulation | Kaufen wird genutzt, um innere Zustände zu regulieren.
+c. Verschuldung | Typische schwere Folge mit hoher klinischer Relevanz.
+c. Preoccupation | Gedankliche Vereinnahmung durch Kaufen/Shopping.
+d. Manie | Affektiv | Manie ist phasisch mit Schlafbedarf↓, Tempo↑ und breitem Risikoverhalten.\nBeim zwanghaften Kaufen steht ein persistentes, trigger- und entlastungsgetriebenes Kaufmuster im Vordergrund (nicht nur episodisch).
+d. Impulskauf | Normalvariante | Spontankäufe ohne anhaltenden Kontrollverlust und ohne relevante Folgeschäden sind keine Störung.\nEntscheidend sind Persistenz, Kontrollverlust und negative Konsequenzen.
+d. Zwangshandlung | Zwangsstörung | Bei Zwang dient das Verhalten primär der Angstneutralisierung.\nBeim zwanghaften Kaufen dominieren Belohnungs-/Entlastungsmechanismen, Preoccupation und Folgeschäden.
+t. f63;zusatzinfo;kaufen;impuls;diagnostik;komorbidität;therapie
+l. 6
+g. sw
+s.  https://pmc.ncbi.nlm.nih.gov/articles/PMC10562810/ | For the first time, compulsive buying-shopping disorder (CBSD) is now listed as an example of other specified impulse control disorders in the coding tool of the 11th edition of the International Classification of Diseases (ICD-11 code 6C7Y) (WHO, 2022). Phenomenological features of CBSD are time-consuming shopping activities and excessive spending of consumer items that are not needed or not utilized for the intended purposes, which may be offline (i.e. in-store) or online (i.e. on the internet) (McElroy, Keck, Pope, Smith, & Strakowski, 1994; Müller, Laskowski, Trotzke, et al., 2021). Diagnostic characteristics of CBSD include diminished control over buying/shopping (with regard to e.g., frequency, intensity, duration, and context), increasing priority given to buying/shopping to the extent that the consumer activities interfere with other interests, leisure activities, professional duties, and daily responsibilities
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cid. icdf60
+#id: f60_131
+b. Indexstörung Therapiefokus | Therapie wird steuerbar, wenn der Auftrag konkret ist.\nKernideen:\n* Start beim primären Auftrag, meist als **ich-dyston** erlebt.\n* Ziele operationalisieren: Verhalten, Beziehung, Risiko, Funktion.\n* Priorisieren: Lebensgefahr → Prozessstabilität → Lebensqualität.\n\nMerke:\n* Nicht „die Persönlichkeit“ behandeln, sondern veränderbare Zielbereiche.
+c. Indexstörung | Subjektiv belastendes Hauptproblem.
+c. Ich-dyston | Erleben als störend, nicht als passend.
+d. Alles gleichzeitig | Prozessfehler | Zu viele Ziele überfordern und erhöhen Abbruch; Priorisierung schafft Sicherheit und Fortschritt.
+d. Diagnose diskutieren | Verkürzung | Diagnose ordnet ein, ersetzt aber keine Ziel- und Prozessarbeit; entscheidend sind konkrete Veränderungsschritte.
+t. f60;therapie;planung;prozess
+l. 5
+g. sw
+
+
+cid. icdf60
+#id: f60_240
+b. Schematherapie | Schematherapie kombiniert Beziehung, Emotionsarbeit und Verhaltensänderung.\nKernidee:\n* Wiederkehrende **Schemata** (z.B. Verlassenheit, Misstrauen) steuern Affekt und Beziehung.\n* Veränderung über „neue Erfahrung“ + Übung + Alltagstransfer.\n\nMerke:\n* Besonders nützlich bei stabilen Beziehungsmustern und chronischer Selbstabwertung.
+c. Schemata | Tiefe Muster, die Affekt und Beziehung steuern.
+c. Neue Erfahrung | Korrigierende Erfahrung im sicheren Rahmen.
+d. Reine Konfrontation | Prozessfehler | Konfrontation ohne Bindung/Validierung destabilisiert; Schematherapie koppelt Veränderung an Beziehung und Emotionsarbeit.
+d. Nur Einsicht | Verkürzung | Verstehen ohne Übung verändert selten; zentral sind Experimente, Beziehung und Transfer.
+t. f60;therapie;schematherapie;beziehung
+l. 5
+g. sw
+s. https://www.nice.org.uk/guidance/cg78
+
+cid. icdf60
+#id: f60_243
+b. Langzeitverlauf PS | Muster können bestehen bleiben, aber viele Betroffene erfüllen später die **Kriterien nicht mehr** (CLPS: nach 1 Jahr deutlich weniger, nach 10 Jahren weiter sinkend).\n\n**Stabilität vs. Besserung:**\n* Persönlichkeitsstörungen sind **stabiler als Major Depression**, aber **bedeutsame Besserungen** sind möglich und nicht selten./N* „Unheilbar“ als Grundannahme ist fachlich überholt; Veränderung oft schrittweise.\n\n**Public Health:** Funktionsbeeinträchtigung, hohe **Inanspruchnahme** von Behandlung, negativer **prognostischer Einfluss** auf Major Depression, **Suizidrisiko**.\n\n**Dimensionale vs. kategoriale Sicht:**/N* **Dimensionale Modelle** haben klinische Validität, die reine Kategorien nicht bieten – v. a. **größere zeitliche Stabilität** der Dimensionen./N* **Persönlichkeitszüge** (dimensional) scheinen die Grundlage der in den PS-Kriterien beschriebenen Verhaltensweisen zu sein./N* Hypothese (CLPS): PS als **Hybrid aus stabilen Persönlichkeitszügen** und **intermittierend** gezeigten **symptomhaften Verhaltensweisen**.
+c. PS immer Lebenslang | Viele erfüllen später die Kriterien nicht mehr; CLPS-Daten über 1 und 10 Jahre.
+c. Stabiler als Major Depression | PS stabiler als MDD; bedeutsame Besserungen aber möglich und nicht selten.
+d. Unheilbar | Pessimismus | Langzeitdaten zeigen Besserungen; hilfreicher ist Funktions- und Prozessdenken.
+t. f60;verlauf;prognose;studien
+l. 5
+g. sw
+s. https://pubmed.ncbi.nlm.nih.gov/16274278/ |The Collaborative Longitudinal Personality Disorders Study (CLPS; Gunderson et al., 2000) was developed to fill gaps in our understanding of the nature, course, and impact of personality disorders (PDs). Here, we review published findings to date, discuss their implications for current conceptualizations of PDs, and raise questions that warrant future consideration. We have found that PDs are more stable than major depressive disorder, but that meaningful improvements are possible and not uncommon. We have confirmed also that PDs constitute a significant public health problem, with respect to associated functional impairment, extensive treatment utilization, negative prognostic impact on major depressive disorder, and suicide risk. At the same time, we have demonstrated that dimensional models of PDs have clinical validity that categories do not, especially greater temporal stability. Furthermore, dimensional personality traits appear to be the foundation of behaviors described by many PD criteria. Taken together, our results lead us to hypothesize that PDs may be reconceptualized as hybrids of stable personality traits and intermittently expressed symptomatic behaviors.
+
+
+
+cid. icdf60
+#id: f60_250
+b. Fünf Entstehungsmodelle | Fünf Modelle helfen, unterschiedliche Aspekte desselben Problems zu erklären.\nModelle:\n* **psychodynamisch** (Lebensgeschichte, innere Organisation)\n* **lerntheoretisch** (Verstärkung, Modelllernen)\n* **soziologisch** (Normen, Kontext, Rollen)\n* **biologisch** (Vulnerabilität, Stressreaktivität)\n* **biopsychosozial** (Integration)\n\nMerke:\n* Modelle sind Landkarten; Therapie braucht ein individuelles Störungsmodell.
+c. Landkarte | Modell erklärt, ersetzt aber nicht Diagnostik.
+c. Individuelles Modell | Fallkonzeption steuert Interventionen.
+d. Ein Faktor | Verkürzung | Einzelursachen erklären selten stabile Muster; sinnvoll ist Mehr-Ebenen-Denken.
+d. Schuld | Stigma | Schuldrahmen blockiert Kooperation; hilfreich ist Funktions- und Kontextdenken.
+t. f60;aetiologie;modelle;grundlagen
+l. 4
+g. sw
+
+cid. icdf60
+#id: f60_251
+b. Circumplex Modell | Persönlichkeit wird im interpersonellen Raum beschrieben.\nKernidee:\n* Muster lassen sich entlang von Beziehungachsen ordnen (z.B. Dominanz–Unterordnung, Nähe–Distanz).\n\nNutzen:\n* macht Beziehungsmuster sichtbar und messbarer (Profil statt Etikett).
+c. Beziehungachsen | Muster werden entlang interpersoneller Achsen beschrieben.
+c. Profil | Beschreibung als Musterprofil statt Schublade.
+d. Diagnoseersatz | Diagnostikfehler | Circumplex ordnet Muster, ersetzt aber keine ICD-Kriterien und keinen Längsschnitt.
+d. Moralurteil | Stigma | Interpersonelle Profile beschreiben Funktion, nicht Wert.
+t. f60;aetiologie;modelle;beziehung
+l. 4
+g. sw
+
+cid. icdf60
+#id: f60_252
+b. Soziologisches Modell | Abweichung wird als Ergebnis von Normen, Rollen und Kontext verstanden.\nKernidee:\n* was als „gestört“ gilt, hängt auch von Kultur, Milieu und Erwartungsrahmen ab.\n\nNutzen:\n* reduziert Überpathologisierung und stärkt Kontextdiagnostik.
+c. Kontextdiagnostik | Normen und Milieu müssen mitgedacht werden.
+c. Kulturrahmen | Erwartungsrahmen beeinflusst Abweichungsbeurteilung.
+d. Beliebigkeit | Missverständnis | Kontextdenken heißt nicht „alles ist okay“; Kriterien bleiben, werden aber kultursensibel geprüft.
+d. Relativismus | Verkürzung | Es geht um Kontext plus Funktionsverlust, nicht um das Auflösen klinischer Kriterien.
+t. f60;aetiologie;modelle;kultur
+l. 4
+g. sw
+
+cid. icdf60
+#id: f60_253
+b. Biologisches Modell | Biologische Vulnerabilität beeinflusst Stressreaktivität und Affektkontrolle.\nKernideen:\n* Genvarianten können Reaktivität (z.B. Amygdala) modulieren.\n* Vulnerabilität ist Risiko, kein Schicksal.\n\nMerke:\n* Biologie erklärt Disposition, nicht den konkreten Lebensstil.
+c. Stressreaktivität | Körperliche/affektive Reaktion auf Stress.
+c. Disposition | Risikoanlage, die unter Stress sichtbar wird.
+d. Determinismus | Irrtum | Genetik ist Risiko, nicht Vorhersage; Lernen und Umfeld bleiben entscheidend.
+d. Hirnschaden | Organik | Hirnschaden ist organische Störung; hier geht es um nicht-organische Vulnerabilität.
+t. f60;aetiologie;genetik;neuro
+l. 5
+g. sw
+
+cid. icdf60
+#id: f60_242
+b. Therapie Prozessregeln | Gute Prozessführung ist oft entscheidender als „die perfekte Technik“.\nKernpunkte:\n* **kleine Schritte** und Geduld\n* Toleranz gegenüber Tempo und Rückschritten\n* Probleme mit Compliance erwarten\n* eigene Reaktionen reflektieren, **Supervision** nutzen\n\nMerke:\n* Prozesssteuerung ist Intervention.
+c. Kleine Schritte | Mini-Schritte erhöhen Umsetzbarkeit.
+c. Supervision | Reflexion schützt Prozess und Beziehung.
+d. Druck | Prozessfehler | Druck erhöht Scham/Abwehr; wirksamer sind Struktur und realistische Schritte.
+d. Retten | Gegenmuster | Retterdynamik destabilisiert Rollen und Grenzen; hilfreich ist planbare Unterstützung im Rahmen.
+t. f60;therapie;prozess;selbstschutz
+l. 5
+g. sw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+cid. icdf63
+#id: f63_120
+b. CSBD ICD-11 Ausblick | Störungsniveau liegt vor, wenn wiederholtes sexuelles Verhalten trotz negativer Folgen nicht kontrolliert werden kann.\nDiagnostischer Kern:\n* **Kontrollverlust** über Impulse/Handlungen.\n* **Folgeschäden** (Beziehungen, Arbeit, Gesundheit).\n* Persistenz über Zeit.\n\nDidaktik:\n* Nicht als „Sucht“ etikettieren müssen: ICD-11 ordnet es als Impulskontrollstörung ein.\n* Moralische Bewertung allein ist kein Kriterium.
+c. Kontrollverlust | Zentrales Kriterium: nicht ausreichend steuerbar.
+c. Folgeschäden | Wiederkehrende, relevante negative Konsequenzen.
+d. Hohe Libido | Normalvariante | Häufigkeit allein ist kein Kriterium.\nEntscheidend sind Kontrollverlust und Folgeschäden.
+d. Moralischer Konflikt | Diagnostikfehler | Moralische Belastung ohne Kontrollverlust/Folgeschäden reicht nicht.\nDiagnostisch zählt Funktionsbeeinträchtigung, nicht Normabweichung.
+t. f63;zusatzinfo;sexualitaet;icd11;diagnostik
+l. 5
+g. sw
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC5775124/
+
+cid. icdf63
+#id: f63_099
+b. CSBD Moral Distress | Diagnostischer Stolperstein: **moral distress** (Schuld/Scham wegen Wertkonflikt) ist nicht gleich Störung.\nKlinische Trennung:\n* Störung: Kontrollverlust + Folgeschäden + Persistenz.\n* Moral distress: Konflikt/Scham ohne zwingenden Kontrollverlust.\n\nDidaktik:\n* Diese Trennung schützt vor Überpathologisierung und vor „Therapien“ mit moralischem Ziel.
+c. moral distress | Wertkonflikt erzeugt Belastung ohne Krankheitsmechanismus.
+c. Überpathologisierung | Risiko: Normkonflikt fälschlich als Störung kodieren.
+d. Konversionstherapie | Unethisch | Normierende „Umpolung“ ist nicht Therapie.\nPsychische Symptome entstehen oft aus Stigma/Stress, nicht aus Orientierung/Identität.
+d. Zwangsstörung | Angstregulation | Zwang zielt auf Angstneutralisierung.\nCSBD zielt auf erwartungsgetriebene Entlastung/Belohnung bei Kontrollverlust.
+t. f63;zusatzinfo;sexualitaet;icd11;differenzialdiagnose
+l. 6
+g. sw
+s. https://pmc.ncbi.nlm.nih.gov/articles/PMC5775124/
+

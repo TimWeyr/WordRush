@@ -129,7 +129,6 @@ Use PIPE (|) to separate fields
 |--------|-----------|
 | `→` | führt zu / erzeugt |
 | `=` | bedeutet / ist |
-| `∈` | gehört zu / Teil von |
 | `↯` | Gegensatz |
 | `↑` | steigert |
 | `↓` | senkt |
@@ -404,6 +403,7 @@ c. correct2 | context2 | collectionorder | level
 d. distractor1 | redirect1 | context1 | level
 d. distractor2 | redirect2 | context2 | level
 s. source | detail
+g. game
 t. tag1 | tag2 | tag3
 l. level
 
@@ -420,6 +420,7 @@ b. = Base word (starts a new item) (word | context) - context optional, word CAN
 c. = Correct entry (word | context | order | level) - order optional (default: 0/empty, only set if collection order matters, e.g. phases of alcoholism), level optional (default: uses round level l., only specify if this entry is harder than round level). IMPORTANT: Each word must be UNIQUE within the item - do NOT create multiple c. entries with the same word!
 d. = Distractor entry (word | redirect | context | level) - level optional (default: uses round level l., only specify if this entry is harder than round level). IMPORTANT: Each word must be UNIQUE within the item - do NOT create multiple d. entries with the same word!
 s. = Source/Detail (source | detail) - detail optional, if missing in update keeps existing value
+g. = suitable for which game (s=streetsmarts, w=wordrush, sw=both)
 t. = Tags (tag1 | tag2 | tag3) - pipe-separated, optional, OVERRIDES all existing tags
 l. = Round Level (1-10, optional, applies to entire round, different from item-level in c./d.)
 # = Comment line (ignored during parsing) - optional

@@ -1,0 +1,290 @@
+[
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 2,
+    "base_word": "Substanzen F10-F19",
+    "context": "\n\n* **Alkohol** – F10: Psychische und Verhaltensstörungen durch Alkohol, häufigste substanzbedingte Störung\n* **Cannabinoide** – F12: Psychische und Verhaltensstörungen durch Cannabinoide (z. B. Cannabis, Haschisch, Marihuana)\n* **Halluzinogene** – F16: Psychische und Verhaltensstörungen durch Halluzinogene (z. B. LSD, Psilocybin, Meskalin)\n* **Kokain** – F14: Psychische und Verhaltensstörungen durch Kokain, Stimulans mit hohem Abhängigkeitspotenzial\n* **Lösungsmittel** – F18: Psychische und Verhaltensstörungen durch flüchtige Lösungsmittel (z. B. Klebstoffe, Lacke)\n* **Opioide** – F11: Psychische und Verhaltensstörungen durch Opioide (z. B. Heroin, Morphin, Methadon)\n* **Sedativa** – F13: Psychische und Verhaltensstörungen durch Sedativa oder Hypnotika (z. B. Benzodiazepine, Barbiturate)\n* **Stimulanzien** – F15: Psychische und Verhaltensstörungen durch andere Stimulanzien (z. B. Amphetamine, Methamphetamin)\n* **Tabak** – F17: Psychische und Verhaltensstörungen durch Tabak, Nikotinabhängigkeit",
+    "correct_words": "Lösungsmittel, Alkohol, Opioide, Cannabinoide, Sedativa, Kokain, Stimulanzien, Halluzinogene, Tabak",
+    "item_uuid": "99f531c9-b6f7-41a5-9876-9eaa501ff661"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Starker Drang zu trinken",
+    "context": "\n\n* **Craving** – Craving = Fachbegriff für starken, unwiderstehlichen Drang, Alkohol zu konsumieren (Kriterium 1 von 6 bei F10.2).",
+    "correct_words": "Craving",
+    "item_uuid": "514af7e4-2348-42c2-8206-175f75e2a26d"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Unfähigkeit, Konsum zu stoppen",
+    "context": "\n\n* **Kontrollverlust** – Kontrollverlust = Kriterium 2 von 6 (Unfähigkeit, den Konsum zu kontrollieren oder zu stoppen).",
+    "correct_words": "Kontrollverlust",
+    "item_uuid": "a29a2001-1653-4fab-b9f6-1b26ecb8be32"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Gewöhnung, höhere Dosis nötig",
+    "context": "\n\n* **Toleranzentwicklung** – Toleranzentwicklung = Kriterium 3 (Gewöhnung, für gleiche Wirkung sind höhere Dosen nötig).",
+    "correct_words": "Toleranzentwicklung",
+    "item_uuid": "edc2ebed-ced1-4ba1-83b6-6204a4fed658"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Körperlicher Entzug",
+    "context": "\n\n* **Tremor, Schwitzen, Tachykardie** – Körperlicher Entzug zeigt u. a. Tremor, Schwitzen, Tachykardie und Unruhe (Kriterium 4 von 6).",
+    "correct_words": "Tremor, Schwitzen, Tachykardie",
+    "item_uuid": "a8aca2dc-7d4d-4630-95d5-d51a164ff47a"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Alkohol bestimmt Tagesplanung",
+    "context": "\n\n* **Einengung** – Einengung = Kriterium 5: Alkohol dominiert Gedanken, Planung und Freizeitgestaltung.",
+    "correct_words": "Einengung",
+    "item_uuid": "1890d48a-6701-4f04-b9d5-5fbf0fa01c9f"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Trinken trotz körperlicher, psychischer oder sozialer Schäden",
+    "context": "\n\n* **Weitergebrauch trotz Schäden** – Weitergebrauch trotz Schäden = Kriterium 6: Konsum trotz Lebererkrankung, Jobverlust, Partnerschaftskonflikten etc.",
+    "correct_words": "Weitergebrauch trotz Schäden",
+    "item_uuid": "e47ed73b-ffeb-4fc6-ab1e-10825df63ef6"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Wie ist der ICD10 Code für Abhängigkeit",
+    "context": "\n\n* **F10.2** – Der ICD-10-Code für Alkoholabhängigkeit.",
+    "correct_words": "F10.2",
+    "item_uuid": "a5cf59b3-8bfa-4e08-92ff-5f5883d3d27b"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Wie ist der ICD10 Code für Alkoholabhängigkeit",
+    "context": "\n\n* **F10.2** – Der ICD-10-Code für Alkoholabhängigkeit.",
+    "correct_words": "F10.2",
+    "item_uuid": "69a4a84a-8da9-4c87-8200-8eaff936ccce"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Dopamin-System",
+    "context": "\n\n* **Reward/Verstärkung im mesolimbischen System** – Dopamin-Anstieg im mesolimbischen System (Nucleus accumbens) → Reward, Verstärkung des Trinkens.",
+    "correct_words": "Reward/Verstärkung im mesolimbischen System",
+    "item_uuid": "02a79663-a661-4f3d-a8ff-d42262651b60"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Tremor",
+    "context": "\n\n* **Feinschlägiges Zittern** – Tremor = feinschlägiges Zittern, typisches körperliches Entzugssymptom.",
+    "correct_words": "Feinschlägiges Zittern",
+    "item_uuid": "8ca88135-33dc-4e3b-bbd8-7c5a68a92c28"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Delirium tremens",
+    "context": "\n\n* **F10.4 – schwerste Entzugsform** – Delirium tremens = F10.4: schwerste Entzugsform mit Desorientiertheit, Halluzinationen, vegetativer Entgleisung.",
+    "correct_words": "F10.4 – schwerste Entzugsform",
+    "item_uuid": "b9abe0a0-4e6f-4b0d-a5ff-3b70fc84b743"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "F10.2",
+    "context": "\n\n* **Alkoholabhängigkeitssyndrom** – F10.2 = Alkoholabhängigkeitssyndrom (mindestens 3 von 6 Kriterien müssen erfüllt sein Verlangen (Craving), Kontrollverlust, körperliche Entzugssymptome, Toleranzentwicklung, Vernachlässigung anderer Interessen und fortgesetzter Konsum trotz schädlicher Folgen.)",
+    "correct_words": "Alkoholabhängigkeitssyndrom",
+    "item_uuid": "8970da93-64d5-4650-8ad8-39d1734025e2"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Acamprosat",
+    "context": "\n\n* **Anti-Craving, GABA/Glutamat-Stabilisierung** – Acamprosat stabilisiert GABA/Glutamat und reduziert Craving in der Rückfallprophylaxe.",
+    "correct_words": "Anti-Craving, GABA/Glutamat-Stabilisierung",
+    "item_uuid": "d0cfad06-a347-41eb-9b26-574509af0014"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Nalmefen",
+    "context": "\n\n* **Opioidantagonist, reduziert Trinkmenge** – Nalmefen blockiert Opioidrezeptoren → weniger Reward beim Trinken → Reduktion der Trinkmenge.",
+    "correct_words": "Opioidantagonist, reduziert Trinkmenge",
+    "item_uuid": "70d5a9ce-2441-4f82-81fd-e9c76c962a70"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Tachykardie",
+    "context": "\n\n* **Herzrasen** – Herzrasen, häufiges vegetatives Entzugssymptom.",
+    "correct_words": "Herzrasen",
+    "item_uuid": "5b9c0919-8201-4350-8145-381052cda44b"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Entzugssymptome",
+    "context": "\n\n* **Tremor, Schwitzen, Tachykardie, Angst** – Entzugssymptome = Tremor, Schwitzen, Tachykardie, Herzrasen, Angst, Schlaflosigkeit (durch GABA↓, Glutamat↑)",
+    "correct_words": "Tremor, Schwitzen, Tachykardie, Angst",
+    "item_uuid": "b40dfbba-dcce-4442-a15a-32d5fa68ddec"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Rückfallprävention",
+    "context": "\n\n* **alternative Rituale** – Rückfallprävention = Triggeranalysen (Schichtende, Einsamkeit), Skills (Körperanker, Atemtechniken), alternative Abendrituale\n* **Triggeranalysen** – Rückfallprävention = Triggeranalysen (Schichtende, Einsamkeit), Skills (Körperanker, Atemtechniken), alternative Abendrituale",
+    "correct_words": "alternative Rituale, Triggeranalysen",
+    "item_uuid": "c2e5da21-f655-4725-8dac-522b1ac592dc"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Gamma Phase",
+    "context": "\n\n* **Abstinenzunfähigkeit** – Kontrollverlust, Entzugssymptome und Verlust der Abstinenzfähigkeit (klassische Abhängigkeit).\n* **Entzug ** – Kontrollverlust, Entzugssymptome und Verlust der Abstinenzfähigkeit (klassische Abhängigkeit).\n* **Kontrollverlust** – Kontrollverlust, Entzugssymptome und Verlust der Abstinenzfähigkeit (klassische Abhängigkeit).",
+    "correct_words": "Entzug , Kontrollverlust, Abstinenzunfähigkeit",
+    "item_uuid": "56b32c11-ef54-4d00-995f-cef33ff6d050"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Glutamat-System",
+    "context": "\n\n* **Im Entzug: Tremor, Angst, Krampfgefahr** – Chronischer Konsum → Glutamat-NMDA hochreguliert; im Entzug Überaktivität → Tremor, Angst, Krampfanfälle.",
+    "correct_words": "Im Entzug: Tremor, Angst, Krampfgefahr",
+    "item_uuid": "0ab058bd-14fa-472e-b345-96b8e9d1f7c5"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Disulfiram",
+    "context": "\n\n* **Aversive Therapie (Antabuse-Effekt)** – Disulfiram hemmt den Alkoholabbau → bei Trinken unangenehme Reaktion (Flush, Übelkeit, Blutdruckabfall).",
+    "correct_words": "Aversive Therapie (Antabuse-Effekt)",
+    "item_uuid": "076f021a-f5dd-4198-8975-31e6e313a656"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Krampfanfälle",
+    "context": "\n\n* **Lebensgefährlich im Entzug** – Krampfanfälle = lebensgefährliche Komplikation im schweren Alkoholentzug (durch Glutamat-Überwiegen)",
+    "correct_words": "Lebensgefährlich im Entzug",
+    "item_uuid": "5c36e74f-9254-40e5-8762-05f1d8fec4c8"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Wie ist der ICD10 Code für Sucht",
+    "context": "\n\n* **F10.2** – Der ICD-10-Code für Alkoholabhängigkeit.",
+    "correct_words": "F10.2",
+    "item_uuid": "51fe7413-534d-4c92-ba16-9586d7a48f03"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "GABA-System",
+    "context": "\n\n* **Akut sedierend** – Alkohol verstärkt GABA: akut sedierend, anxiolytisch, muskelrelaxierend durch Verstärkung der GABA-Wirkung\n* **Akut: sedierend, anxiolytisch** – Alkohol verstärkt GABA: akut sedierend, anxiolytisch, muskelrelaxierend.\n* **Anxiolytische Wirkung** – Alkohol wirkt angstlösend durch Verstärkung der GABAergen Hemmung, besonders bei akutem Konsum\n* **Entzug Hyperexzitabilität** – Im Entzug: GABA-System unteraktiv, Glutamat-System überaktiv, führt zu Entzugssymptomen wie Tremor, Krampfanfälle, Unruhe\n* **GABA-Rezeptoren** – Alkohol bindet an GABA-A-Rezeptoren und verstärkt die inhibitorische Wirkung von GABA, führt zu Sedierung und Entspannung\n* **Muskelrelaxation** – Alkohol verstärkt GABA-vermittelte Muskelrelaxation, kann zu Atemdepression bei hohen Dosen führen\n* **Toleranzentwicklung** – Chronischer Alkoholkonsum führt zu Downregulation der GABA-Rezeptoren, höhere Dosen nötig für gleiche Wirkung",
+    "correct_words": "Akut: sedierend, anxiolytisch, Akut sedierend, GABA-Rezeptoren, Anxiolytische Wirkung, Entzug Hyperexzitabilität, Toleranzentwicklung, Muskelrelaxation",
+    "item_uuid": "006c0306-9925-4bd7-80b8-1d2a216d79be"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 2,
+    "base_word": "Psychotrope Substanzen",
+    "context": "\n\n* **Alkohol** – Eine psychotrope Substanz.",
+    "correct_words": "Alkohol",
+    "item_uuid": "1d01036f-f33f-480a-8b49-3a27b5f0cd72"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 2,
+    "base_word": "Zwang",
+    "context": "\n\n* **Starker Wunsch** – Ein Aspekt des Zwangs.",
+    "correct_words": "Starker Wunsch",
+    "item_uuid": "b2e6f16f-12cd-42fa-b054-721b6ceeec94"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 2,
+    "base_word": "Toleranz",
+    "context": "\n\n* **Gewöhnung an Substanz** – Ein Aspekt der Toleranz.",
+    "correct_words": "Gewöhnung an Substanz",
+    "item_uuid": "36a893b0-5ae3-4ad2-b174-a2224c82701c"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 2,
+    "base_word": "Kontrollfähigkeit",
+    "context": "\n\n* **Verminderte Kontrolle** – Ein Aspekt der Alkoholabhängigkeit.",
+    "correct_words": "Verminderte Kontrolle",
+    "item_uuid": "00fec962-3498-4b5a-b348-ac36fb8bc4ab"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 2,
+    "base_word": "Vernachlässigung",
+    "context": "\n\n* **Soziale Beziehungen** – Ein Aspekt der Vernachlässigung.",
+    "correct_words": "Soziale Beziehungen",
+    "item_uuid": "6f920cf1-9167-4d74-bae8-fbb36d5a48e0"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 1,
+    "base_word": "Konsum",
+    "context": "\n\n* **Alkoholkonsum** – Ein anderer Aspekt des Konsums.",
+    "correct_words": "Alkoholkonsum",
+    "item_uuid": "ea78a711-fe52-4004-a9ca-4f0bf904ec61"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 2,
+    "base_word": "Diagnosekriterien",
+    "context": "\n\n* **6 Kriterien** – Die Anzahl der Kriterien, die für die Diagnose Alkoholabhängigkeit erfüllt sein müssen.",
+    "correct_words": "6 Kriterien",
+    "item_uuid": "9f7dddfd-855e-468d-80f4-4a52371fe5da"
+  },
+  {
+    "theme_name": "F10-F19: Psychische und Verhaltensstörungen durch psychotrope Substanzen",
+    "chapter_name": "F10 Alkohol",
+    "round_level": 2,
+    "base_word": "Entzugssyndrom",
+    "context": "\n\n* **Körperliche Symptome** – Ein Aspekt des Entzugssyndroms.",
+    "correct_words": "Körperliche Symptome",
+    "item_uuid": "fe60e4ad-1445-412e-ade6-5a5d66c272da"
+  }
+]

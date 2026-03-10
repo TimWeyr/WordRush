@@ -235,12 +235,33 @@ export class SupabaseLoader {
 
   /**
    * 💾 Delete a round and all its items
+   * Deletes items first (FK constraint), then the round
    */
   async deleteRound(roundId: string): Promise<{ success: boolean; error?: string }> {
     console.log(`🗑️ [SupabaseLoader] Deleting round: ${roundId}`);
     
     try {
-      // Items will be cascade-deleted by database constraint
+      // 1. Get round UUID (items reference round_uuid, not id)
+      const { data: round, error: fetchError } = await supabase
+        .from('rounds')
+        .select('uuid')
+        .eq('id', roundId)
+        .single();
+      
+      if (fetchError || !round) {
+        const msg = fetchError?.message ?? `Round ${roundId} not found`;
+        console.error('❌ [SupabaseLoader] Failed to fetch round:', msg);
+        return { success: false, error: msg };
+      }
+      
+      // 2. Delete all items for this round first (avoids FK violation)
+      const deleteItemsResult = await this.deleteItemsByRound(round.uuid);
+      if (!deleteItemsResult.success) {
+        console.error('❌ [SupabaseLoader] Failed to delete items before round:', deleteItemsResult.error);
+        return deleteItemsResult;
+      }
+      
+      // 3. Delete the round
       const { error } = await supabase
         .from('rounds')
         .delete()

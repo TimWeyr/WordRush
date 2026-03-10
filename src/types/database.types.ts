@@ -90,6 +90,7 @@ export interface RoundRow {
   updated_at: string | null;
   chapter_uuid: string | null;
   uuid: string | null;
+  game?: 'sw' | 's' | 'w' | string | null;
 }
 
 export interface ItemRow {

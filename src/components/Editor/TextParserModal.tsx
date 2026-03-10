@@ -498,9 +498,10 @@ export function TextParserModal({ isOpen, onClose, onSave, chapterId, initialIte
       } else {
         // Item wurde gestartet, aber ist unvollständig
         const partialItem = currentItem as Partial<ParsedItemData>;
-        const hasBase = typeof partialItem.base === 'string';
-        const hasCorrects = Array.isArray(partialItem.corrects) && partialItem.corrects.length > 0;
-        
+        const missing: string[] = [];
+        if (typeof partialItem.base !== 'string') missing.push('base');
+        if (!Array.isArray(partialItem.corrects) || partialItem.corrects.length === 0) missing.push('corrects');
+        parseErrors.push({ line: 0, message: `Incomplete item: missing ${missing.join(', ')}` });
       }
     }
     

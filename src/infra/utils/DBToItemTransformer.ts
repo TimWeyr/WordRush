@@ -72,7 +72,7 @@ export function transformRoundsToItems(rounds: RoundRow[], items: ItemRow[], the
       chapter: chapterId,
       level: round.level || 1,
       published: round.published ?? true,
-      game: (round.game as 'sw' | 's' | 'w') ?? 'sw',
+      game: (round.game === 's' || round.game === 'w' ? round.game : 'sw') as 'sw' | 's' | 'w',
       freeTier: round.free_tier,
       waveDuration: round.wave_duration ? Number(round.wave_duration) : undefined,
       introText: round.intro_text ?? undefined,

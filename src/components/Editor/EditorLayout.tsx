@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback, type CSSProperties } from 'react';
+import { useEditorMobile, useEditorMobileSectionInitiallyOpen } from '@/hooks/useEditorMobile';
 import { useNavigate, useParams } from 'react-router-dom';
 import { EditorHeader } from './EditorHeader';
 import { EditorSidebar } from './EditorSidebar';
@@ -28,8 +29,53 @@ function EditorLayoutContent() {
   const [saving, setSaving] = useState(false);
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
 
+  const isEditorMobile = useEditorMobile();
+  const [metadataEditorOpen, setMetadataEditorOpen] = useState(() => useEditorMobileSectionInitiallyOpen());
+
+  useEffect(() => {
+    setMetadataEditorOpen(!isEditorMobile);
+  }, [isEditorMobile]);
+
+  /** Mobile: hide header + sidebar while scrolling down in the main editor for more vertical space */
+  const editorContentRef = useRef<HTMLDivElement>(null);
+  const lastContentScrollTop = useRef(0);
+  const [editorScrollChromeHidden, setEditorScrollChromeHidden] = useState(false);
+
+  const handleEditorContentScroll = useCallback(() => {
+    if (!isEditorMobile) return;
+    const el = editorContentRef.current;
+    if (!el) return;
+    const st = el.scrollTop;
+    const prev = lastContentScrollTop.current;
+    const delta = st - prev;
+    lastContentScrollTop.current = st;
+
+    if (st <= 12) {
+      setEditorScrollChromeHidden(false);
+      return;
+    }
+    if (delta > 5 && st > 48) {
+      setEditorScrollChromeHidden(true);
+    } else if (delta < -5) {
+      setEditorScrollChromeHidden(false);
+    }
+  }, [isEditorMobile]);
+
+  useEffect(() => {
+    if (!isEditorMobile) {
+      setEditorScrollChromeHidden(false);
+    }
+  }, [isEditorMobile]);
+
   // View mode: 'table' or 'detail'
   const [viewMode, setViewMode] = useState<'table' | 'detail'>(itemId ? 'detail' : 'table');
+
+  useEffect(() => {
+    setEditorScrollChromeHidden(false);
+    requestAnimationFrame(() => {
+      lastContentScrollTop.current = editorContentRef.current?.scrollTop ?? 0;
+    });
+  }, [itemId, viewMode, selectedChapter, selectedUniverse?.id, selectedTheme?.id]);
 
   // Load universes on mount
   useEffect(() => {
@@ -500,10 +546,13 @@ function EditorLayoutContent() {
   }
 
   return (
-    <div className="editor-layout" style={{
+    <div
+      className={`editor-layout${isEditorMobile && editorScrollChromeHidden ? ' editor-layout--mobile-chrome-hidden' : ''}`}
+      style={{
       '--theme-primary': selectedTheme?.colorPrimary || selectedUniverse?.colorPrimary || '#2196F3',
       '--theme-accent': selectedTheme?.colorAccent || selectedUniverse?.colorAccent || '#64B5F6',
-    } as React.CSSProperties}>
+    } as CSSProperties}
+    >
       <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
         <EditorHeader
           universe={selectedUniverse}
@@ -518,7 +567,7 @@ function EditorLayoutContent() {
           onBack={() => navigate('/')}
         />
 
-        <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
+        <div className="editor-body">
           <EditorSidebar
           universes={universes}
           selectedUniverse={selectedUniverse}
@@ -541,7 +590,11 @@ function EditorLayoutContent() {
         />
 
         <div className="editor-main">
-          <div className="editor-content">
+          <div
+            className="editor-content"
+            ref={editorContentRef}
+            onScroll={handleEditorContentScroll}
+          >
             {!selectedUniverse ? (
               <div style={{ 
                 textAlign: 'center', 
@@ -553,7 +606,24 @@ function EditorLayoutContent() {
               </div>
             ) : (
               <>
-                {/* Metadata Editor - Always show if Universe is selected */}
+                {/* Metadata Editor — toggle row on mobile */}
+                {isEditorMobile && (
+                  <button
+                    type="button"
+                    className="editor-metadata-collapse-toggle"
+                    onClick={() => setMetadataEditorOpen((o) => !o)}
+                    aria-expanded={metadataEditorOpen}
+                  >
+                    <span className="editor-metadata-collapse-title">Metadata Editor</span>
+                    <span className="editor-metadata-collapse-summary">
+                      {[selectedUniverse?.name, selectedTheme?.name || selectedTheme?.id, selectedChapter]
+                        .filter(Boolean)
+                        .join(' · ') || 'Universe, Theme, Chapter'}
+                    </span>
+                    <span className="editor-metadata-collapse-chevron">{metadataEditorOpen ? '▲' : '▼'}</span>
+                  </button>
+                )}
+                {(!isEditorMobile || metadataEditorOpen) && (
                 <MetadataEditor
                   universe={selectedUniverse}
                   theme={selectedTheme}
@@ -629,6 +699,7 @@ function EditorLayoutContent() {
                     }
                   }}
                 />
+                )}
 
                 {/* Items Editor - Show TableView when chapter is selected OR when items are loaded */}
                 {(selectedChapter || items.length > 0) && selectedTheme && selectedUniverse ? (

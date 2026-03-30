@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useRef } from 'react';
+import { useState, useMemo, useEffect, useRef, type CSSProperties, type ReactNode } from 'react';
 import type { Item, CorrectEntry, DistractorEntry, Theme } from '@/types/content.types';
 import { VisualConfig } from './VisualConfig';
 import { SpawnConfig } from './SpawnConfigCompact';
@@ -9,6 +9,7 @@ import { supabaseLoader } from '@/infra/utils/SupabaseLoader';
 import { useToast } from '../Toast/ToastContainer';
 import { TextParserModal } from './TextParserModal';
 import { SearchableDropdown } from './SearchableDropdown';
+import { useEditorMobile, useEditorMobileSectionInitiallyOpen } from '@/hooks/useEditorMobile';
 
 interface DetailViewProps {
   item: Item | null;
@@ -21,6 +22,182 @@ interface DetailViewProps {
 }
 
 // Removed unused constants
+const CONTEXT_EXPANDED_STORAGE_KEY = 'detailView_context_expanded_v1';
+
+const BRACKET_CHIP_STYLE: CSSProperties = {
+  padding: '0.05rem 0.35rem',
+  borderRadius: '4px',
+  border: '1px solid rgba(255,255,255,0.22)',
+  background: 'rgba(255,255,255,0.08)',
+  fontSize: '0.88em',
+};
+
+/** Map browser selection inside a preview root to source string [start, end). */
+function getSourceSelectionOffsets(root: HTMLElement | null): { start: number; end: number } | null {
+  if (!root) return null;
+  const sel = window.getSelection();
+  if (!sel || sel.rangeCount === 0) return null;
+  const range = sel.getRangeAt(0);
+  if (!root.contains(range.commonAncestorContainer)) return null;
+
+  const offsetFor = (node: Node, off: number): number | null => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      let el: HTMLElement | null = node.parentElement;
+      while (el && el !== root && !el.hasAttribute('data-sstart')) {
+        el = el.parentElement;
+      }
+      if (!el || !root.contains(el)) return null;
+      const s0 = el.getAttribute('data-sstart');
+      const slen = el.getAttribute('data-slen');
+      if (s0 == null || slen == null) return null;
+      const base = parseInt(s0, 10);
+      const max = parseInt(slen, 10);
+      if (off < 0 || off > max) return null;
+      return base + off;
+    }
+    return null;
+  };
+
+  const a = offsetFor(range.startContainer, range.startOffset);
+  const b = offsetFor(range.endContainer, range.endOffset);
+  if (a === null || b === null) return null;
+  return { start: Math.min(a, b), end: Math.max(a, b) };
+}
+
+function parseInlineContent(line: string, baseOffset: number, keyPrefix: string): ReactNode[] {
+  const out: ReactNode[] = [];
+  let i = 0;
+  let k = 0;
+  while (i < line.length) {
+    if (line.startsWith('**', i)) {
+      const close = line.indexOf('**', i + 2);
+      if (close !== -1) {
+        const inner = line.slice(i + 2, close);
+        const innerStart = baseOffset + i + 2;
+        out.push(
+          <strong key={`${keyPrefix}-b-${k++}`}>
+            <span data-sstart={innerStart} data-slen={inner.length}>{inner}</span>
+          </strong>
+        );
+        i = close + 2;
+        continue;
+      }
+    }
+    if (line[i] === '*' && !line.startsWith('**', i)) {
+      const close = line.indexOf('*', i + 1);
+      if (close !== -1 && close > i + 1) {
+        const inner = line.slice(i + 1, close);
+        if (!inner.includes('*') && !inner.includes('\n')) {
+          const innerStart = baseOffset + i + 1;
+          out.push(
+            <em key={`${keyPrefix}-em-${k++}`}>
+              <span data-sstart={innerStart} data-slen={inner.length}>{inner}</span>
+            </em>
+          );
+          i = close + 1;
+          continue;
+        }
+      }
+    }
+    if (line[i] === '[') {
+      const close = line.indexOf(']', i + 1);
+      if (close !== -1) {
+        const inner = line.slice(i + 1, close);
+        const innerStart = baseOffset + i + 1;
+        out.push(
+          <span key={`${keyPrefix}-br-${k++}`} style={BRACKET_CHIP_STYLE} data-sstart={innerStart} data-slen={inner.length}>
+            {inner}
+          </span>
+        );
+        i = close + 1;
+        continue;
+      }
+    }
+    let j = i + 1;
+    while (j < line.length) {
+      if (line.startsWith('**', j)) break;
+      if (line[j] === '[') break;
+      if (line[j] === '*' && !line.startsWith('**', j)) {
+        const close = line.indexOf('*', j + 1);
+        if (close !== -1 && close > j + 1) {
+          const inner = line.slice(j + 1, close);
+          if (!inner.includes('*') && !inner.includes('\n')) break;
+        }
+      }
+      j++;
+    }
+    const run = line.slice(i, j);
+    out.push(
+      <span key={`${keyPrefix}-pl-${k++}`} data-sstart={baseOffset + i} data-slen={run.length}>{run}</span>
+    );
+    i = j;
+  }
+  return out;
+}
+
+function renderBulletLine(line: string, lineStart: number, keyPrefix: string): ReactNode {
+  const m = line.match(/^(\s*\*\s+)(.*)$/);
+  if (!m) {
+    return <>{parseInlineContent(line, lineStart, keyPrefix)}</>;
+  }
+  const prefix = m[1];
+  const rest = m[2];
+  const starIdxInPrefix = prefix.indexOf('*');
+  const beforeStar = prefix.slice(0, starIdxInPrefix);
+  const afterStar = prefix.slice(starIdxInPrefix + 1);
+  return (
+    <span style={{ display: 'flex', gap: '0.35rem', alignItems: 'flex-start' }}>
+      {beforeStar ? (
+        <span data-sstart={lineStart} data-slen={beforeStar.length}>{beforeStar}</span>
+      ) : null}
+      <span style={{ color: 'rgba(126,212,255,0.95)', flexShrink: 0 }} data-sstart={lineStart + starIdxInPrefix} data-slen={1}>•</span>
+      {afterStar ? (
+        <span data-sstart={lineStart + starIdxInPrefix + 1} data-slen={afterStar.length}>{afterStar}</span>
+      ) : null}
+      <span style={{ flex: 1, minWidth: 0 }}>{parseInlineContent(rest, lineStart + prefix.length, keyPrefix)}</span>
+    </span>
+  );
+}
+
+function buildContextPreviewRich(text: string, collapsed: boolean, keyPrefix: string): ReactNode {
+  const normalized = text.replace(/\\n/g, '\n');
+  const lines: { line: string; start: number }[] = [];
+  let pos = 0;
+  const parts = normalized.split('\n');
+  for (let i = 0; i < parts.length; i++) {
+    lines.push({ line: parts[i], start: pos });
+    pos += parts[i].length + (i < parts.length - 1 ? 1 : 0);
+  }
+
+  if (collapsed) {
+    const first = lines[0]?.line ?? '';
+    const firstStart = lines[0]?.start ?? 0;
+    const isBullet = /^\s*\*\s+/.test(first);
+    return (
+      <div style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+        {isBullet ? renderBulletLine(first, firstStart, `${keyPrefix}-c`) : <>{parseInlineContent(first, firstStart, `${keyPrefix}-c`)}</>}
+      </div>
+    );
+  }
+
+  const blocks: ReactNode[] = [];
+  for (let idx = 0; idx < lines.length; idx++) {
+    const { line, start } = lines[idx];
+    if (idx > 0) {
+      const nlAt = lines[idx - 1].start + lines[idx - 1].line.length;
+      blocks.push(
+        <span key={`${keyPrefix}-nl-${idx}`} data-sstart={nlAt} data-slen={1}>{'\n'}</span>
+      );
+    }
+    const isBullet = /^\s*\*\s+/.test(line);
+    blocks.push(
+      <div key={`${keyPrefix}-ln-${idx}`}>
+        {isBullet ? renderBulletLine(line, start, `${keyPrefix}-l${idx}`) : parseInlineContent(line, start, `${keyPrefix}-l${idx}`)}
+      </div>
+    );
+  }
+  return <div style={{ whiteSpace: 'pre-wrap' }}>{blocks}</div>;
+}
 
 export function DetailView({ item, allItems, onItemChange, onBack, universeId, theme, chapterId }: DetailViewProps) {
   const [localItem, setLocalItem] = useState<Item | null>(item);
@@ -38,6 +215,37 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
   const [selectedFilterTheme, setSelectedFilterTheme] = useState<string>(theme?.id || '');
   const [selectedFilterChapter, setSelectedFilterChapter] = useState<string>(chapterId || '');
   const [filteredItems, setFilteredItems] = useState<Item[]>(allItems);
+  const [contextViewMode, setContextViewMode] = useState<'raw' | 'edited'>('raw');
+  const [contextsExpanded, setContextsExpanded] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return true;
+    return localStorage.getItem(CONTEXT_EXPANDED_STORAGE_KEY) !== '0';
+  });
+  const contextTextareaRefs = useRef<Record<string, HTMLTextAreaElement | null>>({});
+  const contextPreviewRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const [activeContextRefKey, setActiveContextRefKey] = useState<string>('baseContext');
+
+  const isMobileDetail = useEditorMobile();
+  const [moveSectionOpen, setMoveSectionOpen] = useState(() => useEditorMobileSectionInitiallyOpen());
+  const [relatedSectionOpen, setRelatedSectionOpen] = useState(() => useEditorMobileSectionInitiallyOpen());
+  const [metaSectionOpen, setMetaSectionOpen] = useState(() => useEditorMobileSectionInitiallyOpen());
+  const [visualSectionOpen, setVisualSectionOpen] = useState(() => useEditorMobileSectionInitiallyOpen());
+
+  useEffect(() => {
+    const expanded = !isMobileDetail;
+    setMoveSectionOpen(expanded);
+    setRelatedSectionOpen(expanded);
+    setMetaSectionOpen(expanded);
+    setVisualSectionOpen(expanded);
+  }, [isMobileDetail]);
+
+  const autoResizeTextarea = (textarea: HTMLTextAreaElement) => {
+    if (!contextsExpanded) {
+      textarea.style.height = '38px';
+      return;
+    }
+    textarea.style.height = 'auto';
+    textarea.style.height = `${textarea.scrollHeight}px`;
+  };
   const [availableThemes, setAvailableThemes] = useState<Theme[]>([]);
   const [availableChapters, setAvailableChapters] = useState<string[]>([]);
   const [selectedFilterThemeObj, setSelectedFilterThemeObj] = useState<Theme | null>(theme || null);
@@ -77,6 +285,161 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
 
     setLocalItem(newItem);
     onItemChange(newItem);
+  };
+
+  const computeContextInsert = (
+    selected: string,
+    kind: 'bold' | 'italic' | 'brackets' | 'list' | 'newline'
+  ): string => {
+    let insert = selected;
+    if (kind === 'bold') insert = `**${selected || ''}**`;
+    if (kind === 'italic') insert = `*${selected || ''}*`;
+    if (kind === 'brackets') insert = `[${selected || ''}]`;
+    if (kind === 'newline') insert = `${selected}\\n`;
+    if (kind === 'list') {
+      if (!selected) {
+        insert = '* ';
+      } else {
+        insert = selected
+          .split('\n')
+          .map((line) => `* ${line.replace(/^\*\s*/, '')}`)
+          .join('\n');
+      }
+    }
+    return insert;
+  };
+
+  const applyContextFormatAtOffsets = (
+    path: string,
+    currentValue: string,
+    start: number,
+    end: number,
+    kind: 'bold' | 'italic' | 'brackets' | 'list' | 'newline'
+  ) => {
+    const selected = currentValue.slice(start, end);
+    const insert = computeContextInsert(selected, kind);
+    const nextValue = currentValue.slice(0, start) + insert + currentValue.slice(end);
+    handleFieldChange(path, nextValue);
+  };
+
+  const applyContextFormat = (
+    path: string,
+    currentValue: string,
+    textarea: HTMLTextAreaElement,
+    kind: 'bold' | 'italic' | 'brackets' | 'list' | 'newline'
+  ) => {
+    const start = textarea.selectionStart ?? 0;
+    const end = textarea.selectionEnd ?? 0;
+    const selected = currentValue.slice(start, end);
+    const insert = computeContextInsert(selected, kind);
+
+    const nextValue = currentValue.slice(0, start) + insert + currentValue.slice(end);
+    handleFieldChange(path, nextValue);
+
+    requestAnimationFrame(() => {
+      textarea.focus();
+      const pos = start + insert.length;
+      textarea.setSelectionRange(pos, pos);
+      autoResizeTextarea(textarea);
+    });
+  };
+
+  const handleContextKeyDown = (
+    e: React.KeyboardEvent<HTMLTextAreaElement>,
+    path: string,
+    currentValue: string
+  ) => {
+    if (!e.ctrlKey) return;
+    const key = e.key.toLowerCase();
+    if (key !== 'f' && key !== 'k' && key !== 'h') return;
+    e.preventDefault();
+
+    if (key === 'f') applyContextFormat(path, currentValue, e.currentTarget, 'bold');
+    if (key === 'k') applyContextFormat(path, currentValue, e.currentTarget, 'italic');
+    if (key === 'h') applyContextFormat(path, currentValue, e.currentTarget, 'brackets');
+  };
+
+  const getContextValueByPath = (path: string): string => {
+    if (!localItem) return '';
+    if (path === 'base.context') return localItem.base.context || '';
+
+    const correctMatch = path.match(/^correct\[(\d+)\]\.context$/);
+    if (correctMatch) {
+      const index = Number(correctMatch[1]);
+      return localItem.correct[index]?.context || '';
+    }
+
+    const distractorMatch = path.match(/^distractors\[(\d+)\]\.context$/);
+    if (distractorMatch) {
+      const index = Number(distractorMatch[1]);
+      return localItem.distractors[index]?.context || '';
+    }
+
+    return '';
+  };
+
+  const applyToolbarToContext = (
+    path: string,
+    refKey: string,
+    kind: 'bold' | 'italic' | 'brackets' | 'list' | 'newline'
+  ) => {
+    setActiveContextRefKey(refKey);
+
+    const textarea = contextTextareaRefs.current[refKey];
+    if (textarea) {
+      const currentValue = getContextValueByPath(path);
+      applyContextFormat(path, currentValue, textarea, kind);
+      return;
+    }
+
+    const currentValue = getContextValueByPath(path);
+    const previewEl = contextPreviewRefs.current[refKey];
+    const mapped = getSourceSelectionOffsets(previewEl);
+    let start: number;
+    let end: number;
+    if (mapped) {
+      start = mapped.start;
+      end = mapped.end;
+    } else if (currentValue === '') {
+      start = 0;
+      end = 0;
+    } else {
+      return;
+    }
+    applyContextFormatAtOffsets(path, currentValue, start, end, kind);
+  };
+
+  const renderContextToolbar = (refKey: string, path: string) => {
+    if (activeContextRefKey !== refKey) return null;
+
+    const toolbarStyle: CSSProperties = {
+      position: 'absolute',
+      top: '-1.65rem',
+      right: '0.2rem',
+      display: 'flex',
+      gap: '0.25rem',
+      zIndex: 5,
+      background: 'rgba(18, 24, 36, 0.72)',
+      border: '1px solid rgba(255,255,255,0.14)',
+      borderRadius: '7px',
+      padding: '0.15rem',
+      backdropFilter: 'blur(4px)',
+      boxShadow: '0 2px 10px rgba(0,0,0,0.18)',
+    };
+
+    const handleClick = (
+      kind: 'bold' | 'italic' | 'brackets' | 'list' | 'newline'
+    ) => applyToolbarToContext(path, refKey, kind);
+
+    return (
+      <div style={toolbarStyle}>
+        <button className="editor-button small" type="button" title="Fett (**...**) | Strg+F" aria-label="Fett formatieren" onMouseDown={(e) => e.preventDefault()} onClick={() => handleClick('bold')}>B</button>
+        <button className="editor-button small" type="button" title="Kursiv (*...*) | Strg+K" aria-label="Kursiv formatieren" onMouseDown={(e) => e.preventDefault()} onClick={() => handleClick('italic')}><em>I</em></button>
+        <button className="editor-button small" type="button" title="Aufzählung (* ...)" aria-label="Aufzählung formatieren" onMouseDown={(e) => e.preventDefault()} onClick={() => handleClick('list')}>* Liste</button>
+        <button className="editor-button small" type="button" title="Zeilenumbruch (\\n)" aria-label="Zeilenumbruch einfügen" onMouseDown={(e) => e.preventDefault()} onClick={() => handleClick('newline')}>\\n</button>
+        <button className="editor-button small" type="button" title="Klammer-Info ([...]) | Strg+H" aria-label="Klammer-Info einfügen" onMouseDown={(e) => e.preventDefault()} onClick={() => handleClick('brackets')}>[ ]</button>
+      </div>
+    );
   };
 
   const handleAddCorrect = () => {
@@ -456,6 +819,17 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    localStorage.setItem(CONTEXT_EXPANDED_STORAGE_KEY, contextsExpanded ? '1' : '0');
+  }, [contextsExpanded]);
+
+  useEffect(() => {
+    Object.values(contextTextareaRefs.current).forEach((textarea) => {
+      if (textarea) autoResizeTextarea(textarea);
+    });
+  }, [contextsExpanded]);
+
   // Check if there are unsaved changes
   const hasUnsavedChanges = useMemo(() => {
     if (!item || !localItem) return false;
@@ -735,9 +1109,25 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
 
       {/* MOVE/COPY ITEM SECTION */}
       <div className="editor-detail-section" style={{ padding: '1rem' }}>
-        <div className="editor-detail-section-title" style={{ fontSize: '1rem', marginBottom: '0.75rem' }}>
-          🔀 Move or Copy Item
-        </div>
+        {isMobileDetail ? (
+          <button
+            type="button"
+            className="editor-detail-mobile-collapse-toggle"
+            onClick={() => setMoveSectionOpen((o) => !o)}
+            aria-expanded={moveSectionOpen}
+          >
+            <span className="editor-detail-mobile-collapse-title">🔀 Move or Copy Item</span>
+            <span className="editor-detail-mobile-collapse-summary">
+              {[theme?.name || theme?.id, getChapterTitle(chapterId || '')].filter(Boolean).join(' · ')}
+            </span>
+            <span className="editor-detail-mobile-collapse-chevron">{moveSectionOpen ? '▲' : '▼'}</span>
+          </button>
+        ) : (
+          <div className="editor-detail-section-title" style={{ fontSize: '1rem', marginBottom: '0.75rem' }}>
+            🔀 Move or Copy Item
+          </div>
+        )}
+        {(!isMobileDetail || moveSectionOpen) && (
         <div style={{ 
           padding: '1rem', 
           background: 'rgba(255, 255, 255, 0.03)', 
@@ -753,7 +1143,7 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
           </p>
           
           {universeId && (
-            <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+            <div className="editor-move-target-row" style={{ marginBottom: '1rem' }}>
               <div style={{ flex: 1 }}>
                 <SearchableDropdown
                   value={moveTargetTheme}
@@ -785,7 +1175,7 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
           {/* Show action buttons only if target chapter is selected AND different from current */}
           {moveTargetChapter && moveTargetThemeObj && (
             (moveTargetTheme !== theme?.id || moveTargetChapter !== chapterId) ? (
-              <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem' }}>
+              <div className="editor-move-target-row" style={{ gap: '0.75rem', marginTop: '1rem', flexWrap: 'wrap' }}>
                 <button
                   className="editor-button"
                   onClick={handleCancelMove}
@@ -827,12 +1217,33 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
             )
           )}
         </div>
+        )}
       </div>
 
       {/* BASE ENTRY */}
       <div className="editor-detail-section" style={{ padding: '1rem' }}>
-        <div className="editor-detail-section-title" style={{ fontSize: '1rem', marginBottom: '0.75rem' }}>
-          🎯 Base Entry
+        <div className="editor-detail-section-title" style={{ fontSize: '1rem', marginBottom: '0.75rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+          <span>🎯 Base Entry</span>
+          <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+            <button
+              className="editor-button small"
+              onClick={() => setContextViewMode((prev) => (prev === 'raw' ? 'edited' : 'raw'))}
+              title={contextViewMode === 'raw' ? 'Zur editierten Ansicht wechseln' : 'Zur Raw-Ansicht wechseln'}
+              aria-label="Raw und Editiert umschalten"
+              type="button"
+            >
+              {contextViewMode === 'raw' ? 'Raw' : 'Editiert'}
+            </button>
+            <button
+              className={`editor-button small ${contextsExpanded ? 'primary' : ''}`}
+              onClick={() => setContextsExpanded((prev) => !prev)}
+              title={contextsExpanded ? 'Alle Context-Felder einklappen' : 'Alle Context-Felder ausklappen'}
+              aria-label="Context Felder umschalten"
+              type="button"
+            >
+              {contextsExpanded ? 'Ausgeklappt' : 'Eingeklappt'}
+            </button>
+          </div>
         </div>
         <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
           <input
@@ -874,14 +1285,50 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
           </select>
         </div>
         <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
-          <input
-            type="text"
-            className="editor-form-input"
-            value={localItem.base.context || ''}
-            onChange={(e) => handleFieldChange('base.context', e.target.value)}
-            placeholder="Base Context (optional)"
-            style={{ flex: 1 }}
-          />
+          <div style={{ position: 'relative', flex: 1 }}>
+            {renderContextToolbar('baseContext', 'base.context')}
+            {contextViewMode === 'raw' ? (
+              <textarea
+                className="editor-form-textarea"
+                value={localItem.base.context || ''}
+                onChange={(e) => handleFieldChange('base.context', e.target.value)}
+                onFocus={() => {
+                  setActiveContextRefKey('baseContext');
+                }}
+                onBlur={() => {
+                  if (activeContextRefKey === 'baseContext') setActiveContextRefKey('');
+                }}
+                onKeyDown={(e) => handleContextKeyDown(e, 'base.context', localItem.base.context || '')}
+                onInput={(e) => autoResizeTextarea(e.currentTarget)}
+                ref={(el) => {
+                  contextTextareaRefs.current.baseContext = el;
+                  if (el) autoResizeTextarea(el);
+                }}
+                placeholder="Base Context (optional)"
+                rows={contextsExpanded ? 3 : 1}
+                style={{ flex: 1, width: '100%', resize: 'none', minHeight: contextsExpanded ? '84px' : '38px', overflow: 'hidden', lineHeight: 1.4 }}
+              />
+            ) : (
+              <div
+                ref={(el) => {
+                  contextPreviewRefs.current.baseContext = el;
+                }}
+                className="editor-form-textarea"
+                onClick={() => {
+                  setActiveContextRefKey('baseContext');
+                }}
+                onMouseUp={() => setActiveContextRefKey('baseContext')}
+                onSelect={() => setActiveContextRefKey('baseContext')}
+                style={{ flex: 1, minHeight: contextsExpanded ? '84px' : '38px', maxHeight: contextsExpanded ? 'none' : '38px', padding: '0.6rem 0.75rem', lineHeight: 1.45, overflow: 'hidden', overflowWrap: 'anywhere', cursor: 'text' }}
+              >
+                {localItem.base.context?.length ? (
+                  buildContextPreviewRich(localItem.base.context || '', !contextsExpanded, 'base')
+                ) : (
+                  <span style={{ opacity: 0.55 }}>Base Context (optional)</span>
+                )}
+              </div>
+            )}
+          </div>
         </div>
         {localItem.base.type === 'image' && (
           <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.75rem' }}>
@@ -933,9 +1380,9 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
             marginBottom: '0.75rem',
             border: '1px solid rgba(76, 175, 80, 0.25)'
           }}>
-            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
-              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <div style={{ display: 'flex', gap: '0.5rem' }}>
+            <div className="editor-detail-entry-card">
+              <div className="editor-detail-entry-main">
+                <div className="editor-detail-entry-row">
                   <input
                     type="text"
                     className="editor-form-input"
@@ -955,15 +1402,51 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
                     <option value="image">Image</option>
                   </select>
                 </div>
-                <div style={{ display: 'flex', gap: '0.5rem' }}>
-                  <textarea
-                    className="editor-form-textarea"
-                    value={correct.context || ''}
-                    onChange={(e) => handleFieldChange(`correct[${index}].context`, e.target.value)}
-                    placeholder="Context"
-                    rows={2}
-                    style={{ resize: 'none', minHeight: '50px', flex: 1 }}
-                  />
+                <div className="editor-detail-entry-row">
+                  <div style={{ position: 'relative', flex: 1 }}>
+                    {renderContextToolbar(`correct-${index}`, `correct[${index}].context`)}
+                    {contextViewMode === 'raw' ? (
+                      <textarea
+                        className="editor-form-textarea"
+                        value={correct.context || ''}
+                        onChange={(e) => handleFieldChange(`correct[${index}].context`, e.target.value)}
+                        onFocus={() => {
+                          setActiveContextRefKey(`correct-${index}`);
+                        }}
+                        onBlur={() => {
+                          if (activeContextRefKey === `correct-${index}`) setActiveContextRefKey('');
+                        }}
+                        onKeyDown={(e) => handleContextKeyDown(e, `correct[${index}].context`, correct.context || '')}
+                        onInput={(e) => autoResizeTextarea(e.currentTarget)}
+                        ref={(el) => {
+                          contextTextareaRefs.current[`correct-${index}`] = el;
+                          if (el) autoResizeTextarea(el);
+                        }}
+                        placeholder="Context"
+                        rows={contextsExpanded ? 2 : 1}
+                        style={{ width: '100%', resize: 'none', minHeight: contextsExpanded ? '64px' : '38px', flex: 1, overflow: 'hidden', lineHeight: 1.4 }}
+                      />
+                    ) : (
+                      <div
+                        ref={(el) => {
+                          contextPreviewRefs.current[`correct-${index}`] = el;
+                        }}
+                        className="editor-form-textarea"
+                        onClick={() => {
+                          setActiveContextRefKey(`correct-${index}`);
+                        }}
+                        onMouseUp={() => setActiveContextRefKey(`correct-${index}`)}
+                        onSelect={() => setActiveContextRefKey(`correct-${index}`)}
+                        style={{ minHeight: contextsExpanded ? '64px' : '38px', maxHeight: contextsExpanded ? 'none' : '38px', flex: 1, padding: '0.6rem 0.75rem', lineHeight: 1.45, overflow: 'hidden', overflowWrap: 'anywhere', cursor: 'text' }}
+                      >
+                        {correct.context?.length ? (
+                          buildContextPreviewRich(correct.context || '', !contextsExpanded, `c-${index}`)
+                        ) : (
+                          <span style={{ opacity: 0.55 }}>Context</span>
+                        )}
+                      </div>
+                    )}
+                  </div>
                   <select
                     className="editor-form-select"
                     value={correct.level ?? 1}
@@ -979,7 +1462,8 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
               </div>
               {localItem.correct.length > 1 && (
                 <button 
-                  className="editor-button small danger" 
+                  type="button"
+                  className="editor-button small danger editor-detail-entry-remove" 
                   onClick={() => handleRemoveCorrect(index)}
                   style={{ padding: '0.5rem', minWidth: '70px', flexShrink: 0 }}
                 >
@@ -1007,9 +1491,9 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
             marginBottom: '0.75rem',
             border: '1px solid rgba(244, 67, 54, 0.25)'
           }}>
-            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
-              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <div style={{ display: 'flex', gap: '0.5rem' }}>
+            <div className="editor-detail-entry-card">
+              <div className="editor-detail-entry-main">
+                <div className="editor-detail-entry-row">
                   <input
                     type="text"
                     className="editor-form-input"
@@ -1027,15 +1511,51 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
                     style={{ flex: 1 }}
                   />
                 </div>
-                <div style={{ display: 'flex', gap: '0.5rem' }}>
-                  <textarea
-                    className="editor-form-textarea"
-                    value={distractor.context || ''}
-                    onChange={(e) => handleFieldChange(`distractors[${index}].context`, e.target.value)}
-                    placeholder="Context"
-                    rows={2}
-                    style={{ resize: 'none', minHeight: '50px', flex: 1 }}
-                  />
+                <div className="editor-detail-entry-row">
+                  <div style={{ position: 'relative', flex: 1 }}>
+                    {renderContextToolbar(`distractor-${index}`, `distractors[${index}].context`)}
+                    {contextViewMode === 'raw' ? (
+                      <textarea
+                        className="editor-form-textarea"
+                        value={distractor.context || ''}
+                        onChange={(e) => handleFieldChange(`distractors[${index}].context`, e.target.value)}
+                        onFocus={() => {
+                          setActiveContextRefKey(`distractor-${index}`);
+                        }}
+                        onBlur={() => {
+                          if (activeContextRefKey === `distractor-${index}`) setActiveContextRefKey('');
+                        }}
+                        onKeyDown={(e) => handleContextKeyDown(e, `distractors[${index}].context`, distractor.context || '')}
+                        onInput={(e) => autoResizeTextarea(e.currentTarget)}
+                        ref={(el) => {
+                          contextTextareaRefs.current[`distractor-${index}`] = el;
+                          if (el) autoResizeTextarea(el);
+                        }}
+                        placeholder="Context"
+                        rows={contextsExpanded ? 2 : 1}
+                        style={{ width: '100%', resize: 'none', minHeight: contextsExpanded ? '64px' : '38px', flex: 1, overflow: 'hidden', lineHeight: 1.4 }}
+                      />
+                    ) : (
+                      <div
+                        ref={(el) => {
+                          contextPreviewRefs.current[`distractor-${index}`] = el;
+                        }}
+                        className="editor-form-textarea"
+                        onClick={() => {
+                          setActiveContextRefKey(`distractor-${index}`);
+                        }}
+                        onMouseUp={() => setActiveContextRefKey(`distractor-${index}`)}
+                        onSelect={() => setActiveContextRefKey(`distractor-${index}`)}
+                        style={{ minHeight: contextsExpanded ? '64px' : '38px', maxHeight: contextsExpanded ? 'none' : '38px', flex: 1, padding: '0.6rem 0.75rem', lineHeight: 1.45, overflow: 'hidden', overflowWrap: 'anywhere', cursor: 'text' }}
+                      >
+                        {distractor.context?.length ? (
+                          buildContextPreviewRich(distractor.context || '', !contextsExpanded, `d-${index}`)
+                        ) : (
+                          <span style={{ opacity: 0.55 }}>Context</span>
+                        )}
+                      </div>
+                    )}
+                  </div>
                   <select
                     className="editor-form-select"
                     value={distractor.level ?? 1}
@@ -1051,7 +1571,8 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
               </div>
               {localItem.distractors.length > 1 && (
                 <button 
-                  className="editor-button small danger" 
+                  type="button"
+                  className="editor-button small danger editor-detail-entry-remove" 
                   onClick={() => handleRemoveDistractor(index)}
                   style={{ padding: '0.5rem', minWidth: '70px', flexShrink: 0 }}
                 >
@@ -1065,13 +1586,30 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
 
       {/* RELATED ITEMS */}
       <div className="editor-detail-section">
-        <div className="editor-detail-section-title">
-          🔗 Related Items
-        </div>
-        
+        {isMobileDetail ? (
+          <button
+            type="button"
+            className="editor-detail-mobile-collapse-toggle"
+            onClick={() => setRelatedSectionOpen((o) => !o)}
+            aria-expanded={relatedSectionOpen}
+          >
+            <span className="editor-detail-mobile-collapse-title">🔗 Related Items</span>
+            <span className="editor-detail-mobile-collapse-summary">
+              {localItem.meta.related?.length ?? 0} selected
+            </span>
+            <span className="editor-detail-mobile-collapse-chevron">{relatedSectionOpen ? '▲' : '▼'}</span>
+          </button>
+        ) : (
+          <div className="editor-detail-section-title">
+            🔗 Related Items
+          </div>
+        )}
+
+        {(!isMobileDetail || relatedSectionOpen) && (
+        <>
         {/* Theme and Chapter Filter Dropdowns */}
         {universeId && (
-          <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+          <div className="editor-move-target-row" style={{ marginBottom: '1rem' }}>
             <div style={{ flex: 1 }}>
               <SearchableDropdown
                 value={selectedFilterTheme}
@@ -1198,13 +1736,35 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
             <p style={{ opacity: 0.5, marginTop: '0.5rem' }}>No related items selected</p>
           )}
         </div>
+        </>
+        )}
       </div>
 
       {/* META INFORMATION */}
       <div className="editor-detail-section">
-        <div className="editor-detail-section-title">
-          📝 Meta Information
-        </div>
+        {isMobileDetail ? (
+          <button
+            type="button"
+            className="editor-detail-mobile-collapse-toggle"
+            onClick={() => setMetaSectionOpen((o) => !o)}
+            aria-expanded={metaSectionOpen}
+          >
+            <span className="editor-detail-mobile-collapse-title">📝 Meta Information</span>
+            <span className="editor-detail-mobile-collapse-summary">
+              {[
+                localItem.meta.tags?.length ? `${localItem.meta.tags.length} tags` : null,
+                localItem.meta.source?.trim() ? localItem.meta.source.trim().slice(0, 48) : null,
+              ].filter(Boolean).join(' · ') || 'Source, tags, detail'}
+            </span>
+            <span className="editor-detail-mobile-collapse-chevron">{metaSectionOpen ? '▲' : '▼'}</span>
+          </button>
+        ) : (
+          <div className="editor-detail-section-title">
+            📝 Meta Information
+          </div>
+        )}
+        {(!isMobileDetail || metaSectionOpen) && (
+        <>
         <div className="editor-form-row">
           {renderTextInput('Source', 'meta.source', localItem.meta.source || '', 100, 'Source reference')}
           <div className="editor-form-group" style={{ position: 'relative' }}>
@@ -1363,24 +1923,62 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
             />
           </div>
         </div>
+        </>
+        )}
       </div>
 
       {/* VISUAL & SPAWN CONFIGURATION */}
       <div className="editor-detail-section">
-        <div className="editor-detail-section-title" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <span>🎨 Visual & Spawn Configuration</span>
+        {isMobileDetail ? (
           <button
-            className="editor-button primary"
-            onClick={() => {
-              const randomized = randomConfigGenerator.applyRandomToItem(localItem, allItems);
-              setLocalItem(randomized);
-              onItemChange(randomized);
-            }}
-            title="Generate random visual and spawn configs (ensures uniqueness)"
+            type="button"
+            className="editor-detail-mobile-collapse-toggle"
+            onClick={() => setVisualSectionOpen((o) => !o)}
+            aria-expanded={visualSectionOpen}
           >
-            🎲 Randomize All
+            <span className="editor-detail-mobile-collapse-title">🎨 Visual & Spawn Configuration</span>
+            <span className="editor-detail-mobile-collapse-summary">
+              Base + {localItem.correct.length} correct + {localItem.distractors.length} distractors
+            </span>
+            <span className="editor-detail-mobile-collapse-chevron">{visualSectionOpen ? '▲' : '▼'}</span>
           </button>
-        </div>
+        ) : (
+          <div className="editor-detail-section-title" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <span>🎨 Visual & Spawn Configuration</span>
+            <button
+              type="button"
+              className="editor-button primary"
+              onClick={() => {
+                const randomized = randomConfigGenerator.applyRandomToItem(localItem, allItems);
+                setLocalItem(randomized);
+                onItemChange(randomized);
+              }}
+              title="Generate random visual and spawn configs (ensures uniqueness)"
+            >
+              🎲 Randomize All
+            </button>
+          </div>
+        )}
+
+        {(!isMobileDetail || visualSectionOpen) && (
+        <>
+        {isMobileDetail && (
+          <div style={{ marginBottom: '0.75rem' }}>
+            <button
+              type="button"
+              className="editor-button primary"
+              style={{ width: '100%' }}
+              onClick={() => {
+                const randomized = randomConfigGenerator.applyRandomToItem(localItem, allItems);
+                setLocalItem(randomized);
+                onItemChange(randomized);
+              }}
+              title="Generate random visual and spawn configs (ensures uniqueness)"
+            >
+              🎲 Randomize All
+            </button>
+          </div>
+        )}
 
         {/* Base Visual Config */}
         <VisualConfig
@@ -1423,6 +2021,8 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
             />
           </div>
         ))}
+        </>
+        )}
       </div>
       
       {/* Text Parser Modal */}

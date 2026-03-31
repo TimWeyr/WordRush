@@ -4,6 +4,7 @@ import { AddNewDialog } from './AddNewDialog';
 import { useToast } from '../Toast/ToastContainer';
 import { SearchableDropdown } from './SearchableDropdown';
 import { jsonLoader } from '@/infra/utils/JSONLoader';
+import { useEditorMobile, useEditorMobileSectionInitiallyOpen } from '@/hooks/useEditorMobile';
 
 type SearchScope = 'chapter' | 'theme' | 'universe';
 
@@ -39,6 +40,15 @@ export function EditorSidebar({
   onLoadAllThemeItems,
 }: EditorSidebarProps) {
   const { showToast } = useToast();
+  const isMobileNav = useEditorMobile();
+  const [navigationOpen, setNavigationOpen] = useState(() => useEditorMobileSectionInitiallyOpen());
+  const [statsOpen, setStatsOpen] = useState(() => useEditorMobileSectionInitiallyOpen());
+
+  useEffect(() => {
+    setNavigationOpen(!isMobileNav);
+    setStatsOpen(!isMobileNav);
+  }, [isMobileNav]);
+
   const [showAddDialog, setShowAddDialog] = useState<'universe' | 'theme' | 'chapter' | null>(null);
   
   // New state for search scope
@@ -260,6 +270,14 @@ export function EditorSidebar({
     return chapterConfig?.title || chapterId;
   };
 
+  const navSummary = useMemo(() => {
+    const parts: string[] = [];
+    if (selectedUniverse) parts.push(selectedUniverse.name || selectedUniverse.id);
+    if (selectedTheme) parts.push(selectedTheme.name || selectedTheme.id);
+    if (selectedChapter) parts.push(getChapterTitle(selectedChapter));
+    return parts.length > 0 ? parts.join(' · ') : 'Zum Öffnen tippen';
+  }, [selectedUniverse, selectedTheme, selectedChapter]);
+
   // Format item label with context
   const formatItemLabel = (item: Item): string => {
     const baseLabel = `${item.id} - ${item.base.word || '(no word)'}`;
@@ -276,16 +294,11 @@ export function EditorSidebar({
     }
   };
 
-  return (
-    <div className="editor-sidebar">
-      {/* Navigation Section */}
-      <div className="editor-sidebar-section">
-        <div className="editor-sidebar-title">Navigation</div>
-
-        {/* Universe Dropdown */}
+  const navigationBody = (
+      <>
         <SearchableDropdown
           value={selectedUniverse?.id || ''}
-          options={universes.map(u => ({ value: u.id, label: u.name }))}
+          options={universes.map((u) => ({ value: u.id, label: u.name }))}
           onChange={(value) => value && onUniverseChange(value)}
           placeholder="Select Universe..."
           searchPlaceholder="🔍 Search universes..."
@@ -297,35 +310,37 @@ export function EditorSidebar({
           }}
         />
 
-        {/* Theme Dropdown */}
         {selectedUniverse && (
           <>
             <SearchableDropdown
               value={selectedTheme?.id || ''}
-              options={themes.map(t => ({ value: t, label: t }))}
+              options={themes.map((t) => ({ value: t, label: t }))}
               onChange={(value) => value && onThemeChange(value)}
               placeholder="Select Theme..."
               searchPlaceholder="🔍 Search themes..."
               label="Theme"
               onAdd={() => setShowAddDialog('theme')}
             />
-            
-            {/* Auto-load Theme Items Checkbox */}
+
             {selectedTheme && (
-              <div style={{ 
-                marginTop: '0.5rem',
-                padding: '0.5rem',
-                background: 'rgba(255, 255, 255, 0.03)',
-                borderRadius: '4px',
-                border: '1px solid rgba(255, 255, 255, 0.1)'
-              }}>
-                <label style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  cursor: 'pointer',
-                  fontSize: '0.875rem',
-                  color: 'rgba(255, 255, 255, 0.8)'
-                }}>
+              <div
+                style={{
+                  marginTop: '0.5rem',
+                  padding: '0.5rem',
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  borderRadius: '4px',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                }}
+              >
+                <label
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    cursor: 'pointer',
+                    fontSize: '0.875rem',
+                    color: 'rgba(255, 255, 255, 0.8)',
+                  }}
+                >
                   <input
                     type="checkbox"
                     checked={autoLoadThemeItems}
@@ -333,7 +348,6 @@ export function EditorSidebar({
                       const isChecked = e.target.checked;
                       setAutoLoadThemeItems(isChecked);
                       if (isChecked) {
-                        // Switch to theme scope when checkbox is enabled
                         setSearchScope('theme');
                       }
                     }}
@@ -346,13 +360,12 @@ export function EditorSidebar({
           </>
         )}
 
-        {/* Chapter Dropdown */}
         {selectedTheme && (
           <SearchableDropdown
             value={selectedChapter}
-            options={chapters.map(c => ({ 
-              value: c, 
-              label: getChapterTitle(c) 
+            options={chapters.map((c) => ({
+              value: c,
+              label: getChapterTitle(c),
             }))}
             onChange={(value) => value && onChapterChange(value)}
             placeholder="Select Chapter..."
@@ -362,47 +375,57 @@ export function EditorSidebar({
           />
         )}
 
-        {/* Item Dropdown - Show when universe is selected */}
         {selectedUniverse && (
           <>
             <SearchableDropdown
               value=""
-              options={scopedItems.map(item => ({ 
-                value: item.id, 
-                label: formatItemLabel(item)
+              options={scopedItems.map((item) => ({
+                value: item.id,
+                label: formatItemLabel(item),
               }))}
               onChange={(value) => value && handleItemSelect(value)}
-              placeholder={loadingItems ? "Loading items..." : scopedItems.length === 0 ? "No items found..." : "Jump to Item..."}
+              placeholder={
+                loadingItems
+                  ? 'Loading items...'
+                  : scopedItems.length === 0
+                    ? 'No items found...'
+                    : 'Jump to Item...'
+              }
               searchPlaceholder="🔍 Search items..."
               label="Jump to Item"
               disabled={loadingItems || scopedItems.length === 0}
             />
-            
-            {/* Search Scope Radio Buttons */}
-            <div style={{ 
-              marginTop: '0.5rem',
-              padding: '0.5rem',
-              background: 'rgba(255, 255, 255, 0.03)',
-              borderRadius: '4px',
-              border: '1px solid rgba(255, 255, 255, 0.1)'
-            }}>
-              <div style={{ 
-                fontSize: '0.75rem', 
-                color: 'rgba(255, 255, 255, 0.5)',
-                marginBottom: '0.5rem',
-                fontWeight: 500
-              }}>
+
+            <div
+              style={{
+                marginTop: '0.5rem',
+                padding: '0.5rem',
+                background: 'rgba(255, 255, 255, 0.03)',
+                borderRadius: '4px',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+              }}
+            >
+              <div
+                style={{
+                  fontSize: '0.75rem',
+                  color: 'rgba(255, 255, 255, 0.5)',
+                  marginBottom: '0.5rem',
+                  fontWeight: 500,
+                }}
+              >
                 Search Scope:
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                <label style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  cursor: selectedChapter ? 'pointer' : 'not-allowed',
-                  fontSize: '0.875rem',
-                  color: searchScope === 'chapter' ? '#4CAF50' : 'rgba(255, 255, 255, 0.7)',
-                  opacity: selectedChapter ? 1 : 0.4
-                }}>
+                <label
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    cursor: selectedChapter ? 'pointer' : 'not-allowed',
+                    fontSize: '0.875rem',
+                    color: searchScope === 'chapter' ? '#4CAF50' : 'rgba(255, 255, 255, 0.7)',
+                    opacity: selectedChapter ? 1 : 0.4,
+                  }}
+                >
                   <input
                     type="radio"
                     value="chapter"
@@ -414,15 +437,17 @@ export function EditorSidebar({
                   🔹 Current Chapter
                   {searchScope === 'chapter' && !loadingItems && ` (${scopedItems.length} items)`}
                 </label>
-                
-                <label style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  cursor: selectedTheme ? 'pointer' : 'not-allowed',
-                  fontSize: '0.875rem',
-                  color: searchScope === 'theme' ? '#4CAF50' : 'rgba(255, 255, 255, 0.7)',
-                  opacity: selectedTheme ? 1 : 0.4
-                }}>
+
+                <label
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    cursor: selectedTheme ? 'pointer' : 'not-allowed',
+                    fontSize: '0.875rem',
+                    color: searchScope === 'theme' ? '#4CAF50' : 'rgba(255, 255, 255, 0.7)',
+                    opacity: selectedTheme ? 1 : 0.4,
+                  }}
+                >
                   <input
                     type="radio"
                     value="theme"
@@ -434,15 +459,17 @@ export function EditorSidebar({
                   🔸 Current Theme
                   {searchScope === 'theme' && !loadingItems && ` (${scopedItems.length} items)`}
                 </label>
-                
-                <label style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  cursor: selectedUniverse ? 'pointer' : 'not-allowed',
-                  fontSize: '0.875rem',
-                  color: searchScope === 'universe' ? '#4CAF50' : 'rgba(255, 255, 255, 0.7)',
-                  opacity: selectedUniverse ? 1 : 0.4
-                }}>
+
+                <label
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    cursor: selectedUniverse ? 'pointer' : 'not-allowed',
+                    fontSize: '0.875rem',
+                    color: searchScope === 'universe' ? '#4CAF50' : 'rgba(255, 255, 255, 0.7)',
+                    opacity: selectedUniverse ? 1 : 0.4,
+                  }}
+                >
                   <input
                     type="radio"
                     value="universe"
@@ -455,18 +482,48 @@ export function EditorSidebar({
                   {searchScope === 'universe' && !loadingItems && ` (${scopedItems.length} items)`}
                 </label>
               </div>
-              
+
               {loadingItems && (
-                <div style={{ 
-                  marginTop: '0.5rem', 
-                  fontSize: '0.75rem', 
-                  color: '#4CAF50',
-                  fontStyle: 'italic'
-                }}>
+                <div
+                  style={{
+                    marginTop: '0.5rem',
+                    fontSize: '0.75rem',
+                    color: '#4CAF50',
+                    fontStyle: 'italic',
+                  }}
+                >
                   ⏳ Loading items...
                 </div>
               )}
             </div>
+          </>
+        )}
+      </>
+  );
+
+  return (
+    <div
+      className={`editor-sidebar${isMobileNav ? (navigationOpen ? ' editor-sidebar--mobile-nav-expanded' : ' editor-sidebar--mobile-nav-collapsed') : ''}`}
+    >
+      <div className="editor-sidebar-section editor-sidebar-nav-section">
+        {isMobileNav ? (
+          <>
+            <button
+              type="button"
+              className="editor-nav-collapse-toggle"
+              onClick={() => setNavigationOpen((o) => !o)}
+              aria-expanded={navigationOpen}
+            >
+              <span className="editor-nav-collapse-title">Navigation</span>
+              <span className="editor-nav-collapse-summary">{navSummary}</span>
+              <span className="editor-nav-collapse-chevron">{navigationOpen ? '▲' : '▼'}</span>
+            </button>
+            {navigationOpen ? <div className="editor-nav-collapse-body">{navigationBody}</div> : null}
+          </>
+        ) : (
+          <>
+            <div className="editor-sidebar-title">Navigation</div>
+            {navigationBody}
           </>
         )}
       </div>
@@ -474,31 +531,78 @@ export function EditorSidebar({
       {/* Stats Section */}
       {selectedChapter && (
         <div className="editor-sidebar-section">
-          <div className="editor-sidebar-title">Chapter Stats</div>
-          <div className="editor-stats">
-            <div className="editor-stat-item">
-              <span className="editor-stat-label">Total Items</span>
-              <span className="editor-stat-value">{stats.totalItems}</span>
-            </div>
-            <div className="editor-stat-item">
-              <span className="editor-stat-label">Published</span>
-              <span className="editor-stat-value" style={{ color: '#4CAF50' }}>
-                {stats.publishedItems}
-              </span>
-            </div>
-            {stats.unpublishedItems > 0 && (
-              <div className="editor-stat-item">
-                <span className="editor-stat-label">Unpublished</span>
-                <span className="editor-stat-value" style={{ color: '#FFC107' }}>
-                  {stats.unpublishedItems}
+          {isMobileNav ? (
+            <>
+              <button
+                type="button"
+                className="editor-nav-collapse-toggle"
+                onClick={() => setStatsOpen((o) => !o)}
+                aria-expanded={statsOpen}
+              >
+                <span className="editor-nav-collapse-title">Chapter Stats</span>
+                <span className="editor-nav-collapse-summary">
+                  {stats.totalItems} items · {stats.publishedItems} published
                 </span>
+                <span className="editor-nav-collapse-chevron">{statsOpen ? '▲' : '▼'}</span>
+              </button>
+              {statsOpen ? (
+                <div className="editor-nav-collapse-body">
+                  <div className="editor-stats">
+                    <div className="editor-stat-item">
+                      <span className="editor-stat-label">Total Items</span>
+                      <span className="editor-stat-value">{stats.totalItems}</span>
+                    </div>
+                    <div className="editor-stat-item">
+                      <span className="editor-stat-label">Published</span>
+                      <span className="editor-stat-value" style={{ color: '#4CAF50' }}>
+                        {stats.publishedItems}
+                      </span>
+                    </div>
+                    {stats.unpublishedItems > 0 && (
+                      <div className="editor-stat-item">
+                        <span className="editor-stat-label">Unpublished</span>
+                        <span className="editor-stat-value" style={{ color: '#FFC107' }}>
+                          {stats.unpublishedItems}
+                        </span>
+                      </div>
+                    )}
+                    <div className="editor-stat-item">
+                      <span className="editor-stat-label">Levels</span>
+                      <span className="editor-stat-value">{stats.levelCount}</span>
+                    </div>
+                  </div>
+                </div>
+              ) : null}
+            </>
+          ) : (
+            <>
+              <div className="editor-sidebar-title">Chapter Stats</div>
+              <div className="editor-stats">
+                <div className="editor-stat-item">
+                  <span className="editor-stat-label">Total Items</span>
+                  <span className="editor-stat-value">{stats.totalItems}</span>
+                </div>
+                <div className="editor-stat-item">
+                  <span className="editor-stat-label">Published</span>
+                  <span className="editor-stat-value" style={{ color: '#4CAF50' }}>
+                    {stats.publishedItems}
+                  </span>
+                </div>
+                {stats.unpublishedItems > 0 && (
+                  <div className="editor-stat-item">
+                    <span className="editor-stat-label">Unpublished</span>
+                    <span className="editor-stat-value" style={{ color: '#FFC107' }}>
+                      {stats.unpublishedItems}
+                    </span>
+                  </div>
+                )}
+                <div className="editor-stat-item">
+                  <span className="editor-stat-label">Levels</span>
+                  <span className="editor-stat-value">{stats.levelCount}</span>
+                </div>
               </div>
-            )}
-            <div className="editor-stat-item">
-              <span className="editor-stat-label">Levels</span>
-              <span className="editor-stat-value">{stats.levelCount}</span>
-            </div>
-          </div>
+            </>
+          )}
         </div>
       )}
 

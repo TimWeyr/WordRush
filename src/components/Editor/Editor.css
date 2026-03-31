@@ -170,6 +170,14 @@
   color: white;
 }
 
+/* Sidebar + main row */
+.editor-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
 /* Main Content Area */
 .editor-main {
   flex: 1;
@@ -177,14 +185,191 @@
   flex-direction: column;
   overflow: hidden;
   min-width: 0; /* Allow flex item to shrink below content size */
+  min-height: 0;
 }
 
 .editor-content {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   padding: 1rem 1rem 1rem 1rem;
   padding-right: 300px; /* Make space for validation panel */
   max-width: 100%;
+}
+
+/* Collapsible navigation (mobile) */
+.editor-nav-collapse-toggle {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  padding: 0.55rem 0.65rem;
+  margin: 0 0 0.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  transition: background 0.15s;
+}
+
+.editor-nav-collapse-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.editor-nav-collapse-title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 600;
+  flex: 0 0 auto;
+}
+
+.editor-nav-collapse-summary {
+  flex: 1 1 100%;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.editor-nav-collapse-chevron {
+  flex: 0 0 auto;
+  margin-left: auto;
+  font-size: 0.65rem;
+  opacity: 0.75;
+}
+
+.editor-nav-collapse-body {
+  padding-top: 0.25rem;
+}
+
+.editor-metadata-collapse-toggle {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  padding: 0.55rem 0.65rem;
+  margin: 0 0 0.85rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  transition: background 0.15s;
+}
+
+.editor-metadata-collapse-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.editor-metadata-collapse-title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 600;
+  flex: 0 0 auto;
+}
+
+.editor-metadata-collapse-summary {
+  flex: 1 1 100%;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.editor-metadata-collapse-chevron {
+  flex: 0 0 auto;
+  margin-left: auto;
+  font-size: 0.65rem;
+  opacity: 0.75;
+}
+
+/* DetailView: collapsible blocks on mobile */
+.editor-detail-mobile-collapse-toggle {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  padding: 0.55rem 0.65rem;
+  margin: 0 0 0.75rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+
+.editor-detail-mobile-collapse-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  flex: 0 0 auto;
+}
+
+.editor-detail-mobile-collapse-summary {
+  flex: 1 1 100%;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.editor-detail-mobile-collapse-chevron {
+  flex: 0 0 auto;
+  margin-left: auto;
+  font-size: 0.65rem;
+  opacity: 0.75;
+}
+
+/* Correct/Distractor entry cards — stack Remove on mobile */
+.editor-detail-entry-card {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.editor-detail-entry-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.editor-detail-entry-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.editor-move-target-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.editor-sidebar-nav-section {
+  flex-shrink: 0;
 }
 
 /* Table View */
@@ -800,13 +985,40 @@ input[type="range"]:active::-ms-thumb {
 }
 
 @media (max-width: 768px) {
-  .editor-layout {
+  .editor-body {
     flex-direction: column;
+    min-height: 0;
   }
 
   .editor-sidebar {
     width: 100%;
-    max-height: 200px;
+    min-width: 0;
+    flex-shrink: 0;
+    overflow-y: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition:
+      max-height 0.26s ease,
+      opacity 0.22s ease,
+      border-width 0.22s ease,
+      margin 0.22s ease;
+  }
+
+  .editor-sidebar.editor-sidebar--mobile-nav-collapsed {
+    max-height: min(30vh, 240px);
+  }
+
+  .editor-sidebar.editor-sidebar--mobile-nav-expanded {
+    max-height: min(52vh, 420px);
+  }
+
+  .editor-main {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .editor-content {
+    padding-right: 1rem;
   }
 
   .editor-header {
@@ -815,9 +1027,35 @@ input[type="range"]:active::-ms-thumb {
     align-items: stretch;
     padding: 0.75rem;
     min-height: auto;
+    max-height: 520px;
     position: sticky;
     top: 0;
     z-index: 2000;
+    overflow: hidden;
+    transition:
+      max-height 0.26s ease,
+      opacity 0.22s ease,
+      padding-block 0.22s ease,
+      border-width 0.22s ease,
+      gap 0.22s ease;
+  }
+
+  /* Scroll-down: tuck away header + sidebar (navigation + stats) for editing space */
+  .editor-layout.editor-layout--mobile-chrome-hidden .editor-header,
+  .editor-layout.editor-layout--mobile-chrome-hidden .editor-sidebar {
+    max-height: 0 !important;
+    min-height: 0 !important;
+    opacity: 0;
+    padding-block: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+    border-width: 0 !important;
+    border-bottom-width: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none;
+    flex-shrink: 0;
+    gap: 0 !important;
   }
   
   .editor-header-left,
@@ -843,6 +1081,37 @@ input[type="range"]:active::-ms-thumb {
 
   .editor-table-search {
     max-width: none;
+  }
+
+  /* DetailView: stack correct/distractor rows; full-width Remove */
+  .editor-detail-entry-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .editor-detail-entry-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .editor-detail-entry-row > .editor-form-input,
+  .editor-detail-entry-row > .editor-form-select,
+  .editor-detail-entry-row > div {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0;
+  }
+
+  .editor-detail-entry-remove {
+    width: 100%;
+    min-width: 0 !important;
+    flex-shrink: 1;
+    align-self: stretch;
+  }
+
+  .editor-move-target-row {
+    flex-direction: column;
   }
 }
 

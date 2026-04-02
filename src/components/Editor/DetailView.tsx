@@ -1,4 +1,5 @@
-import { useState, useMemo, useEffect, useRef, type CSSProperties, type ReactNode } from 'react';
+import { useState, useMemo, useEffect, useLayoutEffect, useRef, type CSSProperties, type ReactNode } from 'react';
+import { renderToString } from 'react-dom/server';
 import type { Item, CorrectEntry, DistractorEntry, Theme } from '@/types/content.types';
 import { VisualConfig } from './VisualConfig';
 import { SpawnConfig } from './SpawnConfigCompact';
@@ -32,7 +33,72 @@ const BRACKET_CHIP_STYLE: CSSProperties = {
   fontSize: '0.88em',
 };
 
-/** Map browser selection inside a preview root to source string [start, end). */
+// ─── Inline markup style constants ───────────────────────────────────────────
+// Used by parseInlineContent for WYSIWYG rendering and by serializeInlineContent
+// (via data-type attribute) for round-tripping back to source markup.
+const GAP_CHIP_STYLE: CSSProperties = {
+  borderBottom: '2px dashed rgba(251,191,36,0.7)',
+  borderRadius: '2px',
+  padding: '0 0.05em',
+  background: 'rgba(251,191,36,0.1)',
+};
+const CODE_INLINE_STYLE: CSSProperties = {
+  fontFamily: 'ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace',
+  background: 'rgba(255,255,255,0.1)',
+  border: '1px solid rgba(255,255,255,0.15)',
+  borderRadius: '3px',
+  padding: '0.05em 0.3em',
+  fontSize: '0.88em',
+};
+const HIGHLIGHT_STYLE: CSSProperties = {
+  background: 'rgba(253,224,71,0.28)',
+  borderRadius: '2px',
+  padding: '0 0.15em',
+};
+const ABBR_CHIP_STYLE: CSSProperties = {
+  borderBottom: '1px dotted rgba(96,165,250,0.75)',
+  cursor: 'help',
+  borderRadius: '2px',
+  padding: '0 0.05em',
+};
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Place the cursor inside a WysiwygContextEditor root at a given source-string offset.
+ * Used to restore cursor position after innerHTML is reset on Enter.
+ */
+function placeCursorAtSourceOffset(root: HTMLElement, srcOffset: number): void {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT);
+  let node: Element | null;
+  while ((node = walker.nextNode() as Element | null)) {
+    if (!(node instanceof HTMLElement)) continue;
+    if (!node.hasAttribute('data-sstart')) continue;
+    const s0 = parseInt(node.getAttribute('data-sstart')!, 10);
+    const slen = parseInt(node.getAttribute('data-slen')!, 10);
+    if (srcOffset < s0 || srcOffset > s0 + slen) continue;
+    for (const child of Array.from(node.childNodes)) {
+      if (child.nodeType !== Node.TEXT_NODE) continue;
+      const charOff = srcOffset - s0;
+      const textLen = (child as Text).nodeValue?.length ?? 0;
+      if (charOff > textLen) continue;
+      try {
+        const range = document.createRange();
+        range.setStart(child, charOff);
+        range.collapse(true);
+        const sel = window.getSelection();
+        if (sel) { sel.removeAllRanges(); sel.addRange(range); }
+      } catch { /* ignore */ }
+      return;
+    }
+  }
+}
+
+/** Map browser selection inside a preview root to source string [start, end).
+ *
+ * Handles both TEXT_NODE endpoints (char offset) and ELEMENT_NODE endpoints
+ * (child-index offset) that browsers produce at styled boundaries or after
+ * keyboard/double-click selections.
+ */
 function getSourceSelectionOffsets(root: HTMLElement | null): { start: number; end: number } | null {
   if (!root) return null;
   const sel = window.getSelection();
@@ -40,20 +106,58 @@ function getSourceSelectionOffsets(root: HTMLElement | null): { start: number; e
   const range = sel.getRangeAt(0);
   if (!root.contains(range.commonAncestorContainer)) return null;
 
-  const offsetFor = (node: Node, off: number): number | null => {
+  /** Source offset for a TEXT_NODE + char position within it. */
+  const textNodeSrcOff = (node: Text, charOff: number): number | null => {
+    let el: HTMLElement | null = node.parentElement;
+    while (el && el !== root && !el.hasAttribute('data-sstart')) el = el.parentElement;
+    if (!el || !el.hasAttribute('data-sstart')) return null;
+    const s0 = parseInt(el.getAttribute('data-sstart')!, 10);
+    const slen = parseInt(el.getAttribute('data-slen')!, 10);
+    if (charOff < 0 || charOff > slen) return null;
+    return s0 + charOff;
+  };
+
+  /** Deepest first text node inside a subtree. */
+  const firstText = (node: Node): Text | null => {
+    if (node.nodeType === Node.TEXT_NODE) return node as Text;
+    for (let i = 0; i < node.childNodes.length; i++) {
+      const t = firstText(node.childNodes[i]);
+      if (t) return t;
+    }
+    return null;
+  };
+
+  /** Deepest last text node inside a subtree. */
+  const lastText = (node: Node): Text | null => {
+    if (node.nodeType === Node.TEXT_NODE) return node as Text;
+    for (let i = node.childNodes.length - 1; i >= 0; i--) {
+      const t = lastText(node.childNodes[i]);
+      if (t) return t;
+    }
+    return null;
+  };
+
+  /**
+   * Resolve a (node, domOffset) pair:
+   * - TEXT_NODE  → charOffset within text node
+   * - ELEMENT    → domOffset is a child-index boundary;
+   *               use end of (domOffset-1)-th child or start of subtree for 0
+   */
+  const offsetFor = (node: Node, domOff: number): number | null => {
     if (node.nodeType === Node.TEXT_NODE) {
-      let el: HTMLElement | null = node.parentElement;
-      while (el && el !== root && !el.hasAttribute('data-sstart')) {
-        el = el.parentElement;
+      return textNodeSrcOff(node as Text, domOff);
+    }
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      if (domOff === 0) {
+        const t = firstText(node);
+        return t ? textNodeSrcOff(t, 0) : null;
       }
-      if (!el || !root.contains(el)) return null;
-      const s0 = el.getAttribute('data-sstart');
-      const slen = el.getAttribute('data-slen');
-      if (s0 == null || slen == null) return null;
-      const base = parseInt(s0, 10);
-      const max = parseInt(slen, 10);
-      if (off < 0 || off > max) return null;
-      return base + off;
+      // after the (domOff-1)-th child — use last text in that child at its end
+      const child = node.childNodes[domOff - 1] ?? node.childNodes[node.childNodes.length - 1];
+      if (!child) return null;
+      const t = lastText(child);
+      if (!t) return null;
+      return textNodeSrcOff(t, t.nodeValue?.length ?? 0);
     }
     return null;
   };
@@ -69,6 +173,77 @@ function parseInlineContent(line: string, baseOffset: number, keyPrefix: string)
   let i = 0;
   let k = 0;
   while (i < line.length) {
+    // {Lückentext} — gap; inner content parsed recursively
+    if (line[i] === '{') {
+      const close = line.indexOf('}', i + 1);
+      if (close !== -1) {
+        const inner = line.slice(i + 1, close);
+        const innerStart = baseOffset + i + 1;
+        out.push(
+          <span key={`${keyPrefix}-gap-${k++}`} data-type="gap" style={GAP_CHIP_STYLE}>
+            {parseInlineContent(inner, innerStart, `${keyPrefix}-gi${k}`)}
+          </span>
+        );
+        i = close + 1;
+        continue;
+      }
+    }
+    // (term)[Expansion] — abbreviation; term parsed recursively
+    if (line[i] === '(') {
+      const closeParen = line.indexOf(')', i + 1);
+      if (closeParen !== -1 && line[closeParen + 1] === '[') {
+        const closeBracket = line.indexOf(']', closeParen + 2);
+        if (closeBracket !== -1) {
+          const term = line.slice(i + 1, closeParen);
+          const expansion = line.slice(closeParen + 2, closeBracket);
+          const termStart = baseOffset + i + 1;
+          out.push(
+            <span
+              key={`${keyPrefix}-abbr-${k++}`}
+              data-type="abbr"
+              data-expansion={expansion}
+              style={ABBR_CHIP_STYLE}
+              title={expansion}
+            >
+              {parseInlineContent(term, termStart, `${keyPrefix}-at${k}`)}
+            </span>
+          );
+          i = closeBracket + 1;
+          continue;
+        }
+      }
+    }
+    // ==Highlight==
+    if (line.startsWith('==', i)) {
+      const close = line.indexOf('==', i + 2);
+      if (close !== -1) {
+        const inner = line.slice(i + 2, close);
+        const innerStart = baseOffset + i + 2;
+        out.push(
+          <mark key={`${keyPrefix}-hl-${k++}`} data-type="highlight" style={HIGHLIGHT_STYLE} data-sstart={innerStart} data-slen={inner.length}>
+            {inner}
+          </mark>
+        );
+        i = close + 2;
+        continue;
+      }
+    }
+    // `inline code`
+    if (line[i] === '`') {
+      const close = line.indexOf('`', i + 1);
+      if (close !== -1 && close > i + 1) {
+        const inner = line.slice(i + 1, close);
+        const innerStart = baseOffset + i + 1;
+        out.push(
+          <code key={`${keyPrefix}-cd-${k++}`} data-type="code" style={CODE_INLINE_STYLE} data-sstart={innerStart} data-slen={inner.length}>
+            {inner}
+          </code>
+        );
+        i = close + 1;
+        continue;
+      }
+    }
+    // **bold**
     if (line.startsWith('**', i)) {
       const close = line.indexOf('**', i + 2);
       if (close !== -1) {
@@ -83,6 +258,7 @@ function parseInlineContent(line: string, baseOffset: number, keyPrefix: string)
         continue;
       }
     }
+    // *italic*
     if (line[i] === '*' && !line.startsWith('**', i)) {
       const close = line.indexOf('*', i + 1);
       if (close !== -1 && close > i + 1) {
@@ -99,13 +275,14 @@ function parseInlineContent(line: string, baseOffset: number, keyPrefix: string)
         }
       }
     }
+    // [Erklär-Chip]
     if (line[i] === '[') {
       const close = line.indexOf(']', i + 1);
       if (close !== -1) {
         const inner = line.slice(i + 1, close);
         const innerStart = baseOffset + i + 1;
         out.push(
-          <span key={`${keyPrefix}-br-${k++}`} style={BRACKET_CHIP_STYLE} data-sstart={innerStart} data-slen={inner.length}>
+          <span key={`${keyPrefix}-br-${k++}`} data-type="bracket" style={BRACKET_CHIP_STYLE} data-sstart={innerStart} data-slen={inner.length}>
             {inner}
           </span>
         );
@@ -113,11 +290,20 @@ function parseInlineContent(line: string, baseOffset: number, keyPrefix: string)
         continue;
       }
     }
+    // Plain text run — advance until next possible markup start
     let j = i + 1;
     while (j < line.length) {
+      const ch = line[j];
+      if (ch === '{') break;
+      if (ch === '(') {
+        const cp = line.indexOf(')', j + 1);
+        if (cp !== -1 && line[cp + 1] === '[') break;
+      }
+      if (line.startsWith('==', j)) break;
+      if (ch === '`') break;
       if (line.startsWith('**', j)) break;
-      if (line[j] === '[') break;
-      if (line[j] === '*' && !line.startsWith('**', j)) {
+      if (ch === '[') break;
+      if (ch === '*' && !line.startsWith('**', j)) {
         const close = line.indexOf('*', j + 1);
         if (close !== -1 && close > j + 1) {
           const inner = line.slice(j + 1, close);
@@ -173,9 +359,18 @@ function buildContextPreviewRich(text: string, collapsed: boolean, keyPrefix: st
     const first = lines[0]?.line ?? '';
     const firstStart = lines[0]?.start ?? 0;
     const isBullet = /^\s*\*\s+/.test(first);
+    const isH2c = first.startsWith('## ');
+    const isH1c = !isH2c && first.startsWith('# ');
+    const displayLine = isH2c ? first.slice(3) : isH1c ? first.slice(2) : first;
+    const displayStart = isH2c ? firstStart + 3 : isH1c ? firstStart + 2 : firstStart;
     return (
-      <div style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-        {isBullet ? renderBulletLine(first, firstStart, `${keyPrefix}-c`) : <>{parseInlineContent(first, firstStart, `${keyPrefix}-c`)}</>}
+      <div
+        data-block-type={isH2c ? 'h2' : isH1c ? 'h1' : undefined}
+        style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
+      >
+        {isBullet && !isH1c && !isH2c
+          ? renderBulletLine(first, firstStart, `${keyPrefix}-c`)
+          : <>{parseInlineContent(displayLine, displayStart, `${keyPrefix}-c`)}</>}
       </div>
     );
   }
@@ -189,14 +384,309 @@ function buildContextPreviewRich(text: string, collapsed: boolean, keyPrefix: st
         <span key={`${keyPrefix}-nl-${idx}`} data-sstart={nlAt} data-slen={1}>{'\n'}</span>
       );
     }
-    const isBullet = /^\s*\*\s+/.test(line);
-    blocks.push(
-      <div key={`${keyPrefix}-ln-${idx}`}>
-        {isBullet ? renderBulletLine(line, start, `${keyPrefix}-l${idx}`) : parseInlineContent(line, start, `${keyPrefix}-l${idx}`)}
-      </div>
-    );
+    const isH2 = line.startsWith('## ');
+    const isH1 = !isH2 && line.startsWith('# ');
+    const isBullet = !isH1 && !isH2 && /^\s*\*\s+/.test(line);
+    if (isH2) {
+      blocks.push(
+        <div key={`${keyPrefix}-ln-${idx}`} data-block-type="h2" className="ctx-h2">
+          {parseInlineContent(line.slice(3), start + 3, `${keyPrefix}-l${idx}`)}
+        </div>
+      );
+    } else if (isH1) {
+      blocks.push(
+        <div key={`${keyPrefix}-ln-${idx}`} data-block-type="h1" className="ctx-h1">
+          {parseInlineContent(line.slice(2), start + 2, `${keyPrefix}-l${idx}`)}
+        </div>
+      );
+    } else {
+      blocks.push(
+        <div key={`${keyPrefix}-ln-${idx}`}>
+          {isBullet ? renderBulletLine(line, start, `${keyPrefix}-l${idx}`) : parseInlineContent(line, start, `${keyPrefix}-l${idx}`)}
+        </div>
+      );
+    }
   }
   return <div style={{ whiteSpace: 'pre-wrap' }}>{blocks}</div>;
+}
+
+/** True if value looks like a web URL (http(s) or www…) — „URL öffnen“ anzeigen */
+function isUrlOpenable(raw: string): boolean {
+  const t = raw.trim();
+  if (!t) return false;
+  return /^https?:\/\//i.test(t) || /^www\./i.test(t);
+}
+
+function openUrlFromSource(raw: string): void {
+  const t = raw.trim();
+  if (!t) return;
+  let url = t;
+  if (/^www\./i.test(t)) url = `https://${t}`;
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
+
+/** Meta `meta.source`: mehrere Einträge, getrennt durch `|` (URLs oder Freitext). */
+function splitMetaSourcePipe(raw: string): string[] {
+  const s = raw ?? '';
+  if (!s.trim()) return [''];
+  return s.split('|').map((p) => p.trim());
+}
+
+function joinMetaSourcePipe(lines: string[]): string {
+  return lines.map((x) => x.trim()).filter((x) => x.length > 0).join('|');
+}
+
+function countMetaSources(raw: string): number {
+  return splitMetaSourcePipe(raw).filter((x) => x.trim()).length;
+}
+
+/** Serialize WYSIWYG DOM (from buildContextPreviewRich / browser edits) back to source string */
+function isBracketChipSpan(el: HTMLElement): boolean {
+  // Legacy detection: spans with border style that don't have a data-type (old content)
+  const dtype = el.getAttribute('data-type');
+  if (dtype) return dtype === 'bracket';
+  const st = el.getAttribute('style') || '';
+  return el.tagName === 'SPAN' && st.includes('border') && st.includes('1px');
+}
+
+function serializeInlineContent(el: HTMLElement): string {
+  let s = '';
+  for (const child of Array.from(el.childNodes)) {
+    if (child.nodeType === Node.TEXT_NODE) {
+      s += child.textContent ?? '';
+      continue;
+    }
+    if (child.nodeType !== Node.ELEMENT_NODE) continue;
+    const node = child as HTMLElement;
+    const dtype = node.getAttribute('data-type');
+
+    if (node.tagName === 'STRONG') { s += '**' + serializeInlineContent(node) + '**'; continue; }
+    if (node.tagName === 'EM') { s += '*' + serializeInlineContent(node) + '*'; continue; }
+    if (node.tagName === 'MARK') { s += '==' + (node.textContent ?? '') + '=='; continue; }
+    if (node.tagName === 'CODE') { s += '`' + (node.textContent ?? '') + '`'; continue; }
+    if (node.tagName === 'SPAN') {
+      if (dtype === 'gap') { s += '{' + serializeInlineContent(node) + '}'; }
+      else if (dtype === 'abbr') {
+        const exp = node.getAttribute('data-expansion') ?? '';
+        s += '(' + serializeInlineContent(node) + ')[' + exp + ']';
+      } else if (isBracketChipSpan(node)) { s += '[' + (node.textContent ?? '') + ']'; }
+      else { s += node.textContent ?? ''; }
+      continue;
+    }
+    if (node.tagName === 'BR') { s += '\n'; continue; }
+    s += node.textContent ?? '';
+  }
+  return s;
+}
+
+function serializeBulletLine(el: HTMLElement): string {
+  const children = Array.from(el.children).filter((c) => c.tagName === 'SPAN') as HTMLElement[];
+  let s = '';
+  for (const c of children) {
+    const t = c.textContent ?? '';
+    if (t === '•') {
+      s += '*';
+      continue;
+    }
+    const style = c.getAttribute('style') || '';
+    if (style.includes('flex') && (style.includes('min-width: 0') || style.includes('flex: 1'))) {
+      s += serializeInlineContent(c);
+    } else {
+      s += t;
+    }
+  }
+  return s;
+}
+
+function serializeLineDiv(div: HTMLElement): string {
+  const flexBullet = Array.from(div.children).find(
+    (c) => c.tagName === 'SPAN' && (c as HTMLElement).style.display === 'flex'
+  ) as HTMLElement | undefined;
+  if (flexBullet) {
+    return serializeBulletLine(flexBullet);
+  }
+  return serializeInlineContent(div);
+}
+
+function serializeExpandedRoot(inner: HTMLElement): string {
+  let out = '';
+  for (const child of Array.from(inner.children)) {
+    if (child.tagName === 'SPAN' && child.textContent === '\n') { out += '\n'; continue; }
+    if (child.tagName === 'DIV') {
+      const blockType = (child as HTMLElement).getAttribute('data-block-type');
+      if (blockType === 'h1') out += '# ' + serializeLineDiv(child as HTMLElement);
+      else if (blockType === 'h2') out += '## ' + serializeLineDiv(child as HTMLElement);
+      else out += serializeLineDiv(child as HTMLElement);
+      continue;
+    }
+    if (child.tagName === 'BR') { out += '\n'; }
+  }
+  return out;
+}
+
+function serializeFirstLineBlock(lineDiv: HTMLElement): string {
+  const blockType = lineDiv.getAttribute('data-block-type');
+  const prefix = blockType === 'h1' ? '# ' : blockType === 'h2' ? '## ' : '';
+  const flexBullet = lineDiv.querySelector(':scope > span[style*="display: flex"]') as HTMLElement | null;
+  if (flexBullet) return prefix + serializeBulletLine(flexBullet);
+  return prefix + serializeInlineContent(lineDiv);
+}
+
+function serializeWysiwygDomToSource(root: HTMLElement): string {
+  const trimmed = root.textContent?.replace(/\u00a0/g, ' ') ?? '';
+  if (!trimmed.trim()) return '';
+
+  const first = root.firstElementChild as HTMLElement | null;
+  const st = first?.getAttribute('style') || '';
+
+  if (!first || first.tagName === 'BR') {
+    // Browser-native structure when typing into empty <br> field:
+    // Chrome places text as a direct child text node (no wrapper element).
+    // Fall back to reading inline content so the typed text is not erased.
+    return serializeInlineContent(root);
+  }
+
+  if (st.includes('nowrap') || st.includes('text-overflow')) {
+    // Our collapsed single-line wrapper
+    return serializeFirstLineBlock(first);
+  }
+
+  if (st.includes('pre-wrap') || st.includes('white-space')) {
+    // Our expanded multi-line wrapper (white-space: pre-wrap)
+    return serializeExpandedRoot(first);
+  }
+
+  // Browser-created wrapper div without style (e.g. Chrome wraps typing in <div>text</div>).
+  // serializeExpandedRoot would miss bare text nodes; read inline content instead.
+  return serializeInlineContent(root);
+}
+
+function renderContextPreviewHtml(text: string, collapsed: boolean, keyPrefix: string): string {
+  const normalized = (text || '').replace(/\\n/g, '\n');
+  if (!normalized.length) {
+    return '';
+  }
+  return renderToString(<>{buildContextPreviewRich(normalized, collapsed, keyPrefix)}</>);
+}
+
+interface WysiwygContextEditorProps {
+  value: string;
+  path: string;
+  collapsed: boolean;
+  keyPrefix: string;
+  placeholder: string;
+  itemId: string;
+  minHeightExpanded: string;
+  minHeightCollapsed: string;
+  onValueChange: (path: string, next: string) => void;
+  onWysiwygKeyDown: (e: React.KeyboardEvent<HTMLDivElement>, path: string) => void;
+  setPreviewRef: (el: HTMLDivElement | null) => void;
+  onActivate?: () => void;
+  /** Called synchronously after innerHTML is reset, so cursor can be restored. */
+  onDidSetInnerHTML?: (el: HTMLDivElement) => void;
+}
+
+function WysiwygContextEditor({
+  value,
+  path,
+  collapsed,
+  keyPrefix,
+  placeholder,
+  itemId,
+  minHeightExpanded,
+  minHeightCollapsed,
+  onValueChange,
+  onWysiwygKeyDown,
+  setPreviewRef,
+  onActivate,
+  onDidSetInnerHTML,
+}: WysiwygContextEditorProps) {
+  const rootRef = useRef<HTMLDivElement | null>(null);
+  const lastEmittedRef = useRef<string | null>(null);
+  const prevItemIdRef = useRef(itemId);
+  // Keep a ref to the latest callback so the effect doesn't re-run just because
+  // a new function reference is passed every render — that would reset innerHTML
+  // and erase unsaved (React-state-batched) user input.
+  const onDidSetInnerHTMLRef = useRef(onDidSetInnerHTML);
+  useLayoutEffect(() => { onDidSetInnerHTMLRef.current = onDidSetInnerHTML; });
+
+  useLayoutEffect(() => {
+    if (itemId !== prevItemIdRef.current) {
+      prevItemIdRef.current = itemId;
+      lastEmittedRef.current = null;
+    }
+  }, [itemId]);
+
+  useLayoutEffect(() => {
+    const el = rootRef.current;
+    if (!el) return;
+    const normalized = (value || '').replace(/\\n/g, '\n');
+    if (normalized !== lastEmittedRef.current) {
+      lastEmittedRef.current = normalized;
+      const html = renderContextPreviewHtml(normalized, collapsed, keyPrefix);
+      el.innerHTML = html || `<br />`;
+      if (!normalized.length) {
+        el.setAttribute('data-placeholder', placeholder);
+      } else {
+        el.removeAttribute('data-placeholder');
+      }
+      onDidSetInnerHTMLRef.current?.(el);
+    }
+  // onDidSetInnerHTML intentionally excluded: we use the ref above so the effect
+  // doesn't re-run (and reset innerHTML) just because the parent re-renders.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value, collapsed, keyPrefix, placeholder, itemId]);
+
+  const handleInput = () => {
+    const el = rootRef.current;
+    if (!el) return;
+    el.removeAttribute('data-placeholder');
+    const next = serializeWysiwygDomToSource(el);
+    if (next === '') {
+      el.innerHTML = '<br />';
+      el.setAttribute('data-placeholder', placeholder);
+      if (lastEmittedRef.current !== '') {
+        lastEmittedRef.current = '';
+        onValueChange(path, '');
+      }
+      return;
+    }
+    if (next !== lastEmittedRef.current) {
+      lastEmittedRef.current = next;
+      onValueChange(path, next);
+    }
+  };
+
+  const setRef = (el: HTMLDivElement | null) => {
+    rootRef.current = el;
+    setPreviewRef(el);
+  };
+
+  return (
+    <div
+      ref={setRef}
+      contentEditable
+      suppressContentEditableWarning
+      spellCheck={false}
+      className="editor-form-textarea editor-context-wysiwyg-root"
+      onInput={handleInput}
+      onKeyDown={(e) => onWysiwygKeyDown(e, path)}
+      onFocus={() => onActivate?.()}
+      onMouseUp={() => onActivate?.()}
+      data-path={path}
+      style={{
+        flex: 1,
+        minHeight: collapsed ? minHeightCollapsed : minHeightExpanded,
+        maxHeight: collapsed ? minHeightCollapsed : 'none',
+        padding: '0.6rem 0.75rem',
+        lineHeight: 1.45,
+        overflow: collapsed ? 'hidden' : 'auto',
+        overflowWrap: 'anywhere',
+        cursor: 'text',
+        outline: 'none',
+      }}
+    />
+  );
 }
 
 export function DetailView({ item, allItems, onItemChange, onBack, universeId, theme, chapterId }: DetailViewProps) {
@@ -222,20 +712,37 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
   });
   const contextTextareaRefs = useRef<Record<string, HTMLTextAreaElement | null>>({});
   const contextPreviewRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  /** Pending cursor restore after innerHTML reset triggered by Enter key. */
+  const wysiwygPendingCursorRef = useRef<{ path: string; offset: number } | null>(null);
   const [activeContextRefKey, setActiveContextRefKey] = useState<string>('baseContext');
 
   const isMobileDetail = useEditorMobile();
   const [moveSectionOpen, setMoveSectionOpen] = useState(() => useEditorMobileSectionInitiallyOpen());
   const [relatedSectionOpen, setRelatedSectionOpen] = useState(() => useEditorMobileSectionInitiallyOpen());
   const [metaSectionOpen, setMetaSectionOpen] = useState(() => useEditorMobileSectionInitiallyOpen());
-  const [visualSectionOpen, setVisualSectionOpen] = useState(() => useEditorMobileSectionInitiallyOpen());
+  /** Desktop: Visual/Spawn standard eingeklappt; Mobil unverändert per Toggle. */
+  const [visualSectionOpen, setVisualSectionOpen] = useState(false);
+
+  const [mobileSourceModal, setMobileSourceModal] = useState<{
+    kind: 'correct' | 'distractor';
+    index: number;
+    draft: string;
+  } | null>(null);
+
+  const [mobileDetailsModal, setMobileDetailsModal] = useState<{
+    kind: 'correct' | 'distractor';
+    index: number;
+    draft: string;
+  } | null>(null);
+
+  /** Mehrere Quellen für `meta.source` (Pipe-getrennt), Desktop + Mobil */
+  const [metaSourcesModal, setMetaSourcesModal] = useState<string[] | null>(null);
 
   useEffect(() => {
     const expanded = !isMobileDetail;
     setMoveSectionOpen(expanded);
     setRelatedSectionOpen(expanded);
     setMetaSectionOpen(expanded);
-    setVisualSectionOpen(expanded);
   }, [isMobileDetail]);
 
   const autoResizeTextarea = (textarea: HTMLTextAreaElement) => {
@@ -287,26 +794,22 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
     onItemChange(newItem);
   };
 
-  const computeContextInsert = (
-    selected: string,
-    kind: 'bold' | 'italic' | 'brackets' | 'list' | 'newline'
-  ): string => {
-    let insert = selected;
-    if (kind === 'bold') insert = `**${selected || ''}**`;
-    if (kind === 'italic') insert = `*${selected || ''}*`;
-    if (kind === 'brackets') insert = `[${selected || ''}]`;
-    if (kind === 'newline') insert = `${selected}\\n`;
+  type InlineKind = 'bold' | 'italic' | 'brackets' | 'list' | 'newline' | 'gap' | 'code' | 'highlight';
+  type ToolbarKind = InlineKind | 'abbr' | 'h1' | 'h2';
+
+  const computeContextInsert = (selected: string, kind: InlineKind): string => {
+    if (kind === 'bold') return `**${selected || ''}**`;
+    if (kind === 'italic') return `*${selected || ''}*`;
+    if (kind === 'brackets') return `[${selected || ''}]`;
+    if (kind === 'gap') return `{${selected || ''}}`;
+    if (kind === 'code') return `\`${selected || ''}\``;
+    if (kind === 'highlight') return `==${selected || ''}==`;
+    if (kind === 'newline') return `${selected}\\n`;
     if (kind === 'list') {
-      if (!selected) {
-        insert = '* ';
-      } else {
-        insert = selected
-          .split('\n')
-          .map((line) => `* ${line.replace(/^\*\s*/, '')}`)
-          .join('\n');
-      }
+      if (!selected) return '* ';
+      return selected.split('\n').map((l) => `* ${l.replace(/^\*\s*/, '')}`).join('\n');
     }
-    return insert;
+    return selected;
   };
 
   const applyContextFormatAtOffsets = (
@@ -314,132 +817,354 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
     currentValue: string,
     start: number,
     end: number,
-    kind: 'bold' | 'italic' | 'brackets' | 'list' | 'newline'
+    kind: InlineKind
   ) => {
     const selected = currentValue.slice(start, end);
     const insert = computeContextInsert(selected, kind);
-    const nextValue = currentValue.slice(0, start) + insert + currentValue.slice(end);
-    handleFieldChange(path, nextValue);
+    handleFieldChange(path, currentValue.slice(0, start) + insert + currentValue.slice(end));
   };
 
   const applyContextFormat = (
     path: string,
     currentValue: string,
     textarea: HTMLTextAreaElement,
-    kind: 'bold' | 'italic' | 'brackets' | 'list' | 'newline'
+    kind: InlineKind
   ) => {
     const start = textarea.selectionStart ?? 0;
     const end = textarea.selectionEnd ?? 0;
     const selected = currentValue.slice(start, end);
     const insert = computeContextInsert(selected, kind);
-
-    const nextValue = currentValue.slice(0, start) + insert + currentValue.slice(end);
-    handleFieldChange(path, nextValue);
-
+    handleFieldChange(path, currentValue.slice(0, start) + insert + currentValue.slice(end));
     requestAnimationFrame(() => {
       textarea.focus();
-      const pos = start + insert.length;
-      textarea.setSelectionRange(pos, pos);
+      textarea.setSelectionRange(start + insert.length, start + insert.length);
       autoResizeTextarea(textarea);
     });
   };
 
+  /** Toggle H1/H2 at the start of the current line (cursor-based). */
+  const applyHeadingToggle = (path: string, currentValue: string, cursorPos: number, level: 1 | 2) => {
+    const lineStart = currentValue.lastIndexOf('\n', cursorPos - 1) + 1;
+    const lineEnd = currentValue.indexOf('\n', lineStart);
+    const line = currentValue.slice(lineStart, lineEnd === -1 ? undefined : lineEnd);
+    let newLine: string;
+    if (line.startsWith('## ')) {
+      newLine = level === 2 ? line.slice(3) : '# ' + line.slice(3);
+    } else if (line.startsWith('# ')) {
+      newLine = level === 1 ? line.slice(2) : '## ' + line.slice(2);
+    } else {
+      newLine = (level === 1 ? '# ' : '## ') + line;
+    }
+    const end = lineEnd === -1 ? currentValue.length : lineEnd;
+    handleFieldChange(path, currentValue.slice(0, lineStart) + newLine + currentValue.slice(end));
+  };
+
   const handleContextKeyDown = (
-    e: React.KeyboardEvent<HTMLTextAreaElement>,
+    e: React.KeyboardEvent<HTMLTextAreaElement | HTMLDivElement>,
     path: string,
     currentValue: string
   ) => {
     if (!e.ctrlKey) return;
     const key = e.key.toLowerCase();
-    if (key !== 'f' && key !== 'k' && key !== 'h') return;
+    const validKeys = ['f', 'k', 'h', 'g', 'e', 'm'];
+    if (!validKeys.includes(key)) return;
     e.preventDefault();
 
-    if (key === 'f') applyContextFormat(path, currentValue, e.currentTarget, 'bold');
-    if (key === 'k') applyContextFormat(path, currentValue, e.currentTarget, 'italic');
-    if (key === 'h') applyContextFormat(path, currentValue, e.currentTarget, 'brackets');
+    const kindMap: Record<string, InlineKind> = {
+      f: 'bold', k: 'italic', h: 'brackets', g: 'gap', e: 'highlight', m: 'code',
+    };
+    const kind = kindMap[key];
+
+    if (e.currentTarget instanceof HTMLTextAreaElement) {
+      // Use textarea.value (DOM) — avoids stale React state causing text loss
+      // The `currentValue` parameter is intentionally ignored here for the same reason
+      applyContextFormat(path, e.currentTarget.value, e.currentTarget, kind);
+      return;
+    }
+    const mapped = getSourceSelectionOffsets(e.currentTarget);
+    if (!mapped) return;
+    applyContextFormatAtOffsets(path, currentValue, mapped.start, mapped.end, kind);
   };
 
-  const getContextValueByPath = (path: string): string => {
+  /** Context + Details (gleiche Mini-Markup-Logik wie Context) */
+  const getRichTextFieldByPath = (path: string): string => {
     if (!localItem) return '';
     if (path === 'base.context') return localItem.base.context || '';
 
-    const correctMatch = path.match(/^correct\[(\d+)\]\.context$/);
+    const correctMatch = path.match(/^correct\[(\d+)\]\.(context|details)$/);
     if (correctMatch) {
       const index = Number(correctMatch[1]);
-      return localItem.correct[index]?.context || '';
+      const field = correctMatch[2] as 'context' | 'details';
+      const row = localItem.correct[index];
+      if (!row) return '';
+      return field === 'context' ? row.context || '' : row.details || '';
     }
 
-    const distractorMatch = path.match(/^distractors\[(\d+)\]\.context$/);
+    const distractorMatch = path.match(/^distractors\[(\d+)\]\.(context|details)$/);
     if (distractorMatch) {
       const index = Number(distractorMatch[1]);
-      return localItem.distractors[index]?.context || '';
+      const field = distractorMatch[2] as 'context' | 'details';
+      const row = localItem.distractors[index];
+      if (!row) return '';
+      return field === 'context' ? row.context || '' : row.details || '';
     }
 
     return '';
   };
 
-  const applyToolbarToContext = (
-    path: string,
-    refKey: string,
-    kind: 'bold' | 'italic' | 'brackets' | 'list' | 'newline'
-  ) => {
+  /**
+   * Normalize raw field value for WYSIWYG toolbar operations.
+   * data-sstart offsets are calculated from the normalized string (\\n → \n),
+   * so we must slice the normalized version. Saving it back is safe because
+   * buildContextPreviewRich handles both \\n and \n equivalently.
+   */
+  const getWysiwygNormalizedValue = (path: string): string =>
+    getRichTextFieldByPath(path).replace(/\\n/g, '\n');
+
+  /**
+   * Fallback offset detection via range.toString() text search.
+   * Covers cases where data-sstart walking fails (e.g. complex bullet DOM nesting).
+   */
+  const getFallbackSelectionOffsets = (
+    root: HTMLElement | null,
+    normalizedSource: string
+  ): { start: number; end: number } | null => {
+    if (!root) return null;
+    const sel = window.getSelection();
+    if (!sel || sel.rangeCount === 0) return null;
+    const range = sel.getRangeAt(0);
+    if (range.collapsed || !root.contains(range.commonAncestorContainer)) return null;
+    const text = range.toString();
+    if (!text) return null;
+    const idx = normalizedSource.indexOf(text);
+    if (idx === -1) return null;
+    return { start: idx, end: idx + text.length };
+  };
+
+  const handleWysiwygKeyDown = (e: React.KeyboardEvent<HTMLDivElement>, path: string) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      // Read from DOM directly — avoids stale React state when user just typed something
+      const domValue = serializeWysiwygDomToSource(e.currentTarget);
+      const currentValue = domValue || getWysiwygNormalizedValue(path);
+      const mapped = getSourceSelectionOffsets(e.currentTarget);
+      const start = mapped?.start ?? currentValue.length;
+      const end = mapped?.end ?? currentValue.length;
+      const next = currentValue.slice(0, start) + '\n' + currentValue.slice(end);
+      wysiwygPendingCursorRef.current = { path, offset: start + 1 };
+      handleFieldChange(path, next);
+      return;
+    }
+    // For other keys: also use fresh DOM value to avoid stale state
+    const domValue = serializeWysiwygDomToSource(e.currentTarget);
+    handleContextKeyDown(e, path, domValue || getWysiwygNormalizedValue(path));
+  };
+
+  /**
+   * Get the freshest available value for a WYSIWYG field.
+   * Reads directly from the current DOM (bypasses React state batching) so
+   * toolbar operations always work on what's actually visible, not a stale state snapshot.
+   */
+  const getWysiwygFreshValue = (refKey: string, path: string): string => {
+    const previewEl = contextPreviewRefs.current[refKey];
+    if (previewEl) {
+      const dom = serializeWysiwygDomToSource(previewEl);
+      if (dom) return dom;
+    }
+    return getWysiwygNormalizedValue(path);
+  };
+
+  const applyToolbarToContext = (path: string, refKey: string, kind: ToolbarKind) => {
     setActiveContextRefKey(refKey);
 
+    const previewEl = contextPreviewRefs.current[refKey];
     const textarea = contextTextareaRefs.current[refKey];
-    if (textarea) {
-      const currentValue = getContextValueByPath(path);
-      applyContextFormat(path, currentValue, textarea, kind);
+
+    // Helper: get fresh value from DOM (bypasses React state batching for both modes)
+    const getFreshCurrentValue = () =>
+      textarea ? textarea.value : getWysiwygFreshValue(refKey, path);
+
+    // ── Block operations (H1 / H2) ───────────────────────────────────────────
+    if (kind === 'h1' || kind === 'h2') {
+      const currentValue = getFreshCurrentValue();
+      let cursorPos = currentValue.length;
+      if (textarea) {
+        cursorPos = textarea.selectionStart ?? currentValue.length;
+      } else {
+        const mapped = getSourceSelectionOffsets(previewEl) ?? getFallbackSelectionOffsets(previewEl, currentValue);
+        if (mapped) cursorPos = mapped.start;
+      }
+      applyHeadingToggle(path, currentValue, cursorPos, kind === 'h1' ? 1 : 2);
       return;
     }
 
-    const currentValue = getContextValueByPath(path);
-    const previewEl = contextPreviewRefs.current[refKey];
-    const mapped = getSourceSelectionOffsets(previewEl);
-    let start: number;
-    let end: number;
-    if (mapped) {
-      start = mapped.start;
-      end = mapped.end;
-    } else if (currentValue === '') {
-      start = 0;
-      end = 0;
-    } else {
+    // ── Abbreviation ─────────────────────────────────────────────────────────
+    // IMPORTANT: save selection and content BEFORE window.prompt() steals focus
+    // (the dialog moves focus away and loses the browser text selection).
+    if (kind === 'abbr') {
+      const currentValue = getFreshCurrentValue();
+      if (textarea) {
+        const s = textarea.selectionStart ?? currentValue.length;
+        const e = textarea.selectionEnd ?? currentValue.length;
+        const term = currentValue.slice(s, e) || 'Begriff';
+        const expansion = window.prompt('Langform / Erklärung (Tooltip):');
+        if (expansion === null) return;
+        // Re-read after prompt — textarea.value is the authoritative DOM value
+        const freshValue = textarea.value;
+        const insert = `(${term})[${expansion}]`;
+        const safeS = Math.min(s, freshValue.length);
+        const safeE = Math.min(e, freshValue.length);
+        handleFieldChange(path, freshValue.slice(0, safeS) + insert + freshValue.slice(safeE));
+        requestAnimationFrame(() => {
+          textarea.focus();
+          textarea.setSelectionRange(safeS + insert.length, safeS + insert.length);
+        });
+        return;
+      }
+      // WYSIWYG: read DOM value + selection BEFORE prompt
+      const savedMapped =
+        getSourceSelectionOffsets(previewEl) ?? getFallbackSelectionOffsets(previewEl, currentValue);
+      const s = savedMapped?.start ?? currentValue.length;
+      const e = savedMapped?.end ?? currentValue.length;
+      const term = currentValue.slice(s, e) || 'Begriff';
+
+      const expansion = window.prompt('Langform / Erklärung (Tooltip):');
+      if (expansion === null) return;
+
+      // Re-read DOM after prompt
+      const freshValue = getWysiwygFreshValue(refKey, path);
+      const insert = `(${term})[${expansion}]`;
+      const safeS = Math.min(s, freshValue.length);
+      const safeE = Math.min(e, freshValue.length);
+      handleFieldChange(path, freshValue.slice(0, safeS) + insert + freshValue.slice(safeE));
       return;
     }
-    applyContextFormatAtOffsets(path, currentValue, start, end, kind);
+
+    // ── Inline operations ─────────────────────────────────────────────────────
+    const inlineKind = kind as InlineKind;
+    if (textarea) {
+      // Use textarea.value (DOM) not state — same pattern as WYSIWYG getWysiwygFreshValue
+      applyContextFormat(path, textarea.value, textarea, inlineKind);
+      return;
+    }
+    // Use fresh DOM value so recent typing isn't lost (bypasses React state batching)
+    const currentValue = getWysiwygFreshValue(refKey, path);
+    const mapped = getSourceSelectionOffsets(previewEl) ?? getFallbackSelectionOffsets(previewEl, currentValue);
+    let start: number, end: number;
+    if (mapped) { start = mapped.start; end = mapped.end; }
+    else if (currentValue === '') { start = 0; end = 0; }
+    else return;
+    applyContextFormatAtOffsets(path, currentValue, start, end, inlineKind);
   };
 
   const renderContextToolbar = (refKey: string, path: string) => {
     if (activeContextRefKey !== refKey) return null;
 
-    const toolbarStyle: CSSProperties = {
-      position: 'absolute',
-      top: '-1.65rem',
-      right: '0.2rem',
-      display: 'flex',
-      gap: '0.25rem',
-      zIndex: 5,
-      background: 'rgba(18, 24, 36, 0.72)',
-      border: '1px solid rgba(255,255,255,0.14)',
-      borderRadius: '7px',
-      padding: '0.15rem',
-      backdropFilter: 'blur(4px)',
-      boxShadow: '0 2px 10px rgba(0,0,0,0.18)',
+    // Zero-height sticky container trick:
+    // The container has height:0 so it contributes NOTHING to layout (no shift when
+    // appearing/disappearing). The toolbar is absolutely positioned relative to this
+    // container and floats ABOVE the field. When the page is scrolled so that the
+    // container would be above the viewport, the sticky kicks in and keeps it at top:8px,
+    // so the toolbar stays visible without ever changing the document height.
+    const stickyContainerStyle: CSSProperties = {
+      position: 'sticky',
+      top: '8px',
+      height: 0,
+      overflow: 'visible',
+      zIndex: 10,
     };
 
-    const handleClick = (
-      kind: 'bold' | 'italic' | 'brackets' | 'list' | 'newline'
-    ) => applyToolbarToContext(path, refKey, kind);
+    const toolbarStyle: CSSProperties = {
+      position: 'absolute',
+      bottom: '0',     // sits just above the sticky anchor line
+      right: '0',
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'flex-end',
+      gap: '0.15rem',
+      background: 'rgba(18,24,36,0.96)',
+      border: '1px solid rgba(255,255,255,0.16)',
+      borderRadius: '7px',
+      padding: '0.2rem',
+      backdropFilter: 'blur(6px)',
+      boxShadow: '0 4px 18px rgba(0,0,0,0.3)',
+      maxWidth: '480px',
+      transform: 'translateY(-100%)',  // shift the toolbar upward by its own height
+    };
+
+    const btn = (label: React.ReactNode, k: ToolbarKind, title: string, ariaLabel: string) => (
+      <button
+        className="editor-button small"
+        type="button"
+        title={title}
+        aria-label={ariaLabel}
+        onMouseDown={(e) => e.preventDefault()}
+        onClick={() => applyToolbarToContext(path, refKey, k)}
+        style={{ minWidth: 0, padding: '0.15rem 0.4rem', fontSize: '0.75rem' }}
+      >
+        {label}
+      </button>
+    );
+
+    const separator = (
+      <span style={{
+        display: 'block',
+        width: '1px',
+        alignSelf: 'stretch',
+        background: 'rgba(255,255,255,0.15)',
+        margin: '0.1rem 0.2rem',
+        flexShrink: 0,
+      }} />
+    );
 
     return (
+      <div style={stickyContainerStyle}>
       <div style={toolbarStyle}>
-        <button className="editor-button small" type="button" title="Fett (**...**) | Strg+F" aria-label="Fett formatieren" onMouseDown={(e) => e.preventDefault()} onClick={() => handleClick('bold')}>B</button>
-        <button className="editor-button small" type="button" title="Kursiv (*...*) | Strg+K" aria-label="Kursiv formatieren" onMouseDown={(e) => e.preventDefault()} onClick={() => handleClick('italic')}><em>I</em></button>
-        <button className="editor-button small" type="button" title="Aufzählung (* ...)" aria-label="Aufzählung formatieren" onMouseDown={(e) => e.preventDefault()} onClick={() => handleClick('list')}>* Liste</button>
-        <button className="editor-button small" type="button" title="Zeilenumbruch (\\n)" aria-label="Zeilenumbruch einfügen" onMouseDown={(e) => e.preventDefault()} onClick={() => handleClick('newline')}>\\n</button>
-        <button className="editor-button small" type="button" title="Klammer-Info ([...]) | Strg+H" aria-label="Klammer-Info einfügen" onMouseDown={(e) => e.preventDefault()} onClick={() => handleClick('brackets')}>[ ]</button>
+        {btn('B', 'bold', 'Fett (**...**) | Strg+F', 'Fett')}
+        {btn(<em>I</em>, 'italic', 'Kursiv (*...*) | Strg+K', 'Kursiv')}
+        {btn('{ }', 'gap', 'Lückentext ({...}) | Strg+G', 'Lückentext')}
+        {btn(<code style={{ fontSize: '0.75rem' }}>` `</code>, 'code', 'Inline-Code (`...`) | Strg+M', 'Code')}
+        {btn('==', 'highlight', 'Highlight (==...==) | Strg+E', 'Highlight')}
+        {btn('(A)', 'abbr', 'Abkürzung (term)[Langform]', 'Abkürzung')}
+        {btn('H1', 'h1', 'Überschrift 1 (# am Zeilenanfang)', 'H1')}
+        {btn('H2', 'h2', 'Überschrift 2 (## am Zeilenanfang)', 'H2')}
+        {btn('* Liste', 'list', 'Aufzählung (* ...)', 'Aufzählung')}
+        {btn('\\n', 'newline', 'Zeilenumbruch (\\n)', 'Zeilenumbruch')}
+        {btn('[ ]', 'brackets', 'Erklär-Chip ([...]) | Strg+H', 'Erklär-Chip')}
+        {separator}
+        <button
+          className={`editor-button small ${contextViewMode === 'edited' ? 'primary' : ''}`}
+          type="button"
+          title={contextViewMode === 'raw' ? 'Zur WYSIWYG-Ansicht wechseln' : 'Zur Raw-Ansicht wechseln'}
+          aria-label="Raw/WYSIWYG umschalten"
+          onMouseDown={(e) => e.preventDefault()}
+          onClick={() => setContextViewMode((prev) => (prev === 'raw' ? 'edited' : 'raw'))}
+          style={{ minWidth: 0, padding: '0.15rem 0.4rem', fontSize: '0.75rem' }}
+        >
+          {contextViewMode === 'raw' ? 'Raw' : 'WYSIWYG'}
+        </button>
+      </div>
       </div>
     );
+  };
+
+  const pasteClipboardToDraft = async (setDraft: (s: string) => void) => {
+    try {
+      const t = await navigator.clipboard.readText();
+      setDraft(t);
+    } catch {
+      showToast('Zwischenablage konnte nicht gelesen werden.', 'error', 2500);
+    }
+  };
+
+  const pasteClipboardToMetaSourceLines = async (setLines: (lines: string[]) => void) => {
+    try {
+      const t = await navigator.clipboard.readText();
+      const parts = t.split('|').map((p) => p.trim());
+      setLines(parts.length ? parts : ['']);
+    } catch {
+      showToast('Zwischenablage konnte nicht gelesen werden.', 'error', 2500);
+    }
   };
 
   const handleAddCorrect = () => {
@@ -456,6 +1181,8 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
       points: 10,
       pattern: 'single',
       context: '',
+      source: '',
+      details: '',
       visual: {
         color: '#4CAF50',
         variant: 'hexagon',
@@ -499,6 +1226,8 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
       damage: 1,
       redirect: '',
       context: '',
+      source: '',
+      details: '',
       visual: {
         color: '#f44336',
         variant: 'spike',
@@ -1012,34 +1741,7 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
     );
   }
 
-  const renderTextInput = (
-    label: string,
-    path: string,
-    value: string,
-    maxLength: number,
-    placeholder: string = ''
-  ) => {
-    const isWarning = value.length > maxLength;
-    return (
-      <div className="editor-form-group">
-        <label className="editor-form-label">{label}</label>
-        <input
-          type="text"
-          className={`editor-form-input ${isWarning ? 'warning' : ''}`}
-          value={value}
-          onChange={(e) => handleFieldChange(path, e.target.value)}
-          placeholder={placeholder}
-        />
-        {value.length > 0 && (
-          <span className={`editor-form-hint ${isWarning ? 'warning' : ''}`}>
-            {value.length}/{maxLength} {isWarning ? '⚠️ Too long!' : 'characters'}
-          </span>
-        )}
-      </div>
-    );
-  };
-
-  // Removed unused renderTextarea function
+  const metaSourceCount = countMetaSources(localItem.meta.source || '');
 
   return (
     <div className="editor-detail-container">
@@ -1107,7 +1809,689 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
         </div>
       </div>
 
-      {/* MOVE/COPY ITEM SECTION */}
+      {/* BASE ENTRY */}
+      <div className="editor-detail-section" style={{ padding: '1rem' }}>
+        <div className="editor-detail-section-title" style={{ fontSize: '1rem', marginBottom: '0.75rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+          <span>🎯 Base Entry</span>
+          <button
+            className={`editor-button small ${contextsExpanded ? 'primary' : ''}`}
+            onClick={() => setContextsExpanded((prev) => !prev)}
+            title={contextsExpanded ? 'Alle Context-Felder einklappen' : 'Alle Context-Felder ausklappen'}
+            aria-label="Context Felder umschalten"
+            type="button"
+          >
+            {contextsExpanded ? 'Ausgeklappt' : 'Eingeklappt'}
+          </button>
+        </div>
+        <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
+          <input
+            type="text"
+            className="editor-form-input"
+            value={localItem.base.word || ''}
+            onChange={(e) => handleFieldChange('base.word', e.target.value)}
+            placeholder="Base Word"
+            style={{ flex: 1 }}
+          />
+          <select
+            className="editor-form-select"
+            value={localItem.base.type}
+            onChange={(e) => {
+              handleFieldChange('base.type', e.target.value);
+              if (e.target.value === 'image') {
+                // Open file picker automatically
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*';
+                input.onchange = (event: any) => {
+                  const file = event.target?.files?.[0];
+                  if (file) {
+                    // In a real app, you would upload the file and get a URL
+                    // For now, show a dialog with instructions
+                    const imagePath = `/content/assets/images/${localItem.theme}/${localItem.chapter}/${file.name}`;
+                    handleFieldChange('base.image', imagePath);
+                    alert(`Image selected: ${file.name}\n\nRecommended path:\n${imagePath}\n\nPlace image files in:\n/public/content/assets/images/[theme]/[chapter]/`);
+                  }
+                };
+                input.click();
+              }
+            }}
+            style={{ flex: '0 0 120px' }}
+          >
+            <option value="word">Word</option>
+            <option value="phrase">Phrase</option>
+            <option value="image">Image</option>
+          </select>
+        </div>
+        <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
+          <div style={{ position: 'relative', flex: 1 }}>
+            {renderContextToolbar('baseContext', 'base.context')}
+            {contextViewMode === 'raw' ? (
+              <textarea
+                className="editor-form-textarea"
+                value={localItem.base.context || ''}
+                onChange={(e) => handleFieldChange('base.context', e.target.value)}
+                onFocus={() => {
+                  setActiveContextRefKey('baseContext');
+                }}
+                onBlur={() => {
+                  if (activeContextRefKey === 'baseContext') setActiveContextRefKey('');
+                }}
+                onKeyDown={(e) => handleContextKeyDown(e, 'base.context', localItem.base.context || '')}
+                onInput={(e) => autoResizeTextarea(e.currentTarget)}
+                ref={(el) => {
+                  contextTextareaRefs.current.baseContext = el;
+                  if (el) autoResizeTextarea(el);
+                }}
+                placeholder="Base Context (optional)"
+                rows={contextsExpanded ? 3 : 1}
+                style={{ flex: 1, width: '100%', resize: 'none', minHeight: contextsExpanded ? '84px' : '38px', overflow: 'hidden', lineHeight: 1.4 }}
+              />
+            ) : (
+              <WysiwygContextEditor
+                key={`${localItem.id}-base-ctx`}
+                value={localItem.base.context || ''}
+                path="base.context"
+                collapsed={!contextsExpanded}
+                keyPrefix="base"
+                placeholder="Base Context (optional)"
+                itemId={localItem.id}
+                minHeightExpanded="84px"
+                minHeightCollapsed="38px"
+                onValueChange={handleFieldChange}
+                onWysiwygKeyDown={handleWysiwygKeyDown}
+                setPreviewRef={(el) => {
+                  contextPreviewRefs.current.baseContext = el;
+                }}
+                onActivate={() => setActiveContextRefKey('baseContext')}
+                onDidSetInnerHTML={(el) => {
+                  const p = wysiwygPendingCursorRef.current;
+                  if (p?.path === 'base.context') { wysiwygPendingCursorRef.current = null; placeCursorAtSourceOffset(el, p.offset); }
+                }}
+              />
+            )}
+          </div>
+        </div>
+        {localItem.base.type === 'image' && (
+          <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.75rem' }}>
+            <input
+              type="text"
+              className="editor-form-input"
+              value={localItem.base.image || ''}
+              onChange={(e) => handleFieldChange('base.image', e.target.value)}
+              placeholder="/content/assets/images/[theme]/[chapter]/image.png"
+              style={{ flex: 1 }}
+            />
+            <button
+              className="editor-button small"
+              onClick={() => {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*';
+                input.onchange = (event: any) => {
+                  const file = event.target?.files?.[0];
+                  if (file) {
+                    const imagePath = `/content/assets/images/${localItem.theme}/${localItem.chapter}/${file.name}`;
+                    handleFieldChange('base.image', imagePath);
+                    alert(`Image selected: ${file.name}\n\nPlace file at:\n/public${imagePath}`);
+                  }
+                };
+                input.click();
+              }}
+              style={{ padding: '0.4rem 0.8rem' }}
+            >
+              📁 Browse
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* CORRECT ENTRIES */}
+      <div className="editor-detail-section" style={{ padding: '1rem' }}>
+        <div style={{ marginBottom: '0.75rem' }}>
+          <span style={{ fontSize: '1rem', fontWeight: 600 }}>✅ Correct Entries ({localItem.correct.length})</span>
+        </div>
+        {localItem.correct.map((correct, index) => (
+          <div key={index} style={{ 
+            background: 'rgba(76, 175, 80, 0.08)', 
+            borderRadius: '6px', 
+            padding: '0.75rem', 
+            marginBottom: '0.75rem',
+            border: '1px solid rgba(76, 175, 80, 0.25)'
+          }}>
+            <div className="editor-detail-entry-card">
+              <div className="editor-detail-entry-main">
+                <div className="editor-detail-entry-row">
+                  <input
+                    type="text"
+                    className="editor-form-input"
+                    value={correct.entry.word || ''}
+                    onChange={(e) => handleFieldChange(`correct[${index}].entry.word`, e.target.value)}
+                    placeholder="Correct Answer"
+                    style={{ flex: 1, minWidth: 0 }}
+                  />
+                </div>
+                <div className="editor-detail-entry-row">
+                  <div style={{ position: 'relative', flex: 1 }}>
+                    {renderContextToolbar(`correct-${index}`, `correct[${index}].context`)}
+                    {contextViewMode === 'raw' ? (
+                      <textarea
+                        className="editor-form-textarea"
+                        value={correct.context || ''}
+                        onChange={(e) => handleFieldChange(`correct[${index}].context`, e.target.value)}
+                        onFocus={() => {
+                          setActiveContextRefKey(`correct-${index}`);
+                        }}
+                        onBlur={() => {
+                          if (activeContextRefKey === `correct-${index}`) setActiveContextRefKey('');
+                        }}
+                        onKeyDown={(e) => handleContextKeyDown(e, `correct[${index}].context`, correct.context || '')}
+                        onInput={(e) => autoResizeTextarea(e.currentTarget)}
+                        ref={(el) => {
+                          contextTextareaRefs.current[`correct-${index}`] = el;
+                          if (el) autoResizeTextarea(el);
+                        }}
+                        placeholder="Context"
+                        rows={contextsExpanded ? 2 : 1}
+                        style={{ width: '100%', resize: 'none', minHeight: contextsExpanded ? '64px' : '38px', flex: 1, overflow: 'hidden', lineHeight: 1.4 }}
+                      />
+                    ) : (
+                      <WysiwygContextEditor
+                        key={`${localItem.id}-correct-${index}-ctx`}
+                        value={correct.context || ''}
+                        path={`correct[${index}].context`}
+                        collapsed={!contextsExpanded}
+                        keyPrefix={`c-${index}`}
+                        placeholder="Context"
+                        itemId={localItem.id}
+                        minHeightExpanded="64px"
+                        minHeightCollapsed="38px"
+                        onValueChange={handleFieldChange}
+                        onWysiwygKeyDown={handleWysiwygKeyDown}
+                        setPreviewRef={(el) => {
+                          contextPreviewRefs.current[`correct-${index}`] = el;
+                        }}
+                        onActivate={() => setActiveContextRefKey(`correct-${index}`)}
+                        onDidSetInnerHTML={(el) => {
+                          const p = wysiwygPendingCursorRef.current;
+                          const key = `correct[${index}].context`;
+                          if (p?.path === key) { wysiwygPendingCursorRef.current = null; placeCursorAtSourceOffset(el, p.offset); }
+                        }}
+                      />
+                    )}
+                    {isMobileDetail && (
+                      <div
+                        className="editor-mobile-level-meta-row editor-mobile-level-meta-row--correct"
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.35rem',
+                          marginTop: '0.35rem',
+                          flexWrap: 'nowrap',
+                        }}
+                      >
+                        <select
+                          className="editor-form-select"
+                          value={correct.level ?? 1}
+                          onChange={(e) => handleFieldChange(`correct[${index}].level`, parseInt(e.target.value))}
+                          style={{ flex: '0 0 64px', minWidth: 0, height: 38, padding: '0 0.35rem', fontSize: '0.75rem' }}
+                          title="Item Level"
+                        >
+                          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(level => (
+                            <option key={level} value={level}>Lvl {level}</option>
+                          ))}
+                        </select>
+                        <select
+                          className="editor-form-select"
+                          value={correct.entry.type}
+                          title="Word / Phrase / Image"
+                          onChange={(e) => {
+                            const v = e.target.value;
+                            handleFieldChange(`correct[${index}].entry.type`, v);
+                            if (v === 'image') {
+                              const input = document.createElement('input');
+                              input.type = 'file';
+                              input.accept = 'image/*';
+                              input.onchange = (event: Event) => {
+                                const file = (event.target as HTMLInputElement)?.files?.[0];
+                                if (file) {
+                                  const imagePath = `/content/assets/images/${localItem.theme}/${localItem.chapter}/${file.name}`;
+                                  handleFieldChange(`correct[${index}].entry.image`, imagePath);
+                                  alert(
+                                    `Image selected: ${file.name}\n\nRecommended path:\n${imagePath}\n\nPlace image files in:\n/public/content/assets/images/[theme]/[chapter]/`
+                                  );
+                                }
+                              };
+                              input.click();
+                            }
+                          }}
+                          style={{
+                            flex: '0 0 72px',
+                            minWidth: 0,
+                            height: 38,
+                            padding: '0 0.3rem',
+                            fontSize: '0.72rem',
+                          }}
+                        >
+                          <option value="word">Word</option>
+                          <option value="phrase">Phrase</option>
+                          <option value="image">Image</option>
+                        </select>
+                        <button
+                          type="button"
+                          className={`editor-button small editor-mobile-meta-btn ${correct.source?.trim() ? 'editor-mobile-meta-btn--filled' : ''}`}
+                          style={{ height: 38, flex: '1 1 0', minWidth: 0, padding: '0 0.45rem' }}
+                          onClick={() =>
+                            setMobileSourceModal({ kind: 'correct', index, draft: correct.source || '' })
+                          }
+                        >
+                          Source{correct.source?.trim() ? ' ✓' : ''}
+                        </button>
+                        <button
+                          type="button"
+                          className={`editor-button small editor-mobile-meta-btn ${correct.details?.trim() ? 'editor-mobile-meta-btn--filled' : ''}`}
+                          style={{ height: 38, flex: '1 1 0', minWidth: 0, padding: '0 0.45rem' }}
+                          onClick={() =>
+                            setMobileDetailsModal({ kind: 'correct', index, draft: correct.details || '' })
+                          }
+                        >
+                          Details{correct.details?.trim() ? ' ✓' : ''}
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                  {!isMobileDetail && (
+                    <>
+                      <select
+                        className="editor-form-select"
+                        value={correct.level ?? 1}
+                        onChange={(e) => handleFieldChange(`correct[${index}].level`, parseInt(e.target.value))}
+                        style={{ flex: '0 0 80px' }}
+                        title="Item Level"
+                      >
+                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(level => (
+                          <option key={level} value={level}>Lvl {level}</option>
+                        ))}
+                      </select>
+                      <select
+                        className="editor-form-select"
+                        value={correct.entry.type}
+                        title="Word / Phrase / Image"
+                        onChange={(e) => {
+                          const v = e.target.value;
+                          handleFieldChange(`correct[${index}].entry.type`, v);
+                          if (v === 'image') {
+                            const input = document.createElement('input');
+                            input.type = 'file';
+                            input.accept = 'image/*';
+                            input.onchange = (event: Event) => {
+                              const file = (event.target as HTMLInputElement)?.files?.[0];
+                              if (file) {
+                                const imagePath = `/content/assets/images/${localItem.theme}/${localItem.chapter}/${file.name}`;
+                                handleFieldChange(`correct[${index}].entry.image`, imagePath);
+                                alert(
+                                  `Image selected: ${file.name}\n\nRecommended path:\n${imagePath}\n\nPlace image files in:\n/public/content/assets/images/[theme]/[chapter]/`
+                                );
+                              }
+                            };
+                            input.click();
+                          }
+                        }}
+                        style={{ flex: '0 0 100px' }}
+                      >
+                        <option value="word">Word</option>
+                        <option value="phrase">Phrase</option>
+                        <option value="image">Image</option>
+                      </select>
+                    </>
+                  )}
+                </div>
+                {!isMobileDetail && (
+                  <>
+                    <div style={{ marginBottom: '0.5rem' }}>
+                      <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
+                        <input
+                          type="text"
+                          className="editor-form-input"
+                          value={correct.source || ''}
+                          onChange={(e) => handleFieldChange(`correct[${index}].source`, e.target.value)}
+                          placeholder="URL oder Quellenangabe"
+                          style={{ flex: 1, minWidth: 0 }}
+                        />
+                        {isUrlOpenable(correct.source || '') && (
+                          <button
+                            type="button"
+                            className="editor-button small"
+                            onClick={() => openUrlFromSource(correct.source || '')}
+                          >
+                            URL öffnen
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                    <div style={{ position: 'relative', marginBottom: '0.5rem' }}>
+                      {renderContextToolbar(`correct-${index}-details`, `correct[${index}].details`)}
+                      {contextViewMode === 'raw' ? (
+                        <textarea
+                          className="editor-form-textarea"
+                          value={correct.details || ''}
+                          onChange={(e) => handleFieldChange(`correct[${index}].details`, e.target.value)}
+                          onFocus={() => setActiveContextRefKey(`correct-${index}-details`)}
+                          onBlur={() => {
+                            if (activeContextRefKey === `correct-${index}-details`) setActiveContextRefKey('');
+                          }}
+                          onKeyDown={(e) =>
+                            handleContextKeyDown(e, `correct[${index}].details`, correct.details || '')
+                          }
+                          onInput={(e) => autoResizeTextarea(e.currentTarget)}
+                          ref={(el) => {
+                            contextTextareaRefs.current[`correct-${index}-details`] = el;
+                            if (el) autoResizeTextarea(el);
+                          }}
+                          placeholder="Details (optional)"
+                          rows={contextsExpanded ? 2 : 1}
+                          style={{
+                            width: '100%',
+                            resize: 'none',
+                            minHeight: contextsExpanded ? '64px' : '38px',
+                            flex: 1,
+                            overflow: 'hidden',
+                            lineHeight: 1.4,
+                          }}
+                        />
+                      ) : (
+                        <WysiwygContextEditor
+                          key={`${localItem.id}-correct-${index}-details`}
+                          value={correct.details || ''}
+                          path={`correct[${index}].details`}
+                          collapsed={!contextsExpanded}
+                          keyPrefix={`cd-c-${index}`}
+                          placeholder="Details (optional)"
+                          itemId={localItem.id}
+                          minHeightExpanded="64px"
+                          minHeightCollapsed="38px"
+                          onValueChange={handleFieldChange}
+                          onWysiwygKeyDown={handleWysiwygKeyDown}
+                          setPreviewRef={(el) => {
+                            contextPreviewRefs.current[`correct-${index}-details`] = el;
+                          }}
+                          onActivate={() => setActiveContextRefKey(`correct-${index}-details`)}
+                          onDidSetInnerHTML={(el) => {
+                            const p = wysiwygPendingCursorRef.current;
+                            const key = `correct[${index}].details`;
+                            if (p?.path === key) { wysiwygPendingCursorRef.current = null; placeCursorAtSourceOffset(el, p.offset); }
+                          }}
+                        />
+                      )}
+                    </div>
+                  </>
+                )}
+              </div>
+              {localItem.correct.length > 1 && (
+                <button 
+                  type="button"
+                  className="editor-button small danger editor-detail-entry-remove" 
+                  onClick={() => handleRemoveCorrect(index)}
+                  style={{ padding: '0.5rem', minWidth: '70px', flexShrink: 0 }}
+                >
+                  Remove
+                </button>
+              )}
+            </div>
+          </div>
+        ))}
+        <button
+          className="editor-button small primary"
+          onClick={handleAddCorrect}
+          style={{ padding: '0.4rem 0.8rem', marginTop: '0.25rem' }}
+        >
+          + Add
+        </button>
+      </div>
+
+      {/* DISTRACTOR ENTRIES */}
+      <div className="editor-detail-section" style={{ padding: '1rem' }}>
+        <div style={{ marginBottom: '0.75rem' }}>
+          <span style={{ fontSize: '1rem', fontWeight: 600 }}>❌ Distractor Entries ({localItem.distractors.length})</span>
+        </div>
+        {localItem.distractors.map((distractor, index) => (
+          <div key={index} style={{ 
+            background: 'rgba(244, 67, 54, 0.08)', 
+            borderRadius: '6px', 
+            padding: '0.75rem', 
+            marginBottom: '0.75rem',
+            border: '1px solid rgba(244, 67, 54, 0.25)'
+          }}>
+            <div className="editor-detail-entry-card">
+              <div className="editor-detail-entry-main">
+                <div className="editor-detail-entry-row">
+                  <input
+                    type="text"
+                    className="editor-form-input"
+                    value={distractor.entry.word || ''}
+                    onChange={(e) => handleFieldChange(`distractors[${index}].entry.word`, e.target.value)}
+                    placeholder="Distractor Word"
+                    style={{ flex: 1 }}
+                  />
+                  <input
+                    type="text"
+                    className="editor-form-input"
+                    value={distractor.redirect || ''}
+                    onChange={(e) => handleFieldChange(`distractors[${index}].redirect`, e.target.value)}
+                    placeholder="Redirect to..."
+                    style={{ flex: 1 }}
+                  />
+                </div>
+                <div className="editor-detail-entry-row">
+                  <div style={{ position: 'relative', flex: 1 }}>
+                    {renderContextToolbar(`distractor-${index}`, `distractors[${index}].context`)}
+                    {contextViewMode === 'raw' ? (
+                      <textarea
+                        className="editor-form-textarea"
+                        value={distractor.context || ''}
+                        onChange={(e) => handleFieldChange(`distractors[${index}].context`, e.target.value)}
+                        onFocus={() => {
+                          setActiveContextRefKey(`distractor-${index}`);
+                        }}
+                        onBlur={() => {
+                          if (activeContextRefKey === `distractor-${index}`) setActiveContextRefKey('');
+                        }}
+                        onKeyDown={(e) => handleContextKeyDown(e, `distractors[${index}].context`, distractor.context || '')}
+                        onInput={(e) => autoResizeTextarea(e.currentTarget)}
+                        ref={(el) => {
+                          contextTextareaRefs.current[`distractor-${index}`] = el;
+                          if (el) autoResizeTextarea(el);
+                        }}
+                        placeholder="Context"
+                        rows={contextsExpanded ? 2 : 1}
+                        style={{ width: '100%', resize: 'none', minHeight: contextsExpanded ? '64px' : '38px', flex: 1, overflow: 'hidden', lineHeight: 1.4 }}
+                      />
+                    ) : (
+                      <WysiwygContextEditor
+                        key={`${localItem.id}-distractor-${index}-ctx`}
+                        value={distractor.context || ''}
+                        path={`distractors[${index}].context`}
+                        collapsed={!contextsExpanded}
+                        keyPrefix={`d-${index}`}
+                        placeholder="Context"
+                        itemId={localItem.id}
+                        minHeightExpanded="64px"
+                        minHeightCollapsed="38px"
+                        onValueChange={handleFieldChange}
+                        onWysiwygKeyDown={handleWysiwygKeyDown}
+                        setPreviewRef={(el) => {
+                          contextPreviewRefs.current[`distractor-${index}`] = el;
+                        }}
+                        onActivate={() => setActiveContextRefKey(`distractor-${index}`)}
+                        onDidSetInnerHTML={(el) => {
+                          const p = wysiwygPendingCursorRef.current;
+                          const key = `distractors[${index}].context`;
+                          if (p?.path === key) { wysiwygPendingCursorRef.current = null; placeCursorAtSourceOffset(el, p.offset); }
+                        }}
+                      />
+                    )}
+                    {isMobileDetail && (
+                      <div
+                        className="editor-mobile-level-meta-row editor-mobile-level-meta-row--distractor"
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.35rem',
+                          marginTop: '0.35rem',
+                          flexWrap: 'nowrap',
+                        }}
+                      >
+                        <select
+                          className="editor-form-select"
+                          value={distractor.level ?? 1}
+                          onChange={(e) => handleFieldChange(`distractors[${index}].level`, parseInt(e.target.value))}
+                          style={{ flex: '0 0 76px', minWidth: 0, height: 38, padding: '0 0.4rem' }}
+                          title="Item Level"
+                        >
+                          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(level => (
+                            <option key={level} value={level}>Lvl {level}</option>
+                          ))}
+                        </select>
+                        <button
+                          type="button"
+                          className={`editor-button small editor-mobile-meta-btn ${distractor.source?.trim() ? 'editor-mobile-meta-btn--filled-distractor' : ''}`}
+                          style={{ height: 38, flex: '1 1 0', minWidth: 0, padding: '0 0.45rem' }}
+                          onClick={() =>
+                            setMobileSourceModal({ kind: 'distractor', index, draft: distractor.source || '' })
+                          }
+                        >
+                          Source{distractor.source?.trim() ? ' ✓' : ''}
+                        </button>
+                        <button
+                          type="button"
+                          className={`editor-button small editor-mobile-meta-btn ${distractor.details?.trim() ? 'editor-mobile-meta-btn--filled-distractor' : ''}`}
+                          style={{ height: 38, flex: '1 1 0', minWidth: 0, padding: '0 0.45rem' }}
+                          onClick={() =>
+                            setMobileDetailsModal({ kind: 'distractor', index, draft: distractor.details || '' })
+                          }
+                        >
+                          Details{distractor.details?.trim() ? ' ✓' : ''}
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                  {!isMobileDetail && (
+                    <select
+                      className="editor-form-select"
+                      value={distractor.level ?? 1}
+                      onChange={(e) => handleFieldChange(`distractors[${index}].level`, parseInt(e.target.value))}
+                      style={{ flex: '0 0 80px' }}
+                      title="Item Level"
+                    >
+                      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(level => (
+                        <option key={level} value={level}>Lvl {level}</option>
+                      ))}
+                    </select>
+                  )}
+                </div>
+                {!isMobileDetail && (
+                  <>
+                    <div style={{ marginBottom: '0.5rem' }}>
+                      <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
+                        <input
+                          type="text"
+                          className="editor-form-input"
+                          value={distractor.source || ''}
+                          onChange={(e) => handleFieldChange(`distractors[${index}].source`, e.target.value)}
+                          placeholder="URL oder Quellenangabe"
+                          style={{ flex: 1, minWidth: 0 }}
+                        />
+                        {isUrlOpenable(distractor.source || '') && (
+                          <button
+                            type="button"
+                            className="editor-button small"
+                            onClick={() => openUrlFromSource(distractor.source || '')}
+                          >
+                            URL öffnen
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                    <div style={{ position: 'relative', marginBottom: '0.5rem' }}>
+                      {renderContextToolbar(`distractor-${index}-details`, `distractors[${index}].details`)}
+                      {contextViewMode === 'raw' ? (
+                        <textarea
+                          className="editor-form-textarea"
+                          value={distractor.details || ''}
+                          onChange={(e) => handleFieldChange(`distractors[${index}].details`, e.target.value)}
+                          onFocus={() => setActiveContextRefKey(`distractor-${index}-details`)}
+                          onBlur={() => {
+                            if (activeContextRefKey === `distractor-${index}-details`) setActiveContextRefKey('');
+                          }}
+                          onKeyDown={(e) =>
+                            handleContextKeyDown(e, `distractors[${index}].details`, distractor.details || '')
+                          }
+                          onInput={(e) => autoResizeTextarea(e.currentTarget)}
+                          ref={(el) => {
+                            contextTextareaRefs.current[`distractor-${index}-details`] = el;
+                            if (el) autoResizeTextarea(el);
+                          }}
+                          placeholder="Details (optional)"
+                          rows={contextsExpanded ? 2 : 1}
+                          style={{
+                            width: '100%',
+                            resize: 'none',
+                            minHeight: contextsExpanded ? '64px' : '38px',
+                            flex: 1,
+                            overflow: 'hidden',
+                            lineHeight: 1.4,
+                          }}
+                        />
+                      ) : (
+                        <WysiwygContextEditor
+                          key={`${localItem.id}-distractor-${index}-details`}
+                          value={distractor.details || ''}
+                          path={`distractors[${index}].details`}
+                          collapsed={!contextsExpanded}
+                          keyPrefix={`cd-d-${index}`}
+                          placeholder="Details (optional)"
+                          itemId={localItem.id}
+                          minHeightExpanded="64px"
+                          minHeightCollapsed="38px"
+                          onValueChange={handleFieldChange}
+                          onWysiwygKeyDown={handleWysiwygKeyDown}
+                          setPreviewRef={(el) => {
+                            contextPreviewRefs.current[`distractor-${index}-details`] = el;
+                          }}
+                          onActivate={() => setActiveContextRefKey(`distractor-${index}-details`)}
+                          onDidSetInnerHTML={(el) => {
+                            const p = wysiwygPendingCursorRef.current;
+                            const key = `distractors[${index}].details`;
+                            if (p?.path === key) { wysiwygPendingCursorRef.current = null; placeCursorAtSourceOffset(el, p.offset); }
+                          }}
+                        />
+                      )}
+                    </div>
+                  </>
+                )}
+              </div>
+              {localItem.distractors.length > 1 && (
+                <button 
+                  type="button"
+                  className="editor-button small danger editor-detail-entry-remove" 
+                  onClick={() => handleRemoveDistractor(index)}
+                  style={{ padding: '0.5rem', minWidth: '70px', flexShrink: 0 }}
+                >
+                  Remove
+                </button>
+              )}
+            </div>
+          </div>
+        ))}
+        <button
+          className="editor-button small primary"
+          onClick={handleAddDistractor}
+          style={{ padding: '0.4rem 0.8rem', marginTop: '0.25rem' }}
+        >
+          + Add
+        </button>
+      </div>
+
+      {/* MOVE/COPY ITEM SECTION — unter Distraktoren, über Related Items */}
       <div className="editor-detail-section" style={{ padding: '1rem' }}>
         {isMobileDetail ? (
           <button
@@ -1218,370 +2602,6 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
           )}
         </div>
         )}
-      </div>
-
-      {/* BASE ENTRY */}
-      <div className="editor-detail-section" style={{ padding: '1rem' }}>
-        <div className="editor-detail-section-title" style={{ fontSize: '1rem', marginBottom: '0.75rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-          <span>🎯 Base Entry</span>
-          <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
-            <button
-              className="editor-button small"
-              onClick={() => setContextViewMode((prev) => (prev === 'raw' ? 'edited' : 'raw'))}
-              title={contextViewMode === 'raw' ? 'Zur editierten Ansicht wechseln' : 'Zur Raw-Ansicht wechseln'}
-              aria-label="Raw und Editiert umschalten"
-              type="button"
-            >
-              {contextViewMode === 'raw' ? 'Raw' : 'Editiert'}
-            </button>
-            <button
-              className={`editor-button small ${contextsExpanded ? 'primary' : ''}`}
-              onClick={() => setContextsExpanded((prev) => !prev)}
-              title={contextsExpanded ? 'Alle Context-Felder einklappen' : 'Alle Context-Felder ausklappen'}
-              aria-label="Context Felder umschalten"
-              type="button"
-            >
-              {contextsExpanded ? 'Ausgeklappt' : 'Eingeklappt'}
-            </button>
-          </div>
-        </div>
-        <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
-          <input
-            type="text"
-            className="editor-form-input"
-            value={localItem.base.word || ''}
-            onChange={(e) => handleFieldChange('base.word', e.target.value)}
-            placeholder="Base Word"
-            style={{ flex: 1 }}
-          />
-          <select
-            className="editor-form-select"
-            value={localItem.base.type}
-            onChange={(e) => {
-              handleFieldChange('base.type', e.target.value);
-              if (e.target.value === 'image') {
-                // Open file picker automatically
-                const input = document.createElement('input');
-                input.type = 'file';
-                input.accept = 'image/*';
-                input.onchange = (event: any) => {
-                  const file = event.target?.files?.[0];
-                  if (file) {
-                    // In a real app, you would upload the file and get a URL
-                    // For now, show a dialog with instructions
-                    const imagePath = `/content/assets/images/${localItem.theme}/${localItem.chapter}/${file.name}`;
-                    handleFieldChange('base.image', imagePath);
-                    alert(`Image selected: ${file.name}\n\nRecommended path:\n${imagePath}\n\nPlace image files in:\n/public/content/assets/images/[theme]/[chapter]/`);
-                  }
-                };
-                input.click();
-              }
-            }}
-            style={{ flex: '0 0 120px' }}
-          >
-            <option value="word">Word</option>
-            <option value="phrase">Phrase</option>
-            <option value="image">Image</option>
-          </select>
-        </div>
-        <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
-          <div style={{ position: 'relative', flex: 1 }}>
-            {renderContextToolbar('baseContext', 'base.context')}
-            {contextViewMode === 'raw' ? (
-              <textarea
-                className="editor-form-textarea"
-                value={localItem.base.context || ''}
-                onChange={(e) => handleFieldChange('base.context', e.target.value)}
-                onFocus={() => {
-                  setActiveContextRefKey('baseContext');
-                }}
-                onBlur={() => {
-                  if (activeContextRefKey === 'baseContext') setActiveContextRefKey('');
-                }}
-                onKeyDown={(e) => handleContextKeyDown(e, 'base.context', localItem.base.context || '')}
-                onInput={(e) => autoResizeTextarea(e.currentTarget)}
-                ref={(el) => {
-                  contextTextareaRefs.current.baseContext = el;
-                  if (el) autoResizeTextarea(el);
-                }}
-                placeholder="Base Context (optional)"
-                rows={contextsExpanded ? 3 : 1}
-                style={{ flex: 1, width: '100%', resize: 'none', minHeight: contextsExpanded ? '84px' : '38px', overflow: 'hidden', lineHeight: 1.4 }}
-              />
-            ) : (
-              <div
-                ref={(el) => {
-                  contextPreviewRefs.current.baseContext = el;
-                }}
-                className="editor-form-textarea"
-                onClick={() => {
-                  setActiveContextRefKey('baseContext');
-                }}
-                onMouseUp={() => setActiveContextRefKey('baseContext')}
-                onSelect={() => setActiveContextRefKey('baseContext')}
-                style={{ flex: 1, minHeight: contextsExpanded ? '84px' : '38px', maxHeight: contextsExpanded ? 'none' : '38px', padding: '0.6rem 0.75rem', lineHeight: 1.45, overflow: 'hidden', overflowWrap: 'anywhere', cursor: 'text' }}
-              >
-                {localItem.base.context?.length ? (
-                  buildContextPreviewRich(localItem.base.context || '', !contextsExpanded, 'base')
-                ) : (
-                  <span style={{ opacity: 0.55 }}>Base Context (optional)</span>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
-        {localItem.base.type === 'image' && (
-          <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.75rem' }}>
-            <input
-              type="text"
-              className="editor-form-input"
-              value={localItem.base.image || ''}
-              onChange={(e) => handleFieldChange('base.image', e.target.value)}
-              placeholder="/content/assets/images/[theme]/[chapter]/image.png"
-              style={{ flex: 1 }}
-            />
-            <button
-              className="editor-button small"
-              onClick={() => {
-                const input = document.createElement('input');
-                input.type = 'file';
-                input.accept = 'image/*';
-                input.onchange = (event: any) => {
-                  const file = event.target?.files?.[0];
-                  if (file) {
-                    const imagePath = `/content/assets/images/${localItem.theme}/${localItem.chapter}/${file.name}`;
-                    handleFieldChange('base.image', imagePath);
-                    alert(`Image selected: ${file.name}\n\nPlace file at:\n/public${imagePath}`);
-                  }
-                };
-                input.click();
-              }}
-              style={{ padding: '0.4rem 0.8rem' }}
-            >
-              📁 Browse
-            </button>
-          </div>
-        )}
-      </div>
-
-      {/* CORRECT ENTRIES */}
-      <div className="editor-detail-section" style={{ padding: '1rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-          <span style={{ fontSize: '1rem', fontWeight: 600 }}>✅ Correct Entries ({localItem.correct.length})</span>
-          <button className="editor-button small primary" onClick={handleAddCorrect} style={{ padding: '0.4rem 0.8rem' }}>
-            + Add
-          </button>
-        </div>
-        {localItem.correct.map((correct, index) => (
-          <div key={index} style={{ 
-            background: 'rgba(76, 175, 80, 0.08)', 
-            borderRadius: '6px', 
-            padding: '0.75rem', 
-            marginBottom: '0.75rem',
-            border: '1px solid rgba(76, 175, 80, 0.25)'
-          }}>
-            <div className="editor-detail-entry-card">
-              <div className="editor-detail-entry-main">
-                <div className="editor-detail-entry-row">
-                  <input
-                    type="text"
-                    className="editor-form-input"
-                    value={correct.entry.word || ''}
-                    onChange={(e) => handleFieldChange(`correct[${index}].entry.word`, e.target.value)}
-                    placeholder="Correct Answer"
-                    style={{ flex: 1 }}
-                  />
-                  <select
-                    className="editor-form-select"
-                    value={correct.entry.type}
-                    onChange={(e) => handleFieldChange(`correct[${index}].entry.type`, e.target.value)}
-                    style={{ flex: '0 0 100px' }}
-                  >
-                    <option value="word">Word</option>
-                    <option value="phrase">Phrase</option>
-                    <option value="image">Image</option>
-                  </select>
-                </div>
-                <div className="editor-detail-entry-row">
-                  <div style={{ position: 'relative', flex: 1 }}>
-                    {renderContextToolbar(`correct-${index}`, `correct[${index}].context`)}
-                    {contextViewMode === 'raw' ? (
-                      <textarea
-                        className="editor-form-textarea"
-                        value={correct.context || ''}
-                        onChange={(e) => handleFieldChange(`correct[${index}].context`, e.target.value)}
-                        onFocus={() => {
-                          setActiveContextRefKey(`correct-${index}`);
-                        }}
-                        onBlur={() => {
-                          if (activeContextRefKey === `correct-${index}`) setActiveContextRefKey('');
-                        }}
-                        onKeyDown={(e) => handleContextKeyDown(e, `correct[${index}].context`, correct.context || '')}
-                        onInput={(e) => autoResizeTextarea(e.currentTarget)}
-                        ref={(el) => {
-                          contextTextareaRefs.current[`correct-${index}`] = el;
-                          if (el) autoResizeTextarea(el);
-                        }}
-                        placeholder="Context"
-                        rows={contextsExpanded ? 2 : 1}
-                        style={{ width: '100%', resize: 'none', minHeight: contextsExpanded ? '64px' : '38px', flex: 1, overflow: 'hidden', lineHeight: 1.4 }}
-                      />
-                    ) : (
-                      <div
-                        ref={(el) => {
-                          contextPreviewRefs.current[`correct-${index}`] = el;
-                        }}
-                        className="editor-form-textarea"
-                        onClick={() => {
-                          setActiveContextRefKey(`correct-${index}`);
-                        }}
-                        onMouseUp={() => setActiveContextRefKey(`correct-${index}`)}
-                        onSelect={() => setActiveContextRefKey(`correct-${index}`)}
-                        style={{ minHeight: contextsExpanded ? '64px' : '38px', maxHeight: contextsExpanded ? 'none' : '38px', flex: 1, padding: '0.6rem 0.75rem', lineHeight: 1.45, overflow: 'hidden', overflowWrap: 'anywhere', cursor: 'text' }}
-                      >
-                        {correct.context?.length ? (
-                          buildContextPreviewRich(correct.context || '', !contextsExpanded, `c-${index}`)
-                        ) : (
-                          <span style={{ opacity: 0.55 }}>Context</span>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                  <select
-                    className="editor-form-select"
-                    value={correct.level ?? 1}
-                    onChange={(e) => handleFieldChange(`correct[${index}].level`, parseInt(e.target.value))}
-                    style={{ flex: '0 0 80px' }}
-                    title="Item Level"
-                  >
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(level => (
-                      <option key={level} value={level}>Lvl {level}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              {localItem.correct.length > 1 && (
-                <button 
-                  type="button"
-                  className="editor-button small danger editor-detail-entry-remove" 
-                  onClick={() => handleRemoveCorrect(index)}
-                  style={{ padding: '0.5rem', minWidth: '70px', flexShrink: 0 }}
-                >
-                  Remove
-                </button>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* DISTRACTOR ENTRIES */}
-      <div className="editor-detail-section" style={{ padding: '1rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-          <span style={{ fontSize: '1rem', fontWeight: 600 }}>❌ Distractor Entries ({localItem.distractors.length})</span>
-          <button className="editor-button small primary" onClick={handleAddDistractor} style={{ padding: '0.4rem 0.8rem' }}>
-            + Add
-          </button>
-        </div>
-        {localItem.distractors.map((distractor, index) => (
-          <div key={index} style={{ 
-            background: 'rgba(244, 67, 54, 0.08)', 
-            borderRadius: '6px', 
-            padding: '0.75rem', 
-            marginBottom: '0.75rem',
-            border: '1px solid rgba(244, 67, 54, 0.25)'
-          }}>
-            <div className="editor-detail-entry-card">
-              <div className="editor-detail-entry-main">
-                <div className="editor-detail-entry-row">
-                  <input
-                    type="text"
-                    className="editor-form-input"
-                    value={distractor.entry.word || ''}
-                    onChange={(e) => handleFieldChange(`distractors[${index}].entry.word`, e.target.value)}
-                    placeholder="Distractor Word"
-                    style={{ flex: 1 }}
-                  />
-                  <input
-                    type="text"
-                    className="editor-form-input"
-                    value={distractor.redirect || ''}
-                    onChange={(e) => handleFieldChange(`distractors[${index}].redirect`, e.target.value)}
-                    placeholder="Redirect to..."
-                    style={{ flex: 1 }}
-                  />
-                </div>
-                <div className="editor-detail-entry-row">
-                  <div style={{ position: 'relative', flex: 1 }}>
-                    {renderContextToolbar(`distractor-${index}`, `distractors[${index}].context`)}
-                    {contextViewMode === 'raw' ? (
-                      <textarea
-                        className="editor-form-textarea"
-                        value={distractor.context || ''}
-                        onChange={(e) => handleFieldChange(`distractors[${index}].context`, e.target.value)}
-                        onFocus={() => {
-                          setActiveContextRefKey(`distractor-${index}`);
-                        }}
-                        onBlur={() => {
-                          if (activeContextRefKey === `distractor-${index}`) setActiveContextRefKey('');
-                        }}
-                        onKeyDown={(e) => handleContextKeyDown(e, `distractors[${index}].context`, distractor.context || '')}
-                        onInput={(e) => autoResizeTextarea(e.currentTarget)}
-                        ref={(el) => {
-                          contextTextareaRefs.current[`distractor-${index}`] = el;
-                          if (el) autoResizeTextarea(el);
-                        }}
-                        placeholder="Context"
-                        rows={contextsExpanded ? 2 : 1}
-                        style={{ width: '100%', resize: 'none', minHeight: contextsExpanded ? '64px' : '38px', flex: 1, overflow: 'hidden', lineHeight: 1.4 }}
-                      />
-                    ) : (
-                      <div
-                        ref={(el) => {
-                          contextPreviewRefs.current[`distractor-${index}`] = el;
-                        }}
-                        className="editor-form-textarea"
-                        onClick={() => {
-                          setActiveContextRefKey(`distractor-${index}`);
-                        }}
-                        onMouseUp={() => setActiveContextRefKey(`distractor-${index}`)}
-                        onSelect={() => setActiveContextRefKey(`distractor-${index}`)}
-                        style={{ minHeight: contextsExpanded ? '64px' : '38px', maxHeight: contextsExpanded ? 'none' : '38px', flex: 1, padding: '0.6rem 0.75rem', lineHeight: 1.45, overflow: 'hidden', overflowWrap: 'anywhere', cursor: 'text' }}
-                      >
-                        {distractor.context?.length ? (
-                          buildContextPreviewRich(distractor.context || '', !contextsExpanded, `d-${index}`)
-                        ) : (
-                          <span style={{ opacity: 0.55 }}>Context</span>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                  <select
-                    className="editor-form-select"
-                    value={distractor.level ?? 1}
-                    onChange={(e) => handleFieldChange(`distractors[${index}].level`, parseInt(e.target.value))}
-                    style={{ flex: '0 0 80px' }}
-                    title="Item Level"
-                  >
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(level => (
-                      <option key={level} value={level}>Lvl {level}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              {localItem.distractors.length > 1 && (
-                <button 
-                  type="button"
-                  className="editor-button small danger editor-detail-entry-remove" 
-                  onClick={() => handleRemoveDistractor(index)}
-                  style={{ padding: '0.5rem', minWidth: '70px', flexShrink: 0 }}
-                >
-                  Remove
-                </button>
-              )}
-            </div>
-          </div>
-        ))}
       </div>
 
       {/* RELATED ITEMS */}
@@ -1753,7 +2773,7 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
             <span className="editor-detail-mobile-collapse-summary">
               {[
                 localItem.meta.tags?.length ? `${localItem.meta.tags.length} tags` : null,
-                localItem.meta.source?.trim() ? localItem.meta.source.trim().slice(0, 48) : null,
+                metaSourceCount > 0 ? `${metaSourceCount} Quelle${metaSourceCount === 1 ? '' : 'n'}` : null,
               ].filter(Boolean).join(' · ') || 'Source, tags, detail'}
             </span>
             <span className="editor-detail-mobile-collapse-chevron">{metaSectionOpen ? '▲' : '▼'}</span>
@@ -1766,7 +2786,21 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
         {(!isMobileDetail || metaSectionOpen) && (
         <>
         <div className="editor-form-row">
-          {renderTextInput('Source', 'meta.source', localItem.meta.source || '', 100, 'Source reference')}
+          <div className="editor-form-group">
+            <label className="editor-form-label">Source</label>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>
+              <button
+                type="button"
+                className={`editor-button small ${metaSourceCount > 0 ? 'primary' : ''}`}
+                onClick={() => setMetaSourcesModal(splitMetaSourcePipe(localItem.meta.source || ''))}
+              >
+                Quellen{metaSourceCount > 0 ? ` (${metaSourceCount})` : ''}
+              </button>
+              <span className="editor-form-hint" style={{ opacity: 0.72, margin: 0 }}>
+                Mehrere Einträge, gespeichert mit | getrennt
+              </span>
+            </div>
+          </div>
           <div className="editor-form-group" style={{ position: 'relative' }}>
             <label className="editor-form-label">Tags</label>
             <div style={{ 
@@ -1943,11 +2977,32 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
             <span className="editor-detail-mobile-collapse-chevron">{visualSectionOpen ? '▲' : '▼'}</span>
           </button>
         ) : (
-          <div className="editor-detail-section-title" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-            <span>🎨 Visual & Spawn Configuration</span>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'stretch',
+              gap: '0.5rem',
+              marginBottom: '0.75rem',
+            }}
+          >
+            <button
+              type="button"
+              className="editor-detail-mobile-collapse-toggle"
+              onClick={() => setVisualSectionOpen((o) => !o)}
+              aria-expanded={visualSectionOpen}
+              style={{ flex: '1 1 220px', minWidth: 0, marginBottom: 0 }}
+            >
+              <span className="editor-detail-mobile-collapse-title">🎨 Visual & Spawn Configuration</span>
+              <span className="editor-detail-mobile-collapse-summary">
+                Base + {localItem.correct.length} correct + {localItem.distractors.length} distractors
+              </span>
+              <span className="editor-detail-mobile-collapse-chevron">{visualSectionOpen ? '▲' : '▼'}</span>
+            </button>
             <button
               type="button"
               className="editor-button primary"
+              style={{ flex: '0 0 auto', alignSelf: 'center' }}
               onClick={() => {
                 const randomized = randomConfigGenerator.applyRandomToItem(localItem, allItems);
                 setLocalItem(randomized);
@@ -1960,7 +3015,7 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
           </div>
         )}
 
-        {(!isMobileDetail || visualSectionOpen) && (
+        {visualSectionOpen && (
         <>
         {isMobileDetail && (
           <div style={{ marginBottom: '0.75rem' }}>
@@ -2024,6 +3079,232 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
         </>
         )}
       </div>
+
+      {/* Meta: mehrere Quellen (| getrennt) */}
+      {metaSourcesModal && localItem && (
+        <div
+          className="editor-modal-overlay editor-modal-overlay--tall"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="editor-meta-sources-modal-title"
+          onClick={() => setMetaSourcesModal(null)}
+        >
+          <div className="editor-modal-panel editor-modal-panel--tall" onClick={(e) => e.stopPropagation()}>
+            <h3 id="editor-meta-sources-modal-title" className="editor-modal-title">
+              Quellen (Meta)
+            </h3>
+            <p className="editor-form-hint" style={{ marginBottom: '0.75rem', opacity: 0.85 }}>
+              Ein Eintrag pro Zeile (URL oder Freitext). Beim Speichern werden leere Zeilen entfernt; Trennzeichen ist{' '}
+              <code style={{ opacity: 0.95 }}>|</code>.
+            </p>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.5rem',
+                maxHeight: 'min(60vh, 520px)',
+                overflowY: 'auto',
+                marginBottom: '0.5rem',
+              }}
+            >
+              {metaSourcesModal.map((line, i) => (
+                <div key={i} style={{ display: 'flex', gap: '0.35rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                  <input
+                    type="text"
+                    className="editor-form-input"
+                    value={line}
+                    onChange={(e) => {
+                      const next = [...metaSourcesModal];
+                      next[i] = e.target.value;
+                      setMetaSourcesModal(next);
+                    }}
+                    placeholder="URL oder Quellenangabe"
+                    style={{ flex: '1 1 160px', minWidth: 0 }}
+                  />
+                  {isUrlOpenable(line) && (
+                    <button type="button" className="editor-button small" onClick={() => openUrlFromSource(line)}>
+                      URL öffnen
+                    </button>
+                  )}
+                  {metaSourcesModal.length > 1 && (
+                    <button
+                      type="button"
+                      className="editor-button small"
+                      title="Zeile entfernen"
+                      onClick={() => {
+                        const next = metaSourcesModal.filter((_, j) => j !== i);
+                        setMetaSourcesModal(next.length ? next : ['']);
+                      }}
+                    >
+                      ×
+                    </button>
+                  )}
+                </div>
+              ))}
+            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+              <button
+                type="button"
+                className="editor-button small"
+                onClick={() => setMetaSourcesModal((m) => (m ? [...m, ''] : null))}
+              >
+                + Zeile
+              </button>
+              <button
+                type="button"
+                className="editor-button small"
+                onClick={() => pasteClipboardToMetaSourceLines((lines) => setMetaSourcesModal(lines))}
+              >
+                Aus Zwischenablage
+              </button>
+            </div>
+            <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
+              <button type="button" className="editor-button" onClick={() => setMetaSourcesModal(null)}>
+                Abbrechen
+              </button>
+              <button
+                type="button"
+                className="editor-button primary"
+                disabled={joinMetaSourcePipe(metaSourcesModal) === (localItem.meta.source || '')}
+                onClick={() => {
+                  if (!localItem) return;
+                  handleFieldChange('meta.source', joinMetaSourcePipe(metaSourcesModal));
+                  setMetaSourcesModal(null);
+                }}
+              >
+                Speichern
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Mobile: Source (URL / Quelle) */}
+      {mobileSourceModal && localItem && (
+        <div
+          className="editor-modal-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="editor-source-modal-title"
+          onClick={() => setMobileSourceModal(null)}
+        >
+          <div className="editor-modal-panel" onClick={(e) => e.stopPropagation()}>
+            <h3 id="editor-source-modal-title" className="editor-modal-title">
+              Source
+            </h3>
+            <input
+              type="text"
+              className="editor-form-input"
+              value={mobileSourceModal.draft}
+              onChange={(e) =>
+                setMobileSourceModal((m) => (m ? { ...m, draft: e.target.value } : null))
+              }
+              style={{ width: '100%', marginBottom: '0.75rem' }}
+              placeholder="URL oder Quellenangabe"
+            />
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+              <button
+                type="button"
+                className="editor-button small"
+                onClick={() =>
+                  pasteClipboardToDraft((t) =>
+                    setMobileSourceModal((m) => (m ? { ...m, draft: t } : null))
+                  )
+                }
+              >
+                Aus Zwischenablage
+              </button>
+              {isUrlOpenable(mobileSourceModal.draft) && (
+                <button
+                  type="button"
+                  className="editor-button small"
+                  onClick={() => openUrlFromSource(mobileSourceModal.draft)}
+                >
+                  URL öffnen
+                </button>
+              )}
+            </div>
+            <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
+              <button type="button" className="editor-button" onClick={() => setMobileSourceModal(null)}>
+                Abbrechen
+              </button>
+              <button
+                type="button"
+                className="editor-button primary"
+                disabled={
+                  (mobileSourceModal.kind === 'correct'
+                    ? localItem.correct[mobileSourceModal.index]?.source || ''
+                    : localItem.distractors[mobileSourceModal.index]?.source || '') ===
+                  mobileSourceModal.draft
+                }
+                onClick={() => {
+                  if (!mobileSourceModal || !localItem) return;
+                  const p =
+                    mobileSourceModal.kind === 'correct'
+                      ? `correct[${mobileSourceModal.index}].source`
+                      : `distractors[${mobileSourceModal.index}].source`;
+                  handleFieldChange(p, mobileSourceModal.draft);
+                  setMobileSourceModal(null);
+                }}
+              >
+                Speichern
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Mobile: Details (langer Text) */}
+      {mobileDetailsModal && localItem && (
+        <div
+          className="editor-modal-overlay editor-modal-overlay--tall"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="editor-details-modal-title"
+          onClick={() => setMobileDetailsModal(null)}
+        >
+          <div className="editor-modal-panel editor-modal-panel--tall" onClick={(e) => e.stopPropagation()}>
+            <h3 id="editor-details-modal-title" className="editor-modal-title">
+              Details
+            </h3>
+            <textarea
+              className="editor-form-textarea"
+              value={mobileDetailsModal.draft}
+              onChange={(e) =>
+                setMobileDetailsModal((m) => (m ? { ...m, draft: e.target.value } : null))
+              }
+              placeholder="Details (optional)"
+              style={{ width: '100%', minHeight: '72vh', boxSizing: 'border-box' }}
+            />
+            <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end', marginTop: '0.75rem' }}>
+              <button type="button" className="editor-button" onClick={() => setMobileDetailsModal(null)}>
+                Abbrechen
+              </button>
+              <button
+                type="button"
+                className="editor-button primary"
+                disabled={
+                  (mobileDetailsModal.kind === 'correct'
+                    ? localItem.correct[mobileDetailsModal.index]?.details || ''
+                    : localItem.distractors[mobileDetailsModal.index]?.details || '') ===
+                  mobileDetailsModal.draft
+                }
+                onClick={() => {
+                  if (!mobileDetailsModal || !localItem) return;
+                  const p =
+                    mobileDetailsModal.kind === 'correct'
+                      ? `correct[${mobileDetailsModal.index}].details`
+                      : `distractors[${mobileDetailsModal.index}].details`;
+                  handleFieldChange(p, mobileDetailsModal.draft);
+                  setMobileDetailsModal(null);
+                }}
+              >
+                Speichern
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       
       {/* Text Parser Modal */}
       {chapterId && localItem && (

@@ -712,6 +712,20 @@ input[type="color"]:hover {
   border-color: #FFC107;
 }
 
+.editor-context-wysiwyg-root[data-placeholder] {
+  position: relative;
+}
+
+.editor-context-wysiwyg-root[data-placeholder]:not(:focus):before {
+  content: attr(data-placeholder);
+  color: rgba(255, 255, 255, 0.45);
+  position: absolute;
+  left: 0.75rem;
+  top: 0.6rem;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
 .editor-form-input.warning {
   background: rgba(255, 200, 0, 0.2);
   border-color: #FFC107;
@@ -1113,5 +1127,131 @@ input[type="range"]:active::-ms-thumb {
   .editor-move-target-row {
     flex-direction: column;
   }
+}
+
+/* DetailView mobile modals — Source / Details */
+.editor-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10050;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.editor-modal-overlay--tall {
+  align-items: stretch;
+  padding: 0.75rem;
+}
+
+.editor-modal-panel {
+  background: linear-gradient(180deg, #1a2235 0%, #121826 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.editor-modal-panel--tall {
+  max-width: min(96vw, 720px);
+  max-height: 96vh;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.editor-modal-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Correct/distractor: Level + Source + Details — eine Zeile, gleiche Höhe */
+.editor-mobile-level-meta-row {
+  align-items: stretch;
+}
+
+.editor-mobile-meta-btn {
+  font-size: 0.78rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.editor-mobile-meta-btn--filled {
+  border-color: rgba(129, 199, 132, 0.65) !important;
+  background: rgba(76, 175, 80, 0.2) !important;
+}
+
+.editor-mobile-meta-btn--filled-distractor {
+  border-color: rgba(239, 154, 154, 0.65) !important;
+  background: rgba(244, 67, 54, 0.16) !important;
+}
+
+/* ── Rich-text inline markup styles (WYSIWYG preview + read-only display) ── */
+
+/* {Lückentext} */
+[data-type="gap"] {
+  display: inline;
+  border-bottom: 2px dashed rgba(251, 191, 36, 0.7);
+  border-radius: 2px;
+  padding: 0 0.05em;
+  background: rgba(251, 191, 36, 0.1);
+}
+
+/* `inline code` */
+[data-type="code"] {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  padding: 0.05em 0.3em;
+  font-size: 0.88em;
+}
+
+/* ==Highlight== */
+[data-type="highlight"] {
+  background: rgba(253, 224, 71, 0.28);
+  border-radius: 2px;
+  padding: 0 0.15em;
+}
+
+/* (Abk.)[Langform] */
+[data-type="abbr"] {
+  border-bottom: 1px dotted rgba(96, 165, 250, 0.75);
+  cursor: help;
+  border-radius: 2px;
+  padding: 0 0.05em;
+}
+[data-type="abbr"]:hover {
+  background: rgba(96, 165, 250, 0.08);
+}
+
+/* # H1 Überschrift */
+.ctx-h1 {
+  font-size: 1.15em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin: 0.4em 0 0.05em;
+  line-height: 1.3;
+  opacity: 0.95;
+}
+
+/* ## H2 Überschrift */
+.ctx-h2 {
+  font-size: 1.04em;
+  font-weight: 600;
+  margin: 0.3em 0 0.05em;
+  line-height: 1.3;
+  opacity: 0.88;
 }
 

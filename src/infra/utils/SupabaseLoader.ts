@@ -508,6 +508,9 @@ export class SupabaseLoader {
     tier?: string;
     size?: string;
     appearance?: string;
+    // Source and detail for correct/distractor entries
+    source?: string;
+    detail?: string;
   }): Promise<{ success: boolean; error?: string }> {
     console.log(`💾 [SupabaseLoader] Creating item: ${item.object_type} for round UUID ${item.round_uuid}`);
     
@@ -764,7 +767,9 @@ export class SupabaseLoader {
           font_size: correct.visual?.fontSize,
           pulsate: correct.visual?.pulsate,
           shake: correct.visual?.shake,
-          glow: correct.visual?.glow
+          glow: correct.visual?.glow,
+          source: correct.source || undefined,
+          detail: correct.details || undefined
         });
         
         if (!correctResult.success) {
@@ -797,7 +802,9 @@ export class SupabaseLoader {
           font_size: distractor.visual?.fontSize,
           pulsate: distractor.visual?.pulsate,
           shake: distractor.visual?.shake,
-          glow: distractor.visual?.glow
+          glow: distractor.visual?.glow,
+          source: distractor.source || undefined,
+          detail: distractor.details || undefined
         });
         
         if (!distractorResult.success) {

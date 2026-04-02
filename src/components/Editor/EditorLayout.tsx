@@ -221,7 +221,16 @@ function EditorLayoutContent() {
   const handleItemSelect = (itemId: string) => {
     setSelectedItemId(itemId);
     setViewMode('detail');
-    navigate(`/editor/${selectedUniverse?.id}/${selectedTheme?.id}/${selectedChapter}/${itemId}`);
+    // When "auto-load all theme items" is active, selectedChapter is '' but the item
+    // knows its own chapter. Use item.chapter as fallback so the URL stays valid and
+    // the detail view gets the correct chapterId for saving.
+    const effectiveChapter = selectedChapter
+      || items.find(i => i.id === itemId)?.chapter
+      || '';
+    if (effectiveChapter && effectiveChapter !== selectedChapter) {
+      setSelectedChapter(effectiveChapter);
+    }
+    navigate(`/editor/${selectedUniverse?.id}/${selectedTheme?.id}/${effectiveChapter}/${itemId}`);
   };
 
   const handleBackToTable = () => {

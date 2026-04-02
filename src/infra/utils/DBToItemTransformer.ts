@@ -139,6 +139,8 @@ function transformCorrectItem(item: ItemRow): CorrectEntry {
     hp: item.hp ?? 1,
     collectionOrder: item.collectionorder ?? undefined,
     context: item.context || '',
+    source: item.source ?? undefined,
+    details: item.detail ?? undefined,
     level: item.level ?? undefined, // Item-level difficulty (1-10)
     visual: transformVisualConfig(item, 'correct'),
     sound: item.sound ?? undefined,
@@ -166,6 +168,8 @@ function transformDistractorItem(item: ItemRow): DistractorEntry {
     behavior: item.behavior ?? undefined,
     redirect: item.redirect || '',
     context: item.context || '',
+    source: item.source ?? undefined,
+    details: item.detail ?? undefined,
     level: item.level ?? undefined, // Item-level difficulty (1-10)
     visual: transformVisualConfig(item, 'distractor'),
     sound: item.sound ?? undefined,

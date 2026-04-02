@@ -193,7 +193,11 @@ export function EditorSidebar({
     };
 
     loadScopedItems();
-  }, [searchScope, selectedUniverse, selectedTheme, items, showToast]);
+  // items intentionally excluded: we don't want to reload all scoped items every time
+  // the user edits an item in DetailView (that would show a toast on every keystroke).
+  // The scoped list is rebuilt when scope/universe/theme actually changes.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchScope, selectedUniverse, selectedTheme]);
 
   // Handle item selection with automatic navigation
   const handleItemSelect = async (itemId: string) => {

@@ -103,6 +103,10 @@ export interface CorrectEntry {
   hp?: number;
   collectionOrder?: number;
   context: string;
+  /** Quelle / URL oder freie Quellenangabe (Editor + DB) */
+  source?: string;
+  /** Zusätzliche Erläuterung (wie Context, Mini-Markup) */
+  details?: string;
   level?: number; // Item-specific difficulty level (1-10), default 1
   visual: VisualConfig;
   sound?: string;
@@ -125,6 +129,8 @@ export interface DistractorEntry {
   behavior?: string;
   redirect: string;
   context: string;
+  source?: string;
+  details?: string;
   level?: number; // Item-specific difficulty level (1-10), default 1
   visual: VisualConfig;
   sound?: string;
@@ -146,6 +152,7 @@ export interface VisualConfig {
 }
 
 export interface ItemMeta {
+  /** Mehrere Quellen: ein String, Einträge mit | getrennt (URL oder Freitext pro Segment). */
   source?: string;
   detail?: string; // Optional detail field (stored in rounds.meta_detail)
   tags?: string[];

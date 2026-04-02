@@ -122,6 +122,8 @@ export interface ItemRow {
   shake: boolean; // NOT NULL default false
   pattern: string | null;
   level: number | null; // Item-specific difficulty level (1-10), default 1
+  source: string | null; // Quellenangabe (URL oder Freitext) für den einzelnen Correct/Distractor-Eintrag
+  detail: string | null; // Zusätzliche Erläuterung für den einzelnen Correct/Distractor-Eintrag
   created_at: string | null;
   updated_at: string | null;
   round_uuid: string | null;

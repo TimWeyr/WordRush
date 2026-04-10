@@ -168,6 +168,21 @@ function getSourceSelectionOffsets(root: HTMLElement | null): { start: number; e
   return { start: Math.min(a, b), end: Math.max(a, b) };
 }
 
+/** Gemeinsame Markup-Regeln (WordRush + streetsmarts): *+ / *- — kein *kursiv* an dieser Stelle */
+function isSharedListMarkerAt(line: string, i: number): boolean {
+  if (line[i] !== '*') return false;
+  if (line.startsWith('**', i)) return false;
+  let j = i + 1;
+  while (j < line.length && (line[j] === '+' || line[j] === '-')) j++;
+  if (j === i + 1) return false;
+  return j < line.length && /\s/.test(line[j]);
+}
+
+/** *+ / *- / *++ … oder Legacy *␠ — gleiche Syntax in beiden Projekten */
+function isListLine(line: string): boolean {
+  return /^\s*\*(\++|-+)\s+/.test(line) || /^\s*\*\s+/.test(line);
+}
+
 function parseInlineContent(line: string, baseOffset: number, keyPrefix: string): ReactNode[] {
   const out: ReactNode[] = [];
   let i = 0;
@@ -258,8 +273,8 @@ function parseInlineContent(line: string, baseOffset: number, keyPrefix: string)
         continue;
       }
     }
-    // *italic*
-    if (line[i] === '*' && !line.startsWith('**', i)) {
+    // *italic* (nicht *+ / *- Listenmarker)
+    if (line[i] === '*' && !line.startsWith('**', i) && !isSharedListMarkerAt(line, i)) {
       const close = line.indexOf('*', i + 1);
       if (close !== -1 && close > i + 1) {
         const inner = line.slice(i + 1, close);
@@ -304,6 +319,7 @@ function parseInlineContent(line: string, baseOffset: number, keyPrefix: string)
       if (line.startsWith('**', j)) break;
       if (ch === '[') break;
       if (ch === '*' && !line.startsWith('**', j)) {
+        if (isSharedListMarkerAt(line, j)) break;
         const close = line.indexOf('*', j + 1);
         if (close !== -1 && close > j + 1) {
           const inner = line.slice(j + 1, close);
@@ -322,12 +338,40 @@ function parseInlineContent(line: string, baseOffset: number, keyPrefix: string)
 }
 
 function renderBulletLine(line: string, lineStart: number, keyPrefix: string): ReactNode {
-  const m = line.match(/^(\s*\*\s+)(.*)$/);
-  if (!m) {
+  const sm = line.match(/^(\s*)(\*(\++|-+))(\s+)(.*)$/);
+  if (sm) {
+    const [, indent, marker, , sp, rest] = sm;
+    const isOrdered = /-/.test(marker);
+    const glyph = isOrdered ? '1.' : '•';
+    const indentLen = indent.length;
+    const markerStart = lineStart + indentLen;
+    const contentOffset = lineStart + indent.length + marker.length + sp.length;
+    return (
+      <span style={{ display: 'flex', gap: '0.35rem', alignItems: 'flex-start' }}>
+        {indent ? (
+          <span data-sstart={lineStart} data-slen={indent.length}>{indent}</span>
+        ) : null}
+        <span
+          data-marker={marker}
+          style={{ color: 'rgba(126,212,255,0.95)', flexShrink: 0 }}
+          data-sstart={markerStart}
+          data-slen={marker.length}
+        >
+          {glyph}
+        </span>
+        {sp ? (
+          <span data-sstart={markerStart + marker.length} data-slen={sp.length}>{sp}</span>
+        ) : null}
+        <span style={{ flex: 1, minWidth: 0 }}>{parseInlineContent(rest, contentOffset, keyPrefix)}</span>
+      </span>
+    );
+  }
+  const legacy = line.match(/^(\s*\*\s+)(.*)$/);
+  if (!legacy) {
     return <>{parseInlineContent(line, lineStart, keyPrefix)}</>;
   }
-  const prefix = m[1];
-  const rest = m[2];
+  const prefix = legacy[1];
+  const rest = legacy[2];
   const starIdxInPrefix = prefix.indexOf('*');
   const beforeStar = prefix.slice(0, starIdxInPrefix);
   const afterStar = prefix.slice(starIdxInPrefix + 1);
@@ -336,7 +380,14 @@ function renderBulletLine(line: string, lineStart: number, keyPrefix: string): R
       {beforeStar ? (
         <span data-sstart={lineStart} data-slen={beforeStar.length}>{beforeStar}</span>
       ) : null}
-      <span style={{ color: 'rgba(126,212,255,0.95)', flexShrink: 0 }} data-sstart={lineStart + starIdxInPrefix} data-slen={1}>•</span>
+      <span
+        data-marker="*"
+        style={{ color: 'rgba(126,212,255,0.95)', flexShrink: 0 }}
+        data-sstart={lineStart + starIdxInPrefix}
+        data-slen={1}
+      >
+        •
+      </span>
       {afterStar ? (
         <span data-sstart={lineStart + starIdxInPrefix + 1} data-slen={afterStar.length}>{afterStar}</span>
       ) : null}
@@ -358,7 +409,7 @@ function buildContextPreviewRich(text: string, collapsed: boolean, keyPrefix: st
   if (collapsed) {
     const first = lines[0]?.line ?? '';
     const firstStart = lines[0]?.start ?? 0;
-    const isBullet = /^\s*\*\s+/.test(first);
+    const isBullet = isListLine(first);
     const isH2c = first.startsWith('## ');
     const isH1c = !isH2c && first.startsWith('# ');
     const displayLine = isH2c ? first.slice(3) : isH1c ? first.slice(2) : first;
@@ -386,7 +437,7 @@ function buildContextPreviewRich(text: string, collapsed: boolean, keyPrefix: st
     }
     const isH2 = line.startsWith('## ');
     const isH1 = !isH2 && line.startsWith('# ');
-    const isBullet = !isH1 && !isH2 && /^\s*\*\s+/.test(line);
+    const isBullet = !isH1 && !isH2 && isListLine(line);
     if (isH2) {
       blocks.push(
         <div key={`${keyPrefix}-ln-${idx}`} data-block-type="h2" className="ctx-h2">
@@ -482,7 +533,20 @@ function serializeInlineContent(el: HTMLElement): string {
 function serializeBulletLine(el: HTMLElement): string {
   const children = Array.from(el.children).filter((c) => c.tagName === 'SPAN') as HTMLElement[];
   let s = '';
-  for (const c of children) {
+  for (let i = 0; i < children.length; i++) {
+    const c = children[i];
+    const dm = c.getAttribute('data-marker');
+    if (dm) {
+      s += dm;
+      const next = children[i + 1];
+      if (next && /^\s+$/.test(next.textContent ?? '')) {
+        s += next.textContent ?? '';
+        i++;
+      } else {
+        s += ' ';
+      }
+      continue;
+    }
     const t = c.textContent ?? '';
     if (t === '•') {
       s += '*';
@@ -794,8 +858,20 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
     onItemChange(newItem);
   };
 
-  type InlineKind = 'bold' | 'italic' | 'brackets' | 'list' | 'newline' | 'gap' | 'code' | 'highlight';
+  type InlineKind =
+    | 'bold'
+    | 'italic'
+    | 'brackets'
+    | 'list'
+    | 'listOrdered'
+    | 'newline'
+    | 'gap'
+    | 'code'
+    | 'highlight';
   type ToolbarKind = InlineKind | 'abbr' | 'h1' | 'h2';
+
+  /** Listenzeilen-Präfix entfernen (*+ / *- / Legacy * ) — gemeinsame Syntax */
+  const stripListLinePrefix = (line: string) => line.replace(/^\s*\*(\++|-+)?\s*/, '');
 
   const computeContextInsert = (selected: string, kind: InlineKind): string => {
     if (kind === 'bold') return `**${selected || ''}**`;
@@ -806,8 +882,12 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
     if (kind === 'highlight') return `==${selected || ''}==`;
     if (kind === 'newline') return `${selected}\\n`;
     if (kind === 'list') {
-      if (!selected) return '* ';
-      return selected.split('\n').map((l) => `* ${l.replace(/^\*\s*/, '')}`).join('\n');
+      if (!selected) return '*+ ';
+      return selected.split('\n').map((l) => `*+ ${stripListLinePrefix(l)}`).join('\n');
+    }
+    if (kind === 'listOrdered') {
+      if (!selected) return '*- ';
+      return selected.split('\n').map((l) => `*- ${stripListLinePrefix(l)}`).join('\n');
     }
     return selected;
   };
@@ -1128,7 +1208,8 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
         {btn('(A)', 'abbr', 'Abkürzung (term)[Langform]', 'Abkürzung')}
         {btn('H1', 'h1', 'Überschrift 1 (# am Zeilenanfang)', 'H1')}
         {btn('H2', 'h2', 'Überschrift 2 (## am Zeilenanfang)', 'H2')}
-        {btn('* Liste', 'list', 'Aufzählung (* ...)', 'Aufzählung')}
+        {btn('*+', 'list', 'Aufzählung (*+ / *++ …, gemeinsames Markup)', 'Aufzählung')}
+        {btn('*-', 'listOrdered', 'Nummeriert (*- / *-- …, gemeinsames Markup)', 'Nummerierte Liste')}
         {btn('\\n', 'newline', 'Zeilenumbruch (\\n)', 'Zeilenumbruch')}
         {btn('[ ]', 'brackets', 'Erklär-Chip ([...]) | Strg+H', 'Erklär-Chip')}
         {separator}

@@ -82,6 +82,18 @@
   animation: modalSlideIn 0.3s ease-out;
 }
 
+.settings-app-meta {
+  margin: 0;
+  padding: 0.35rem 1rem 0.65rem;
+  text-align: center;
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.26);
+  letter-spacing: 0.03em;
+  user-select: none;
+  border-top: 1px solid rgba(74, 144, 226, 0.12);
+}
+
 @keyframes modalSlideIn {
   from {
     opacity: 0;

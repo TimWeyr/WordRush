@@ -11,6 +11,7 @@ import { useToast } from '../Toast/ToastContainer';
 import { TextParserModal } from './TextParserModal';
 import { SearchableDropdown } from './SearchableDropdown';
 import { useEditorMobile, useEditorMobileSectionInitiallyOpen } from '@/hooks/useEditorMobile';
+import { uploadMediaFileToBucket } from '@/utils/media/uploadContentBucketMedia';
 
 interface DetailViewProps {
   item: Item | null;
@@ -781,6 +782,7 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
   const [activeContextRefKey, setActiveContextRefKey] = useState<string>('baseContext');
 
   const isMobileDetail = useEditorMobile();
+  const [mediaSectionOpen, setMediaSectionOpen] = useState(() => useEditorMobileSectionInitiallyOpen());
   const [moveSectionOpen, setMoveSectionOpen] = useState(() => useEditorMobileSectionInitiallyOpen());
   const [relatedSectionOpen, setRelatedSectionOpen] = useState(() => useEditorMobileSectionInitiallyOpen());
   const [metaSectionOpen, setMetaSectionOpen] = useState(() => useEditorMobileSectionInitiallyOpen());
@@ -804,6 +806,7 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
 
   useEffect(() => {
     const expanded = !isMobileDetail;
+    setMediaSectionOpen(expanded);
     setMoveSectionOpen(expanded);
     setRelatedSectionOpen(expanded);
     setMetaSectionOpen(expanded);
@@ -856,6 +859,46 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
 
     setLocalItem(newItem);
     onItemChange(newItem);
+  };
+
+  /** Storage-Pfad = Editor-URL: /editor/{universe}/{theme}/{chapter}/{itemId} → media-Bucket gleiche Segmente */
+  const [uploadingMediaField, setUploadingMediaField] = useState<string | null>(null);
+
+  const uploadMediaForCurrentItem = async (file: File, applyPath: string) => {
+    if (!localItem) return;
+    if (!universeId || !chapterId || !theme?.id) {
+      showToast(
+        '❌ Universe, Theme und Chapter werden für den Storage-Pfad benötigt (URL wie /editor/…/…/…/ItemId).',
+        'error'
+      );
+      return;
+    }
+    setUploadingMediaField(applyPath);
+    try {
+      const { publicUrl } = await uploadMediaFileToBucket(file, {
+        universeId,
+        themeId: theme.id,
+        chapterId,
+        contentId: localItem.id,
+      });
+      handleFieldChange(applyPath, publicUrl);
+      showToast('✅ Hochgeladen · URL gesetzt', 'success');
+    } catch (e) {
+      showToast(`❌ Upload: ${e instanceof Error ? e.message : String(e)}`, 'error');
+    } finally {
+      setUploadingMediaField(null);
+    }
+  };
+
+  const openImageFilePicker = (applyPath: string) => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.onchange = (event: Event) => {
+      const f = (event.target as HTMLInputElement)?.files?.[0];
+      if (f) void uploadMediaForCurrentItem(f, applyPath);
+    };
+    input.click();
   };
 
   type InlineKind =
@@ -1919,21 +1962,7 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
             onChange={(e) => {
               handleFieldChange('base.type', e.target.value);
               if (e.target.value === 'image') {
-                // Open file picker automatically
-                const input = document.createElement('input');
-                input.type = 'file';
-                input.accept = 'image/*';
-                input.onchange = (event: any) => {
-                  const file = event.target?.files?.[0];
-                  if (file) {
-                    // In a real app, you would upload the file and get a URL
-                    // For now, show a dialog with instructions
-                    const imagePath = `/content/assets/images/${localItem.theme}/${localItem.chapter}/${file.name}`;
-                    handleFieldChange('base.image', imagePath);
-                    alert(`Image selected: ${file.name}\n\nRecommended path:\n${imagePath}\n\nPlace image files in:\n/public/content/assets/images/[theme]/[chapter]/`);
-                  }
-                };
-                input.click();
+                openImageFilePicker('base.image');
               }
             }}
             style={{ flex: '0 0 120px' }}
@@ -1999,28 +2028,18 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
               className="editor-form-input"
               value={localItem.base.image || ''}
               onChange={(e) => handleFieldChange('base.image', e.target.value)}
-              placeholder="/content/assets/images/[theme]/[chapter]/image.png"
+              placeholder="https://… (Storage media-Bucket) oder Upload"
               style={{ flex: 1 }}
             />
             <button
+              type="button"
               className="editor-button small"
-              onClick={() => {
-                const input = document.createElement('input');
-                input.type = 'file';
-                input.accept = 'image/*';
-                input.onchange = (event: any) => {
-                  const file = event.target?.files?.[0];
-                  if (file) {
-                    const imagePath = `/content/assets/images/${localItem.theme}/${localItem.chapter}/${file.name}`;
-                    handleFieldChange('base.image', imagePath);
-                    alert(`Image selected: ${file.name}\n\nPlace file at:\n/public${imagePath}`);
-                  }
-                };
-                input.click();
-              }}
+              disabled={uploadingMediaField === 'base.image'}
+              onClick={() => openImageFilePicker('base.image')}
+              title="In Bucket media hochladen: …/{Universe}/{Theme}/{Chapter}/{ItemId}/Datei"
               style={{ padding: '0.4rem 0.8rem' }}
             >
-              📁 Browse
+              {uploadingMediaField === 'base.image' ? '⏳ …' : '📁 Upload'}
             </button>
           </div>
         )}
@@ -2129,20 +2148,7 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
                             const v = e.target.value;
                             handleFieldChange(`correct[${index}].entry.type`, v);
                             if (v === 'image') {
-                              const input = document.createElement('input');
-                              input.type = 'file';
-                              input.accept = 'image/*';
-                              input.onchange = (event: Event) => {
-                                const file = (event.target as HTMLInputElement)?.files?.[0];
-                                if (file) {
-                                  const imagePath = `/content/assets/images/${localItem.theme}/${localItem.chapter}/${file.name}`;
-                                  handleFieldChange(`correct[${index}].entry.image`, imagePath);
-                                  alert(
-                                    `Image selected: ${file.name}\n\nRecommended path:\n${imagePath}\n\nPlace image files in:\n/public/content/assets/images/[theme]/[chapter]/`
-                                  );
-                                }
-                              };
-                              input.click();
+                              openImageFilePicker(`correct[${index}].entry.image`);
                             }
                           }}
                           style={{
@@ -2201,20 +2207,7 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
                           const v = e.target.value;
                           handleFieldChange(`correct[${index}].entry.type`, v);
                           if (v === 'image') {
-                            const input = document.createElement('input');
-                            input.type = 'file';
-                            input.accept = 'image/*';
-                            input.onchange = (event: Event) => {
-                              const file = (event.target as HTMLInputElement)?.files?.[0];
-                              if (file) {
-                                const imagePath = `/content/assets/images/${localItem.theme}/${localItem.chapter}/${file.name}`;
-                                handleFieldChange(`correct[${index}].entry.image`, imagePath);
-                                alert(
-                                  `Image selected: ${file.name}\n\nRecommended path:\n${imagePath}\n\nPlace image files in:\n/public/content/assets/images/[theme]/[chapter]/`
-                                );
-                              }
-                            };
-                            input.click();
+                            openImageFilePicker(`correct[${index}].entry.image`);
                           }
                         }}
                         style={{ flex: '0 0 100px' }}
@@ -2570,6 +2563,121 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
         >
           + Add
         </button>
+      </div>
+
+      {/* MEDIA STORAGE — eigener Block wie Move/Copy */}
+      <div className="editor-detail-section" style={{ padding: '1rem' }}>
+        {isMobileDetail ? (
+          <button
+            type="button"
+            className="editor-detail-mobile-collapse-toggle"
+            onClick={() => setMediaSectionOpen((o) => !o)}
+            aria-expanded={mediaSectionOpen}
+          >
+            <span className="editor-detail-mobile-collapse-title">📤 Media (Supabase Storage)</span>
+            <span className="editor-detail-mobile-collapse-summary">
+              {universeId && theme?.id && chapterId
+                ? `${universeId}/${theme.id}/…/${localItem.id}`
+                : '—'}
+            </span>
+            <span className="editor-detail-mobile-collapse-chevron">{mediaSectionOpen ? '▲' : '▼'}</span>
+          </button>
+        ) : (
+          <div className="editor-detail-section-title" style={{ fontSize: '1rem', marginBottom: '0.75rem' }}>
+            📤 Media (Supabase Storage)
+          </div>
+        )}
+        {(!isMobileDetail || mediaSectionOpen) && (
+          <div
+            style={{
+              padding: '1rem',
+              background: 'rgba(255, 255, 255, 0.03)',
+              borderRadius: '8px',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+            }}
+          >
+            {universeId && theme?.id && chapterId ? (
+              <>
+                <p
+                  style={{
+                    fontSize: '0.8rem',
+                    color: 'rgba(255, 255, 255, 0.65)',
+                    marginBottom: '0.5rem',
+                    lineHeight: 1.45,
+                  }}
+                >
+                  Bucket <code style={{ fontSize: '0.78rem' }}>media</code>, Pfad wie{' '}
+                  <code style={{ fontSize: '0.78rem' }}>/editor/…</code>:
+                </p>
+                <code
+                  style={{
+                    fontSize: '0.72rem',
+                    wordBreak: 'break-all',
+                    display: 'block',
+                    marginBottom: '0.6rem',
+                    color: 'rgba(200, 230, 255, 0.9)',
+                  }}
+                >
+                  {universeId}/{theme.id}/{chapterId}/{localItem.id}/Dateiname
+                </code>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '0.5rem',
+                    alignItems: 'center',
+                  }}
+                >
+                  <button
+                    type="button"
+                    className="editor-button small primary"
+                    disabled={uploadingMediaField === 'base.image'}
+                    onClick={() => openImageFilePicker('base.image')}
+                    title="Öffentliche URL nach Upload in base.image schreiben"
+                  >
+                    {uploadingMediaField === 'base.image' ? '⏳ …' : '📁 Base-Bild'}
+                  </button>
+                  {localItem.correct.map((c, index) =>
+                    c.entry.type === 'image' ? (
+                      <button
+                        key={`media-section-correct-img-${index}`}
+                        type="button"
+                        className="editor-button small"
+                        disabled={uploadingMediaField === `correct[${index}].entry.image`}
+                        onClick={() => openImageFilePicker(`correct[${index}].entry.image`)}
+                        title={`Correct #${index + 1} → entry.image`}
+                      >
+                        {uploadingMediaField === `correct[${index}].entry.image`
+                          ? '⏳ …'
+                          : `📁 Correct #${index + 1}`}
+                      </button>
+                    ) : null
+                  )}
+                </div>
+                <p
+                  style={{
+                    fontSize: '0.75rem',
+                    color: 'rgba(255, 255, 255, 0.45)',
+                    marginTop: '0.5rem',
+                    marginBottom: 0,
+                  }}
+                >
+                  Dieselben Aktionen gibt es bei Base Entry / Correct, wenn der Typ „Image“ ist.
+                </p>
+              </>
+            ) : (
+              <p
+                style={{
+                  fontSize: '0.8rem',
+                  color: 'rgba(255, 165, 0, 0.85)',
+                  margin: 0,
+                }}
+              >
+                Media-Upload braucht Universe, Theme und Chapter (Editor-URL vollständig).
+              </p>
+            )}
+          </div>
+        )}
       </div>
 
       {/* MOVE/COPY ITEM SECTION — unter Distraktoren, über Related Items */}

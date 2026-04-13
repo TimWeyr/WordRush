@@ -19,8 +19,8 @@ interface SettingsProps {
 type TabType = 'settings' | 'gameplay' | 'export';
 
 /** Nutzerlesbare Release-Info (bei Release manuell anpassen) */
-const APP_VERSION = '0.8.6';
-const APP_LAST_UPDATE_LABEL = '10. Apr. 2026';
+const APP_VERSION = '0.8.7';
+const APP_LAST_UPDATE_LABEL = '2. Apr. 2026';
 
 export const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
   const navigate = useNavigate();

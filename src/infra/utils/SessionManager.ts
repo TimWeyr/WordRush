@@ -96,7 +96,7 @@ export interface SessionInfo {
       const connectionType = connection?.effectiveType;
       
       // App Version (from environment variable or fallback)
-      const appVersion = import.meta.env.VITE_APP_VERSION || '0.3.0';
+      const appVersion = import.meta.env.VITE_APP_VERSION || '0.3.1';
       
       // Viewport dimensions (actual visible area)
       const viewportWidth = window.innerWidth;

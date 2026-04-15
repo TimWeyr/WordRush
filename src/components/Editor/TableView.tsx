@@ -18,10 +18,19 @@ interface TableViewProps {
 
 const MAX_CONTEXT_LENGTH = 60;
 
+const STREETSMARTS_APP_ORIGIN = 'https://streetsmarts.vercel.app';
+
+function streetSmartsItemUrl(itemId: string): string {
+  return `${STREETSMARTS_APP_ORIGIN}/?entry=${encodeURIComponent(itemId)}`;
+}
+
 export function TableView({ items, onItemsChange, onItemSelect, chapterId, themeId, universeId, theme }: TableViewProps) {
   const { showToast, showConfirm } = useToast();
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState<'id' | 'level' | 'word'>('id');
+  const [sortBy, setSortBy] = useState<'id' | 'level' | 'word'>(() => {
+    const saved = localStorage.getItem('tableViewSortBy');
+    return saved === 'id' || saved === 'level' || saved === 'word' ? saved : 'id';
+  });
   const [selectedItems, setSelectedItems] = useState<Set<string>>(new Set());
   const [savingItems, setSavingItems] = useState<Set<string>>(new Set());
   const [deletingItems, setDeletingItems] = useState<Set<string>>(new Set());
@@ -889,7 +898,11 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
           <select
             className="editor-table-sort"
             value={sortBy}
-            onChange={(e) => setSortBy(e.target.value as 'id' | 'level' | 'word')}
+            onChange={(e) => {
+              const next = e.target.value as 'id' | 'level' | 'word';
+              setSortBy(next);
+              localStorage.setItem('tableViewSortBy', next);
+            }}
             style={{
               padding: '8px 12px',
               borderRadius: '4px',
@@ -1168,6 +1181,26 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
                           >
                             📋
                           </button>
+                          <a
+                            href={streetSmartsItemUrl(item.id)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="editor-button small"
+                            style={{
+                              padding: '0.3rem 0.4rem',
+                              fontSize: '0.7rem',
+                              width: '100%',
+                              textAlign: 'center',
+                              textDecoration: 'none',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              boxSizing: 'border-box',
+                            }}
+                            title="Open in StreetSmarts (?entry= deep link)"
+                          >
+                            🌐
+                          </a>
                         </div>
                       </td>
                       
@@ -1231,29 +1264,26 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
                             }}
                             title={item.published !== false ? 'Published' : 'Unpublished'}
                           />
-                          {/* Game toggle: sw=both, s=StreetSmarts, w=WordRush */}
-                          <div style={{ display: 'flex', gap: '1px', borderRadius: '4px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.15)' }} title="Game: sw=both, s=StreetSmarts only, w=WordRush only">
+                          <div
+                            className="editor-game-toggle editor-game-toggle--compact"
+                            title="Game: sw=both, s=StreetSmarts only, w=WordRush only"
+                            role="group"
+                            aria-label="Which games use this item"
+                          >
                             {(['sw', 's', 'w'] as const).map((val) => {
                               const current = item.game ?? 'sw';
                               const active = current === val;
-                              const colors: Record<string, string> = { sw: '#9c27b0', s: '#ff9800', w: '#4caf50' };
                               const labels: Record<string, string> = { sw: 'S+W', s: 'S', w: 'W' };
+                              const t =
+                                val === 'sw' ? 'Both games' : val === 's' ? 'StreetSmarts only' : 'WordRush only';
                               return (
                                 <button
                                   key={val}
+                                  type="button"
+                                  className={`editor-game-toggle__btn editor-game-toggle__btn--${val}${active ? ' editor-game-toggle__btn--active' : ''}`}
+                                  title={t}
+                                  aria-pressed={active}
                                   onClick={() => handleCellChange(item.id, 'game', val)}
-                                  style={{
-                                    padding: '1px 3px',
-                                    fontSize: '0.6rem',
-                                    fontWeight: 700,
-                                    cursor: 'pointer',
-                                    border: 'none',
-                                    background: active ? colors[val] : 'rgba(255,255,255,0.06)',
-                                    color: active ? '#fff' : 'rgba(255,255,255,0.4)',
-                                    transition: 'all 0.15s',
-                                    lineHeight: 1.4,
-                                  }}
-                                  title={val === 'sw' ? 'Both games' : val === 's' ? 'StreetSmarts only' : 'WordRush only'}
                                 >
                                   {labels[val]}
                                 </button>
@@ -1450,6 +1480,26 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
                           >
                             📋
                           </button>
+                          <a
+                            href={streetSmartsItemUrl(item.id)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="editor-button small"
+                            style={{
+                              padding: '0.3rem 0.4rem',
+                              fontSize: '0.7rem',
+                              width: '100%',
+                              textAlign: 'center',
+                              textDecoration: 'none',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              boxSizing: 'border-box',
+                            }}
+                            title="Open in StreetSmarts (?entry= deep link)"
+                          >
+                            🌐
+                          </a>
                         </div>
                       </td>
                       <td rowSpan={3 + item.correct.length + item.distractors.length} style={{ 
@@ -1509,29 +1559,26 @@ export function TableView({ items, onItemsChange, onItemSelect, chapterId, theme
                             }}
                             title={item.published !== false ? 'Published' : 'Unpublished'}
                           />
-                          {/* Game toggle: sw=both, s=StreetSmarts, w=WordRush */}
-                          <div style={{ display: 'flex', gap: '1px', borderRadius: '4px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.15)' }} title="Game: sw=both, s=StreetSmarts only, w=WordRush only">
+                          <div
+                            className="editor-game-toggle editor-game-toggle--compact"
+                            title="Game: sw=both, s=StreetSmarts only, w=WordRush only"
+                            role="group"
+                            aria-label="Which games use this item"
+                          >
                             {(['sw', 's', 'w'] as const).map((val) => {
                               const current = item.game ?? 'sw';
                               const active = current === val;
-                              const colors: Record<string, string> = { sw: '#9c27b0', s: '#ff9800', w: '#4caf50' };
                               const labels: Record<string, string> = { sw: 'S+W', s: 'S', w: 'W' };
+                              const t =
+                                val === 'sw' ? 'Both games' : val === 's' ? 'StreetSmarts only' : 'WordRush only';
                               return (
                                 <button
                                   key={val}
+                                  type="button"
+                                  className={`editor-game-toggle__btn editor-game-toggle__btn--${val}${active ? ' editor-game-toggle__btn--active' : ''}`}
+                                  title={t}
+                                  aria-pressed={active}
                                   onClick={() => handleCellChange(item.id, 'game', val)}
-                                  style={{
-                                    padding: '1px 3px',
-                                    fontSize: '0.6rem',
-                                    fontWeight: 700,
-                                    cursor: 'pointer',
-                                    border: 'none',
-                                    background: active ? colors[val] : 'rgba(255,255,255,0.06)',
-                                    color: active ? '#fff' : 'rgba(255,255,255,0.4)',
-                                    transition: 'all 0.15s',
-                                    lineHeight: 1.4,
-                                  }}
-                                  title={val === 'sw' ? 'Both games' : val === 's' ? 'StreetSmarts only' : 'WordRush only'}
                                 >
                                   {labels[val]}
                                 </button>

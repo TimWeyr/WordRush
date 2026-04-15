@@ -26,6 +26,12 @@ interface DetailViewProps {
 // Removed unused constants
 const CONTEXT_EXPANDED_STORAGE_KEY = 'detailView_context_expanded_v1';
 
+const STREETSMARTS_APP_ORIGIN = 'https://streetsmarts.vercel.app';
+
+function streetSmartsItemUrl(itemId: string): string {
+  return `${STREETSMARTS_APP_ORIGIN}/?entry=${encodeURIComponent(itemId)}`;
+}
+
 const BRACKET_CHIP_STYLE: CSSProperties = {
   padding: '0.05rem 0.35rem',
   borderRadius: '4px',
@@ -1902,6 +1908,32 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
         <div className="editor-detail-section-title" style={{ fontSize: '1rem', marginBottom: '0.75rem' }}>
           📋 Basic Information
         </div>
+        <div
+          className="editor-game-toggle editor-game-toggle--spaced"
+          title="Game: sw=both, s=StreetSmarts only, w=WordRush only"
+          role="group"
+          aria-label="Which games use this item"
+          style={{ marginBottom: '0.75rem' }}
+        >
+          {(['sw', 's', 'w'] as const).map((val) => {
+            const current = localItem.game ?? 'sw';
+            const active = current === val;
+            const label =
+              val === 'sw' ? 'Both games' : val === 's' ? 'StreetSmarts only' : 'WordRush only';
+            return (
+              <button
+                key={val}
+                type="button"
+                className={`editor-game-toggle__btn editor-game-toggle__btn--${val}${active ? ' editor-game-toggle__btn--active' : ''}`}
+                title={label}
+                aria-pressed={active}
+                onClick={() => handleFieldChange('game', val)}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </div>
         <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
           <input
             type="text"
@@ -1930,6 +1962,23 @@ export function DetailView({ item, allItems, onItemChange, onBack, universeId, t
             />
             <span style={{ fontSize: '0.9rem' }}>{localItem.published !== false ? '✅ Published' : '❌ Unpublished'}</span>
           </label>
+          <a
+            href={streetSmartsItemUrl(localItem.id)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="editor-button small"
+            title="Open in StreetSmarts (?entry= deep link)"
+            style={{
+              textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '0.25rem 0.5rem',
+              fontSize: '0.85rem',
+            }}
+          >
+            🌐
+          </a>
         </div>
       </div>
 

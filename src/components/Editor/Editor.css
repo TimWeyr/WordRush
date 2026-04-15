@@ -1255,3 +1255,58 @@ input[type="range"]:active::-ms-thumb {
   opacity: 0.88;
 }
 
+/* Item.game: which app(s) show this round — sw=both, s=StreetSmarts, w=WordRush */
+.editor-game-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: fit-content;
+  max-width: 100%;
+}
+
+.editor-game-toggle--spaced {
+  margin-bottom: 0.75rem;
+}
+
+.editor-game-toggle--compact .editor-game-toggle__btn {
+  padding: 1px 3px;
+  font-size: 0.6rem;
+  line-height: 1.4;
+}
+
+.editor-game-toggle__btn {
+  padding: 6px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.45);
+  transition: background 0.15s, color 0.15s;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.editor-game-toggle__btn:hover:not(.editor-game-toggle__btn--active) {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.editor-game-toggle__btn--active.editor-game-toggle__btn--sw {
+  background: #9c27b0;
+  color: #fff;
+}
+
+.editor-game-toggle__btn--active.editor-game-toggle__btn--s {
+  background: #ff9800;
+  color: #fff;
+}
+
+.editor-game-toggle__btn--active.editor-game-toggle__btn--w {
+  background: #4caf50;
+  color: #fff;
+}
+
